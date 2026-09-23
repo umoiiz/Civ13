@@ -19,8 +19,8 @@
 
 	input = remove_characters(input, list("~", "|", "@", ":", "#", "$", "%", "&",  "'",  "*", "+", "\"", ",", "-", "<", ">", "(", ")", "=", "/", "\\", "!", "^"))
 
-	if (length(input) > max_length)
-		input = copytext(input, TRUE, max_length+1)
+	if (length_char(input) > max_length)
+		input = copytext_char(input, TRUE, max_length + 1)
 	return input
 /*
  * Text sanitization
@@ -32,7 +32,8 @@
 		return
 
 	if (max_length)
-		input = copytext(input,1,max_length)
+		// Keep the limit in user-visible characters and avoid splitting UTF-8 CJK.
+		input = copytext_char(input, 1, max_length + 1)
 
 	if (extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -63,15 +64,22 @@
 
 //Filters out undesirable characters from names
 /proc/sanitizeName(var/input, var/max_length = MAX_NAME_LEN, var/allow_numbers = FALSE)
-	if (!input || length(input) > max_length)
+	if (!input || length_char(input) > max_length)
 		return //Rejects the input if it is null or if it is longer then the max length allowed
 
 	var/number_of_alphanumeric	= FALSE
 	var/last_char_group			= FALSE
 	var/output = ""
 
-	for (var/i=1, i<=length(input), i++)
-		var/ascii_char = text2ascii(input,i)
+	for (var/i=1, i<=length_char(input), i++)
+		var/char = copytext_char(input, i, i + 1)
+		var/ascii_char = text2ascii(char)
+		// Preserve non-ASCII Unicode characters, including multibyte CJK.
+		if (ascii_char > 127)
+			output += char
+			number_of_alphanumeric++
+			last_char_group = 4
+			continue
 		switch(ascii_char)
 			// A  .. Z
 			if (65 to 90)			//Uppercase Letters
@@ -118,7 +126,7 @@
 	if (number_of_alphanumeric < 2)	return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
 
 	if (last_char_group == TRUE)
-		output = copytext(output,1,length(output))	//removes the last character (in this case a space)
+		output = copytext_char(output,1,length_char(output))	//removes the last character (in this case a space)
 
 	for (var/bad_name in list("space","floor","wall","r-wall","monkey","unknown","inactive ai","plating"))	//prevents these common metagamey names
 		if (cmptext(output,bad_name))	return	//(not case sensitive)
@@ -127,12 +135,14 @@
 
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(var/text, var/max_length=512)
-	if (length(text) > max_length)	return			//message too long
+	if (length_char(text) > max_length)	return			//message too long
 	var/non_whitespace = FALSE
-	for (var/i=1, i<=length(text), i++)
-		switch(text2ascii(text,i))
+	for (var/i=1, i<=length_char(text), i++)
+		var/char = copytext_char(text, i, i + 1)
+		var/ascii_char = text2ascii(char)
+		switch(ascii_char)
 			if (62,60,92,47)	return			//rejects the text if it contains these bad characters: <, >, \ or /
-			if (127 to 255)	return			//rejects weird letters like �
+			if (127)		return			//reject DEL while allowing multibyte Unicode text
 			if (0 to 31)		return			//more weird stuff
 			if (32)			continue		//whitespace
 			else			non_whitespace = TRUE

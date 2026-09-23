@@ -336,7 +336,7 @@
 	return FALSE
 
 /mob/proc/store_memory(msg as message, popup, sane = TRUE)
-	msg = copytext(msg, TRUE, MAX_MESSAGE_LEN)
+	msg = copytext_char(msg, TRUE, MAX_MESSAGE_LEN + 1)
 
 	msg = replacetext(msg, "<i>", "")
 	msg = replacetext(msg, "</i>", "")

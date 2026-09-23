@@ -58,7 +58,7 @@ html body #uiContent {
 }
 
 .civ-root {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	color: #3a2c1a;
 	padding: 14px;
 	background:
@@ -80,7 +80,7 @@ html body #uiContent {
 }
 
 .civ-root h2 {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	font-weight: bold;
 	font-size: 16px;
 	color: #4a3418;
@@ -106,7 +106,7 @@ html body #uiContent {
    nano_base_helpers.js), restyled to match the theme instead of the bare
    default NanoUI look. */
 .civ-root .link, .civ-root .linkActive {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	background: #e9dcb8;
 	border: 1px solid #a98c5c;
 	color: #3a2c1a;

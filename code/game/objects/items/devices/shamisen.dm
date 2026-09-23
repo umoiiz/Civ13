@@ -172,13 +172,14 @@
 				spawn() playsong()
 
 		else if (href_list["newline"])
-			var/newline = html_encode(input("Enter your line: ", "shamisen") as text|null)
+			var/newline = input("Enter your line: ", "shamisen") as text|null
 			if (!newline)
 				return
 			if (song.lines.len > MAX_CHARS_PER_LINE)
 				return
-			if (length(newline) > MAX_CHARS_PER_LINE)
-				newline = copytext(newline, TRUE, MAX_CHARS_PER_LINE)
+			if (length_char(newline) > MAX_CHARS_PER_LINE)
+				newline = copytext_char(newline, TRUE, MAX_CHARS_PER_LINE + 1)
+			newline = html_encode(newline)
 			song.lines.Add(newline)
 
 		else if (href_list["deleteline"])
@@ -189,11 +190,12 @@
 
 		else if (href_list["modifyline"])
 			var/num = round(text2num(href_list["modifyline"]),1)
-			var/content = html_encode(input("Enter your line: ", "shamisen", song.lines[num]) as text|null)
+			var/content = input("Enter your line: ", "shamisen", html_decode(song.lines[num])) as text|null
 			if (!content)
 				return
-			if (length(content) > MAX_CHARS_PER_LINE)
-				content = copytext(content, TRUE, MAX_CHARS_PER_LINE)
+			if (length_char(content) > MAX_CHARS_PER_LINE)
+				content = copytext_char(content, TRUE, MAX_CHARS_PER_LINE + 1)
+			content = html_encode(content)
 			if (num > song.lines.len || num < 1)
 				return
 			song.lines[num] = content
@@ -210,15 +212,15 @@
 		else if (href_list["import"])
 			var/t = ""
 			do
-				t = html_encode(input(usr, "Please paste the entire song, formatted:", text("[]", name), t)  as message)
+				t = input(usr, "Please paste the entire song, formatted:", text("[]", name), t) as message
 				if (!in_range(src, usr))
 					return
 
-				if (length(t) >= MAX_CHARS_TOTAL)
+				if (length_char(t) >= MAX_CHARS_TOTAL)
 					var/cont = WWinput(usr, "Your song is too long! Would you like to continue editing it?", "Error", "Yes", list("Yes", "No"))
 					if (cont == "No")
 						break
-			while (length(t) > MAX_CHARS_TOTAL)
+			while (length_char(t) > MAX_CHARS_TOTAL)
 
 			//split into lines
 			spawn()
@@ -233,14 +235,15 @@
 					to_chat(usr, "行数太多!")
 					lines.Cut(MAX_CHARS_PER_LINE+1)
 				var/linenum = TRUE
+				var/list/encoded_lines = list()
 				for (var/l in lines)
-					if (length(l) > MAX_CHARS_PER_LINE)
-						to_chat(usr, "第[linenum]行太长!")
-						lines.Remove(l)
+					if (length_char(l) > MAX_CHARS_PER_LINE)
+						to_chat(usr, "Line [linenum] too long!")
 					else
+						encoded_lines += html_encode(l)
 						linenum++
 				song = new()
-				song.lines = lines
+				song.lines = encoded_lines
 				song.tempo = tempo
 
 	add_fingerprint(usr)

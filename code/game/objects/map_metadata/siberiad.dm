@@ -128,8 +128,8 @@
 // MAP SPECIFIC OBJECTS //
 
 /obj/structure/props/computerprops/tracking/siberiad
-	name = "launch terminal"
-	desc = "A terminal used to control the missile silo."
+	name = "发射终端"
+	desc = "用于控制导弹发射井的终端."
 	var/active = FALSE
 	var/unlocked = FALSE
 	var/destination = 0
@@ -175,25 +175,25 @@
 					src.visible_message(SPAN_WARNING("\icon[getFlatIcon(src)] Target destination: NOVOSIBIRSK <br>(LAT: 55.018803, LONG: 82.933952)."))
 
 /obj/item/weapon/disk/siberiad
-	name = "ballistic trajectory diskette"
-	desc = "A diskette containing protocols for setting up the ballistic trajectory a missile."
+	name = "弹道轨迹软盘"
+	desc = "一张包含设置导弹弹道轨迹协议的软盘."
 	icon_state = "disk_black"
 	item_state = "disk_black"
 	attackby(obj/item/W, mob/living/M)
 		return
 
 /obj/item/weapon/disk/siberiad/soviet
-	name = "Soviet ballistic trajectory diskette"
+	name = "苏联弹道轨迹软盘"
 	icon_state = "disk_red"
 	item_state = "disk_red"
 
 /obj/item/weapon/disk/siberiad/nato
-	name = "Coalition ballistic trajectory diskette"
+	name = "联军弹道轨迹软盘"
 	icon_state = "disk_blue"
 	item_state = "disk_blue"
 
 /obj/item/weapon/paper/official/activation_code
-	name = "confidential document"
+	name = "机密文件"
 	New()
 		..()
 		if (map && map.ID == MAP_SIBERIAD)

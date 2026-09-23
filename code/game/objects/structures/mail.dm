@@ -1,7 +1,7 @@
 /////MAILBOXES/////
 /obj/structure/closet/crate/wall_mailbox
-	name = "wall mailbox"
-	desc = "A mail box fastened on walls."
+	name = "壁挂邮箱"
+	desc = "固定在墙上的邮箱。"
 	icon = 'icons/obj/mail.dmi'
 	icon_state = "wall_mailbox_closed"
 	icon_closed = "wall_mailbox_closed"
@@ -61,21 +61,21 @@
 
 /obj/structure/closet/crate/wall_mailbox/attackby(var/obj/item/W as obj, mob/user as mob)
 	if (!istype(W, /obj/item/weapon/storage/envelope) && !istype(W, /obj/item/weapon/paper) && !istype(W, /obj/item/weapon/key) && !istype(W, /obj/item/weapon/storage/belt/keychain) && !istype(W, /obj/item/weapon/photo) && !istype(W, /obj/item/weapon/hammer))
-		to_chat(user, "<span class='notice'>You can't put it in the mailbox!</span>")
+		to_chat(user, "<span class='notice'>你不能把它放进邮箱里!</span>")
 		return TRUE
 	if (istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/weapon/photo) || istype(W, /obj/item/weapon/storage/envelope))
 		if(!opened)
 			if (contents_stored >= storagecap)
-				to_chat(user, "<span class='notice'>The mailbox is full!</span>")
+				to_chat(user, "<span class='notice'>邮箱满了!</span>")
 				return TRUE
 			else
 				if (istype(W, /obj/item/weapon/storage/envelope))
 					var/obj/item/weapon/storage/envelope/E = W
 					if (E.opened == TRUE || E.knifed == TRUE)
-						to_chat(user, "<span class='notice'>You change your mind about sending an opened envelope - better use a closed one instead.</span>")
+						to_chat(user, "<span class='notice'>你改变了主意,不想寄出打开的信封 - 最好还是用封好的。</span>")
 						return TRUE
 				user.remove_from_mob(W)
-				to_chat(user, "<span class='notice'>You slip the [W.name] into the mailbox slot.</span>")
+				to_chat(user, "<span class='notice'>你把[W.name]塞进邮箱投信口。</span>")
 				W.forceMove(src)
 				contents_stored++
 				return TRUE
@@ -88,8 +88,8 @@
 	return FALSE
 
 /obj/structure/closet/crate/wall_mailbox/wood_mailbox
-	name = "wood mailbox"
-	desc = "A wood box with a slot to accept mail."
+	name = "木制邮箱"
+	desc = "一个带有投信口的木箱,用于接收邮件。"
 	icon = 'icons/obj/mail.dmi'
 	icon_state = "wood_mailbox_closed"
 	icon_closed = "wood_mailbox_closed"
@@ -98,7 +98,7 @@
 
 /////ENVELOPE/////
 /obj/item/weapon/storage/envelope
-	name = "envelope"
+	name = "信封"
 	icon = 'icons/obj/mail.dmi'
 	icon_state = "envelope_empty"
 	item_state = "envelope_empty"
@@ -155,18 +155,18 @@
 /obj/item/weapon/storage/envelope/attack_self(mob/user as mob)
 	if(opened && !knifed)
 		if (do_after(user, 15, src))
-			to_chat(user, "You close the envelope.")
+			to_chat(user, "你封上了信封.")
 			opened = FALSE
 			icon_state = "envelope_closed"
 			return TRUE
 	if(!opened && user.a_intent == I_HARM)
-		to_chat(usr, "<span class='warning'>You start tearing up the envelope...</span>")
+		to_chat(usr, "<span class='warning'>你开始撕开信封...</span>")
 		playsound(loc,'sound/items/poster_ripped.ogg',100, TRUE)
 		spawn(10)
 			playsound(loc,'sound/items/poster_ripped.ogg',100, TRUE)
 		if (do_after(user, 25, src))
-			to_chat(usr, "<span class='warning'>You tear the envelope into pieces!</span>")
-			visible_message("[user] tears the envelope into pieces!")
+			to_chat(usr, "<span class='warning'>你把信封撕成了碎片!</span>")
+			visible_message("[user]把信封撕成了碎片!")
 			qdel(src)
 			return TRUE
 	return FALSE
@@ -186,7 +186,7 @@
 		if (opened)
 			open(user)
 		else
-			to_chat(usr, "<span class='warning'>The envelope is closed! Use a knife to open it.</span>")
+			to_chat(usr, "<span class='warning'>信封是封着的! 用小刀打开它.</span>")
 			return TRUE
 	else
 		..()
@@ -200,14 +200,14 @@
 	if(!opened)
 		if(istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
 			if (do_after(usr, 15, src))
-				to_chat(usr, "You knife the envelope.")
+				to_chat(usr, "你用小刀划开了信封.")
 				opened = TRUE
 				knifed = TRUE
 				icon_state = "envelope_knifed"
 				return TRUE
 		if(istype(W, /obj/item/weapon/pen))
 			if(addressee && sender)
-				to_chat(usr, "<span class='warning'>The addressee and sender fields are already filled!</span>")
+				to_chat(usr, "<span class='warning'>收件人和寄件人栏已经填好了!</span>")
 				return TRUE
 			else
 				var/write_to = sanitize(input(user, "TO: Who is the addressee?", "Addressee", null)  as text, 128)
@@ -216,13 +216,13 @@
 				sender = write_from
 				if (!addressee || !sender)
 					desc = desc
-					to_chat(usr, "<span class='warning'>You need to fill both fields at the same time!</span>")
+					to_chat(usr, "<span class='warning'>你需要同时填写两个栏位!</span>")
 				else
 					desc += "<br>= = = = =<br><u><b>TO:</b></u> [addressee]<br>- - - - -<br><u><b>FROM:</b></u> [sender]<br>= = = = ="
 				return TRUE
 		if(istype(W, /obj/item/weapon/stamp/mail))
 			if(sealed)
-				to_chat(usr, "<span class='warning'>There is a wax seal already!</span>")
+				to_chat(usr, "<span class='warning'>已经有一个火漆印了!</span>")
 				return TRUE
 			var/wax = WWinput(user, "What color should the wax seal be?","Wax seal","Normal",list("cancel", "red", "black", "blue", "green", "pink", "white"))
 			if (wax == "cancel")
@@ -238,7 +238,7 @@
 			else
 				desc += "<br>There is a name on the seal - <b>[usr.real_name]</b>."
 			return TRUE
-		to_chat(usr, "<span class='warning'>The envelope is closed! Use a knife to open it.</span>")
+		to_chat(usr, "<span class='warning'>信封是封着的! 用小刀打开它.</span>")
 		return TRUE
 	return..()
  

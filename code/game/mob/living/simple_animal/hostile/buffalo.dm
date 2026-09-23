@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/buffalo
 	name = "buffalo"
-	desc =  "A large member of the bovine Family, they are grazers and will be hostile if harmed."
+	desc =  "牛科的大型成员, 它们是食草动物, 受到伤害时会变得敌对."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "buffalo"
 	icon_living = "buffalo"
@@ -24,7 +24,7 @@
 
 /mob/living/simple_animal/bison
 	name = "bison cow"
-	desc =  "A large member of the bovine family, they are grazers commonly found in herds and will be hostile if harmed."
+	desc =  "牛科的大型成员, 它们常成群结队地食草, 受到伤害时会变得敌对."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "bison_cow"
 	icon_living = "bison_cow"
@@ -56,7 +56,7 @@
 
 /mob/living/simple_animal/bisonbull
 	name = "bison bull"
-	desc =  "A large member of the bovine family, they are grazers commonly found in herds and will be hostile if harmed."
+	desc =  "牛科的大型成员, 它们常成群结队地食草, 受到伤害时会变得敌对."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "bisonbull"
 	icon_living = "bisonbull"
@@ -138,7 +138,7 @@
 /mob/living/simple_animal/bison/attackby(var/obj/item/O as obj, var/mob/user as mob) //need some code to make them tempoarily calm or flip out after milking to make it risky.
 	var/obj/item/weapon/reagent_containers/glass/G = O
 	if (stat == CONSCIOUS && istype(G) && G.is_open_container())
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
+		user.visible_message("<span class='notice'>[user]用\the [O]挤[src]的奶.</span>")
 		var/transfered = udder.trans_id_to(G, "milk", rand(5,10))
 		if (G.reagents.total_volume >= G.volume)
 			to_chat(user, SPAN_RED("The [O] is full."))
@@ -192,4 +192,4 @@
 			else
 				var/mob/living/simple_animal/bisonbull/B = new/mob/living/simple_animal/bisonbull(loc)
 				B.calf = TRUE
-			visible_message("A calf has been born!")
+			visible_message("一只牛犊出生了!")

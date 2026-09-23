@@ -1,6 +1,6 @@
 /obj/structure/vending/sales/cards
-	name = "Civ Cards vending machine"
-	desc = "A vending machine selling packs of the 'Civ Cards' collection stickers. Gotta collect 'em all!"
+	name = "文明卡牌自动售货机"
+	desc = "一台售卖\"文明卡牌\"收藏贴纸包的自动售货机.要把它们全部收集齐!"
 	icon_state = "cards"
 	owner = "Civ Cards Collection"
 	products = list(
@@ -14,8 +14,8 @@
 
 
 /obj/item/sticker_album
-	name = "Civ Cards sticker album"
-	desc = "A binder for collecting and displaying your 'Civ Cards' stickers."
+	name = "文明卡牌贴纸册"
+	desc = "一本用于收集和展示你的\"文明卡牌\"贴纸的活页夹."
 	icon = 'icons/obj/collectibles.dmi'
 	icon_state = "collectible_album"
 	w_class = ITEM_SIZE_NORMAL
@@ -27,14 +27,14 @@
 	if(istype(W, /obj/item/sticker))
 		var/obj/item/sticker/S = W
 		if(!S.sticker_id || !GLOB.sticker_registry[S.sticker_id])
-			to_chat(user, "<span class='warning'>This sticker seems blank!</span>")
+			to_chat(user, "<span class='warning'>这张贴纸似乎是空白的!</span>")
 			return
 		var/list/player_stickers = get_player_stickers(user.ckey)
 		if(S.sticker_id in player_stickers)
-			to_chat(user, "<span class='notice'>You already have this sticker in your collection!</span>")
+			to_chat(user, "<span class='notice'>你的收藏中已经有这张贴纸了!</span>")
 			return
 		player_stickers += S.sticker_id
-		user.visible_message("<span class='notice'>[user] carefully places \the [S] into \the [src].</span>")
+		user.visible_message("<span class='notice'>[user]小心地将\the [S]放入\the [src].</span>")
 		qdel(W)
 		save_sticker_collection(user.ckey, player_stickers)
 		return
@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(sticker_collections)
 		return ui_interact(user)
 	if(ismob(M))
 		if(!M.ckey)
-			to_chat(user, "<span class='notice'>You flip through \the [src] but find no collection linked to [M].</span>")
+			to_chat(user, "<span class='notice'>你翻阅了\the [src],但没有找到与[M]相关的收藏.</span>")
 			return
 		var/list/owner_stickers = get_player_stickers(M.ckey)
 		var/dat = "<html><head>[common_browser_style]</head><body>"

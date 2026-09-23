@@ -1,5 +1,5 @@
 /obj/structure/simple_door
-	name = "door"
+	name = "门"
 	density = TRUE
 	anchored = TRUE
 	var/custom = FALSE //for customized locks in RP
@@ -46,7 +46,7 @@
 /obj/structure/simple_door/bullet_act(var/obj/item/projectile/P)
 	var/damage = max(P.damage/2, 2)
 	health -= damage
-	visible_message("<span class = 'warning'>\The [src] is hit by \the [P.name]!</span>")
+	visible_message("<span class = 'warning'>\The [src]被\the [P.name]击中!</span>")
 	if (istype(src, /obj/structure/simple_door/key_door))
 		src:damage_display()
 	if (health <= 0)
@@ -202,7 +202,7 @@
 	//KEYPAD AND LOCKSAASDASD
 	if (istype(W,/obj/item/weapon/keypad))
 		if(haslock)
-			to_chat(user, "This door already has a lock!")
+			to_chat(user, "这扇门已经有锁了!")
 		else
 			to_chat(user, "You attach the " + W.name + " to the door!")
 			src.name = name + "("+W.name+")"
@@ -237,7 +237,7 @@
 
 	else if (istype(W,/obj/item/weapon)) //not sure, can't not just weapons get passed to this proc?
 		hardness -= W.force/100
-		to_chat(user, "You hit the [name] with your [W.name]!")
+		to_chat(user, "你用你的[W.name]击中了[name]!")
 		CheckHardness()
 	else
 		attack_hand(user)
@@ -287,36 +287,36 @@
 		if (W.code == custom_code)
 			locked = !locked
 			if (locked == 1)
-				visible_message("<span class = 'notice'>[user] locks the door.</span>")
+				visible_message("<span class = 'notice'>[user]锁上了门.</span>")
 				playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 				return
 			else if (locked == 0)
-				visible_message("<span class = 'notice'>[user] unlocks the door.</span>")
+				visible_message("<span class = 'notice'>[user]打开了门锁.</span>")
 				playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 				return
 		if (W.code != custom_code)
-			to_chat(user, "This key does not match this lock!")
+			to_chat(user, "这把钥匙和这把锁不匹配!")
 	else if (istype(W, /obj/item/weapon/storage/belt/keychain))
 		for (var/obj/item/weapon/key/KK in W.contents)
 			if (KK.code == custom_code)
 				locked = !locked
 				if (locked == 1)
-					visible_message("<span class = 'notice'>[user] locks the door.</span>")
+					visible_message("<span class = 'notice'>[user]锁上了门.</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 				else if (locked == 0)
-					visible_message("<span class = 'notice'>[user] unlocks the door.</span>")
+					visible_message("<span class = 'notice'>[user]打开了门锁.</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 		if (W.code != custom_code)
-			to_chat(user, "None of the keys match this lock!")
+			to_chat(user, "这些钥匙没有一把能打开这把锁!")
 	else if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/wrench) && !istype(W,/obj/item/weapon/hammer)) //No weapons can harm me! If not weapon and not a wrench.
-		to_chat(user, "You pound the bars uselessly!")
+		to_chat(user, "你徒劳地砸着栏杆!")
 	else if (istype(W,/obj/item/weapon/wrench) || istype(W,/obj/item/weapon/hammer))//if it is a wrench
 		if (state == 0)
-			to_chat(user, "You need to open the door first.")
+			to_chat(user, "你需要先打开门.")
 		else
-			to_chat(user, "<span class='notice'>You start disassembling the [src]...</span>")
+			to_chat(user, "<span class='notice'>你开始拆解[src]...</span>")
 			playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
 			if (do_after(user, 30, target = src))
 				for (var/i = TRUE, i <= buildstackamount, i++)
@@ -326,22 +326,22 @@
 	else if (istype(W, /obj/item/weapon/lockpick))
 		if (src.locked == 1)
 			var/mob/living/human/H = user
-			visible_message("<span class = 'danger'>[user] starts picking the [src.name]'s lock with the [W]!</span>")
+			visible_message("<span class = 'danger'>[user]开始用[W]撬[src.name]的锁!</span>")
 			if (H.getStatCoeff("dexterity") < 1.7)
-				to_chat(user, "You don't have the skills to use this.")
+				to_chat(user, "你没有使用这个的技能.")
 				return
 			else
 				if (do_after(user, 35*H.getStatCoeff("dexterity"), src))
 					if(prob(H.getStatCoeff("dexterity")*35))
-						to_chat(user, "<span class='notice'>You pick the lock.</span>")
+						to_chat(user, "<span class='notice'>你撬开了锁.</span>")
 						src.locked = 0
 						return
 					else if (prob(60))
 						qdel(W)
-						to_chat(user, "<span class='warning'>Your lockpick broke!</span>")
+						to_chat(user, "<span class='warning'>你的撬锁工具断了!</span>")
 						return
 					else
-						to_chat(user, "<span class='warning'>You failed to pick the lock!</span>")
+						to_chat(user, "<span class='warning'>你撬锁失败了!</span>")
 						return
 				return
 	else
@@ -353,36 +353,36 @@
 		if (W.code == custom_code)
 			locked = !locked
 			if (locked == 1)
-				visible_message("<span class = 'notice'>[user] locks the door.</span>")
+				visible_message("<span class = 'notice'>[user]锁上了门.</span>")
 				playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 				return
 			else if (locked == 0)
-				visible_message("<span class = 'notice'>[user] unlocks the door.</span>")
+				visible_message("<span class = 'notice'>[user]解锁了门.</span>")
 				playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 				return
 		if (W.code != custom_code)
-			to_chat(user, "This key does not match this lock!")
+			to_chat(user, "这把钥匙打不开这把锁!")
 	else if (istype(W, /obj/item/weapon/storage/belt/keychain))
 		for (var/obj/item/weapon/key/KK in W.contents)
 			if (KK.code == custom_code)
 				locked = !locked
 				if (locked == 1)
-					visible_message("<span class = 'notice'>[user] locks the door.</span>")
+					visible_message("<span class = 'notice'>[user]锁上了门.</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 				else if (locked == 0)
-					visible_message("<span class = 'notice'>[user] unlocks the door.</span>")
+					visible_message("<span class = 'notice'>[user]解锁了门.</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 		if (W.code != custom_code)
-			to_chat(user, "None of the keys match this lock!")
+			to_chat(user, "这些钥匙没有一把能打开这把锁!")
 	else if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/weldingtool)) //No weapons can harm me! If not weapon and not a wrench.
-		to_chat(user, "You pound the bars uselessly!")
+		to_chat(user, "你徒劳地砸着栏杆!")
 	else if (istype(W,/obj/item/weapon/weldingtool))//if it is a welding tool
 		if (state == 0)
-			to_chat(user, "You need to open the door first.")
+			to_chat(user, "你需要先打开门.")
 		else
-			to_chat(user, "<span class='notice'>You start disassembling the [src]...</span>")
+			to_chat(user, "<span class='notice'>你开始拆解[src]...</span>")
 			playsound(loc, 'sound/effects/extinguish.ogg', 50, TRUE)
 			if (do_after(user, 30, target = src))
 				for (var/i = TRUE, i <= buildstackamount, i++)
@@ -392,22 +392,22 @@
 	else if (istype(W, /obj/item/weapon/lockpick))
 		if (src.locked == 1)
 			var/mob/living/human/H = user
-			visible_message("<span class = 'danger'>[user] starts picking the [src.name]'s lock with the [W]!</span>")
+			visible_message("<span class = 'danger'>[user]开始用[W]撬[src.name]的锁!</span>")
 			if (H.getStatCoeff("dexterity") < 1.7)
-				to_chat(user, "You don't have the skills to use this.")
+				to_chat(user, "你没有使用这个的技能.")
 				return
 			else
 				if (do_after(user, 35*H.getStatCoeff("dexterity"), src))
 					if(prob(H.getStatCoeff("dexterity")*35))
-						to_chat(user, "<span class='notice'>You pick the lock.</span>")
+						to_chat(user, "<span class='notice'>你撬开了锁.</span>")
 						src.locked = 0
 						return
 					else if (prob(60))
 						qdel(W)
-						to_chat(user, "<span class='warning'>Your lockpick broke!</span>")
+						to_chat(user, "<span class='warning'>你的撬锁工具断了!</span>")
 						return
 					else
-						to_chat(user, "<span class='warning'>You failed to pick the lock!</span>")
+						to_chat(user, "<span class='warning'>你撬锁失败了!</span>")
 						return
 				return
 	else
@@ -505,8 +505,8 @@
 
 //this is the keyless version of the blast door
 /obj/structure/simple_door/blast
-	name = "blast door"
-	desc = "A sturdy blast door."
+	name = "防爆门"
+	desc = "一扇坚固的防爆门."
 	basic_icon = "blast"
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "blast"

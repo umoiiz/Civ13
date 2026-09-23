@@ -1,9 +1,9 @@
 // Glass shards
 
 /obj/item/weapon/material/shard
-	name = "shard"
+	name = "碎片"
 	icon = 'icons/obj/shards.dmi'
-	desc = "Made of nothing. How does this even exist?" // set based on material, if this desc is visible it's a bug (shards default to being made of glass)
+	desc = "什么都没有做的.这到底是怎么存在的?" // set based on material, if this desc is visible it's a bug (shards default to being made of glass)
 	icon_state = "large"
 	sharp = TRUE
 	edge = TRUE
@@ -65,7 +65,7 @@
 			if ( H.shoes || ( H.wear_suit && (H.wear_suit.body_parts_covered & FEET) ) )
 				return
 
-			to_chat(M, "<span class='danger'>You step on \the [src]!</span>")
+			to_chat(M, "<span class='danger'>你踩到了\the [src]!</span>")
 
 			var/list/check = list("l_foot", "r_foot")
 			while (check.len)

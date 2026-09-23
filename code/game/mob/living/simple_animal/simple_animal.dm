@@ -152,7 +152,7 @@
 				simplehunger = 1000
 
 		if (simplehunger <= 0)
-			visible_message("\The [src] is starving!")
+			visible_message("\The [src]正在挨饿!")
 			adjustBruteLoss(round(max(1,maxHealth/10)))
 			simplehunger = 60
 			updatehealth()
@@ -295,9 +295,9 @@
 			if (health > 0)
 				if (istype(src, /mob/living/simple_animal/pet/dog))
 					if (prob(30))
-						M.visible_message("<span class = 'notice'>[M] tells \the [src] that he is a good boy!</span>")
+						M.visible_message("<span class = 'notice'>[M]告诉\the [src]他是个好孩子!</span>")
 					else
-						M.visible_message("<span class = 'notice'>[M] pats \the [src]'s head!</span>")
+						M.visible_message("<span class = 'notice'>[M]拍了拍\the [src]的头!</span>")
 				else
 					M.visible_message("<span class = 'notice'>[M] [response_help] \the [src].</span>")
 
@@ -337,7 +337,7 @@
 			G.affecting = src
 			LAssailant = M
 
-			M.visible_message("<span class = 'red'>[M] has grabbed [src] passively!</span>")
+			M.visible_message("<span class = 'red'>[M]被动地抓住了[src]!</span>")
 			M.do_attack_animation(src)
 
 		if (I_HARM)
@@ -486,13 +486,13 @@
 		var/obj/item/weapon/leash/L = O
 		if (L.onedefined == FALSE)
 			L.S1 = src
-			to_chat(user, "You tie \the [src] with the leash.")
+			to_chat(user, "你用牵引绳拴住\the [src]。")
 			L.onedefined = TRUE
 			return
 		else if (L.onedefined == TRUE && (src in range(3,L.S1)))
 			L.S2 = src
 			L.S2.following_mob = L.S1
-			to_chat(user, "You tie \the [src] to \the [L.S1] with the leash. It will now follow \the [L.S1].")
+			to_chat(user, "你用牵引绳将\the [src]拴到\the [L.S1]上。它现在会跟随\the [L.S1]。")
 			qdel(L)
 			return
 	else if (istype(O, /obj/item/stack/farming/seeds))
@@ -519,7 +519,7 @@
 			return TRUE
 	else if (!O.sharp || istype(O, /obj/item/weapon/macuahuitl))
 		if (!O.force && !istype(O, /obj/item/stack/medical/bruise_pack))
-			visible_message("<span class='notice'>[user] gently taps [src] with \the [O].</span>")
+			visible_message("<span class='notice'>[user]用\the [O]轻轻拍打[src]。</span>")
 		else
 			var/tgt = user.targeted_organ
 			if (user.targeted_organ == "random")
@@ -528,9 +528,9 @@
 	else if (O.sharp && !istype(src, /mob/living/simple_animal/hostage))
 		if (!istype(O, /obj/item/weapon/reagent_containers) && user.a_intent == I_HARM && stat == DEAD)
 			if (istype(src, /mob/living/simple_animal/frog/poisonous))
-				user.visible_message("<span class = 'notice'>[user] starts to butcher [src].</span>")
+				user.visible_message("<span class = 'notice'>[user]开始肢解[src]。</span>")
 				if (do_after(user, 30, src))
-					user.visible_message("<span class = 'notice'>[user] butchers [src] into a meat slab.</span>")
+					user.visible_message("<span class = 'notice'>[user]将[src]肢解成一块肉排。</span>")
 					var/obj/item/weapon/reagent_containers/food/snacks/meat/poisonfrog/P = new/obj/item/weapon/reagent_containers/food/snacks/meat/poisonfrog(get_turf(src))
 					P.radiation = radiation/2
 					if (istype(user, /mob/living/human))
@@ -539,9 +539,9 @@
 					crush()
 					qdel(src)
 			else
-				user.visible_message("<span class = 'notice'>[user] starts to butcher [src].</span>")
+				user.visible_message("<span class = 'notice'>[user]开始屠宰[src]。</span>")
 				if (do_after(user, 30, src))
-					user.visible_message("<span class = 'notice'>[user] butchers [src].</span>")
+					user.visible_message("<span class = 'notice'>[user]屠宰了[src]。</span>")
 					var/amt = butcher_yield()
 					var/namt = amt-2
 					if (namt <= 0)
@@ -619,9 +619,9 @@
 					crush()
 					qdel(src)
 		if (!istype(O, /obj/item/weapon/reagent_containers) && user.a_intent == I_GRAB && stat == DEAD)
-			user.visible_message("<span class = 'notice'>[user] starts to skin and butcher [src].</span>")
+			user.visible_message("<span class = 'notice'>[user]开始剥皮并屠宰[src]。</span>")
 			if (do_after(user, 100, src))
-				user.visible_message("<span class = 'notice'>[user] skins and butchers [src].</span>")
+				user.visible_message("<span class = 'notice'>[user]剥皮并屠宰了[src]。</span>")
 				var/amt = butcher_yield()
 				var/namt = amt-2
 				if (namt <= 0)
@@ -762,7 +762,7 @@
 	if (check_shields(effective_force, O, user, hit_zone, "the [O.name]"))
 		return 0
 
-	visible_message("<span class='danger'>\The [src] has been attacked with \the [O] by [user].</span>")
+	visible_message("<span class='danger'>\The [src]被[user]用\the [O]攻击了。</span>")
 
 	if (O.force <= resistance)
 		to_chat(user, SPAN_DANGER("This weapon is ineffective, it does no damage."))
@@ -842,7 +842,7 @@
 			WB.record_npc_kill(H.client.ckey, src.name)
 			if (WB.check_level(H.client.ckey) == "3")
 				WB.change_level(H.client.ckey, "4")
-				to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) has progressed to qualification level 4 (<b>B.A.S.E.D.</b>) by slaying \a [src]!</font>")
+				to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b>([H.key])通过击杀\a [src]已晋升至4级资格(<b>B.A.S.E.D.</b>)!</font>")
 
 	return ..(gibbed,deathmessage)
 
@@ -899,19 +899,19 @@
 	set src in view(1)
 
 	if (following_mob == null)
-		to_chat(usr, "This animal is not leashed.")
+		to_chat(usr, "这只动物没有被拴住。")
 		return
 	else if (istype(following_mob, /obj/structure/grille/fence) || istype(following_mob, /obj/structure/barricade/wood_pole))
 		following_mob = null
 		new/obj/item/weapon/leash(src.loc)
-		to_chat(usr, "You free the [src].")
+		to_chat(usr, "你解开了[src]。")
 		stop_automated_movement = FALSE
 
 		return
 	else
 		following_mob = null
 		new/obj/item/weapon/leash(src.loc)
-		to_chat(usr, "You free the [src].")
+		to_chat(usr, "你解开了[src]。")
 		stop_automated_movement = FALSE
 
 		return

@@ -4,7 +4,7 @@
 	set name = "Toggle Playing"
 
 	ticker.players_can_join = !ticker.players_can_join
-	to_chat(world, "<big><b>You [(ticker.players_can_join) ? "can" : "can't"] join the game [(ticker.players_can_join) ? "now" : "anymore"].</b></big>")
+	to_chat(world, "<big><b>你[(ticker.players_can_join) ? "can" : "can't"]加入游戏[(ticker.players_can_join) ? "now" : "anymore"].</b></big>")
 	message_admins("[key_name(src)] changed the playing setting.", key_name(src))
 
 /client/proc/toggle_tts()
@@ -223,7 +223,7 @@ var/tsfsr_toggled = TRUE
 	set category = "Special"
 
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/list/choices = list()
@@ -266,119 +266,119 @@ var/tsfsr_toggled = TRUE
 
 	else if (findtext(choice, "CIVILIAN"))
 		civilians_toggled = !civilians_toggled
-		to_chat(world, "<span class = 'warning'>The Civilian faction has been [civilians_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>平民阵营已被[civilians_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Civilian faction 'enabled' setting to [civilians_toggled].", key_name(src))
 	else if (findtext(choice, "BRITISH"))
 		british_toggled = !british_toggled
-		to_chat(world, "<span class = 'warning'>The British has been [british_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>英国阵营已被[british_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the British faction 'enabled' setting to [british_toggled].", key_name(src))
 	else if (findtext(choice, "PIRATES"))
 		pirates_toggled = !pirates_toggled
-		to_chat(world, "<span class = 'warning'>The Pirate faction has been [pirates_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>海盗阵营已被[pirates_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Pirate faction 'enabled' setting to [pirates_toggled].", key_name(src))
 	else if (findtext(choice, "INDIANS"))
 		indians_toggled = !indians_toggled
-		to_chat(world, "<span class = 'warning'>The Native faction has been [indians_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>原住民阵营已被[indians_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Native faction 'enabled' setting to [indians_toggled].", key_name(src))
 	else if (findtext(choice, "PORTUGUESE"))
 		portuguese_toggled = !portuguese_toggled
-		to_chat(world, "<span class = 'warning'>The Portuguese faction has been [portuguese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>葡萄牙阵营已被[portuguese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Portuguese faction 'enabled' setting to [portuguese_toggled].", key_name(src))
 	else if (findtext(choice, "SPANISH"))
 		spanish_toggled = !spanish_toggled
-		to_chat(world, "<span class = 'warning'>The Spanish faction has been [spanish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>西班牙阵营已被[spanish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Spanish faction 'enabled' setting to [spanish_toggled].", key_name(src))
 	else if (findtext(choice, "FRENCH"))
 		french_toggled = !french_toggled
-		to_chat(world, "<span class = 'warning'>The French faction has been [french_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>法国阵营已被[french_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the French faction 'enabled' setting to [french_toggled].", key_name(src))
 	else if (findtext(choice, "DUTCH"))
 		dutch_toggled = !dutch_toggled
-		to_chat(world, "<span class = 'warning'>The Dutch faction has been [dutch_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>荷兰阵营已被[dutch_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Dutch faction 'enabled' setting to [dutch_toggled].", key_name(src))
 	else if (findtext(choice, "JAPANESE"))
 		japanese_toggled = !japanese_toggled
-		to_chat(world, "<span class = 'warning'>The Japanese faction has been [japanese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>日本阵营已被[japanese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Japanese faction 'enabled' setting to [japanese_toggled].", key_name(src))
 	else if (findtext(choice, "RUSSIAN"))
 		russian_toggled = !russian_toggled
-		to_chat(world, "<span class = 'warning'>The Russian faction has been [russian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>俄罗斯阵营已被[russian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Russian faction 'enabled' setting to [russian_toggled].", key_name(src))
 	else if (findtext(choice, "CHECHEN"))
 		chechen_toggled = !chechen_toggled
-		to_chat(world, "<span class = 'warning'>The Chechen faction has been [chechen_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>车臣阵营已被[chechen_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Chechen faction 'enabled' setting to [chechen_toggled].", key_name(src))
 	else if (findtext(choice, "FINNISH"))
 		finnish_toggled = !finnish_toggled
-		to_chat(world, "<span class = 'warning'>The Finnish faction has been [finnish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>芬兰阵营已被[finnish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Finnish faction 'enabled' setting to [finnish_toggled].", key_name(src))
 	else if (findtext(choice, "NORWEGIAN"))
 		finnish_toggled = !finnish_toggled
-		to_chat(world, "<span class = 'warning'>The Norwegian faction has been [norwegian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>挪威阵营已被[norwegian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Norwegian faction 'enabled' setting to [norwegian_toggled].", key_name(src))
 	else if (findtext(choice, "SWEDISH"))
 		finnish_toggled = !finnish_toggled
-		to_chat(world, "<span class = 'warning'>The Swedish faction has been [swedish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>瑞典阵营已被[swedish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Swedish faction 'enabled' setting to [swedish_toggled].", key_name(src))
 	else if (findtext(choice, "DANISH"))
 		finnish_toggled = !finnish_toggled
-		to_chat(world, "<span class = 'warning'>The Danish faction has been [danish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>丹麦阵营已被[danish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Finnish faction 'enabled' setting to [danish_toggled].", key_name(src))
 	else if (findtext(choice, "ROMAN"))
 		roman_toggled = !roman_toggled
-		to_chat(world, "<span class = 'warning'>The Roman faction has been [roman_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>罗马阵营已被[roman_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Roman faction 'enabled' setting to [roman_toggled].", key_name(src))
 	else if (findtext(choice, "GREEK"))
 		greek_toggled = !greek_toggled
-		to_chat(world, "<span class = 'warning'>The Greek faction has been [greek_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>希腊阵营已被[greek_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Greek faction 'enabled' setting to [greek_toggled].", key_name(src))
 	else if (findtext(choice, "ARAB"))
 		arab_toggled = !arab_toggled
-		to_chat(world, "<span class = 'warning'>The Arabic faction has been [arab_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>阿拉伯阵营已被[arab_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Arabic faction 'enabled' setting to [arab_toggled].", key_name(src))
 	else if (findtext(choice, "GERMAN"))
 		german_toggled = !german_toggled
-		to_chat(world, "<span class = 'warning'>The German faction has been [german_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>德国阵营已被[german_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the German faction 'enabled' setting to [german_toggled].", key_name(src))
 	else if (findtext(choice, "AMERICAN"))
 		american_toggled = !american_toggled
-		to_chat(world, "<span class = 'warning'>The American faction has been [american_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>美国阵营已被[american_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the American faction 'enabled' setting to [american_toggled].", key_name(src))
 	else if (findtext(choice, "VIETNAMESE"))
 		vietnamese_toggled = !vietnamese_toggled
-		to_chat(world, "<span class = 'warning'>The Vietnamese faction has been [vietnamese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>越南阵营已被[vietnamese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Vietnamese faction 'enabled' setting to [vietnamese_toggled].", key_name(src))
 	else if (findtext(choice, "CHINESE"))
 		chinese_toggled = !chinese_toggled
-		to_chat(world, "<span class = 'warning'>The Chinese faction has been [chinese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>中国阵营已被[chinese_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Chinese faction 'enabled' setting to [chinese_toggled].", key_name(src))
 	else if (findtext(choice, "FILIPINO"))
 		filipino_toggled = !filipino_toggled
-		to_chat(world, "<span class = 'warning'>The Filipino faction has been [filipino_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>菲律宾阵营已被[filipino_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Filipino faction 'enabled' setting to [filipino_toggled].", key_name(src))
 	else if (findtext(choice, "POLISH"))
 		polish_toggled = !polish_toggled
-		to_chat(world, "<span class = 'warning'>The Polish faction has been [polish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>波兰阵营已被[polish_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Polish faction 'enabled' setting to [polish_toggled].", key_name(src))
 	else if (findtext(choice, "ITALIAN"))
 		italian_toggled = !italian_toggled
-		to_chat(world, "<span class = 'warning'>The Italian faction has been [italian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>意大利阵营已被[italian_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Italian faction 'enabled' setting to [italian_toggled].", key_name(src))
 	else if (findtext(choice, "BLUEFACTION"))
 		bluefaction_toggled = !bluefaction_toggled
-		to_chat(world, "<span class = 'warning'>The Bluefaction faction has been [bluefaction_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>蓝方阵营已被[bluefaction_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Bluefaction faction 'enabled' setting to [bluefaction_toggled].", key_name(src))
 	else if (findtext(choice, "REDFACTION"))
 		redfaction_toggled = !redfaction_toggled
-		to_chat(world, "<span class = 'warning'>The Redfaction faction has been [redfaction_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>红方阵营已被[redfaction_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the Redfaction faction 'enabled' setting to [redfaction_toggled].", key_name(src))
 	else if (findtext(choice, "CAFR"))
 		cafr_toggled = !cafr_toggled
-		to_chat(world, "<span class = 'warning'>The CAFR faction has been [cafr_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>CAFR 阵营已被[cafr_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the CAFR faction 'enabled' setting to [cafr_toggled].", key_name(src))
 	else if (findtext(choice, "TSFSR"))
 		tsfsr_toggled = !tsfsr_toggled
-		to_chat(world, "<span class = 'warning'>The TSFSR faction has been [tsfsr_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
+		to_chat(world, "<span class = 'warning'>TSFSR 阵营已被[tsfsr_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>")
 		message_admins("[key_name(src)] changed the TSFSR faction 'enabled' setting to [tsfsr_toggled].", key_name(src))
 var/civilians_forceEnabled = FALSE
 var/british_forceEnabled = FALSE
@@ -415,7 +415,7 @@ var/tsfsr_forceEnabled = FALSE
 	set category = "Special"
 
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/list/choices = list()
@@ -458,118 +458,118 @@ var/tsfsr_forceEnabled = FALSE
 
 	else if (findtext(choice, "CIVILIAN"))
 		civilians_forceEnabled = !civilians_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Civilian faction [civilians_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>平民阵营[civilians_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Civilian faction 'forceEnabled' setting to [civilians_forceEnabled].", key_name(src))
 	else if (findtext(choice, "BRITISH"))
 		british_forceEnabled = !british_forceEnabled
-		to_chat(world, "<span class = 'notice'>The British faction [british_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>英国阵营[british_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the British faction 'forceEnabled' setting to [british_forceEnabled].", key_name(src))
 	else if (findtext(choice, "PIRATES"))
 		pirates_forceEnabled = !pirates_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Pirate faction [pirates_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>海盗阵营[pirates_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Pirate faction 'forceEnabled' setting to [pirates_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "SPANISH"))
 		spanish_forceEnabled = !spanish_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Spanish faction [spanish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>西班牙阵营[spanish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Spanish faction 'forceEnabled' setting to [spanish_forceEnabled].", key_name(src))
 	else if (findtext(choice, "PORTUGUESE"))
 		portuguese_forceEnabled = !portuguese_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Portuguese faction [portuguese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>葡萄牙阵营[portuguese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Portuguese faction 'forceEnabled' setting to [portuguese_forceEnabled].", key_name(src))
 	else if (findtext(choice, "FRENCH"))
 		french_forceEnabled = !french_forceEnabled
-		to_chat(world, "<span class = 'notice'>The French faction [french_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>法国阵营[french_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the French faction 'forceEnabled' setting to [french_forceEnabled].", key_name(src))
 	else if (findtext(choice, "DUTCH"))
 		dutch_forceEnabled = !dutch_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Dutch faction [dutch_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>荷兰阵营[dutch_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Dutch faction 'forceEnabled' setting to [dutch_forceEnabled].", key_name(src))
 	else if (findtext(choice, "ITALIAN"))
 		italian_forceEnabled = !italian_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Italian faction [italian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>意大利阵营[italian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Italian faction 'forceEnabled' setting to [italian_forceEnabled].", key_name(src))
 	else if (findtext(choice, "JAPANESE"))
 		japanese_forceEnabled = !japanese_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Japanese faction [japanese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>日本阵营[japanese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Japanese faction 'forceEnabled' setting to [japanese_forceEnabled].", key_name(src))
 	else if (findtext(choice, "RUSSIAN"))
 		russian_forceEnabled = !russian_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Russian faction [russian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>俄罗斯阵营[russian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Russian faction 'forceEnabled' setting to [russian_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "CHECHEN"))
 		chechen_forceEnabled = !chechen_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Chechen faction [chechen_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>车臣阵营[chechen_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Chechen faction 'forceEnabled' setting to [chechen_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "FINNISH"))
 		finnish_forceEnabled = !finnish_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Finnish faction [finnish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>芬兰阵营[finnish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Finnish faction 'forceEnabled' setting to [finnish_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "NORWEGIAN"))
 		norwegian_forceEnabled = !norwegian_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Norwegian faction [norwegian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>挪威阵营[norwegian_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Norwegian faction 'forceEnabled' setting to [norwegian_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "SWEDISH"))
 		swedish_forceEnabled = !swedish_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Swedish faction [swedish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>瑞典阵营[swedish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Swedish faction 'forceEnabled' setting to [swedish_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "DANISH"))
 		danish_forceEnabled = !danish_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Danish faction [danish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>丹麦阵营[danish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Danish faction 'forceEnabled' setting to [danish_forceEnabled].", key_name(src))
 
 	else if (findtext(choice, "INDIANS"))
 		indians_forceEnabled = !indians_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Native faction [indians_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>原住民阵营[indians_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Native faction 'forceEnabled' setting to [indians_forceEnabled].", key_name(src))
 	else if (findtext(choice, "ROMAN"))
 		roman_forceEnabled = !roman_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Roman faction [roman_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>罗马阵营[roman_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Roman faction 'forceEnabled' setting to [roman_forceEnabled].", key_name(src))
 	else if (findtext(choice, "GREEK"))
 		greek_forceEnabled = !greek_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Greek faction [greek_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>希腊阵营[greek_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Greek faction 'forceEnabled' setting to [greek_forceEnabled].", key_name(src))
 	else if (findtext(choice, "ARAB"))
 		arab_forceEnabled = arab_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Arabic faction [arab_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>阿拉伯阵营[arab_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Arabic faction 'forceEnabled' setting to [arab_forceEnabled].", key_name(src))
 	else if (findtext(choice, "GERMAN"))
 		german_forceEnabled = german_forceEnabled
-		to_chat(world, "<span class = 'notice'>The German faction [german_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>德国阵营[german_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the German faction 'forceEnabled' setting to [german_forceEnabled].", key_name(src))
 	else if (findtext(choice, "AMERICAN"))
 		american_forceEnabled = american_forceEnabled
-		to_chat(world, "<span class = 'notice'>The American faction [american_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>美国阵营[american_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the American faction 'forceEnabled' setting to [american_forceEnabled].", key_name(src))
 	else if (findtext(choice, "VIETNAMESE"))
 		vietnamese_forceEnabled = vietnamese_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Vietnamese faction [vietnamese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>越南阵营[vietnamese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Vietnamese faction 'forceEnabled' setting to [vietnamese_forceEnabled].", key_name(src))
 	else if (findtext(choice, "CHINESE"))
 		chinese_forceEnabled = !chinese_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Chinese faction [chinese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>中国阵营[chinese_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Chinese faction 'forceEnabled' setting to [chinese_forceEnabled].", key_name(src))
 	else if (findtext(choice, "FILIPINO"))
 		filipino_forceEnabled = !filipino_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Filipino faction [filipino_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>菲律宾阵营[filipino_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Filipino faction 'forceEnabled' setting to [filipino_forceEnabled].", key_name(src))
 	else if (findtext(choice, "POLISH"))
 		polish_forceEnabled = !polish_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Polish faction [polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>波兰阵营[polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Polish faction 'forceEnabled' setting to [polish_forceEnabled].", key_name(src))
 	else if (findtext(choice, "BLUEFACTION"))
 		bluefaction_forceEnabled = !bluefaction_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Bluefaction faction [polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>蓝方阵营[polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Bluefaction faction 'forceEnabled' setting to [polish_forceEnabled].", key_name(src))
 	else if (findtext(choice, "REDFACTION"))
 		redfaction_forceEnabled = !redfaction_forceEnabled
-		to_chat(world, "<span class = 'notice'>The Redfaction faction [polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
+		to_chat(world, "<span class = 'notice'>红方阵营[polish_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>")
 		message_admins("[key_name(src)] changed the Redfaction faction 'forceEnabled' setting to [polish_forceEnabled].", key_name(src))
 
 /client/proc/toggle_respawn_delays()
@@ -579,7 +579,7 @@ var/tsfsr_forceEnabled = FALSE
 	var/M = "[key_name(src)] [config.no_respawn_delays ? "disabled" : "enabled"] respawn delays."
 	message_admins(M, key_name(src))
 	log_admin(M)
-	to_chat(world, "<font size = 3><span class = 'notice'>Respawn delays are now <b>[config.no_respawn_delays ? "disabled" : "enabled"]</b>.</span></font>")
+	to_chat(world, "<font size = 3><span class = 'notice'>重生延迟现在是<b>[config.no_respawn_delays ? "disabled" : "enabled"]</b>.</span></font>")
 
 
 
@@ -588,7 +588,7 @@ var/tsfsr_forceEnabled = FALSE
 	set name = "Show Battle Report"
 
 	if (!processes.battle_report || !processes.battle_report.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't send a battle report right now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在无法发送战报.</span>")
 		return
 
 	// to prevent showing multiple battle reports - Kachnov
@@ -602,7 +602,7 @@ var/tsfsr_forceEnabled = FALSE
 	set category = "Special"
 	set name = "See Battle Report"
 	if (!processes.battle_report || !processes.battle_report.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't see the battle report right now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在无法查看战报.</span>")
 		return
 	show_global_battle_report(src, TRUE)
 
@@ -1020,7 +1020,7 @@ var/tsfsr_forceEnabled = FALSE
 
 	if (public == "Yes")
 		if (!shower || (input(shower, "Are you sure you want to show the battle report? Unless the Battle Controller Process died, it will happen automatically!", "Battle Report") in list ("Yes", "No")) == "Yes")
-			to_chat(world, "<font size=4>Status Report:</font>")
+			to_chat(world, "<font size=4>状态报告:</font>")
 
 			if (msg1)
 				to_chat(world, "<font size=3>[msg1]</font>")

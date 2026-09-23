@@ -237,7 +237,7 @@
 	if (repeat)
 		spawn(12000)
 			spawn_disks(repeat)
-	to_chat(world, "<font size=2 color ='yellow'>New disks have arrived at the vaults!</font>")
+	to_chat(world, "<font size=2 color ='yellow'>新的磁盘已送达金库!</font>")
 
 /obj/map_metadata/art_of_the_deal/proc/refill_marketplace(repeat = FALSE)
 	if (precursor_stocks.len >= 4)
@@ -290,7 +290,7 @@
 		spawn(rand(12000,14000))
 			refill_marketplace(repeat)
 /obj/map_metadata/art_of_the_deal/proc/score()
-	to_chat(world, "<b><font color='yellow' size=3>Scores:</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>比分:</font></b>")
 	for(var/obj/structure/closet/safe/SF in world)
 		if (SF.faction)
 			var/list/tlist = list(SF.faction,0)
@@ -303,7 +303,7 @@
 					var/obj/item/stack/money/M = I
 					tlist[2]+=M.amount*M.value/4
 			tlist[2] += scores[SF.faction]
-			to_chat(world, "<big><font color='yellow' size=2>[tlist[1]]: [tlist[2]] points</font></big>")
+			to_chat(world, "<big><font color='yellow' size=2>[tlist[1]]: [tlist[2]] 分</font></big>")
 //five-o scores
 	var/list/tlist2 = list("Sheriff Office",0)
 	for(var/obj/item/I in get_area(/area/caribbean/prison/jail))
@@ -315,14 +315,14 @@
 			var/obj/item/stack/money/M = I
 			tlist2[2]+= M.amount*(M.value/4)
 	tlist2[2] += scores["Sheriff Office"]
-	to_chat(world, "<big><font color='yellow' size=2>[tlist2[1]]: [tlist2[2]] points</font></big>")
+	to_chat(world, "<big><font color='yellow' size=2>[tlist2[1]]: [tlist2[2]] 分</font></big>")
 	spawn(3000)
 		score()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/package
-	name = "package"
-	desc = "Some kind of package."
+	name = "包裹"
+	desc = "某种包裹."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "deliverypackage"
 	item_state = "deliverypackage"
@@ -339,20 +339,20 @@
 	w_class = ITEM_SIZE_NORMAL
 
 /obj/item/weapon/paper_bin/police
-	name = "incoming documents"
-	desc = "incoming documents and warrants will arrive here."
+	name = "送来的文件"
+	desc = "送来的文件和搜查令将送达此处."
 	amount = 0
 
 /obj/item/weapon/paper/police
 	icon_state = "police_record"
 	base_icon = "police_record"
-	name = "Police Record"
+	name = "警方记录"
 	var/spawntimer = 0
 
 /obj/item/weapon/paper/police/warrant
 	icon_state = "police_record"
 	base_icon = "police_record"
-	name = "Arrest Warrant"
+	name = "逮捕令"
 	var/reason = "Mischief"
 	var/mob/living/human/tgt_mob = null
 	var/tgt = "Unknown"
@@ -372,7 +372,7 @@
 /obj/item/weapon/paper/police/searchwarrant
 	icon_state = "police_warrant"
 	base_icon = "police_warrant"
-	name = "Search Warrant"
+	name = "搜查令"
 	var/cmp = "Unknown"
 	var/arn = 0
 	New()
@@ -383,8 +383,8 @@
 			info = "<center>DEPARTMENT OF JUSTICE<hr><large><b>Search Warrant No. [arn]</b></large><hr><br>Law Enforcement Agencies are hereby authorized and directed to search all and every property owned by <b>[cmp]</b>. They will disregard any claims of immunity or privilege by the Suspect or agents acting on the Suspect's behalf.<br><br><small><center><i>Form Model 13-C1</i></center></small><hr>"
 
 /obj/item/weapon/paper/k9_manual
-	name = "K-9 manual"
-	desc = "The official SCSD K-9 training manual."
+	name = "K-9手册"
+	desc = "SCSD官方K-9训练手册."
 	info = "<h1>SCSD K-9 Training Manual</h1><br>Here's the list of commands that your K-9 is trained to respond to:<br><br><ul><li>\"Follow!\" - Follows you </li><li>\"Stop following!\" - Stops following who issued the command to follow</li><li>\"Attack!\" - Attacks armed enemies</li><li>\"Kill!\" - Attacks anyone that isn't a LEO, armed or unarmed</li><li>\"Guard!\" - Attacks people who approach the area</li><li>\"Patrol!\" - Wanders around the base, overlaps with other commands</li><li>\"Stop patrolling!\" - Stop the previous command</li><li>\"Be passive!\" - Only attacks in self-defense</li><li>\"Stop everything!\" - Stops everything</li><li>\"Prioritize following!\" - Will prioritize following over attacking</li><li>\"Prioritize attacking!\" - Will pririoritize attacking over following</ul><br>Your dog automatically detects most contraband (disks and narcotics) in a 7 tile range. It'll also bark if there's a person not apart of the Sheriff's Department in that same range."
 
 //////////////////SCREEN HELPERS////////////////////////////
@@ -472,7 +472,7 @@
 		real_name = chosen_name
 		voice = chosen_name
 		is_undercover = TRUE
-		to_chat(src, "<big><b>You go undercover.</b></big>")
+		to_chat(src, "<big><b>你开始卧底.</b></big>")
 		return
 	else
 		switch(original_job_title)
@@ -485,12 +485,12 @@
 				name = "Detective [hidden_name]"
 				voice = "Detective [hidden_name]"
 		is_undercover = FALSE
-		to_chat(src, "<big><b>You are now revealing your identity again.</b></big>")
+		to_chat(src, "<big><b>你现在再次暴露了身份.</b></big>")
 		return
 
 /obj/item/clothing/accessory/armband/policebadge
-	name = "police badge"
-	desc = "A police badge in a star shape, with an officer's name engraved."
+	name = "警徽"
+	desc = "一枚星形警徽,上面刻有警官的名字."
 	icon = 'icons/obj/clothing/ties.dmi'
 	icon_state = "sheriff"
 	throwforce = WEAPON_FORCE_HARMLESS
@@ -508,7 +508,7 @@
 /////////////////////////delivery points//////////////////////
 /turf/floor/delivery
 	name = "delivery area"
-	desc = "A collection point for deliveries."
+	desc = "送货收集点."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "sidewalk"
 
@@ -518,8 +518,8 @@
 			new/obj/structure/redmailbox(src)
 
 /obj/structure/redmailbox
-	name = "pillar postbox"
-	desc = "A red pillar postbox."
+	name = "柱式邮筒"
+	desc = "一个红色柱式邮筒."
 	icon = 'icons/obj/mail.dmi'
 	icon_state = "redmailbox"
 	density = TRUE
@@ -560,7 +560,7 @@
 							else
 								var/obj/item/stack/money/dollar/D = new/obj/item/stack/money/dollar(SF)
 								D.amount = i[5]/D.value
-					to_chat(H, "<big><font color='green'>You fulfill the order. The payment has been sent to your company's safe.</font></big>")
+					to_chat(H, "<big><font color='green'>你完成了订单.货款已汇入你公司的保险箱.</font></big>")
 
 	else
 		..()
@@ -602,7 +602,7 @@
 //// SMUGGLING SYSTEM//////
 
 /obj/structure/largecrate/smuggler
-	name = "suspicious large crate"
+	name = "可疑的大木箱"
 
 /obj/structure/largecrate/smuggler/crystals/New()
 	..()

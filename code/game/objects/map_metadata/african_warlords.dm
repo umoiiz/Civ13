@@ -52,7 +52,7 @@
 	return FALSE
 
 /obj/map_metadata/african_warlords/proc/points_check()
-	to_chat(world, "<big><b>Current Points:</b></big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
 	to_chat(world, "<big>Yellowagwana: [scores["Yellowagwana"]]</big>")
 	to_chat(world, "<big>Blugisi: [scores["Blugisi"]]</big>")
 	spawn(300)
@@ -87,7 +87,7 @@
 	return TRUE
 ///////////map specific objs/////////
 /obj/structure/altar/darkstone/sacrifice
-	name = "shaman's altar"
+	name = "萨满祭坛"
 	icon_state = "blood_altar"
 	flammable = FALSE
 	health = 1000000
@@ -140,7 +140,7 @@
 				AW.scores["Yellowagwana"] -= 1*/
 	//		if("Redkantu")
 	//			AW.scores["Redkantu"] -= 1
-		to_chat(user, "You place the head on the shaman's altar.")
+		to_chat(user, "你将头颅放在萨满祭坛上.")
 		if	(prob(20))
 			var/randmed = rand(1,6)
 			switch (randmed)

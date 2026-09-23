@@ -1,6 +1,6 @@
 /obj/item/blueprint
-	name = "blueprint"
-	desc = "A technical blueprint."
+	name = "蓝图"
+	desc = "一份技术蓝图."
 	icon_state = "blueprints"
 	icon = 'icons/obj/items.dmi'
 	flammable = TRUE
@@ -23,9 +23,9 @@
 	var/cost_steel = 0
 
 /obj/item/blueprint/gun/arisaka
-	name = "Arisaka Type 99 Blueprint"
+	name = "九九式有坂蓝图"
 	custom_name = "Arisaka Type 99"
-	desc = "A blueprint for a Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition."
+	desc = "一份日本栓动步枪的蓝图,使用7.7x58mm有坂弹药."
 
 	stock_type = "Rifle Wooden Stock"
 	receiver_type = "Bolt-Action"
@@ -42,9 +42,9 @@
 	cost_steel = 15
 
 /obj/item/blueprint/gun/m4
-	name = "M4 Carbine Blueprint"
+	name = "M4卡宾枪蓝图"
 	custom_name = "M4 Carbine"
-	desc = "A blueprint for a carbine version of the AR-15/M16 chambered in 5.56x45mm."
+	desc = "一份AR-15/M16卡宾枪版本的蓝图,使用5.56x45mm弹药."
 
 	stock_type = "Steel Stock"
 	receiver_type = "Dual Selective Fire"
@@ -61,9 +61,9 @@
 	cost_steel = 25
 
 /obj/item/blueprint/gun/ak103
-	name = "AK-103 Blueprint"
+	name = "AK-103蓝图"
 	custom_name = "AK-103"
-	desc = "A blueprint for a modern Russian AK variant chambered in 7.62x39mm."
+	desc = "一份现代俄罗斯AK变体的蓝图,使用7.62x39mm弹药."
 
 	stock_type = "Steel Stock"
 	receiver_type = "Dual Selective Fire"

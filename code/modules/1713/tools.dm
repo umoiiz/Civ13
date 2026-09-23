@@ -1,7 +1,7 @@
 /*****************************Shovel********************************/
 /obj/item/weapon/plough
-	name = "plough"
-	desc = "A simple wood plough. Use it on dirt to plough farming areas."
+	name = "犁"
+	desc = "一把简易的木犁。在泥土上使用以开垦农田。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "plough"
 	flags = CONDUCT
@@ -24,8 +24,8 @@
 	return
 
 /obj/item/weapon/plough/iron
-	name = "iron plough"
-	desc = "A sturdy iron plough. Use it on dirt to plough the land."
+	name = "铁犁"
+	desc = "一把坚固的铁犁。在泥土上使用以开垦土地。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "iplough"
 	item_state = "iplough"
@@ -47,52 +47,52 @@
 /obj/item/weapon/foldable/attack_self(var/mob/user as mob)
 	var/target = get_step(user, user.dir)
 	if (target)
-		user.visible_message("<span class='warning'>[user] starts to deploy the [src].</span>", "<span class='notice'>You start to deploy the [src].</span>", "<span class='warning'>You feel something being deployed nearby.</span>")
+		user.visible_message("<span class='warning'>[user]开始部署[src]。</span>", "<span class='notice'>你开始部署[src]。</span>", "<span class='warning'>你感觉到附近有东西正在被部署。</span>")
 		if (do_after(user, 25, get_turf(user)))
-			user.visible_message("<span class='warning'>[user] deploys the [src].</span>", "<span class='notice'>You deploy the [src].</span>", "<span class='warning'>You hear the sound of something being deployed nearby.</span>")
+			user.visible_message("<span class='warning'>[user]部署了[src]。</span>", "<span class='notice'>你部署了[src]。</span>", "<span class='warning'>你听到附近有东西被部署的声音。</span>")
 			var/atom/A = new path(get_turf(src))
 			A.dir = user.dir
 			user.remove_from_mob(src)
 			qdel(src)
 
 /obj/item/weapon/foldable/generic
-	name = "Foldable Mortar"
-	desc = "A light-weight portable mortar."
+	name = "折叠迫击炮"
+	desc = "一种轻便的便携式迫击炮。"
 	icon_state = "mortar"
 	item_state = "type89"
 	path = /obj/structure/cannon/mortar/foldable/generic
 
 /obj/item/weapon/foldable/type89_mortar
-	name = "Type 89 Mortar"
-	desc = "A light-weight portable mortar."
+	name = "89式迫击炮"
+	desc = "一种轻便的便携式迫击炮。"
 	icon_state = "type89"
 	item_state = "type89"
 	path = /obj/structure/cannon/mortar/foldable/type89
 
 /obj/item/weapon/foldable/atgm
-	name = "Anti-Tank Guided Missile system"
-	desc = "A light-weight portable ATGM."
+	name = "反坦克导弹系统"
+	desc = "一种轻便的便携式反坦克导弹。"
 	icon_state = "atgm"
 	item_state = "atgm"
 	path = /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable
 
 /obj/item/weapon/foldable/atgm/kornet
-	name = "Foldable 9K135 Kornet"
-	desc = "A highly accurate, Russian laser-guided anti-tank missile system with long-range capabilities and advanced armor penetration, designed for modern battlefield engagements."
+	name = "折叠9K135短号"
+	desc = "一种高精度、俄制激光制导反坦克导弹系统,具备远程打击能力和先进穿甲能力,专为现代战场交战而设计。"
 	icon_state = "kornet_atgm"
 	item_state = "kornet_atgm"
 	path = /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable/kornet
 
 /obj/item/weapon/foldable/atgm/bgm_tow
-	name = "Foldable BGM-71 TOW"
-	desc = "A wire-guided anti-tank missile, known for its effectiveness against armored vehicles at long distances."
+	name = "折叠BGM-71陶式"
+	desc = "一种线导反坦克导弹,以在远距离对装甲车辆的有效性而闻名。"
 	icon_state = "bgm71_tow_atgm"
 	item_state = "bgm71_tow_atgm"
 	path = /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable/bgm_tow
 
 /obj/item/weapon/foldable/pkm
-	name = "Foldable PKM machine gun"
-	desc = "A soviet machinegun chambered in 7.62x54mmR rounds."
+	name = "折叠PKM机枪"
+	desc = "一种发射7.62x54mmR弹药的苏联机枪。"
 	icon_state = "foldable_pkm"
 	item_state = "foldable_pkm"
 	force = 20
@@ -104,8 +104,8 @@
 	path = /obj/item/weapon/gun/projectile/automatic/stationary/foldable/pkm
 
 /obj/item/weapon/foldable/hescokit
-	name = "HESCO bastion kit"
-	desc = "A collapsible wire mesh container filled with locally sourced materials. Very sturdy, also can't be removed after being deployed."
+	name = "HESCO防爆墙套件"
+	desc = "一种可折叠的金属网容器,填充当地材料。非常坚固,部署后也无法移除。"
 	icon_state = "bastionkit"
 	item_state = "ammo_can"
 	force = 20
@@ -118,8 +118,8 @@
 	value = 55
 
 /obj/item/weapon/material/shovel
-	name = "shovel"
-	desc = "A long tool for digging and moving dirt."
+	name = "铲子"
+	desc = "一种用于挖掘和移动泥土的长工具。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "shovel"
 	flags = CONDUCT
@@ -149,7 +149,7 @@
 
 /obj/item/weapon/material/shovel/bone
 	icon_state = "shovel_bone"
-	desc = "A shovel made out of some bone."
+	desc = "一把用骨头制成的铲子。"
 	usespeed = 0.6
 	default_material = "bone"
 	health = 7.5
@@ -158,7 +158,7 @@
 
 // Foldable shovels
 /obj/item/weapon/material/shovel/spade/foldable
-	name = "foldable shovel"
+	name = "折叠铲"
 	icon_state = "trench_shovel"
 	item_state = "lopata"
 	usespeed = 0.9
@@ -169,29 +169,29 @@
 /obj/item/weapon/material/shovel/spade/foldable/secondary_attack_self(mob/living/human/user)
 	if (secondary_action)
 		if (do_after(user, 10, src, can_move = TRUE))
-			user.visible_message("<span class='warning'>[user] folds their [src] closed.</span>", "<span class='notice'>You fold your [src] closed.</span>", "<span class='warning'>You hear something being folded nearby.</span>")
+			user.visible_message("<span class='warning'>[user]将[src]折叠收起。</span>", "<span class='notice'>你将[src]折叠收起。</span>", "<span class='warning'>你听到附近有东西被折叠的声音。</span>")
 			qdel(src)
 			usr.put_in_any_hand_if_possible(new path, prioritize_active_hand = TRUE)
 
 /obj/item/weapon/material/shovel/trench
-	name = "entrenching tool"
-	desc = "A compact shovel used specifically for digging and moving dirt."
+	name = "挖掘工具"
+	desc = "一把专门用于挖掘和移动泥土的紧凑型铲子."
 	icon_state = "trench_shovel"
 	dig_speed = 7
 	force = 35
 	usespeed = 0.8
 
 /obj/item/weapon/material/shovel/trench/foldable
-	name = "foldable entrenching tool"
-	desc = "A foldable shovel used specifically for digging and moving dirt."
+	name = "可折叠挖掘工具"
+	desc = "一把专门用于挖掘和移动泥土的可折叠铲子."
 	icon_state = "trench_shovel"
 	usespeed = 0.8
 	var/path = /obj/item/weapon/foldable_shovel/trench
 	secondary_action = TRUE
 
 /obj/item/weapon/material/shovel/trench/foldable/etool
-	name = "foldable entrenching tool"
-	desc = "A foldable shovel used for digging dirt and moving dirt. It can be also as a improvised hatchet."
+	name = "可折叠挖掘工具"
+	desc = "一把用于挖掘和移动泥土的可折叠铲子. 它也可以作为临时斧头使用."
 	icon_state = "etool"
 	usespeed = 0.8
 	chopping_speed = 3.1
@@ -205,15 +205,15 @@
 			usr.put_in_any_hand_if_possible(new path, prioritize_active_hand = TRUE)
 
 /obj/item/weapon/material/shovel/trench/foldable/etool/german
-	name = "german entrenching tool"
-	desc = "A foldable shovel used specifically for digging and moving dirt."
+	name = "德军挖掘工具"
+	desc = "一把专门用于挖掘和移动泥土的可折叠铲子."
 	icon_state = "etool"
 	usespeed = 0.8
 	path = /obj/item/weapon/foldable_shovel/trench/german
 
 /obj/item/weapon/material/shovel/spade
-	name = "spade"
-	desc = "A small tool for digging and moving dirt."
+	name = "小铲"
+	desc = "一把用于挖掘和移动泥土的小型工具."
 	icon_state = "spade"
 	item_state = "spade"
 	force = 15.0
@@ -232,9 +232,9 @@
 
 // Foldable shovel items
 /obj/item/weapon/foldable_shovel
-	name = "foldable shovel"
+	name = "可折叠铲"
 	icon = 'icons/obj/items.dmi'
-	desc = "A foldable shovel which is currently, folded."
+	desc = "一把当前处于折叠状态的可折叠铲子."
 	icon_state = "trench_shovel_folded"
 	item_state = "lopata"
 	edge = FALSE
@@ -245,22 +245,22 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/foldable_shovel/trench
-	name = "foldable entrenching tool"
-	desc = "A foldable entrenching tool which is currently, folded."
+	name = "可折叠挖掘工具"
+	desc = "一把当前处于折叠状态的可折叠挖掘工具."
 	icon_state = "trench_shovel_folded"
 	item_state = "lopata"
 	path = /obj/item/weapon/material/shovel/trench/foldable
 
 /obj/item/weapon/foldable_shovel/trench/etool
-	name = "foldable entrenching tool"
-	desc = "A foldable entrenching tool which is currently, folded."
+	name = "可折叠挖掘工具"
+	desc = "一把当前处于折叠状态的可折叠挖掘工具."
 	icon_state = "etool_folded"
 	item_state = "lopata"
 	path = /obj/item/weapon/material/shovel/trench/foldable/etool
 
 /obj/item/weapon/foldable_shovel/trench/german
-	name = "german entrenching tool"
-	desc = "A foldable entrenching tool which is currently, folded."
+	name = "德军挖掘工具"
+	desc = "一把当前处于折叠状态的可折叠挖掘工具."
 	icon_state = "german_shovel_folded"
 	item_state = "lopata"
 	path = /obj/item/weapon/material/shovel/trench/foldable/etool/german
@@ -273,15 +273,15 @@
 			usr.put_in_any_hand_if_possible(new path, prioritize_active_hand = TRUE)
 
 /obj/item/weapon/material/shovel/spade/small
-	name = "small shovel"
+	name = "小铲子"
 	icon_state = "lopata"
 	item_state = "lopata"
 	dig_speed = 7
 	usespeed = 0.9
 
 /obj/item/weapon/material/pickaxe
-	name = "pickaxe"
-	desc = "Miner's favorite."
+	name = "镐"
+	desc = "矿工的最爱."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "pickaxe"
 	flags = CONDUCT
@@ -321,8 +321,8 @@
 	maxhealth = 15
 
 /obj/item/weapon/material/pickaxe/jackhammer
-	name = "jackhammer"
-	desc = "An effecient mining tool."
+	name = "凿岩机"
+	desc = "一种高效的采矿工具."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "jackhammer"
 	force = 12.0
@@ -341,21 +341,21 @@
 //Needs two hands to use.
 /obj/item/weapon/material/pickaxe/jackhammer/proc/special_check(mob/user)
 	if (!(user.has_empty_hand(both = FALSE)))
-		to_chat(user, "<span class='warning'>You need both hands to use the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能使用[src]!</span>")
 		return FALSE
 
 /obj/item/weapon/wirecutters/boltcutters
-	name = "boltcutters"
-	desc = "This cuts bolts and other things."
+	name = "断线钳"
+	desc = "用于剪断螺栓和其他东西."
 	icon_state = "boltcutters"
 
 /obj/item/weapon/crowbar/prybar
-	name = "prybar"
+	name = "撬棍"
 	icon_state = "prybar"
 
 /obj/item/weapon/berriesgatherer
-	name = "berries gatherer"
-	desc = "A basic berry gatherer tool. Utilize it on berry bushes for efficient berry harvesting."
+	name = "浆果采集器"
+	desc = "一种基础的浆果采集工具. 在浆果灌木上使用它来高效采集浆果."
 	icon = 'icons/obj/flora/berries.dmi'
 	icon_state = "berriesgatherer"
 	force = 2.0
@@ -369,8 +369,8 @@
 	flags = FALSE
 
 /obj/item/weapon/chisel
-	name = "stone chisel"
-	desc = "A stone chisel, for carving stone walls."
+	name = "石凿"
+	desc = "一把石凿, 用于雕刻石墙."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "chisel"
 	force = 2.0
@@ -405,8 +405,8 @@
 		design = "tiled"
 
 /obj/item/weapon/chisel/metal
-	name = "iron chisel"
-	desc = "A iron chisel, for carving stone walls."
+	name = "铁凿"
+	desc = "一把铁凿, 用于雕刻石墙."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "chisel_metal"
 	force = 2.25
@@ -445,13 +445,13 @@
 				var/mob/living/human/H = user
 				digging_tunnel_time /= H.getStatCoeff("strength")
 				digging_tunnel_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
-			user.visible_message("<span class='danger'>[user] starts digging up!</span>", "<span class='notice'>You start digging up.</span>")
+			user.visible_message("<span class='danger'>[user]开始挖掘!</span>", "<span class='notice'>你开始挖掘.</span>")
 			if (do_after(user, digging_tunnel_time, user.loc))
 				if (!TB.is_diggable)
 					return
 				new/obj/structure/multiz/ladder/ww2/tunneltop(locate(user.x, user.y, user.z+1))
 				new/obj/structure/multiz/ladder/ww2/tunnelbottom(user.loc)
-				user.visible_message("<span class='danger'>[user] finishes digging up!</span>", "<span class='notice'>You finish digging up.</span>")
+				user.visible_message("<span class='danger'>[user]完成了挖掘!</span>", "<span class='notice'>你完成了挖掘.</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 1)
@@ -467,7 +467,7 @@
 					var/mob/living/human/H = user
 					digging_tunnel_time /= H.getStatCoeff("strength")
 					digging_tunnel_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
-				user.visible_message("<span class='danger'>[user] starts digging a tunnel entrance!</span>", "<span class='danger'>You start digging a tunnel entrance.</span>")
+				user.visible_message("<span class='danger'>[user]开始挖掘隧道入口!</span>", "<span class='danger'>你开始挖掘隧道入口.</span>")
 				if (do_after(user, digging_tunnel_time, user.loc))
 					if (!TB.is_diggable)
 						return
@@ -476,7 +476,7 @@
 					var/turf/BL = get_turf(locate(user.x, user.y, user.z-1))
 					if (istype(BL, /turf/floor/dirt/underground))
 						BL.ChangeTurf(/turf/floor/dirt)
-					user.visible_message("<span class='danger'>[user] finishes digging the tunnel entrance.</span>", "<span class='danger'>You finish digging the tunnel entrance.</span>")
+					user.visible_message("<span class='danger'>[user]完成了隧道入口的挖掘.</span>", "<span class='danger'>你完成了隧道入口的挖掘.</span>")
 					if (ishuman(user))
 						var/mob/living/human/H = user
 						H.adaptStat("crafting", 1)
@@ -493,9 +493,9 @@
 		if (map && !map.is_node_done(istype(HU) ? HU.civilization : null, "irrigation"))
 			to_chat(user, SPAN_WARNING("Your people haven't researched Irrigation yet."))
 			return
-		user.visible_message("<span class='notice'>[user] starts to dig an irrigation channel.</span>", "<span class='notice'>You start to dig an irrigation channel.</span>", "<span class='notice'>You hear the ground being dug nearby.</span>")
+		user.visible_message("<span class='notice'>[user]开始挖掘灌溉渠.</span>", "<span class='notice'>你开始挖掘灌溉渠.</span>", "<span class='notice'>你听到附近有挖掘地面的声音.</span>")
 		if (do_after(user, 25, src))
-			user.visible_message("<span class='notice'>[user] makes an irrigation channel.</span>", "<span class='notice'>You make an irrigation channel.</span>", "<span class='notice'>You finish and the sounds cease.</span>")
+			user.visible_message("<span class='notice'>[user]挖出了一条灌溉渠.</span>", "<span class='notice'>你挖出了一条灌溉渠.</span>", "<span class='notice'>你完成了, 声音停止了.</span>")
 			TB.irrigate("empty")
 			return
 		return
@@ -504,9 +504,9 @@
 			return
 		else
 			if (locate(/obj/structure/multiz) in user.loc)
-				to_chat(user, "<span class='notice'>There is a tunnel entrance here!</span>")
+				to_chat(user, "<span class='notice'>这里有一个隧道入口!</span>")
 				return
-			user.visible_message("[user] starts digging up a grave...", "<span class='notice'>You start digging up a grave...</span>", "<span class='notice'>You hear the ground being dug nearby.</span>")
+			user.visible_message("[user]开始挖掘坟墓...", "<span class='notice'>你开始挖掘坟墓...</span>", "<span class='notice'>你听到附近有挖掘地面的声音.</span>")
 			playsound(src,'sound/effects/shovelling.ogg',100,1)
 			if (do_after(user, 100, src))
 				to_chat(user, SPAN_NOTICE("You finish digging the grave."))
@@ -521,7 +521,7 @@
 			if (locate(/obj/structure/multiz) in user.loc)
 				to_chat(user, SPAN_NOTICE("There is a tunnel entrance here!"))
 				return
-			user.visible_message("[user] starts digging up a pit latrine...", "<span class='notice'>You start digging up a pit latrine...</span>", "<span class='notice'>You hear the sound of dirt being excavated nearby.</span>")
+			user.visible_message("[user]开始挖掘坑式厕所...", "<span class='notice'>你开始挖掘坑式厕所...</span>", "<span class='notice'>你听到附近有挖掘泥土的声音.</span>")
 			playsound(src,'sound/effects/shovelling.ogg',100,1)
 			if (do_after(user, 150, src))
 				to_chat(user, SPAN_NOTICE("You finish digging the pit latrine."))
@@ -532,9 +532,9 @@
 
 
 /obj/structure/grapplehook
-	name = "grappling hook"
+	name = "抓钩"
 	icon = 'icons/obj/objects.dmi'
-	desc = "A grappling hook attached to a long hemp rope."
+	desc = "一个连接着长麻绳的抓钩."
 	icon_state = "grapplehook"
 	opacity = FALSE
 	density = FALSE
@@ -620,7 +620,7 @@
 				return
 		var/obj/covers/repairedfloor/rope/part = new/obj/covers/repairedfloor/rope(nT)
 		part.develop(src)
-	visible_message("<span class='warning'>The [src] failed to attach to anything!</span>")
+	visible_message("<span class='warning'>[src]未能附着到任何东西上!</span>")
 	src.undeploy()
 	deployed = FALSE
 	update_icon()

@@ -4,8 +4,8 @@
  * To-do: refactor the "for" statements into a proc
  */
 /obj/item/weapon/storage/pill_bottle
-	name = "pill bottle"
-	desc = "An airtight container for storing medication."
+	name = "药瓶"
+	desc = "一个用于储存药物的密封容器."
 	icon_state = "pill_canister"
 	icon = 'icons/obj/chemical.dmi'
 	item_state = "contsolid"
@@ -25,8 +25,8 @@
 	return ..(I, user)
 
 /obj/item/weapon/storage/pill_bottle/antitox
-	name = "bottle of Dylovene pills"
-	desc = "Contains pills used to counter toxins."
+	name = "地洛文药丸瓶"
+	desc = "含有用于对抗毒素的药丸."
 
 	New()
 		..()
@@ -34,8 +34,8 @@
 			new /obj/item/weapon/reagent_containers/pill/antitox(src)
 
 /obj/item/weapon/storage/pill_bottle/paracetamol
-	name = "bottle of paracetamol pills"
-	desc = "Contains pills used to counter mild to moderate pain."
+	name = "扑热息痛药丸瓶"
+	desc = "含有用于缓解轻度至中度疼痛的药丸."
 
 	New()
 		..()
@@ -43,8 +43,8 @@
 			new /obj/item/weapon/reagent_containers/pill/paracetamol(src)
 
 /obj/item/weapon/storage/pill_bottle/penicillin
-	name = "bottle of penicillin pills"
-	desc = "An antibiotic. Effective against many microbial diseases."
+	name = "青霉素药丸瓶"
+	desc = "一种抗生素. 对许多微生物疾病有效."
 
 /obj/item/weapon/storage/pill_bottle/penicillin/New()
 	..()
@@ -52,8 +52,8 @@
 		new /obj/item/weapon/reagent_containers/pill/penicillin(src)
 
 /obj/item/weapon/storage/pill_bottle/tramadol
-	name = "bottle of Tramadol pills"
-	desc = "Contains pills used to relieve pain."
+	name = "曲马多药丸瓶"
+	desc = "含有用于缓解疼痛的药丸."
 
 	New()
 		..()
@@ -61,8 +61,8 @@
 			new /obj/item/weapon/reagent_containers/pill/tramadol(src)
 
 /obj/item/weapon/storage/pill_bottle/pervitin
-	name = "bottle of Pervitin pills"
-	desc = "Contains pills of methamphetamine."
+	name = "佩尔维汀药丸瓶"
+	desc = "含有甲基苯丙胺药丸."
 
 	New()
 		..()
@@ -70,8 +70,8 @@
 			new /obj/item/weapon/reagent_containers/pill/pervitin(src)
 
 /obj/item/weapon/storage/pill_bottle/potassium_iodide
-	name = "bottle of potassium iodide pills"
-	desc = "Contains pills of potassium iodide, used for radiation poisoning."
+	name = "碘化钾药丸瓶"
+	desc = "含有碘化钾药丸,用于治疗辐射中毒."
 
 	New()
 		..()
@@ -79,8 +79,8 @@
 			new /obj/item/weapon/reagent_containers/pill/potassium_iodide(src)
 
 /obj/item/weapon/storage/pill_bottle/citalopram
-	name = "bottle of Citalopram pills"
-	desc = "Contains pills used to stabilize a patient's mood."
+	name = "西酞普兰药丸瓶"
+	desc = "含有用于稳定患者情绪的药丸."
 
 	New()
 		..()

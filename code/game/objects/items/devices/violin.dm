@@ -1,6 +1,6 @@
 /obj/item/violin
-	name = "Violin"
-	desc = "A classic violin. "
+	name = "小提琴"
+	desc = "一把经典小提琴."
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "violin"
 	item_state = "violin"
@@ -372,12 +372,12 @@
 					tempo = 600 / text2num(copytext(lines[1],6))
 					lines.Cut(1,2)
 				if (lines.len > MAX_CHARS_PER_LINE)
-					to_chat(usr, "Too many lines!")
+					to_chat(usr, "行数太多!")
 					lines.Cut(MAX_CHARS_PER_LINE+1)
 				var/linenum = TRUE
 				for (var/l in lines)
 					if (length(l) > MAX_CHARS_PER_LINE)
-						to_chat(usr, "Line [linenum] too long!")
+						to_chat(usr, "第[linenum]行太长!")
 						lines.Remove(l)
 					else
 						linenum++

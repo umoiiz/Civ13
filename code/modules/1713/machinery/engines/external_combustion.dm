@@ -4,8 +4,8 @@
 
 /obj/structure/engine/external
 	enginetype = "external"
-	name = "external combustion engine"
-	desc = "A basic engine."
+	name = "外燃机"
+	desc = "一个基础引擎."
 	weight = 30
 	var/defaultmaxpower = 0
 	starting_snd = 'sound/machines/steam_starting.ogg'
@@ -20,7 +20,7 @@
 			pwd=1
 	if (pwd && hts)
 		if(!on)
-			visible_message("[user] turns \the [src] on.","You turn \the [src] on.")
+			visible_message("[user]打开了\the [src].","你打开了\the [src].")
 			playsound(loc, starting_snd, 35, FALSE, 3)
 			on = TRUE
 			update_icon()
@@ -29,11 +29,11 @@
 				running_sound()
 			return
 	else if (pwd && !hts)
-		to_chat(user, "<span class = 'notice'>You need to light the heat source first.</span>")
+		to_chat(user, "<span class = 'notice'>你需要先点燃热源.</span>")
 		on = FALSE
 		return
 	else
-		to_chat(user, "<span class = 'notice'>This engine needs an external heat source to work!</span>")
+		to_chat(user, "<span class = 'notice'>这个引擎需要外部热源才能工作!</span>")
 		on = FALSE
 		return
 
@@ -43,7 +43,7 @@
 		if (HSI.on)
 			pwd=1
 	if (!pwd)
-		visible_message("The engine stalls.")
+		visible_message("引擎熄火了.")
 		playsound(loc, ending_snd, 100, FALSE, 3)
 		on = FALSE
 		power_off_connections()
@@ -72,8 +72,8 @@
 
 ///////////////////////ENGINES//////////////////////////////////////////////
 /obj/structure/engine/external/steam
-	name = "steam engine"
-	desc = "A big steam-powered engine. Low Power-To-Weight ratio, but good for static operations."
+	name = "蒸汽机"
+	desc = "一个大型蒸汽动力引擎. 功率重量比低, 但适合静态运作."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "steam_static"
 	engineclass = "steam"
@@ -82,8 +82,8 @@
 	torque = 1.4
 
 /obj/structure/engine/external/aeolipile
-	name = "aeolipile"
-	desc = "A small steam-powered device. Low Power-To-Weight ratio, but iffy for static operations."
+	name = "汽转球"
+	desc = "一个小型蒸汽动力装置. 功率重量比低, 但不太适合静态运作."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "aeolipile_static"
 	engineclass = "steam"
@@ -92,8 +92,8 @@
 	torque = 1.1
 
 /obj/structure/engine/external/stirling
-	name = "Stirling engine"
-	desc = "A large Stirling cycle engine. Very low Power-To-Weight ratio, but good for static operations, and can run on any source of heat or temperature difference, not just combustion."
+	name = "斯特林发动机"
+	desc = "一个大型斯特林循环引擎. 功率重量比非常低, 但适合静态运作, 并且可以依靠任何热源或温差运行, 而不仅仅是燃烧."
 	icon = 'icons/obj/engines.dmi'
 	icon_state = "stirling_static"
 	engineclass = "stirling"

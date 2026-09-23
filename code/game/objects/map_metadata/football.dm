@@ -75,7 +75,7 @@
 			team2_kit = "secondary uniform"
 		team1 = t_team1
 		team2 = t_team2
-		to_chat(world, "<font size=4>This match will be between [team1] and [team2]!</font>")
+		to_chat(world, "<font size=4>本场比赛将在[team1]和[team2]之间进行!</font>")
 		for (var/obj/structure/banner/faction/team/team1/T1 in world)
 			T1.team = team1
 			T1.assign_team(team1)
@@ -137,7 +137,7 @@
 				world.log << "Finished loading teams."
 	return
 /obj/map_metadata/football/proc/points_check()
-	to_chat(world, "<font size=4 color='yellow'><b>Current Score:</font></b>")
+	to_chat(world, "<font size=4 color='yellow'><b>当前比分:</font></b>")
 	to_chat(world, "<font size=3 color=[teams[team1][team1_kit]["shirt_color"]]><b>[teams[team1][1]]</font><font size=3 color='#FFF'> [teams[team1][2]] - [teams[team2][2]] </font><font size=3 color=[teams[team2][team2_kit]["shirt_color"]]>[teams[team2][1]]</b></font>")
 	spawn(300)
 		points_check()
@@ -147,9 +147,9 @@
 		var/list/tmplistc = sortTim(scorers, /proc/cmp_numeric_dsc,TRUE)
 		for (var/i in tmplistc)
 			if (tmplistc[i]>1)
-				to_chat(world, "<font size=3>[i]: <b>[tmplistc[i]]</b> goals</font>")
+				to_chat(world, "<font size=3>[i]: <b>[tmplistc[i]]</b> 个进球</font>")
 			else
-				to_chat(world, "<font size=3>[i]: <b>[tmplistc[i]]</b> goal</font>")
+				to_chat(world, "<font size=3>[i]: <b>[tmplistc[i]]</b> 个进球</font>")
 /obj/map_metadata/football/update_win_condition()
 
 	if ((processes.ticker.playtime_elapsed >= match_duration || (world.time >= next_win && next_win != -1)))
@@ -198,7 +198,7 @@
 /obj/map_metadata/football/proc/reset_ball()
 	stopped = TRUE
 	stopped_until = world.time + 200
-	to_chat(world, "<font size=3 color='yellow'><b>Goal! Play stopped - returning to positions...</b></font>")
+	to_chat(world, "<font size=3 color='yellow'><b>进球! 比赛暂停 - 返回位置中...</b></font>")
 	var/whistle = sound("sound/effects/football_whistle.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 	for (var/mob/M in player_list)
 		M.client << whistle
@@ -218,7 +218,7 @@
 		FB.loc = spawnpoint
 	spawn(200)
 		stopped = FALSE
-		to_chat(world, "<font size=3 color='yellow'><b>Play resumes!</b></font>")
+		to_chat(world, "<font size=3 color='yellow'><b>比赛继续!</b></font>")
 		var/whistle2 = sound("sound/effects/football_whistle.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 		for (var/mob/M in player_list)
 			M.client << whistle2

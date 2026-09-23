@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/bear
 	name = "black bear"
-	desc = "Rawr Rawr!!"
+	desc = "吼吼!!"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "blackbear"
 	icon_living = "blackbear"
@@ -101,7 +101,7 @@
 				var/mob/living/simple_animal/hostile/bear/sow/B = new/mob/living/simple_animal/hostile/bear/sow(loc)
 				B.cub = TRUE
 				B.btype = btype
-			visible_message("A bear cub has been born!")
+			visible_message("一只熊崽出生了!")
 
 /mob/living/simple_animal/hostile/bear/boar/New()
 	bear_count |= src

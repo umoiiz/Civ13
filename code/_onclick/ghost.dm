@@ -6,9 +6,9 @@
 	if (!client) return
 	client.inquisitive_ghost = !client.inquisitive_ghost
 	if (client.inquisitive_ghost)
-		to_chat(src, "<span class='notice'>You will now examine everything you click on.</span>")
+		to_chat(src, "<span class='notice'>你现在会检查你点击的一切.</span>")
 	else
-		to_chat(src, "<span class='notice'>You will no longer examine things you click on.</span>")
+		to_chat(src, "<span class='notice'>你不再检查你点击的东西.</span>")
 
 /mob/observer/ghost/DblClickOn(var/atom/A, var/params)
 	if (can_reenter_corpse && mind && mind.current)

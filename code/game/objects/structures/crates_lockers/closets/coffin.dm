@@ -1,6 +1,6 @@
 /obj/structure/closet/coffin
-	name = "coffin"
-	desc = "It's a burial receptacle for the dearly departed."
+	name = "棺材"
+	desc = "这是为逝去的亲人准备的安葬容器."
 	icon_state = "coffin"
 	icon_closed = "coffin"
 	icon_opened = "coffin_open"
@@ -23,8 +23,8 @@
 	anchored = TRUE
 
 /obj/structure/closet/coffin/sarcophagus
-	name = "bronze sarcophagus"
-	desc = "It's a burial receptacle for egyptian royalty."
+	name = "青铜石棺"
+	desc = "这是为埃及皇室准备的安葬容器."
 	icon_state = "bronze_sarcophagus_closed"
 	icon_closed = "bronze_sarcophagus_closed"
 	icon_opened = "sarcophagus_open"
@@ -35,8 +35,8 @@
 	anchored = TRUE
 
 /obj/structure/closet/coffin/sarcophagus/gold
-	name = "gold sarcophagus"
-	desc = "It's a burial receptacle for egyptian royalty."
+	name = "黄金石棺"
+	desc = "这是为埃及皇室准备的安葬容器."
 	icon_state = "gold_sarcophagus_closed"
 	icon_closed = "gold_sarcophagus_closed"
 	icon_opened = "sarcophagus_open"
@@ -44,8 +44,8 @@
 	health = 700
 
 /obj/structure/closet/old_coffin
-	name = "old coffin"
-	desc = "It's a burial receptacle for some ancient bag of bones."
+	name = "旧棺材"
+	desc = "这是为某些老骨头准备的安葬容器."
 	icon_state = "sealed_coffin"
 	icon_closed = "sealed_coffin"
 	icon_opened = "sealed_coffin_open"
@@ -55,7 +55,7 @@
 /obj/structure/closet/old_coffin/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	if (!opened)
-		to_chat(user, "<span class='notice'>\The [src] is a big heavy stone... you're not gonna move this by hand</span>")
+		to_chat(user, "<span class='notice'>\The [src]是一块又大又重的石头...你没法徒手搬动它</span>")
 		return
 	else
 		toggle(user)
@@ -77,11 +77,11 @@
 					content_size += ceil(I.w_class/2)
 				if (content_size < storage_capacity)
 					W.forceMove(src)
-					to_chat(user, "You throw \the [W] into \the [src].")
+					to_chat(user, "你把\the [W]扔进了\the [src].")
 					update_icon()
 					return
 				else
-					to_chat(user, "<span class='warning'>\The [src] is too full!</span>")
+					to_chat(user, "<span class='warning'>\The [src]已经满了!</span>")
 					return
 			else
 				W.forceMove(loc)

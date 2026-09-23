@@ -1,6 +1,6 @@
 /obj/structure/religious
-	name = "gravestone"
-	desc = "A gravestone made with polished stone."
+	name = "墓碑"
+	desc = "一座用抛光石头制成的墓碑."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "gravestone"
 	var/health = 100
@@ -8,16 +8,16 @@
 	not_disassemblable = FALSE
 
 /obj/structure/religious/gravestone
-	name = "gravestone"
-	desc = "A gravestone made with polished stone."
+	name = "墓碑"
+	desc = "一座用抛光石头制成的墓碑."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "gravestone"
 	density = FALSE
 	anchored = TRUE
 
 /obj/structure/religious/runestone
-	name = "runestone"
-	desc = "A large rock with a symbol carved into it."
+	name = "符文石"
+	desc = "一块刻有符号的大石头."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "runestone"
 	density = FALSE
@@ -27,8 +27,8 @@
 	icon_state = "runestone_2"
 
 /obj/structure/religious/totem
-	name = "stone totem"
-	desc = "A stone statue, representing a spirit animal of this tribe."
+	name = "石图腾"
+	desc = "一座石像, 代表这个部落的灵兽."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "goose"
 	density = TRUE
@@ -38,8 +38,8 @@
 	layer = 3.2
 
 /obj/structure/religious/olmec_head
-	name = "large stone head"
-	desc = "A large stone head."
+	name = "大石头"
+	desc = "一个巨大的石头头颅."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "olmec_head"
 	density = TRUE
@@ -47,8 +47,8 @@
 	layer = 3.2
 
 /obj/structure/religious/moai
-	name = "moai statue"
-	desc = "A large stone statue."
+	name = "摩艾石像"
+	desc = "一座大型石像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "moai2_bottom"
 	density = TRUE
@@ -68,7 +68,7 @@
 		overlays += top
 
 /obj/structure/religious/moai/long
-	name = "long moai statue"
+	name = "长摩艾石像"
 	icon_state = "moai1_bottom"
 
 	New()
@@ -95,8 +95,8 @@ obj/structure/religious/monument
 		update_icon()
 
 /obj/structure/religious/monument/obelisk
-	name = "monumental sandstone obelisk"
-	desc = "A large sandstone obelisk."
+	name = "纪念性砂岩方尖碑"
+	desc = "一座大型砂岩方尖碑."
 	icon_state = "obelisk_bottom"
 
 	New()
@@ -111,8 +111,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/megalith
-	name = "monumental stone megalith"
-	desc = "A enormous rough stone megalith planted into the ground."
+	name = "纪念性巨石"
+	desc = "一块巨大的粗糙巨石插入地面."
 	icon_state = "megalith_bottom"
 
 	New()
@@ -127,8 +127,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/pillar_monument
-	name = "monumental stone pillar"
-	desc = "A tall pillar that stands triumphantly and is easy to the eye."
+	name = "纪念性石柱"
+	desc = "一根高耸的柱子, 傲然挺立且赏心悦目."
 	icon_state = "monumental_pillar_bottom"
 
 	New()
@@ -143,8 +143,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/crucero
-	name = "monumental crucero cross"
-	desc = "A large edifice of a cross, as if to impact a statement."
+	name = "巨型十字架纪念碑"
+	desc = "一座巨大的十字架建筑,仿佛在宣告某种声明."
 	icon_state = "crucero_bottom"
 	New()
 		..()
@@ -158,8 +158,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/venus
-	name = "monumental marble statue of venus"
-	desc = "A chiselled marble statue of the classical goddess venus, she is barely covered for modesty."
+	name = "巨型维纳斯大理石雕像"
+	desc = "一尊精雕细琢的古典女神维纳斯大理石雕像,她几乎衣不蔽体."
 	icon_state = "venus_bottom"
 
 	New()
@@ -174,16 +174,16 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/liberty
-	name = "statue of liberty"
-	desc = "A figure of Libertas."
+	name = "自由女神像"
+	desc = "一尊自由女神像."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "liberty"
 	bound_height = 64
 	layer = 5.0
 
 /obj/structure/religious/monument/karl_marx
-	name = "monumental bronze statue of karl marx"
-	desc = "The father of communism himself, enshrined in bronze."
+	name = "巨型卡尔·马克思青铜雕像"
+	desc = "共产主义之父本人,以青铜铸就."
 	icon_state = "communist_santa_bottom"
 
 	New()
@@ -200,8 +200,8 @@ obj/structure/religious/monument
 /* Religious Monuments*/
 
 /obj/structure/religious/monument/cultist
-	name = "monumental cultist statue"
-	desc = "ping a @contributor or sergeant on the discord if you can see this."
+	name = "巨型邪教徒雕像"
+	desc = "如果你能看到这个,请在discord上ping一个@contributor或中士."
 	icon_state = null
 	var/religion = "none"
 
@@ -217,8 +217,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/cultist/cthulu
-	name = "monumental ominous statue of the deep-one"
-	desc = "A large seated statue of creature, its visage is unsettling and the inscription on the base is written in a cryptic set of symbols."
+	name = "巨型深潜者不祥雕像"
+	desc = "一尊巨大的生物坐像,其面容令人不安,底座上的铭文由一组神秘的符号写成."
 	icon_state = "cthulu_bottom"
 
 	New()
@@ -233,8 +233,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/cultist/moloch
-	name = "monumental ominous statue of the evil-one"
-	desc = "A statue of a demonic being, its lifelike wings and features are prominently displayed in the stone."
+	name = "巨型邪魔不祥雕像"
+	desc = "一尊恶魔生物的雕像,其栩栩如生的翅膀和特征在石头上鲜明展现."
 	icon_state = "moloch_bottom"
 
 	New()
@@ -249,8 +249,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/cultist/outsider
-	name = "monumental ominous statue of the outsider"
-	desc = "A statue of a extra-dimensional creature, it is baffling to look with strange physiology for dramatic effect."
+	name = "巨型外神不祥雕像"
+	desc = "一尊异次元生物的雕像,其奇异的外形结构令人费解,只为营造戏剧效果."
 	icon_state = "outsider_bottom"
 
 	New()
@@ -265,8 +265,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/cultist/sauron
-	name = "monumental ominous statue of the ruler"
-	desc = "A statue of a tall armored figure, sceptre clutched firmly in hand, it radiates a area of uneasyness and authority."
+	name = "巨型统治者不祥雕像"
+	desc = "一尊高大装甲人物的雕像,手中紧握权杖,散发着不安与威严的气场."
 	icon_state = "sauron_bottom"
 
 	New()
@@ -281,8 +281,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/cultist/sauron/reverse //for mapping
-	name = "monumental ominous statue of the ruler"
-	desc = "A statue of a tall armored figure, sceptre clutched firmly in hand, it radiates a area of uneasyness and authority."
+	name = "巨型统治者不祥雕像"
+	desc = "一尊高大装甲人物的雕像,手中紧握权杖,散发着不安与威严的气场."
 	icon_state = "reverse_sauron_bottom"
 
 	New()
@@ -309,8 +309,8 @@ obj/structure/religious/monument
 		return
 
 /obj/structure/religious/monument/monk
-	name = "monumental monk statue"
-	desc = "ping a @contributor or sergeant on the discord if you can see this."
+	name = "巨型僧侣雕像"
+	desc = "如果你能看到这个,请在discord上ping一个@contributor或中士."
 	icon_state = null
 	var/religion = "none"
 
@@ -326,8 +326,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/monk/quangshi
-	name = "monumental stone buddha"
-	desc = "This large stone statue of bhudda, it extrubes a exceptional feeling of tranqulity and harmonious nature."
+	name = "巨型石佛"
+	desc = "这尊巨大的石佛雕像,散发着非凡的宁静与和谐之感."
 	icon_state = "quangshi_bottom"
 
 	New()
@@ -342,8 +342,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/priesthood
-	name = "monumental priesthood statue"
-	desc = "ping a @contributor or sergeant on the discord if you can see this."
+	name = "巨型祭司雕像"
+	desc = "如果你能看到这个,请在discord上ping一个@contributor或中士."
 	icon_state = null
 	var/religion = "none"
 
@@ -359,8 +359,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/priesthood/saint
-	name = "monumental saint statue"
-	desc = "A enormous stone statue of a angellic saint, with a sword firmly gripped in hand."
+	name = "巨型圣徒雕像"
+	desc = "一尊巨大的天使圣徒石像,手中紧握一把剑."
 	icon_state = "saint_bottom"
 	religion = "none"
 
@@ -376,8 +376,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/shaman
-	name = "monumental shaman statue"
-	desc = "ping a @contributor or sergeant on the discord if you can see this."
+	name = "巨型萨满雕像"
+	desc = "如果你能看到这个,请在discord上ping一个@contributor或中士."
 	icon_state = null
 	var/religion = "none"
 
@@ -393,8 +393,8 @@ obj/structure/religious/monument
 		overlays += top
 
 /obj/structure/religious/monument/shaman/ape
-	name = "monumental statue of a giant ape"
-	desc = "A enormous stone statue of a fearsome ape, it is beating its chest furiously."
+	name = "巨型巨猿雕像"
+	desc = "一尊巨大的可怕猿猴石像,正狂怒地捶打着自己的胸膛."
 	icon_state = "great_ape_bottom"
 	religion = "none"
 
@@ -418,8 +418,8 @@ obj/structure/religious/monument
 
 
 /obj/structure/religious/aztec_statue
-	name = "aztec statue"
-	desc = "An aztec-style statue."
+	name = "阿兹特克雕像"
+	desc = "一尊阿兹特克风格的雕像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "aztec_statue"
 	density = TRUE
@@ -427,8 +427,8 @@ obj/structure/religious/monument
 	layer = 3.2
 
 /obj/structure/religious/tiki_statue
-	name = "tiki statue"
-	desc = "A tiki style statue."
+	name = "提基雕像"
+	desc = "一尊提基风格的雕像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "tikistatue1"
 	density = TRUE
@@ -437,12 +437,12 @@ obj/structure/religious/monument
 	flammable = TRUE
 
 /obj/structure/religious/tiki_statue/small
-	name = "tiki statue"
+	name = "提基雕像"
 	icon_state = "tikistatue2"
 
 /obj/structure/religious/totem_pole
-	name = "wood totem pole"
-	desc = "A wood totem pole, with several animals."
+	name = "木制图腾柱"
+	desc = "一根木制图腾柱,上面刻有数种动物."
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "totem_pole"
 	density = TRUE
@@ -451,8 +451,8 @@ obj/structure/religious/monument
 	flammable = TRUE
 
 /obj/structure/religious/gargoyle
-	name = "gargoyle statue"
-	desc = "A statue of a watchful gargoyle."
+	name = "石像鬼雕像"
+	desc = "一尊警觉的石像鬼雕像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "gargoyle"
 	density = TRUE
@@ -460,8 +460,8 @@ obj/structure/religious/monument
 	layer = 3.2
 
 /obj/structure/religious/angel
-	name = "angel statue"
-	desc = "A statue of a watchful angel."
+	name = "天使雕像"
+	desc = "一尊警觉的天使雕像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "angel"
 	density = TRUE
@@ -479,8 +479,8 @@ obj/structure/religious/monument
 				map.custom_religions[religion][3] += 25
 
 /obj/structure/religious/totem/sandstone
-	name = "sandstone totem"
-	desc = "A sandstone statue, representing a spirit animal of this tribe."
+	name = "砂岩图腾"
+	desc = "一尊砂岩雕像,代表着该部落的灵兽."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "sandstone_snake"
 
@@ -495,8 +495,8 @@ obj/structure/religious/monument
 				map.custom_religions[religion][3] += 25
 
 /obj/structure/religious/animal_statue
-	name = "statue"
-	desc = "A stone statue."
+	name = "雕像"
+	desc = "一尊石制雕像."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "goose"
 	density = TRUE
@@ -510,8 +510,8 @@ obj/structure/religious/monument
 	name = "[randimg] statue"
 
 /obj/structure/religious/animal_statue/sandstone
-	name = "sandstone statue"
-	desc = "A sandstone statue."
+	name = "砂岩雕像"
+	desc = "一尊砂岩雕像."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "sandstone_snake"
 
@@ -522,8 +522,8 @@ obj/structure/religious/monument
 	name = "[randimg] statue"
 
 /obj/structure/religious/woodcross1
-	name = "small wood cross"
-	desc = "A small engraved wood cross."
+	name = "小型木制十字架"
+	desc = "一个小型雕刻木制十字架."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "cross1"
 	density = FALSE
@@ -532,8 +532,8 @@ obj/structure/religious/monument
 	flammable = TRUE
 
 /obj/structure/religious/woodcross2
-	name = "wood cross"
-	desc = "An engraved wood cross."
+	name = "木制十字架"
+	desc = "一个雕刻木制十字架."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "cross2"
 	density = FALSE
@@ -542,8 +542,8 @@ obj/structure/religious/monument
 	flammable = TRUE
 
 /obj/structure/religious/grave
-	name = "open grave"
-	desc = "An opened grave."
+	name = "敞开的坟墓"
+	desc = "一座敞开的坟墓."
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "grave_overlay"
 	density = FALSE
@@ -554,11 +554,11 @@ obj/structure/religious/monument
 	not_movable = TRUE
 /obj/structure/religious/grave/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/material/shovel) && open)
-		visible_message("[user] starts filling up \the [src]...","You start filling up \the [src]...")
+		visible_message("[user]开始填满\the [src]...","你开始填满\the [src]...")
 		playsound(src,'sound/effects/shovelling.ogg',100,1)
 		if (do_after(user, 100, src))
 			if (open)
-				to_chat(user, "You fill up \the [src].")
+				to_chat(user, "你填满了\the [src].")
 				open = FALSE
 				icon_state = "grave_filled"
 				name = "grave"
@@ -593,11 +593,11 @@ obj/structure/religious/monument
 		else
 			return
 	else if (istype(W, /obj/item/weapon/material/shovel) && !open)
-		user.visible_message("[user] starts digging up \the [src]...", "You start digging up \the [src]...")
+		user.visible_message("[user]开始挖开\the [src]...", "你开始挖开\the [src]...")
 		playsound(src,'sound/effects/shovelling.ogg',100,1)
 		if (do_after(user, 100, src))
 			if (!open)
-				to_chat(user, "You uncover \the [src].")
+				to_chat(user, "你挖出了\the [src].")
 				open = TRUE
 				icon_state = "grave_overlay"
 				name = "open grave"
@@ -630,11 +630,11 @@ obj/structure/religious/monument
 							HM.client.perspective = MOB_PERSPECTIVE
 					CF.forceMove(src.loc)
 	if (istype(W, /obj/item/weapon/barrier) && open)
-		user.visible_message("[user] throws the dirt into \the [src].", "You throw the dirt into \the [src].")
+		user.visible_message("[user]把泥土扔进\the [src].", "你把泥土扔进\the [src].")
 		filled++
 		qdel(W)
 		if (filled >= 2)
-			visible_message("The grave gets covered.")
+			visible_message("坟墓被覆盖了.")
 			qdel(src)
 			return
 	else
@@ -651,21 +651,21 @@ obj/structure/religious/monument
 	update_icon()
 
 /obj/structure/religious/impaledskull
-	name = "impaled skull"
-	desc = "A skull on a spike."
+	name = "穿刺的头骨"
+	desc = "一个插在尖刺上的头骨."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "impaledskull"
 
 /obj/structure/religious/tribalmask
-	name = "native wood mask"
-	desc = "A decorative wood mask."
+	name = "原住民木制面具"
+	desc = "一个装饰性木制面具."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalmask1"
 	flammable = TRUE
 
 /obj/structure/religious/remains
-	name = "human remains"
-	desc = "A bunch of human bones. Spooky."
+	name = "人类遗骸"
+	desc = "一堆人类骨头.真吓人."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "remains1"
 	anchored = FALSE
@@ -694,7 +694,7 @@ obj/structure/religious/monument
 
 /obj/structure/religious/proc/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		qdel(src)
 		return
 
@@ -749,7 +749,7 @@ obj/structure/religious/monument
 		if (power < 50)
 			if (weather == WEATHER_NONE)
 				change_weather_somehow()
-			visible_message("The gods are angry, sending heavy rains!")
+			visible_message("神明发怒了,降下暴雨!")
 			if (prob(100-power))
 				var/diseasedone = FALSE
 				for (var/mob/living/human/HH in range(10,loc))
@@ -766,7 +766,7 @@ obj/structure/religious/monument
 		//angry
 		else if (power >= 50 && power < 100)
 			if (prob(100-power))
-				visible_message("Heavy winds and rain have destroyed the crops!")
+				visible_message("狂风暴雨摧毁了庄稼!")
 				if (weather == WEATHER_NONE)
 					change_weather_somehow()
 				for (var/obj/structure/farming/plant/P in range(30,loc))
@@ -785,21 +785,21 @@ obj/structure/religious/monument
 			if (prob(power/250))
 				if (weather == WEATHER_WET)
 					change_weather_somehow()
-					visible_message("The gods have blessed us with good weather!")
+					visible_message("神明赐予了我们好天气!")
 		//very pleased
 		else if (power >= 250)
 			if (weather == WEATHER_WET)
 				change_weather_somehow()
-			visible_message("The gods have blessed us with good weather!")
+			visible_message("神明赐予了我们好天气!")
 			if (prob(50) && human_clients_mob_list.len>0)
 				if (prob(30))
-					visible_message("The gods send us offerings!")
+					visible_message("众神赐予我们祭品!")
 					new /obj/item/weapon/reagent_containers/food/condiment/tealeaves(loc)
 				else if (prob(20))
-					visible_message("The gods send us offerings!")
+					visible_message("众神赐予我们祭品!")
 					new /obj/item/weapon/reagent_containers/pill/opium(loc)
 				else if (prob(20))
-					visible_message("The gods send us offerings!")
+					visible_message("众神赐予我们祭品!")
 					new /obj/item/stack/medical/splint(loc)
 		if (power > 50)
 			for (var/obj/effect/landmark/npctarget/TG in loc)
@@ -881,35 +881,35 @@ obj/structure/religious/monument
 		if (istype(I, /obj/item/organ/heart))
 			power = (power + 75)
 			if (reltype == "tribal")
-				visible_message("The gods take [user]'s offering of \the [I]! They are very pleased!")
+				visible_message("众神接受了[user]献上的\the [I]! 他们非常满意!")
 			else
-				visible_message("God takes [user]'s offering of \the [I]! He is very pleased!")
+				visible_message("神接受了[user]献上的\the [I]! 他非常满意!")
 			new /obj/effect/effect/smoke/fast(loc)
 			qdel(I)
 			return
 		else if (istype(I, /obj/item/stack/teeth) || istype(I, /obj/item/stack/material/tobacco_green) || istype(I, /obj/item/stack/material/tobacco))
 			power = (power + (I.amount*12))
 			if (reltype == "tribal")
-				visible_message("The gods take [user]'s offering of \the [I]! They are pleased!")
+				visible_message("众神接受了[user]献上的\the [I]! 他们很满意!")
 			else
-				visible_message("God takes [user]'s offering of \the [I]! He is pleased!")
+				visible_message("神接受了[user]献上的\the [I]! 他很满意!")
 			new /obj/effect/effect/smoke/fast(loc)
 			qdel(I)
 			return
 		else if (istype(I, /obj/item/weapon/reagent_containers/food/snacks))
 			power = (power + 10)
 			if (reltype == "tribal")
-				visible_message("The gods take [user]'s offering of \the [I]! They are pleased!")
+				visible_message("众神接受了[user]献上的\the [I]! 他们很满意!")
 			else
-				visible_message("God takes [user]'s offering of \the [I]! He is pleased!")
+				visible_message("神接受了[user]献上的\the [I]! 他很满意!")
 			new /obj/effect/effect/smoke/fast(loc)
 			qdel(I)
 			return
 	else
 		if (reltype == "tribal")
-			visible_message("The gods reject [user]'s offering of \the [I]. They are satiated for now.")
+			visible_message("众神拒绝了[user]献上的\the [I]. 他们暂时满足了.")
 		else
-			visible_message("God rejects [user]'s offering of \the [I]. He is satisfied for now.")
+			visible_message("神拒绝了[user]献上的\the [I]. 他暂时满足了.")
 		return
 	..()
 
@@ -933,16 +933,16 @@ obj/structure/religious/monument
 					power = (power - 150)
 					return
 				else
-					to_chat(user, "Not enough favour points.")
+					to_chat(user, "恩惠点数不足.")
 					return
 	else
-		to_chat(user, "You failed to communicate with the gods. You need drugs to connect yourself with the astral plane.")
+		to_chat(user, "你未能与众神沟通. 你需要药物来连接星界位面.")
 		return
 
 ////////////////////STATUES///////////////////////
 /obj/structure/religious/statue
-	name = "statue"
-	desc = "A human statue."
+	name = "雕像"
+	desc = "一尊人类雕像."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "human_male_base"
 	density = TRUE
@@ -954,7 +954,7 @@ obj/structure/religious/monument
 		..()
 		spawn(1)
 			if (name == "statue")
-				name = "[statue_material] statue"
+				name = "[statue_material]雕像"
 				update_icon()
 
 /obj/structure/religious/statue/update_icon()
@@ -977,11 +977,11 @@ obj/structure/religious/monument
 	statue_material = "stone"
 	New()
 		..()
-		name = "The King"
+		name = "国王"
 
 /obj/structure/religious/statue/king/sandstone
 	statue_layers = list("cl_king", "obj_spear", "obj_shield2")
 	statue_material = "sandstone"
 	New()
 		..()
-		name = "The King"
+		name = "国王"

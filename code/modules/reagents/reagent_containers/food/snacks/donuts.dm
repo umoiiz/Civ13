@@ -1,8 +1,8 @@
 //Ports donuts from /tg/
 
 /obj/item/weapon/reagent_containers/food/snacks/donut
-	name = "donut"
-	desc = "Goes great with some coffee. Policemen's favorite snack."
+	name = "甜甜圈"
+	desc = "配咖啡很棒.警察最爱的零食."
 	icon = 'icons/obj/food/donuts.dmi'
 	icon_state = "donut"
 	filling_color = "#8F5A04"
@@ -37,7 +37,7 @@
 	icon_state = "donut"
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/berry
-	name = "berry donut"
+	name = "浆果甜甜圈"
 	icon_state = "donut_pink"
 	decorated_icon = "donut_homer"
 	New ()
@@ -46,7 +46,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/cherry
-	name = "cherry donut"
+	name = "樱桃甜甜圈"
 	icon_state = "donut_purple"
 	is_decorated = TRUE
 	New ()
@@ -55,7 +55,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/apple
-	name = "apple donut"
+	name = "苹果甜甜圈"
 	icon_state = "donut_olive"
 	is_decorated = TRUE
 	New ()
@@ -64,7 +64,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/caramel
-	name = "caramel donut"
+	name = "焦糖甜甜圈"
 	icon_state = "donut_beige"
 	is_decorated = TRUE
 	New ()
@@ -73,7 +73,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/chocolate
-	name = "chocolate donut"
+	name = "巧克力甜甜圈"
 	icon_state = "donut_choc"
 	decorated_icon = "donut_choc_sprinkles"
 	New ()
@@ -82,7 +82,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/mint
-	name = "mint donut"
+	name = "薄荷甜甜圈"
 	icon_state = "donut_blue"
 	is_decorated = TRUE
 	New ()
@@ -91,7 +91,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/banana
-	name = "banana donut"
+	name = "香蕉甜甜圈"
 	icon_state = "donut_yellow"
 	is_decorated = TRUE
 	New ()
@@ -100,7 +100,7 @@
 		reagents.add_reagent("sprinkles", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/lime
-	name = "lime donut"
+	name = "青柠甜甜圈"
 	icon_state = "donut_green"
 	is_decorated = TRUE
 	New ()
@@ -110,7 +110,7 @@
 
 
 /obj/item/weapon/reagent_containers/food/snacks/donut/grenadine
-	name = "grenadine donut"
+	name = "石榴糖浆甜甜圈"
 	icon_state = "donut_laugh"
 	is_decorated = TRUE
 	New ()

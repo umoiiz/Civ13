@@ -29,8 +29,8 @@
 
 	for (var/mob/living/human/H in player_list)
 		if (H.client && (H.client.ckey in member_ckeys))
-			to_chat(H, "<span class='danger'>[source_name] - +[amount] Sabotage Point\s.</span>")
-			to_chat(H, "<span class='notice'>Total: [sabotage_points]/[max_threshold] ([progress]% toward Grand Ritual).</span>")
+			to_chat(H, "<span class='danger'>[source_name] - +[amount] 破坏点\s .</span>")
+			to_chat(H, "<span class='notice'>总计: [sabotage_points]/[max_threshold] ([progress]% 进度至大仪式).</span>")
 
 	check_threshold()
 
@@ -44,7 +44,7 @@
 		if (H.client && (H.client.ckey in member_ckeys))
 			var/obj/item/weapon/moldy_ritual/R = new(H)
 			H.put_in_hands(R)
-			to_chat(H, "<span class='danger'>The threshold has been reached! The Grand Ritual scroll is now in your possession. Use it to summon Lord Moldywart!</span>")
+			to_chat(H, "<span class='danger'>已达到阈值! 大仪式卷轴现在归你所有. 用它来召唤霉巫王!</span>")
 			H << sound('sound/effects/siren_once.ogg')
 
 /datum/moldy_sabotage/proc/complete_ritual(mob/living/user)
@@ -58,7 +58,7 @@
 	var/mob/living/simple_animal/hostile/wizard/moldywart/B = new(T)
 	B.name = "Lord Moldywart"
 
-	to_chat(world, "<span class='danger'><font size=4>\"Lord Moldywart has been summoned at [get_area(T)]!\"</font></span>")
+	to_chat(world, "<span class='danger'><font size=4>\"霉巫王已在[get_area(T)]被召唤!\"</font></span>")
 	world << sound('sound/effects/explosionfar.ogg')
 
 	reveal_all()

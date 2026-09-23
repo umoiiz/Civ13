@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/semiautomatic/laser
 	name = "DC-15"
-	desc = "Standard issue carbine of the Grand Army of the Republic"
+	desc = "共和国大军的标准配发卡宾枪"
 	icon_state = "DC-15A"
 	item_state = "DC-15A"
 	base_icon = "DC-15A"
@@ -57,7 +57,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/laser/dc15
 	name = "DC-15"
-	desc = "Standard issue carbine of the Grand Army of the Republic"
+	desc = "共和国大军的标准配发卡宾枪"
 	icon_state = "DC-15"
 	item_state = "DC-15"
 	base_icon = "DC-15"
@@ -84,7 +84,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/laser/dc15a
 	name = "DC-15A"
-	desc = "Standard issue rifle of the Grand Army of the Republic"
+	desc = "共和国大军的标准配发步枪"
 	icon_state = "DC-15A"
 	item_state = "DC-15A"
 	base_icon = "DC-15A"
@@ -111,7 +111,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/laser/e5
 	name = "E-5"
-	desc = "Standard issue rifle of the Confederacy of Independant Systems"
+	desc = "独立星系邦联的标准配发步枪"
 	icon_state = "E-5"
 	item_state = "E-5"
 	base_icon = "E-5"
@@ -138,7 +138,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/laser/e11
 	name = "E-11"
-	desc = "Standard issue rifle of the Storm Trooper Corps of the Galactic Empire"
+	desc = "银河帝国风暴兵军团的标准配发步枪"
 	icon_state = "E-11"
 	item_state = "E-11"
 	base_icon = "E-11"
@@ -164,8 +164,8 @@
 	handle_casings = REMOVE_CASINGS
 
 /obj/item/weapon/gun/projectile/semiautomatic/laser/a280
-	name = "A280 Blaster"
-	desc = "Standard issue rifle of the Rebel Alliance."
+	name = "A280爆能枪"
+	desc = "义军同盟的标准配发步枪."
 	icon_state = "A280"
 	item_state = "A280"
 	base_icon = "A280"
@@ -192,8 +192,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////PISTOLS/////////////////////////////////////////////
 /obj/item/weapon/gun/projectile/pistol/laser
-	name = "Laser pistol"
-	desc = "A generic laser shooter"
+	name = "激光手枪"
+	desc = "一种通用激光射击武器"
 	icon_state = "DC-17"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laserb"
@@ -206,18 +206,18 @@
 	handle_casings = REMOVE_CASINGS
 
 /obj/item/weapon/gun/projectile/pistol/laser/dc17
-	name = "DC-17 blaster"
-	desc = "A DC-17 blaster pistol most commonly used by the Grand Army of the Republic."
+	name = "DC-17爆能手枪"
+	desc = "共和国大军最常使用的DC-17爆能手枪."
 	icon_state = "DC-17"
 
 /obj/item/weapon/gun/projectile/pistol/laser/dc17c
-	name = "DC-17 Commando blaster"
-	desc = "A DC-17 Commando blaster pistol most commonly used by the Grand Army of the Republic Commandos."
+	name = "DC-17突击队爆能手枪"
+	desc = "共和国大军突击队最常使用的DC-17突击队爆能手枪."
 	icon_state = "DC-17c"
 
 /obj/item/weapon/gun/projectile/pistol/laser/dl44
-	name = "DL-44 blaster"
-	desc = "A DL-44 blaster pistol used by various organizations throughout the galaxy."
+	name = "DL-44爆能手枪"
+	desc = "银河系各组织广泛使用的DL-44爆能手枪."
 	icon_state = "DL-44"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laser"
@@ -228,8 +228,8 @@
 	ammo_type = /obj/item/ammo_casing/laser/pistol
 
 /obj/item/weapon/gun/projectile/pistol/laser/dh17
-	name = "DH-17 blaster"
-	desc = "A DH-17 blaster pistol used as a service pistol by the Empire and also common within the Rebel Alliance."
+	name = "DH-17爆能手枪"
+	desc = "帝国用作制式手枪、同时在义军同盟中也十分常见的DH-17爆能手枪."
 	icon_state = "DH-17"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laser"
@@ -240,8 +240,8 @@
 	ammo_type = /obj/item/ammo_casing/laser/pistol
 
 /obj/item/weapon/gun/projectile/pistol/laser/westar34
-	name = "Westar-34 blaster"
-	desc = "A Westar-34 blaster pistol, mostly used by those who can afford such a fancy lethal sidearm."
+	name = "Westar-34爆能手枪"
+	desc = "一种Westar-34爆能手枪,多为买得起这种华丽致命副武器的人所使用."
 	icon_state = "Westar-34"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laser"
@@ -252,8 +252,8 @@
 	ammo_type = /obj/item/ammo_casing/laser/pistol
 /////////////////////////////STAT MG'S/////////////////////////////////////////
 /obj/item/weapon/gun/projectile/automatic/stationary/laser
-	name = "laser MG"
-	desc = "shouldnt be viewing this"
+	name = "激光机枪"
+	desc = "不该看到这个"
 	icon_state = "repeating_blaster"
 	base_icon = "repeating_blaster"
 	caliber = "laser"
@@ -277,8 +277,8 @@
 	last_fire = world.time
 
 /obj/item/weapon/gun/projectile/automatic/stationary/laser/repeating_laser
-	name = "repeating laser"
-	desc = "A stationary repeating laser, a turret firing tibanna gas cartridge lasers."
+	name = "连发激光"
+	desc = "一种固定式连发激光,一种发射提班纳气弹匣激光的炮塔."
 	icon_state = "repeating_blaster"
 	base_icon = "repeating_blaster"
 	caliber = "laser"
@@ -291,8 +291,8 @@
 	ammo_type = /obj/item/ammo_casing/laser
 
 /obj/item/weapon/gun/projectile/automatic/stationary/laser/eweb
-	name = "E-WEB Heavy Repeating blaster"
-	desc = "A stationary repeating blasyer, set on a tri-pod, firing tibanna-gas cartridge lasers."
+	name = "E-WEB重型连发爆能枪"
+	desc = "一种固定式连发爆能枪,架设在三脚架上,发射提班纳气弹匣激光."
 	icon_state = "repeating_blaster"
 	base_icon = "repeating_blaster"
 	caliber = "laser"
@@ -305,8 +305,8 @@
 	ammo_type = /obj/item/ammo_casing/laser
 
 /obj/item/weapon/gun/projectile/automatic/laser
-	name = "laser minigun"
-	desc = "shouldnt be using this m8"
+	name = "激光转轮机枪"
+	desc = "不该使用这个,兄弟"
 	icon_state = "Z-6"
 	item_state = "Z-6"
 	base_icon = "Z-6"
@@ -338,8 +338,8 @@
 	last_fire = world.time
 
 /obj/item/weapon/gun/projectile/automatic/laser/z6
-	name = "Z-6 blaster"
-	desc = "The standard Z-6 heavy rotary blaster used commonly in the Grand Army of the Republic."
+	name = "Z-6爆能枪"
+	desc = "共和国大军常用的标准Z-6重型旋转爆能枪."
 	icon_state = "Z-6"
 	item_state = "Z-6"
 	base_icon = "Z-6"
@@ -366,12 +366,12 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/laser/z6/empire
-	desc = "The standard Z-6 heavy rotary blaster used commonly by the by the Storm Trooper Corps of the Galactic Empire and the combatants of the Rebel Alliance alike."
+	desc = "银河帝国风暴兵军团与义军同盟战斗人员同样常用的标准Z-6重型旋转爆能枪."
 
 //////////other laser weapons//////////
 /obj/item/weapon/gun/projectile/automatic/laser/qblz1
-	name = "Qblz1 Plasma gun"
-	desc = "An advanced plasma rifle used by the Chinese."
+	name = "Qblz1等离子枪"
+	desc = "中国使用的一种先进等离子步枪."
 	icon = 'icons/obj/guns/wip.dmi'
 	icon_state = "qblz1"
 	item_state = "m16"
@@ -391,8 +391,8 @@
 	is_laser_mg = TRUE
 
 /obj/item/weapon/gun/projectile/pistol/laser/dcb2
-	name = "Dcb-2 Plasma pistol"
-	desc = "A plasma pistol used by the Chinese."
+	name = "Dcb-2等离子手枪"
+	desc = "中国使用的一种等离子手枪."
 	icon_state = "dcb2"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laserb"
@@ -411,8 +411,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/laser/lasgun
-	name = "Lasgun"
-	desc = "The standard lasgun used by the imperial gaurd."
+	name = "激光枪"
+	desc = "帝国卫队使用的标准激光枪."
 	icon = 'icons/obj/guns/wip.dmi'
 	icon_state = "lasgunm36"
 	item_state = "lasgunm36"
@@ -435,8 +435,8 @@
 	slot_flags = SLOT_SHOULDER
 
 /obj/item/weapon/gun/projectile/pistol/laser/laspistol
-	name = "Laspistol"
-	desc = "A laspistol used by the imperial gaurd."
+	name = "激光手枪"
+	desc = "帝国卫队使用的一种激光手枪."
 	icon_state = "laspistol"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "laser"

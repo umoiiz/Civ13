@@ -380,9 +380,9 @@ var/civmax_research = list(230,230,230)
 			windspeed = "a gale"
 			winddesc = "A [winddirection]ern gale."
 	if (windspeedvar != oldspeed)
-		to_chat(world, "<big>The wind changes strength. It is now <b>[windspeed]</b>.</big>")
+		to_chat(world, "<big>风力发生变化. 现在为<b>[windspeed]</b>.</big>")
 	if (winddirection != oldwind)
-		to_chat(world, "<big>The wind changes direction. It is now blowing from the <b>[winddirection]</b>.</big>")
+		to_chat(world, "<big>风向发生变化. 现在从<b>[winddirection]</b>吹来.</big>")
 	spawn(rand(3600,6000))
 		wind()
 
@@ -412,7 +412,7 @@ var/civmax_research = list(230,230,230)
 		for(var/client/C in clients)
 			if(C.is_preference_enabled(/datum/client_preference/show_tips))
 				to_chat(C, "<font color='#5194BB'>---</font>")
-				to_chat(C, "<font color='#5194BB'><b>Tip:</b> [pick(tips)]</font>")
+				to_chat(C, "<font color='#5194BB'><b>提示:</b> [pick(tips)]</font>")
 				to_chat(C, "<font color='#5194BB'>---</font>")
 
 /obj/map_metadata/proc/set_ordinal_age()
@@ -505,7 +505,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age1_lim && world.time > 36000)
-					to_chat(world, "<big>The world has advanced into the Bronze Age!</big>")
+					to_chat(world, "<big>世界已进入青铜时代!</big>")
 					age = "313 B.C."
 					set_ordinal_age()
 					age1_done = TRUE
@@ -519,7 +519,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age2_lim && world.time >= age2_timer)
-					to_chat(world, "<big>The world has advanced into the Medieval Age!</big>")
+					to_chat(world, "<big>世界已进入中世纪!</big>")
 					age = "1013"
 					set_ordinal_age()
 					age2_done = TRUE
@@ -533,7 +533,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age3_lim && world.time >= age3_timer)
-					to_chat(world, "<big>The world has advanced into the Imperial Age!</big>")
+					to_chat(world, "<big>世界已进入帝国时代!</big>")
 					age = "1713"
 					set_ordinal_age()
 					age3_done = TRUE
@@ -546,7 +546,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age4_lim && world.time >= age4_timer)
-					to_chat(world, "<big>The world has advanced into the Industrial Age!</big>")
+					to_chat(world, "<big>世界已进入工业时代!</big>")
 					age = "1873"
 					set_ordinal_age()
 					age4_done = TRUE
@@ -558,7 +558,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age5_lim && world.time >= age5_timer)
-					to_chat(world, "<big>The world has advanced into the Early Modern Age!</big>")
+					to_chat(world, "<big>世界已进入近代!</big>")
 					age = "1903"
 					set_ordinal_age()
 					age5_done = TRUE
@@ -570,7 +570,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age6_lim && world.time >= age6_timer)
-					to_chat(world, "<big>The world has advanced into the Second World War!</big>")
+					to_chat(world, "<big>世界已进入第二次世界大战!</big>")
 					age = "1943"
 					set_ordinal_age()
 					age6_done = TRUE
@@ -582,7 +582,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age7_lim && world.time >= age7_timer)
-					to_chat(world, "<big>The world has advanced into the Cold War!</big>")
+					to_chat(world, "<big>世界已进入冷战!</big>")
 					age = "1969"
 					set_ordinal_age()
 					age7_done = TRUE
@@ -594,7 +594,7 @@ var/civmax_research = list(230,230,230)
 			for(var/i = 1, i <= custom_faction_nr.len, i++)
 				count = custom_civs[custom_faction_nr[i]][1]+custom_civs[custom_faction_nr[i]][2]+custom_civs[custom_faction_nr[i]][3]
 				if (count > age8_lim && world.time >= age8_timer)
-					to_chat(world, "<big>The world has advanced into the Modern Age!</big>")
+					to_chat(world, "<big>世界已进入现代!</big>")
 					age = "2013"
 					set_ordinal_age()
 					age8_done = TRUE
@@ -717,7 +717,7 @@ var/civmax_research = list(230,230,230)
 					current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 		else
 			if (current_win_condition != no_winner && current_winner && current_loser)
-				to_chat(world, "<font size = 3>The [current_winner] has lost control of the [army2name(current_loser)] base!</font>")
+				to_chat(world, "<font size = 3>[current_winner]失去了对[army2name(current_loser)]基地的控制!</font>")
 				current_winner = null
 				current_loser = null
 			next_win = -1
@@ -1026,7 +1026,7 @@ var/civmax_research = list(230,230,230)
 	if (force || config.seasons_on)
 		if (season == "FALL")
 			season = "WINTER"
-			to_chat(world, "<big>The <b>Winter</b> has started. In the hot climates, the wet season has started.</big>")
+			to_chat(world, "<big><b>冬季</b>已经开始. 在炎热气候中, 雨季已经开始.</big>")
 			change_weather_somehow()
 			spawn(1200)
 				for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -1084,7 +1084,7 @@ var/civmax_research = list(230,230,230)
 
 		else if (season == "SPRING")
 			season = "SUMMER"
-			to_chat(world, "<big>The <b>Summer</b> has started. In the hot climates, the dry season has started.</big>")
+			to_chat(world, "<big><b>夏季</b>已经开始. 在炎热气候中, 旱季已经开始.</big>")
 			change_weather_somehow()
 			spawn(300)
 				for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -1116,7 +1116,7 @@ var/civmax_research = list(230,230,230)
 				WT.ChangeTurf(/turf/floor/dirt)
 		else if (season == "WINTER")
 			season = "SPRING"
-			to_chat(world, "<big>The weather is getting warmer. It is now <b>Spring</b>. In the hot climates, the wet season continues.</big>")
+			to_chat(world, "<big>天气正在变暖. 现在是<b>春季</b>. 在炎热气候中, 雨季仍在继续.</big>")
 			spawn(900)
 				for (var/obj/structure/wild/tree/live_tree/TREES in world)
 					TREES.change_season()
@@ -1182,7 +1182,7 @@ var/civmax_research = list(230,230,230)
 						qdel(SW3)
 		else if (season == "SUMMER")
 			season = "FALL"
-			to_chat(world, "<big>The leaves start to fall and the weather gets colder. It is now <b>Fall</b>. In the hot climates, the dry season continues.</big>")
+			to_chat(world, "<big>树叶开始飘落, 天气变冷. 现在是<b>秋季</b>. 在炎热气候中, 旱季仍在继续.</big>")
 			spawn(900)
 				for (var/obj/structure/wild/tree/live_tree/TREES in world)
 					TREES.change_season()

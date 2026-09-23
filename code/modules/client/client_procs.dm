@@ -97,11 +97,11 @@
 	if (config.automute_on && !holder && last_message == message)
 		last_message_count++
 		if (last_message_count >= SPAM_TRIGGER_AUTOMUTE)
-			to_chat(src, "<span class = 'red'>You have exceeded the spam filter limit for identical messages. An auto-mute was applied.</span>")
+			to_chat(src, "<span class = 'red'>你已超出相同消息的垃圾信息过滤限制. 已自动禁言.</span>")
 			cmd_admin_mute(mob, mute_type, TRUE)
 			return TRUE
 		if (last_message_count >= SPAM_TRIGGER_WARNING)
-			to_chat(src, "<span class = 'red'>You are nearing the spam filter limit for identical messages.</span>")
+			to_chat(src, "<span class = 'red'>你已接近相同消息的垃圾信息过滤限制.</span>")
 			return FALSE
 	else
 		last_message = message
@@ -111,7 +111,7 @@
 //This stops files larger than UPLOAD_LIMIT being sent from client to server via input(), client.Import() etc.
 /client/AllowUpload(filename, filelength)
 	if (filelength > UPLOAD_LIMIT)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
+		to_chat(src, "<font color='red'>错误: AllowUpload(): 文件上传过大. 上传限制: [UPLOAD_LIMIT/1024]KiB.</font>")
 		return FALSE
 /*	//Don't need this at the moment. But it's here if it's needed later.
 	//Helps prevent multiple files being uploaded at once. Or right after eachother.
@@ -171,7 +171,7 @@
 		return FALSE
 
 	if (byond_version < REAL_MIN_CLIENT_VERSION)		//Out of date client.
-		to_chat(src, "<span class = 'danger'><font size = 4>Please upgrade to BYOND [REAL_MIN_CLIENT_VERSION] to play.</font></span>")
+		to_chat(src, "<span class = 'danger'><font size = 4>请升级至 BYOND [REAL_MIN_CLIENT_VERSION] 以进行游戏.</font></span>")
 		del(src)
 		return FALSE
 
@@ -200,7 +200,7 @@
 
 	if (clients.len >= PLAYERCAP)
 		if (!holder)
-			to_chat(src, "<span class = 'danger'><font size = 4>The server is full right now, sorry.</font></span>")
+			to_chat(src, "<span class = 'danger'><font size = 4>服务器目前已满, 抱歉.</font></span>")
 			del(src)
 			return
 
@@ -218,15 +218,15 @@
 	if (!holder)
 
 		if (!world_is_open)
-			to_chat(src, "<span class = 'userdanger'>The server is currently closed to non-admins.</span>")
+			to_chat(src, "<span class = 'userdanger'>服务器当前对非管理员关闭.</span>")
 			message_admins("[src] tried to log in, but was rejected, the server is closed to non-admins.", src)
 			del(src)
 			return
 
 
 	if (custom_event_msg && custom_event_msg != "")
-		to_chat(src, "<h1 class='alert'>Custom Event</h1>")
-		to_chat(src, "<h2 class='alert'>A custom event is taking place. OOC Info:</h2>")
+		to_chat(src, "<h1 class='alert'>自定义事件</h1>")
+		to_chat(src, "<h2 class='alert'>自定义事件正在进行中. OOC 信息:</h2>")
 		to_chat(src, "<span class='alert'>[custom_event_msg]</span>")
 		to_chat(src, "<br>")
 

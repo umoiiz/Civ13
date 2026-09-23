@@ -1,7 +1,7 @@
 //for unfired clay stuff, i.e. unusable
 /obj/item/weapon/clay
-	name = "unfired clay"
-	desc = "Unfired clay. Put it in the fire to dry it"
+	name = "未烧制的黏土"
+	desc = "未烧制的黏土. 把它放进火里烘干"
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claylump"
 	item_state = "claylump"
@@ -16,121 +16,121 @@
 	flags = FALSE
 
 /obj/item/weapon/clay/roofing
-	name = "unfired clay roof tiles"
+	name = "未烧制的黏土屋顶瓦"
 	icon_state = "unfired_clayroofing"
 	result = /obj/item/weapon/roofbuilder/clay
 
 /obj/item/weapon/clay/roofing/blue
-	name = "unfired blue clay roof tiles"
+	name = "未烧制的蓝黏土屋顶瓦"
 	icon_state = "unfired_clayroofing"
 	result = /obj/item/weapon/roofbuilder/clay/blue
 
 /obj/item/weapon/clay/roofing/black
-	name = "unfired black clay roof tiles"
+	name = "未烧制的黑黏土屋顶瓦"
 	icon_state = "unfired_clayroofing"
 	result = /obj/item/weapon/roofbuilder/clay/black
 
 /obj/item/weapon/clay/roofing/kerawa
-	name = "unfired black kerawa roof tiles"
+	name = "未烧制的黑凯拉瓦屋顶瓦"
 	icon_state = "unfired_clayroofing"
 	result = /obj/item/weapon/roofbuilder/clay/kerawa
 
 /obj/item/weapon/clay/vase
-	name = "unfired clay vase"
+	name = "未烧制的黏土花瓶"
 	icon_state = "unfired_clayvase"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/clayvase
 
 /obj/item/weapon/clay/winecup
-	name = "unfired clay wine cup"
+	name = "未烧制的黏土酒杯"
 	icon_state = "unfired_winecup"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/claywinecup
 
 /obj/item/weapon/clay/claypot
-	name = "unfired medium clay pot"
+	name = "未烧制的中号黏土罐"
 	icon_state = "unfired_claypot1"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/claypot
 	New()
 		..()
 		icon_state = "unfired_claypot[pick(1,2,3)]"
 /obj/item/weapon/clay/claybricks
-	name = "unfired clay blocks"
+	name = "未烧制的黏土块"
 	icon_state = "unfired_claybricks"
 	result = /obj/item/weapon/clay/claybricks/fired
 
 /obj/item/weapon/clay/advclaybricks
-	name = "unfired bricks"
+	name = "未烧制的砖"
 	icon_state = "unfired_advclaybricks"
 	result = /obj/item/weapon/clay/advclaybricks/fired
 
 /obj/item/weapon/clay/advclaybricks/cement
-	name = "unfired cement bricks"
+	name = "未烧制的水泥砖"
 	icon_state = "unfired_cementbricks"
 	result = /obj/item/weapon/clay/advclaybricks/fired/cement
 
 /obj/item/weapon/clay/claybowl
-	name = "unfired clay bowl"
+	name = "未烧制的陶碗"
 	icon_state = "unfired_claybowl"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/claybowl
 
 /obj/item/weapon/clay/clayjug
-	name = "unfired clay jug"
+	name = "未烧制的陶壶"
 	icon_state = "unfired_bigclaypot1"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/clayjug
 	New()
 		..()
 		icon_state = "unfired_clayjug[pick(1,2)]"
 /obj/item/weapon/clay/claycup
-	name = "unfired clay cup"
+	name = "未烧制的陶杯"
 	icon_state = "unfired_claycup"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/claycup
 
 /obj/item/weapon/clay/smallclaypot
-	name = "unfired small clay pot"
+	name = "未烧制的小陶罐"
 	icon_state = "unfired_smallclaypot1"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/smallclaypot
 	New()
 		..()
 		icon_state = "unfired_smallclaypot[pick(1,2)]"
 /obj/item/weapon/clay/bigclaypot
-	name = "unfired big clay pot"
+	name = "未烧制的大陶罐"
 	icon_state = "unfired_bigclaypot1"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/bigclaypot
 	New()
 		..()
 		icon_state = "unfired_bigclaypot[pick(1,2)]"
 /obj/item/weapon/clay/verysmallclaypot
-	name = "unfired very small clay pot"
+	name = "未烧制的极小陶罐"
 	icon_state = "unfired_verysmallclaypot"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/verysmallclaypot
 
 /obj/item/weapon/clay/claypitcher
-	name = "unfired clay picher"
+	name = "未烧制的陶水罐"
 	icon_state = "unfired_claypitcher"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/claypitcher
 
 /obj/item/weapon/clay/largeclaypitcher
-	name = "unfired large clay pitcher"
+	name = "未烧制的大陶水罐"
 	icon_state = "unfired_largeclaypitcher"
 	result = /obj/item/weapon/reagent_containers/food/drinks/clay/largeclaypitcher
 
 /obj/item/weapon/clay/claybricks/fired
-	name = "clay blocks"
+	name = "黏土块"
 	icon_state = "claybricks"
-	desc = "Clay blocks. Can be used to make clay walls."
+	desc = "黏土块. 可用于建造黏土墙."
 	throwforce = WEAPON_FORCE_WEAK+2
 	force = WEAPON_FORCE_WEAK+4
 
 /obj/item/weapon/clay/advclaybricks/fired
-	name = "bricks"
+	name = "砖块"
 	icon_state = "advclaybricks"
-	desc = "Modern bricks. Can be used to make brick walls."
+	desc = "现代砖块. 可用于建造砖墙."
 	throwforce = WEAPON_FORCE_WEAK+3
 	force = WEAPON_FORCE_WEAK+5
 
 /obj/item/weapon/clay/advclaybricks/fired/cement
-	name = "cement bricks"
+	name = "水泥砖"
 	icon_state = "cementbricks"
-	desc = "Modern bricks. Can be used to make cement walls."
+	desc = "现代砖块. 可用于建造水泥墙."
 	throwforce = WEAPON_FORCE_WEAK+4
 	force = WEAPON_FORCE_WEAK+6
 
@@ -138,41 +138,41 @@
 /obj/item/weapon/clay/claybricks/fired/attack_self(mob/user)
 	var/choice = WWinput(user, "What time of clay wall do you want to build?","Clay Walls","Clay Blocks",list("Clay Blocks","Sumerian Clay"))
 	if (choice == "Clay Blocks")
-		to_chat(user, "You start building the clay wall...")
+		to_chat(user, "你开始建造黏土墙...")
 		if (do_after(user, 25, src))
-			to_chat(user, "You finish the placement of the clay block wall foundation.")
+			to_chat(user, "你完成了黏土块墙地基的放置.")
 			new /obj/covers/clay_wall/incomplete(user.loc)
 			qdel(src)
 			return
 
 	else if (choice == "Sumerian Clay")
-		to_chat(user, "You start building the sumerian clay wall...")
+		to_chat(user, "你开始建造苏美尔黏土墙...")
 		if (do_after(user, 25, src))
-			to_chat(user, "You finish the placement of the sumerian clay wall foundation.")
+			to_chat(user, "你完成了苏美尔黏土墙地基的放置.")
 			new /obj/covers/clay_wall/sumerian/incomplete(user.loc)
 			qdel(src)
 			return
 
 /obj/item/weapon/clay/advclaybricks/fired/attack_self(mob/user)
-	to_chat(user, "You start building the brick wall...")
+	to_chat(user, "你开始建造砖墙...")
 	if (do_after(user, 25, src))
-		to_chat(user, "You finish the placement of the brick wall foundation.")
+		to_chat(user, "你完成了砖墙地基的放置.")
 		new /obj/covers/brick_wall/incomplete(user.loc)
 		qdel(src)
 		return
 
 /obj/item/weapon/clay/advclaybricks/fired/cement/attack_self(mob/user)
-	to_chat(user, "You start building the cement wall...")
+	to_chat(user, "你开始建造水泥墙...")
 	if (do_after(user, 25, src))
-		to_chat(user, "You finish the placement of the cement wall foundation.")
+		to_chat(user, "你完成了水泥墙地基的放置.")
 		new /obj/covers/cement_wall/incomplete(user.loc)
 		qdel(src)
 		return
 
 //pots
 /obj/item/weapon/reagent_containers/food/drinks/clay
-	name = "clay pot"
-	desc = "A clay pot."
+	name = "陶罐"
+	desc = "一个陶罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claypot1"
 	amount_per_transfer_from_this = 10
@@ -193,11 +193,11 @@
 
 	..()
 	if (reagents && reagents.total_volume > 0)
-		hit_atom.visible_message("<span class='notice'>The contents of \the [src] splash all over [hit_atom]!</span>")
+		hit_atom.visible_message("<span class='notice'>\the [src]的内容物溅了[hit_atom]一身!</span>")
 		reagents.splash(hit_atom, reagents.total_volume)
 		
 	else
-		hit_atom.visible_message("<span class='notice'>The clay of \the [src] shatters all over [hit_atom]!</span>")
+		hit_atom.visible_message("<span class='notice'>\the [src]的陶土碎裂在[hit_atom]身上!</span>")
 	shatter(loc, hit_atom)
 
 // call shatter when you want it to become a broken_bottle
@@ -222,19 +222,19 @@
 	var/mob/living/human/H = target
 	if (istype(H) && H.headcheck(hit_zone))
 		var/obj/item/organ/affecting = H.get_organ(hit_zone) //headcheck should ensure that affecting is not null
-		user.visible_message("<span class='danger'>[user] shatters [src] into [H]'s [affecting.name]!</span>")
+		user.visible_message("<span class='danger'>[user]将[src]砸进了[H]的[affecting.name]里!</span>")
 		if (weaken_duration)
 			target.apply_effect(min(weaken_duration, 5), WEAKEN, blocked) // Never weaken more than a flash!
 	else
-		user.visible_message("<span class='danger'>\The [user] shatters [src] into [target]!</span>")
+		user.visible_message("<span class='danger'>\The [user]将[src]砸进了[target]里!</span>")
 
 	if (reagents && reagents.total_volume > 0)
 		spawn (1) // wait until after our explosion, if we have one
-			user.visible_message("<span class='notice'>The contents of \the [src] splash all over [target]!</span>")
+			user.visible_message("<span class='notice'>\the [src]的内容物溅了[target]一身!</span>")
 			reagents.splash(target, reagents.total_volume)
 			
 	else
-		user.visible_message("<span class='notice'>The clay of \the [src] shatters all over [target]!</span>")
+		user.visible_message("<span class='notice'>\the [src]的陶土碎裂在[target]身上!</span>")
 	shatter(loc, target)
 	
 // call shatter when you want it to become a broken_bottle
@@ -264,8 +264,8 @@
 		return B
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/verysmallclaypot
-	name = "very small clay pot"
-	desc = "A very small clay pot."
+	name = "极小陶罐"
+	desc = "一个极小陶罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "verysmallclaypot"
 	amount_per_transfer_from_this = 2
@@ -273,8 +273,8 @@
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/smallclaypot
-	name = "small clay pot"
-	desc = "Small clay pot."
+	name = "小陶罐"
+	desc = "小陶罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "smallclaypot"
 	amount_per_transfer_from_this = 5
@@ -285,8 +285,8 @@
 		icon_state = "smallclaypot[pick(1,2)]"
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/claypot
-	name = "medium clay pot"
-	desc = "Medium clay pot."
+	name = "中陶罐"
+	desc = "中陶罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claypot1"
 	amount_per_transfer_from_this = 10
@@ -298,8 +298,8 @@
 
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/bigclaypot
-	name = "big clay pot"
-	desc = "Big clay pot."
+	name = "大陶罐"
+	desc = "大陶罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "bigclaypot1"
 	amount_per_transfer_from_this = 10
@@ -310,8 +310,8 @@
 		icon_state = "bigclaypot[pick(1,2)]"
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/clayjug
-	name = "clay jug"
-	desc = "Clay jug."
+	name = "陶壶"
+	desc = "陶壶."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "clayjug1"
 	amount_per_transfer_from_this = 10
@@ -322,8 +322,8 @@
 		icon_state = "clayjug[pick(1,2)]"
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/claybowl
-	name = "clay bowl"
-	desc = "Clay bowl."
+	name = "陶碗"
+	desc = "陶碗."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claybowl"
 	amount_per_transfer_from_this = 10
@@ -331,8 +331,8 @@
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/claycup
-	name = "clay cup"
-	desc = "Clay cup."
+	name = "陶杯"
+	desc = "陶杯."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claycup"
 	amount_per_transfer_from_this = 10
@@ -340,8 +340,8 @@
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/claywinecup
-	name = "clay wine cup"
-	desc = "Clay wine cup."
+	name = "陶酒杯"
+	desc = "陶酒杯."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claywinecup"
 	amount_per_transfer_from_this = 5
@@ -349,8 +349,8 @@
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/clayvase
-	name = "clay vase"
-	desc = "Clay vase."
+	name = "陶花瓶"
+	desc = "陶花瓶."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "clayvase"
 	amount_per_transfer_from_this = 15
@@ -358,8 +358,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/claypitcher
-	name = "clay pitcher"
-	desc = "Clay pitcher."
+	name = "陶水罐"
+	desc = "陶水罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claypitcher"
 	amount_per_transfer_from_this = 15
@@ -367,8 +367,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/largeclaypitcher
-	name = "large clay pitcher"
-	desc = "Large clay pitcher."
+	name = "大陶水罐"
+	desc = "大陶水罐."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "largeclaypitcher"
 	amount_per_transfer_from_this = 20
@@ -415,21 +415,21 @@
 	..()
 
 /obj/item/weapon/reagent_containers/food/drinks/clay/largeclaypitcher/gold
-	name = "golden clay pitcher"
+	name = "金陶水罐"
 	icon_state = "pitcher_gold"
 	quality = 10
 /obj/item/weapon/reagent_containers/food/drinks/clay/largeclaypitcher/silver
-	name = "silver clay pitcher"
+	name = "银陶水罐"
 	icon_state = "pitcher_silver"
 	quality = 5
 /obj/item/weapon/reagent_containers/food/drinks/clay/largeclaypitcher/diamond
-	name = "diamond incrusted clay pitcher"
+	name = "镶钻陶水罐"
 	icon_state = "pitcher_diamond"
 	quality = 20
 
 /obj/item/weapon/clayshards
-	name = "clay shards"
-	desc = "Clay shards from broken clay pottery."
+	name = "陶片"
+	desc = "破碎陶器留下的陶片."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "clayshards"
 	item_state = "clayshards"
@@ -442,8 +442,8 @@
 
 
 /obj/item/weapon/stucco
-	name = "generic raw stucco"
-	desc = "Raw stucco. Nothing particular in its composition, ready to be applied onto a surface"
+	name = "普通生灰泥"
+	desc = "生灰泥. 成分无特别之处, 可直接涂抹于表面"
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "stucco"
 	item_state = "stucco"
@@ -459,18 +459,18 @@
 /obj/item/weapon/stucco/generic
 
 /obj/item/weapon/stucco/greek
-	name = "greek raw stucco"
-	desc = "Raw stucco. Dyed with blue streaks and clandestine white, ready to be applied onto a crude stone surface"
+	name = "希腊生灰泥"
+	desc = "生灰泥. 带有蓝色条纹和隐秘白色染色, 可直接涂抹于粗糙石质表面"
 	icon_state = "greek_stucco"
 	item_state = "greek_stucco"
 
 /obj/item/weapon/stucco/roman
-	name = "roman raw stucco"
-	desc = "Raw stucco. It has a creamy complexion, ready to be applied onto a crude stone surface"
+	name = "罗马生灰泥"
+	desc = "生灰泥. 呈奶油色, 可直接涂抹于粗糙石质表面"
 	icon_state = "roman_stucco"
 	item_state = "roman_stucco"
 
 /obj/item/weapon/clay/cookingpot
-	name = "unfired clay cooking pot"
+	name = "未烧制的陶锅"
 	icon_state = "unfired_cookingpot"
 	result = /obj/item/weapon/reagent_containers/glass/small_pot/clay

@@ -3,8 +3,8 @@
 ///jar
 
 /obj/item/weapon/reagent_containers/food/drinks/jar
-	name = "empty jar"
-	desc = "A jar. You're not sure what it's supposed to hold."
+	name = "空罐子"
+	desc = "一个罐子.你不确定它应该装什么."
 	icon_state = "jar"
 	item_state = "beaker"
 	center_of_mass = list("x"=15, "y"=8)

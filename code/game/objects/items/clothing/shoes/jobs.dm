@@ -1,7 +1,7 @@
 
 /obj/item/clothing/shoes/jackboots
-	name = "jackboots"
-	desc = "Military-style boots designed for combat or rugged environments."
+	name = "长筒军靴"
+	desc = "为战斗或恶劣环境设计的军用风格靴子."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	force = 0
@@ -20,8 +20,8 @@
 	item_state = "brownboots"
 
 /obj/item/clothing/shoes/workboots
-	name = "workboots"
-	desc = "A pair of steel-toed work boots designed for use in industrial settings. Safety first."
+	name = "工作靴"
+	desc = "一双为工业环境使用而设计的钢头工作靴.安全第一."
 	icon_state = "workboots"
 	item_state = "workboots"
 	armor = list(melee = 40, arrow = FALSE, gun = FALSE, energy = 15, bomb = 20, bio = FALSE, rad = 20)

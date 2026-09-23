@@ -5,10 +5,10 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	W.load_houses()
-	to_chat(usr, "Houses loaded successfully.")
+	to_chat(usr, "房屋加载成功.")
 	log_admin("[key_name(usr)] loaded wizard houses.")
 	message_admins("[key_name(usr)] loaded wizard houses.", key_name(usr))
 
@@ -19,10 +19,10 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	W.save_houses()
-	to_chat(usr, "Houses saved successfully.")
+	to_chat(usr, "房屋保存成功.")
 	log_admin("[key_name(usr)] saved wizard houses.")
 	message_admins("[key_name(usr)] saved wizard houses.", key_name(usr))
 
@@ -33,7 +33,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -56,7 +56,7 @@
 		return
 	
 	var/house = W.check_house(target_ckey)
-	to_chat(usr, "Ckey [target_ckey] is in house: [house]")
+	to_chat(usr, "Ckey [target_ckey] 在房屋: [house]")
 
 /datum/admins/proc/check_level()
 	set category = "Magic"
@@ -65,7 +65,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -89,7 +89,7 @@
 	
 	var/level = W.check_level(target_ckey)
 	var/level_text = W.level_to_text(level)
-	to_chat(usr, "Ckey [target_ckey] is qualification level: [level] ([level_text])")
+	to_chat(usr, "Ckey [target_ckey] 的资格等级为: [level] ([level_text])")
 
 /datum/admins/proc/change_level()
 	set category = "Magic"
@@ -98,7 +98,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -136,11 +136,11 @@
 	
 	var/level_val = levels[level_choice]
 	if (W.change_level(target_ckey, level_val))
-		to_chat(usr, "Changed [target_ckey]'s level to [level_choice].")
+		to_chat(usr, "已将 [target_ckey] 的等级更改为 [level_choice].")
 		log_admin("[key_name(usr)] changed [target_ckey]'s level to [level_val].")
 		message_admins("[key_name(usr)] changed [target_ckey]'s level to [level_val].", key_name(usr))
 	else
-		to_chat(usr, "Failed to change level. Make sure the ckey is already in a house.")
+		to_chat(usr, "更改等级失败. 请确保该 ckey 已在房屋中.")
 
 /datum/admins/proc/remove_from_house()
 	set category = "Magic"
@@ -149,7 +149,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -172,11 +172,11 @@
 		return
 	
 	if (W.remove_from_house(target_ckey))
-		to_chat(usr, "Removed [target_ckey] from house.")
+		to_chat(usr, "已将 [target_ckey] 从房屋中移除.")
 		log_admin("[key_name(usr)] removed [target_ckey] from house.")
 		message_admins("[key_name(usr)] removed [target_ckey] from house.", key_name(usr))
 	else
-		to_chat(usr, "Failed to remove [target_ckey] from house. Make sure the ckey is in a house.")
+		to_chat(usr, "从房屋中移除 [target_ckey] 失败. 请确保该 ckey 在房屋中.")
 
 /datum/admins/proc/change_house()
 	set category = "Magic"
@@ -185,7 +185,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -212,11 +212,11 @@
 		return
 	
 	if (W.change_house(target_ckey, new_house))
-		to_chat(usr, "Changed [target_ckey]'s house to [new_house].")
+		to_chat(usr, "已将 [target_ckey] 的房屋更改为 [new_house].")
 		log_admin("[key_name(usr)] changed [target_ckey]'s house to [new_house].")
 		message_admins("[key_name(usr)] changed [target_ckey]'s house to [new_house].", key_name(usr))
 	else
-		to_chat(usr, "Failed to change house. Make sure the ckey is already in a house.")
+		to_chat(usr, "更改房屋失败. 请确保该 ckey 已在房屋中.")
 
 /datum/admins/proc/add_to_house()
 	set category = "Magic"
@@ -225,7 +225,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -252,7 +252,7 @@
 		return
 	
 	W.add_to_house(target_ckey, house)
-	to_chat(usr, "Added [target_ckey] to house [house].")
+	to_chat(usr, "已将 [target_ckey] 添加到房屋 [house].")
 	log_admin("[key_name(usr)] added [target_ckey] to house [house].")
 	message_admins("[key_name(usr)] added [target_ckey] to house [house].", key_name(usr))
 
@@ -263,7 +263,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 
 	var/house = input(usr, "Select house", "Set House Points") in list("Rubywyrm", "Mintysnek", "Slatepie", "Mustardweasel")
@@ -275,7 +275,7 @@
 		return
 
 	W.house_points[house] += new_points
-	to_chat(usr, "Changed [house] points by [new_points] (new value: [W.house_points[house]]).")
+	to_chat(usr, "已将 [house] 的分数更改 [new_points] (新值: [W.house_points[house]]).")
 	log_admin("[key_name(usr)] changed [house] points by [new_points] (new value: [W.house_points[house]]).")
 	message_admins("[key_name(usr)] changed [house] points by [new_points] (new value: [W.house_points[house]]).", key_name(usr))
 
@@ -286,7 +286,7 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	var/list/ckeys = list()
@@ -309,11 +309,11 @@
 		return
 	
 	if (W.make_moldy_man(target_ckey))
-		to_chat(usr, "Made [target_ckey] a Moldy Man.")
+		to_chat(usr, "已将 [target_ckey] 设为霉变人.")
 		log_admin("[key_name(usr)] made [target_ckey] a Moldy Man.")
 		message_admins("[key_name(usr)] made [target_ckey] a Moldy Man.", key_name(usr))
 	else
-		to_chat(usr, "Failed to make [target_ckey] a Moldy Man. They may already be one, or they may not be connected.")
+		to_chat(usr, "将 [target_ckey] 设为霉变人失败. 他们可能已经是霉变人, 或者可能未连接.")
 
 /datum/admins/proc/remove_moldy_man()
 	set category = "Magic"
@@ -322,11 +322,11 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	if (!W.moldy_men.len)
-		to_chat(usr, "There are no Moldy Men to remove.")
+		to_chat(usr, "没有可移除的霉变人.")
 		return
 	
 	var/selected = input(usr, "Select a Moldy Man to remove", "Remove Moldy Man") in W.moldy_men
@@ -334,11 +334,11 @@
 		return
 	
 	if (W.remove_moldy_man(selected))
-		to_chat(usr, "Removed [selected] from Moldy Men.")
+		to_chat(usr, "已将 [selected] 从霉变人中移除.")
 		log_admin("[key_name(usr)] removed [selected] from Moldy Men.")
 		message_admins("[key_name(usr)] removed [selected] from Moldy Men.", key_name(usr))
 	else
-		to_chat(usr, "Failed to remove [selected] from Moldy Men.")
+		to_chat(usr, "从霉变人中移除 [selected] 失败.")
 
 /datum/admins/proc/check_moldy_men()
 	set category = "Magic"
@@ -347,14 +347,14 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	
 	if (!W.moldy_men.len)
-		to_chat(usr, "There are no Moldy Men this round.")
+		to_chat(usr, "本回合没有霉变人.")
 		return
 	
-	to_chat(usr, "<b>Current Moldy Men:</b>")
+	to_chat(usr, "<b>当前霉变人:</b>")
 	for (var/entry in W.get_moldy_man_info())
 		to_chat(usr, entry)
 
@@ -365,10 +365,10 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	if (!W.sabotage)
-		to_chat(usr, "Sabotage system not initialized.")
+		to_chat(usr, "破坏系统未初始化.")
 		return
 
 	var/amount = input(usr, "Enter points to award:", "Award Sabotage Points") as num
@@ -390,17 +390,17 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	if (!W.sabotage)
-		to_chat(usr, "Sabotage system not initialized.")
+		to_chat(usr, "破坏系统未初始化.")
 		return
 
 	var/datum/moldy_sabotage/S = W.sabotage
-	to_chat(usr, "<b>Sabotage Progress:</b>")
-	to_chat(usr, "Points: [S.sabotage_points]/[S.max_threshold]")
-	to_chat(usr, "Ritual Unlocked: [S.ritual_unlocked]")
-	to_chat(usr, "Members ([S.member_ckeys.len]):")
+	to_chat(usr, "<b>破坏进度:</b>")
+	to_chat(usr, "分数: [S.sabotage_points]/[S.max_threshold]")
+	to_chat(usr, "仪式已解锁: [S.ritual_unlocked]")
+	to_chat(usr, "成员 ([S.member_ckeys.len]):")
 	for (var/ckey in S.member_ckeys)
 		to_chat(usr, "  - [ckey]")
 
@@ -411,16 +411,16 @@
 		return
 	var/obj/map_metadata/wizard_boy/W = map
 	if (!istype(W))
-		to_chat(usr, "The current map is not Wizard Boy.")
+		to_chat(usr, "当前地图不是巫师男孩.")
 		return
 	if (!W.sabotage)
-		to_chat(usr, "Sabotage system not initialized.")
+		to_chat(usr, "破坏系统未初始化.")
 		return
 
 	if (alert(usr, "This will reveal ALL Moldy Men to the entire server. Continue?", "Trigger Moldy Reveal", "Yes", "No") != "Yes")
 		return
 
 	W.sabotage.reveal_all()
-	to_chat(world, "<span class='danger'><font size=4>\"The Moldy Men have been exposed!\"</font></span>")
+	to_chat(world, "<span class='danger'><font size=4>\"霉变人已被揭露!\"</font></span>")
 	log_admin("[key_name(usr)] triggered the Moldy Men global reveal.")
 	message_admins("[key_name(usr)] triggered the Moldy Men global reveal.", key_name(usr))

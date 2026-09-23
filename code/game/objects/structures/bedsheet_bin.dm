@@ -5,8 +5,8 @@ LINEN BINS
 */
 
 /obj/item/weapon/bedsheet
-	name = "bedsheet"
-	desc = "A soft linen bedsheet."
+	name = "床单"
+	desc = "一条柔软的亚麻床单."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "sheet"
 	item_state = "bedsheet"
@@ -29,9 +29,9 @@ LINEN BINS
 
 /obj/item/weapon/bedsheet/attackby(obj/item/I, mob/user)
 	if (is_sharp(I))
-		user.visible_message("<span class='notice'>\The [user] begins cutting up \the [src] with \a [I].</span>", "<span class='notice'>You begin cutting up \the [src] with \the [I].</span>")
+		user.visible_message("<span class='notice'>\The [user]开始用\a [I]切割\the [src].</span>", "<span class='notice'>你开始用\the [I]切割\the [src].</span>")
 		if (do_after(user, 50, src))
-			to_chat(user, "<span class='notice'>You cut \the [src] into pieces!</span>")
+			to_chat(user, "<span class='notice'>你把\the [src]切成了碎片!</span>")
 			for (var/i in TRUE to rand(2,5))
 				new /obj/item/weapon/reagent_containers/glass/rag(get_turf(src))
 			qdel(src)
@@ -88,8 +88,8 @@ LINEN BINS
 
 
 /obj/structure/bedsheetbin
-	name = "linen bin"
-	desc = "A linen bin. It looks rather cosy."
+	name = "亚麻布箱"
+	desc = "一个亚麻布箱.看起来相当舒适."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = TRUE
@@ -102,12 +102,12 @@ LINEN BINS
 	..(user)
 
 	if (amount < 1)
-		to_chat(user, "There are no bed sheets in the bin.")
+		to_chat(user, "箱子里没有床单.")
 		return
 	if (amount == TRUE)
-		to_chat(user, "There is one bed sheet in the bin.")
+		to_chat(user, "箱子里有一条床单.")
 		return
-	to_chat(user, "There are [amount] bed sheets in the bin.")
+	to_chat(user, "箱子里有[amount]条床单.")
 
 
 /obj/structure/bedsheetbin/update_icon()
@@ -123,12 +123,12 @@ LINEN BINS
 		I.loc = src
 		sheets.Add(I)
 		amount++
-		to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
+		to_chat(user, "<span class='notice'>你把[I]放进了[src].</span>")
 	else if (amount && !hidden && I.w_class < 4)	//make sure there's sheets to hide it among, make sure nothing else is hidden in there.
 		user.drop_item()
 		I.loc = src
 		hidden = I
-		to_chat(user, "<span class='notice'>You hide [I] among the sheets.</span>")
+		to_chat(user, "<span class='notice'>你把[I]藏在了床单之间.</span>")
 
 /obj/structure/bedsheetbin/attack_hand(mob/user as mob)
 	if (amount >= 1)
@@ -144,11 +144,11 @@ LINEN BINS
 
 		B.loc = user.loc
 		user.put_in_hands(B)
-		to_chat(user, "<span class='notice'>You take [B] out of [src].</span>")
+		to_chat(user, "<span class='notice'>你从[src]中取出了[B].</span>")
 
 		if (hidden)
 			hidden.loc = user.loc
-			to_chat(user, "<span class='notice'>[hidden] falls out of [B]!</span>")
+			to_chat(user, "<span class='notice'>[hidden]从[B]中掉了出来!</span>")
 			hidden = null
 
 

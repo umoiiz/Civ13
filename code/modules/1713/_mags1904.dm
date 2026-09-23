@@ -2,7 +2,7 @@
 RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 ***********************************/
 /obj/item/ammo_magazine/mosin
-	name = "clip (7.62x54mm)"
+	name = "弹夹 (7.62x54mm)"
 	icon_state = "clip"
 	caliber = "a762x54"
 	ammo_type = /obj/item/ammo_casing/a762x54
@@ -12,7 +12,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/mosinbox
-	name = "magazine box (7.62x54mm)"
+	name = "弹匣箱 (7.62x54mm)"
 	icon_state = "mosin_ammo"
 	mag_type = MAGAZINE
 	caliber = "a762x54"
@@ -23,7 +23,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/madsen
-	name = "magazine (7.62x54mm)"
+	name = "弹匣 (7.62x54mm)"
 	icon_state = "madsen"
 	attached_icon_state = "mad_mag"
 	mag_type = MAGAZINE
@@ -34,7 +34,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/madsen/box
-	name = "magazine box (7.62x54mm)"
+	name = "弹匣箱 (7.62x54mm)"
 	icon_state = "mhbox"
 	mag_type = MAGAZINE
 	caliber = "a762x54"
@@ -44,7 +44,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 	is_box = TRUE
 /obj/item/ammo_magazine/b762
-	name = "belt (7.62x51mm)"
+	name = "弹链 (7.62x51mm)"
 	icon_state = "b762"
 	attached_icon_state = "m60_mag"
 	mag_type = MAGAZINE
@@ -55,7 +55,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/gewehr71
-	name = "clip (7.65x53mm)"
+	name = "弹夹 (7.65x53mm)"
 	icon_state = "kclip"
 	caliber = "a765x53"
 	ammo_type = /obj/item/ammo_casing/a765x53
@@ -66,7 +66,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 
 
 /obj/item/ammo_magazine/gewehr71box
-	name = "magazine box (7.65x53mm)"
+	name = "弹匣箱 (7.65x53mm)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a765x53"
@@ -77,7 +77,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/gewehr98
-	name = "clip (7.92x57mm)"
+	name = "弹夹 (7.92x57mm)"
 	icon_state = "kclip"
 	caliber = "a792x57"
 	ammo_type = /obj/item/ammo_casing/a792x57
@@ -87,7 +87,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/vgclip
-	name = "clip (7.92x33mm)"
+	name = "弹夹 (7.92x33mm)"
 	icon_state = "kclip"
 	caliber = "a792x33"
 	ammo_type = /obj/item/ammo_casing/a792x33
@@ -97,7 +97,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/mauser1893
-	name = "clip (7x53mm)"
+	name = "弹夹 (7x53mm)"
 	icon_state = "kclip"
 	caliber = "a7x57"
 	ammo_type = /obj/item/ammo_casing/a7x57
@@ -107,7 +107,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/gewehr98box
-	name = "magazine box (7.92x57mm)"
+	name = "弹匣箱 (7.92x57mm)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a792x57"
@@ -118,7 +118,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/mauser1893box
-	name = "magazine box (7x53mm)"
+	name = "弹匣箱 (7x53mm)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a7x57"
@@ -129,7 +129,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/sharps
-	name = "ammo box (.45-70 Government)"
+	name = "弹药箱 (.45-70 Government)"
 	icon_state = "oldbox"
 	caliber = "a4570"
 	w_class = ITEM_SIZE_SMALL
@@ -140,7 +140,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/c577
-	name = "ammo box (.577/450 Martini-Henry)"
+	name = "弹药箱 (.577/450 Martini-Henry)"
 	icon_state = "mhbox"
 	caliber = "a577"
 	w_class = ITEM_SIZE_NORMAL
@@ -151,7 +151,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/arisaka
-	name = "clip (6.5x50mm)"
+	name = "弹夹 (6.5x50mm)"
 	icon_state = "kclip"
 	caliber = "a65x50"
 
@@ -162,7 +162,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/arisakabox
-	name = "magazine box (6.5x50mm)"
+	name = "弹匣箱 (6.5x50mm)"
 	icon_state = "arisaka_ammo"
 	mag_type = MAGAZINE
 	caliber = "a65x50"
@@ -174,7 +174,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/carcano
-	name = "clip (6.5x52mm)"
+	name = "弹夹 (6.5x52mm)"
 	icon_state = "kclip"
 	caliber = "a65x52"
 
@@ -185,7 +185,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/carcano_box
-	name = "magazine box (6.5x52mm)"
+	name = "弹匣箱 (6.5x52mm)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a65x52"
@@ -197,7 +197,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/maxim
-	name = "Maxim ammo belt"
+	name = "马克沁弹链"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -210,7 +210,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	belt = TRUE
 
 /obj/item/ammo_magazine/mg08
-	name = "MG08 ammo belt"
+	name = "MG08弹链"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -223,7 +223,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	belt = TRUE
 
 /obj/item/ammo_magazine/vickers
-	name = "Vickers ammo belt"
+	name = "维克斯弹链"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a303_weak"
@@ -235,7 +235,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	belt = TRUE
 
 /obj/item/ammo_magazine/vickers/box
-	name = "magazine box (.303 British)"
+	name = "弹匣箱 (.303 British)"
 	icon_state = "wood_ammobox"
 	mag_type = MAGAZINE
 	caliber = "a303_weak"
@@ -247,7 +247,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	slowdown = 2.0
 
 /obj/item/ammo_magazine/hotchkiss
-	name = "Hotchkiss ammo belt"
+	name = "哈奇开斯弹链"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a8x50_weak"
@@ -260,7 +260,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 
 
 /obj/item/ammo_magazine/type3
-	name = "Type 3 ammo belt"
+	name = "三年式弹链"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a65x50_weak"
@@ -272,7 +272,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	belt = TRUE
 
 /obj/item/ammo_magazine/mg34belt
-	name = "MG 34 ammo belt"
+	name = "MG 34弹链"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -285,7 +285,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	belt = TRUE
 
 /obj/item/ammo_magazine/mg3belt
-	name = "belt (7.62x51mm)"
+	name = "弹链 (7.62x51mm)"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -297,7 +297,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/c8mmnambu
-	name = "Nambu magazine"
+	name = "南部弹匣"
 	icon_state = "lugermag"
 	mag_type = MAGAZINE
 	caliber = "c8mmnambu"
@@ -307,7 +307,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/luger
-	name = "Luger magazine"
+	name = "鲁格弹匣"
 	icon_state = "lugermag"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -317,7 +317,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/walther
-	name = "Walther magazine"
+	name = "瓦尔特弹匣"
 	icon_state = "waltherp"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -330,7 +330,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/borchardt
-	name = "Borchardt magazine"
+	name = "博查特弹匣"
 	icon_state = "borchardtmag"
 	mag_type = MAGAZINE
 	caliber = "a765x25"
@@ -350,7 +350,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/mauser
-	name = "Mauser clip (7.63mm)"
+	name = "毛瑟弹夹 (7.63mm)"
 	icon_state = "mauser"
 	caliber = "a762x25"
 
@@ -364,7 +364,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 
 ////////// NAGANT REVOLVER ///////////////
 /obj/item/ammo_magazine/c762x38mmR
-	name = "bullet pouch (7.62x38mmR)"
+	name = "子弹袋 (7.62x38mmR)"
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a762x38
 	caliber = "a762x38"
@@ -375,7 +375,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c8x27
-	name = "bullet pouch (8x27mmR)"
+	name = "子弹袋 (8x27mmR)"
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a8x27
 	caliber = "a8x27"
@@ -386,7 +386,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c9mm_jap_revolver
-	name = "bullet pouch (9mm)"
+	name = "子弹袋 (9mm)"
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/c9mm_jap_revolver
 	caliber = "c9mm_jap_revolver"
@@ -398,8 +398,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c32
-	name = "bullet pouch (.32 S&W Long)"
-	desc = "A pouch of 26 .32 bullets."
+	name = "子弹袋 (.32 S&W Long)"
+	desc = "一袋26发.32子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a32
 	caliber = "a32"
@@ -410,8 +410,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c32acp
-	name = "bullet pouch (.32 ACP)"
-	desc = "A pouch of 26 .32 ACP bullets."
+	name = "子弹袋 (.32 ACP)"
+	desc = "一袋26发.32 ACP子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a32acp
 	caliber = "a32"
@@ -422,8 +422,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c9mm
-	name = "bullet pouch (9x19mm)"
-	desc = "A pouch of 30 9x19mm Parabellum bullets."
+	name = "子弹袋 (9x19mm)"
+	desc = "一袋30发9x19mm帕拉贝鲁姆子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a9x19
 	caliber = "a9x19"
@@ -434,8 +434,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c38
-	name = "bullet pouch (.38 long)"
-	desc = "A pouch of 26 .38 bullets."
+	name = "子弹袋 (.38 long)"
+	desc = "一袋26发.38子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a38
 	caliber = "a38"
@@ -446,8 +446,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c45
-	name = "bullet pouch (.45 Colt)"
-	desc = "A pouch of 11.43xmmR bullets."
+	name = "子弹袋 (.45 Colt)"
+	desc = "一袋11.43xmmR子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a45
 	caliber = "a45"
@@ -458,8 +458,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c455
-	name = "bullet pouch (.455 Webley)"
-	desc = "A pouch of .455 Webley bullets."
+	name = "子弹袋 (.455 Webley)"
+	desc = "一袋.455韦伯利子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a455
 	caliber = "a455"
@@ -470,8 +470,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c41
-	name = "bullet pouch (.41 Short)"
-	desc = "A pouch of .41-100 bullets, mostly used on the Derringer."
+	name = "子弹袋 (.41 Short)"
+	desc = "一袋.41-100子弹, 主要用于德林杰手枪."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a41
 	caliber = "a41"
@@ -482,8 +482,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c43
-	name = "bullet pouch (.43 Spanish)"
-	desc = "A pouch of .43 Spanish bullets, mostly used on the spanish rolling block rifle."
+	name = "子弹袋 (.43 Spanish)"
+	desc = "一袋.43西班牙子弹, 主要用于西班牙滚动闭锁步枪."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a43
 	caliber = "a43"
@@ -493,8 +493,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/webly445
-	name = "bullet pouch (.445 webly)"
-	desc = "A pouch of .445 webly."
+	name = "子弹袋 (.445 webly)"
+	desc = "一袋.445 webly."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/webly445
 	caliber = "webly445"
@@ -505,8 +505,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c44
-	name = "bullet pouch (.44-40 Winchester)"
-	desc = "A pouch of .44-40 bullets."
+	name = "子弹袋 (.44-40 Winchester)"
+	desc = "一袋.44-40子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a44
 	caliber = "a44"
@@ -517,8 +517,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c44magnum
-	name = "bullet pouch (.44 magnum)"
-	desc = "A pouch of .44 magnum bullets."
+	name = "子弹袋 (.44 magnum)"
+	desc = "一袋.44马格南子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a44magnum
 	caliber = "a44magnum"
@@ -529,8 +529,8 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/c8x50
-	name = "bullet pouch (8x50mmR Lebel)"
-	desc = "A pouch of 8x50mmR Lebel bullets."
+	name = "子弹袋 (8x50mmR Lebel)"
+	desc = "一袋8x50mmR勒贝尔子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a8x50
 	caliber = "a8x50"
@@ -541,7 +541,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/murata
-	name = "clip (8x53mm)"
+	name = "弹夹 (8x53mm)"
 	icon_state = "kclip"
 	caliber = "a8x53"
 
@@ -552,7 +552,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/murata_box
-	name = "magazine box (8x53mm)"
+	name = "弹匣箱 (8x53mm)"
 	icon_state = "arisaka_ammo"
 	mag_type = MAGAZINE
 	caliber = "a8x53"
@@ -564,7 +564,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/enfield
-	name = "clip (.303)"
+	name = "弹夹 (.303)"
 	icon_state = "clip"
 	caliber = "a303"
 
@@ -575,7 +575,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	clip = TRUE
 
 /obj/item/ammo_magazine/enfield_box
-	name = "magazine box (.303)"
+	name = "弹匣箱 (.303)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a303"
@@ -586,7 +586,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = FALSE
 	is_box = TRUE
 /obj/item/ammo_magazine/c8x50_3clip
-	name = "clip (8x50mmR Lebel, 3u)"
+	name = "弹夹 (8x50mmR Lebel, 3u)"
 	icon_state = "clip"
 
 	ammo_type = /obj/item/ammo_casing/a8x50
@@ -596,7 +596,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 	clip = TRUE
 /obj/item/ammo_magazine/c8x50_5clip
-	name = "clip (8x50mmR Lebel, 5u)"
+	name = "弹夹 (8x50mmR Lebel, 5u)"
 	icon_state = "clip"
 
 	ammo_type = /obj/item/ammo_casing/a8x50
@@ -606,7 +606,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	multiple_sprites = TRUE
 	clip = TRUE
 /obj/item/ammo_magazine/c44p
-	name = "bullet pouch (.44)"
+	name = "子弹袋 (.44)"
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a44p
 	caliber = "a44p"
@@ -614,11 +614,11 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	weight = 0.4
 	multiple_sprites = TRUE
 
-	desc = "A pouch containing 18 .44 pistol rounds."
+	desc = "一袋装有18发.44手枪弹."
 
 /obj/item/ammo_magazine/c357
-	name = "bullet pouch (.357 magnum)"
-	desc = "A pouch of .357 magnum bullets."
+	name = "子弹袋 (.357 magnum)"
+	desc = "一袋.357马格南子弹."
 	icon_state = "pouch"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = "a357"
@@ -629,7 +629,7 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	pouch = TRUE
 
 /obj/item/ammo_magazine/shellbox
-	name = "shotgun buckshot box (.12 gauge)"
+	name = "霰弹鹿弹盒 (.12 gauge)"
 	icon_state = "shellbox"
 	mag_type = MAGAZINE
 	caliber = "12gauge"
@@ -641,21 +641,21 @@ RUSSO-JAPANESE WAR WEAPONS MAGS N AMMO
 	is_box = TRUE
 
 /obj/item/ammo_magazine/shellbox/slug
-	name = "shotgun slugshot box (.12 gauge)"
+	name = "霰弹枪独头弹盒 (.12号口径)"
 	icon_state = "slugbox"
 	ammo_type = /obj/item/ammo_casing/shotgun/slug
 
 /obj/item/ammo_magazine/shellbox/beanbag
-	name = "shotgun beanbag box (.12 gauge)"
+	name = "霰弹枪豆袋弹盒 (.12号口径)"
 	icon_state = "beanbagbox"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 
 /obj/item/ammo_magazine/shellbox/rubber
-	name = "shotgun rubber box (.12 gauge)"
+	name = "霰弹枪橡胶弹盒 (.12号口径)"
 	icon_state = "beanbagbox"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubber
 
 /obj/item/ammo_magazine/shellbox/breaching
-	name = "shotgun breaching slug box (.12 gauge)"
+	name = "霰弹枪破门独头弹盒 (.12号口径)"
 	icon_state = "slugbox"
 	ammo_type = /obj/item/ammo_casing/shotgun/breaching

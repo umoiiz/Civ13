@@ -60,7 +60,7 @@
 //Allow a small chance of parrying melee attacks when wielded - maybe generalize this to other weapons someday
 /obj/item/weapon/material/twohanded/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(wielded && default_parry_check(user, attacker, damage_source) && prob(15))
-		user.visible_message("<font color='#E55300'>\The [user] parries [attack_text] with \the [src]!</font>")
+		user.visible_message("<font color='#E55300'>\The [user]用\the [src]招架了[attack_text]的</font>!")
 		playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 		if (istype(damage_source, /obj/item/weapon/melee) || istype(damage_source, /obj/item/weapon/material/hatchet))
 			health -= 5
@@ -79,8 +79,8 @@
 /obj/item/weapon/material/twohanded/fireaxe  // DEM AXES MAN, marker -Agouri
 	icon_state = "fireaxe0"
 	base_icon = "fireaxe"
-	name = "fire axe"
-	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
+	name = "消防斧"
+	desc = "确实, 疯子的武器. 谁会想到用斧头来救火?"
 	unwielded_force_divisor = 0.25
 	force_divisor = 0.7 // 10/42 with hardness 60 (steel) and 0.25 unwielded divisor
 	sharp = TRUE
@@ -109,8 +109,8 @@
 /obj/item/weapon/material/twohanded/spear
 	icon_state = "spearglass0"
 	base_icon = "spearglass"
-	name = "spear"
-	desc = "A haphazardly-constructed yet still deadly weapon of ancient design."
+	name = "长矛"
+	desc = "一把随意拼凑但依然致命的古代设计武器."
 	force = WEAPON_FORCE_PAINFUL
 	w_class = ITEM_SIZE_LARGE
 	slot_flags = SLOT_BACK
@@ -126,8 +126,8 @@
 
 
 /obj/item/weapon/material/twohanded/sword/tes13
-	name = "twohanded steel sword"
-	desc = "A sword with a long blade and handle meant to be used with 2 hands."
+	name = "双手钢剑"
+	desc = "一把长刃长柄, 设计为双手使用的剑."
 	icon_state = "twohanded"
 	base_icon = "twohanded"
 	throw_speed = 2

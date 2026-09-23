@@ -1,16 +1,16 @@
 /obj/item/clothing/shoes/
 	force = 1
 /obj/item/clothing/shoes/black
-	name = "black shoes"
+	name = "黑色鞋子"
 	icon_state = "black"
-	desc = "A pair of black shoes."
+	desc = "一双黑色鞋子."
 	body_parts_covered = FEET
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/heavyboots
-	name = "\improper military boots"
-	desc = "When you want to turn up the heat."
+	name = "\improper 军用靴"
+	desc = "当你想火力全开的时候."
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	armor = list(melee = 80, arrow = 30, gun = 10, energy = 25, bomb = 50, bio = 10, rad = FALSE)
@@ -20,8 +20,8 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/swat
-	name = "SWAT boots"
-	desc = "When you want to turn up the heat."
+	name = "特警靴"
+	desc = "当你想要火力全开的时候。"
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	armor = list(melee = 80, arrow = 30, gun = 10, energy = 25, bomb = 50, bio = 10, rad = FALSE)
@@ -31,8 +31,8 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/combat
-	name = "combat boots"
-	desc = "When you REALLY want to turn up the heat"
+	name = "作战靴"
+	desc = "当你真的想要火力全开的时候"
 	icon_state = "swat"
 	force = WEAPON_FORCE_WEAK
 	armor = list(melee = 80, arrow = 30, gun = 10, energy = 25, bomb = 50, bio = 10, rad = FALSE)
@@ -45,8 +45,8 @@
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/iogboots
-	name = "IOG boots"
-	desc = "When you REALLY want to turn up the heat."
+	name = "IOG靴"
+	desc = "当你真的想要火力全开的时候。"
 	icon_state = "iogboot"
 	force = WEAPON_FORCE_WEAK
 	armor = list(melee = 80, arrow = 70, gun = 50, energy = 25, bomb = 50, bio = 10, rad = FALSE)
@@ -60,29 +60,29 @@
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/iogboots/black
-	name = "combat boots"
-	desc = "Sturdy military footwear."
+	name = "作战靴"
+	desc = "结实的军用鞋具。"
 
 /obj/item/clothing/shoes/sandal
-	desc = "A pair of rather plain, wooden sandals."
-	name = "sandals"
+	desc = "一双相当朴素的木制凉鞋。"
+	name = "凉鞋"
 	icon_state = "sandals"
 	item_state = "wizard"
 	species_restricted = null
 	body_parts_covered = FALSE
 
 /obj/item/clothing/shoes/sandal/leather
-	name = "sandals"
-	desc = "A pair of simple, thin leather strap sandals. Covers up to the lower foot."
+	name = "凉鞋"
+	desc = "一双简单的细皮带凉鞋。只覆盖脚的下部。"
 
 /obj/item/clothing/shoes/sandal/marisa
-	desc = "A pair of magic, black shoes."
-	name = "magic shoes"
+	desc = "一双魔法黑鞋。"
+	name = "魔法鞋"
 	icon_state = "black"
 
 /obj/item/clothing/shoes/slippers
-	name = "bunny slippers"
-	desc = "Fluffy!"
+	name = "兔子拖鞋"
+	desc = "毛茸茸的!"
 	icon_state = "slippers"
 	item_state = "slippers"
 	force = FALSE
@@ -93,8 +93,8 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/slippers_worn
-	name = "worn bunny slippers"
-	desc = "Fluffy..."
+	name = "穿旧的兔子拖鞋"
+	desc = "毛茸茸的..."
 	icon_state = "slippers_worn"
 	item_state = "slippers_worn"
 	force = FALSE
@@ -104,8 +104,8 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/laceup
-	name = "laceup shoes"
-	desc = "The height of fashion, and they're pre-polished!"
+	name = "系带鞋"
+	desc = "时尚的巅峰,而且已经预先擦亮了!"
 	icon_state = "laceups"
 	item_state = "laceups"
 	body_parts_covered = FEET
@@ -113,33 +113,33 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/shoes/laceup/brown
-	name = "brown laceup shoes"
-	desc = "The height of fashion, and they're pre-polished!"
+	name = "棕色系带鞋"
+	desc = "时尚的巅峰,而且已经预先擦亮了!"
 	icon_state = "brown_laceups"
 	item_state = "brown_laceups"
 
 /obj/item/clothing/shoes/laceup/grey
-	name = "grey laceup shoes"
-	desc = "The height of fashion, and they're pre-polished!"
+	name = "灰色系带鞋"
+	desc = "时尚的巅峰,而且已经预先擦亮了!"
 	icon_state = "grey_laceups"
 	item_state = "grey_laceups"
 
 /obj/item/clothing/shoes/laceup/white
-	name = "white laceup shoes"
-	desc = "The height of fashion, and they're pre-polished!"
+	name = "白色系带鞋"
+	desc = "时尚的巅峰,而且已经预先擦亮了!"
 	icon_state = "white_laceups"
 	item_state = "white_laceups"
 
 /obj/item/clothing/shoes/gator_laceup
-	name = "alligator scale laceup shoes"
-	desc = "The height of luxurious footwear, and they're pre-polished!"
+	name = "鳄鱼鳞系带鞋"
+	desc = "奢华鞋具的巅峰,而且已经预先擦亮了!"
 	icon_state = "gator_laceups"
 	item_state = "gator_laceups"
 	body_parts_covered = FEET
 
 /obj/item/clothing/shoes/leather
-	name = "leather shoes"
-	desc = "A sturdy pair of leather shoes."
+	name = "皮鞋"
+	desc = "一双结实的皮鞋。"
 	icon_state = "leather"
 	item_state = "leather"
 	body_parts_covered = FEET

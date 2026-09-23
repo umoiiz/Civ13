@@ -8,7 +8,7 @@
 
 // Brain is defined in brain_item.dm.
 /obj/item/organ/kidneys
-	name = "kidneys"
+	name = "肾脏"
 	icon_state = "kidneys"
 	gender = PLURAL
 	organ_tag = "kidneys"
@@ -34,7 +34,7 @@
 			owner.adjustToxLoss(0.3 * PROCESS_ACCURACY)
 
 /obj/item/organ/eyes
-	name = "eyeballs"
+	name = "眼球"
 	icon_state = "eyes"
 	gender = PLURAL
 	organ_tag = "eyes"
@@ -56,7 +56,7 @@
 	var/oldbroken = is_broken()
 	..()
 	if (is_broken() && !oldbroken && owner && !owner.stat)
-		to_chat(owner, "<span class='danger'>You go blind!</span>")
+		to_chat(owner, "<span class='danger'>你失明了!</span>")
 
 /obj/item/organ/eyes/process() //Eye damage replaces the old eye_stat var.
 	..()
@@ -68,7 +68,7 @@
 		owner.eye_blind = 20
 
 /obj/item/organ/liver
-	name = "liver"
+	name = "肝脏"
 	icon_state = "liver"
 	organ_tag = "liver"
 	parent_organ = "groin"
@@ -83,7 +83,7 @@
 
 	if (germ_level > INFECTION_LEVEL_ONE)
 		if (prob(1))
-			to_chat(owner, "<span class = 'red'>Your skin itches.</span>")
+			to_chat(owner, "<span class = 'red'>你的皮肤发痒.</span>")
 	if (germ_level > INFECTION_LEVEL_TWO)
 		if (prob(1))
 			spawn owner.vomit()
@@ -123,7 +123,7 @@
 				take_damage(owner.chem_effects[CE_ALCOHOL_TOXIC] * 0.1 * PROCESS_ACCURACY, prob(1)) // Chance to warn them
 
 /obj/item/organ/appendix
-	name = "appendix"
+	name = "阑尾"
 	icon_state = "appendix"
 	parent_organ = "groin"
 	organ_tag = "appendix"
@@ -141,7 +141,7 @@
 	if (inflamed && owner)
 		inflamed++
 		if (prob(5))
-			to_chat(owner, "<span class='warning'>You feel a stinging pain in your abdomen!</span>")
+			to_chat(owner, "<span class='warning'>你感到腹部一阵刺痛!</span>")
 			owner.emote("me",1,"winces slightly.")
 		if (inflamed > 200)
 			if (prob(3))
@@ -154,11 +154,11 @@
 				if (owner.nutrition > 100)
 					owner.vomit()
 				else
-					to_chat(owner, "<span class='danger'>You gag as you want to throw up, but there's nothing in your stomach!</span>")
+					to_chat(owner, "<span class='danger'>你想吐却干呕起来,因为胃里空空如也!</span>")
 					owner.Weaken(10)
 		if (inflamed > 600)
 			if (prob(1))
-				to_chat(owner, "<span class='danger'>Your abdomen is a world of pain!</span>")
+				to_chat(owner, "<span class='danger'>你的腹部剧痛难忍!</span>")
 				owner.Weaken(10)
 
 				var/obj/item/organ/external/E = owner.get_organ(parent_organ)

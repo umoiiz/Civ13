@@ -11,14 +11,14 @@
 		Weaken(3)
 		spin(32,2)
 		visible_message(
-			"<span class='danger'>[src] rolls on the floor, trying to put themselves out!</span>",
-			"<span class='notice'>You stop, drop, and roll!</span>"
+			"<span class='danger'>[src]在地上打滚,试图扑灭自己身上的火!</span>",
+			"<span class='notice'>你停下、趴下、打滚!</span>"
 			)
 		sleep(30)
 		if (fire_stacks <= 0)
 			visible_message(
-				"<span class='danger'>[src] has successfully extinguished themselves!</span>",
-				"<span class='notice'>You extinguish yourself.</span>"
+				"<span class='danger'>[src]成功扑灭了自己身上的火!</span>",
+				"<span class='notice'>你扑灭了自己身上的火。</span>"
 				)
 			ExtinguishMob()
 		return TRUE
@@ -55,16 +55,16 @@
 //	var/mob/living/human/H = src
 
 	visible_message(
-		"<span class='danger'>\The [src] attempts to remove \the [HC]!</span>",
-		"<span class='warning'>You attempt to remove \the [HC]. (This will take around [displaytime] minutes and you need to stand still)</span>"
+		"<span class='danger'>\The [src]试图取下\the [HC]!</span>",
+		"<span class='warning'>你试图取下\the [HC]。(这大约需要[displaytime]分钟,并且你需要保持不动)</span>"
 		)
 
 	if (do_after(src, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
 		if (!handcuffed || buckled)
 			return
 		visible_message(
-			"<span class='danger'>\The [src] manages to remove \the [handcuffed]!</span>",
-			"<span class='notice'>You successfully remove \the [handcuffed].</span>"
+			"<span class='danger'>\The [src]成功取下了\the [handcuffed]!</span>",
+			"<span class='notice'>你成功取下了\the [handcuffed]。</span>"
 			)
 		drop_from_inventory(handcuffed)
 
@@ -89,16 +89,16 @@
 		displaytime = breakouttime / 600 //Minutes
 
 	visible_message(
-		"<span class='danger'>[usr] attempts to remove \the [HC]!</span>",
-		"<span class='warning'>You attempt to remove \the [HC]. (This will take around [displaytime] minutes and you need to stand still)</span>"
+		"<span class='danger'>[usr]试图取下\the [HC]!</span>",
+		"<span class='warning'>你试图取下\the [HC]。(这大约需要[displaytime]分钟,并且你需要保持不动)</span>"
 		)
 
 	if (do_after(src, breakouttime, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
 		if (!legcuffed || buckled)
 			return
 		visible_message(
-			"<span class='danger'>[src] manages to remove \the [legcuffed]!</span>",
-			"<span class='notice'>You successfully remove \the [legcuffed].</span>"
+			"<span class='danger'>[src]成功取下了\the [legcuffed]!</span>",
+			"<span class='notice'>你成功取下了\the [legcuffed]。</span>"
 			)
 
 		drop_from_inventory(legcuffed)
@@ -112,8 +112,8 @@
 
 /mob/living/human/proc/break_handcuffs()
 	visible_message(
-		"<span class='danger'>[src] is trying to break \the [handcuffed]!</span>",
-		"<span class='warning'>You attempt to break your [handcuffed.name]. (This will take around 5 seconds and you need to stand still)</span>"
+		"<span class='danger'>[src]正试图挣脱\the [handcuffed]!</span>",
+		"<span class='warning'>你试图挣脱你的[handcuffed.name]。(这大约需要5秒,并且你需要保持不动)</span>"
 		)
 
 	if (do_after(src, 5 SECONDS, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
@@ -121,8 +121,8 @@
 			return
 
 		visible_message(
-			"<span class='danger'>[src] manages to break \the [handcuffed]!</span>",
-			"<span class='warning'>You successfully break your [handcuffed.name].</span>"
+			"<span class='danger'>[src]成功挣脱了\the [handcuffed]!</span>",
+			"<span class='warning'>你成功挣脱了你的[handcuffed.name]。</span>"
 			)
 
 		say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
@@ -134,16 +134,16 @@
 		update_inv_handcuffed()
 
 /mob/living/human/proc/break_legcuffs()
-	to_chat(src, "<span class='warning'>You attempt to break your legcuffs. (This will take around 5 seconds and you need to stand still)</span>")
-	visible_message("<span class='danger'>[src] is trying to break the legcuffs!</span>")
+	to_chat(src, "<span class='warning'>你试图挣脱脚镣。(这大约需要5秒,并且你需要保持不动)</span>")
+	visible_message("<span class='danger'>[src]正试图挣脱脚镣!</span>")
 
 	if (do_after(src, 5 SECONDS, incapacitation_flags = INCAPACITATION_DEFAULT & ~INCAPACITATION_RESTRAINED))
 		if (!legcuffed || buckled)
 			return
 
 		visible_message(
-			"<span class='danger'>[src] manages to break the legcuffs!</span>",
-			"<span class='warning'>You successfully break your legcuffs.</span>"
+			"<span class='danger'>[src]成功挣脱了脚镣!</span>",
+			"<span class='warning'>你成功挣脱了脚镣。</span>"
 			)
 
 		say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
@@ -160,14 +160,14 @@
 		..()
 	else
 		visible_message(
-			"<span class='danger'>[usr] attempts to unbuckle themself!</span>",
-			"<span class='warning'>You attempt to unbuckle yourself. (This will take around a minute and you need to stand still)</span>"
+			"<span class='danger'>[usr]试图解开自己的安全带!</span>",
+			"<span class='warning'>你试图解开自己的安全带。(这大约需要一分钟,并且你需要保持不动)</span>"
 			)
 
 
 		if (do_after(usr, getHumanBreakoutTime(src, 1 MINUTE), incapacitation_flags = INCAPACITATION_DEFAULT & ~(INCAPACITATION_RESTRAINED | INCAPACITATION_BUCKLED_FULLY)))
 			if (!buckled)
 				return
-			visible_message("<span class='danger'>\The [usr] manages to unbuckle themself!</span>",
-							"<span class='notice'>You successfully unbuckle yourself.</span>")
+			visible_message("<span class='danger'>\The [usr]成功解开了自己的安全带!</span>",
+							"<span class='notice'>你成功解开了自己的安全带。</span>")
 			buckled.user_unbuckle_mob(src)

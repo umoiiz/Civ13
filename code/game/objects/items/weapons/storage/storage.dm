@@ -6,7 +6,7 @@
 
 
 /obj/item/weapon/storage
-	name = "storage"
+	name = "储存"
 	icon = 'icons/obj/storage.dmi'
 	w_class = ITEM_SIZE_NORMAL
 	var/list/can_hold = new/list() //List of objects which this item can store (if set, it can't store anything else)
@@ -109,15 +109,15 @@
 							usr.u_equip(src)
 							usr.put_in_r_hand(src)
 						else
-							to_chat(usr, "<span class='notice'>Your right hand is already holding the [usr.r_hand].</span>")
+							to_chat(usr, "<span class='notice'>你的右手已经拿着[usr.r_hand]了.</span>")
 					if (slot_l_hand)
 						if (!usr.l_hand)
 							usr.u_equip(src)
 							usr.put_in_l_hand(src)
 						else
-							to_chat(usr, "<span class='notice'>Your left hand is already holding the [usr.l_hand].</span>")
+							to_chat(usr, "<span class='notice'>你的左手已经拿着[usr.l_hand]了.</span>")
 			else
-				to_chat(usr, "<span class='notice'>Your hand is too busy to grab the [src].</span>")
+				to_chat(usr, "<span class='notice'>你的手太忙了, 无法抓住[src].</span>")
 
 		add_fingerprint(usr)
 
@@ -370,7 +370,7 @@
 
 	if (storage_slots != null && contents.len >= storage_slots)
 		if (!stop_messages)
-			to_chat(usr, "<span class='notice'>[src] is full, make some space.</span>")
+			to_chat(usr, "<span class='notice'>[src]已满, 腾出一些空间.</span>")
 		return FALSE //Storage item is full
 
 	if (W.anchored)
@@ -379,22 +379,22 @@
 	if (can_hold.len)
 		if (!is_type_in_list(W, can_hold))
 			if (!stop_messages)
-				to_chat(usr, "<span class='notice'>[src] cannot hold \the [W].</span>")
+				to_chat(usr, "<span class='notice'>[src]无法容纳\the [W].</span>")
 			return FALSE
 		var/max_instances = can_hold[W.type]
 		if (max_instances && instances_of_type_in_list(W, contents) >= max_instances)
 			if (!stop_messages)
-				to_chat(usr, "<span class='notice'>[src] has no more space specifically for \the [W].</span>")
+				to_chat(usr, "<span class='notice'>[src]没有更多专门用于\the [W]的空间了.</span>")
 			return FALSE
 
 	if (cant_hold.len && is_type_in_list(W, cant_hold))
 		if (!stop_messages)
-			to_chat(usr, "<span class='notice'>[src] cannot hold [W].</span>")
+			to_chat(usr, "<span class='notice'>[src]无法容纳[W].</span>")
 		return FALSE
 
 	if (max_w_class != null && W.w_class > max_w_class)
 		if (!stop_messages)
-			to_chat(usr, "<span class='notice'>[W] is too long for this [src].</span>")
+			to_chat(usr, "<span class='notice'>[W]对于这个[src]来说太长了.</span>")
 		return FALSE
 
 	var/total_storage_space = W.get_storage_cost()
@@ -403,12 +403,12 @@
 
 	if (total_storage_space > max_storage_space)
 		if (!stop_messages)
-			to_chat(usr, "<span class='notice'>[src] is too full, make some space.</span>")
+			to_chat(usr, "<span class='notice'>[src]太满了, 腾出一些空间.</span>")
 		return FALSE
 
 	if (W.w_class >= w_class && (istype(W, /obj/item/weapon/storage)))
 		if (!stop_messages)
-			to_chat(usr, "<span class='notice'>[src] cannot hold [W] as it's a storage item of the same size.</span>")
+			to_chat(usr, "<span class='notice'>[src]无法容纳[W], 因为它是相同大小的储存物品.</span>")
 		return FALSE //To prevent the stacking of same sized storage items.
 
 	return TRUE
@@ -432,7 +432,7 @@
 		if (!prevent_warning)
 			for (var/mob/M in viewers(usr, null))
 				if (M == usr)
-					to_chat(usr, "<span class='notice'>You put \the [W] into [src].</span>")
+					to_chat(usr, "<span class='notice'>你将\the [W]放入了[src].</span>")
 				else if (M in range(1)) //If someone is standing close enough, they can tell what it is...
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>")
 				else if (W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
@@ -499,14 +499,14 @@
 		var/obj/item/weapon/tray/T = W
 		if (T.calc_carry() > 0)
 			if (prob(85))
-				to_chat(user, "<span class='warning'>The tray won't fit in [src].</span>")
+				to_chat(user, "<span class='warning'>托盘放不进[src].</span>")
 				return
 			else
 				W.loc = user.loc
 				if ((user.client && user.s_active != src))
 					user.client.screen -= W
 				W.dropped(user)
-				to_chat(user, "<span class='warning'>God damnit!</span>")
+				to_chat(user, "<span class='warning'>妈的!</span>")
 
 	W.add_fingerprint(user)
 	return handle_item_insertion(W)
@@ -543,9 +543,9 @@
 	collection_mode = !collection_mode
 	switch (collection_mode)
 		if (1)
-			to_chat(usr, "[src] now picks up all items in a tile at once.")
+			to_chat(usr, "[src]现在会一次拾取一个格子内的所有物品.")
 		if (0)
-			to_chat(usr, "[src] now picks up one item at a time.")
+			to_chat(usr, "[src]现在会一次拾取一个物品.")
 
 
 /obj/item/weapon/storage/verb/quick_empty()

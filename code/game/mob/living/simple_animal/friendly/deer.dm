@@ -1,6 +1,6 @@
 /mob/living/simple_animal/deer
 	name = "stag"
-	desc = "Provides some nice meat, if you can catch it."
+	desc = "能提供一些不错的肉,如果你能抓到它的话。"
 	icon_state = "deer_m"
 	icon_living = "deer_m"
 	icon_dead = "deer_m_dead"
@@ -34,7 +34,7 @@
 
 /mob/living/simple_animal/deer/male
 	name = "stag"
-	desc = "Provides some nice meat, if you can catch it."
+	desc = "能提供一些不错的肉,如果你能抓到它的话。"
 	icon_state = "deer_m"
 	icon_living = "deer_m"
 	icon_dead = "deer_m_dead"
@@ -121,11 +121,11 @@
 				else
 					var/mob/living/simple_animal/deer/male/B = new/mob/living/simple_animal/deer/male(loc)
 					B.babydeer = TRUE
-				visible_message("A deer has been born!")
+				visible_message("一只鹿出生了!")
 
 /mob/living/simple_animal/deer/reindeer/male
 	name = "reindeer stag"
-	desc = "Provides some nice meat, if you can catch it."
+	desc = "能提供一些不错的肉,如果你能抓到它的话。"
 	icon_state = "reindeer_m"
 	icon_living = "reindeer_m"
 	icon_dead = "reindeer_m_dead"
@@ -155,7 +155,7 @@
 
 /mob/living/simple_animal/deer/elk/male
 	name = "elk stag"
-	desc = "Provides some nice meat, if you can catch it."
+	desc = "能提供一些不错的肉,如果你能抓到它的话。"
 	icon_state = "elk_m"
 	icon_living = "elk_m"
 	icon_dead = "elk_m_dead"
@@ -183,7 +183,7 @@
 
 /mob/living/simple_animal/deer/dikdik/male
 	name = "dik-dik stag"
-	desc = "A small little mammal seems kinda cute, might be good eating if you can catch it."
+	desc = "一只小型哺乳动物,看起来挺可爱,如果你能抓到它的话也许很好吃。"
 	icon_state = "dikdik_male"
 	icon_living = "dikdik_male"
 	icon_dead = "dikdik_dead"
@@ -275,4 +275,4 @@
 				else
 					var/mob/living/simple_animal/deer/dikdik/male/B = new/mob/living/simple_animal/deer/dikdik/male(loc)
 					B.babydeer = TRUE
-				visible_message("A dik-dik has been born!")
+				visible_message("一只犬羚出生了!")

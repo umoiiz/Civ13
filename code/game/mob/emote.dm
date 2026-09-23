@@ -5,7 +5,7 @@
 
 	if (usr && stat || !use_me && usr == src)
 		if (usr.stat != DEAD && usr.stat != UNCONSCIOUS) // fixes spam when you die? - Kachnov
-			to_chat(src, "You are unable to emote.")
+			to_chat(src, "你无法做出表情.")
 		return
 
 	var/muzzled = istype(wear_mask, /obj/item/clothing/mask/muzzle) || istype(wear_mask, /obj/item/weapon/grenade)
@@ -71,16 +71,16 @@
 /mob/proc/emote_dead(var/message)
 
 	if (client.prefs.muted & MUTE_DEADCHAT)
-		to_chat(src, "<span class='danger'>You cannot send deadchat emotes (muted).</span>")
+		to_chat(src, "<span class='danger'>你无法发送死亡聊天表情(已禁言).</span>")
 		return
 
 	if (!is_preference_enabled(/datum/client_preference/show_dsay))
-		to_chat(src, "<span class='danger'>You have deadchat muted.</span>")
+		to_chat(src, "<span class='danger'>你已屏蔽死亡聊天.</span>")
 		return
 
 	if (!client.holder)
 		if (!config.dsay_allowed)
-			to_chat(src, "<span class='danger'>Deadchat is globally muted.</span>")
+			to_chat(src, "<span class='danger'>死亡聊天已被全局屏蔽.</span>")
 			return
 
 

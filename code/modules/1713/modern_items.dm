@@ -1,8 +1,8 @@
 ///Mostly electrically powered stuff
 
 /obj/structure/lamp
-	name = "small lamp post"
-	desc = "A small lamp post, good for outdoor illumination."
+	name = "小型灯柱"
+	desc = "一根小型灯柱,适合户外照明."
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "lamppost_small"
 	var/base_icon = "lamppost_small"
@@ -39,7 +39,7 @@
 	if (istype(W,/obj/item/lightbulb) && !lamp_inside)
 		var/obj/item/lightbulb/L = W
 		if (!L.broken && L.ltype == ltype)
-			to_chat(user, "You put the lightbulb in.")
+			to_chat(user, "你把灯泡装了进去.")
 			qdel(W)
 			lamp_inside = TRUE
 			lamp_broken = FALSE
@@ -48,23 +48,23 @@
 			return
 	if (istype(W,/obj/item/weapon/wrench) && !not_movable)
 		if (powersource)
-			to_chat(user, "<span class='notice'>Remove the cables first.</span>")
+			to_chat(user, "<span class='notice'>先移除电缆.</span>")
 			return
 		if (istype(src, /obj/structure/engine))
 			var/obj/structure/engine/EN = src
 			if (!isemptylist(EN.connections))
-				to_chat(user, "<span class='notice'>Remove the cables first.</span>")
+				to_chat(user, "<span class='notice'>先移除电缆.</span>")
 				return
 		playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 		to_chat(user, (anchored ? "<span class='notice'>You unfasten \the [src] from the floor.</span>" : "<span class='notice'>You secure \the [src] to the floor.</span>"))
 		anchored = !anchored
 		return
 	if (!anchored)
-		to_chat(user, "<span class='notice'>Fix the lamp in place with a wrench first.</span>")
+		to_chat(user, "<span class='notice'>先用扳手把灯固定到位.</span>")
 		return
 	if (istype(W, /obj/item/stack/cable_coil))
 		if (powersource)
-			to_chat(user, "There's already a cable connected here! Split it further from \the [src].")
+			to_chat(user, "这里已经连接了一根电缆!把它从\the [src]处进一步分开.")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		powersource = CC.place_turf(get_turf(src), user, turn(get_dir(user,src),180))
@@ -88,7 +88,7 @@
 						NCOO.connections += powersource
 					if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 						powersource.connections += NCOO
-					to_chat(user, "You connect the two cables.")
+					to_chat(user, "你把两根电缆连接起来.")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 				if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)
@@ -96,7 +96,7 @@
 						NCOC.connections += powersource
 					if (!(NCOC in powersource.connections) && !list_cmp(powersource.connections, NCOC.connections))
 						powersource.connections += NCOC
-		to_chat(user, "You connect the cable to \the [src].")
+		to_chat(user, "你把电缆连接到\the [src].")
 	else
 		..()
 
@@ -156,7 +156,7 @@
 
 /obj/structure/lamp/bullet_act(var/obj/item/projectile/Proj)
 	if (lamp_inside && !lamp_broken)
-		visible_message("\The [src] shatters!")
+		visible_message("\The [src]碎裂了!")
 		playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 //		new/obj/item/weapon/material/shard(loc)
 		on = FALSE
@@ -171,7 +171,7 @@
 	..()
 
 /obj/item/lightbulb
-	name = "lightbulb"
+	name = "灯泡"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "lbulb"
 	anchored = FALSE
@@ -182,24 +182,24 @@
 	flags = CONDUCT
 
 /obj/item/lightbulb/broken
-	name = "broken lightbulb"
+	name = "破碎的灯泡"
 	icon_state = "lbulb_broken"
 	broken = TRUE
 
 /obj/item/lightbulb/tube
-	name = "light tube"
+	name = "灯管"
 	icon_state = "ltube"
 	ltype = "ltube"
 
 /obj/item/lightbulb/tube/broken
-	name = "broken light tube"
+	name = "破碎的灯管"
 	icon_state = "ltube_broken"
 	broken = TRUE
 
 /obj/structure/lamp/attack_hand(mob/living/human/user as mob)
 	if (lamp_inside)
 		if (lamp_broken)
-			to_chat(user, "You remove the broken lightbulb.")
+			to_chat(user, "你取下了破碎的灯泡.")
 			lamp_inside = FALSE
 			lamp_broken = FALSE
 			var/obj/item/lightbulb/broken/LP = new/obj/item/lightbulb/broken
@@ -209,7 +209,7 @@
 			user.put_in_active_hand(LP)
 
 		else
-			to_chat(user, "You remove the lightbulb.")
+			to_chat(user, "你取下了灯泡.")
 			lamp_inside = FALSE
 			var/obj/item/lightbulb/LP = new/obj/item/lightbulb
 			LP.ltype = ltype
@@ -222,8 +222,8 @@
 		..()
 
 /obj/structure/lamp/lamppost_small
-	name = "small lamp post"
-	desc = "A small lamp post, good for outdoor illumination."
+	name = "小型灯柱"
+	desc = "一根小型灯柱,适合户外照明."
 	icon_state = "lamppost_small"
 	powerneeded = 2
 	light_amt = 6
@@ -231,8 +231,8 @@
 	powerneeded = 0
 	on = TRUE
 /obj/structure/lamp/streetlight
-	name = "street light"
-	desc = "A street light, good for illuminating the streets."
+	name = "路灯"
+	desc = "一盏路灯,适合照亮街道."
 	icon = 'icons/obj/lighting_32x64.dmi'
 	base_icon = "streetlight"
 	icon_state = "streetlight"
@@ -244,8 +244,8 @@
 
 
 /obj/structure/lamp/lamp_small
-	name = "small lightbulb"
-	desc = "A small lightbulb."
+	name = "小型灯泡"
+	desc = "一个小型灯泡."
 	icon_state = "bulb"
 	base_icon = "bulb"
 	powerneeded = 1
@@ -298,7 +298,7 @@
 	light_amt = 8
 
 /obj/structure/lamp/lamp_small/tank/red/police
-	name = "police lights"
+	name = "警灯"
 	pixel_x=32
 	update_icon()
 		..()
@@ -318,7 +318,7 @@
 /obj/structure/lamp/lamp_small/tank/blue
 	brightness_color = "#0202da"
 /obj/structure/lamp/lamp_small/tank/blue/police
-	name = "police lights"
+	name = "警灯"
 	pixel_x=-32
 	update_icon()
 		..()
@@ -336,8 +336,8 @@
 				pixel_y=-16
 				pixel_x=0
 /obj/structure/lamp/lamp_big
-	name = "light tube"
-	desc = "A light tube."
+	name = "灯管"
+	desc = "一根灯管."
 	icon_state = "tube"
 	base_icon = "tube"
 	powerneeded = 1.3
@@ -357,8 +357,8 @@
 	brightness_color = "#ffffff"
 
 /obj/structure/refinery
-	name = "petroleum refinery"
-	desc = "A petroleum refinery."
+	name = "炼油厂"
+	desc = "一座炼油厂."
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "refinery"
 	flammable = FALSE
@@ -379,7 +379,7 @@
 			barrel += W
 			H.drop_from_inventory(W)
 			W.forceMove(locate(0,0,0))
-			visible_message("[H] puts \the [W] in \the [src].","You put \the [W] in \the [src].")
+			visible_message("[H]把\the [W]放入\the [src].","你把\the [W]放入\the [src].")
 			return
 		else
 			if (volume >= maxvolume)
@@ -391,14 +391,14 @@
 				if (barrelamt < (maxvolume-volume))
 					C.reagents.remove_reagent("petroleum",barrelamt)
 					volume += barrelamt
-					H.visible_message("[H] pours \the [W] into \the [src].", "You pour [barrelamt] units of petroleum from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].", "你把[barrelamt]单位的石油从\the [W]倒入\the [src].")
 					if (volume > maxvolume)
 						volume = maxvolume
 					return
 				else
 					C.reagents.remove_reagent("petroleum",(maxvolume-volume))
 					volume += (maxvolume-volume)
-					H.visible_message("[H] pours \the [W] into \the [src].", "You pour [maxvolume-volume] units of petroleum from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].", "你把[maxvolume-volume]单位的石油从\the [W]倒入\the [src].")
 					if (volume > maxvolume)
 						volume = maxvolume
 					return
@@ -421,9 +421,9 @@
 		to_chat(usr, SPAN_NOTICE("You need to shut the refinery down first!"))
 		return
 	if (!isemptylist(barrel))
-		to_chat(usr, "You start taking \the [barrel[1]] from \the [src]...")
+		to_chat(usr, "你开始从\the [src]中取出\the [barrel[1]]...")
 		if (do_after(usr,35,src))
-			usr.visible_message("[usr] removes \the [barrel[1]] from \the [src].", "You remove \the [barrel[1]] from \the [src].")
+			usr.visible_message("[usr]从\the [src]中取出了\the [barrel[1]].", "你从\the [src]中取出了\the [barrel[1]].")
 		for(var/obj/item/weapon/reagent_containers/glass/barrel/B in barrel)
 			B.loc = get_turf(src)
 			barrel -= B
@@ -448,11 +448,11 @@
 			return
 		else if (prod == "Gasoline")
 			product = "gasoline"
-			to_chat(usr, "This refinery will now produce <b>Gasoline</b>.")
+			to_chat(usr, "该炼油厂现在将生产<b>汽油</b>.")
 			return
 		else if (prod == "Diesel")
 			product = "diesel"
-			to_chat(usr, "This refinery will now produce <b>Diesel</b>.")
+			to_chat(usr, "该炼油厂现在将生产<b>柴油</b>.")
 			return
 /obj/structure/refinery/attack_hand(var/mob/living/human/H)
 	if (active)
@@ -461,7 +461,7 @@
 		powersource.update_power(powerneeded,1)
 		powersource.currentflow -= powerneeded
 		powersource.lastupdate2 = world.time
-		to_chat(H, "You power off the refinery.")
+		to_chat(H, "你关闭了炼油厂.")
 		return
 	if (isemptylist(barrel))
 		to_chat(H, SPAN_NOTICE("There is no barrel to collect the refined products."))
@@ -480,7 +480,7 @@
 		powersource.currentflow += powerneeded
 		powersource.lastupdate2 = world.time
 		power_on()
-		to_chat(H, "You power the refinery.")
+		to_chat(H, "你启动了炼油厂.")
 		return
 	else
 		to_chat(H, SPAN_NOTICE("There is not enough power to start the refinery."))
@@ -503,7 +503,7 @@
 			update_icon()
 			return
 		if (barrel[1].reagents.total_volume >= barrel[1].reagents.maximum_volume)
-			visible_message("The refinery stops working. The [barrel[1]] is full.")
+			visible_message("炼油厂停止工作.[barrel[1]]已满.")
 			active = FALSE
 			update_icon()
 			return
@@ -536,8 +536,8 @@
 //////////////////////////////////////BIOFUELS////////////////////////////////////
 
 /obj/structure/refinery/biofuel
-	name = "biofuel refinery"
-	desc = "A biofuel refinery, used to produce ethanol and biodiesel."
+	name = "生物燃料精炼厂"
+	desc = "一座生物燃料精炼厂,用于生产乙醇和生物柴油."
 	maxvolume = 300
 	product = "biodiesel"
 
@@ -547,7 +547,7 @@
 			barrel += W
 			H.drop_from_inventory(W)
 			W.forceMove(locate(0,0,0))
-			H.visible_message("[H] puts \the [W] in \the [src].", "You put \the [W] in \the [src].")
+			H.visible_message("[H]把\the [W]放入\the [src].", "你把\the [W]放入\the [src].")
 			return
 		else
 			if (volume_et+volume_di >= maxvolume)
@@ -559,14 +559,14 @@
 				if (barrelamt < (maxvolume-volume_di))
 					C.reagents.remove_reagent("olive_oil",barrelamt)
 					volume_di += barrelamt
-					H.visible_message("[H] pours \the [W] into \the [src].", "You pour [barrelamt] units of olive oil from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].", "你把[barrelamt]单位的橄榄油从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_di = maxvolume-volume_et
 					return
 				else
 					C.reagents.remove_reagent("olive_oil",(maxvolume-volume_di))
 					volume_di += (maxvolume-volume_di)
-					H.visible_message("[H] pours \the [W] into \the [src].","You pour [maxvolume-volume] units of olive oil from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].","你把[maxvolume-volume]单位的橄榄油从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_di = maxvolume-volume_et
 					return
@@ -585,14 +585,14 @@
 					strength = 1-(strength/100)
 					C.reagents.remove_reagent("ethanol",barrelamt)
 					volume_et += barrelamt*strength
-					H.visible_message("[H] pours \the [W] into \the [src].", "You pour [barrelamt] units of unpurified ethanol from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].", "你把[barrelamt]单位的未提纯乙醇从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_di = maxvolume-volume_di
 					return
 				else
 					C.reagents.remove_reagent("ethanol",(maxvolume-volume_et))
 					volume_et += (maxvolume-volume_et)
-					visible_message("[H] pours \the [W] into \the [src].","You pour [maxvolume-volume] units of unpurified ethanol from \the [W] into \the [src].")
+					visible_message("[H]把\the [W]倒入\the [src].","你把[maxvolume-volume]单位的未提纯乙醇从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_et = maxvolume-volume_di
 					return
@@ -601,14 +601,14 @@
 				if (barrelamt < (maxvolume-volume_di))
 					C.reagents.remove_reagent("fat_oil",barrelamt)
 					volume_di += barrelamt
-					H.visible_message("[H] pours \the [W] into \the [src].", "You pour [barrelamt] units of olive oil from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].", "你把[barrelamt]单位的橄榄油从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_di = maxvolume-volume_et
 					return
 				else
 					C.reagents.remove_reagent("fat_oil",(maxvolume-volume_di))
 					volume_di += (maxvolume-volume_di)
-					H.visible_message("[H] pours \the [W] into \the [src].","You pour [maxvolume-volume] units of olive oil from \the [W] into \the [src].")
+					H.visible_message("[H]把\the [W]倒入\the [src].","你把[maxvolume-volume]单位的橄榄油从\the [W]倒入\the [src].")
 					if (volume_di+volume_et > maxvolume)
 						volume_di = maxvolume-volume_et
 					return
@@ -627,7 +627,7 @@
 	set src in range(1, usr)
 
 	if (active)
-		to_chat(usr, "You need to shut the refinery down first!")
+		to_chat(usr, "你需要先关闭精炼厂!")
 		return
 	else
 		var/prod = WWinput(usr, "What to produce?", "Refinery", "Cancel", list("Ethanol","Biodiesel","Cancel"))
@@ -635,11 +635,11 @@
 			return
 		else if (prod == "Ethanol")
 			product = "ethanol"
-			to_chat(usr, "This refinery will now produce <b>Ethanol</b>.")
+			to_chat(usr, "该精炼厂现在将生产<b>乙醇</b>.")
 			return
 		else if (prod == "Biodiesel")
 			product = "biodiesel"
-			to_chat(usr, "This refinery will now produce <b>Biodiesel</b>.")
+			to_chat(usr, "该精炼厂现在将生产<b>生物柴油</b>.")
 			return
 
 
@@ -650,7 +650,7 @@
 			update_icon()
 			return
 		if (barrel[1].reagents.total_volume >= barrel[1].reagents.maximum_volume)
-			visible_message("The refinery stops working. The [barrel[1]] is full.")
+			visible_message("精炼厂停止工作.[barrel[1]]已满.")
 			active = FALSE
 			update_icon()
 			return
@@ -685,8 +685,8 @@
 ////////////////////////bakelizer (plastic maker)///////////////////
 
 /obj/structure/bakelizer
-	name = "bakelizer"
-	desc = "A machine used to transform petroleum into plastics."
+	name = "胶木化机"
+	desc = "一台用于将石油转化为塑料的机器."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "bakelizer"
 	flammable = FALSE
@@ -705,7 +705,7 @@
 			var/barrelamt = C.reagents.get_reagent_amount("petroleum")
 			C.reagents.remove_reagent("petroleum",barrelamt)
 			volume += barrelamt
-			H.visible_message("[H] pours \the [W] into \the [src].", "You pour [barrelamt] units of petroleum from \the [W] into \the [src].")
+			H.visible_message("[H]把\the [W]倒入\the [src].", "你把[barrelamt]单位的石油从\the [W]倒入\the [src].")
 			desc = "A machine used to transform petroleum into plastics. Has [volume] petroleum and [plastic] plastic sheets inside."
 			return
 		else
@@ -724,7 +724,7 @@
 		powersource.update_power(powerneeded,1)
 		powersource.currentflow -= powerneeded
 		powersource.lastupdate2 = world.time
-		to_chat(H, "You power off the [src].")
+		to_chat(H, "你关闭了[src].")
 		update_icon()
 		return
 	if (volume < 1)
@@ -742,7 +742,7 @@
 		powersource.currentflow += powerneeded
 		powersource.lastupdate2 = world.time
 		power_on()
-		to_chat(H, "You power the [src].")
+		to_chat(H, "你启动了[src].")
 		update_icon()
 		return
 	else
@@ -778,7 +778,7 @@
 	set src in range(1, usr)
 
 	if (!plastic)
-		to_chat(usr, "Theres no finished plastic in the [src].")
+		to_chat(usr, "[src]中没有成品塑料.")
 		desc = "A machine used to transform petroleum into plastics. Has [volume] petroleum and 0 plastic sheets inside."
 		return
 	else if (plastic <= 0)
@@ -798,8 +798,8 @@
 		icon_state = "bakelizer"
 
 /obj/structure/shopping_cart
-	name = "shopping cart"
-	desc = "A metal shopping cart."
+	name = "购物车"
+	desc = "一辆金属购物车."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "shopping_cart"
 	flammable = FALSE
@@ -850,8 +850,8 @@
 ///////////////////////////////////////////////////////////////////////////////Katana Wall Stand////////////////////////
 
 /obj/structure/katana_stand
-	name = "katana display"
-	desc = "A display for a katana mounted to a wall."
+	name = "武士刀展示架"
+	desc = "一个用于将武士刀挂在墙上的展示架."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "katana_stand"
 	item_state = "katana_stand"
@@ -910,8 +910,8 @@
 	update_icon()
 
 /obj/structure/floodlight //Works in the basic way, will need more coding for powersupply, being destroyable, etc.
-	name = "floodlight"
-	desc = "A floodlight, good for outdoor illumination in dark conditions."
+	name = "泛光灯"
+	desc = "一盏泛光灯,适合在黑暗环境中进行户外照明."
 	icon ='icons/obj/lighting.dmi'
 	icon_state = "floodlight"
 	var/floodlighton = 0
@@ -948,8 +948,8 @@
 
 
 /obj/structure/metal_detector
-	name = "walkthrough metal detector"
-	desc = "Detects metallic objects when people pass through it."
+	name = "金属探测门"
+	desc = "当有人通过时探测金属物品."
 	icon ='icons/obj/modern_structures.dmi'
 	icon_state = "metal_detector1"
 	flammable = FALSE
@@ -1027,18 +1027,18 @@
 			return
 		if(!on)
 			on = TRUE
-			M.visible_message("[M] turns the metal detector on.", "You turn the metal detector on.")
+			M.visible_message("[M]打开了金属探测器.", "你打开了金属探测器.")
 			set_light(2, 0.5, "#62cc53")
 		else
-			M.visible_message("<span class='warning'>[M] is trying to turn the metal detector off!</span>", "You start turning the metal detector off...")
+			M.visible_message("<span class='warning'>[M]正试图关闭金属探测器!</span>", "你开始关闭金属探测器...")
 			if(do_after(M, 50, src))
-				M.visible_message("<span class='warning'>[M] turns the metal detector off.</span>", "You turn the metal detector off.")
+				M.visible_message("<span class='warning'>[M]关闭了金属探测器.</span>", "你关闭了金属探测器.")
 				on = FALSE
 				set_light(0)
 
 /obj/structure/drill
-	name = "industrial drill"
-	desc = "A heavy industrial deep drill used to collect minerals that are hidden far underground. It needs to be powered, underground and on dirt in order to operate."
+	name = "工业钻机"
+	desc = "一台重型工业深钻,用于采集深埋地下的矿物.它需要通电,位于地下且放置在泥土上才能运作."
 	icon = 'icons/obj/machines/mining_drill.dmi'
 	icon_state = "mining_drill"
 	flammable = FALSE
@@ -1140,13 +1140,13 @@
 		active = TRUE
 		process_machine()
 		update_icon()
-		to_chat(H, "You power up \the [src].")
+		to_chat(H, "你启动了\the [src].")
 		return
 	else if (active)
 		next_spawn = -1
 		active = FALSE
 		update_icon()
-		to_chat(H, "You power off \the [src].")
+		to_chat(H, "你关闭了\the [src].")
 		return
 
 /obj/structure/drill/proc/process_machine()

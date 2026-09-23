@@ -7,7 +7,7 @@
 
 	if (!check_HUDdatum())
 		log_debug("[H] trying to check a HUD, but HUDdatums does not have \"[H.client.prefs.UI_style]!\"")
-		to_chat(H, "Some problem has occured, use default HUD type.")
+		to_chat(H, "发生了一些问题,请使用默认HUD类型.")
 		H.defaultHUD = "1713Style"
 		++recreate_flag
 	else if (H.client.prefs.UI_style != H.defaultHUD)
@@ -71,7 +71,7 @@
 	for (var/gear_slot in species.hud.gear)
 		if (!HUDdatum.slot_data.Find(gear_slot))
 			log_debug("[usr] tring to make inventory data for [gear_slot], but HUDdatum does not have it!")
-			to_chat(src, "Sorry, but something went wrong while creating the inventory slots, we recomendend that you change the HUD type or contact the admins.")
+			to_chat(src, "抱歉,创建物品栏槽位时出了点问题,我们建议你更改HUD类型或联系管理员.")
 			return
 		else
 			var/HUDtype
@@ -153,7 +153,7 @@ the HUD updates properly! */
 		return
 
 	#ifdef PROCESS_FACTION_HUD_DEBUG
-	to_chat(world, "[viewer] processing faction huds.")
+	to_chat(world, "[viewer]正在处理阵营HUD.")
 	#endif
 
 	var/datum/arranged_hud_process/P = arrange_hud_process(M, Alt, faction_hud_users)

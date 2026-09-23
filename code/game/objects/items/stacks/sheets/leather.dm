@@ -1,6 +1,6 @@
 /obj/item/stack/material/hairlesshide
-	name = "hairless hide"
-	desc = "This hide was stripped of it's hair, but still needs tanning."
+	name = "无毛兽皮"
+	desc = "这张兽皮已被剥去毛发,但仍需鞣制。"
 	singular_name = "hairless hide piece"
 	icon = 'icons/obj/materials.dmi'
 	icon_state = "sheet-hairlesshide"
@@ -13,9 +13,9 @@
 	if(	istype(W, /obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/material/hatchet) )
 
 		//visible message on mobs is defined as visible_message(var/message, var/self_message, var/blind_message)
-		usr.visible_message("<span class='notice'>\The [usr] starts cutting hair off \the [src]...</span>", "<span class='notice'>You start cutting the hair off \the [src]...</span>", "You hear the sound of a knife rubbing against flesh.")
+		usr.visible_message("<span class='notice'>\The [usr]开始从\the [src]上剪下毛发...</span>", "<span class='notice'>你开始从\the [src]上剪下毛发...</span>", "你听到刀刃摩擦皮肉的声音。")
 		if(do_after(user,50))
-			to_chat(usr, "<span class='notice'>You cut the hair from the [singular_name].</span>")
+			to_chat(usr, "<span class='notice'>你从[singular_name]上剪下了毛发。</span>")
 			//Try locating an exisitng stack on the tile and add to there if possible
 			for(var/obj/item/stack/material/hairlesshide/HS in usr.loc)
 				if(HS.amount < 50)

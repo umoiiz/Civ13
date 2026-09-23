@@ -62,25 +62,25 @@ var/global/redirect_all_players = null
 
 	if (client)
 		if (client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, "<span class = 'red'>You cannot talk in lobbychat (muted).</span>")
+			to_chat(src, "<span class = 'red'>你无法在大厅聊天中说话 (已被禁言).</span>")
 			return
 
 		if (client.handle_spam_prevention(message,MUTE_DEADCHAT))
 			return
 		if (!client.holder)
 			if (!config.ooc_allowed)
-				to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
+				to_chat(src, "<span class='danger'>OOC已被全局禁言.</span>")
 				return
 			if (!config.dooc_allowed && (stat == DEAD))
-				to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+				to_chat(usr, "<span class='danger'>死亡生物的OOC已被关闭.</span>")
 				return
 			if (client.prefs.muted & MUTE_OOC)
-				to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
+				to_chat(src, "<span class='danger'>你无法使用OOC (已被禁言).</span>")
 				return
 			if (client.handle_spam_prevention(message,MUTE_OOC))
 				return
 			if (findtext(message, "byond://"))
-				to_chat(src, "<b>Advertising other servers is not allowed.</b>")
+				to_chat(src, "<b>不允许宣传其他服务器.</b>")
 				log_admin("[key_name(client)] has attempted to advertise in OOC: [message]")
 				message_admins("[key_name_admin(client)] has attempted to advertise in OOC: [message]", key_name_admin(client))
 				return
@@ -229,7 +229,7 @@ var/global/redirect_all_players = null
 			if (T)
 				observer.loc = T
 			else
-				to_chat(src, "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to another map point.</span>")
+				to_chat(src, "<span class='danger'>无法找到观察者出生点. 使用传送动词跳转到另一个地图点.</span>")
 			observer.timeofdeath = world.time // Set the time of death so that the respawn timer works correctly.
 
 			announce_ghost_joinleave(src)
@@ -430,10 +430,10 @@ var/global/redirect_all_players = null
 							_color = "#0000CF"
 						if("Mustardweasel")
 							_color = "#FFD700"
-					to_chat(src, "<font size=6 class='wizard'>You are a member of <span style='color:[_color]'>[house_result]</span>.</font>")
+					to_chat(src, "<font size=6 class='wizard'>你是<span style='color:[_color]'>[house_result]</span>的一员.</font>")
 					var/skill_result = WB.check_level(client.ckey)
 					var/skill_string = WB.level_to_formatted_text(skill_result)
-					to_chat(src, "<font size=6 class='wizard'>You are a [skill_string].</font>")
+					to_chat(src, "<font size=6 class='wizard'>你是一名[skill_string].</font>")
 					close_spawn_windows()
 					if (AttemptLateSpawn("Wizard Boy"))
 						return TRUE
@@ -1207,15 +1207,15 @@ var/global/redirect_all_players = null
 				else
 					H.squad = rand(1,map.squads)
 				map.faction1_squads[H.squad] += list(H)
-				to_chat(H, "<big><b>You have been assigned to Squad [H.squad]!</b></big>")
+				to_chat(H, "<big><b>你已被分配到[H.squad]班!</b></big>")
 				if (H.original_job.is_squad_leader)
 					if (!map.faction1_squad_leaders[H.squad] || map.faction1_squad_leaders[H.squad] == H)
-						to_chat(H, "<big><b>You are the new squad leader!</b></big>")
+						to_chat(H, "<big><b>你是新的班长!</b></big>")
 						map.faction1_squad_leaders[H.squad] = H
 					else if (map.faction1_squad_leaders[H.squad] && map.faction1_squad_leaders[H.squad] != H)
-						to_chat(H, "<big><b>Your squad leader is [map.faction1_squad_leaders[H.squad]].</b></big>")
+						to_chat(H, "<big><b>你的班长是[map.faction1_squad_leaders[H.squad]].</b></big>")
 				else if (map.faction1_squad_leaders[H.squad])
-					to_chat(H, "<big><b>Your squad leader is [map.faction1_squad_leaders[H.squad]].</b></big>")
+					to_chat(H, "<big><b>你的班长是[map.faction1_squad_leaders[H.squad]].</b></big>")
 			else if (H.faction_text == map.faction2)
 				if (H.original_job.is_officer || H.original_job.is_squad_leader || H.original_job.is_commander)
 					if (map.ordinal_age >= 6 && map.ordinal_age < 8)
@@ -1234,15 +1234,15 @@ var/global/redirect_all_players = null
 				else
 					H.squad = rand(1,map.squads)
 				map.faction2_squads[H.squad] += list(H)
-				to_chat(H, "<big><b>You have been assigned to Squad [H.squad]!</b></big>")
+				to_chat(H, "<big><b>你已被分配到[H.squad]班!</b></big>")
 				if (H.original_job.is_squad_leader)
 					if (!map.faction2_squad_leaders[H.squad] || map.faction2_squad_leaders[H.squad] == H)
-						to_chat(H, "<big><b>You are the new squad leader!</b></big>")
+						to_chat(H, "<big><b>你是新的班长!</b></big>")
 						map.faction2_squad_leaders[H.squad] = H
 					else if (map.faction2_squad_leaders[H.squad] && map.faction2_squad_leaders[H.squad] != H)
-						to_chat(H, "<big><b>Your squad leader is [map.faction2_squad_leaders[H.squad]].</b></big>")
+						to_chat(H, "<big><b>你的班长是[map.faction2_squad_leaders[H.squad]].</b></big>")
 				else if (map.faction2_squad_leaders[H.squad])
-					to_chat(H, "<big><b>Your squad leader is [map.faction2_squad_leaders[H.squad]].</b></big>")
+					to_chat(H, "<big><b>你的班长是[map.faction2_squad_leaders[H.squad]].</b></big>")
 	if(!map.fob_spawns)
 		job_master.relocate(character)
 	if (map.ID == MAP_WIZARD_BOY && ishuman(character))

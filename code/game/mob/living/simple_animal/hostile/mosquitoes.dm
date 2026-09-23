@@ -1,7 +1,7 @@
 //not really a subtype of hostile animals, but it is harmful so it goes here.
 /mob/living/simple_animal/mosquito
 	name = "mosquitoes"
-	desc = "Annoying and dangerous."
+	desc = "烦人又危险."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "mosquitoes1"
 	icon_living = "mosquitoes1"
@@ -57,7 +57,7 @@
 		if (prob(10))
 			for (var/mob/living/human/TG in range(1,src))
 				if (map && ((map.ID == MAP_NOMADS_AFRICA && TG.s_tone > -175) || map.ID != MAP_NOMADS_AFRICA))
-					visible_message("<span class = 'danger'>\The [src] bite [TG]!")
+					visible_message("<span class = 'danger'>\The [src]咬了[TG]!")
 					TG.adjustBruteLoss(1,2)
 					if (TG.disease == 0)
 						try_infect(TG, 20, "malaria")
@@ -68,7 +68,7 @@
 
 /mob/living/simple_animal/mosquito/attack_hand(mob/living/human/M as mob)
 	M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	visible_message("[M] swats away the [src]!","You swat away the [src]!")
+	visible_message("[M]拍开了[src]!","你拍开了[src]!")
 	if (prob(40))
 		walk_away_od(src, M, 3, 3)
 		return
@@ -82,25 +82,25 @@
 /mob/living/simple_animal/mosquito/attackby(var/obj/item/O, var/mob/user)
 	if (istype(O, /obj/item/weapon/swatter/modern))
 		if (prob(75))
-			visible_message("[user] swats \the [src] with \the [O]!")
+			visible_message("[user]用\the [O]拍开了\the [src]!")
 			if (origin)
 				var/obj/structure/sink/S = origin
 				S.mosquito_count--
 			qdel(src)
 			return
 		else
-			visible_message("[user] misses \the [src]!")
+			visible_message("[user]没打中\the [src]!")
 			return
 	else if (istype(O, /obj/item/weapon/swatter))
 		if (prob(30))
-			visible_message("[user] swats \the [src] with \the [O]!")
+			visible_message("[user]用\the [O]拍开了\the [src]!")
 			if (origin)
 				var/obj/structure/sink/S = origin
 				S.mosquito_count--
 			qdel(src)
 			return
 		else
-			visible_message("[user] misses \the [src]!")
+			visible_message("[user]没打中\the [src]!")
 			return
 	else
 		return

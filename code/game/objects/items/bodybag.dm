@@ -1,6 +1,6 @@
 /obj/item/bodybag
-	name = "body bag"
-	desc = "A folded bag designed for the storage and transportation of cadavers."
+	name = "裹尸袋"
+	desc = "一种用于存放和运送尸体的折叠袋."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	w_class = ITEM_SIZE_SMALL
@@ -11,16 +11,16 @@
 		qdel(src)
 
 /obj/item/weapon/storage/box/bodybags
-	name = "body bags"
-	desc = "This box contains body bags."
+	name = "裹尸袋"
+	desc = "这个箱子里装着裹尸袋."
 	New()
 		..()
 		for (var/i=1, i<= 8, i++)
 			new /obj/item/bodybag(src)
 
 /obj/structure/closet/body_bag
-	name = "body bag"
-	desc = "A plastic bag designed for the storage and transportation of cadavers."
+	name = "裹尸袋"
+	desc = "一种用于存放和运送尸体的塑料袋."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_closed"
 	icon_closed = "bodybag_closed"
@@ -48,7 +48,7 @@
 			name = "body bag"
 		return
 	else if (istype(W, /obj/item/weapon/wirecutters))
-		to_chat(user, "You cut the tag off the bodybag.")
+		to_chat(user, "你剪掉了裹尸袋上的标签.")
 		name = "body bag"
 		overlays.Cut()
 		return
@@ -69,7 +69,7 @@
 		if (!ishuman(usr))	return
 		if (opened)	return FALSE
 		if (contents.len)	return FALSE
-		visible_message("[usr] folds up the [name]")
+		visible_message("[usr]把[name]折叠起来")
 		new item_path(get_turf(src))
 		spawn(0)
 			qdel(src)

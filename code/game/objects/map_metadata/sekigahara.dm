@@ -31,9 +31,9 @@
 		spawn(600) // 1 minute
 			points_check()
 /obj/map_metadata/sekigahara/proc/points_check()
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Eastern Army: [scores["Eastern Army"]]</big>")
-	to_chat(world, "<big>Western Army: [scores["Western Army"]]</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>东方军: [scores["Eastern Army"]]</big>")
+	to_chat(world, "<big>西方军: [scores["Western Army"]]</big>")
 	spawn(300)
 		points_check()
 

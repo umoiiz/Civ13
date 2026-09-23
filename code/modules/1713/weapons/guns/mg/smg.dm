@@ -31,19 +31,19 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/special_check(mob/user)
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险开启时你无法射击\the [src]!</span>")
 		return FALSE
 	if (!user.has_empty_hand(both = FALSE) && one_handed == FALSE)
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能射击\the [src]!</span>")
 		return FALSE
 	if (jammed_until > world.time)
-		to_chat(user, "<span class = 'danger'>\The [src] has jammed! You can't fire it until it has unjammed.</span>")
+		to_chat(user, "<span class = 'danger'>\The [src]卡壳了!在排除故障之前你无法射击.</span>")
 		return FALSE
 	return TRUE
 
 /obj/item/weapon/gun/projectile/submachinegun/stg
 	name = "StG-44"
-	desc = "German assault rifle chambered in 7.92x33mm Kurz, 30 round magazine."
+	desc = "德国突击步枪,使用7.92x33mm Kurz弹药,30发弹匣."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "stg"
 	item_state = "stg"
@@ -88,7 +88,7 @@
 	icon_state = "spas12"
 	item_state = "spas12"
 	base_icon = "spas12"
-	desc = "A dual mode shotgun designed in Italy by the Franchi Firearms Company with an 8 round capacity."
+	desc = "一种由意大利弗兰基枪械公司设计的双模式霰弹枪,容量为8发."
 	max_shells = 8 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
 	caliber = "12gauge"
 	handle_casings = EJECT_CASINGS
@@ -112,7 +112,7 @@
 	icon_state = "usas12"
 	item_state = "usas12"
 	base_icon = "usas12"
-	desc = "A South Korean selective fire gas-operated shotgun designed by John Trevor, Jr. that uses mags."
+	desc = "一种由John Trevor, Jr.设计的韩国选射导气式霰弹枪,使用弹匣."
 	caliber = "12gauge"
 	slot_flags = SLOT_SHOULDER
 	handle_casings = EJECT_CASINGS
@@ -138,7 +138,7 @@
 	icon_state = "saiga12"
 	item_state = "saiga12"
 	base_icon = "saiga12"
-	desc = "A 12 gauge semi-automatic, gas-operated combat shotgun used by Russian Armed Forces."
+	desc = "一种12号口径半自动导气式战斗霰弹枪,被俄罗斯武装部队使用."
 	magazine_type = /obj/item/ammo_magazine/saiga12
 	weight = 3.5
 	equiptimer = 11
@@ -183,7 +183,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mp40
 	name = "MP40"
-	desc = "Iconic German submachinegun with an underfolding stock, chambered in 9mm Luger."
+	desc = "标志性的德国冲锋枪,带有下折叠枪托,使用9mm鲁格弹药."
 	icon_state = "mp40"
 	item_state = "mp40"
 	base_icon = "mp40"
@@ -204,7 +204,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mp40/mp38
 	name = "MP38"
-	desc = "Early German submachinegun with an underfolding stock, chambered in 9mm Luger."
+	desc = "早期德国冲锋枪,带有下折叠枪托,使用9mm鲁格弹药."
 	weight = 4.10
 	full_auto = TRUE
 	equiptimer = 13
@@ -218,7 +218,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mp40/modello38
 	name = "MAB 38"
-	desc = "The Moschetto Automatico Beretta Modello 1938 is a submachine gun of the Royal Italian Army introduced in 1938, chambered in 9mm Luger."
+	desc = "Moschetto Automatico Beretta Modello 1938是意大利皇家陆军于1938年采用的冲锋枪,使用9mm鲁格弹药."
 	weight = 4.20
 	magazine_type = /obj/item/ammo_magazine/mp40/modello38
 	good_mags = list(/obj/item/ammo_magazine/mp40/modello38)
@@ -234,7 +234,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ermaemp
 	name = "Erma-Emp"
-	desc = "A very early German submachinegun produced by the ERMA factory with an wooden stock, chambered in 9mm Luger."
+	desc = "一种由ERMA工厂生产的早期德国冲锋枪,带有木制枪托,使用9mm鲁格弹药."
 	icon_state = "ermaemp"
 	item_state = "ermaemp"
 	base_icon = "ermaemp"
@@ -255,7 +255,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mp40/blyskawica
 	name = "Blyskawica"
-	desc = "Polish Underground State submachine gun, chambered in 9mm Luger."
+	desc = "波兰地下国冲锋枪,使用9mm鲁格弹."
 	icon_state = "blyskawica"
 	item_state = "blyskawica"
 	base_icon = "blyskawica"
@@ -277,7 +277,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mp40/mp5
 	name = "H&K MP5"
-	desc = "German submachinegun chambered in 9mm Parabellum."
+	desc = "德国冲锋枪,使用9mm帕拉贝鲁姆弹."
 	icon_state = "mp5"
 	item_state = "mp5"
 	base_icon = "mp5"
@@ -297,7 +297,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/fg42
 	name = "FG42"
-	desc = "A German automatic rifle that was developed specifically for the use of the Fallschirmjäger airborne infantry, it is chambered in 7.92x57 Mauser."
+	desc = "一款专为伞兵空降步兵研发的德国自动步枪,使用7.92x57毛瑟弹."
 	icon_state = "fg42"
 	item_state = "fg42"
 	base_icon = "fg42"
@@ -327,7 +327,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/uzi
 	name = "Uzi"
-	desc = "An Israeli submachinegun chambered in 9mm Parabellum."
+	desc = "以色列冲锋枪,使用9mm帕拉贝鲁姆弹."
 	icon_state = "uzi"
 	item_state = "uzi"
 	base_icon = "uzi"
@@ -348,7 +348,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/mac10
 	name = "MAC-10"
-	desc = "An American compact blowback operated submachinegun chambered in 9mm Parabellum."
+	desc = "美国紧凑型自由枪机式冲锋枪,使用9mm帕拉贝鲁姆弹."
 	icon_state = "mac10"
 	item_state = "mac10"
 	base_icon = "mac10"
@@ -369,7 +369,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/tec9
 	name = "TEC-9"
-	desc = "A blowback-operated semi-automatic pistol."
+	desc = "自由枪机式半自动手枪."
 	icon = 'icons/obj/guns/automatic.dmi'
 	icon_state = "tec-9"
 	item_state = "tec-9"
@@ -393,7 +393,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/skorpion
 	name = "Skorpion"
-	desc = "An Czechoslovak machinepistol chambered in 9mm Parabellum."
+	desc = "捷克斯洛伐克冲锋手枪,使用9mm帕拉贝鲁姆弹."
 	icon_state = "skorpion"
 	item_state = "skorpion"
 	base_icon = "skorpion"
@@ -414,7 +414,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/greasegun
 	name = "M3A1 SMG"
-	desc = "A simplistic American submachinegun, chambered in .45 ACP."
+	desc = "美国简易冲锋枪,使用.45 ACP弹."
 	icon_state = "greasegun"
 	item_state = "greasegun"
 	base_icon = "greasegun"
@@ -438,7 +438,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/thompson
 	name = "Thompson M1A1"
-	desc = "An American submachinegun, chambered in .45 ACP."
+	desc = "美国冲锋枪,使用.45 ACP弹."
 	icon_state = "thompson"
 	item_state = "thompson"
 	base_icon = "thompson"
@@ -458,7 +458,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/tommy
 	name = "Thompson M1928"
-	desc = "An American submachinegun, chambered in .45 ACP."
+	desc = "美国冲锋枪,使用.45 ACP弹."
 	icon_state = "tommygun"
 	item_state = "thompson"
 	base_icon = "tommygun"
@@ -478,7 +478,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/type100
 	name = "Type-100"
-	desc = "A Japanese submachinegun, chambered in 8x22mm Nambu."
+	desc = "日本冲锋枪,使用8x22mm南部弹."
 	icon_state = "type100"
 	item_state = "type100"
 	base_icon = "type100"
@@ -500,7 +500,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/sten
 	name = "Sten MK II"
-	desc = "A British submachinegun, chambered in 9x19 Parabellum."
+	desc = "英国冲锋枪,使用9x19帕拉贝鲁姆弹."
 	icon_state = "sten2"
 	item_state = "sten2"
 	base_icon = "sten2"
@@ -523,7 +523,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/sten/stv
 	name = "Sten MK V"
-	desc = "A British submachinegun, chambered in 9x19 Parabellum."
+	desc = "英国冲锋枪,使用9x19帕拉贝鲁姆弹."
 	icon_state = "sten2"
 	item_state = "sten2"
 	base_icon = "sten2"
@@ -535,7 +535,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ppsh
 	name = "PPSh-41"
-	desc = "Soviet submachinegun typically equipped with drum magazines. Chambered in 7.62x25mm Tokarev."
+	desc = "苏联冲锋枪,通常配备弹鼓.使用7.62x25mm托卡列夫弹."
 	icon_state = "ppsh"
 	item_state = "ppsh"
 	base_icon = "ppsh"
@@ -560,13 +560,13 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ppsh/chinese
 	name = "Type 50"
-	desc = "Chinese Variant of the Iconic Soviet submachinegun. Chambered in 7.62x25mm Tokarev."
+	desc = "标志性苏联冲锋枪的中国仿制型.使用7.62x25mm托卡列夫弹."
 	weight = 3.61
 	equiptimer = 11
 
 /obj/item/weapon/gun/projectile/submachinegun/pps
 	name = "PPS-43"
-	desc = "A simplistic Soviet submachinegun. Chambered in 7.62x25mm Tokarev."
+	desc = "苏联简易冲锋枪.使用7.62x25mm托卡列夫弹."
 	icon_state = "pps"
 	item_state = "pps"
 	base_icon = "pps"
@@ -590,7 +590,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ppd
 	name = "PPD-40"
-	desc = "Early Soviet submachinegun. Chambered in 7.62x25mm Tokarev."
+	desc = "苏联早期冲锋枪.使用7.62x25mm托卡列夫弹."
 	icon_state = "ppd"
 	item_state = "ppd"
 	base_icon = "ppd"
@@ -616,7 +616,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak47
 	name = "AKM"
-	desc = "Iconic Soviet assault rifle, chambered in 7.62x39mm."
+	desc = "标志性苏联突击步枪,使用7.62x39mm弹."
 	icon_state = "ak47"
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	item_state = "ak47"
@@ -646,17 +646,17 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak47/gold
 	name = "gold-plated AKM"
-	desc = "Iconic Soviet assault rifle, chambered in 7.62x39mm. This one is plated in gold. It looks very expensive."
+	desc = "标志性苏联突击步枪,使用7.62x39mm弹.这一把镀了金.看起来非常昂贵."
 	icon_state = "ak47gold"
 	item_state = "ak47gold"
 	base_icon = "ak47gold"
 
 /obj/item/weapon/gun/projectile/submachinegun/ak47/chinese
 	name = "Type 56 Assault Rifle"
-	desc = "Chinese 7.62x39mm rifle. It is a variant of the Soviet-designed AK-47."
+	desc = "中国7.62x39mm步枪.它是苏联设计的AK-47的仿制型."
 /obj/item/weapon/gun/projectile/submachinegun/ak47/akms
 	name = "AKMS"
-	desc = "Iconic Soviet assault rifle, chambered in 7.62x39mm. This one has a wire underfolding stock."
+	desc = "标志性苏联突击步枪,使用7.62x39mm弹.这一把配有钢丝下折叠枪托."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "akms"
 	item_state = "akms"
@@ -700,7 +700,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74
 	name = "AK-74"
-	desc = "Soviet assault rifle, chambered in 5.45x39mm."
+	desc = "苏联突击步枪,使用5.45x39mm弹."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "ak74"
 	item_state = "ak74"
@@ -740,7 +740,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74/aks74
 	name = "AKS-74"
-	desc = "Soviet assault rifle chambered in 5.45x39mm, with a folding stock."
+	desc = "苏联突击步枪,使用5.45x39mm弹,配有折叠枪托."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "aks74"
 	item_state = "aks74"
@@ -784,7 +784,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74/aks74/aks74u
 	name = "AKS-74U"
-	desc = "Soviet compact assault rifle, chambered in 5.45x39mm, with a folding stock."
+	desc = "苏联紧凑型突击步枪,使用5.45x39mm弹,配有折叠枪托."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "aks74u"
 	item_state = "aks74u"
@@ -838,7 +838,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74/aks74/aks74u/aks74uso
 	name = "AKS-74U SpecOps"
-	desc = "Soviet assault carbine version of the AK-74, chambered in 5.45x39mm, with a folding stock. This one has picatinny rails for attachments."
+	desc = "AK-74的苏联突击卡宾枪版本,使用5.45x39mm弹,配有折叠枪托.这一把配有用于安装配件的皮卡汀尼导轨."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "aks74uso"
 	item_state = "aks74uso"
@@ -904,7 +904,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74m
 	name = "AK-74M"
-	desc = "Russian assault rifle, chambered in 5.45x39mm."
+	desc = "俄罗斯突击步枪,使用5.45x39mm弹."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "ak74m"
 	item_state = "ak74m"
@@ -934,7 +934,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74m/ak12
 	name = "AK-12"
-	desc = "A fifth generation Modern AK variant, chambered in 5.45x39mm."
+	desc = "第五代现代AK改进型,使用5.45x39mm弹."
 	icon_state = "ak12"
 	item_state = "ak12"
 	base_icon = "ak12"
@@ -953,7 +953,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak74m/ak12/ak15
 	name = "AK-15"
-	desc = "A fifth generation Modern AK variant, chambered in 7.62x39mm."
+	desc = "第五代现代AK改进型,使用7.62x39mm弹."
 	icon_state = "ak12"
 	item_state = "ak12"
 	base_icon = "ak12"
@@ -970,7 +970,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/m16
 	name = "M16A1"
-	desc = "An American assault rifle, chambered in 5.56x45mm."
+	desc = "美国突击步枪,使用5.56x45mm弹."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "m16"
 	item_state = "m16"
@@ -999,7 +999,7 @@
 /obj/item/weapon/gun/projectile/submachinegun/m16/ar15
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_BARREL|ATTACH_SCOPE|ATTACH_UNDER
 	name = "AR-15"
-	desc = "A civilian market version of ArmaLite's AR-15, single-fire only. Has railings for several attachments."
+	desc = "阿玛莱特AR-15的民用市场版本,仅支持单发.配有用于安装多种配件的导轨."
 	base_icon = "ar15"
 	icon_state = "ar15"
 	item_state = "ar15"
@@ -1015,7 +1015,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ar10
 	name = "AR-10"
-	desc = "An ArmaLite battle rifle, chambered in 7.62x51mm."
+	desc = "阿玛莱特战斗步枪,使用7.62x51mm弹."
 	icon_state = "ar10"
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	item_state = "m16"
@@ -1042,7 +1042,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/m16/commando
 	name = "XM177E2"
-	desc = "A carbine version of the AR-15/M16, chambered in 5.56x45mm."
+	desc = "AR-15/M16的卡宾枪版本,使用5.56x45mm弹."
 	icon_state = "m4"
 	item_state = "m4"
 	base_icon = "m4"
@@ -1067,7 +1067,7 @@
 	name = "M16A2"
 	base_icon = "m16"
 	icon_state = "m16"
-	desc = "A modernized version of the M16, with burst fire instead of automatic."
+	desc = "M16的现代化版本,以点射取代全自动."
 	full_auto = FALSE
 	firemodes = list(
 		list(name = "semiauto",	burst=1, burst_delay=1.1),
@@ -1100,7 +1100,7 @@
 	name = "M16A4"
 	base_icon = "m16a4"
 	icon_state = "m16a4"
-	desc = "A modernized version of the M16, with a railed upper receiver and handguard."
+	desc = "M16的现代化版本,配有带导轨的上机匣和护木."
 	full_auto = FALSE
 	firemodes = list(
 		list(name = "semiauto",	burst=1, burst_delay=1.0),
@@ -1129,7 +1129,7 @@
 		FP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/submachinegun/m16/commando/m4
-	name = "M4 Carbine"
+	name = "M4卡宾枪"
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_BARREL|ATTACH_SCOPE|ATTACH_UNDER
 	under_mounts = list ("picatinny")
 
@@ -1137,7 +1137,7 @@
 	name = "M4 MWS"
 	base_icon = "m4mws"
 	icon_state = "m4mws"
-	desc = "A version of the M4 carbine made to fit the Modular Weapon System."
+	desc = "适配模块化武器系统的M4卡宾枪版本."
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_BARREL|ATTACH_SCOPE|ATTACH_UNDER
 	under_mounts = list ("picatinny")
 	scope_x_offset = 0
@@ -1169,7 +1169,7 @@
 	
 /obj/item/weapon/gun/projectile/submachinegun/m14
 	name = "M14"
-	desc = "An American battle rifle, chambered in 7.62x51mm."
+	desc = "美国战斗步枪, 发射7.62x51mm弹药."
 	icon = 'icons/obj/guns/rifles.dmi'
 	icon_state = "m14"
 	item_state = "m14"
@@ -1202,7 +1202,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/m14/sniper/m21
 	name = "M21 SWS"
-	desc = "An American sniper rifle, chambered in 7.62x51mm."
+	desc = "美国狙击步枪, 发射7.62x51mm弹药."
 	sel_mode = 1
 	firemodes = list(
 		list(name = "semiauto",	burst=1, burst_delay=0.6),
@@ -1212,7 +1212,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/g3
 	name = "H&K G3"
-	desc = "A German battle rifle, chambered in 7.62x51mm."
+	desc = "德国战斗步枪, 发射7.62x51mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "g3"
 	item_state = "g3"
@@ -1238,7 +1238,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/fal
 	name = "FN Fal"
-	desc = "A Belgian battle rifle, chambered in 7.62x51mm."
+	desc = "比利时战斗步枪, 发射7.62x51mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "fal"
 	item_state = "fal"
@@ -1261,7 +1261,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/scarl
 	name = "FN SCAR-L"
-	desc = "A Belgian assault rifle, chambered in 5.56x45mm."
+	desc = "比利时突击步枪, 发射5.56x45mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "scar"
 	item_state = "scar"
@@ -1295,7 +1295,7 @@
 	icon_state = "scar"
 	item_state = "scar"
 	base_icon = "scar"
-	desc = "A Belgian-designed automatic rifle, chambered in 7.62x51mm."
+	desc = "比利时设计的自动步枪, 发射7.62x51mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	caliber = "a762x51"
 	fire_sound = 'sound/weapons/guns/fire/M14.ogg'
@@ -1324,7 +1324,7 @@
 	icon_state = "ar12"
 	item_state = "ar12"
 	base_icon = "ar12"
-	desc = "An AR-15 style magazine fed shotgun in 12 gauge."
+	desc = "AR-15风格的弹匣供弹霰弹枪, 使用12号口径."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	caliber = "12gauge"
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
@@ -1352,7 +1352,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/hk417
 	name = "HK417"
-	desc = "A modern German battle rifle, chambered in 7.62x51mm."
+	desc = "现代德国战斗步枪, 发射7.62x51mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "hk417"
 	item_state = "hk417"
@@ -1397,7 +1397,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/p90
 	name = "P90"
-	desc = "A compact, rapid-fire defensive weapon, chambered in 5.7x28mm."
+	desc = "紧凑型高射速防御武器, 发射5.7x28mm弹药."
 	icon_state = "p90"
 	item_state = "p90"
 	base_icon = "p90"
@@ -1427,7 +1427,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/vector
 	name = "Kriss Vector"
-	desc = "A compact gun using an unconventional delayed blowback system combined with in-line design to reduce perceived recoil and muzzle climb. It's chambered in 9mm"
+	desc = "采用非常规延迟反冲系统结合直列设计的紧凑型枪械, 可减少感知后坐力和枪口上跳. 发射9mm弹药"
 	icon_state = "victor"
 	item_state = "victor"
 	base_icon = "victor"
@@ -1459,7 +1459,7 @@
 	icon_state = "qbz95"
 	item_state = "qbz95"
 	base_icon = "qbz95"
-	desc = "A Chinese-designed bullup assault rifle, chambered in 5.8x42mm."
+	desc = "中国设计的无托突击步枪, 发射5.8x42mm弹药."
 	icon = 'icons/obj/guns/wip.dmi'
 	caliber = "a58x42"
 	fire_sound = 'sound/weapons/guns/fire/M14.ogg'
@@ -1483,7 +1483,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/makeshiftak47
 	name = "Makeshift AK-47"
-	desc = "Looks like someone did a really bad job at \"UpGRaDinG\" their AK."
+	desc = "看起来有人在\"UpGRaDinG\"他们的AK时做得非常糟糕."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "makeshiftak"
 	item_state = "makeshiftak"
@@ -1506,7 +1506,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/vz58
 	name = "VZ-58"
-	desc = "Czechoslovakian assault rifle chambered in 7.62x39mm."
+	desc = "捷克斯洛伐克突击步枪, 发射7.62x39mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "vz58"
 	item_state = "vz58"
@@ -1533,7 +1533,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/vz58/white
 	name = "White VZ-58"
-	desc = "Czechoslovakian assault rifle chambered in 7.62x39mm. This model has a birch stock and handguard."
+	desc = "捷克斯洛伐克突击步枪, 发射7.62x39mm弹药. 此型号配有桦木枪托和护木."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "white_vz58"
 	item_state = "white_vz58"
@@ -1541,7 +1541,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/vz58/black
 	name = "Black VZ-58"
-	desc = "Czechoslovakian assault rifle chambered in 7.62x39mm. This model has a black stock and handguard."
+	desc = "捷克斯洛伐克突击步枪, 发射7.62x39mm弹药. 此型号配有黑色枪托和护木."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "black_vz58"
 	item_state = "black_vz58"
@@ -1549,7 +1549,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/c7
 	name = "C7"
-	desc = "A Canadian Colt C7 assault rifle, chambered in 5.56x45mm."
+	desc = "加拿大柯尔特C7突击步枪, 发射5.56x45mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "c7"
 	item_state = "c7"
@@ -1584,7 +1584,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/c7/c8
 	name = "C8"
-	desc = "A Canadian Colt C8 assault rifle, chambered in 5.56x45mm."
+	desc = "加拿大柯尔特C8突击步枪, 发射5.56x45mm弹药."
 	equiptimer = 11
 	icon_state = "c8"
 	item_state = "c8"
@@ -1612,7 +1612,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/m2carbine
 	name = "M2 carbine"
-	desc = "An American Selective fire carbine using 7.62x33mm (Rimless.30 Carbine) ammunition in a external magazine."
+	desc = "美国选射卡宾枪, 使用7.62x33mm (无缘.30卡宾) 弹药, 采用外置弹匣."
 	icon_state = "mcar"
 	item_state = "mcar"
 	base_icon = "mcar"
@@ -1634,7 +1634,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/srm
 	name = "SR-3"
-	desc = "Russian Compact Carbine chambered in 9x39mm,comes with a compact stock."
+	desc = "俄罗斯紧凑型卡宾枪, 发射9x39mm弹药, 配有紧凑枪托."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "srm"
 	item_state = "srm"
@@ -1697,7 +1697,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/l85a2
 	name = "L85A2"
-	desc = "The L85A2 (also known as the SA80) rifle is a service rifle used by the British since 1987. A bullpup rifle by design, it is a very compact rifle while still having a relatively long barrel. It's chambered in 5.56x45mm."
+	desc = "L85A2 (又称SA80) 步枪是英国自1987年起使用的制式步枪. 采用无托设计, 是一款非常紧凑的步枪, 同时仍拥有相对较长的枪管. 发射5.56x45mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "l85a2"
 	item_state = "m16"
@@ -1721,7 +1721,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/aug
 	name = "Steyr AUG"
-	desc = "The Steyr AUG is an Austrian bullpup assault rifle designed in the 1960s by Steyr-Daimler-Puch. It's chambered in 5.56×45mm."
+	desc = "斯泰尔AUG是奥地利无托突击步枪, 由斯泰尔-戴姆勒-普赫于1960年代设计. 发射5.56×45mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "aug"
 	item_state = "m16"
@@ -1748,7 +1748,7 @@
 /obj/item/weapon/gun/projectile/submachinegun/m16/fallout/service_rifle
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_BARREL|ATTACH_SCOPE|ATTACH_UNDER
 	name = "Service Rifle"
-	desc = "A pre-war rifle design employed as the standard arm of the New California Republic."
+	desc = "一种战前步枪设计, 被新加州共和国用作标准装备."
 	icon_state = "service_rifle"
 	item_state = "service_rifle"
 	base_icon = "service_rifle"

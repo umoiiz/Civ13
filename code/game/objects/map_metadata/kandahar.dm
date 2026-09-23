@@ -161,9 +161,9 @@
 				sov_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Bridge Outpost</b>: [a1_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>桥梁前哨</b>: [a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Bridge Outpost</b>: Nobody</big>")
+			to_chat(world, "<big><b>桥梁前哨</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		c3 = 0
@@ -200,9 +200,9 @@
 				sov_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>South Border Checkpoint</b>: [a2_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>南部边境检查站</b>: [a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>South Border Checkpoint</b>: Nobody</big>")
+			to_chat(world, "<big><b>南部边境检查站</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		c3 = 0
@@ -239,9 +239,9 @@
 				sov_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Palace</b>: [a3_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>宫殿</b>: [a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Palace</b>: Nobody</big>")
+			to_chat(world, "<big><b>宫殿</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		c3 = 0
@@ -278,12 +278,12 @@
 				sov_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>North West Village Outpost</b>: [a4_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>西北村庄前哨</b>: [a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>North West Village Outpost</b>: Nobody</big>")
+			to_chat(world, "<big><b>西北村庄前哨</b>: 无人</big>")
 	if (a1_control == "Mujahideen" && a2_control == "Mujahideen" && a3_control == "Mujahideen" && a4_control == "Mujahideen")
 		muj_points++
-		to_chat(world, "<big><font color='yellow'><b>The Mujahideen control all points!</b></font></big>")
+		to_chat(world, "<big><font color='yellow'><b>圣战者控制了所有据点!</b></font></big>")
 	for (var/mob/living/human/H in player_list)
 		if (H.original_job.is_soviet == TRUE || H.original_job.is_dra == TRUE)
 			var/area/A = get_area(H)
@@ -292,22 +292,22 @@
 					switch(H.original_job.title)
 						if ("Soviet Army Captain")
 							muj_points += 4
-							to_chat(world, "<font color='orange' size=2>The <b><font color='red'>Soviet Army Captain</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2><b><font color='red'>苏军上尉</font></b>已被俘!</font>")
 						if ("Soviet Army Lieutenant")
 							muj_points += 3
-							to_chat(world, "<font color='orange' size=2>A <b><font color='red'>Soviet Army Lieutenant</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2><b><font color='red'>苏军中尉</font></b>已被俘!</font>")
 						if ("Soviet Army Sergeant")
 							muj_points += 2
-							to_chat(world, "<font color='orange' size=2>A <b><font color='red'>Soviet Army Sergeant</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2><b><font color='red'>苏军军士</font></b>已被俘!</font>")
 						if ("DRA Governor")
 							muj_points += 5
-							to_chat(world, "<font color='orange' size=2>The <b><font color='green'>DRA Governor</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2><b><font color='green'>阿富汗民主共和国省长</font></b>已被俘!</font>")
 						if ("DRA Lieutenant")
 							muj_points += 3
-							to_chat(world, "<font color='orange' size=2>A <b><font color='green'>DRA Lieutenant</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2>一名 <b><font color='green'>DRA中尉</font></b> 已被俘获!</font>")
 						if ("DRA Sergeant")
 							muj_points += 2
-							to_chat(world, "<font color='orange' size=2>A <b><font color='green'>DRA Sergeant</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2>一名 <b><font color='green'>DRA中士</font></b> 已被俘获!</font>")
 		if (H.original_job.is_muj == TRUE)
 			var/area/B = get_area(H)
 			if (istype(B, /area/caribbean/prison/jail))
@@ -315,17 +315,17 @@
 					switch(H.original_job_title)
 						if ("Mujahideen Warchief")
 							sov_points += 4
-							to_chat(world, "<font color='orange' size=2>The <b><font color='black'>Mujahideen Warchief</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2>圣战军<b><font color='black'>战争首领</font></b> 已被俘获!</font>")
 						if ("Mujahideen Group Leader")
 							sov_points += 2
-							to_chat(world, "<font color='orange' size=2>A <b><font color='black'>Mujahideen Group Leader</font></b> is in captivity!</font>")
+							to_chat(world, "<font color='orange' size=2>一名 <b><font color='black'>圣战军小组长</font></b> 已被俘获!</font>")
 	handle_flags()
 	spawn(600) // 1 minute
 		points_check()
 		spawn(300)
-			to_chat(world, "<big><b>Current Points:</b></big>")
-			to_chat(world, "<big>Mujahideen: [muj_points]</big>")
-			to_chat(world, "<big>Soviets and DRA: [sov_points]</big>")
+			to_chat(world, "<big><b>当前分数:</b></big>")
+			to_chat(world, "<big>圣战军: [muj_points]</big>")
+			to_chat(world, "<big>苏军与DRA: [sov_points]</big>")
 
 /obj/map_metadata/kandahar/update_win_condition()
 	if (processes.ticker.playtime_elapsed > 4800)
@@ -374,8 +374,8 @@
 //////Vendors////////
 
 /obj/structure/vending/sales/cia_agent
-	name = "CIA agent"
-	desc = "The USA supports your cause in exchange of ressources."
+	name = "CIA特工"
+	desc = "美国支持你们的事业,以换取资源."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "afghcia"
 	products = list(
@@ -408,18 +408,18 @@
 	)
 	attack_hand(mob/living/human/user as mob)
 		if (user.faction_text != "ARAB")
-			to_chat(user, "You are not part of the Mujahideen, you should really leave the area.")
+			to_chat(user, "你不是圣战军的一员,你真的应该离开这个区域.")
 			return
 		..()
 	attackby(obj/item/I, mob/living/human/user)
 		if (user.faction_text != "ARAB")
-			to_chat(user, "You are not part of the Mujahideen, you should really leave the area.")
+			to_chat(user, "你不是圣战军的一员,你真的应该离开这个区域.")
 			return
 		..()
 
 /obj/structure/props/afghan/druglord
-	name = "Tarik the Trafficker"
-	desc = "You've got opium? I've got money."
+	name = "毒贩塔里克"
+	desc = "你有鸦片吗?我有钱."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "afghdrug"
 	flammable = FALSE
@@ -434,21 +434,21 @@
 		if (istype(W, /obj/item/weapon/reagent_containers/pill/opium))
 			if (!W)
 				return
-			to_chat(user, "Here's your payment, pleasure doing business with you, brother.")
+			to_chat(user, "这是你的报酬,很高兴和你做生意,兄弟.")
 			new/obj/item/stack/money/dollar/five(loc)
 			if (prob(5))
-				to_chat(user, "Here's also a little extra to get you going.")
+				to_chat(user, "这里还有一点额外的,让你好上路.")
 				new/obj/item/stack/money/dollar/five(loc)
 			if (prob(5))
 				var/obj/map_metadata/kandahar/MP = map
 				var/randevent = rand(1,2)
 				switch (randevent)
 					if (1)
-						to_chat(world, "A shipment of heroin has successfully left the Afghan border! The authorities are furious!")
+						to_chat(world, "一批海洛因已成功离开阿富汗边境!当局震怒!")
 						MP.muj_points += 1
 						MP.sov_points -= 1
 					if (2)
-						to_chat(world, "A shipment of heroin was intercepted by the authorities at the Afghan border!")
+						to_chat(world, "一批海洛因在阿富汗边境被当局截获!")
 						MP.muj_points -= 1
 						MP.sov_points += 1
 			qdel(W)
@@ -457,21 +457,21 @@
 		if (istype(W, /obj/item/weapon/reagent_containers/pill/opium))
 			if (!W)
 				return
-			to_chat(user, "Here's your payment, there's more where it came from, if you bring me the stuff, of course.")
+			to_chat(user, "这是你的报酬,货源还多着呢,当然,前提是你把货带给我.")
 			new/obj/item/stack/money/dollar(loc)
 			new/obj/item/stack/money/dollar(loc)
 			if (prob(5))
-				to_chat(user, "Here's also a little extra to get you going.")
+				to_chat(user, "这里还有一点额外的,让你好上路.")
 				new/obj/item/stack/money/dollar/five(loc)
 			qdel(W)
 			return
 	else
-		to_chat(user, "I've got no business with you! Get lost, you dog!")
+		to_chat(user, "我跟你没什么好谈的!滚开,你这狗东西!")
 		return
 
 /obj/item/weapon/package/humanitarian
-	name = "humanitarian package"
-	desc = "Contains essential supplies for crisis-affected populations"
+	name = "人道主义物资包"
+	desc = "包含为受危机影响的民众提供的基本补给品"
 	icon_state = "humanitarian"
 /*/obj/structure/supply_radio
 	name = "supply ordering radio"
@@ -547,7 +547,7 @@
 				else
 					new /mob/living/simple_animal/hostile/human/muj_insurgent/akm(loc)
 				if (prob(50))
-					to_chat(world, "The Mujahideen coerced some of the local population into their ranks.")
+					to_chat(world, "圣战军胁迫了一些当地民众加入他们的队伍.")
 				qdel(src)
 				return
 	..()

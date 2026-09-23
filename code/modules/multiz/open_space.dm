@@ -109,15 +109,15 @@ var/list/sky_drop_map = list()
 		if (isliving(mover))
 			var/mob/living/L = mover
 			if (!ishuman(mover))
-				to_chat(L, "<span class = 'good'>You land softly onto the ground.</span>")
+				to_chat(L, "<span class = 'good'>你轻轻地落到了地面上.</span>")
 			else
 				var/mob/living/human/H = mover
 				var/client/C = H.client
 				if (!H.back || !istype(H.back, /obj/item/weapon/storage/backpack/paratrooper))
 					if (prob(10))
-						to_chat(H, "<span class = 'userdanger'><b>You smack face first onto the ground, damn.</b></span>")
+						to_chat(H, "<span class = 'userdanger'><b>你脸朝下摔到了地上,该死.</b></span>")
 					else
-						to_chat(H, "<span class = 'userdanger'><b>You land hard on the ground!</b></span>")
+						to_chat(H, "<span class = 'userdanger'><b>你重重地摔到了地上!</b></span>")
 					H.adjustBruteLossByPart(300, "l_leg")
 					H.adjustBruteLossByPart(300, "r_leg")
 					if (hasorgans(H))
@@ -202,7 +202,7 @@ var/list/sky_drop_map = list()
 				A.forceMove(get_step(src,push_dir))
 				return
 			A.z -= 1
-			A.visible_message("[A] falls from the level above and slams into the floor!", "You land on the floor.", "You hear a soft whoosh and a crunch.")
+			A.visible_message("[A]从上层跌落并砸到了地板上!", "你落到了地板上.", "你听到一声轻柔的呼啸和嘎吱声.")
 			if (istype(A, /mob/living/human))
 				playsound(A.loc, 'sound/effects/gore/fallsmash.ogg', 50, TRUE)
 				var/mob/living/human/H = A
@@ -224,7 +224,7 @@ var/list/sky_drop_map = list()
 					A.forceMove(get_step(src,push_dir))
 					return
 				A.z -= 1
-				A.visible_message("\The [A] falls from the level above and slams into the floor!", "You hear something slam into the deck.")
+				A.visible_message("\The [A]从上层跌落并砸到了地板上!", "你听到有什么东西砸到了甲板上.")
 
 /turf/floor/broken_floor/attackby(mob/user)
 	var/your_dir = "NORTH"
@@ -247,11 +247,11 @@ var/list/sky_drop_map = list()
 		covers_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
 
 	if (WWinput(user, "This will start building a floor cover [your_dir] of you.", "Floor Cover Construction", "Continue", list("Continue", "Stop")) == "Continue")
-		visible_message("<span class='danger'>[user] starts constructing the floor cover.</span>", "<span class='danger'>You start constructing the floor cover.</span>")
+		visible_message("<span class='danger'>[user]开始建造地板盖.</span>", "<span class='danger'>你开始建造地板盖.</span>")
 		if (do_after(user, covers_time, user.loc))
 			qdel(src)
 			new/obj/covers/repairedfloor(get_step(user, user.dir), user)
-			visible_message("<span class='danger'>[user] finishes placing the floor cover.</span>")
+			visible_message("<span class='danger'>[user]完成了地板盖的放置.</span>")
 			if (ishuman(user))
 				var/mob/living/human/H = user
 				H.adaptStat("crafting", 3)

@@ -1,6 +1,6 @@
 /obj/item/weapon/civilian_passport
-	name = "Civilian's Documents"
-	desc = "The identification papers of a civilian."
+	name = "平民证件"
+	desc = "一名平民的身份证明文件。"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "passport"
 	item_state = "paper"
@@ -24,8 +24,8 @@
 				var/mob/living/human/H = loc
 				document_name = H.real_name
 				owner = H
-				name = "[document_name] documents"
-				desc = "The identification papers of <b>[document_name]</b>."
+				name = "[document_name]证件"
+				desc = "<b>[document_name]</b>的身份证明文件。"
 				var/crimereason = "Criminal Behaviour"
 				if (istype(H.original_job, /datum/job/civilian/occupation))
 					var/datum/job/civilian/occupation/P = H.original_job
@@ -51,16 +51,16 @@
 	to_chat(user, "<span class='info'>*---------*</span>")
 	..(user)
 	if (document_details.len >= 7)
-		to_chat(user, "<b><span class='info'>Hair:</b> [document_details[1]]</span>")
+		to_chat(user, "<b><span class='info'>头发:</b> [document_details[1]]</span>")
 		if (document_details[4] == "male")
-			to_chat(user, "<b><span class='info'>Face:</b> [document_details[2]]</span>")
-		to_chat(user, "<b><span class='info'>Eyes:</b> [document_details[6]]</span>")
-		to_chat(user, "<b><span class='info'>Extra Info:</b> [document_details[3]]</span>")
-		to_chat(user, "<b><span class='info'>Job:</b> [document_details[7]]</span>")
+			to_chat(user, "<b><span class='info'>面部:</b> [document_details[2]]</span>")
+		to_chat(user, "<b><span class='info'>眼睛:</b> [document_details[6]]</span>")
+		to_chat(user, "<b><span class='info'>附加信息:</b> [document_details[3]]</span>")
+		to_chat(user, "<b><span class='info'>职业:</b> [document_details[7]]</span>")
 	to_chat(user, "<span class='info'>*---------*</span>")
 	if (guardnotes.len)
 		for(var/i in guardnotes)
-			to_chat(user, "NOTE: [i]")
+			to_chat(user, "注意: [i]")
 		to_chat(user, "<span class='info'>*---------*</span>")
 
 /obj/item/weapon/civilian_passport/attackby(var/obj/item/I, var/mob/living/human/H)
@@ -485,7 +485,7 @@
 	uniform.attackby(SS_hauptsturmfuhrer, H)
 	uniform.attackby(ss_sadler, H)
 	give_random_name(H)
-	to_chat(world, "<big><b>[H.real_name] is the Hauptsturmfuhrer of the German Forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是德国部队的党卫军突击队大队长!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, the highest ranking officer present. Your job is to command the SS troops and organize them to find and apprehend the UPA partisans.")
 	H.setStat("strength", STAT_HIGH)
 	H.setStat("crafting", STAT_NORMAL)

@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/mammoth
 	name = "mammoth"
-	desc = "This thing is huge!"
+	desc = "这东西真大!"
 	icon = 'icons/mob/animal_192.dmi'
 	icon_state = "mammoth"
 	icon_living = "mammoth"
@@ -49,7 +49,7 @@
 		if (prob(88))
 			H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), sharp=1, edge=1)
 		else
-			visible_message("\The [src] crushes [H]!")
+			visible_message("\The [src]碾碎了[H]!")
 			spawn(5)
 				H.crush()
 		return H

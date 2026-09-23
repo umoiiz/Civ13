@@ -1,6 +1,6 @@
 /obj/structure/stockmarket
-	name = "stock market"
-	desc = "Use this to buy, sell and check company shares. You can also manage your companies here."
+	name = "股票市场"
+	desc = "用它来买卖和查看公司股份. 你也可以在这里管理你的公司."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook"
 	density = TRUE
@@ -144,7 +144,7 @@
 					var/req_currency = L.len >= 6 ? L[6] : "standard"
 
 					if (!istype(H.get_inactive_hand(), /obj/item/stack/money))
-						to_chat(H, "<span class='notice'>You need to have money in your inactive hand to buy stocks!</span>")
+						to_chat(H, "<span class='notice'>你需要非惯用手持有货币才能购买股票!</span>")
 						return
 					var/obj/item/stack/money/M = H.get_inactive_hand()
 					var/valid_money = FALSE
@@ -166,11 +166,11 @@
 
 					if (!valid_money)
 						var/req_name = req_currency == "standard" ? "sc" : fiat.currency_list[req_currency][1]
-						to_chat(H, "<span class='notice'>You are not holding the requested currency ([req_name])!</span>")
+						to_chat(H, "<span class='notice'>你手上拿的不是所需的货币 ([req_name])!</span>")
 						return
 					if (money_val < ord_price)
 						var/req_name = req_currency == "standard" ? "sc" : fiat.currency_list[req_currency][1]
-						to_chat(H, "<span class='notice'>You do not have enough money. Need [ord_price] [req_name], have [money_val] [req_name].</span>")
+						to_chat(H, "<span class='notice'>你的钱不够. 需要 [ord_price] [req_name], 现有 [money_val] [req_name].</span>")
 						return
 
 					qdel(M)
@@ -212,11 +212,11 @@
 							if (LL[1] == ord && LL[2] == ord_perc && LL[3] == L[3] && LL[4] == null)
 								LL[5] = 0
 								map.sales_registry -= LL
-					to_chat(H, "<span class='notice'>You successfully bought [ord_perc]% of [ord].</span>")
+					to_chat(H, "<span class='notice'>你成功购买了 [ord_perc]% 的 [ord].</span>")
 					break
 				sale_idx++
 		if (!found)
-			to_chat(H, "<span class='notice'>That stock listing is no longer available.</span>")
+			to_chat(H, "<span class='notice'>该股票挂单已不再可用.</span>")
 		return
 
 	// Sell stock
@@ -239,7 +239,7 @@
 				var/curr_name = "Standard Coins"
 				if (requested_currency != "standard" && fiat.currency_list[requested_currency])
 					curr_name = fiat.currency_list[requested_currency][1]
-				to_chat(H, "<span class='notice'>You put up [amt]% of [cmp] at [price] [curr_name].</span>")
+				to_chat(H, "<span class='notice'>你以 [price] [curr_name] 挂出了 [amt]% 的 [cmp].</span>")
 				break
 		return
 
@@ -279,9 +279,9 @@
 						j[4][fid] += (j[2]/100)*tprof_fiat
 					distributed_something = TRUE
 		if (distributed_something)
-			to_chat(H, "<span class='notice'>You distribute the profits of [cmp].</span>")
+			to_chat(H, "<span class='notice'>你分配了 [cmp] 的利润.</span>")
 		else
-			to_chat(H, "<span class='notice'>There are no profits to distribute from [cmp].</span>")
+			to_chat(H, "<span class='notice'>[cmp] 没有可分配的利润.</span>")
 		return
 
 	// Manage company - withdraw profits
@@ -302,7 +302,7 @@
 					var/obj/item/stack/money/goldcoin/GC = new/obj/item/stack/money/goldcoin(loc)
 					GC.amount = round(price_without_tax/4)
 					j[3] = 0
-					to_chat(H, "<span class='notice'>You withdraw [GC.amount*4] silver coins in profit, paying [businesstax] silver coins in Business Tax.</span>")
+					to_chat(H, "<span class='notice'>你提取了 [GC.amount*4] 枚银币的利润, 缴纳了 [businesstax] 枚银币的营业税.</span>")
 					withdrew_something = TRUE
 				if (j.len >= 4 && istype(j[4], /list))
 					var/list/fiat_profits = j[4]
@@ -324,10 +324,10 @@
 									map.custom_civs[H.civilization][11][fid] += businesstax
 							new/obj/item/stack/money/fiat(loc, round(price_without_tax), fid)
 							fiat_profits[fid] = 0
-							to_chat(H, "<span class='notice'>You withdraw [round(price_without_tax)] [fiat.currency_list[fid][1]] in profit, paying [businesstax] [fiat.currency_list[fid][1]] in Business Tax.</span>")
+							to_chat(H, "<span class='notice'>你提取了 [round(price_without_tax)] [fiat.currency_list[fid][1]] 的利润, 缴纳了 [businesstax] [fiat.currency_list[fid][1]] 的营业税.</span>")
 							withdrew_something = TRUE
 				if (!withdrew_something)
-					to_chat(H, "<span class='notice'>You have no profits to withdraw.</span>")
+					to_chat(H, "<span class='notice'>你没有可提取的利润.</span>")
 		return
 
 	// Faction treasury - set sales tax
@@ -341,7 +341,7 @@
 		if (val < 0) val = 0
 		if (val > 30) val = 10
 		map.custom_civs[H.civilization][9] = val
-		to_chat(H, "<b>Sales Tax</b> set to [val]%.")
+		to_chat(H, "<b>销售税</b> 设置为 [val]%.")
 		return
 
 	// Faction treasury - set business tax
@@ -355,20 +355,20 @@
 		if (val < 0) val = 0
 		if (val > 30) val = 10
 		map.custom_civs[H.civilization][10] = val
-		to_chat(H, "<b>Business Tax</b> set to [val]%.")
+		to_chat(H, "<b>营业税</b> 设置为 [val]%.")
 		return
 
 	// Faction treasury - withdraw taxes
 	if (href_list["withdrawtaxes"])
 		if (map.custom_civs[H.civilization][4] != H)
-			to_chat(H, "<span class='warning'>You do not have the permissions to do that!</span>")
+			to_chat(H, "<span class='warning'>你没有权限这么做!</span>")
 			return
 		var/withdrew_something = FALSE
 		if (map.custom_civs[H.civilization][5] > 0)
 			var/obj/item/stack/money/goldcoin/GC = new/obj/item/stack/money/goldcoin(loc)
 			GC.amount = map.custom_civs[H.civilization][5]/4
 			map.custom_civs[H.civilization][5] = 0
-			to_chat(H, "You withdraw [GC.amount] gold coins in faction funds.")
+			to_chat(H, "你从阵营资金中提取了 [GC.amount] 枚金币.")
 			withdrew_something = TRUE
 		if (map.custom_civs[H.civilization].len >= 11 && istype(map.custom_civs[H.civilization][11], /list))
 			var/list/fiat_treasury = map.custom_civs[H.civilization][11]
@@ -376,17 +376,17 @@
 				var/amt = fiat_treasury[fid]
 				if (amt > 0)
 					new/obj/item/stack/money/fiat(loc, round(amt), fid)
-					to_chat(H, "You withdraw [round(amt)] [fiat.currency_list[fid][1]] in faction funds.")
+					to_chat(H, "你从阵营资金中提取了 [round(amt)] [fiat.currency_list[fid][1]].")
 					fiat_treasury[fid] = 0
 					withdrew_something = TRUE
 		if (!withdrew_something)
-			to_chat(H, "<span class='notice'>There is no money to withdraw.</span>")
+			to_chat(H, "<span class='notice'>没有可提取的资金.</span>")
 		return
 
 	// Faction treasury - withdraw fiat tax
 	if (href_list["withdrawfiat"])
 		if (map.custom_civs[H.civilization][4] != H)
-			to_chat(H, "<span class='warning'>You do not have the permissions to do that!</span>")
+			to_chat(H, "<span class='warning'>你没有权限这么做!</span>")
 			return
 		var/fid = href_list["withdrawfiat"]
 		if (map.custom_civs[H.civilization].len >= 11 && istype(map.custom_civs[H.civilization][11], /list))
@@ -394,6 +394,6 @@
 			var/amt = fiat_treasury[fid]
 			if (amt > 0)
 				new/obj/item/stack/money/fiat(loc, round(amt), fid)
-				to_chat(H, "You withdraw [round(amt)] [fiat.currency_list[fid][1]] in faction funds.")
+				to_chat(H, "你从阵营资金中提取了 [round(amt)] [fiat.currency_list[fid][1]].")
 				fiat_treasury[fid] = 0
 		return

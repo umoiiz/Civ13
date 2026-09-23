@@ -192,7 +192,7 @@ var/datum/quickBan_handler/quickBan_handler = null
 	var/duration_in_days = text2num(ckey(splittext(duration_in_x_units, " ")[1]))
 	duration_in_days = max(0,min(duration_in_days,10000))
 	if (!isnum(duration_in_days))
-		to_chat(src, "<span class = 'warning'>Invalid amount.</span>")
+		to_chat(src, "<span class = 'warning'>无效的数量.</span>")
 		goto reenter_bantime
 
 	if (findtext(duration_in_x_units, "year"))
@@ -208,7 +208,7 @@ var/datum/quickBan_handler/quickBan_handler = null
 	else if (findtext(duration_in_x_units, "second"))
 		duration_in_days /= 86400
 	else if (!findtext(duration_in_x_units, "day"))
-		to_chat(src, "<span class = 'warning'>Invalid unit.</span>")
+		to_chat(src, "<span class = 'warning'>无效的单位.</span>")
 		goto reenter_bantime
 
 	var/duration_in_deciseconds = duration_in_days * 86400 * 10
@@ -293,7 +293,7 @@ var/datum/quickBan_handler/quickBan_handler = null
 	text2file("[fields["type"]];[fields["type_specific_info"]];[fields["UID"]];[fields["reason"]];[fields["banned_by"]];[fields["ban_date"]];[fields["expire_realtime"]];[fields["expire_info"]];[banckey];[bancID];[banip];|||","SQL/bans.txt")
 	var/M = ""
 	if (banner)
-		to_chat(banner, "<span class = 'notice'>You have successfully banned [banckey]/[bancID]/[banip]. This ban [lowertext(expire_info)].")
+		to_chat(banner, "<span class = 'notice'>你已成功封禁[banckey]/[bancID]/[banip]. 此封禁[lowertext(expire_info)].")
 		M = "[key_name(banner)] banned [banckey]/[bancID]/[banip] (bantype = [fields["type"]] ([fields["type_specific_info"]])) for reason '[fields["reason"]]'. This ban [lowertext(expire_info)]."
 		message_admins(M, key_name(banner))
 	else
@@ -310,12 +310,12 @@ var/datum/quickBan_handler/quickBan_handler = null
 		if (fields["type_specific_info"])
 			for (var/client/C in clients)
 				if (C.ckey == banckey)
-					to_chat(C, "<span class = 'userdanger'>You have been [lowertext(fields["type"])]-banned ([fields["type_specific_info"]]). Reason: '[fields["reason"]]'. This ban [lowertext(expire_info)].")
+					to_chat(C, "<span class = 'userdanger'>你已被[lowertext(fields["type"])]封禁([fields["type_specific_info"]]). 原因: '[fields["reason"]]'. 此封禁[lowertext(expire_info)].")
 					break
 		else
 			for (var/client/C in clients)
 				if (C.ckey == banckey)
-					to_chat(C, "<span class = 'userdanger'>You have been [fields["type"]]-banned. Reason: '[fields["reason"]]'. This ban [lowertext(expire_info)].")
+					to_chat(C, "<span class = 'userdanger'>你已被[fields["type"]]封禁. 原因: '[fields["reason"]]'. 此封禁[lowertext(expire_info)].")
 					break
 
 /* checking if we're banned */
@@ -352,15 +352,15 @@ var/datum/quickBan_handler/quickBan_handler = null
 
 	if (reason)
 		if (bantype == "Server")
-			to_chat(src, "<span class = 'userdanger'>You're banned. Reason: '[reason]'. This ban was assigned on [date] and [expire_info] (after assigned date)</span>")
+			to_chat(src, "<span class = 'userdanger'>你已被封禁. 原因: '[reason]'. 此封禁于[date]下达,并且[expire_info](在下达日期之后)</span>")
 			return TRUE
 		else
-			to_chat(src, "<span class = 'userdanger'>You're [lowertext(bantype)]-banned. Reason: '[reason]'. This ban was assigned on [date] and [expire_info] (after assigned date)</span>")
+			to_chat(src, "<span class = 'userdanger'>你已被[lowertext(bantype)]封禁. 原因: '[reason]'. 此封禁于[date]下达,并且[expire_info](在下达日期之后)</span>")
 	return FALSE
 
 /* kick us if we just got banned */
 /client/proc/quickBan_kicked(var/bantype, var/reason, var/expire_info)
-	to_chat(src, "<span class = 'userdanger'>You have been given a [lowertext(bantype)]-ban. Reason: '[reason]'. [expire_info].</span>")
+	to_chat(src, "<span class = 'userdanger'>你已被给予[lowertext(bantype)]封禁. 原因: '[reason]'. [expire_info].</span>")
 	del src
 
 /* check if we're an admin trying to quickBan another admin */
@@ -373,7 +373,7 @@ var/datum/quickBan_handler/quickBan_handler = null
 			for(var/i in admincheck)
 				var/list/admincheck_two = splittext(i, ";")
 				if (admincheck_two.len && admincheck_two[1] == "[_ckey]")
-					to_chat(src, "<span class = 'danger'>You can't ban admins!</span>")
+					to_chat(src, "<span class = 'danger'>你不能封禁管理员!</span>")
 					return TRUE
 	return FALSE
 

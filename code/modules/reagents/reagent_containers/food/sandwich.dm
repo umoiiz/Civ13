@@ -7,8 +7,8 @@
 	..()
 
 /obj/item/weapon/reagent_containers/food/snacks/csandwich
-	name = "sandwich"
-	desc = "The best thing since sliced bread."
+	name = "三明治"
+	desc = "自切片面包以来最棒的东西."
 	icon_state = "breadslice"
 	bitesize = 2
 	satisfaction = 7
@@ -22,16 +22,16 @@
 			sandwich_limit += 4
 
 	if (contents.len > sandwich_limit)
-		to_chat(user, "<span class = 'red'>If you put anything else on \the [src] it's going to collapse.</span>")
+		to_chat(user, "<span class = 'red'>如果你在\the [src]上放任何别的东西,它就要塌了.</span>")
 		return
 	else if (istype(W,/obj/item/weapon/material/shard))
-		to_chat(user, "<span class = 'notice'>You hide [W] in \the [src].</span>")
+		to_chat(user, "<span class = 'notice'>你把[W]藏进了\the [src]里.</span>")
 		user.drop_item()
 		W.loc = src
 		update()
 		return
 	else if (istype(W,/obj/item/weapon/reagent_containers/food/snacks))
-		to_chat(user, "<span class = 'notice'>You layer [W] over \the [src].</span>")
+		to_chat(user, "<span class = 'notice'>你把[W]铺在\the [src]上.</span>")
 		var/obj/item/weapon/reagent_containers/F = W
 		if (F && F.reagents)
 			F.reagents.trans_to_obj(src, F.reagents.total_volume)
@@ -82,7 +82,7 @@
 	..(user)
 	if (contents)
 		var/obj/item/O = pick(contents)
-		to_chat(user, "<span class = 'notice'>You think you can see [O.name] in there.</span>")
+		to_chat(user, "<span class = 'notice'>你觉得你能在里面看到[O.name].</span>")
 
 /obj/item/weapon/reagent_containers/food/snacks/csandwich/attack(mob/M as mob, mob/user as mob, def_zone)
 
@@ -97,6 +97,6 @@
 		H = M
 
 	if (H && shard && M == user) //This needs a check for feeding the food to other people, but that could be abusable.
-		to_chat(H, "<span class = 'red'>You lacerate your mouth on a [shard.name] in the sandwich!</span>")
+		to_chat(H, "<span class = 'red'>你的嘴被三明治里的[shard.name]划伤了!</span>")
 		H.adjustBruteLoss(5) //TODO: Target head if human.
 	..()

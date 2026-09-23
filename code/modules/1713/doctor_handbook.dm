@@ -1,8 +1,8 @@
 // 2017-07-08: Created with essentials -- Irra
 
 /obj/item/weapon/doctor_handbook
-	name = "doctor's handbook"
-	desc = "A book the size of your hand, containing a compact encyclopedia of the dark wonders of war - diseases, conditions, and documentation of all degrees of injury."
+	name = "医生手册"
+	desc = "一本手掌大小的书,内含一部关于战争黑暗奇观的简明百科全书 - 疾病,病症,以及各种程度伤势的记录."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bookmed"
 	item_state = "bible" // I couldn't find any better placeholder for now
@@ -23,7 +23,7 @@
 		return ..()
 
 	var/datum/gender/G = gender_datums[victim.gender]
-	user.visible_message("<span class='notice'>[user] glances through [src], inspecting [victim]'s [victim.stat == DEAD ? "corpse" : "body"].</span>")
+	user.visible_message("<span class='notice'>[user]浏览着[src],检查着[victim]的[victim.stat == DEAD ? "corpse" : "body"].</span>")
 
 	if (ishuman(victim))
 		var/mob/living/human/H = victim

@@ -1,8 +1,8 @@
 //experimental alternative research method - using resources to increase research.
 
 /obj/structure/researchdesk
-	name = "research desk"
-	desc = "Use this study several items and increase your research levels."
+	name = "研究桌"
+	desc = "使用这个来研究多个物品并提升你的研究等级."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "researchdesk"
 	var/money = 0
@@ -22,31 +22,31 @@
 		return
 
 	if (H.civilization == "none")
-		to_chat(H, "You are not part of any factions.")
+		to_chat(H, "你不属于任何阵营.")
 		return
 
 	if (W.value == 0)
-		to_chat(H, "This item has no research value.")
+		to_chat(H, "该物品没有研究价值.")
 		return
 	if (map.age1_done == FALSE)
 		if (world.time < 36000 && map.custom_civs[H.civilization][1]+map.custom_civs[H.civilization][2]+map.custom_civs[H.civilization][3] >= (19*3))
-			to_chat(H, "You are already too advanced. You can research again in [(36000-world.time)/600] minutes.")
+			to_chat(H, "你已经过于先进了. 你可以在[(36000-world.time)/600]分钟后再次研究.")
 			return
 	else if (map.age1_done == TRUE && map.age2_done == FALSE)
 		if (world.time < map.age2_timer && map.custom_civs[H.civilization][1]+map.custom_civs[H.civilization][2]+map.custom_civs[H.civilization][3] >= (map.age1_top*3))
-			to_chat(H, "You are already too advanced. You can research again in [(map.age2_timer-world.time)/600] minutes.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age2_timer-world.time)/600]分钟后再次研究.")
 			return
 	else if (map.age2_done == TRUE && map.age3_done == FALSE)
 		if (world.time < map.age3_timer && map.custom_civs[H.civilization][1]+map.custom_civs[H.civilization][2]+map.custom_civs[H.civilization][3] >= (map.age2_top*3))
-			to_chat(H, "You are already too advanced. You can research again in [(map.age3_timer-world.time)/600] minutes.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age3_timer-world.time)/600]分钟后再次研究.")
 			return
 	else if (map.age3_done == TRUE && map.age4_done == FALSE)
 		if (world.time < map.age3_timer && map.custom_civs[H.civilization][1]+map.custom_civs[H.civilization][2]+map.custom_civs[H.civilization][3] >= (map.age3_top*3))
-			to_chat(H, "You are already too advanced. You can research again in [(map.age4_timer-world.time)/600] minutes.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age4_timer-world.time)/600]分钟后再次研究.")
 			return
 	else if (map.age4_done == TRUE && map.age5_done == FALSE)
 		if (world.time < map.age5_timer && map.custom_civs[H.civilization][1]+map.custom_civs[H.civilization][2]+map.custom_civs[H.civilization][3] >= (map.age4_top*3))
-			to_chat(H, "You are already too advanced. You can research again in [(map.age5_timer-world.time)/600] minutes.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age5_timer-world.time)/600]分钟后再次研究.")
 			return
 	if (!map.civilizations || map.ID == MAP_TRIBES || map.ID == MAP_FOUR_KINGDOMS || map.ID == MAP_THREE_TRIBES)
 		return
@@ -90,8 +90,8 @@
 //Chad Mode +
 
 /obj/structure/researchdesk/chad
-	name = "Altar of Chad."
-	desc = "Grab live or dead people and sacrifice them."
+	name = "猛男祭坛."
+	desc = "抓住活人或死人并献祭他们."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "altar_of_chad"
 	money = 0
@@ -108,34 +108,34 @@
 		return
 
 	if (H.civilization == "none")
-		to_chat(H, "You are not part of any factions.")
+		to_chat(H, "你不属于任何阵营.")
 		return
 
 	if (istype(W, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/G = W
 		var/mob/living/affecting = G.affecting
 		if(!istype(affecting, /mob/living/human) && !istype(affecting, /mob/living/human/corpse))
-			to_chat(H, "This item has no research value.")
+			to_chat(H, "该物品没有研究价值.")
 			return
 	if (map.age1_done == FALSE)
 		if (world.time < 36000 && ( (map.custom_civs[H.civilization][1] >= 19) || (map.custom_civs[H.civilization][2] >= 19) || (map.custom_civs[H.civilization][3] >= 19)) )
-			to_chat(H, "You are already too advanced. You can research again in [(36000-world.time)/600/60] hours.")
+			to_chat(H, "你已经过于先进了. 你可以在[(36000-world.time)/600/60]小时后再次研究.")
 			return
 	else if (map.age1_done == TRUE && map.age2_done == FALSE)
 		if (world.time < map.age2_timer && ( (map.custom_civs[H.civilization][1] >= map.age1_top) || (map.custom_civs[H.civilization][2] >= map.age1_top) || (map.custom_civs[H.civilization][3] >= map.age1_top)) )
-			to_chat(H, "You are already too advanced. You can research again in [(map.age2_timer-world.time)/600/60] hours.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age2_timer-world.time)/600/60]小时后再次研究.")
 			return
 	else if (map.age2_done == TRUE && map.age3_done == FALSE)
 		if (world.time < map.age3_timer && ( (map.custom_civs[H.civilization][1] >= map.age2_top) || (map.custom_civs[H.civilization][2] >= map.age2_top) || (map.custom_civs[H.civilization][3] >= map.age2_top)) )
-			to_chat(H, "You are already too advanced. You can research again in [(map.age3_timer-world.time)/600/60] hours.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age3_timer-world.time)/600/60]小时后再次研究.")
 			return
 	else if (map.age3_done == TRUE && map.age4_done == FALSE)
 		if (world.time < map.age4_timer && ( (map.custom_civs[H.civilization][1] >= map.age3_top) || (map.custom_civs[H.civilization][2] >= map.age3_top) || (map.custom_civs[H.civilization][3] >= map.age3_top)) )
-			to_chat(H, "You are already too advanced. You can research again in [(map.age4_timer-world.time)/600/60] hours.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age4_timer-world.time)/600/60]小时后再次研究.")
 			return
 	else if (map.age4_done == TRUE && map.age5_done == FALSE)
 		if (world.time < map.age5_timer && ( (map.custom_civs[H.civilization][1] >= map.age4_top) || (map.custom_civs[H.civilization][2] >= map.age4_top) || (map.custom_civs[H.civilization][3] >= map.age4_top)) )
-			to_chat(H, "You are already too advanced. You can research again in [(map.age5_timer-world.time)/600/60] hours.")
+			to_chat(H, "你已经过于先进了. 你可以在[(map.age5_timer-world.time)/600/60]小时后再次研究.")
 			return
 
 	if (done == FALSE)
@@ -149,10 +149,10 @@
 				marketval = 5
 				moneyin = 5
 			else
-				to_chat(H, "<span class='alert'>That is not a human!</span>")
+				to_chat(H, "<span class='alert'>那不是人类!</span>")
 				return
 		else
-			to_chat(H, "<span class='alert'>You need to grab a human.</span>")
+			to_chat(H, "<span class='alert'>你需要抓住一个人类.</span>")
 			return
 		done = TRUE
 		var/list/display = list("Industrial", "Military", "Health", "Cancel")
@@ -170,10 +170,10 @@
 					affecting.crush()
 					map.custom_civs[H.civilization][1] += (moneyin)
 				else
-					to_chat(H, "<span class='alert'> You need to be holding someone.</span>")
+					to_chat(H, "<span class='alert'>你需要正抓着某个人.</span>")
 					return
 			else
-				to_chat(H, "<span class='alert'> Sacrificing yourself isn't very cash money of you.</span>")
+				to_chat(H, "<span class='alert'>献祭你自己可不太够意思.</span>")
 				qdel(affecting)
 				return
 			done = FALSE
@@ -188,10 +188,10 @@
 					affecting.crush()
 					map.custom_civs[H.civilization][2] += (moneyin)
 				else
-					to_chat(H, "<span class='alert'> You need to be holding someone.</span>")
+					to_chat(H, "<span class='alert'>你需要正抓着某个人.</span>")
 					return
 			else
-				to_chat(H, "<span class='alert'> Sacrificing yourself isn't very cash money of you.</span>")
+				to_chat(H, "<span class='alert'>献祭你自己可不太够意思.</span>")
 				qdel(affecting)
 				return
 			done = FALSE
@@ -206,10 +206,10 @@
 					affecting.crush()
 					map.custom_civs[H.civilization][3] += (moneyin)
 				else
-					to_chat(H, "<span class='alert'> You need to be holding someone.</span>")
+					to_chat(H, "<span class='alert'>你需要正抓着某个人.</span>")
 					return
 			else
-				to_chat(H, "<span class='alert'> Sacrificing yourself isn't very cash money of you.</span>")
+				to_chat(H, "<span class='alert'>献祭你自己可不太够意思.</span>")
 				qdel(affecting)
 				return
 			done = FALSE

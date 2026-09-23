@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/zombie
 	name = "\improper zombie"
-	desc = "A reanimated dead corpse."
+	desc = "一具被重新赋予生命的死尸."
 	icon = 'icons/mob/zombie1.dmi'
 	icon_state = "zombie"
 	icon_dead = ""
@@ -140,7 +140,7 @@
 	else
 		if ((limb in list("r_leg", "l_leg", "l_arm", "r_arm")) && prob(50))
 			bodyparts -= "[limb]_s"
-			visible_message("[src]'s [parse_zone(limb)] gets severed!")
+			visible_message("[src]的[parse_zone(limb)]被切断了!")
 			var/tmplimb = limb
 			tmplimb = replacetext(tmplimb, "arm", "hand")
 			tmplimb = replacetext(tmplimb, "leg", "foot")

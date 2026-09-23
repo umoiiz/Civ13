@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/holster
-	name = "shoulder holster"
-	desc = "A handgun holster."
+	name = "肩部枪套"
+	desc = "一个手枪枪套."
 	icon_state = "holster"
 	slot = "utility"
 	var/obj/item/holstered = null
@@ -10,15 +10,15 @@
 	map_storage_saved_vars = "density;icon_state;dir;name;pixel_x;pixel_y;holstered;holstered2"
 /obj/item/clothing/accessory/holster/proc/holster(var/obj/item/I, var/mob/living/user)
 	if (holstered && istype(user) && capacity == 1)
-		to_chat(user, "<span class='warning'>There is already \a [holstered] holstered here!</span>")
+		to_chat(user, "<span class='warning'>这里已经插着\a 把[holstered]了!</span>")
 		return
 
 	if (holstered && holstered2 && istype(user) && capacity == 2)
-		to_chat(user, "<span class='warning'>There are already \a [holstered] and \a [holstered2] holstered here!</span>")
+		to_chat(user, "<span class='warning'>这里已经插着\a 把[holstered]和\a 把[holstered2]了!</span>")
 		return
 
 	if (!(I.slot_flags & SLOT_HOLSTER))
-		to_chat(user, "<span class='warning'>[I] won't fit in [src]!</span>")
+		to_chat(user, "<span class='warning'>[I]放不进[src]!</span>")
 		return
 	/*if (istype(I, /obj/item/weapon/gun))
 		var/obj/item/weapon/gun/G = I
@@ -33,7 +33,7 @@
 		holstered.loc = src
 		holstered.add_fingerprint(user)
 		w_class = max(w_class, holstered.w_class)
-		user.visible_message("<span class='notice'>[user] holsters \the [holstered].</span>", "<span class='notice'>You holster \the [holstered].</span>")
+		user.visible_message("<span class='notice'>[user]将\the [holstered]插入枪套.</span>", "<span class='notice'>你将\the [holstered]插入枪套.</span>")
 		name = "occupied [initial(name)]"
 	else if (capacity == 2)
 		if (holstered && !holstered2)
@@ -42,7 +42,7 @@
 			holstered2.loc = src
 			holstered2.add_fingerprint(user)
 			w_class = max(w_class, holstered2.w_class)
-			user.visible_message("<span class='notice'>[user] holsters \the [holstered2].</span>", "<span class='notice'>You holster \the [holstered2].</span>")
+			user.visible_message("<span class='notice'>[user]将\the [holstered2]插入枪套.</span>", "<span class='notice'>你将\the [holstered2]插入枪套.</span>")
 			name = "occupied [initial(name)]"
 		else if (!holstered)
 			holstered = I
@@ -50,7 +50,7 @@
 			holstered.loc = src
 			holstered.add_fingerprint(user)
 			w_class = max(w_class, holstered.w_class)
-			user.visible_message("<span class='notice'>[user] holsters \the [holstered].</span>", "<span class='notice'>You holster \the [holstered].</span>")
+			user.visible_message("<span class='notice'>[user]将\the [holstered]插入枪套.</span>", "<span class='notice'>你将\the [holstered]插入枪套.</span>")
 			name = "occupied [initial(name)]"
 		else //this really shouldnt happen
 			return
@@ -71,17 +71,17 @@
 
 	if (holstered && capacity == 1)
 		if (istype(user.get_active_hand(),/obj) && istype(user.get_inactive_hand(),/obj))
-			to_chat(user, "<span class='warning'>You need an empty hand to draw \the [holstered]!</span>")
+			to_chat(user, "<span class='warning'>你需要空出一只手才能拔出\the [holstered]!</span>")
 		else
 			if (user.a_intent == I_HARM)
 				usr.visible_message(
-					"<span class='danger'>[user] draws \the [holstered], ready to shoot!</span>",
-					"<span class='warning'>You draw \the [holstered], ready to shoot!</span>"
+					"<span class='danger'>[user]拔出\the [holstered],准备射击!</span>",
+					"<span class='warning'>你拔出\the [holstered],准备射击!</span>"
 					)
 			else
 				user.visible_message(
-					"<span class='notice'>[user] draws \the [holstered], pointing it at the ground.</span>",
-					"<span class='notice'>You draw \the [holstered], pointing it at the ground.</span>"
+					"<span class='notice'>[user]拔出\the [holstered],枪口指向地面.</span>",
+					"<span class='notice'>你拔出\the [holstered],枪口指向地面.</span>"
 					)
 			user.put_in_hands(holstered)
 			holstered.add_fingerprint(user)
@@ -90,17 +90,17 @@
 			return
 	else if (holstered2 && capacity == 2)
 		if (istype(user.get_active_hand(),/obj) && istype(user.get_inactive_hand(),/obj))
-			to_chat(user, "<span class='warning'>You need an empty hand to draw \the [holstered2]!</span>")
+			to_chat(user, "<span class='warning'>你需要空出一只手才能拔出\the [holstered2]!</span>")
 		else
 			if (user.a_intent == I_HARM)
 				usr.visible_message(
-					"<span class='danger'>[user] draws \the [holstered2], ready to shoot!</span>",
-					"<span class='warning'>You draw \the [holstered2], ready to shoot!</span>"
+					"<span class='danger'>[user]拔出\the [holstered2],准备射击!</span>",
+					"<span class='warning'>你拔出\the [holstered2],准备射击!</span>"
 					)
 			else
 				user.visible_message(
-					"<span class='notice'>[user] draws \the [holstered2], pointing it at the ground.</span>",
-					"<span class='notice'>You draw \the [holstered2], pointing it at the ground.</span>"
+					"<span class='notice'>[user]拔出\the [holstered2],枪口指向地面.</span>",
+					"<span class='notice'>你拔出\the [holstered2],枪口指向地面.</span>"
 					)
 			user.put_in_hands(holstered2)
 			holstered.add_fingerprint(user)
@@ -109,17 +109,17 @@
 
 	else if (holstered && capacity == 2)
 		if (istype(user.get_active_hand(),/obj) && istype(user.get_inactive_hand(),/obj))
-			to_chat(user, "<span class='warning'>You need an empty hand to draw \the [holstered]!</span>")
+			to_chat(user, "<span class='warning'>你需要空出一只手才能拔出\the [holstered]!</span>")
 		else
 			if (user.a_intent == I_HARM)
 				usr.visible_message(
-					"<span class='danger'>[user] draws \the [holstered], ready to shoot!</span>",
-					"<span class='warning'>You draw \the [holstered], ready to shoot!</span>"
+					"<span class='danger'>[user]拔出\the [holstered],准备射击!</span>",
+					"<span class='warning'>你拔出\the [holstered],准备射击!</span>"
 					)
 			else
 				user.visible_message(
-					"<span class='notice'>[user] draws \the [holstered], pointing it at the ground.</span>",
-					"<span class='notice'>You draw \the [holstered], pointing it at the ground.</span>"
+					"<span class='notice'>[user]拔出\the [holstered],指向地面.</span>",
+					"<span class='notice'>你拔出\the [holstered],指向地面.</span>"
 					)
 			user.put_in_hands(holstered)
 			holstered.add_fingerprint(user)
@@ -149,18 +149,18 @@
 	..(user)
 	if (capacity == 1)
 		if (holstered)
-			to_chat(user, "A [holstered] is holstered here.")
+			to_chat(user, "一个[holstered]套在这里.")
 		else
-			to_chat(user, "It is empty.")
+			to_chat(user, "它是空的.")
 	else if (capacity == 2)
 		if (holstered && !holstered2)
-			to_chat(user, "A [holstered] is holstered here.")
+			to_chat(user, "一个[holstered]套在这里.")
 		else if (holstered && holstered2)
-			to_chat(user, "A [holstered] and a [holstered2] are holstered here.")
+			to_chat(user, "一个[holstered]和一个[holstered2]套在这里.")
 		else if (!holstered && holstered2)
-			to_chat(user, "A [holstered2] is holstered here.")
+			to_chat(user, "一个[holstered2]套在这里.")
 		else
-			to_chat(user, "It is empty.")
+			to_chat(user, "它是空的.")
 /obj/item/clothing/accessory/holster/on_attached(obj/item/clothing/under/S, mob/user as mob)
 	..()
 	has_suit.verbs += /obj/item/clothing/accessory/holster/verb/holster_verb
@@ -187,51 +187,51 @@
 			H = locate() in S.accessories
 
 	if (!H)
-		to_chat(usr, "<span class='warning'>Something is very wrong.</span>")
+		to_chat(usr, "<span class='warning'>有些非常不对劲.</span>")
 
 	if (!H.holstered)
 		var/obj/item/W = usr.get_active_hand()
 		if (!istype(W, /obj/item))
-			to_chat(usr, "<span class='warning'>You need your gun equiped to holster it.</span>")
+			to_chat(usr, "<span class='warning'>你需要装备你的枪才能将其收起.</span>")
 			return
 		H.holster(W, usr)
 	else
 		H.unholster(usr)
 
 /obj/item/clothing/accessory/holster/armpit
-	name = "armpit holster"
-	desc = "A worn-out handgun holster. Perfect for concealed carry"
+	name = "腋下枪套"
+	desc = "一个破旧的手枪枪套.非常适合隐蔽携带"
 	icon_state = "holster"
 
 /obj/item/clothing/accessory/holster/waist
-	name = "waist holster"
-	desc = "A handgun holster. Made of expensive leather."
+	name = "腰部枪套"
+	desc = "一个手枪枪套.由昂贵的皮革制成."
 	icon_state = "holster"
 	overlay_state = "holster_low"
 
 /obj/item/clothing/accessory/holster/chest
-	name = "chest holster"
-	desc = "A handgun holster with slung around the chest."
+	name = "胸前枪套"
+	desc = "一个挂在胸前的手枪枪套."
 	icon_state = "waist_holster"
 	overlay_state = "waist_holster"
 
 /obj/item/clothing/accessory/holster/hip
-	name = "hip holster"
-	desc = "A handgun holster slung low on the hip."
+	name = "臀部枪套"
+	desc = "一个低挂在臀部的手枪枪套."
 	icon_state = "holster_hip"
 
 /obj/item/clothing/accessory/holster/hip/double
-	name = "double hip holster"
-	desc = "A double handgun holster slung low on the hip."
+	name = "双联臀部枪套"
+	desc = "一个低挂在臀部的双联手枪枪套."
 	icon_state = "holster_hip2"
 	capacity = 2
 
 /obj/item/clothing/accessory/holster/tactical
-	name = "hip holster"
-	desc = "A handgun holster slung low on the hip."
+	name = "臀部枪套"
+	desc = "一个低挂在臀部的手枪枪套."
 	icon_state = "tacholster"
 
 /obj/item/clothing/accessory/holster/replicantkama
-	name = "replicant kama"
-	desc = "A kama skirt with a built in holster slung low on the hip."
+	name = "复制人卡玛"
+	desc = "一条低挂在臀部、内置枪套的卡玛裙."
 	icon_state = "replicant_kama"

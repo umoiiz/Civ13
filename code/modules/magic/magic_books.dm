@@ -1,6 +1,6 @@
 // Professor Snip's Cauldron-Stirring Syllabus
 /obj/item/weapon/book/manual/potions
-	name = "Professor Snip's Cauldron-Stirring Syllabus"
+	name = "斯尼普教授的搅锅教学大纲"
 	icon_state = "grimoire0"
 	author = "Professor Snip"
 	title = "Professor Snip's Cauldron-Stirring Syllabus"
@@ -120,7 +120,7 @@
 
 // Splinters' Guide to Bootleg Wands
 /obj/item/weapon/book/manual/wand_crafting
-	name = "Splinters' Guide to Bootleg Wands"
+	name = "斯普林特斯的盗版魔杖指南"
 	icon_state = "book18"
 	author = "Seamus 'Splinters' O'Shaughnessy"
 	title = "Splinters' Guide to Bootleg Wands"
@@ -225,7 +225,7 @@
 
 // L.A.M.E. Student Handbook
 /obj/item/weapon/book/manual/student_handbook
-	name = "The L.A.M.E. Student Handbook"
+	name = "L.A.M.E.学生手册"
 	icon_state = "book_lame"
 	author = "Ministry of Arcane Standards & Practices"
 	title = "L.A.M.E. Student Handbook: A Guide to Academic Progression"
@@ -292,7 +292,7 @@
 
 // The Dark Arts: A Warning
 /obj/item/weapon/book/manual/dark_arts
-	name = "The Dark Arts: A Warning"
+	name = "黑魔法:一份警告"
 	icon_state = "book_skull2"
 	author = "Ministry of Arcane Standards & Practices"
 	title = "The Dark Arts: A Warning"
@@ -397,7 +397,7 @@
 
 // Almanac of Wand Components
 /obj/item/weapon/book/manual/wand_components
-	name = "Almanac of Wand Components"
+	name = "魔杖材料年鉴"
 	icon_state = "research1"
 	author = "Dr. Barnaby Finch"
 	title = "Almanac of Wand Components"

@@ -15,8 +15,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 //		Some will attract vermins (orderlies), who will consume these substances.
 //	Final redesign of drying system, based on reagents and "drying" process, but not only items creation, deletion.
 /obj/item/weapon/reagent_containers/food/snacks
-	name = "snack" //Name that displays in the UI.
-	desc = "yummy" //String, that you see, when examine
+	name = "零食" //Name that displays in the UI.
+	desc = "好吃" //String, that you see, when examine
 	icon = 'icons/obj/food/food.dmi' //Icons file. Don't define it, if you not want to use another file.
 	icon_state = null //Icon. By default from icon file, if you don't inherit it with custom file.
 	color = null //Additional coloring of icon. Usual as grayscale icon, but you may do rotten icon by adding disguisting color for original icon.
@@ -182,7 +182,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 				H.reagents.add_reagent("food_poisoning", pick(0,0,1)) //1/3 chance to be poisoned if you are not orc, crab, wolfman or lizard
 	M.rad_act(radiation) //need be before qdel(src) may happens
 	if (!reagents.total_volume)
-		M.visible_message("<span class='notice'>[M] finishes eating \the [src].</span>","<span class='notice'>You finish eating \the [src].</span>")
+		M.visible_message("<span class='notice'>[M]吃完了\the [src].</span>","<span class='notice'>你吃完了\the [src].</span>")
 		over(M)
 
 /obj/item/weapon/reagent_containers/food/snacks/attack_self(mob/user as mob)
@@ -191,7 +191,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 /obj/item/weapon/reagent_containers/food/snacks/attack(mob/M as mob, mob/user as mob, def_zone)
 	if (reagents)
 		if (!reagents.total_volume)
-			to_chat(user, "<span class='danger'>None of [src] left!</span>")
+			to_chat(user, "<span class='danger'>[src]一点不剩!</span>")
 			over(user)
 			return FALSE
 	if (istype(M, /mob/living/human))
@@ -202,29 +202,29 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 			if (istype(C,/mob/living/human))
 				var/mob/living/human/H = M
 				if (!H.check_has_mouth())
-					to_chat(user, "Where do you intend to put \the [src]? You don't have a mouth!")
+					to_chat(user, "你打算把\the [src]放到哪里?你没有嘴!")
 					return
 				var/obj/item/blocked = H.check_mouth_coverage()
 				if (blocked)
-					to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+					to_chat(user, "<span class='warning'>\The [blocked]挡住了!</span>")
 					return
 				if (H.gorillaman || H.find_trait("Vegan"))
 					if (non_vegetarian)
-						to_chat(user, "<span class='warning'>You are a vegan/herbivore! You can't eat this!</span>")
+						to_chat(user, "<span class='warning'>你是素食者/食草动物!你不能吃这个!</span>")
 						return
 				else if (H.wolfman || H.crab || H.find_trait("Carnivore"))
 					if (!non_vegetarian)
-						to_chat(user, "<span class='warning'>You are a carnivore! You can't eat this!</span>")
+						to_chat(user, "<span class='warning'>你是食肉动物!你不能吃这个!</span>")
 						return
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
 			if (fullness <= 50)
-				to_chat(C, "<span class='danger'>You hungrily chew out a piece of [src] and gobble it!</span>")
+				to_chat(C, "<span class='danger'>你饥饿地咬下一块[src]吞了下去!</span>")
 			if (fullness > 50 && fullness <= 150)
-				to_chat(C, "<span class='notice'>You hungrily begin to eat [src].</span>")
+				to_chat(C, "<span class='notice'>你饥饿地开始吃[src].</span>")
 			if (fullness > 150 && fullness <= 580)
-				to_chat(C, "<span class='notice'>You take a bite of [src].</span>")
+				to_chat(C, "<span class='notice'>你咬了一口[src].</span>")
 			if (fullness > 580)
-				to_chat(C, "<span class='danger'>You cannot force any more of [src] to go down your throat.</span>")
+				to_chat(C, "<span class='danger'>你再也咽不下更多的[src]了.</span>")
 				return FALSE
 		else //If you're feeding somebody
 			if (!M.can_force_feed(user, src))
@@ -233,16 +233,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 				var/mob/living/human/H = M
 				if (H.gorillaman)
 					if (non_vegetarian)
-						to_chat(user, "<span class='warning'>[H] is an herbivore! They can't eat this!</span>")
+						to_chat(user, "<span class='warning'>[H]是食草动物!他们不能吃这个!</span>")
 						return
 				else if (H.wolfman || H.crab)
 					if (!non_vegetarian)
-						to_chat(user, "<span class='warning'>[H] is a carnivore! They can't eat this!</span>")
+						to_chat(user, "<span class='warning'>[H]是食肉动物!他们不能吃这个!</span>")
 						return
 			if (fullness <= 580)
-				user.visible_message("<span class='danger'>[user] attempts to feed [M] [src].</span>")
+				user.visible_message("<span class='danger'>[user]试图喂[M]吃[src].</span>")
 			else
-				user.visible_message("<span class='danger'>[user] cannot force anymore of [src] down [M]'s throat.</span>")
+				user.visible_message("<span class='danger'>[user]再也塞不进[src]到[M]的喉咙里了.</span>")
 				return FALSE
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			if (!do_after(user, 30, M, check_for_repeats = FALSE))
@@ -250,7 +250,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 			M.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been fed [name] by [user.name] ([user.ckey]) Reagents: [reagentlist(src)]</font>")
 			user.attack_log += text("\[[time_stamp()]\] <font color='red'>Fed [name] by [M.name] ([M.ckey]) Reagents: [reagentlist(src)]</font>")
 			msg_admin_attack("[key_name(user)] fed [key_name(M)] with [name] Reagents: [reagentlist(src)] (INTENT: [uppertext(user.a_intent)])", key_name(user), key_name(M))
-			user.visible_message("<span class='danger'>[user] feeds [M] [src].</span>")
+			user.visible_message("<span class='danger'>[user]喂[M]吃了[src].</span>")
 		//A spoon for mom, a spoon for dad. If we are here, then food is go to mouth to human type species, not others!
 		playsound(M.loc,"eat", rand(40,85), TRUE)
 		if (reagents.total_volume > bitesize)
@@ -268,11 +268,11 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	if (bitecount == 0)
 		return
 	else if (bitecount == 1)
-		to_chat(user, "<span class='notice'>\The [src] was bitten by someone!</span>")
+		to_chat(user, "<span class='notice'>\The [src]被某人咬了!</span>")
 	else if (bitecount <= 3)
-		to_chat(user, "<span class='notice'>\The [src] was bitten [bitecount] time\s!</span>")
+		to_chat(user, "<span class='notice'>\The [src]被咬了[bitecount]次\s !</span>")
 	else
-		to_chat(user, "<span class='notice'>\The [src] was bitten multiple times!</span>")
+		to_chat(user, "<span class='notice'>\The [src]被咬了多次!</span>")
 
 /obj/item/weapon/reagent_containers/food/snacks/proc/is_sliceable()
 	if (slice_path)
@@ -297,10 +297,10 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 			return
 		var/slices_lost = 0
 		if (W.w_class > 3) //big weapons may damage dishes
-			user.visible_message("<span class='notice'>\The [user] crudely slices \the [src] with [W]!</span>", "<span class='notice'>You crudely slice \the [src] with your [W]!</span>")
+			user.visible_message("<span class='notice'>\The [user]用[W]粗暴地切开了\the [src]!</span>", "<span class='notice'>你用你的[W]粗暴地切开了\the [src]!</span>")
 			slices_lost = rand(1,min(1,round(slices_num/2)))
 		else
-			user.visible_message("<span class='notice'>\The [user] slices \the [src]!</span>", "<span class='notice'>You slice \the [src]!</span>")
+			user.visible_message("<span class='notice'>\The [user]切开了\the [src]!</span>", "<span class='notice'>你切开了\the [src]!</span>")
 		var/reagents_per_slice = reagents.total_volume/slices_num
 		for (var/i=1 to (slices_num - slices_lost))
 			var/obj/item/weapon/reagent_containers/food/snacks/slice = new slice_path(loc)
@@ -315,7 +315,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 			if (!U.reagents)
 				U.create_reagents(5)
 			if (U.reagents.total_volume > 0)
-				to_chat(user, "<span class='warning'>You already have something on your [U].</span>")
+				to_chat(user, "<span class='warning'>你的[U]上已经有东西了.</span>")
 				return
 			user.visible_message( \
 				"\The [user] scoops up some [src] with \the [U]!", \
@@ -335,7 +335,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 /obj/item/weapon/reagent_containers/food/snacks/attack_generic(var/mob/living/M) //Eating food by mobs on "their own"
 	if (!isanimal(M))
 		return
-	M.visible_message("<b>[M]</b> nibbles away at \the [src].")
+	M.visible_message("<b>[M]</b>一点点啃着\the [src].")
 	bitecount++
 	if (reagents && M.reagents)
 		reagents.trans_to_mob(M, bitesize, CHEM_INGEST)
@@ -355,8 +355,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 ////////////////////////////////////////////Snacks
 //////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/food/snacks/hardtack
-	name = "hardtack"
-	desc = "Looks like it has been in a ship's hull for years."
+	name = "压缩饼干"
+	desc = "看起来像是在船体里放了好几年."
 	icon_state = "hardtack1"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 2
@@ -369,8 +369,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		icon_state = "hardtack[rand(1,2)]"
 
 /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknale
-	name = "hardtack soaked in ale"
-	desc = "Looks like it has been in a ship's hull for years. You soaked some ale into it before the battle started, good thinking!"
+	name = "泡过麦酒的压缩饼干"
+	desc = "看起来像是在船体里放了好几年. 你在战斗开始前泡了些麦酒进去, 想得真周到!"
 	nutriment_desc = list("biscuits" = 1)
 	biteamount = 2
 	New()
@@ -378,8 +378,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("ale", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknwine
-	name = "hardtack soaked in wine"
-	desc = "Looks like it has been in a ship's hull for years. You soaked some ale into it before the battle started, good thinking!"
+	name = "泡过葡萄酒的压缩饼干"
+	desc = "看起来像是在船体里放了好几年. 你在战斗开始前泡了些麦酒进去, 想得真周到!"
 	nutriment_desc = list("biscuits" = 1,)
 	biteamount = 2
 	New()
@@ -387,8 +387,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("wine", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknbeer
-	name = "hardtack soaked in beer"
-	desc = "Looks like it has been in a ship's hull for years. You soaked some ale into it before the battle started, good thinking!"
+	name = "泡过啤酒的压缩饼干"
+	desc = "看起来像是在船体里放了好几年. 你在战斗开始前泡了些麦酒进去, 想得真周到!"
 	nutriment_desc = list("biscuits" = 1,)
 	biteamount = 2
 	New()
@@ -396,8 +396,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("beer", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknopium
-	name = "hardtack with an opium smear"
-	desc = "Looks like it has been in a ship's hull for years. You smeared opium onto it before the battle started, good thinking!"
+	name = "涂了鸦片的压缩饼干"
+	desc = "看起来像是在船体里放了好几年. 你在战斗开始前涂了些鸦片上去, 想得真周到!"
 	nutriment_desc = list("biscuits" = 1,)
 	biteamount = 2
 	New()
@@ -405,8 +405,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("opium", 0.5)
 
 /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknkhat
-	name = "hardtack with an opium smear"
-	desc = "Looks like it has been in a ship's hull for years. You smeared khat leaves onto it before the battle started, good thinking!"
+	name = "涂了鸦片的压缩饼干"
+	desc = "看起来像是在船体里放了好几年. 你在战斗开始前涂了些阿拉伯茶上去, 想得真周到!"
 	nutriment_desc = list("biscuits" = 1,)
 	biteamount = 2
 	New()
@@ -414,8 +414,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("cocaine", 0.5)
 
 /obj/item/weapon/reagent_containers/food/snacks/driedmeat
-	name = "dried meat"
-	desc = "Dried meat. Probably pork. Or mice."
+	name = "肉干"
+	desc = "肉干. 大概是猪肉. 或者是老鼠肉."
 	icon_state = "driedmeat"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 3
@@ -426,8 +426,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 250*600
 
 /obj/item/weapon/reagent_containers/food/snacks/driedfish
-	name = "dried fish"
-	desc = "Some kind of sun dried fish."
+	name = "鱼干"
+	desc = "某种晒干的鱼."
 	icon_state = "driedfish"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 3
@@ -438,8 +438,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 180*600
 
 /obj/item/weapon/reagent_containers/food/snacks/driedsalmon
-	name = "dried salmon"
-	desc = "A dried salmon fillet."
+	name = "干鲑鱼"
+	desc = "一片干鲑鱼片."
 	icon_state = "driedsalmon"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 3
@@ -449,8 +449,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 200*600
 
 /obj/item/weapon/reagent_containers/food/snacks/pickle
-	name = "pickle"
-	desc = "A pickle. That's it."
+	name = "腌黄瓜"
+	desc = "一根腌黄瓜. 就这样."
 	icon_state = "pickle"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 1
@@ -460,8 +460,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 250*600
 
 /obj/item/weapon/reagent_containers/food/snacks/pickle/big
-	name = "big pickle"
-	desc = "Oh boy, that's a big pickle!"
+	name = "大腌黄瓜"
+	desc = "哦天哪, 好大一根腌黄瓜!"
 	icon_state = "pickleb"
 	center_of_mass = list("x"=17, "y"=18)
 	nutriment_amt = 5
@@ -470,8 +470,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 250*600
 
 /obj/item/weapon/reagent_containers/food/snacks/cookie
-	name = "cookie"
-	desc = "COOKIE!!!"
+	name = "饼干"
+	desc = "饼干!!!"
 	icon_state = "COOKIE!!!"
 	center_of_mass = list("x"=17, "y"=18)
 	filling_color = "#DBC94F"
@@ -481,8 +481,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	biteamount = 5
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatebar
-	name = "Chocolate bar"
-	desc = "Such sweet, fattening food. You feel so empowered after tasting it!"
+	name = "巧克力棒"
+	desc = "如此甜美, 令人发胖的食物. 尝过之后你感觉自己充满了力量!"
 	icon_state = "chocolatebar"
 	filling_color = "#7D5F46"
 	nutriment_amt = 4
@@ -490,8 +490,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_desc = list("nutriment" = 2, "sugar" = 2, "cocoa" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatebar/pervitin
-	name = "Panzerschokolade bar"
-	desc = "Such sweet, fattening food. You feel so empowered after tasting it!"
+	name = "装甲巧克力棒"
+	desc = "如此甜美, 令人发胖的食物. 尝过之后你感觉自己充满了力量!"
 
 	bitesize = 2
 	nutriment_desc = list("nutriment" = 2, "sugar" = 2, "cocoa" = 2)
@@ -500,8 +500,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("pervitin", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/egg
-	name = "egg"
-	desc = "An egg!"
+	name = "蛋"
+	desc = "一颗蛋!"
 	icon_state = "egg"
 	filling_color = "#FDFFD1"
 	center_of_mass = list("x"=16, "y"=13)
@@ -520,7 +520,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		return
 	if (!(proximity && O.is_open_container()))
 		return
-	to_chat(user, "You crack \the [src] into \the [O].")
+	to_chat(user, "你把\the [src]打进\the [O]里.")
 	reagents.trans_to(O, reagents.total_volume)
 	user.drop_from_inventory(src)
 	qdel(src)
@@ -530,12 +530,12 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	new/obj/effect/decal/cleanable/egg_smudge(loc)
 	if (reagents)
 		reagents.splash(hit_atom, reagents.total_volume)
-	visible_message("<span class='warning'>\The [src] has been squashed!</span>","<span class='warning'>You hear a smack.</span>")
+	visible_message("<span class='warning'>\The [src]被压碎了!</span>","<span class='warning'>你听到啪的一声.</span>")
 	qdel(src)
 
 /obj/item/weapon/reagent_containers/food/snacks/turkeyegg //TO DO: move to /egg patch
-	name = "turkey egg"
-	desc = "An egg!"
+	name = "火鸡蛋"
+	desc = "一颗蛋!"
 	icon_state = "egg_turkey"
 	center_of_mass = list("x"=16, "y"=13)
 	nutriment_amt = 2
@@ -551,7 +551,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		return
 	if (!(proximity && O.is_open_container()))
 		return
-	to_chat(user, "You crack \the [src] into \the [O].")
+	to_chat(user, "你把\the [src]打进\the [O]里.")
 	reagents.trans_to(O, reagents.total_volume)
 	user.drop_from_inventory(src)
 	qdel(src)
@@ -560,13 +560,13 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	..()
 	new/obj/effect/decal/cleanable/egg_smudge(loc)
 	reagents.splash(hit_atom, reagents.total_volume)
-	visible_message("<span class='warning'>\The [src] has been squashed!</span>","<span class='warning'>You hear a smack.</span>")
+	visible_message("<span class='warning'>\The [src]被压碎了!</span>","<span class='warning'>你听到啪的一声.</span>")
 	qdel(src)
 
 
 /obj/item/weapon/reagent_containers/food/snacks/friedegg
-	name = "fried egg"
-	desc = "A fried egg, with a touch of salt and pepper."
+	name = "煎蛋"
+	desc = "一个煎蛋, 撒了点盐和胡椒."
 	icon_state = "friedegg"
 	filling_color = "#FFDF78"
 	center_of_mass = list("x"=16, "y"=14)
@@ -581,8 +581,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("blackpepper", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg
-	name = "boiled egg"
-	desc = "A hard boiled egg."
+	name = "水煮蛋"
+	desc = "一个煮熟的蛋."
 	icon_state = "egg"
 	filling_color = "#FFFFFF"
 	nutriment_amt = 2
@@ -592,8 +592,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/organ
-	name = "organ"
-	desc = "It's good for you."
+	name = "内脏"
+	desc = "对你有好处."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "appendix"
 	filling_color = "#E00D34"
@@ -608,9 +608,9 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", rand(3,5))
 
 /obj/item/weapon/reagent_containers/food/snacks/tofu
-	name = "tofu"
+	name = "豆腐"
 	icon_state = "tofu"
-	desc = "We all love tofu."
+	desc = "我们都爱豆腐."
 	filling_color = "#FFFEE0"
 	center_of_mass = list("x"=17, "y"=10)
 	nutriment_amt = 3
@@ -619,8 +619,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 25*600
 
 /obj/item/weapon/reagent_containers/food/snacks/fishfillet
-	name = "fish fillet"
-	desc = "A fillet of fish."
+	name = "鱼片"
+	desc = "一片鱼肉."
 	icon_state = "fishfillet"
 	filling_color = "#FFDEFE"
 	center_of_mass = list("x"=17, "y"=13)
@@ -636,8 +636,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("food_poisoning", pick(0,0,0,0,0,0,0,1,1,2)) //most fish may be eat fresh, ask the japanese about it
 
 /obj/item/weapon/reagent_containers/food/snacks/pink_squid
-	name = "squid"
-	desc = "A living squid."
+	name = "鱿鱼"
+	desc = "一只活鱿鱼."
 	icon_state = "pink_squid"
 	center_of_mass = list("x"=17, "y"=13)
 	rotten_icon_state = "pink_squid_rotten"
@@ -656,8 +656,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("food_poisoning", pick(0,0,0,0,0,0,0,1,1,2))
 
 /obj/item/weapon/reagent_containers/food/snacks/pink_squid/dried
-	name = "dried squid"
-	desc = "A sun dried squid rings. Snack for beer."
+	name = "鱿鱼干"
+	desc = "晒干的鱿鱼圈. 啤酒零食."
 	icon = 'icons/obj/food/dryed.dmi'
 	icon_state = "squid_rings"
 	center_of_mass = list("x"=16, "y"=16)
@@ -675,8 +675,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("nutriment", 3, list("seafood"=2))
 
 /obj/item/weapon/reagent_containers/food/snacks/salmonfillet
-	name = "salmon fillet"
-	desc = "A fillet of salmon."
+	name = "三文鱼片"
+	desc = "一片三文鱼肉."
 	icon_state = "salmonfillet"
 	rotten_icon_state = "rottensalmonfillet"
 	rots = TRUE
@@ -692,8 +692,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 
 
 /obj/item/weapon/reagent_containers/food/snacks/fishfingers
-	name = "Fish fingers"
-	desc = "A finger of fish."
+	name = "鱼手指"
+	desc = "一根鱼肉条."
 	icon_state = "fishfingers"
 	filling_color = "#FFDEFE"
 	center_of_mass = list("x"=16, "y"=13)
@@ -704,8 +704,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/fishfingers/chickenbucket
-	name = "Fried Chicken Bucket"
-	desc = "A Fried Chicken Bucket."
+	name = "炸鸡桶"
+	desc = "一桶炸鸡."
 	icon_state = "chickenbucket"
 	filling_color = "#FFDEFE"
 	center_of_mass = list("x"=16, "y"=13)
@@ -716,8 +716,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/bearmeat
-	name = "bear meat"
-	desc = "A very manly slab of meat."
+	name = "熊肉"
+	desc = "一块非常有男人味的肉."
 	icon_state = "bearmeat"
 	filling_color = "#DB0000"
 	center_of_mass = list("x"=16, "y"=10)
@@ -742,14 +742,14 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		A = new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
 		A.name = "bear meat cutlet"
 		A.desc = replacetext(desc, "slab", "cutlet")
-		to_chat(user, "You cut the meat into thin strips.")
+		to_chat(user, "你把肉切成细条.")
 		qdel(src)
 	else
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage
-	name = "sausage"
-	desc = "A piece of mixed, long meat."
+	name = "香肠"
+	desc = "一段混合的长条肉."
 	icon_state = "sausage"
 	filling_color = "#DB0000"
 	center_of_mass = list("x"=16, "y"=16)
@@ -763,8 +763,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/omelette
-	name = "Omelette Du Fromage"
-	desc = "That's all you can say!"
+	name = "奶酪煎蛋卷"
+	desc = "你只会说这一句!"
 	icon_state = "omelette"
 	center_of_mass = list("x"=16, "y"=13)
 	filling_color = "#FFF9A8"
@@ -775,8 +775,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/muffin
-	name = "muffin"
-	desc = "A delicious and spongy little cake"
+	name = "松饼"
+	desc = "一块美味又松软的小蛋糕"
 	icon_state = "muffin"
 	filling_color = "#E0CF9B"
 	center_of_mass = list("x"=17, "y"=4)
@@ -785,8 +785,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 25*600
 
 /obj/item/weapon/reagent_containers/food/snacks/waffles
-	name = "waffles"
-	desc = "Mmm, waffles"
+	name = "华夫饼"
+	desc = "嗯, 华夫饼"
 	icon_state = "waffles"
 	filling_color = "#E6DEB5"
 	center_of_mass = list("x"=15, "y"=11)
@@ -795,8 +795,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 18*600
 
 /obj/item/weapon/reagent_containers/food/snacks/meatpie
-	name = "Meat-pie"
-	desc = "An old barber recipe, very delicious!"
+	name = "肉馅饼"
+	desc = "一个老理发师的配方, 非常美味!"
 	icon_state = "meatpie"
 	filling_color = "#948051"
 	center_of_mass = list("x"=16, "y"=13)
@@ -808,9 +808,9 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/tofupie
-	name = "tofu-pie"
+	name = "豆腐派"
 	icon_state = "plaincake"
-	desc = "A delicious tofu pie."
+	desc = "一个美味的豆腐派."
 	filling_color = "#FFFEE0"
 	center_of_mass = list("x"=16, "y"=13)
 	nutriment_desc = list("tofu" = 2, "pie" = 8)
@@ -818,8 +818,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 25*600
 
 /obj/item/weapon/reagent_containers/food/snacks/loadedbakedpotato
-	name = "loaded baked potato"
-	desc = "Totally baked."
+	name = "满载烤土豆"
+	desc = "完全烤熟了."
 	icon_state = "loadedbakedpotato"
 	filling_color = "#9C7A68"
 	center_of_mass = list("x"=16, "y"=10)
@@ -828,8 +828,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/fries
-	name = "fries"
-	desc = "AKA: French Fries, Freedom Fries, etc."
+	name = "薯条"
+	desc = "又名: 法式炸薯条, 自由薯条, 等等."
 	icon_state = "fries"
 	filling_color = "#EDDD00"
 	center_of_mass = list("x"=16, "y"=11)
@@ -839,8 +839,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 8
 
 /obj/item/weapon/reagent_containers/food/snacks/rice
-	name = "rice"
-	desc = "A pile of raw rice grains."
+	name = "大米"
+	desc = "一堆生米粒."
 	icon_state = "ricepile"
 	filling_color = "#dcdcdc"
 	nutriment_desc = list("rice" = TRUE)
@@ -849,8 +849,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 100*600
 
 /obj/item/weapon/reagent_containers/food/snacks/spaghetti
-	name = "spaghetti"
-	desc = "A bundle of raw spaghetti."
+	name = "意大利面"
+	desc = "一捆生意大利面."
 	icon_state = "spaghetti"
 	filling_color = "#EDDD00"
 	center_of_mass = list("x"=16, "y"=16)
@@ -861,14 +861,14 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 
 /obj/item/weapon/reagent_containers/food/snacks/spaghetti/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.sharp || W.edge)
-		to_chat(user, "You make some noodles from the long spaghetti.")
+		to_chat(user, "你用长意大利面做了一些面条.")
 		for (var/v in 1 to pick(1,2))
 			new /obj/item/weapon/reagent_containers/food/snacks/noodles(get_turf(src))
 		qdel(src)
 
 /obj/item/weapon/reagent_containers/food/snacks/noodles
-	name = "noodles"
-	desc = "A bundle of raw noodles."
+	name = "面条"
+	desc = "一捆生面条."
 	icon_state = "noodles"
 	filling_color = "#EDDD00"
 	center_of_mass = list("x"=16, "y"=16)
@@ -878,8 +878,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/badrecipe
-	name = "burned mess"
-	desc = "Someone should be demoted from chef for this."
+	name = "烧焦的一团"
+	desc = "有人该因为这个被从厨师降职了."
 	icon_state = "badrecipe"
 	filling_color = "#211F02"
 	center_of_mass = list("x"=16, "y"=12)
@@ -894,8 +894,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("carbon", 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatsteak
-	name = "meat steak"
-	desc = "A piece of hot spicy meat."
+	name = "肉排"
+	desc = "一块热辣的肉."
 	icon_state = "meatstake"
 	filling_color = "#7A3D11"
 	center_of_mass = list("x"=16, "y"=13)
@@ -909,8 +909,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("blackpepper", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/poppypretzel
-	name = "poppy pretzel"
-	desc = "It's all twisted up!"
+	name = "罂粟椒盐卷饼"
+	desc = "它全都扭在一起了!"
 	icon_state = "poppypretzel"
 	filling_color = "#916E36"
 	center_of_mass = list("x"=16, "y"=10)
@@ -919,8 +919,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 35*600
 
 /obj/item/weapon/reagent_containers/food/snacks/meatballsoup
-	name = "meatball soup"
-	desc = "You've got balls kid, BALLS!"
+	name = "肉丸汤"
+	desc = "你小子有种, 有种!"
 	icon_state = "meatballsoup"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#785210"
@@ -933,8 +933,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 16)
 
 /obj/item/weapon/reagent_containers/food/snacks/vegetablesoup
-	name = "vegetable soup"
-	desc = "A true vegan meal" //TODO
+	name = "蔬菜汤"
+	desc = "一顿真正的纯素餐" //TODO
 	icon_state = "vegetablesoup"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#AFC4B5"
@@ -947,7 +947,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 16)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/baguette
-	name = "baguette"
+	name = "法棍面包"
 	icon_state = "Bon Appetit!"
 	icon_state = "baguette"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/breadslice
@@ -960,8 +960,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 4
 
 /obj/item/weapon/reagent_containers/food/snacks/sandwich
-	name = "sandwich"
-	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
+	name = "三明治"
+	desc = "肉, 奶酪, 面包和几片生菜组成的伟大创造! 亚瑟·登特会为之骄傲的."
 	icon_state = "sandwich"
 	filling_color = "#D9BE29"
 	center_of_mass = list("x"=16, "y"=4)
@@ -974,8 +974,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 3)
 
 /obj/item/weapon/reagent_containers/food/snacks/toastedsandwich
-	name = "toasted sandwich"
-	desc = "Now if you only had a pepper bar."
+	name = "烤三明治"
+	desc = "要是你再来根辣椒条就好了."
 	icon_state = "toastedsandwich"
 	filling_color = "#D9BE29"
 	center_of_mass = list("x"=16, "y"=4)
@@ -990,8 +990,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("carbon", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/grilledcheese
-	name = "grilled cheese sandwich"
-	desc = "Goes great with Tomato soup!"
+	name = "烤奶酪三明治"
+	desc = "配番茄汤超棒!"
 	icon_state = "toastedsandwich"
 	filling_color = "#D9BE29"
 	nutriment_desc = list("toasted bread" = 3, "cheese" = 3)
@@ -1003,8 +1003,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/tomatosoup
-	name = "tomato soup"
-	desc = "Drinking this feels like being a vampire! A tomato vampire..."
+	name = "番茄汤"
+	desc = "喝这个感觉像吸血鬼! 一个番茄吸血鬼..."
 	icon_state = "tomatosoup"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#D92929"
@@ -1018,8 +1018,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomatojuice", 18)
 
 /obj/item/weapon/reagent_containers/food/snacks/stew
-	name = "stew"
-	desc = "A nice and warm stew. Healthy and strong."
+	name = "炖菜"
+	desc = "一份美味又温暖的炖菜. 健康又强壮."
 	icon_state = "stew"
 	filling_color = "#9E673A"
 	center_of_mass = list("x"=16, "y"=5)
@@ -1033,8 +1033,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 14)
 
 /obj/item/weapon/reagent_containers/food/snacks/stew_wood
-	name = "stew"
-	desc = "A nice and warm stew. Healthy and strong."
+	name = "炖菜"
+	desc = "一份美味又温暖的炖菜. 健康又强壮."
 	icon_state = "stew_wood"
 	filling_color = "#9E673A"
 	center_of_mass = list("x"=16, "y"=5)
@@ -1048,8 +1048,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 14)
 
 /obj/item/weapon/reagent_containers/food/snacks/jelliedtoast
-	name = "Jellied toast"
-	desc = "A slice of bread covered with delicious jam."
+	name = "果冻吐司"
+	desc = "一片涂满美味果酱的面包."
 	icon_state = "jellytoast"
 	filling_color = "#B572AB"
 	center_of_mass = list("x"=16, "y"=8)
@@ -1066,8 +1066,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("cherryjelly", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledspagetti
-	name = "boiled spaghetti"
-	desc = "A plain dish of spaghetti, this sucks."
+	name = "煮意大利面"
+	desc = "一盘平淡的意大利面, 这太烂了."
 	icon_state = "spagettiboiled"
 	filling_color = "#FCEE81"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1078,14 +1078,14 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledspagetti/attackby(obj/item/I as obj, mob/user as mob)
 	if (istype(I, /obj/item/weapon/reagent_containers/food/snacks/meatball))
-		visible_message("<span class = 'notice'>[user] combines the spaghetti with the meatball to make spaghetti and meatballs.</span>")
+		visible_message("<span class = 'notice'>[user]把意大利面和肉丸组合成了意大利面配肉丸.</span>")
 		qdel(I)
 		new/obj/item/weapon/reagent_containers/food/snacks/meatballspagetti(get_turf(src))
 		qdel(src)
 
 /obj/item/weapon/reagent_containers/food/snacks/ramen
-	name = "ramen"
-	desc = "A combination of meat, noodles, and egg all in a savoury broth!"
+	name = "拉面"
+	desc = "肉, 面条和鸡蛋全都在美味高汤里的组合!"
 	icon_state = "ramen"
 	filling_color = "#DE4545"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1099,8 +1099,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 30)
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledrice
-	name = "boiled rice"
-	desc = "A boring dish of boring rice."
+	name = "米饭"
+	desc = "一盘无聊的米饭."
 	icon_state = "boiledrice"
 	filling_color = "#FFFBDB"
 	center_of_mass = list("x"=17, "y"=11)
@@ -1110,8 +1110,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 5
 
 /obj/item/weapon/reagent_containers/food/snacks/ricepudding
-	name = "rice pudding"
-	desc = "Where's the jam?"
+	name = "米布丁"
+	desc = "果酱在哪?"
 	icon_state = "rpudding"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#FFFBDB"
@@ -1121,8 +1121,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/pastatomato
-	name = "spaghetti"
-	desc = "Spaghetti and crushed tomatoes. Just like your abusive father used to make!"
+	name = "意大利面"
+	desc = "意大利面配碎番茄. 就像你那爱施暴的父亲以前做的一样!"
 	icon_state = "pastatomato"
 	filling_color = "#DE4545"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1134,8 +1134,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomatojuice", 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatballspagetti
-	name = "spaghetti & meatballs"
-	desc = "Now thats a nic'e meatball!"
+	name = "意大利面与肉丸"
+	desc = "这才叫好吃的肉丸!"
 	icon_state = "meatballspagetti"
 	filling_color = "#DE4545"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1148,8 +1148,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/applepie
-	name = "apple pie"
-	desc = "A pie containing sweet sweet love... or apple."
+	name = "苹果派"
+	desc = "一个充满甜蜜爱意... 或者苹果的派."
 	icon_state = "applepie"
 	filling_color = "#E0EDC5"
 	center_of_mass = list("x"=16, "y"=13)
@@ -1158,8 +1158,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 18*600
 
 /obj/item/weapon/reagent_containers/food/snacks/cherrypie
-	name = "cherry Pie"
-	desc = "Taste so good, make a grown man cry."
+	name = "樱桃派"
+	desc = "味道好极了, 能让成年男人落泪."
 	icon_state = "cherrypie"
 	filling_color = "#FF525A"
 	center_of_mass = list("x"=16, "y"=11)
@@ -1168,8 +1168,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 18*600
 
 /obj/item/weapon/reagent_containers/food/snacks/sweetroll
-	name = "sweet roll"
-	desc = "A towering donut topped with icing."
+	name = "甜面包卷"
+	desc = "一个高耸的甜甜圈, 上面覆着糖霜."
 	icon_state = "sweetroll"
 	filling_color = "#FF525A"
 	center_of_mass = list("x"=16, "y"=11)
@@ -1178,8 +1178,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 18*600
 
 /obj/item/weapon/reagent_containers/food/snacks/twobread
-	name = "two bread"
-	desc = "It is very bitter and winy."
+	name = "两条面包"
+	desc = "它非常苦涩且带酒味."
 	icon_state = "twobread"
 	filling_color = "#DBCC9A"
 	center_of_mass = list("x"=15, "y"=12)
@@ -1188,8 +1188,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/jellysandwich
-	name = "jelly sandwich"
-	desc = "You wish you had some peanut butter to go with this..."
+	name = "果冻三明治"
+	desc = "你希望能有点花生酱来搭配这个..."
 	icon_state = "jellysandwich"
 	filling_color = "#9E3A78"
 	center_of_mass = list("x"=16, "y"=8)
@@ -1206,8 +1206,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("cherryjelly", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/mint
-	name = "mint"
-	desc = "it is only wafer thin."
+	name = "薄荷"
+	desc = "它薄如蝉翼."
 	icon_state = "mint"
 	filling_color = "#F2F2F2"
 	center_of_mass = list("x"=16, "y"=14)
@@ -1218,8 +1218,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("mint", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/mushroomsoup
-	name = "mushroom soup"
-	desc = "A delicious and hearty mushroom soup."
+	name = "蘑菇汤"
+	desc = "一道美味又丰盛的蘑菇汤."
 	icon_state = "mushroomsoup"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#E386BF"
@@ -1232,8 +1232,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 30)
 
 /obj/item/weapon/reagent_containers/food/snacks/beetsoup
-	name = "borshch"
-	desc = "Delicious beet and tomato soup."
+	name = "罗宋汤"
+	desc = "美味的甜菜和番茄汤."
 	icon_state = "beetsoup"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#FAC9FF"
@@ -1249,8 +1249,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/caldoverde
-	name = "caldo verde"
-	desc = "A typical Portuguese soup, made with cabbages and potatoes."
+	name = "绿汤"
+	desc = "一道典型的葡萄牙汤, 用卷心菜和土豆制成."
 	icon_state = "caldoverde"
 	trash = /obj/item/kitchen/wood_bowl
 	filling_color = "#FAC9FF"
@@ -1265,16 +1265,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("water", 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/gyro
-	name = "gyro"
-	desc = "Greek delicacy."
+	name = "希腊烤肉卷"
+	desc = "希腊美食."
 	icon_state = "gyro"
 	satisfaction = 10
 	nutriment_amt = 6
 	nutriment_desc = list("lamb" = 4, "bread" = 2, "tzatziki" = 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/tossedsalad
-	name = "tossed salad"
-	desc = "A proper salad, basic and simple, with little bits of carrot, tomato and apple intermingled. Vegan!"
+	name = "拌沙拉"
+	desc = "一道正宗的沙拉, 简单基础, 夹杂着少许胡萝卜, 番茄和苹果. 纯素!"
 	icon_state = "herbsalad"
 	trash = /obj/item/kitchen/snack_bowl
 	filling_color = "#76B87F"
@@ -1284,8 +1284,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 16*600
 
 /obj/item/weapon/reagent_containers/food/snacks/appletart
-	name = "golden apple streusel tart"
-	desc = "A tasty dessert that won't make it through a metal detector."
+	name = "黄金苹果酥皮挞"
+	desc = "一道美味的甜点, 无法通过金属探测器."
 	icon_state = "gappletart"
 	filling_color = "#FFFF00"
 	center_of_mass = list("x"=16, "y"=18)
@@ -1298,8 +1298,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("gold", 5)
 
 /obj/item/weapon/reagent_containers/food/snacks/ssicle
-	name = "Strawberry popsicle"
-	desc = "A nice refreshing strawberry treat for those hot days."
+	name = "草莓冰棍"
+	desc = "炎热天气里一道清爽的草莓美食."
 	icon_state = "ssicle"
 	filling_color = "#FFDEFE"
 	satisfaction = 10
@@ -1308,8 +1308,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/ssicle/gsicle
-	name = "Grape popsicle"
-	desc = "A nice refreshing grape treat for those hot days."
+	name = "葡萄冰棍"
+	desc = "炎热天气里一道清爽的葡萄美食."
 	icon_state = "gsicle"
 	filling_color = "#FFDEFE"
 	satisfaction = 10
@@ -1318,8 +1318,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 12*600
 
 /obj/item/weapon/reagent_containers/food/snacks/ssicle/osicle
-	name = "Orange popsicle"
-	desc = "A nice refreshing orange treat for those hot days."
+	name = "橙子冰棍"
+	desc = "炎热天气里一道清爽的橙子美食."
 	icon_state = "osicle"
 	filling_color = "#FFDEFE"
 	satisfaction = 10
@@ -1336,8 +1336,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 17*600
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza
-	name = "pizza"
-	desc = "A large flattened pie with toppings."
+	name = "披萨"
+	desc = "一个铺有配料的大扁馅饼."
 	icon_state = "pizza"
 	center_of_mass = list("x"=16, "y"=13)
 	nutriment_amt = 8 //and 4 are below, total 12
@@ -1351,16 +1351,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzaslice
-	name = "pizza slice"
-	desc = "A slice of delicious classic pizza."
+	name = "披萨切片"
+	desc = "一片美味的经典披萨."
 	icon_state = "vegetablepizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzapepperoni
-	name = "pepperoni and cheese pizza"
-	desc = "A large flattened pie with cheese and pepperoni."
+	name = "意大利辣香肠与奶酪披萨"
+	desc = "一个铺有奶酪和意大利辣香肠的大扁馅饼."
 	icon_state = "pizzapepperoni"
 	nutriment_amt = 9 //and 3 are below, total 12
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzapepslice
@@ -1374,16 +1374,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("capsaicin", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzapepslice
-	name = "pepperoni pizza slice"
-	desc = "A slice of delicious pepperoni pizza."
+	name = "意大利辣香肠披萨切片"
+	desc = "一片美味的意大利辣香肠披萨."
 	icon_state = "pizzapepperonislice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza
-	name = "spicy vegetable pizza"
-	desc = "A large flattened pie with vegetables."
+	name = "辣味蔬菜披萨"
+	desc = "一个铺有蔬菜的大扁馅饼."
 	icon_state = "vegetablepizza"
 	nutriment_amt = 8 //and 4 are below, total 12
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzavege
@@ -1396,16 +1396,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("celery", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzavege
-	name = "spicy vegetarian pizza slice"
-	desc = "A slice of delicious vege pizza."
+	name = "辣味素食披萨切片"
+	desc = "一片美味的蔬菜披萨."
 	icon_state = "vegetablepizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/meatpizza
-	name = "meatball pizza"
-	desc = "A large flattened pie with meat balls and tomato sauce."
+	name = "肉丸披萨"
+	desc = "一个铺有肉丸和番茄酱的大扁馅饼."
 	icon_state = "meatpizza"
 	nutriment_amt = 6 //and 6 are below, total 12
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzameat
@@ -1419,16 +1419,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzameat
-	name = "meat pizza slice"
-	desc = "A slice of delicious meat pizza."
+	name = "肉披萨切片"
+	desc = "一片美味的肉披萨."
 	icon_state = "meatpizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzasauced
-	name = "plain pizza"
-	desc = "A large flattened pie with tomato sauce."
+	name = "原味披萨"
+	desc = "一个铺有番茄酱的大扁馅饼."
 	icon_state = "pizzasauced"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/saucedsliced
 	slices_num = 8
@@ -1440,16 +1440,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 8)
 
 /obj/item/weapon/reagent_containers/food/snacks/saucedsliced
-	name = "sauced pizza slice"
-	desc = "A slice of delicious sauced pizza."
+	name = "酱汁披萨切片"
+	desc = "一片美味的酱汁披萨."
 	icon_state = "pizzasaucedslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzacheesed
-	name = "cheese pizza"
-	desc = "A large flattened pie with cheese and tomato sauce."
+	name = "奶酪披萨"
+	desc = "一个铺有奶酪和番茄酱的大扁馅饼."
 	icon_state = "pizzacheesed"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzacheesesliced
 	slices_num = 8
@@ -1461,16 +1461,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzacheesesliced
-	name = "cheese pizza slice"
-	desc = "A slice of delicious cheese pizza."
+	name = "奶酪披萨切片"
+	desc = "一片美味的奶酪披萨."
 	icon_state = "pizzacheesedslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzahawaiian
-	name = "hawaiian pizza"
-	desc = "A large flattened pie with cheese, ham and pineapple"
+	name = "夏威夷披萨"
+	desc = "一个铺有奶酪, 火腿和菠萝的大扁馅饼"
 	icon_state = "hawaiianpizza"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzahawaiiansliced
 	slices_num = 8
@@ -1482,16 +1482,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzahawaiiansliced
-	name = "cheese pizza slice"
-	desc = "A slice of delicious hawaiian styled pizza."
+	name = "奶酪披萨切片"
+	desc = "一片美味的夏威夷风味披萨."
 	icon_state = "hawaiianpizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzamac
-	name = "mac n cheese pizza"
-	desc = "A large flattened pie with cheese and macaroni noodles"
+	name = "芝士通心粉披萨"
+	desc = "一个铺有奶酪和通心粉的大扁馅饼"
 	icon_state = "macpizza"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzamacsliced
 	slices_num = 8
@@ -1503,16 +1503,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzamacsliced
-	name = "mac n cheese pizza slice"
-	desc = "A slice of delicious mac n cheese pizza."
+	name = "芝士通心粉披萨切片"
+	desc = "一片美味的芝士通心粉披萨."
 	icon_state = "macpizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/pizzamushroom
-	name = "mushroom pizza"
-	desc = "A large flattened pie with mushrooms and sauce."
+	name = "蘑菇披萨"
+	desc = "一个铺有蘑菇和酱汁的大扁馅饼."
 	icon_state = "mushroompizza"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pizzamushsliced
 	slices_num = 8
@@ -1524,16 +1524,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("tomato", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/pizzamushsliced
-	name = "mushroom pizza slice"
-	desc = "A slice of delicious mushroom pizza."
+	name = "蘑菇披萨切片"
+	desc = "一片美味的蘑菇披萨."
 	icon_state = "mushroompizzaslice"
 	center_of_mass = list("x"=16, "y"=13)
 	decay = 17*600
 	non_vegetarian = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/meatbread
-	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	name = "肉面包"
+	desc = "每个有自尊的雄辩/tg/绅士的烹饪基础."
 	icon_state = "meatbread"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/meatbreadslice
 	slices_num = 5
@@ -1548,8 +1548,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatbreadslice
-	name = "meatbread slice"
-	desc = "A slice of delicious meatbread."
+	name = "肉面包切片"
+	desc = "一片美味的肉面包."
 	icon_state = "meatbreadslice"
 	filling_color = "#FF7575"
 	center_of_mass = list("x"=16, "y"=13)
@@ -1557,8 +1557,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	non_vegetarian = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/bananabread
-	name = "banana-nut bread"
-	desc = "A heavenly and filling treat."
+	name = "香蕉坚果面包"
+	desc = "一道天堂般又管饱的美食."
 	icon_state = "bananabread"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/bananabreadslice
 	slices_num = 5
@@ -1572,16 +1572,16 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("banana", 20)
 
 /obj/item/weapon/reagent_containers/food/snacks/bananabreadslice
-	name = "banana-nut bread slice"
-	desc = "A slice of delicious banana bread."
+	name = "香蕉坚果面包片"
+	desc = "一片美味的香蕉面包."
 	icon_state = "bananabreadslice"
 	filling_color = "#EDE5AD"
 	center_of_mass = list("x"=16, "y"=8)
 	decay = 17*600
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/carrotcake
-	name = "carrot cake"
-	desc = "A favorite desert of a certain wascally wabbit. Not a lie."
+	name = "胡萝卜蛋糕"
+	desc = "某只狡猾兔子的最爱甜点.不骗你."
 	icon_state = "carrotcake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/carrotcakeslice
 	slices_num = 5
@@ -1595,15 +1595,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("imidazoline", 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/carrotcakeslice
-	name = "carrot cake slice"
-	desc = "Carrotty slice of carrot cake, carrots are good for your eyes! Also not a lie."
+	name = "胡萝卜蛋糕片"
+	desc = "充满胡萝卜的蛋糕片,胡萝卜对眼睛好!也不骗你."
 	icon_state = "carrotcake_slice"
 	filling_color = "#FFD675"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesecake
-	name = "cheese cake"
-	desc = "DANGEROUSLY cheesy."
+	name = "芝士蛋糕"
+	desc = "危险地浓郁芝士味."
 	icon_state = "cheesecake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/cheesecakeslice
 	slices_num = 5
@@ -1616,15 +1616,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesecakeslice
-	name = "cheese cake slice"
-	desc = "Slice of pure cheestisfaction"
+	name = "芝士蛋糕片"
+	desc = "一片纯粹的芝士满足感"
 	icon_state = "cheesecake_slice"
 	filling_color = "#FAF7AF"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/plaincake
-	name = "vanilla cake"
-	desc = "A plain cake, not a lie."
+	name = "香草蛋糕"
+	desc = "一个普通的蛋糕,不骗你."
 	icon_state = "plaincake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/plaincakeslice
 	slices_num = 5
@@ -1634,15 +1634,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/plaincakeslice
-	name = "vanilla cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	name = "香草蛋糕片"
+	desc = "就一片蛋糕,够所有人吃."
 	icon_state = "plaincake_slice"
 	filling_color = "#F7EDD5"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake
-	name = "orange cake"
-	desc = "A cake with added orange."
+	name = "橙子蛋糕"
+	desc = "加了橙子的蛋糕."
 	icon_state = "orangecake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/orangecakeslice
 	slices_num = 5
@@ -1652,15 +1652,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/orangecakeslice
-	name = "orange cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	name = "橙子蛋糕片"
+	desc = "就一片蛋糕,够所有人吃."
 	icon_state = "orangecake_slice"
 	filling_color = "#FADA8E"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/limecake
-	name = "lime cake"
-	desc = "A cake with added lime."
+	name = "青柠蛋糕"
+	desc = "加了青柠的蛋糕."
 	icon_state = "limecake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/limecakeslice
 	slices_num = 5
@@ -1670,15 +1670,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/limecakeslice
-	name = "lime cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	name = "青柠蛋糕片"
+	desc = "就一片蛋糕,够所有人吃."
 	icon_state = "limecake_slice"
 	filling_color = "#CBFA8E"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/lemoncake
-	name = "lemon cake"
-	desc = "A cake with added lemon."
+	name = "柠檬蛋糕"
+	desc = "加了柠檬的蛋糕."
 	icon_state = "lemoncake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/lemoncakeslice
 	slices_num = 5
@@ -1688,15 +1688,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/lemoncakeslice
-	name = "lemon cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	name = "柠檬蛋糕片"
+	desc = "就一片蛋糕,够所有人吃."
 	icon_state = "lemoncake_slice"
 	filling_color = "#FAFA8E"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/chocolatecake
-	name = "chocolate cake"
-	desc = "A cake with added chocolate"
+	name = "巧克力蛋糕"
+	desc = "加了巧克力的蛋糕"
 	icon_state = "chocolatecake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/chocolatecakeslice
 	slices_num = 5
@@ -1706,15 +1706,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 20
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolatecakeslice
-	name = "chocolate cake slice"
-	desc = "Just a slice of cake, it is enough for everyone."
+	name = "巧克力蛋糕片"
+	desc = "就一片蛋糕,够所有人吃."
 	icon_state = "chocolatecake_slice"
 	filling_color = "#805930"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel
-	name = "cheese wheel"
-	desc = "A big wheel of delcious Cheddar."
+	name = "芝士轮"
+	desc = "一大轮美味的切达芝士."
 	icon_state = "cheesewheel"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/cheesewedge
 	slices_num = 5
@@ -1731,8 +1731,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 10)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheesewedge
-	name = "cheese wedge"
-	desc = "A wedge of delicious Cheddar. The cheese wheel it was cut from can't have gone far."
+	name = "芝士楔"
+	desc = "一块美味的切达芝士.切下它的芝士轮肯定就在附近."
 	icon_state = "cheesewedge"
 	filling_color = "#FFF700"
 	center_of_mass = list("x"=16, "y"=10)
@@ -1740,7 +1740,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/bread
-	name = "bread"
+	name = "面包"
 	icon_state = "Some plain old bread."
 	icon_state = "bread"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/breadslice
@@ -1753,8 +1753,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 4
 
 /obj/item/weapon/reagent_containers/food/snacks/breadslice
-	name = "bread slice"
-	desc = "A slice of home."
+	name = "面包片"
+	desc = "一片家的味道."
 	icon_state = "breadslice"
 	filling_color = "#D27332"
 	center_of_mass = list("x"=16, "y"=4)
@@ -1762,8 +1762,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	satisfaction = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/creamcheesebread
-	name = "cream Cheese Bread"
-	desc = "Yum yum yum!"
+	name = "奶油芝士面包"
+	desc = "好吃好吃好吃!"
 	icon_state = "creamcheesebread"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/creamcheesebreadslice
 	slices_num = 5
@@ -1777,15 +1777,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 15)
 
 /obj/item/weapon/reagent_containers/food/snacks/creamcheesebreadslice
-	name = "cream Cheese Bread slice"
-	desc = "A slice of yum!"
+	name = "奶油芝士面包片"
+	desc = "一片好吃!"
 	icon_state = "creamcheesebreadslice"
 	filling_color = "#FFF896"
 	center_of_mass = list("x"=16, "y"=13)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/applecake
-	name = "apple cake"
-	desc = "A cake centred with Apple"
+	name = "苹果蛋糕"
+	desc = "以苹果为中心的蛋糕"
 	icon_state = "applecake"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/applecakeslice
 	slices_num = 5
@@ -1795,15 +1795,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 15
 
 /obj/item/weapon/reagent_containers/food/snacks/applecakeslice
-	name = "apple cake slice"
-	desc = "A slice of heavenly cake."
+	name = "苹果蛋糕片"
+	desc = "一片天堂般的蛋糕."
 	icon_state = "applecakeslice"
 	filling_color = "#EBF5B8"
 	center_of_mass = list("x"=16, "y"=14)
 
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pumpkinpie
-	name = "pumpkin pie"
-	desc = "A delicious treat for the autumn months."
+	name = "南瓜派"
+	desc = "秋季月份的美味点心."
 	icon_state = "pumpkinpie"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice
 	slices_num = 5
@@ -1813,15 +1813,15 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	nutriment_amt = 15
 
 /obj/item/weapon/reagent_containers/food/snacks/pumpkinpieslice
-	name = "pumpkin pie slice"
-	desc = "A slice of pumpkin pie, with whipped cream on top. Perfection."
+	name = "南瓜派片"
+	desc = "一片南瓜派,上面有打发的奶油.完美."
 	icon_state = "pumpkinpieslice"
 	filling_color = "#F5B951"
 	center_of_mass = list("x"=16, "y"=12)
 
 /obj/item/weapon/reagent_containers/food/snacks/cracker
-	name = "cracker"
-	desc = "It's a salted cracker."
+	name = "饼干"
+	desc = "这是一块咸饼干."
 	icon_state = "cracker"
 	filling_color = "#F5DEB8"
 	center_of_mass = list("x"=17, "y"=6)
@@ -1833,8 +1833,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 // new old food stuff from bs12
 ///////////////////////////////////////////
 /obj/item/weapon/reagent_containers/food/snacks/dough
-	name = "dough"
-	desc = "A piece of dough."
+	name = "面团"
+	desc = "一块面团."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "dough"
 	center_of_mass = list("x"=16, "y"=13)
@@ -1850,10 +1850,10 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 /obj/item/weapon/reagent_containers/food/snacks/dough/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon/material/kitchen/rollingpin))
 		new /obj/item/weapon/reagent_containers/food/snacks/sliceable/flatdough(get_turf(src))
-		to_chat(user, "You flatten the dough.")
+		to_chat(user, "你把面团压平.")
 		qdel(src)
 	else if (W.sharp || W.edge)
-		to_chat(user, "You make some spaghetti from the dough.")
+		to_chat(user, "你用面团做了一些意大利面.")
 		for (var/v in 1 to pick(2,3))
 			new /obj/item/weapon/reagent_containers/food/snacks/spaghetti(get_turf(src))
 		qdel(src)
@@ -1861,13 +1861,13 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 // Dough attack self = Bun
 /obj/item/weapon/reagent_containers/food/snacks/dough/attack_self(mob/user)
 	new /obj/item/weapon/reagent_containers/food/snacks/bun(get_turf(src))
-	to_chat(user, "You form the dough into a bun.")
+	to_chat(user, "你把面团捏成了一个圆面包.")
 	qdel(src)
 
 // Slicable into 3xdoughslices
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/flatdough
-	name = "flat dough"
-	desc = "A flattened dough."
+	name = "压平的面团"
+	desc = "一块压平的面团."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "flat dough"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/doughslice
@@ -1882,8 +1882,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 1)
 
 /obj/item/weapon/reagent_containers/food/snacks/doughslice
-	name = "dough slice"
-	desc = "A building block of an impressive dish."
+	name = "面团片"
+	desc = "一道令人印象深刻菜肴的构建块."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "doughslice"
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/spaghetti
@@ -1895,8 +1895,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 25*600
 
 /obj/item/weapon/reagent_containers/food/snacks/bun
-	name = "bun"
-	desc = "A base for any self-respecting burger."
+	name = "圆面包"
+	desc = "任何有自尊的汉堡的基底."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "bun"
 	center_of_mass = list("x"=16, "y"=12)
@@ -1906,8 +1906,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 25*600
 
 /obj/item/weapon/reagent_containers/food/snacks/burger
-	name = "burger"
-	desc = "Does not contain ham, probably."
+	name = "汉堡"
+	desc = "大概不含火腿."
 	icon_state = "hburger"
 	satisfaction = 6
 	center_of_mass = list("x"=16, "y"=17)
@@ -1918,8 +1918,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/cheeseburger
-	name = "cheeseburger"
-	desc = "Contains cheese, duh."
+	name = "芝士汉堡"
+	desc = "含有芝士,废话."
 	icon_state = "cheeseburger"
 	satisfaction = 6
 	center_of_mass = list("x"=16, "y"=17)
@@ -1935,28 +1935,28 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	// Bun + meatpatty = burger
 	if (istype(W,/obj/item/weapon/reagent_containers/food/snacks/patty))
 		new /obj/item/weapon/reagent_containers/food/snacks/burger(src)
-		to_chat(user, "You make a burger.")
+		to_chat(user, "你做了一个汉堡.")
 		qdel(W)
 		qdel(src)
 
 	// Bun + cutlet = hamburger
 	else if (istype(W,/obj/item/weapon/reagent_containers/food/snacks/cutlet))
 		new /obj/item/weapon/reagent_containers/food/snacks/burger(src)
-		to_chat(user, "You make a burger.")
+		to_chat(user, "你做了一个汉堡.")
 		qdel(W)
 		qdel(src)
 
 	// Bun + sausage = hotdog
 	if (istype(W,/obj/item/weapon/reagent_containers/food/snacks/sausage))
 		new /obj/item/weapon/reagent_containers/food/snacks/hotdog(src)
-		to_chat(user, "You make a hotdog.")
+		to_chat(user, "你做了一个热狗.")
 		qdel(W)
 		qdel(src)
 
 	// Bun + cocoa beans = cookie
 	if (istype(W,/obj/item/weapon/reagent_containers/food/snacks/grown/cocoa))
 		new /obj/item/weapon/reagent_containers/food/snacks/cookie(src)
-		to_chat(user, "You make a cookie!")
+		to_chat(user, "你做了一块饼干!")
 		qdel(W)
 		qdel(src)
 
@@ -1964,7 +1964,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 /obj/item/weapon/reagent_containers/food/snacks/burger/attackby(obj/item/weapon/reagent_containers/food/snacks/cheesewedge/W as obj, mob/user as mob)
 	if (istype(W))// && !istype(src,/obj/item/weapon/reagent_containers/food/snacks/cheesewedge))
 		new /obj/item/weapon/reagent_containers/food/snacks/cheeseburger(src)
-		to_chat(user, "You make a cheeseburger.")
+		to_chat(user, "你做了一个芝士汉堡.")
 		qdel(W)
 		qdel(src)
 		return
@@ -1984,8 +1984,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 */
 
 /obj/item/weapon/reagent_containers/food/snacks/rawcutlet
-	name = "raw cutlet"
-	desc = "A thin piece of raw meat."
+	name = "生肉排"
+	desc = "一片薄薄的生肉."
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "rawcutlet"
 	center_of_mass = list("x"=17, "y"=20)
@@ -2010,7 +2010,7 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 			G  = user.r_hand
 		if (G.reagents.get_reagent_amount("flour") >= 5)
 			if (do_after(user, 90))
-				visible_message("[user.name] pours the [src.name] onto the [G.name], covering it.")
+				visible_message("[user.name]把[src.name]倒在[G.name]上,将其覆盖.")
 				G.reagents.remove_reagent("flour", 5)
 				new/obj/item/weapon/reagent_containers/food/snacks/rawschnitzel(user.loc)
 				qdel(src)
@@ -2019,8 +2019,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		return ..()
 
 /obj/item/weapon/reagent_containers/food/snacks/rawschnitzel
-	name = "uncooked schnitzel"
-	desc = "A thin piece of raw meat covered in flour."
+	name = "未烹制的炸肉排"
+	desc = "一片裹着面粉的生肉。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "schnitzel-breaded"
 	center_of_mass = list("x"=17, "y"=20)
@@ -2036,8 +2036,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/cutlet
-	name = "cutlet"
-	desc = "A tasty meat slice."
+	name = "肉排"
+	desc = "一片美味的肉。"
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "cutlet"
 	center_of_mass = list("x"=17, "y"=20)
@@ -2050,8 +2050,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/hotdog
-	name = "hotdog"
-	desc = "Unrelated to dogs, maybe."
+	name = "热狗"
+	desc = "也许和狗没什么关系。"
 	icon_state = "hotdog"
 	satisfaction = 6
 	center_of_mass = list("x"=16, "y"=17)
@@ -2062,8 +2062,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 		reagents.add_reagent("protein", 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/flatbread
-	name = "flatbread"
-	desc = "Bland but filling."
+	name = "扁面包"
+	desc = "味道平淡但管饱。"
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "flatbread"
 	satisfaction = 4
@@ -2076,14 +2076,14 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 /obj/item/weapon/reagent_containers/food/snacks/grown/potato/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon/material/kitchen/utensil/knife))
 		new /obj/item/weapon/reagent_containers/food/snacks/rawsticks(src)
-		to_chat(user, "You cut the potato.")
+		to_chat(user, "你切开了土豆。")
 		qdel(src)
 	else
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/rawsticks
-	name = "raw potato sticks"
-	desc = "Raw fries, not very tasty."
+	name = "生土豆条"
+	desc = "生薯条, 不太好吃。"
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "rawsticks"
 	satisfaction = -2
@@ -2093,8 +2093,8 @@ var/const/debug_snacks = FALSE //if you want to see new food creating logs set i
 	decay = 27*600
 
 /obj/item/weapon/reagent_containers/food/snacks/leaf_salad
-	name = "leaf salad"
-	desc = "Leaf salad, best selection of leaves straight from the tree and into the mouth."
+	name = "叶菜沙拉"
+	desc = "叶菜沙拉, 精选树叶从树上直接送入口中。"
 	icon_state = "leaf_salad"
 	satisfaction = 2
 	center_of_mass = list("x"=16, "y"=12)

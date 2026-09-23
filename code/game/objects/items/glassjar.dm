@@ -1,6 +1,6 @@
 /obj/item/glass_jar
-	name = "glass jar"
-	desc = "A small empty jar."
+	name = "玻璃罐"
+	desc = "一个小空罐."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "jar"
 	w_class = ITEM_SIZE_SMALL
@@ -21,10 +21,10 @@
 			if (istype(A, D))
 				accept = TRUE
 		if (!accept)
-			to_chat(user, "[A] doesn't fit into \the [src].")
+			to_chat(user, "[A]放不进\the [src].")
 			return
 		var/mob/L = A
-		user.visible_message("<span class='notice'>[user] scoops [L] into \the [src].</span>", "<span class='notice'>You scoop [L] into \the [src].</span>")
+		user.visible_message("<span class='notice'>[user]将[L]舀入\the [src]。</span>", "<span class='notice'>你将[L]舀入\the [src]。</span>")
 		L.forceMove(src)
 		contains = 2
 		update_icon()
@@ -42,7 +42,7 @@
 		if (2)
 			for (var/mob/M in src)
 				M.loc = user.loc
-				user.visible_message("<span class='notice'>[user] releases [M] from \the [src].</span>", "<span class='notice'>You release [M] from \the [src].</span>")
+				user.visible_message("<span class='notice'>[user]将[M]从\the [src]中释放。</span>", "<span class='notice'>你将[M]从\the [src]中释放。</span>")
 			contains = FALSE
 			update_icon()
 			return

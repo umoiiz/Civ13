@@ -35,7 +35,7 @@
 	var/atk_verb = pick("precisely kick", "brutally chop", "cleanly hit", "viciously slam")
 	D.visible_message("<span class='danger'>[A] [atk_verb]s [D]!</span>", \
 					"<span class='userdanger'>[A] [atk_verb]s you!</span>", null, null, A)
-	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
+	to_chat(A, "<span class='danger'>你[atk_verb][D]!</span>")
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 	D.attack_log += "\[[time_stamp()]\] <font color='orange'>Strong punched (Sleeping Carp) by [A.name] ([A.ckey])</font>"
 	D.apply_damage(20, BRUTE, affecting)
@@ -44,8 +44,8 @@
 ///Crashing Wave Kick: Harm Disarm combo, throws people seven tiles backwards
 /datum/martial_art/the_sleeping_carp/proc/launchKick(mob/living/human/A, mob/living/human/D)
 	A.do_attack_animation(D)
-	D.visible_message("<span class='warning'>[A] kicks [D] square in the chest, sending them flying!</span>", \
-					"<span class='userdanger'>You are kicked square in the chest by [A], sending you flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>")
+	D.visible_message("<span class='warning'>[A]一脚正中[D]的胸口,将其踢飞!</span>", \
+					"<span class='userdanger'>You are kicked square in the chest by [A], sending you flying!</span>", "<span class='hear'>你听到一阵令人作呕的皮肉相击声!</span>")
 	playsound(get_turf(A), 'sound/weapons/kick.ogg', 50, TRUE, -1)
 	var/atom/throw_target = get_edge_target_turf(D, A.dir)
 	D.throw_at(throw_target, 7, 14, A)
@@ -61,15 +61,15 @@
 		D.apply_damage(10, BRUTE, "head")
 		D.stats["stamina"][1] = max(0, D.stats["stamina"][1] - 40)
 		D.Weaken(40)
-		D.visible_message("<span class='warning'>[A] kicks [D] in the head, sending them face first into the floor!</span>", \
-					"<span class='userdanger'>You are kicked in the head by [A], sending you crashing to the floor!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>")
+		D.visible_message("<span class='warning'>[A]一脚踢中[D]的头部,使其脸朝下摔倒在地!</span>", \
+					"<span class='userdanger'>You are kicked in the head by [A], sending you crashing to the floor!</span>", "<span class='hear'>你听到一阵令人作呕的皮肉相击声!</span>")
 	else
 		D.apply_damage(5, BRUTE, "head")
 		D.stats["stamina"][1] = max(0, D.stats["stamina"][1] - 40)
 		D.drop_l_hand()
 		D.drop_r_hand()
-		D.visible_message("<span class='warning'>[A] kicks [D] in the head!</span>", \
-					"<span class='userdanger'>You are kicked in the head by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>")
+		D.visible_message("<span class='warning'>[A]一脚踢中[D]的头部!</span>", \
+					"<span class='userdanger'>You are kicked in the head by [A]!</span>", "<span class='hear'>你听到一阵令人作呕的皮肉相击声!</span>")
 	D.attack_log += "\[[time_stamp()]\] <font color='orange'>Dropkicked (Sleeping Carp) by [A.name] ([A.ckey])</font>"
 	return
 
@@ -89,7 +89,7 @@
 	var/atk_verb = pick("kick", "chop", "hit", "slam")
 	D.visible_message("<span class='danger'>[A] [atk_verb]s [D]!</span>", \
 					"<span class='userdanger'>[A] [atk_verb]s you!</span>", null, null, A)
-	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
+	to_chat(A, "<span class='danger'>你[atk_verb][D]!</span>")
 	D.apply_damage(rand(10,15), BRUTE, affecting)
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 	D.attack_log += "\[[time_stamp()]\] <font color='orange'>Punched (Sleeping Carp) by [A.name] ([A.ckey])</font>"

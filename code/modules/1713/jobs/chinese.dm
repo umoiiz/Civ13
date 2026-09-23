@@ -52,7 +52,7 @@
 	if (H.f_style != "Shaved" && H.f_style != "Short Facial Hair" && H.f_style != "Goatee")
 		H.f_style = pick("Shaved","Short Facial Hair","Goatee")
 
-	to_chat(world, "<big><b>[H.real_name] is the Captain of the Chinese Forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是中国部队的队长!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, the highest ranking officer present. Your job is to command the company.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -113,7 +113,7 @@
 	if (H.f_style != "Shaved" && H.f_style != "Short Facial Hair" && H.f_style != "Goatee")
 		H.f_style = pick("Shaved","Short Facial Hair","Goatee")
 
-	to_chat(world, "<big><b>[H.real_name] is the 1st Lieutenant of the Chinese forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是中国部队的第一中尉!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the troops and their orders. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -379,7 +379,7 @@
 	if (H.f_style != "Shaved" && H.f_style != "Short Facial Hair" && H.f_style != "Goatee")
 		H.f_style = pick("Shaved","Short Facial Hair","Goatee")
 
-	to_chat(world, "<big><b>[H.real_name] is the Captain of the Chinese Forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是中国部队的队长!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, the highest ranking officer present. Your job is to command the company.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -435,7 +435,7 @@
 	if (H.f_style != "Shaved" && H.f_style != "Short Facial Hair" && H.f_style != "Goatee")
 		H.f_style = pick("Shaved","Short Facial Hair","Goatee")
 
-	to_chat(world, "<big><b>[H.real_name] is the 1st Lieutenant of the Chinese forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是中国部队的第一中尉!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the troops and their orders. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)

@@ -153,16 +153,16 @@
 	w_right = list("c_wall",TRUE,TRUE,20,20,FALSE,FALSE)
 	w_front = list("c_armoredfront",TRUE,TRUE,20,20,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/t20/leftm
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制车架"
+	desc = "钢制车辆车架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
 	noroof = FALSE
 	w_left = list("c_wall",TRUE,TRUE,15,15,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/t20/rightm
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制车架"
+	desc = "钢制车辆车架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
@@ -170,8 +170,8 @@
 	w_right = list("c_door",TRUE,TRUE,30,30,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/t20/frontlback
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 120
@@ -180,8 +180,8 @@
 	w_right = list("c_door",TRUE,TRUE,15,15,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/t20/frontrback
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 120
@@ -190,8 +190,8 @@
 	w_left = list("c_door",TRUE,TRUE,15,15,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/t20/backl
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 120
@@ -200,8 +200,8 @@
 	w_right = list("c_door",TRUE,TRUE,15,15,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/t20/backr
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 120
@@ -280,16 +280,16 @@
 	w_right = list("c_wall",TRUE,TRUE,40,40,FALSE,FALSE)
 	w_front = list("c_armoredfront",TRUE,TRUE,40,40,FALSE,FALSE,TRUE)
 /obj/structure/vehicleparts/frame/unattr/leftm
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制车架"
+	desc = "钢制车辆车架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
 	noroof = FALSE
 	w_left = list("c_wall",TRUE,TRUE,40,40,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/unattr/rightm
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制车架"
+	desc = "钢制车辆车架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
@@ -297,8 +297,8 @@
 	w_right = list("c_door",TRUE,TRUE,40,40,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/unattr/frontlback
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = FALSE
 	resistance = 140
@@ -308,8 +308,8 @@
 	w_left = list("c_door",TRUE,TRUE,40,40,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/unattr/frontrback
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = FALSE
 	resistance = 140
@@ -319,8 +319,8 @@
 	w_right = list("c_door",TRUE,TRUE,40,40,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/unattr/backl
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 140
@@ -330,8 +330,8 @@
 	w_left = list("c_door",TRUE,TRUE,40,40,TRUE,TRUE)
 	doorcode = 4975
 /obj/structure/vehicleparts/frame/unattr/backr
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木制车架"
+	desc = "木制车辆车架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 140

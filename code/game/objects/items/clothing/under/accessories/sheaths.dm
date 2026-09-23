@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/storage/sheath
-	name = "short sword sheath"
-	desc = "A case of leather for a shorter length sword."
+	name = "短剑剑鞘"
+	desc = "一个用于较短长度剑的皮革剑鞘."
 	var/base_icon = "short_sheath"
 	icon_state = "short_sheath"
 	item_state = "short_sheath"
@@ -56,7 +56,7 @@
 		var/obj/item/W = usr.get_active_hand()
 		attackby(W, usr)
 		if (H.hold.contents.len >= 1)
-			usr.visible_message("<span class = 'notice'>[usr] stores \the [W].</span>", "<span class = 'notice'>You store \the [W].</span>")
+			usr.visible_message("<span class = 'notice'>[usr]收起\the [W].</span>", "<span class = 'notice'>你收起\the [W].</span>")
 //			update_icon()
 			playsound(usr, 'sound/items/unholster_sword01.ogg', 50, 1)
 			return TRUE
@@ -70,7 +70,7 @@
 			return FALSE
 		else
 			usr.put_in_hands(currsword)
-			usr.visible_message("<span class='danger'>[usr] draws \the [currsword]!</span>", "<span class='notice'>You draw \the [currsword].</span>")
+			usr.visible_message("<span class='danger'>[usr]拔出\the [currsword]!</span>", "<span class='notice'>你拔出\the [currsword].</span>")
 //			update_icon()
 			playsound(usr, 'sound/items/unholster_sword02.ogg', 80, 1)
 			return TRUE
@@ -84,8 +84,8 @@
 		item_state = "[base_icon]_empty"
 */
 /obj/item/clothing/accessory/storage/sheath/longsword
-	name = "long sword sheath"
-	desc = "A large leather case. Looks long enough to accommodate most swords."
+	name = "长剑剑鞘"
+	desc = "一个大号皮革剑鞘.看起来足够长,能容纳大多数剑."
 	base_icon = "longsword_sheath"
 	icon_state = "longsword_sheath"
 	item_state = "longsword_sheath"
@@ -123,8 +123,8 @@
 		/obj/item/weapon/material/machete1)
 
 /obj/item/clothing/accessory/storage/sheath/katana
-	name = "katana sheath"
-	desc = "A case of leather for a katana."
+	name = "武士刀刀鞘"
+	desc = "一个用于武士刀的皮革刀鞘."
 	base_icon = "katana_sheath"
 	icon_state = "katana_sheath"
 	item_state = "katana_sheath"
@@ -145,8 +145,8 @@
 
 
 /obj/item/clothing/accessory/storage/sheath/daisho
-	name = "daisho sheaths"
-	desc = "A pair of leather cases for a matched weapon set."
+	name = "大小刀鞘"
+	desc = "一对用于配套武器的皮革刀鞘."
 	base_icon = "daisho_sheath"
 	icon_state = "daisho_sheath"
 	item_state = "daisho_sheath"
@@ -160,8 +160,8 @@
 		/obj/item/weapon/material/kitchen/utensil/knife/tanto)
 
 /obj/item/clothing/accessory/storage/sheath/longer
-	name = "sword sheath"
-	desc = "A case of leather for holding a sword, it is of intermediate length."
+	name = "剑鞘"
+	desc = "一个用于装剑的皮革剑鞘,长度适中."
 	base_icon = "longer_sheath"
 	icon_state = "longer_sheath"
 	item_state = "longer_sheath"
@@ -196,8 +196,8 @@
 		/obj/item/weapon/material/machete1)
 
 /obj/item/clothing/accessory/storage/sheath/longer/officer
-	name = "officer rig"
-	desc = "A pair of cases for holding an officer's side arms. Can hold pistols, revolvers, and most swords."
+	name = "军官装备带"
+	desc = "一对用于装军官随身武器的枪套.可以装手枪、左轮手枪和大多数剑."
 	base_icon = "longer_sheath"
 	icon_state = "longer_sheath"
 	item_state = "longer_sheath"
@@ -244,8 +244,8 @@
 		/obj/item/weapon/melee)
 
 /obj/item/clothing/accessory/storage/sheath/knife
-	name = "knife sheath"
-	desc = "A leather case for holding a knife."
+	name = "刀鞘"
+	desc = "一个用于装刀的皮革刀鞘."
 	base_icon = "knifeholster"
 	icon_state = "knifeholster"
 	item_state = "knifeholster"
@@ -262,8 +262,8 @@
 		/obj/item/weapon/material/kitchen/utensil/knife/tanto)
 
 /obj/item/clothing/accessory/storage/sheath/baton
-	name = "belt loop"
-	desc = "A loop for your belt. You could probably store something dibilitating there."
+	name = "腰带环"
+	desc = "一个用于你腰带的环.你大概可以在那里放些使人丧失行动能力的东西."
 	base_icon = "knifeholster"
 	icon_state = "knifeholster"
 	item_state = "knifeholster"
@@ -275,8 +275,8 @@
 
 
 /obj/item/clothing/accessory/storage/sheath/baton/enforcement
-	name = "duty rig"
-	desc = "A set of loops and cases on a belt. You could probably store some enforcement tool there."
+	name = "执勤装备带"
+	desc = "一条腰带上的环和枪套组合.你大概可以在那里放些执法工具."
 	base_icon = "tacholster"
 	icon_state = "tacholster"
 	item_state = "tacholster"
@@ -295,8 +295,8 @@
 
 
 /obj/item/clothing/accessory/storage/sheath/baton/enslavement
-	name = "loose pouches"
-	desc = "A pair of loose pouches, perfect for getting some pacifying tools quickly."
+	name = "松散小包"
+	desc = "一对松散的小包,非常适合快速取出一些安抚工具."
 	base_icon = "tan_pouches"
 	icon_state = "tan_pouches"
 	item_state = "tan_pouches"
@@ -311,8 +311,8 @@
 		/obj/item/weapon/gun/projectile/dartgun/blowgun)
 
 /obj/item/clothing/accessory/storage/sheath/thrown
-	name = "thrown weapon bandolier"
-	desc = "A set of leather cases on belts for storing and retrieving thrown weapons quickly."
+	name = "投掷武器弹带"
+	desc = "一组腰带上的皮革枪套,用于快速存放和取用投掷武器."
 	base_icon = "bandolier"
 	icon_state = "bandolier"
 	item_state = "bandolier"

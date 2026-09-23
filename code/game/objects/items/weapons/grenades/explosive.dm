@@ -20,8 +20,8 @@
 	damage = 30
 
 /obj/item/weapon/grenade/frag
-	name = "fragmentation grenade"
-	desc = "A military fragmentation grenade, designed to explode in a deadly shower of fragments, while avoiding massive structural damage."
+	name = "破片手榴弹"
+	desc = "一种军用破片手榴弹,设计为爆炸时产生致命的碎片散射,同时避免造成大规模结构损坏."
 	icon_state = "frggrenade"
 
 	sharp = FALSE
@@ -85,15 +85,15 @@
 		explosion(O, -1, -1, explosion_size, round(explosion_size/2), 0)
 
 /obj/item/weapon/grenade/frag/shell
-	name = "fragmentation grenade"
-	desc = "A light fragmentation grenade, designed to be fired from a launcher. It can still be activated and thrown by hand if necessary."
+	name = "破片手榴弹"
+	desc = "一种轻型破片手榴弹,设计用于从发射器发射.必要时仍可手动激活并投掷."
 	icon_state = "fragshell"
 
 	num_fragments = 50 //less powerful than a regular frag grenade
 
 /obj/item/weapon/grenade/frag/high_yield
-	name = "fragmentation bomb"
-	desc = "Larger and heavier than a standard fragmentation grenade, this device is extremely dangerous. It cannot be thrown as far because of its weight."
+	name = "破片炸弹"
+	desc = "比标准破片手榴弹更大更重,这种装置极其危险.由于重量原因,它无法投掷得很远."
 	icon_state = "frag"
 
 	w_class = ITEM_SIZE_NORMAL
@@ -110,8 +110,8 @@
 
 
 /obj/item/weapon/grenade/frag/ugl/shell40mm
-	name = "40x46mm 'M381 HE' grenade shell"
-	desc = "Cannot be thrown as the usual grenade, by the way."
+	name = "40x46mm 'M381 HE'榴弹"
+	desc = "顺带一提,它不能像普通手榴弹那样投掷."
 	icon_state = "M406"
 	num_fragments = 50
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)
@@ -122,8 +122,8 @@
 	return
 
 /obj/item/weapon/grenade/frag/ugl/vog25
-	name = "40x103mm 'VOG-25' grenade shell"
-	desc = "Cannot be thrown as the usual grenade, by the way."
+	name = "40x103mm 'VOG-25'榴弹"
+	desc = "顺带一提,它不能像普通手榴弹那样投掷."
 	icon_state = "40x103mmshell"
 	num_fragments = 50
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)

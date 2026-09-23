@@ -11,8 +11,8 @@ Vending Apparel/Weapon racks, used for maps, put your structures defines here.
 */
 
 /obj/structure/vending/piratesapparel
-	name = "Pirate clothes rack"
-	desc = "Basic wear for pirates soldiers."
+	name = "海盗衣架"
+	desc = "海盗士兵的基础服装。"
 	icon_state = "apparel_pirates"
 	products = list(
 		/obj/item/clothing/suit/storage/jacket/piratejacket1 = 15,
@@ -39,56 +39,56 @@ MAPS (including, but not up to);
 */
 
 /obj/structure/vending/muskets
-	name = "Musket rack"
-	desc = "A rack of war muskets."
+	name = "火枪架"
+	desc = "一架子战争火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/musket = 15,
 	)
 
 /obj/structure/vending/muskets/small
-	name = "musket rack"
-	desc = "A rack of war muskets."
+	name = "火枪架"
+	desc = "一架子战争火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/musket = 5,
 	)
 
 /obj/structure/vending/muskets/english
-	name = "English musket rack"
-	desc = "A rack of war muskets."
+	name = "英国火枪架"
+	desc = "一架子战争火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/brownbess = 15,
 	)
 
 /obj/structure/vending/muskets/french
-	name = "French musket rack"
-	desc = "A rack of smoothbore charleville muskets."
+	name = "法国火枪架"
+	desc = "一架子滑膛查尔维尔火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/charleville = 15,
 	)
 
 /obj/structure/vending/muskets/spanish
-	name = "Spanish musket rack"
-	desc = "A rack of smoothbore M1752 muskets."
+	name = "西班牙火枪架"
+	desc = "一架子滑膛M1752火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/m1752 = 15,
 	)
 
 /obj/structure/vending/muskets/portuguese
-	name = "Portuguese musket rack"
-	desc = "A rack of smoothbore Portuguese muskets."
+	name = "葡萄牙火枪架"
+	desc = "一架子滑膛葡萄牙火枪。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/m1752 = 15,
 	)
 
 /obj/structure/vending/flintlock
-	name = "Flintlock weapon rack"
-	desc = "An assorted rack of flintlock weapons."
+	name = "燧发枪武器架"
+	desc = "一架子各式燧发枪武器。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/musketoon = 5,
@@ -103,8 +103,8 @@ MAPS (including, but not up to);
 */
 
 /obj/structure/vending/capnball
-	name = "Cap-n-Ball weapon rack"
-	desc = "An assorted rack of Cap-n-Ball weapons."
+	name = "火帽弹丸武器架"
+	desc = "一架子各式火帽弹丸武器。"
 	icon_state = "apparel_rifles"
 	products = list(
 		/obj/item/weapon/gun/projectile/flintlock/springfield = 15,
@@ -119,8 +119,8 @@ MAPS (including, but not up to);
 */
 
 /obj/structure/vending/confederate_apparel
-	name = "confederate apparel rack"
-	desc = "An assorted rack of confederate apparel."
+	name = "邦联服装架"
+	desc = "一架子各式邦联服装。"
 	icon_state = "apparel_confed"
 	products = list(
 		/obj/item/clothing/head/confederatecap = 15,
@@ -131,8 +131,8 @@ MAPS (including, but not up to);
 	)
 
 /obj/structure/vending/union_apparel
-	name = "union apparel rack"
-	desc = "An assorted rack of union apparel."
+	name = "联邦服装架"
+	desc = "一架子各式联邦服装。"
 	icon_state = "apparel_japan"
 	products = list(
 		/obj/item/clothing/head/unioncap = 15,
@@ -153,8 +153,8 @@ MAPS:
 
 
 /obj/structure/vending/britishapparel
-	name = "Royal Navy sailor clothes rack"
-	desc = "Basic wear for sailors of the Royal Navy."
+	name = "皇家海军水手衣架"
+	desc = "皇家海军水手的基础服装。"
 	icon_state = "apparel_british"
 	products = list(
 		/obj/item/clothing/under/british_sailor1 = 15,
@@ -172,8 +172,8 @@ MAPS:
 */
 
 /obj/structure/vending/rusweapons
-	name = "Russian Weapon rack"
-	desc = "A rack of war equipment."
+	name = "俄式武器架"
+	desc = "一架子战争装备。"
 	icon_state = "equipment_russia"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/mosin = 15,
@@ -189,8 +189,8 @@ MAPS:
 */
 
 /obj/structure/vending/rednikovweapons
-	name = "Rednikov Weapon rack"
-	desc = "A rack of Mafia equipment."
+	name = "列德尼科夫武器架"
+	desc = "一架子黑手党装备。"
 	icon_state = "weapons_sof"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ak47/akms = 8,
@@ -204,8 +204,8 @@ MAPS:
 	)
 
 /obj/structure/vending/rednikovapparel
-	name = "Rednikov apparel rack"
-	desc = "Basic wear for the Rednikov Mafia."
+	name = "列德尼科夫服装架"
+	desc = "列德尼科夫黑手党的基础服装。"
 	icon_state = "apparel_sof"
 	products = list(
 		/obj/item/clothing/under/expensive/red = 40,
@@ -225,8 +225,8 @@ MAPS:
 */
 
 /obj/structure/vending/ww1gerweapons
-	name = "German rifle rack"
-	desc = "A rack of rifles and ammunition."
+	name = "德国步枪架"
+	desc = "一架子步枪和弹药。"
 	icon_state = "modern_german"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98 = 15,
@@ -236,8 +236,8 @@ MAPS:
 	)
 
 /obj/structure/vending/ww1britweapons
-	name = "British rifle rack"
-	desc = "A rack of rifles and ammunition."
+	name = "英国步枪架"
+	desc = "一架子步枪和弹药。"
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/enfield = 15,
@@ -247,8 +247,8 @@ MAPS:
 	)
 
 /obj/structure/vending/ww1frenchweapons
-	name = "French rifle rack"
-	desc = "A rack of rifles and ammunition."
+	name = "法国步枪架"
+	desc = "一架子步枪和弹药。"
 	icon_state = "modern_france"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/lebel = 15,
@@ -259,8 +259,8 @@ MAPS:
 	)
 
 /obj/structure/vending/ww1frenchapparel
-	name = "French Army apparel rack"
-	desc = "Basic wear for soldiers of the French Army."
+	name = "法国陆军服装架"
+	desc = "法国陆军士兵的基础服装。"
 	icon_state = "apparel_france"
 	products = list(
 		/obj/item/clothing/shoes/leatherboots = 15,
@@ -277,8 +277,8 @@ MAPS:
 	)
 
 /obj/structure/vending/ww1britapparel
-	name = "British Army apparel rack"
-	desc = "Basic wear for soldiers of the Royal Army."
+	name = "英国陆军服装架"
+	desc = "皇家陆军士兵的基础服装。"
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/leatherboots = 15,
@@ -296,8 +296,8 @@ MAPS:
 	)
 
 /obj/structure/vending/ww1gerapparel
-	name = "German Army apparel rack"
-	desc = "Basic wear for soldiers of the Imperial German Army."
+	name = "德国陆军服装架"
+	desc = "德意志帝国陆军士兵的基础服装。"
 	icon_state = "apparel_german2"
 	products = list(
 		/obj/item/clothing/shoes/blackboots = 15,
@@ -319,8 +319,8 @@ MAPS:
 */
 
 /obj/structure/vending/japweapons
-	name = "Japanese Weapon rack"
-	desc = "A rack of war equipment."
+	name = "日本武器架"
+	desc = "一架子战争装备。"
 	icon_state = "equipment_japan"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/arisaka30 = 15,
@@ -331,8 +331,8 @@ MAPS:
 	)
 
 /obj/structure/vending/japaneseapparel
-	name = "Imperial Japanese Army apparel rack"
-	desc = "Basic wear for soldiers of the Imperial Japanese Army."
+	name = "大日本帝国陆军服装架"
+	desc = "大日本帝国陆军士兵的基础服装."
 	icon_state = "apparel_japan"
 	products = list(
 		/obj/item/clothing/shoes/japboots = 15,
@@ -354,8 +354,8 @@ MAPS:
 */
 
 /obj/structure/vending/chineseweapons
-	name = "Chinese Weapon rack"
-	desc = "A rack of war equipment."
+	name = "中式武器架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "equipment_japan"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k/chinese = 15,
@@ -365,8 +365,8 @@ MAPS:
 	)
 
 /obj/structure/vending/chineseweapons_korean_war
-	name = "Chinese Weapon rack"
-	desc = "A rack of war equipment."
+	name = "中式武器架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "equipment_japan"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k/chinese = 15,
@@ -378,8 +378,8 @@ MAPS:
 		/obj/item/weapon/attachment/bayonet = 15,
 	)
 /obj/structure/vending/chineseapparel_korean_war
-	name = "Chinese apparel rack"
-	desc = "Basic wear for soldiers of the People's Liberation Army."
+	name = "中式服装架"
+	desc = "中国人民解放军士兵的基础服装."
 	icon_state = "apparel_china"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -395,8 +395,8 @@ MAPS:
 	)
 
 /obj/structure/vending/chineseapparel
-	name = "Chinese apparel rack"
-	desc = "Basic wear for soldiers of the Chinese Army."
+	name = "中式服装架"
+	desc = "中国军队士兵的基础服装."
 	icon_state = "apparel_china"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -414,8 +414,8 @@ MAPS:
 	)
 
 /obj/structure/vending/chineseapparel/early
-	name = "Chinese apparel rack"
-	desc = "Basic wear for soldiers of the Chinese Army."
+	name = "中式服装架"
+	desc = "中国军队士兵的基础服装."
 	icon_state = "apparel_china"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -438,8 +438,8 @@ MAPS:
 //**/
 
 /obj/structure/vending/usa_apparel_ww2
-	name = "US Army apparel rack"
-	desc = "Basic wear for soldiers of the US Army."
+	name = "美国陆军服装架"
+	desc = "美国陆军士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -458,8 +458,8 @@ MAPS:
 	)
 
 /obj/structure/vending/usa_apparel_korean_war
-	name = "US Army apparel rack"
-	desc = "Basic wear for soldiers of the US Army."
+	name = "美国陆军服装架"
+	desc = "美国陆军士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -476,8 +476,8 @@ MAPS:
 	)
 
 /obj/structure/vending/usa_equipment_ww2
-	name = "US Army equipment rack"
-	desc = "Basic gear for soldiers of the US Army."
+	name = "美国陆军装备架"
+	desc = "美国陆军士兵的基础装备."
 	icon_state = "equipment_usa"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/m1garand = 15,
@@ -494,8 +494,8 @@ MAPS:
 	)
 
 /obj/structure/vending/japaneseapparel_ww2
-	name = "Imperial Japanese Army apparel rack"
-	desc = "Basic wear for soldiers of the Imperial Japanese Army."
+	name = "大日本帝国陆军服装架"
+	desc = "大日本帝国陆军士兵的基础服装."
 	icon_state = "apparel_japan_ww2"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots/jap_ww2 = 15,
@@ -514,8 +514,8 @@ MAPS:
 	)
 
 /obj/structure/vending/japaneseapparel_ww2_snlf
-	name = "Imperial Japanese Army apparel rack"
-	desc = "Basic wear for soldiers of the Imperial Japanese Special Navy Landing Force."
+	name = "大日本帝国陆军服装架"
+	desc = "大日本帝国海军特别陆战队士兵的基础服装."
 	icon_state = "apparel_japan_ww2"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots/jap_ww2/navy = 15,
@@ -533,8 +533,8 @@ MAPS:
 	)
 
 /obj/structure/vending/japaneseapparel_ww2_navy
-	name = "Imperial Japanese Navy apparel rack"
-	desc = "Basic wear for soldiers of the Imperial Japanese Navy."
+	name = "大日本帝国海军服装架"
+	desc = "大日本帝国海军士兵的基础服装."
 	icon_state = "apparel_japan_ww2"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots/jap_ww2/navy = 15,
@@ -552,8 +552,8 @@ MAPS:
 	)
 
 /obj/structure/vending/japweapons_ww2
-	name = "Japanese Weapon rack"
-	desc = "A rack of war equipment."
+	name = "日式武器架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "equipment_japan"
 
 /obj/structure/vending/japweapons_ww2/New() // Different products for different maps.
@@ -580,8 +580,8 @@ MAPS:
 */
 
 /obj/structure/vending/yakuza
-	name = "Yakuza apparel rack"
-	desc = "Basic clothing for the Yakuza."
+	name = "黑帮服装架"
+	desc = "黑帮的基础服装."
 	icon_state = "apparel_german2"
 	products = list(
 		/obj/item/stack/medical/bruise_pack/bint = 10,
@@ -595,8 +595,8 @@ MAPS:
 	)
 
 /obj/structure/vending/yakuza/equipment
-	name = "Yakuza equipment rack"
-	desc = "Basic gear for the Yakuza."
+	name = "黑帮装备架"
+	desc = "黑帮的基础装备."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/m1911 = 14,
@@ -622,8 +622,8 @@ MAPS:
 */
 
 /obj/structure/vending/russianapparel
-	name = "Russian Army apparel rack"
-	desc = "Basic wear for russian soldiers."
+	name = "俄军服装架"
+	desc = "俄罗斯士兵的基础服装."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -641,8 +641,8 @@ MAPS:
 */
 
 /obj/structure/vending/sofapparel
-	name = "SOF apparel rack"
-	desc = "Basic wear for U.S. Special Operations Forces."
+	name = "特种部队服装架"
+	desc = "美国特种作战部队的基础服装."
 	icon_state = "apparel_sof"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -672,8 +672,8 @@ MAPS:
 	)
 
 /obj/structure/vending/sofweapons
-	name = "SOF weapons rack"
-	desc = "Weapons for U.S. Special Operations Forces."
+	name = "特种部队武器架"
+	desc = "美国特种作战部队的武器."
 	icon_state = "weapons_sof"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/m16/m16a4 = 15,
@@ -718,8 +718,8 @@ obj/structure/vending/sofammo
 
 
 /obj/structure/vending/sovietapparel
-	name = "Red Army apparel rack"
-	desc = "Basic wear for russian soldiers."
+	name = "红军服装架"
+	desc = "俄罗斯士兵的基础服装."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -739,8 +739,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/wehrmachtapparel
-	name = "Wehrmacht apparel rack"
-	desc = "Basic wear for german soldiers."
+	name = "国防军服装架"
+	desc = "德国士兵的基础服装."
 	icon_state = "apparel_german"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -759,8 +759,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/ssapparel
-	name = "SS apparel rack"
-	desc = "Basic wear for SS soldiers."
+	name = "党卫军服装架"
+	desc = "党卫军士兵的基础服装."
 	icon_state = "apparel_german"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -779,8 +779,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/ss_officerapparel
-	name = "SS Officer apparel rack"
-	desc = "Basic wear for SS Officers."
+	name = "党卫军军官服装架"
+	desc = "党卫军军官的基础服装."
 	icon_state = "apparel_german"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 10,
@@ -803,8 +803,8 @@ obj/structure/vending/sofammo
 */
 
 /obj/structure/vending/wehrmachtweapons
-	name = "Wehrmacht rifle rack"
-	desc = "A rack of war equipment."
+	name = "国防军步枪架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "modern_german"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k = 15,
@@ -812,8 +812,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/ss_weaponsassault
-	name = "SS Attack Weapons rack"
-	desc = "A rack of war equipment."
+	name = "党卫军突击武器架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "modern_german"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k = 15,
@@ -829,8 +829,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/ss_weaponsassaultlatewar
-	name = "SS Attack Weapons rack"
-	desc = "A rack of Deadly war equipment."
+	name = "党卫军突击武器架"
+	desc = "一个放置致命战争装备的架子."
 	icon_state = "modern_german"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k = 15,
@@ -849,8 +849,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/sovietweapons
-	name = "Soviet rifle rack"
-	desc = "A rack of war equipment."
+	name = "苏联步枪架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/mosin/m30 = 15,
@@ -858,8 +858,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/sovietweaponsassault
-	name = "Soviet Attack Weapons rack"
-	desc = "A rack of war equipment."
+	name = "苏联突击武器架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ppsh = 1,
@@ -873,8 +873,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/oldrussianweapons
-	name = "Russian rifle rack"
-	desc = "A rack of war equipment."
+	name = "俄式步枪架"
+	desc = "一个放置战争装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/mosin = 15,
@@ -886,8 +886,8 @@ obj/structure/vending/sofammo
 */
 
 /obj/structure/vending/wehrmachtammo
-	name = "Wehrmacht ammo crate"
-	desc = "A large crate of Wehrmacht ammunition."
+	name = "国防军弹药箱"
+	desc = "一大箱国防军弹药."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/gewehr98box = 10,
@@ -904,8 +904,8 @@ obj/structure/vending/sofammo
 	)
 
 /obj/structure/vending/sovietammo
-	name = "Soviet ammo crate"
-	desc = "A large crate of Red Army ammunition."
+	name = "苏联弹药箱"
+	desc = "一大箱红军弹药."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/mosinbox = 10,
@@ -936,8 +936,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/hezammo
-	name = "Hezbollah ammo pile"
-	desc = "ammunition and attachments for the Hezbollah armed forces."
+	name = "真主党弹药堆"
+	desc = "真主党武装部队的弹药和配件."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/ak47 = 50,
@@ -956,8 +956,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/usa_apparel_modern
-	name = "USMC apparel rack"
-	desc = "Basic wear for soldiers of the USMC."
+	name = "美国海军陆战队服装架"
+	desc = "美国海军陆战队士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/usmc = 15,
@@ -972,8 +972,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/hez_apparel_modern
-	name = "Hezbollah apparel rack"
-	desc = "Basic wear for soldiers of Hezbollah."
+	name = "真主党服装架"
+	desc = "真主党士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -988,8 +988,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/idf_apparel_modern
-	name = "IDF apparel rack"
-	desc = "Basic wear for soldiers of the IDF."
+	name = "以色列国防军服装架"
+	desc = "以色列国防军士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/jackboots = 15,
@@ -1008,8 +1008,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/usa_equipment_modern
-	name = "USMC ammunition"
-	desc = "Ammunition and explosives for USMC forces."
+	name = "美国海军陆战队弹药"
+	desc = "美国海军陆战队部队的弹药和爆炸物."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/weapon/grenade/smokebomb/m18smoke = 15,
@@ -1026,8 +1026,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/usa_apparel_coldwar
-	name = "US Army apparel rack"
-	desc = "Basic wear for the soldiers of the US Army."
+	name = "美国陆军服装架"
+	desc = "美国陆军士兵的基础服装."
 	icon_state = "apparel_usa"
 	products = list(
 		/obj/item/clothing/shoes/blackboots = 30,
@@ -1055,8 +1055,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/usa_equipment_coldwar
-	name = "US Army weapons and ammunition"
-	desc = "Weapons, ammunition, equipment and explosives issued by the US Army."
+	name = "美国陆军武器和弹药"
+	desc = "美国陆军配发的武器,弹药,装备和爆炸物."
 	icon_state = "equipment_usa"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/m16 = 40,
@@ -1101,7 +1101,7 @@ obj/structure/vending/idfammo
 	if (!user.unEquip(W))
 		return
 
-	user.visible_message(SPAN_NOTICE("[user] inserts \the [W] into \the [src]."), SPAN_NOTICE("You insert \the [W] into \the [src]."), "You hear something thudding and slotting into place.")
+	user.visible_message(SPAN_NOTICE("[user] inserts \the [W] into \the [src]."), SPAN_NOTICE("You insert \the [W] into \the [src]."), "你听到有什么东西砰的一声嵌入了到位.")
 	W.forceMove(src)
 	product_records.Add(R)
 	GLOB.nanomanager.update_uis(src)
@@ -1115,14 +1115,14 @@ obj/structure/vending/idfammo
 	update_icon()
 
 /obj/structure/vending/craftable/rifles
-	name = "rifle rack"
-	desc = "A rack that can store up to 5 rifles."
+	name = "步枪架"
+	desc = "一个可存放最多5支步枪的架子."
 	icon_state = "rack_base"
 	products = list(
 	)
 
 /obj/structure/vending/craftable/rifles/wood
-	name = "rifle rack"
+	name = "步枪架"
 	icon_state = "rack_base_wood"
 	flammable = TRUE
 
@@ -1177,8 +1177,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/yeltsinapparel
-	name = "Russian Army apparel rack"
-	desc = "A rack of clothing and gear."
+	name = "俄军服装架"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/soldiershoes = 15,
@@ -1206,8 +1206,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/yeltsinweapons
-	name = "Russian Army weapon rack"
-	desc = "A rack of war equipment."
+	name = "俄军武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ak74 = 15,
@@ -1228,8 +1228,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/yeltsinammo
-	name = "Russian Army ammo crate"
-	desc = "A large crate of ammunition."
+	name = "俄军弹药箱"
+	desc = "一个装满弹药的大箱子."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/ak74 = 50,
@@ -1253,8 +1253,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/sovafghan/soviet/apparel
-	name = "Soviet Army apparel and gear rack"
-	desc = "A rack of clothing and gear."
+	name = "苏军服装和装备架"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/combat = 15,
@@ -1282,8 +1282,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sovafghan/soviet/weapons
-	name = "Soviet Army weapon rack"
-	desc = "A rack of war equipment."
+	name = "苏军武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ak74 = 15,
@@ -1294,8 +1294,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sovafghan/soviet/ammo
-	name = "Soviet Army ammo crate"
-	desc = "A large crate of ammunition."
+	name = "苏军弹药箱"
+	desc = "一个装满弹药的大箱子."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/ak74 = 50,
@@ -1308,8 +1308,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sovafghan/dra/apparel
-	name = "DRA apparel and gear rack"
-	desc = "A rack of clothing and gear."
+	name = "阿富汗民主共和国服装和装备架"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/soldiershoes = 20,
@@ -1334,8 +1334,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sovafghan/dra/weapons
-	name = "DRA weapon rack"
-	desc = "A rack of war equipment."
+	name = "阿富汗民主共和国武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/sks = 30,
@@ -1348,8 +1348,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sovafghan/dra/ammo
-	name = "DRA ammo crate"
-	desc = "A large crate of ammunition."
+	name = "阿富汗民主共和国弹药箱"
+	desc = "一个装满弹药的大箱子."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/ak47 = 40,
@@ -1362,8 +1362,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/coldwar/soviet/apparel
-	name = "Soviet Armed Forces apparel and gear rack"
-	desc = "A rack of clothing and gear."
+	name = "苏联武装力量服装和装备架"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/jackboots/soviet = 20,
@@ -1392,8 +1392,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/sixties/china/apparel
-	name = "Chinese apparel rack"
-	desc = "Basic wear for soldiers of the People's Liberation Army."
+	name = "中国服装架"
+	desc = "中国人民解放军士兵的基础服装."
 	icon_state = "apparel_china"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -1414,8 +1414,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sixties/china/apparelnotwinter
-	name = "Chinese apparel rack"
-	desc = "Basic wear for soldiers of the People's Liberation Army."
+	name = "中国服装架"
+	desc = "中国人民解放军士兵的基础服装."
 	icon_state = "apparel_china"
 	products = list(
 		/obj/item/clothing/shoes/heavyboots/wrappedboots = 15,
@@ -1435,8 +1435,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sixties/china/weapons
-	name = "Chinese Weapon rack"
-	desc = "A rack of war equipment."
+	name = "中国武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "equipment_japan"
 	products = list(
 		/obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k/chinese = 15,
@@ -1459,8 +1459,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/sixties/soviet/apparel
-	name = "Soviet Army apparel and gear rack"
-	desc = "A rack of clothing and gear."
+	name = "苏军服装和装备架"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/combat = 15,
@@ -1485,8 +1485,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/sixties/soviet/weapons
-	name = "Soviet Army weapons and ammo rack"
-	desc = "A rack of war equipment."
+	name = "苏军武器和弹药架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ak47 = 5,
@@ -1510,8 +1510,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/starwars/imperial/apparel
-	name = "Imperial uniform rack"
-	desc = "Basic wear for imperial stormtroopers."
+	name = "帝国制服架"
+	desc = "帝国风暴兵的基础服装."
 	icon_state = "apparel_german_old"
 	products = list(
 		/obj/item/clothing/under/bodyglove = 25,
@@ -1522,8 +1522,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/imperial/weapons
-	name = "Imperial weapon and ammo rack"
-	desc = "A rack of imperial blaster equipment."
+	name = "帝国武器和弹药架"
+	desc = "一个存放帝国爆能装备的架子."
 	icon_state = "blaster_munitions"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/laser/e11 = 30,
@@ -1535,8 +1535,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/rebel/apparel
-	name = "Rebel uniform rack"
-	desc = "Basic wear for rebel soldiers."
+	name = "义军制服架"
+	desc = "义军士兵的基础服装."
 	icon_state = "apparel_german_old"
 	products = list(
 		/obj/item/clothing/under/rebel = 25,
@@ -1546,8 +1546,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/rebel/weapons
-	name = "Rebel weapon and ammo rack"
-	desc = "A rack of rebel blaster equipment."
+	name = "义军武器和弹药架"
+	desc = "一个存放义军爆能装备的架子."
 	icon_state = "blaster_munitions"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/laser/a280 = 20,
@@ -1560,8 +1560,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/republic/apparel
-	name = "Republic uniform rack"
-	desc = "Basic wear for republic soldiers."
+	name = "共和国制服架"
+	desc = "共和国士兵的基础服装."
 	icon_state = "apparel_german_old"
 	products = list(
 		/obj/item/clothing/under/bodyglove = 50,
@@ -1576,8 +1576,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/republic/weapons
-	name = "Republic weapon and ammo rack"
-	desc = "A rack of republic blaster equipment."
+	name = "共和国武器和弹药架"
+	desc = "一个存放共和国爆能装备的架子."
 	icon_state = "blaster_munitions"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/laser/dc15a = 10,
@@ -1589,8 +1589,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/starwars/gonk/gcw
-	name = "A munitions gonk droid"
-	desc = "A gonk droid that supplies tibanna magizines."
+	name = "弹药贡克机器人"
+	desc = "一个供应提班纳弹匣的贡克机器人."
 	icon_state = "gonk"
 	products = list(
 		/obj/item/weapon/gun/projectile/semiautomatic/laser/e11 = 60,
@@ -1600,8 +1600,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/grenade_crate
-	name = "grenade crate"
-	desc = "A crate full of grenades."
+	name = "手榴弹箱"
+	desc = "一个装满手榴弹的箱子."
 	icon_state = "grenade_crate"
 	products = list()
 
@@ -1613,8 +1613,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/syria/gungov
-	name = "Syrian Army weapon rack"
-	desc = "A rack of war equipment."
+	name = "叙利亚军武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/ak74 = 15,
@@ -1636,8 +1636,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/syria/ammogov
-	name = "Syrian Army ammo crate"
-	desc = "A large crate of ammunition."
+	name = "叙利亚军弹药箱"
+	desc = "一个装满弹药的大箱子."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/ak74 = 10,
@@ -1658,8 +1658,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/syria/armorgov
-	name = "Syrian Equipment Crate"
-	desc = "A rack of clothing and gear."
+	name = "叙利亚装备箱"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/combat = 15,
@@ -1693,8 +1693,8 @@ obj/structure/vending/idfammo
 */
 
 /obj/structure/vending/syria/fsa/gunreb
-	name = "Free Syrian Army weapon rack"
-	desc = "A rack of war equipment."
+	name = "自由叙利亚军武器架"
+	desc = "一个存放作战装备的架子."
 	icon_state = "modern_british"
 	products = list(
 		/obj/item/weapon/gun/projectile/submachinegun/m16 = 15,
@@ -1716,8 +1716,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/syria/fsa/ammoreb
-	name = "Free Syrian Army ammo crate"
-	desc = "A large crate of ammunition."
+	name = "自由叙利亚军弹药箱"
+	desc = "一个装满弹药的大箱子."
 	icon_state = "ammo_crates"
 	products = list(
 		/obj/item/ammo_magazine/m16 = 20,
@@ -1735,8 +1735,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/syria/fsa/armorreb
-	name = "Free Syrian Army Equipment Crate"
-	desc = "A rack of clothing and gear."
+	name = "自由叙利亚军装备箱"
+	desc = "一个存放服装和装备的架子."
 	icon_state = "apparel_russia"
 	products = list(
 		/obj/item/clothing/shoes/combat = 15,
@@ -1767,8 +1767,8 @@ obj/structure/vending/idfammo
 	)
 
 /obj/structure/vending/submarine_emergency
-	name = "Emergency Equipment Locker"
-	desc = "A wall-mounted locker containing emergency firefighting and repair equipment. Push button to dispense."
+	name = "应急设备柜"
+	desc = "一个壁挂式储物柜,内含应急消防和维修设备.按下按钮即可取出."
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "firecloset"
 	products = list(

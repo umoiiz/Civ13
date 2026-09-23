@@ -22,8 +22,8 @@ proc/is_complete_print(var/print)
 // Crime scene kit
 
 /obj/item/weapon/storage/briefcase/crimekit
-	name = "crime scene kit"
-	desc = "A stainless steel-plated carrycase for all your forensic needs. Feels heavy."
+	name = "犯罪现场勘查箱"
+	desc = "一个不锈钢镀层的便携箱,满足你所有的法医鉴定需求.感觉很沉."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "case"
 	item_icons = list(
@@ -38,8 +38,8 @@ proc/is_complete_print(var/print)
 
 // Evidence bag
 /obj/item/weapon/evidencebag
-	name = "evidence bag"
-	desc = "An empty evidence bag."
+	name = "证物袋"
+	desc = "一个空的证物袋."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "evidenceobj"
 	item_state = null
@@ -87,7 +87,7 @@ proc/is_complete_print(var/print)
 		to_chat(user, SPAN_NOTICE("[src] already has something inside it."))
 		return
 
-	user.visible_message("[user] puts [I] into [src]", "You put [I] inside [src].",\
+	user.visible_message("[user]将[I]放入[src]", "你将[I]放入[src].",\
 	"You hear a rustle as someone puts something into a plastic bag.")
 
 	icon_state = "evidence"
@@ -111,7 +111,7 @@ proc/is_complete_print(var/print)
 /obj/item/weapon/evidencebag/attack_self(mob/user as mob)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message("[user] takes [I] out of [src]", "You take [I] out of [src].",\
+		user.visible_message("[user]从[src]中取出[I]", "你从[src]中取出[I].",\
 		"You hear someone rustle around in a plastic bag, and remove something.")
 		overlays.Cut()	//remove the overlays
 
@@ -122,7 +122,7 @@ proc/is_complete_print(var/print)
 		icon_state = "evidenceobj"
 		desc = "An empty evidence bag."
 	else
-		to_chat(user, "[src] is empty.")
+		to_chat(user, "[src]是空的.")
 		icon_state = "evidenceobj"
 	return
 
@@ -133,8 +133,8 @@ proc/is_complete_print(var/print)
 //Luminol bottle
 
 /obj/item/weapon/reagent_containers/spray/luminol
-	name = "luminol bottle"
-	desc = "A bottle containing an odourless, colorless liquid used to reveal bloodstains."
+	name = "鲁米诺试剂瓶"
+	desc = "一个装有用于显现血迹的无味无色液体的瓶子."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "luminol"
 	item_state = "cleaner"
@@ -149,8 +149,8 @@ proc/is_complete_print(var/print)
 //Scene cards
 
 /obj/item/weapon/csi_marker
-	name = "crime scene marker"
-	desc = "Plastic cards used to mark points of interests on the scene. Just like in the movies!"
+	name = "犯罪现场标记牌"
+	desc = "用于标记现场关注点的塑料卡片.就像电影里一样!"
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "card1"
 	w_class = ITEM_SIZE_TINY
@@ -184,7 +184,7 @@ proc/is_complete_print(var/print)
 //Sample kits
 
 /obj/item/weapon/forensics/sample
-	name = "forensic sample"
+	name = "法医样本"
 	w_class = ITEM_SIZE_TINY
 	var/list/evidence = list()
 
@@ -231,8 +231,8 @@ proc/is_complete_print(var/print)
 	return ..()
 
 /obj/item/weapon/forensics/sample/print
-	name = "fingerprint card"
-	desc = "Records a set of fingerprints."
+	name = "指纹卡"
+	desc = "记录一组指纹."
 	icon_state = "fingerprint0"
 	item_state = "paper"
 
@@ -287,7 +287,7 @@ proc/is_complete_print(var/print)
 	if (!has_hand)
 		HU << SPAN_WARNING("They don't have any hands.")
 		return 1
-	HU.visible_message("[HU] takes a copy of \the [H]'s fingerprints.")
+	HU.visible_message("[HU]提取了\the [H]的指纹副本.")
 	var/fullprint = H.get_full_print()
 	evidence[fullprint] = fullprint
 	copy_evidence(src)
@@ -302,8 +302,8 @@ proc/is_complete_print(var/print)
 		supplied.fingerprints.Cut()
 
 /obj/item/weapon/forensics/sample_kit
-	name = "fingerprint powder"
-	desc = "A jar containing aluminum powder and a specialized brush."
+	name = "指纹粉"
+	desc = "一个装有铝粉和专用刷子的罐子."
 	w_class = ITEM_SIZE_SMALL
 	icon_state = "dust"
 	var/evidence_type = "fingerprint"
@@ -331,8 +331,8 @@ proc/is_complete_print(var/print)
 //Swabs
 
 /obj/item/weapon/forensics/swab
-	name = "swab kit"
-	desc = "A sterilized cotton swab and vial used to take forensic samples."
+	name = "拭子采集套装"
+	desc = "用于采集法医样本的消毒棉签和小瓶."
 	icon_state = "swab"
 	var/gsr = 0
 	var/list/dna
@@ -378,7 +378,7 @@ proc/is_complete_print(var/print)
 		if(!H.check_has_mouth())
 			HU << SPAN_WARNING("They don't have a mouth.")
 			return
-		HU.visible_message("[HU] swabs \the [H]'s mouth for a saliva sample.")
+		HU.visible_message("[HU]用拭子擦拭了\the [H]的口腔以采集唾液样本.")
 		dna = list(H.dna.unique_enzymes)
 		sample_type = "DNA"
 
@@ -394,7 +394,7 @@ proc/is_complete_print(var/print)
 		if (!has_hand)
 			HU << SPAN_WARNING("They don't have any hands.")
 			return
-		HU.visible_message("[HU] swabs [H]'s palm for a sample.")
+		HU.visible_message("[HU]用拭子擦拭了[H]的手掌以采集样本.")
 		sample_type = "GSR"
 		gsr = H.gunshot_residue
 	else
@@ -452,7 +452,7 @@ proc/is_complete_print(var/print)
 			sample_type = "residue"
 
 	if (sample_type)
-		user.visible_message("\The [user] swabs \the [A] for a sample.", "You swab \the [A] for a sample.")
+		user.visible_message("\The [user]用拭子擦拭了\the [A]以采集样本.", "你用拭子擦拭了\the [A]以采集样本.")
 		set_used(sample_type, A)
 
 /obj/item/weapon/forensics/swab/proc/set_used(var/sample_str, var/atom/source)
@@ -464,8 +464,8 @@ proc/is_complete_print(var/print)
 // UV Light
 
 /obj/item/device/uv_light
-	name = "UV light"
-	desc = "A small handheld black light."
+	name = "紫外线灯"
+	desc = "一个小型手持黑光灯."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "uv_off"
 	slot_flags = SLOT_BELT
@@ -536,8 +536,8 @@ proc/is_complete_print(var/print)
 //Slides
 
 /obj/item/weapon/forensics/slide
-	name = "microscope slide"
-	desc = "A pair of thin glass panes used in the examination of samples beneath a microscope. Used with GSR swab tests to examine the samples in the microscope. To empty them, use in hand."
+	name = "显微镜载玻片"
+	desc = "一对用于在显微镜下检查样本的薄玻璃片.配合枪击残留物拭子测试,在显微镜下检查样本.要清空它们,拿在手中使用."
 	icon_state = "slide"
 	w_class = ITEM_SIZE_TINY
 	var/obj/item/weapon/forensics/swab/has_swab
@@ -575,7 +575,7 @@ proc/is_complete_print(var/print)
 
 /obj/machinery/microscope
 	name = "high powered electron microscope"
-	desc = "A highly advanced microscope capable of zooming up to 3000x.<br> Use a microscope slide or a fingerprint card on this machine to analyze it. <br> Alt click to remove any object within it."
+	desc = "一台高度先进的显微镜,能够放大至3000倍.<br>将显微镜载玻片或指纹卡放在这台机器上进行分析.<br>按住Alt点击可取出其中的任何物体."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "microscope_adv"
 	anchored = 1
@@ -684,7 +684,7 @@ proc/is_complete_print(var/print)
 
 /obj/machinery/dnaforensics
 	name = "DNA analyzer"
-	desc = "A high tech machine that is designed to read DNA samples properly."
+	desc = "一台用于正确读取DNA样本的高科技机器."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "dnaopen"
 	anchored = 1
@@ -811,8 +811,8 @@ proc/is_complete_print(var/print)
 //STORAGE
 
 /obj/item/weapon/storage/box/evidence
-	name = "evidence bag box"
-	desc = "A box containing evidence bags."
+	name = "证物袋盒"
+	desc = "一个装有证物袋的盒子."
 	storage_slots = 7
 	can_hold = list(/obj/item/weapon/evidencebag)
 
@@ -822,8 +822,8 @@ proc/is_complete_print(var/print)
 		new /obj/item/weapon/evidencebag(src)
 
 /obj/item/weapon/storage/box/csi_markers
-	name = "crime scene markers box"
-	desc = "A cardboard box for crime scene marker cards."
+	name = "犯罪现场标记牌盒"
+	desc = "一个用于装犯罪现场标记卡的纸板盒."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "cards"
 	w_class = ITEM_SIZE_TINY
@@ -840,8 +840,8 @@ proc/is_complete_print(var/print)
 	return
 
 /obj/item/weapon/storage/box/fingerprints
-	name = "box of fingerprint cards"
-	desc = "Sterilized equipment within. Do not contaminate."
+	name = "指纹卡盒"
+	desc = "内含消毒设备.请勿污染."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "dnakit"
 	can_hold = list(/obj/item/weapon/forensics/sample/print)
@@ -853,8 +853,8 @@ proc/is_complete_print(var/print)
 		new /obj/item/weapon/forensics/sample/print(src)
 
 /obj/item/weapon/storage/box/swabs
-	name = "box of swab kits"
-	desc = "Sterilized equipment within. Do not contaminate."
+	name = "拭子采集套装盒"
+	desc = "内含消毒设备.请勿污染."
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "dnakit"
 	can_hold = list(/obj/item/weapon/forensics/swab)
@@ -866,7 +866,7 @@ proc/is_complete_print(var/print)
 		new /obj/item/weapon/forensics/swab(src)
 
 /obj/item/weapon/storage/box/slides
-	name = "microscope slide box"
+	name = "显微镜载玻片盒"
 	icon_state = "solution_trays"
 	can_hold = list(/obj/item/weapon/forensics/slide)
 	storage_slots = 8

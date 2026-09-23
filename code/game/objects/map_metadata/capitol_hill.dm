@@ -204,7 +204,7 @@ var/no_loop_capitol = FALSE
 						current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 			else
 				if (current_win_condition != no_winner && current_winner && current_loser)
-					to_chat(world, "<font size = 3>The National Guard has recaptured the Capitol!</font>")
+					to_chat(world, "<font size = 3>国民警卫队已重新夺回国会大厦!</font>")
 					current_winner = null
 					current_loser = null
 				next_win = -1
@@ -239,9 +239,9 @@ var/no_loop_capitol = FALSE
 			sov_points++
 		if (a1_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>House</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> 失去了 <b>众议院</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font> captured the <b>House</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font> 占领了 <b>众议院</b>!</big>")
 		c1 = 0
 		c2 = 0
 		prev_control = a2_control
@@ -264,12 +264,12 @@ var/no_loop_capitol = FALSE
 			sov_points++
 		if (a2_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>Senate</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> 失去了 <b>参议院</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font> captured the <b>Senate</b>!</big>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>National Guard: [scores["National Guard"]]</big>")
-	to_chat(world, "<big>Militia: [scores["Militia"]]</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font> 占领了 <b>参议院</b>!</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>国民警卫队: [scores["National Guard"]]</big>")
+	to_chat(world, "<big>民兵: [scores["Militia"]]</big>")
 //	to_chat(world, "<big>Militia: [ger_points]</big>")
 //	to_chat(world, "<big>Soviet Army: [sov_points]</big>")
 	spawn(300)

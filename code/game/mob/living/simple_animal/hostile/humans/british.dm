@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/voyage/british
 	name = "Redcoat Soldier"
-	desc = "A british soldier."
+	desc = "一名英国士兵."
 	icon_state = "britishmelee1"
 	icon_dead = "britishmelee1_dead"
 	response_help = "pushes"
@@ -34,7 +34,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/british/ranged
 	name = "Redcoat Soldier"
-	desc = "A british soldier."
+	desc = "一名英国士兵."
 	icon_state = "britishranged1"
 	icon_dead = "britishranged1_dead"
 	response_help = "pushes"
@@ -85,7 +85,7 @@
 
 /mob/living/simple_animal/hostile/human/townmilitia
 	name = "Town Militia"
-	desc = "A british town militia."
+	desc = "一名英国城镇民兵."
 	icon_state = "britishmelee1"
 	icon_dead = "britishmelee1_dead"
 	response_help = "pushes"

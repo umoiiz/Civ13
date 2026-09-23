@@ -1,9 +1,9 @@
 //all bolt-action weapons
 
 /obj/item/weapon/gun/projectile/boltaction
-	name = "bolt-action rifle"
+	name = "栓动步枪"
 	icon = 'icons/obj/guns/rifles.dmi'
-	desc = "A bolt-action rifle of true ww2 (You shouldn't be seeing this)"
+	desc = "一把真正的二战栓动步枪 (你不应该看到这个)"
 	icon_state = "mosin"
 	item_state = "mosin" //placeholder
 	base_icon = "mosin"
@@ -56,14 +56,14 @@
 			return
 	else return
 	if (check_bolt_lock)
-		to_chat(user, "<span class='notice'>The bolt won't move, the gun is empty!</span>")
+		to_chat(user, "<span class='notice'>枪栓动不了,枪是空的!</span>")
 		check_bolt--
 		return
 	bolt_open = !bolt_open
 	if (bolt_open)
 		if (chambered)
 			playsound(loc, bolt_open_sound, 50, TRUE)
-			to_chat(user, "<span class='notice'>You work the bolt open, ejecting [chambered]!</span>")
+			to_chat(user, "<span class='notice'>你拉开枪栓,退出了[chambered]!</span>")
 			chambered.loc = get_turf(src)
 			chambered.randomrotation()
 			loaded -= chambered
@@ -71,13 +71,13 @@
 			if (bolt_safety)
 				if (!loaded.len)
 					check_bolt_lock++
-					to_chat(user, "<span class='notice'>The bolt is locked!</span>")
+					to_chat(user, "<span class='notice'>枪栓被锁住了!</span>")
 		else
 			playsound(loc, bolt_open_sound, 50, TRUE)
-			to_chat(user, "<span class='notice'>You work the bolt open.</span>")
+			to_chat(user, "<span class='notice'>你拉开了枪栓.</span>")
 	else
 		playsound(loc, bolt_close_sound, 50, TRUE)
-		to_chat(user, "<span class='notice'>You work the bolt closed.</span>")
+		to_chat(user, "<span class='notice'>你推上了枪栓.</span>")
 		bolt_open = FALSE
 	add_fingerprint(user)
 	update_icon()
@@ -85,13 +85,13 @@
 
 /obj/item/weapon/gun/projectile/boltaction/special_check(mob/user)
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险打开时你无法发射\the [src]!</span>")
 		return FALSE
 	if (bolt_open)
-		to_chat(user, "<span class='warning'>You can't fire [src] while the bolt is open!</span>")
+		to_chat(user, "<span class='warning'>枪栓打开时你无法发射[src]!</span>")
 		return FALSE
 	if (!user.has_empty_hand(both = FALSE) && !istype(src,/obj/item/weapon/gun/projectile/boltaction/mosin/obrez))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能发射\the [src]!</span>")
 		return FALSE
 	return TRUE
 
@@ -147,8 +147,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot
-	name = "Sharps Rifle"
-	desc = "A single-shot, falling block rifle, with a long range. Uses .45-70 cartridges."
+	name = "夏普斯步枪"
+	desc = "单发落块式步枪,射程远.使用.45-70弹药."
 	icon_state ="sharps"
 	item_state ="shotgun"
 	base_icon = "sharps"
@@ -172,8 +172,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/martini_henry
-	name = "Martini-Henry Rifle"
-	desc = "A single-shot, falling block rifle, with a long range. Uses .577/450 cartridges."
+	name = "马蒂尼-亨利步枪"
+	desc = "单发落块式步枪,射程远.使用.577/450弹药."
 	icon_state ="martini_henry"
 	item_state ="shotgun"
 	base_icon = "martini_henry"
@@ -195,8 +195,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/rollingblock
-	name = "Rolling-Block Rifle"
-	desc = "A single-shot, rolling block rifle, with a long range. Uses .45-70 Gov cartridges."
+	name = "滚块式步枪"
+	desc = "单发滚块式步枪,射程远.使用.45-70 Gov弹药."
 	icon_state ="rollingblock"
 	item_state ="rollingblock"
 	base_icon = "rollingblock"
@@ -218,16 +218,16 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/rollingblock/spanish
-	name = "Rolling-Block Rifle"
-	desc = "A single-shot, rolling block rifle, with a long range. This Spanish one uses .43 cartridges."
+	name = "滚块式步枪"
+	desc = "单发滚块式步枪,射程远.这支西班牙型号使用.43弹药."
 	caliber = "a43"
 	ammo_type = /obj/item/ammo_casing/a43
 	magazine_type = /obj/item/ammo_magazine/c43
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/makeshiftbolt
-	name = "Makeshift Bolt"
-	desc = "A single-shot, makeshift bolt rifle."
+	name = "简易栓动步枪"
+	desc = "单发简易栓动步枪."
 	icon_state ="makeshiftbolt"
 	item_state ="shotgun"
 	base_icon = "makeshiftbolt"
@@ -250,8 +250,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/barrett
-	name = "Barrett M99"
-	desc = "A single-shot anti-material rifle designed by the Barrett Firearms Company."
+	name = "巴雷特 M99"
+	desc = "由巴雷特枪械公司设计的单发反器材步枪."
 	icon_state = "m99"
 	item_state = "m99"
 	base_icon = "m99"
@@ -290,7 +290,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/ptrd
 	name = "PTRD-41"
-	desc = "A soviet anti-material rifle chambered in 14.5x114mm designed to take out tanks."
+	desc = "苏联反器材步枪,口径14.5x114mm,设计用于击毁坦克."
 	icon_state = "ptrd"
 	item_state = "ptrd"
 	base_icon = "ptrd"
@@ -332,7 +332,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/pzb39
 	name = "PzB 39"
-	desc = "A German anti-tank rifle chambered in 7.92x94mm."
+	desc = "德国反坦克步枪,口径7.92x94mm."
 	icon_state = "pzb39"
 	item_state = "pzb39"
 	base_icon = "pzb39"
@@ -364,7 +364,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/singleshot/special_check(mob/user)
 	if (bolt_open)
-		to_chat(user, "<span class='warning'>You can't fire [src] while the breech is open!</span>")
+		to_chat(user, "<span class='warning'>枪膛打开时你无法开火[src]!</span>")
 		return FALSE
 	return TRUE
 
@@ -379,25 +379,25 @@
 	if (bolt_open)
 		if (chambered)
 			playsound(loc, bolt_open_sound, 50, TRUE)
-			to_chat(user, "<span class='notice'>You open the breech lever, ejecting [chambered]!</span>")
+			to_chat(user, "<span class='notice'>你打开枪膛拉杆,退出了[chambered]!</span>")
 			chambered.loc = get_turf(src)
 			chambered.randomrotation()
 			loaded -= chambered
 			chambered = null
 		else
 			playsound(loc, bolt_open_sound, 50, TRUE)
-			to_chat(user, "<span class='notice'>You open the breech lever.</span>")
+			to_chat(user, "<span class='notice'>你打开枪膛拉杆.</span>")
 	else
 		playsound(loc, bolt_close_sound, 50, TRUE)
-		to_chat(user, "<span class='notice'>You close the breech lever.</span>")
+		to_chat(user, "<span class='notice'>你关闭枪膛拉杆.</span>")
 		bolt_open = FALSE
 	add_fingerprint(user)
 	update_icon()
 	check_bolt--
 
 /obj/item/weapon/gun/projectile/boltaction/mosin
-	name = "Mosin M1891"
-	desc = "Russian bolt-action rifle chambered in 7.62x54mmR cartridges."
+	name = "莫辛 M1891"
+	desc = "俄罗斯栓动步枪,口径7.62x54mmR弹药."
 	icon_state ="mosin"
 	item_state ="mosin"
 	base_icon = "mosin"
@@ -422,8 +422,8 @@
 	barrel_y_offset = 17
 
 /obj/item/weapon/gun/projectile/boltaction/mosin/m30
-	name = "Mosin 91/30"
-	desc = "A modernized version of the original M1891. Bolt-action rifle chambered in 7.62x54mmR cartridges."
+	name = "莫辛 91/30"
+	desc = "原版M1891的现代化版本.栓动步枪,口径7.62x54mmR弹药."
 	icon_state ="mosin30"
 	item_state ="mosin30"
 	base_icon = "mosin30"
@@ -440,8 +440,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka30
-	name = "Arisaka Type 30"
-	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
+	name = "有坂三十年式"
+	desc = "日本栓动步枪,口径6.50x50mm有坂弹药."
 	icon_state = "arisaka30"
 	item_state = "arisaka30"
 	base_icon = "arisaka30"
@@ -465,8 +465,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka38
-	name = "Arisaka Type 38"
-	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
+	name = "有坂三八式"
+	desc = "日本栓动步枪,口径6.50x50mm有坂弹药."
 	icon_state = "arisaka38"
 	item_state = "arisaka38"
 	base_icon = "arisaka38"
@@ -490,8 +490,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka38/sniper
-	name = "Arisaka Type 97"
-	desc = "Japanese bolt-action rifle chambered in 6.5x50mm Arisaka ammunition."
+	name = "有坂九七式"
+	desc = "日本栓动步枪,口径6.5x50mm有坂弹药."
 	scope_mounts = list("type97_cronstein")
 /obj/item/weapon/gun/projectile/boltaction/arisaka38/sniper/New()
 	..()
@@ -499,8 +499,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka99
-	name = "Arisaka Type 99"
-	desc = "Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition."
+	name = "有坂九九式"
+	desc = "日本栓动步枪,口径7.7x58mm有坂弹药."
 	icon_state = "arisaka99"
 	item_state = "arisaka99"
 	base_icon = "arisaka99"
@@ -526,8 +526,8 @@
 	scope_mounts = list("type97_cronstein")
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka99/sniper
-	name = "Arisaka Type 99"
-	desc = "Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition."
+	name = "有坂九九式"
+	desc = "日本栓动步枪,口径7.7x58mm有坂弹药."
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_SCOPE|ATTACH_BARREL|ATTACH_UNDER
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka99/sniper/New()
@@ -543,8 +543,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka99_training
-	name = "Training Arisaka Type 99"
-	desc = "Japanese bolt-action rifle chambered in 7.7x58mm Arisaka ammunition. This one is a training rifle that shoots wooden bullets."
+	name = "有坂九九式训练步枪"
+	desc = "日本栓动步枪,口径7.7x58mm有坂弹药.这支是发射木制子弹的训练步枪."
 	icon_state = "arisaka99"
 	item_state = "arisaka99"
 	base_icon = "arisaka99"
@@ -570,7 +570,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr71
 	name = "Gewehr 71"
-	desc = "A german bolt-action rifle chambered in 7.65x53mm Mauser ammunition."
+	desc = "德国栓动步枪,口径7.65x53mm毛瑟弹药."
 	icon_state = "gewehr71"
 	item_state = "gewehr71"
 	base_icon = "gewehr71"
@@ -592,8 +592,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/madsenm47
-	name = "Madsen M47"
-	desc = "A Danish bolt action."
+	name = "马德森 M47"
+	desc = "丹麦栓动步枪."
 	icon_state = "madsenm47"
 	item_state = "gewehr71"
 	base_icon = "madsenm47"
@@ -616,8 +616,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/mauser1890
-	name = "Mauser M1890"
-	desc = "A german bolt-action rifle commonly known as the \"Ottoman Mauser\", chambered in 7.65x53mm Mauser ammunition."
+	name = "毛瑟 M1890"
+	desc = "德国栓动步枪,通常被称为\"奥斯曼毛瑟\",口径7.65x53mm毛瑟弹药."
 	icon_state = "mauser90"
 	item_state = "gewehr98"
 	base_icon = "mauser90"
@@ -640,8 +640,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/mauser1893
-	name = "Mauser M1893"
-	desc = "A german bolt-action rifle commonly known as the \"Spanish Mauser\", chambered in 7x57mm Mauser ammunition."
+	name = "毛瑟 M1893"
+	desc = "德国栓动步枪,通常被称为\"西班牙毛瑟\",口径7x57mm毛瑟弹药."
 	icon_state = "mauser93"
 	item_state = "mauser93"
 	base_icon = "mauser93"
@@ -664,8 +664,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/mauser1893/mauser1893o
-	name = "Mauser M1893 (Ottoman)"
-	desc = "An Ottoman version of the \"Spanish Mauser\", chambered in 7.65x53mm Mauser ammunition."
+	name = "毛瑟 M1893 (奥斯曼)"
+	desc = "\"西班牙毛瑟\"的奥斯曼版本,口径7.65x53mm毛瑟弹药."
 	caliber = "a765x53"
 	weight = 3.8
 	ammo_type = /obj/item/ammo_casing/a765x53
@@ -674,7 +674,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr98
 	name = "Gewehr 98"
-	desc = "A german bolt-action rifle chambered in 7.92x57mm Mauser ammunition."
+	desc = "德国栓动步枪,口径7.92x57mm毛瑟弹药."
 	icon_state = "gewehr98"
 	item_state = "gewehr98"
 	base_icon = "gewehr98"
@@ -698,8 +698,8 @@
 	barrel_x_offset = 15
 
 /obj/item/weapon/gun/projectile/boltaction/vg //for balance reasons this gun wont use the STG mags instead it will use just clips also i dont know how to code in mag usage by bolties
-	name = "Volkssturmgewehr"
-	desc = "A very primitive german bolt action rifle chambered in 7.92x33mm Kurz."
+	name = "国民突击步枪"
+	desc = "一种非常原始的德国栓动步枪,口径7.92x33mm Kurz."
 	icon_state = "vg1"
 	item_state = "vg1"
 	base_icon = "vg1"
@@ -723,8 +723,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr98/mauser1903
-	name = "Mauser M1903"
-	desc = "The ottoman version of the Mauser M1898, chambered in 7.65x53mm Mauser ammunition."
+	name = "毛瑟 M1903"
+	desc = "毛瑟M1898的奥斯曼版本,口径7.65x53mm毛瑟弹药."
 	caliber = "a765x53"
 	weight = 3.7
 	ammo_type = /obj/item/ammo_casing/a765x53
@@ -735,7 +735,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98a
 	name = "Karabiner 98a"
-	desc = "A shortened carabine version of the Gewehr 98, chambered in 7.92x57mm Mauser ammunition."
+	desc = "Gewehr 98的缩短卡宾版本,口径7.92x57mm毛瑟弹药."
 	icon_state = "kar98a"
 	item_state = "kar98k"
 	base_icon = "kar98a"
@@ -745,7 +745,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k
 	name = "Karabiner 98k"
-	desc = "A shortened, modernized carabine version of the Gewehr 98, chambered in 7.92x57mm Mauser ammunition."
+	desc = "Gewehr 98的缩短现代化卡宾版本,口径7.92x57mm毛瑟弹药."
 	icon_state = "kar98k"
 	item_state = "kar98k"
 	base_icon = "kar98k"
@@ -761,13 +761,13 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/gewehr98/karabiner98k/chinese
-	name = "Chiang Kai-Shek"
-	desc = "A shortened, modernized carabine version of the Gewehr 98, chambered in 7.92x57mm Mauser ammunition. This one being adopted by the Chinese."
+	name = "中正式"
+	desc = "Gewehr 98的缩短现代化卡宾版本,口径7.92x57mm毛瑟弹药.这支被中国采用."
 	scope_mounts = list("swept_back")
 	
 /obj/item/weapon/gun/projectile/boltaction/p14enfield
-	name = "Pattern 1914 Enfield"
-	desc = "A british bolt-action rifle based on the Mauser line, chambered in .303 Enfield ammunition."
+	name = "Pattern 1914 恩菲尔德"
+	desc = "基于毛瑟系列的英国栓动步枪,口径.303恩菲尔德弹药."
 	icon_state = "p14enfield"
 	item_state = "p14enfield"
 	base_icon = "p14enfield"
@@ -788,8 +788,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/carcano
-	name = "carcano 1891"
-	desc = "An italian bolt-action rifle chambered in 6.50x52mm ammunition."
+	name = "卡尔卡诺 1891"
+	desc = "意大利栓动步枪,口径6.50x52mm弹药."
 	icon_state = "carcano"
 	item_state = "carcano"
 	base_icon = "carcano"
@@ -811,8 +811,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/arisaka35
-	name = "Arisaka Type 35"
-	desc = "Japanese bolt-action rifle chambered in 6.50x50mm Arisaka ammunition."
+	name = "有坂三五式"
+	desc = "日本栓动步枪,口径6.50x50mm有坂弹药."
 	icon_state = "arisaka35"
 	item_state = "arisaka35"
 	base_icon = "arisaka35"
@@ -834,8 +834,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/murata
-	name = "Type-22 Murata"
-	desc = "Japanese bolt-action rifle chambered in 8x53mm Murata ammunition."
+	name = "二十二年式村田"
+	desc = "日本栓动步枪,口径8x53mm村田弹药."
 	icon_state = "murata"
 	item_state = "murata"
 	base_icon = "murata"
@@ -868,8 +868,8 @@
 	///M1817 Common Rifle (All Rifles used during the civil war)
 
 /obj/item/weapon/gun/projectile/boltaction/berdan
-	name = "Berdan M1870"
-	desc = "Russian bolt-action rifle chambered in 7.62x54mmR cartridges."
+	name = "伯丹 M1870"
+	desc = "俄罗斯栓动步枪,口径7.62x54mmR弹药."
 	icon_state ="berdanka"
 	item_state ="berdan"
 	base_icon = "berdanka"
@@ -891,8 +891,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/enfield
-	name = "Lee-Enfield Mk. III"
-	desc = "A 10-shot, bolt-action rifle, standard issue for british military, chambered in .303 british."
+	name = "李-恩菲尔德 Mk. III"
+	desc = "10发栓动步枪,英国军队制式装备,口径.303英国弹药."
 	icon_state ="enfield"
 	item_state ="enfield"
 	base_icon = "enfield"
@@ -915,8 +915,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/lebel
-	name = "Lebel 1886/M93"
-	desc = "A 8 round, bolt-action rifle, standard issue for french military, chambered in 8x50mmR Lebel."
+	name = "勒贝尔 1886/M93"
+	desc = "8发栓动步枪,法国军队制式装备,口径8x50mmR勒贝尔弹药."
 	icon_state ="lebel"
 	item_state ="lebel"
 	base_icon = "lebel"
@@ -946,8 +946,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/berthier
-	name = "Berthier M1907/15"
-	desc = "A 3 round, bolt-action carbine, chambered in 8x50mmR Lebel."
+	name = "贝蒂埃 M1907/15"
+	desc = "3发栓动卡宾枪,口径8x50mmR勒贝尔弹药."
 	icon_state ="berthier"
 	item_state ="berthier"
 	base_icon = "berthier"
@@ -970,8 +970,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/boltaction/berthier/m16
-	name = "Berthier M1907/16"
-	desc = "A 5 round, bolt-action carbine, chambered in 8x50mmR Lebel."
+	name = "贝蒂埃 M1907/16"
+	desc = "5发栓动卡宾枪,口径8x50mmR勒贝尔弹药."
 	magazine_type = /obj/item/ammo_magazine/c8x50_5clip
 	good_mags = list(/obj/item/ammo_magazine/c8x50_3clip)
 	max_shells = 5
@@ -992,8 +992,8 @@
 		overlays += scope_image
 
 /obj/item/weapon/gun/projectile/boltaction/mosin/obrez
-	name = "Mosin-Nagant \"Obrez\""
-	desc = "A makeshift sawn-off Mosin \"pistol\", chambered in 7.62x54mmR cartridges."
+	name = "莫辛-纳甘 \"截短型\""
+	desc = "一把临时改装的截短莫辛 \"手枪\", 使用7.62x54mmR弹药."
 	icon_state ="obrez"
 	item_state ="pistol"
 	base_icon = "obrez"
@@ -1013,7 +1013,7 @@
 
 /obj/item/weapon/gun/projectile/boltaction/m24
 	name = "M24 SWS"
-	desc = "A military version of the Remington 700 rifle."
+	desc = "雷明顿700步枪的军用版本."
 	icon_state = "m24"
 	item_state = "m24"
 	base_icon = "m24"
@@ -1043,8 +1043,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/boltaction/springfield
-	name = "M1903 Springfield"
-	desc = "A bolt-action rifle made in 1903, chambered in .30-06 with a 5 round internal magazine."
+	name = "M1903 斯普林菲尔德"
+	desc = "一把1903年制造的栓动步枪, 使用.30-06弹药, 内置5发弹仓."
 	icon_state ="springfield_ww2"
 	item_state ="springfield_ww2"
 	base_icon = "springfield_ww2"

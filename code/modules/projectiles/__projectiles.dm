@@ -249,7 +249,7 @@
 	..()
 
 /obj/item/projectile/grenade/smoke
-	name = "smoke grenade"
+	name = "烟雾弹"
 
 	kill_count = 10
 
@@ -711,18 +711,18 @@
 /obj/item/projectile/bullet/pellet/buckshot
 	kill_count = 20
 	agony = 42
-	name = "buckshot pellet"
+	name = "鹿弹弹丸"
 	icon_state = "pellets"
 	damage = DAMAGE_VERY_HIGH + 35
 	armor_penetration = ARMOR_CLASS*2
 
 /obj/item/projectile/bullet/shotgun/slug
-	name = "shotgun slug"
+	name = "霰弹枪独头弹"
 	damage = DAMAGE_MEDIUM_HIGH
 	armor_penetration = ARMOR_CLASS*4
 
 /obj/item/projectile/bullet/shotgun/beanbag
-	name = "beanbag"
+	name = "豆袋弹"
 	damage = 5
 	armor_penetration = 0
 	agony = 60
@@ -732,7 +732,7 @@
 	sharp = FALSE
 
 /obj/item/projectile/bullet/shotgun/breaching
-	name = "breaching slug"
+	name = "破门独头弹"
 	damage = DAMAGE_LOW + 5
 	armor_penetration = ARMOR_CLASS*5
 
@@ -740,6 +740,6 @@
 	sharp = FALSE
 
 /obj/item/projectile/bullet/shotgun/incendiary
-	name = "incendiary slug"
+	name = "燃烧独头弹"
 	damage = DAMAGE_LOW
 	armor_penetration = ARMOR_CLASS*2

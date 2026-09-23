@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/pistol/taser
-	name = "taser pistol"
-	desc = "A type of electroshock weapon that uses electrical current to disrupt muscle control and temporarily incapacitate a person."
+	name = "泰瑟手枪"
+	desc = "一种电击武器,利用电流扰乱肌肉控制并暂时使人丧失行动能力."
 	icon = 'icons/obj/guns/wip.dmi'
 	icon_state = "taser_new"
 	item_state = "taser_new"
@@ -34,7 +34,7 @@
 	return
 
 /obj/item/projectile/taser
-	name = "taser dart"
+	name = "泰瑟飞镖"
 	icon_state = "dart"
 	taser_effect = TRUE
 	damage = 2
@@ -51,8 +51,8 @@
 	muzzle_type = null
 
 /obj/item/ammo_casing/taser
-	name = "taser dart"
-	desc = "A small projectile that delivers an electrical shock to the target. "
+	name = "泰瑟飞镖"
+	desc = "一种小型投射物,可向目标释放电击."
 	caliber = "taser"
 	icon_state = "bdart"
 	spent_icon = "bdart"
@@ -60,7 +60,7 @@
 	leaves_residue = FALSE
 
 /obj/item/ammo_magazine/taser
-	name = "taser cartridge"
+	name = "泰瑟弹匣"
 	icon_state = "taser"
 	caliber = "taser"
 	ammo_type = /obj/item/ammo_casing/taser

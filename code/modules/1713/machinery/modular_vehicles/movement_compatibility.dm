@@ -3,7 +3,7 @@
 /// vehicle definitions. They map onto the new config-driven movement system.
 
 /obj/structure/vehicleparts/movement/tracks
-	name = "armored tracks"
+	name = "装甲履带"
 	icon_state = "tracks_end"
 	base_icon = "tracks_end"
 	movement_icon = "tracks_end_m"

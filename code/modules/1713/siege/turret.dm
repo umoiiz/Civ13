@@ -525,7 +525,7 @@
 /obj/structure/turret/course
 	turret_color = "#4a5243"
 	turret_icon = "su100_turret"
-	name = "Course cannon"
+	name = "训练炮"
 
 	gunner_x = 12
 	gunner_y = 8
@@ -1032,7 +1032,7 @@
 /obj/structure/turret/sherman
 	turret_color = "#635931"
 	turret_icon = "m4_turret"
-	name = "M-4 Sherman"
+	name = "M-4谢尔曼"
 
 	turret_x = 0
 	turret_y = 8
@@ -1062,7 +1062,7 @@
 /obj/structure/turret/m41
 	turret_color = "#635931"
 	turret_icon = "m41_turret"
-	name = "M-41 Walker Bulldog"
+	name = "M-41沃克斗牛犬"
 
 	turret_x = -16
 	turret_y = 0
@@ -1092,7 +1092,7 @@
 /obj/structure/turret/m48
 	turret_color = "#635931"
 	turret_icon = "m48_turret"
-	name = "M-48 Patton"
+	name = "M-48巴顿"
 
 	gunner_x = 9
 	gunner_y = -8
@@ -1118,7 +1118,7 @@
 
 /obj/structure/turret/bradley
 	turret_icon = "bradley_turret"
-	name = "Bradley"
+	name = "布拉德利"
 
 	icon = 'icons/obj/guns/mgs.dmi'
 	icon_state = "autocannon"
@@ -1216,7 +1216,7 @@
 
 /obj/structure/turret/m1abrams
 	turret_icon = "m1a1_turret"
-	name = "M1A1_turret"
+	name = "M1A1炮塔"
 
 	turret_x = 0
 	turret_y = 16
@@ -1245,7 +1245,7 @@
 
 /obj/structure/turret/challenger2
 	turret_icon = "challenger2_turret"
-	name = "Challenger-2"
+	name = "挑战者-2"
 
 	turret_x = 0
 	turret_y = 16
@@ -1275,7 +1275,7 @@
 /obj/structure/turret/chiha
 	turret_color = "#6a5a3d"
 	turret_icon = "jap_turret"
-	name = "Type 97 Chi-Ha"
+	name = "97式中战车"
 
 	turret_x = 0
 	turret_y = -8
@@ -1300,7 +1300,7 @@
 /obj/structure/turret/hago
 	turret_color = "#6a5a3d"
 	turret_icon = "type95_turret"
-	name = "Type 95 Ha-Go"
+	name = "95式轻战车"
 
 	turret_x = -12
 	turret_y = 0

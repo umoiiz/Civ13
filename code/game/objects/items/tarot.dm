@@ -2,8 +2,8 @@
 */
 
 /obj/item/weapon/deck/tarot
-	name = "deck of tarot cards"
-	desc = "For all your occult needs!"
+	name = "塔罗牌组"
+	desc = "满足你所有的神秘学需求!"
 	icon_state = "deck_tarot"
 
 /obj/item/weapon/deck/tarot/New()
@@ -38,4 +38,4 @@
 		newcards += P
 		cards -= P
 	cards = newcards
-	user.visible_message("\The [user] shuffles [src].")
+	user.visible_message("\The [user]洗了[src]。")

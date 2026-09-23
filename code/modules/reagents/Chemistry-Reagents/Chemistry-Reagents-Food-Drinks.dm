@@ -358,7 +358,7 @@
 		M.apply_effect(agony_amount, AGONY, FALSE)
 		if (prob(5))
 			M.custom_emote(2, "[pick("dry heaves!","coughs!","splutters!")]")
-			to_chat(M, "<span class='danger'>You feel like your insides are burning!</span>")
+			to_chat(M, "<span class='danger'>你感觉你的内脏在燃烧!</span>")
 	holder.remove_reagent("frostoil", 5)
 
 /datum/reagent/capsaicin/condensed
@@ -428,11 +428,11 @@
 		if (H.species && (H.species.flags & NO_PAIN))
 			return
 	if (dose == metabolism)
-		to_chat(M, "<span class='danger'>You feel like your insides are burning!</span>")
+		to_chat(M, "<span class='danger'>你感觉你的内脏在燃烧!</span>")
 	else
 		M.apply_effect(4, AGONY, FALSE)
 		if (prob(5))
-			M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>", "<span class='danger'>You feel like your insides are burning!</span>")
+			M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>", "<span class='danger'>你感觉你的内脏在燃烧!</span>")
 	holder.remove_reagent("frostoil", 5)
 
 /* Drinks */
@@ -508,7 +508,7 @@
 /datum/reagent/drink/olive_oil/affect_blood(var/mob/living/human/M, var/alien, var/removed)
 	..()
 	if (prob(10))
-		to_chat(M, "<span class = 'warning'>You feel sick...</span>")
+		to_chat(M, "<span class = 'warning'>你感觉恶心...</span>")
 		M.vomit()
 
 /datum/reagent/drink/lard
@@ -521,7 +521,7 @@
 /datum/reagent/drink/lard/affect_blood(var/mob/living/human/M, var/alien, var/removed)
 	..()
 	if (prob(10))
-		to_chat(M, "<span class = 'warning'>You feel disgusted and sick...</span>")
+		to_chat(M, "<span class = 'warning'>你感觉厌恶又恶心...</span>")
 		M.vomit()
 
 /datum/reagent/drink/fat_oil
@@ -534,7 +534,7 @@
 /datum/reagent/drink/fat_oil/affect_blood(var/mob/living/human/M, var/alien, var/removed)
 	..()
 	if (prob(10))
-		to_chat(M, "<span class = 'warning'>You feel sick...</span>")
+		to_chat(M, "<span class = 'warning'>你感觉恶心...</span>")
 		M.vomit()
 
 /datum/reagent/drink/grapejuice

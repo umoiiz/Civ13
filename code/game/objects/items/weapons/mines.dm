@@ -3,8 +3,8 @@
 //MINES
 //*****************************
 /obj/item/mine
-	name = "proximity mine"
-	desc = "An anti-personnel mine. Useful for setting traps or for area denial. "
+	name = "感应地雷"
+	desc = "一种反人员地雷. 适用于设置陷阱或区域封锁."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "mine"
 	force = 5.0
@@ -23,16 +23,16 @@
 //Arming
 /obj/item/mine/attack_self(mob/living/user as mob)
 	if (locate(/obj/item/mine) in get_turf(src))
-		to_chat(user, "There's already a mine at this position!")
+		to_chat(user, "这个位置已经有一颗地雷了!")
 		return
 
 	if (!anchored)
-		user.visible_message("<span class = 'notice'>\The [user] starts to deploy \the [src].</span>")
+		user.visible_message("<span class = 'notice'>\The [user]开始部署\the [src].</span>")
 		if (!do_after(user,rand(30,40)))
-			user.visible_message("<span class = 'notice'>\The [user] decides not to deploy \the [src].</span>")
+			user.visible_message("<span class = 'notice'>\The [user]决定不部署\the [src].</span>")
 			return
 		nextCanExplode = world.time + 5
-		user.visible_message("<span class = 'notice'>\The [user] finishes deploying \the [src].</span>")
+		user.visible_message("<span class = 'notice'>\The [user]完成了部署\the [src].</span>")
 		anchored = TRUE
 		layer = TURF_LAYER + 0.01
 		icon_state = "mine_armed"
@@ -51,12 +51,12 @@
 		if (ishuman(user))
 			var/mob/living/human/H = user
 			if (istype(W, /obj/item/weapon/wirecutters))
-				user.visible_message("<span class = 'notice'>\The [user] starts to disarm \the [src] with \the [W].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]开始用\the [W]拆除\the [src].</span>")
 				if (!do_after(user,60))
-					user.visible_message("<span class = 'notice'>\The [user] decides not to disarm \the [src].</span>")
+					user.visible_message("<span class = 'notice'>\The [user]决定不拆除\the [src].</span>")
 					return
 				if (prob(min(98*H.getStatCoeff("dexterity"),100)))
-					user.visible_message("<span class = 'notice'>\The [user] finishes disarming \the [src]!</span>")
+					user.visible_message("<span class = 'notice'>\The [user]完成了拆除\the [src]!</span>")
 					anchored = FALSE
 					icon_state = "mine"
 					layer = initial(layer)
@@ -64,12 +64,12 @@
 				else
 					Bumped(user)
 			else if (istype(W, /obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/attachment/bayonet))
-				user.visible_message("<span class = 'notice'>\The [user] starts to dig around \the [src] with the [W].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]开始用[W]在\the [src]周围挖掘.</span>")
 				if (!do_after(user,120))
-					user.visible_message("<span class = 'notice'>\The [user] decides not to dig up \the [src].</span>")
+					user.visible_message("<span class = 'notice'>\The [user]决定不挖出\the [src].</span>")
 					return
 				if (prob(min(50*H.getStatCoeff("dexterity"),75)))
-					user.visible_message("<span class = 'notice'>\The [user] finishes digging up \the [src], disarming it!!</span>")
+					user.visible_message("<span class = 'notice'>\The [user]完成了挖出\the [src],将其拆除!!</span>")
 					anchored = FALSE
 					icon_state = "mine"
 					layer = initial(layer)
@@ -91,12 +91,12 @@
 	if (anchored)
 		if (ishuman(user))
 			var/mob/living/human/H = user
-			user.visible_message("<span class = 'notice'>\The [user] starts to dig around \the [src] with their bare hands!</span>")
+			user.visible_message("<span class = 'notice'>\The [user]开始徒手在\the [src]周围挖掘!</span>")
 			if (!do_after(user,100))
-				user.visible_message("<span class = 'notice'>\The [user] decides not to dig up \the [src].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]决定不挖出\the [src].</span>")
 				return
 			if (prob(min(15*H.getStatCoeff("dexterity"),35)))
-				user.visible_message("<span class = 'notice'>\The [user] finishes digging up \the [src], disarming it!</span>")
+				user.visible_message("<span class = 'notice'>\The [user]完成了挖出\the [src],将其拆除!</span>")
 				anchored = FALSE
 				icon_state = "mine"
 				layer = initial(layer)
@@ -117,7 +117,7 @@
 /obj/item/mine/kick_act(mob/user as mob)
 	if (anchored)
 		if(ishuman(user) && in_range(src, user))
-			user.visible_message("<span class = 'warning'>\The [user] kicks \the [src]! What an idiot!</span>")
+			user.visible_message("<span class = 'warning'>\The [user]踢了\the [src]! 真是个白痴!</span>")
 			Bumped(user)
 	else
 		..()
@@ -148,9 +148,9 @@
 		return
 	if (istype(AM, /mob/living))
 		for (var/mob/O in viewers(7, loc))
-			to_chat(O, "<font color='red'>[AM] triggered the [src]!</font>")
+			to_chat(O, "<font color='red'>[AM]触发了[src]!</font>")
 		triggered = TRUE
-		visible_message("<span class = 'red'><b>Click!</b></span>")
+		visible_message("<span class = 'red'><b>咔嗒!</b></span>")
 		explosion(get_turf(src),1,2,6)
 		spawn(9)
 			if (src)
@@ -159,8 +159,8 @@
 //TYPES//
 
 /obj/item/mine/ap
-	name = "anti-personnel mine"
-	desc = "Useful for setting traps or for area denial."
+	name = "反人员地雷"
+	desc = "适用于设置陷阱或区域封锁."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "mine"
 	force = 10.0
@@ -187,9 +187,9 @@
 		return
 	if (istype(AM, /mob/living))
 		for (var/mob/O in viewers(7, loc))
-			to_chat(O, "<font color='red'>[AM] triggered the [src]!</font>")
+			to_chat(O, "<font color='red'>[AM]触发了[src]!</font>")
 		triggered = TRUE
-		visible_message("<span class = 'red'><b>Click!</b></span>")
+		visible_message("<span class = 'red'><b>咔嗒!</b></span>")
 		explosion(get_turf(src),1,2,4)
 
 
@@ -212,8 +212,8 @@
 				qdel(src)
 
 /obj/item/mine/at
-	name = "anti-tank mine"
-	desc = "Useful for setting traps or for area denial."
+	name = "反坦克地雷"
+	desc = "适用于设置陷阱或区域封锁."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "mine"
 	force = 12.0
@@ -244,9 +244,9 @@
 
 /obj/item/mine/at/trigger(atom/movable/AM)
 	for (var/mob/O in viewers(7, loc))
-		to_chat(O, "<font color='red'>[AM] triggered the [src]!</font>")
+		to_chat(O, "<font color='red'>[AM]触发了[src]!</font>")
 	triggered = TRUE
-	visible_message("<span class = 'red'><b>Click!</b></span>")
+	visible_message("<span class = 'red'><b>咔嗒!</b></span>")
 	for(var/obj/structure/vehicleparts/frame/F in range(1,src))
 		for (var/mob/M in F.axis.transporting)
 			shake_camera(M, 4, 4)
@@ -268,8 +268,8 @@
 			return
 
 /obj/item/mine/boobytrap
-	name = "booby trap"
-	desc = "Useful for setting traps or for area denial."
+	name = "诡雷"
+	desc = "适用于设置陷阱或区域封锁."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "boobytrap_armed"
 	force = 10.0
@@ -287,12 +287,12 @@
 		if (ishuman(user))
 			var/mob/living/human/H = user
 			if (istype(W, /obj/item/weapon/wirecutters))
-				user.visible_message("<span class = 'notice'>\The [user] starts to disarm \the [src] with \the [W].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]开始用\the [W]拆除\the [src].</span>")
 				if (!do_after(user,60))
-					user.visible_message("<span class = 'notice'>\The [user] decides not to disarm \the [src].</span>")
+					user.visible_message("<span class = 'notice'>\The [user]决定不拆除\the [src].</span>")
 					return
 				if (prob(min(95*H.getStatCoeff("dexterity"),100)))
-					user.visible_message("<span class = 'notice'>\The [user] finishes disarming \the [src]!</span>")
+					user.visible_message("<span class = 'notice'>\The [user]完成了拆除\the [src]!</span>")
 					if (origin)
 						new origin(get_turf(user))
 					qdel(src)
@@ -300,12 +300,12 @@
 				else
 					Bumped(user)
 			else if (istype(W, /obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/attachment/bayonet))
-				user.visible_message("<span class = 'notice'>\The [user] starts to disarm \the [src] with \the [W].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]开始用\the [W]拆除\the [src].</span>")
 				if (!do_after(user,80))
-					user.visible_message("<span class = 'notice'>\The [user] decides not to disarm \the [src].</span>")
+					user.visible_message("<span class = 'notice'>\The [user]决定不拆除\the [src].</span>")
 					return
 				if (prob(min(85*H.getStatCoeff("dexterity"),90)))
-					user.visible_message("<span class = 'notice'>\The [user] finishes disarming \the [src]!</span>")
+					user.visible_message("<span class = 'notice'>\The [user]完成了拆除\the [src]!</span>")
 					if (origin)
 						new origin(get_turf(user))
 					qdel(src)
@@ -321,12 +321,12 @@
 	if (anchored)
 		if (ishuman(user))
 			var/mob/living/human/H = user
-			user.visible_message("<span class = 'notice'>\The [user] starts to dig around \the [src] with their bare hands!</span>")
+			user.visible_message("<span class = 'notice'>\The [user]开始徒手在\the [src]周围挖掘!</span>")
 			if (!do_after(user,100))
-				user.visible_message("<span class = 'notice'>\The [user] decides not to dig up \the [src].</span>")
+				user.visible_message("<span class = 'notice'>\The [user]决定不挖出\the [src].</span>")
 				return
 			if (prob(min(60*H.getStatCoeff("dexterity"),85)))
-				user.visible_message("<span class = 'notice'>\The [user] finishes digging up \the [src], disarming it!</span>")
+				user.visible_message("<span class = 'notice'>\The [user]完成了挖出\the [src],将其拆除!</span>")
 				if (origin)
 					new origin(get_turf(user))
 				qdel(src)
@@ -345,17 +345,17 @@
 		return
 	if (istype(AM, /mob/living))
 		for (var/mob/O in viewers(7, loc))
-			to_chat(O, "<font color='red'>[AM] triggered the [src]!</font>")
+			to_chat(O, "<font color='red'>[AM]触发了[src]!</font>")
 		triggered = TRUE
-		visible_message("<span class = 'red'><b>Click!</b></span>")
+		visible_message("<span class = 'red'><b>咔嗒!</b></span>")
 		explosion(get_turf(src),1,2,4)
 		spawn(9)
 			if (src)
 				qdel(src)
 
 /obj/item/mine/pipe
-	name = "damaged pipe"
-	desc = "Is that safe?"
+	name = "破损管道"
+	desc = "那安全吗?"
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "damaged_pipe"
 	force = 10.0
@@ -377,9 +377,9 @@
 			return
 		if (istype(AM, /mob/living))
 			for (var/mob/O in viewers(7, loc))
-				to_chat(O, "<font color='red'>[AM] tripped over the [src]!</font>")
+				to_chat(O, "<font color='red'>[AM]被[src]绊倒了!</font>")
 			triggered = TRUE
-			visible_message("<span class = 'red'><b>SSSShh!</b></span>")
+			visible_message("<span class = 'red'><b>嘶嘶嘶!</b></span>")
 			explosion(get_turf(src),1,2,3)
 
 

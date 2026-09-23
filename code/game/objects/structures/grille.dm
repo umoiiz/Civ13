@@ -1,6 +1,6 @@
 /obj/structure/grille
-	name = "grille"
-	desc = "Flimsy wood rods, with screws to secure it to the floor."
+	name = "格栅"
+	desc = "脆弱的木杆,用螺丝固定在地板上。"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "grille"
 	density = TRUE
@@ -96,7 +96,7 @@
 	else if ((isscrewdriver(W)) && (istype(loc, /turf) || anchored))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 100, TRUE)
 		anchored = !anchored
-		user.visible_message("<span class='notice'>[user] [anchored ? "fastens" : "unfastens"] the grille.</span>", \
+		user.visible_message("<span class='notice'>[user][anchored ? "fastens" : "unfastens"]格栅。</span>", \
 							 "<span class='notice'>You have [anchored ? "fastened the grille to" : "unfastened the grill from"] the floor.</span>")
 		return
 
@@ -122,23 +122,23 @@
 					else
 						dir_to_set = 4
 			else
-				to_chat(user, "<span class='notice'>You can't reach.</span>")
+				to_chat(user, "<span class='notice'>你够不到。</span>")
 				return //Only works for cardinal direcitons, diagonals aren't supposed to work like this.
 		for (var/obj/structure/window/WINDOW in loc)
 			if (WINDOW.dir == dir_to_set)
-				to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+				to_chat(user, "<span class='notice'>这里已经有一扇朝这个方向的窗户了。</span>")
 				return
-		to_chat(user, "<span class='notice'>You start placing the window.</span>")
+		to_chat(user, "<span class='notice'>你开始放置窗户。</span>")
 		if (do_after(user,20,src))
 			for (var/obj/structure/window/WINDOW in loc)
 				if (WINDOW.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
-					to_chat(user, "<span class='notice'>There is already a window facing this way there.</span>")
+					to_chat(user, "<span class='notice'>这里已经有一扇朝这个方向的窗户了。</span>")
 					return
 
 			var/wtype = ST.material.created_window
 			if (ST.use(1))
 				var/obj/structure/window/WD = new wtype(loc, dir_to_set, TRUE)
-				to_chat(user, "<span class='notice'>You place the [WD] on [src].</span>")
+				to_chat(user, "<span class='notice'>你把[WD]放置在[src]上。</span>")
 				WD.update_icon()
 		return
 //window placing end
@@ -166,12 +166,12 @@
 
 /obj/structure/grille/fire_act(temperature)
 	if (prob((temperature/500) * 30))
-		visible_message("<span class = 'warning'>[src] burns.</span>")
+		visible_message("<span class = 'warning'>[src]烧起来了。</span>")
 		health = 0
 		healthcheck()
 
 /obj/structure/grille/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
+	visible_message("<span class='danger'>[user][attack_verb]了[src]!</span>")
 	attack_animation(user)
 	health -= damage
 	spawn(1) healthcheck()
@@ -179,7 +179,7 @@
 
 /obj/structure/grille/hitby(AM as mob|obj)
 	..()
-	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	visible_message("<span class='danger'>[src]被[AM]击中了。</span>")
 	playsound(loc, hitsound, 80, TRUE)
 	var/tforce = FALSE
 	if (ismob(AM))

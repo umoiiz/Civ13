@@ -1,7 +1,7 @@
 //BEDROLL
 /obj/item/weapon/bedroll
-	name = "bedroll"
-	desc = "A portable bed, made of leather and fur."
+	name = "铺盖卷"
+	desc = "一张便携床,由皮革和毛皮制成."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "bedroll_r"
 	force = WEAPON_FORCE_WEAK
@@ -13,8 +13,8 @@
 	flammable = TRUE
 
 /obj/structure/bed/bedroll
-	name = "bedroll"
-	desc = "A portable bed, made of leather and fur."
+	name = "铺盖卷"
+	desc = "一张便携床,由皮革和毛皮制成."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "bedroll_o"
 	anchored = TRUE
@@ -32,7 +32,7 @@
 	cover_overlay = image("icon" = 'icons/obj/items.dmi', "icon_state" = "bedroll_w", "layer" = MOB_LAYER + 2.1)
 
 /obj/item/weapon/bedroll/attack_self(mob/user as mob)
-	to_chat(user, "You open the bedroll, extending it.")
+	to_chat(user, "你打开铺盖卷,将其展开.")
 	new/obj/structure/bed/bedroll(user.loc)
 	qdel(src)
 	return
@@ -49,7 +49,7 @@
 	set src in view(1)
 	set name = "Fold Bedroll"
 	if (used == FALSE)
-		to_chat(usr, "You fold the bedroll.")
+		to_chat(usr, "你折叠铺盖卷.")
 		running = FALSE
 		new/obj/item/weapon/bedroll(src.loc)
 		qdel(src)
@@ -71,7 +71,7 @@
 	if (istype(W, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/G = W
 		var/mob/living/affecting = G.affecting
-		user.visible_message("<span class='notice'>[user] attempts to tuck [affecting] into \the [src]!</span>")
+		user.visible_message("<span class='notice'>[user]试图将[affecting]塞进\the [src]!</span>")
 		if (do_after(user, 20, src))
 			affecting.loc = loc
 			spawn(0)
@@ -87,8 +87,8 @@
 
 //TENT
 /obj/item/weapon/tent
-	name = "folded canopy"
-	desc = "A foldable canopy."
+	name = "折叠顶篷"
+	desc = "一个可折叠的顶篷."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "tent_r"
 	force = WEAPON_FORCE_WEAK
@@ -100,8 +100,8 @@
 	flammable = TRUE
 
 /obj/structure/tent
-	name = "canopy"
-	desc = "A portable cloth canopy, assembled here."
+	name = "顶篷"
+	desc = "一个便携布制顶篷,已在此处搭建."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "tent_o"
 	layer = 5
@@ -125,15 +125,15 @@
 /obj/item/weapon/tent/attack_self(mob/user as mob)
 	for (var/obj/O in src.loc)
 		if (istype(O, /obj/structure/tent))
-			to_chat(user, "There is already a structure here.")
+			to_chat(user, "这里已经有一个建筑了.")
 			return
 	var/area/caribbean/oldarea = get_area(src)
 	if (oldarea.location == AREA_INSIDE)
-		to_chat(user, "This location is covered already, you can't set up a tent here.")
+		to_chat(user, "这个位置已经被覆盖了,你不能在这里搭帐篷.")
 		return
-	visible_message("[user] starts unfolding the [src]...","You open the [src] and start unfolding it...")
+	visible_message("[user]开始展开[src]...","你打开[src]并开始展开它...")
 	if (do_after(user, 35, src))
-		visible_message("[user] finishes unfolding the [src].","You finish unfolding the [src].")
+		visible_message("[user]完成了展开[src].","你完成了展开[src].")
 		new/obj/structure/tent(user.loc)
 		qdel(src)
 		return
@@ -145,9 +145,9 @@
 
 	if (!oldarea)
 		return
-	visible_message("[usr] starts folding the [src]...","You start folding the [src]...")
+	visible_message("[usr]开始折叠[src]...","你开始折叠[src]...")
 	if (do_after(usr, 35, src))
-		visible_message("[usr] finishes folding the [src].","You finish folding the [src].")
+		visible_message("[usr]完成了折叠[src].","你完成了折叠[src].")
 		new/obj/item/weapon/tent(get_turf(src))
 		for(var/obj/structure/tent/T in range(1,src))
 			T.update_icon()
@@ -211,8 +211,8 @@
 					icon_state = "tent_c"
 
 /obj/item/weapon/leash
-	name = "rope leash"
-	desc = "A rope leash, used to tie animals together."
+	name = "绳索牵引绳"
+	desc = "一根绳索牵引绳,用于将动物拴在一起."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "leash"
 	force = WEAPON_FORCE_HARMLESS

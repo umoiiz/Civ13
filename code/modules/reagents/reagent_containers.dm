@@ -1,5 +1,5 @@
 /obj/item/weapon/reagent_containers
-	name = "Container"
+	name = "容器"
 	desc = "..."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = null
@@ -49,7 +49,7 @@
 			else if (percent <= 15)
 				continue
 			out.Add("[size][tastes[i]]")
-	to_chat(usr, "<span class='notice'>You can smell [english_list(out,"something indescribable")].</span>") //no taste means there are too many tastes and not enough flavor.)
+	to_chat(usr, "<span class='notice'>你能闻到[english_list(out,"something indescribable")].</span>") //no taste means there are too many tastes and not enough flavor.)
 
 /obj/item/weapon/reagent_containers/secondary_attack_self(mob/living/human/user)
 	if(user.a_intent == I_HARM)
@@ -68,7 +68,7 @@
 				new/obj/effect/flooding(TGT)
 			reagents.splash(TGT, reagents.total_volume)
 			playsound(src,'sound/effects/Splash_Small_01_mono.ogg',50,1)
-			to_chat(user, "<span class='notice'>You spill \the [src] into the tile in front of you.</span>")
+			to_chat(user, "<span class='notice'>你将\the [src]洒在了你前方的地砖上.</span>")
 	else
 		smell()
 
@@ -101,28 +101,28 @@
 	if (!istype(target))
 		return FALSE
 	if (target.locked && target.custom_code != 0)
-		to_chat(user, "<span class='notice'>\The [target] is locked.</span>")
+		to_chat(user, "<span class='notice'>\The [target]已锁定.</span>")
 		return FALSE
 	if (target.dmode=="dispense")
 		if (!target.reagents || !target.reagents.total_volume)
-			to_chat(user, "<span class='notice'>[target] is empty.</span>")
+			to_chat(user, "<span class='notice'>[target]是空的.</span>")
 			return TRUE
 		if (reagents && !reagents.get_free_space())
-			to_chat(user, "<span class='notice'>[src] is full.</span>")
+			to_chat(user, "<span class='notice'>[src]是满的.</span>")
 			return TRUE
 		var/trans = target.reagents.trans_to_obj(src, target:amount_per_transfer_from_this)
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>你用[target]内容物中的[trans]单位装满了[src].</span>")
 		playsound(loc, 'sound/effects/watersplash.ogg', 100, TRUE)
 		return TRUE
 	else
 		if (!reagents || !reagents.total_volume)
-			to_chat(user, "<span class='notice'>[src] is empty.</span>")
+			to_chat(user, "<span class='notice'>[src]是空的.</span>")
 			return TRUE
 		if (target.reagents && !target.reagents.get_free_space())
-			to_chat(user, "<span class='notice'>[target] is full.</span>")
+			to_chat(user, "<span class='notice'>[target]已满.</span>")
 			return TRUE
 		var/trans = src.reagents.trans_to_obj(target, target.amount_per_transfer_from_this)
-		to_chat(user, "<span class='notice'>You fill \the [target] with [trans] units of the contents of [src].</span>")
+		to_chat(user, "<span class='notice'>你将[src]中的[trans]单位内容装入\the [target].</span>")
 		playsound(loc, 'sound/effects/watersplash.ogg', 100, TRUE)
 		return TRUE
 
@@ -157,7 +157,7 @@
 	if (!istype(target))
 		return
 	if (!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, "<span class='notice'>[src]是空的.</span>")
 		return TRUE
 	var/contained = reagentlist()
 	target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been splashed with [name] by [user.name] ([user.ckey]). Reagents: [contained]</font>")
@@ -171,27 +171,27 @@
 				HT.hygiene = min(HT.hygiene+(reagents.get_reagent_amount("water")),HYGIENE_LEVEL_CLEAN)
 				washed = TRUE
 			else
-				user.visible_message("<span class='danger'>[target] has been splashed with something by [user]!</span>", "<span class = 'notice'>You splash the solution onto [target].</span>")
+				user.visible_message("<span class='danger'>[target]被[user]泼上了什么东西!</span>", "<span class = 'notice'>你将溶液泼洒到[target]上.</span>")
 				proper_spill(target, reagents.total_volume)
 				return TRUE
 	if (washed)
 		if (target == user)
-			user.visible_message("<span class='notice'>[user] washes himself with \the [src]</span>", "<span class = 'notice'>You wash yourself with \the [src].</span>")
+			user.visible_message("<span class='notice'>[user]用\the [src]清洗自己</span>", "<span class = 'notice'>你用\the [src]清洗自己.</span>")
 		else
-			user.visible_message("<span class='notice'>[user] washes [target] with \the [src]</span>", "<span class = 'notice'>You wash [target] with \the [src].</span>")
+			user.visible_message("<span class='notice'>[user]用\the [src]清洗[target]</span>", "<span class = 'notice'>你用\the [src]清洗[target].</span>")
 	else
-		user.visible_message("<span class='danger'>[target] has been splashed with something by [user]!</span>", "<span class = 'notice'>You splash the solution onto [target].</span>")
+		user.visible_message("<span class='danger'>[target]被[user]泼上了什么东西!</span>", "<span class = 'notice'>你将溶液泼洒到[target]上.</span>")
 	proper_spill(target, reagents.total_volume)
 	return TRUE
 
 /obj/item/weapon/reagent_containers/proc/self_feed_message(var/mob/user)
-	user.visible_message("span class='notice'[user] eats \the [src].</span>", "<span class='notice'>You eat \the [src].</span>")
+	user.visible_message("span class='notice'[user]吃掉了\the [src].</span>", "<span class='notice'>你吃掉了\the [src].</span>")
 
 /obj/item/weapon/reagent_containers/proc/other_feed_message_start(var/mob/user, var/mob/target)
-	user.visible_message("<span class='warning'>[user] is trying to feed [target] \the [src]!</span>", "<span class='warning'>You try to feed [target] \the [src]!</span>")
+	user.visible_message("<span class='warning'>[user]正试图喂[target]\the [src]!</span>", "<span class='warning'>你试图喂[target]\the [src]!</span>")
 
 /obj/item/weapon/reagent_containers/proc/other_feed_message_finish(var/mob/user, var/mob/target)
-	user.visible_message("<span class='warning'>[user] has fed [target] \the [src]!</span>")
+	user.visible_message("<span class='warning'>[user]喂了[target]\the [src]!</span>")
 
 /obj/item/weapon/reagent_containers/proc/feed_sound(var/mob/user)
 	return
@@ -200,16 +200,16 @@
 	if (!istype(target))
 		return FALSE
 	if (!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+		to_chat(user, "<span class='notice'>\The [src]是空的.</span>")
 		return TRUE
 	if (ishuman(target))
 		var/mob/living/human/H = target
 		if (!H.check_has_mouth())
-			to_chat(user, "Where do you intend to put \the [src]? \The [H] doesn't have a mouth!")
+			to_chat(user, "你打算把\the [src]放到哪里?\The [H]没有嘴!")
 			return TRUE
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if (blocked)
-			to_chat(user, "<span class='warning'>\The [blocked] is in the way!</span>")
+			to_chat(user, "<span class='warning'>\The [blocked]挡住了!</span>")
 			return TRUE
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
 	if (target == user)
@@ -254,25 +254,25 @@
 		return FALSE
 	if (!target.is_open_container() && istype(target, /obj/item/weapon/reagent_containers)) // Ensure we don't splash beakers and similar containers.
 		if (istype(target, /obj/item/weapon/reagent_containers/food) && !(istype(target, /obj/item/weapon/reagent_containers/food/drinks) || istype(target, /obj/item/weapon/reagent_containers/food/condiment)))
-			to_chat(user, "<span class='notice'>\The [target] is not a container. What were you thinking?</span>")
+			to_chat(user, "<span class='notice'>\The [target]不是容器.你在想什么?</span>")
 		else
-			to_chat(user, "<span class='notice'>\The [target] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [target]是关着的.</span>")
 		return FALSE
 	if (!target.is_open_container()) // Otherwise don't care about splashing.
 		if(!ishuman(target)) //Bugfix: Humans appearing as containers when using condiments
-			to_chat(user, "<span class='notice'>\The [target] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [target]是关着的.</span>")
 			return FALSE
 	if (!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, "<span class='notice'>[src]是空的.</span>")
 		return TRUE
 	if (!target.reagents.get_free_space())
-		to_chat(user, "<span class='notice'>[target] is full.</span>")
+		to_chat(user, "<span class='notice'>[target]已满.</span>")
 		return TRUE
 	var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 	if(!ishuman(target)) //Bugfix: Humans appearing as containers when using condiments
 		playsound(src,'sound/effects/Liquid_transfer_mono.ogg',50,1)
-		user.visible_message("<span class='notice'>[user] pours the contents of [src] into the [target].</span>",
-			"<span class='notice'>You transfer [trans] units of the solution to [target].</span>")
+		user.visible_message("<span class='notice'>[user]将[src]中的内容倒入[target]中.</span>",
+			"<span class='notice'>你将[trans]单位的溶液转移到[target]中.</span>")
 	if (istype(target, /obj/item/weapon/reagent_containers/glass/rag)) // fixes rags not updating names after being wet - Kachnov
 		var/obj/item/weapon/reagent_containers/glass/rag/R = target
 		R.update_name()

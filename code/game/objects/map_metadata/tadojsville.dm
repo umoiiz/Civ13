@@ -114,7 +114,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The United Nations troops have recaptured the clinic!</font>")
+			to_chat(world, "<font size = 3>联合国部队已夺回诊所!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -164,7 +164,7 @@
 
 ///////////map specific objs/////////
 /obj/structure/altar/darkstone/unsacrifice
-	name = "shaman's altar"
+	name = "萨满祭坛"
 	icon_state = "blood_altar"
 	flammable = FALSE
 	health = 1000000
@@ -174,16 +174,16 @@
 /obj/structure/altar/darkstone/unsacrifice/attackby(obj/item/W, mob/living/human/user)
 	if (istype(W, /obj/item/organ/external/head) && map.ID == MAP_TADOJSVILLE)
 		if (!W)
-			to_chat(user, "This is not even a head, it is worthless. Only Peacekeeper heads will do.")
+			to_chat(user, "这甚至不是一颗头,毫无价值.只有维和者的头才行.")
 			return
 		var/obj/item/organ/external/head/HD = W
 		var/head_nationality = HD.nationality
 		qdel(W)
 		if (head_nationality != "United Nations")
-			to_chat(user, "This head is worthless, only Peacekeeper heads will do.")
+			to_chat(user, "这颗头毫无价值,只有维和者的头才行.")
 
 		else
-			to_chat(user, "You place the Peacekeeper's head on the shaman's altar.")
+			to_chat(user, "你将维和者的头放在了萨满祭坛上.")
 			if(prob(20))
 				var/randmed = rand(1,3)
 				switch (randmed)

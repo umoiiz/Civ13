@@ -1,6 +1,6 @@
 /mob/living/simple_animal/horse
 	name = "horse"
-	desc = "A friendly horse. Seems to be tamed."
+	desc = "一匹友好的马.似乎已被驯服."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "horse"
 	icon_living = "horse"

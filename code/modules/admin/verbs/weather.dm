@@ -2,7 +2,7 @@
 	set category = "Debug"
 	set name = "Randomly Change the Weather"
 	change_weather_somehow()
-	to_chat(src, "<span class = 'good'>Sucessfully changed the weather!</span>")
+	to_chat(src, "<span class = 'good'>成功更改了天气!</span>")
 	message_admins("[key_name(src)] randomly changed the weather.", key_name(src))
 	log_admin("[key_name(src)] randomly changed the weather.")
 
@@ -11,7 +11,7 @@
 	set name = "Randomly Modify the Weather"
 	var/old_intensity = weather_intensity
 	modify_weather_somehow()
-	to_chat(src, "<span class = 'good'>Sucessfully modified the weather from [old_intensity] to [weather_intensity]!</span>")
+	to_chat(src, "<span class = 'good'>成功将天气从[old_intensity]修改为[weather_intensity]!</span>")
 	message_admins("[key_name(src)] randomly modified the weather.", key_name(src))
 	log_admin("[key_name(src)] randomly modified the weather.")
 
@@ -20,7 +20,7 @@
 	set name = "Change the Season"
 
 	map.seasons(FALSE,TRUE)
-	to_chat(src, "<span class = 'good'>Sucessfully changed the season.</span>")
+	to_chat(src, "<span class = 'good'>成功更改了季节.</span>")
 	message_admins("[key_name(src)] changed the season.", key_name(src))
 	log_admin("[key_name(src)] changed the season.")
 
@@ -30,11 +30,11 @@
 
 	if (config.seasons_on)
 		config.seasons_on = FALSE
-		to_chat(src, "<span class = 'good'>Seasons are now <b>disabled.</span>")
+		to_chat(src, "<span class = 'good'>季节现已<b>禁用.</span>")
 		log_admin("[key_name(src)] disabled season change.")
 		
 	else
 		config.seasons_on = TRUE
-		to_chat(src, "<span class = 'good'>Seasons are now <b>enabled.</span>")
+		to_chat(src, "<span class = 'good'>季节现已<b>启用.</span>")
 		message_admins("[key_name(src)] enabled season change.", key_name(src))
 	

@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/mimic
 	name = "mimic"
-	desc = "Thats no treasure chest!"
+	desc = "那可不是什么宝箱!"
 	icon_state = "mimic"
 	icon_living = "mimic"
 	icon_dead = "none"

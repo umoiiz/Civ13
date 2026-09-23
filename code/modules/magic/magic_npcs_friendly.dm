@@ -1,6 +1,6 @@
 /mob/living/simple_animal/wizard
 	name = "Llanboarwart Student"
-	desc = "They look tired and damp."
+	desc = "他们看起来疲惫而潮湿."
 	icon = 'icons/mob/npcs_wizards.dmi'
 	icon_state = "wizard_base1"
 	icon_living = "wizard_base1"
@@ -148,7 +148,7 @@
 			M.show_chat_overlay(src, "<i>[spell_name]</i>", "#dea30d")
 	if(sound_file)
 		playsound(src.loc, sound_file, 75, FALSE)
-	visible_message("<span style=color:'#dea30d'><b>[src]</b> says, \"<i>[spell_name]</i>\"</span>")
+	visible_message("<span style=color:'#dea30d'><b>[src]</b>说, \"<i>[spell_name]</i>\"</span>")
 	spawn(5)
 		playsound(src.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
 	var/obj/item/projectile/magic/bolt = new spell_type(src.loc)
@@ -184,7 +184,7 @@
 
 /mob/living/simple_animal/wizard/goblin_healer
 	name = "Goblin Healer"
-	desc = "A small, warty creature in a filthy apron that smells of mildew and strong herbs. It eyes you with a businesslike squint."
+	desc = "一个矮小、长满疣的生物, 穿着散发着霉味和浓烈草药味的肮脏围裙. 它用一副公事公办的眯眼打量着你."
 	icon_state = "goblin_healer"
 	icon_living = "goblin_healer"
 	icon_dead = "goblin_healer_dead"
@@ -239,7 +239,7 @@
 
 /mob/living/simple_animal/wizard/goblin_cleaner
 	name = "Cleaner Goblin"
-	desc = "A miserable little goblin in a damp apron. It looks like it has cleaned more mud than magic and wants nothing to do with the rain."
+	desc = "一个穿着潮湿围裙、可怜兮兮的小哥布林. 它看起来清理过的泥巴比魔法还多, 而且完全不想和这场雨扯上关系."
 	icon_state = "goblin_cleaner"
 	icon_living = "goblin_cleaner"
 	icon_dead = "goblin_cleaner_dead"
@@ -335,7 +335,7 @@
 
 /mob/living/simple_animal/wizard/tumbledoor
 	name = "Headmaster Tumbledoor"
-	desc = "An ancient wizard with a magnificent silver beard, half-moon spectacles, and the unsettling air of someone who already knows what you are about to say."
+	desc = "一位古老的巫师, 留着华丽的银色长须, 戴着半月形眼镜, 带着一种令人不安的气质, 仿佛早已知道你要说什么."
 	icon_state = "tumbledoor"
 	icon_living = "tumbledoor"
 	icon_dead = "tumbledoor_dead"
@@ -435,7 +435,7 @@
 
 /mob/living/simple_animal/wizard/bobby
 	name = "Arcane Bobby"
-	desc = "An underfunded, highly bureaucratic officer of the C.A.P., the Constabulary for Arcane Practices. Don't cast illegal magic around them."
+	desc = "一位资金不足、极度官僚化的C.A.P.官员, 即魔法实践治安局. 不要在他们周围施放非法魔法."
 	icon_state = "wizard_police"
 	icon_living = "wizard_police"
 	icon_dead = "wizard_police_dead"
@@ -592,7 +592,7 @@
 
 /mob/living/simple_animal/wizard/professor
 	name = "L.A.M.E. Professor"
-	desc = "A miserable, underpaid teaching staff member who just wants to get through the day without a student exploding."
+	desc = "一位悲惨、薪水过低的教学人员, 只想在没有学生爆炸的情况下熬过这一天."
 	icon_state = "wizard_professor1"
 	icon_living = "wizard_professor1"
 	icon_dead = "wizard_professor1_dead"
@@ -668,7 +668,7 @@ var/list/flavour_text_normies = list(
 
 /mob/living/simple_animal/wizard/normie_farmer
 	name = "Normie Farmer"
-	desc = "A local farmer, probably fed up with magical shenanigans."
+	desc = "一位当地农夫, 大概已经受够了魔法胡闹."
 	icon = 'icons/mob/npcs.dmi'
 	faction = "Civilians"
 	maxHealth = 100
@@ -705,7 +705,7 @@ var/list/flavour_text_normies = list(
 
 /mob/living/simple_animal/wizard/huw_pugh
 	name = "Farmer Huw Pugh"
-	desc = "A Welsh farmer whose fields border the L.A.M.E. grounds. He absolutely despises the students. His name is Huw, son of Huw."
+	desc = "一位威尔士农夫, 他的田地与L.A.M.E.场地接壤. 他极其鄙视学生. 他的名字叫休, 休之子."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "farmer"
 	icon_living = "farmer"
@@ -775,7 +775,7 @@ var/list/flavour_text_normies = list(
 
 /mob/living/simple_animal/wizard/professor_snip
 	name = "Professor Snip"
-	desc = "A gaunt, perpetually unimpressed potions professor. His robes are permanently stained with at least seven identifiable chemicals and several unidentifiable ones. He smells faintly of sulphur and disappointment."
+	desc = "一位消瘦、永远一脸不满的魔药学教授. 他的长袍上永久沾染着至少七种可辨认的化学物质和若干无法辨认的物质. 他身上散发着淡淡的硫磺和失望的气味."
 	icon_state = "professor_snip"
 	icon_living = "professor_snip"
 	icon_dead = "professor_snip_dead"
@@ -891,7 +891,7 @@ var/list/flavour_text_normies = list(
 	RC.reagents.remove_reagent("darkness_powder", 10)
 
 	WB.change_level(H.client.ckey, "2")
-	to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) has passed Professor Snip's practical assessment and progressed to qualification level 2 (<b>C.O.A.L.</b>)!</font>")
+	to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) 已通过斯尼普教授的实操考核, 并晋升至资格等级2 (<b>C.O.A.L.</b>)!</font>")
 	src.say("...Acceptable. Barely. The consistency was off and your colour was wrong, but the active compounds are present in adequate quantity. C.O.A.L. qualification granted. Do not celebrate. You have a long way to go.")
 	playsound(src.loc, 'sound/effects/spells/fixae.ogg', 50, FALSE)
 
@@ -901,7 +901,7 @@ var/list/flavour_text_normies = list(
 
 /mob/living/simple_animal/wizard/big_brenda
 	name = "Big Brenda"
-	desc = "The no-nonsense owner of The Leaky Sheep. Her forearms are thicker than most wizards' thighs, and her tolerance for magical nonsense is thinner than a wet paper towel."
+	desc = "\"漏水绵羊\"酒吧说一不二的老板娘. 她的前臂比大多数巫师的大腿还粗, 而她对魔法胡闹的容忍度比湿纸巾还薄."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "big_brenda"
 	icon_living = "big_brenda"
@@ -1096,7 +1096,7 @@ h2 { color: #ffd700; border-bottom: 2px solid #5a3a1a; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/golden_gnat
 	name = "golden gnat"
-	desc = "A tiny, brilliantly golden insect that hums at an impossibly high frequency. It seems to vibrate with barely contained speed."
+	desc = "一只微小、闪耀着金色光芒的昆虫, 以高得不可思议的频率嗡嗡作响. 它似乎因勉强压抑的速度而振动."
 	icon = 'icons/mob/monsters_wizards.dmi'
 	icon_state = "gnat"
 	icon_living = "gnat"

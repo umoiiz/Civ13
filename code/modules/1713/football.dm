@@ -25,7 +25,7 @@
 		FB.throw_at(NEAR, FB.throw_range, FB.throw_speed, src)
 		src.do_attack_animation(get_step(src,src.dir))
 		playsound(loc, 'sound/effects/football_kick.ogg', 100, 1)
-		visible_message("[src] passes \the [FB] to [NEAR].")
+		visible_message("[src]将[FB]\the 递给[NEAR].")
 		return
 //with ball, pressing Z (targeted at mouse position)
 /mob/living/human/proc/football_shoot(atom/A = null)
@@ -42,7 +42,7 @@
 			football = null
 			do_attack_animation(get_step(src,src.dir))
 			playsound(loc, 'sound/effects/football_kick.ogg', 100, 1)
-			visible_message("[src] kicks \the [FB.name].")
+			visible_message("[src]踢了\the [FB.name].")
 			return
 /mob/living/human/proc/football_shoot_target(obj/item/football/FB)
 	if (!FB)
@@ -67,7 +67,7 @@
 		for (var/mob/living/human/HM in range(1,src))
 			if (HM.civilization != src.civilization) //no tackling on same team
 				if (prob(60))
-					visible_message("<font color='red'>[src] tackles [HM]!</font>")
+					visible_message("<font color='red'>[src]擒抱了[HM]!</font>")
 					playsound(loc, 'sound/weapons/punch1.ogg', 50, 1)
 					do_attack_animation(get_step(src,src.dir))
 					HM.Weaken(1)
@@ -78,7 +78,7 @@
 						HM.football = null
 					return
 				else
-					visible_message("<font color='yellow'>[src] tries to tackle [HM] but fails!</font>")
+					visible_message("<font color='yellow'>[src]试图擒抱[HM]但失败了!</font>")
 					playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 				return
 //no ball, pressing C
@@ -104,7 +104,7 @@
 				if (A.football)
 					opponent_has_ball = A.football
 				if (prob(35) && opponent_has_ball)
-					src.visible_message("<font color='red'>[src] takes the ball from [A]!</font>")
+					src.visible_message("<font color='red'>[src]从[A]脚下抢到了球!</font>")
 					playsound(src.loc, 'sound/weapons/punch1.ogg', 50, 1)
 					A.football = null
 					opponent_has_ball.last_owner = src
@@ -112,7 +112,7 @@
 					src.football = opponent_has_ball
 					opponent_has_ball.forceMove(src.loc)
 				else
-					src.visible_message("<font color='yellow'>[src] pressures [A]!</font>")
+					src.visible_message("<font color='yellow'>[src]对[A]施压!</font>")
 					src.do_attack_animation(A)
 					playsound(src.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 				return
@@ -128,7 +128,7 @@
 					FB.pickup(src)
 					src.football = null
 					FB.owner = null
-					visible_message("<font color='yellow'>[src] picks up the ball!</font>")
+					visible_message("<font color='yellow'>[src]捡起了球!</font>")
 					return
 
 //handle hit by ball
@@ -138,7 +138,7 @@
 			if (gloves && istype(gloves, /obj/item/clothing/gloves/goalkeeper))
 				var/area/A = get_area(src.loc)
 				if (istype(A, /area/caribbean/football/blue/goalkeeper) || istype(A, /area/caribbean/football/red/goalkeeper))
-					visible_message("<font color='yellow'>[src] blocks and picks up the ball!</font>")
+					visible_message("<font color='yellow'>[src]挡住并捡起了球!</font>")
 					src.put_in_active_hand(FB)
 					if (FB.owner)
 						FB.owner.football = null
@@ -169,9 +169,9 @@
 				src.football.last_owner = src
 				src.football.owner = null
 				src.football = null
-				visible_message("[src] bumps into [HM] and loses control of the ball!")
+				visible_message("[src]撞上了[HM]并失去了对球的控制!")
 			else if (HM.football)
 				HM.football.last_owner = HM
 				HM.football.owner = null
 				HM.football = null
-				visible_message("[HM] bumps into [src] and loses control of the ball!")
+				visible_message("[HM]撞上了[src]并失去了对球的控制!")

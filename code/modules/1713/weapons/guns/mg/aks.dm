@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/submachinegun/ak101
 	name = "AK-101"
-	desc = "A modern Russian AK variant, chambered in NATO 5.56x45mm."
+	desc = "一款现代俄罗斯AK衍生型,发射北约5.56x45mm弹药."
 	icon_state = "ak101"
 	item_state = "ak101"
 	base_icon = "ak101"
@@ -36,13 +36,13 @@
 	set src in usr
 	if (folded)
 		folded = FALSE
-		to_chat(usr, "You extend the stock on \the [src].")
+		to_chat(usr, "你展开了\the [src]的枪托.")
 		equiptimer = 15
 		set_stock()
 		update_icon()
 	else
 		folded = TRUE
-		to_chat(usr, "You collapse the stock on \the [src].")
+		to_chat(usr, "你折叠了\the [src]的枪托.")
 		equiptimer = 7
 		set_stock()
 		update_icon()
@@ -56,7 +56,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak101/ak102
 	name = "AK-102"
-	desc = "A modern Russian AK variant, chambered in NATO 5.56x45mm. This is a carbine version of the AK-101."
+	desc = "一款现代俄罗斯AK衍生型,发射北约5.56x45mm弹药.这是AK-101的卡宾版本."
 	icon_state = "ak101"
 	item_state = "ak74m"
 	base_icon = "ak101"
@@ -69,7 +69,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak101/ak103
 	name = "AK-103"
-	desc = "A modern Russian AK variant, chambered in 7.62x39mm."
+	desc = "一款现代俄罗斯AK衍生型,发射7.62x39mm弹药."
 	icon_state = "ak101"
 	item_state = "ak101"
 	base_icon = "ak101"
@@ -83,7 +83,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak101/ak103/ak104
 	name = "AK-104"
-	desc = "A modern Russian AK variant, chambered in 7.62x39mm. This is a carbine version of the AK-103."
+	desc = "现代俄罗斯AK变体,使用7.62x39mm弹药.这是AK-103的卡宾枪版本."
 	icon_state = "ak101"
 	item_state = "ak74m"
 	base_icon = "ak101"
@@ -94,7 +94,7 @@
 
 /obj/item/weapon/gun/projectile/submachinegun/ak101/ak105
 	name = "AK-105"
-	desc = "A modern Russian AK variant, chambered in 5.45x39mm. This is a carbine version of the AK-74M."
+	desc = "现代俄罗斯AK变体,使用5.45x39mm弹药.这是AK-74M的卡宾枪版本."
 	icon_state = "ak101"
 	item_state = "ak74m"
 	base_icon = "ak101"

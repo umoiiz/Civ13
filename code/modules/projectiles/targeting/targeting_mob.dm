@@ -12,7 +12,7 @@
 			M.aiming = new(src)
 		M.aiming.toggle_active()
 	else
-		to_chat(src, "<span class='warning'>This verb may only be used by living mobs, sorry.</span>")
+		to_chat(src, "<span class='warning'>抱歉,此动词只能由活着的生物使用.</span>")
 	return
 
 /mob/living/proc/stop_aiming(var/obj/item/thing, var/no_message = FALSE)

@@ -35,7 +35,7 @@
 	if(breached) return
 	breached = TRUE
 	breach_inflow_rate = SUB_BREACH_INFLOW_BASE
-	visible_message("<span class='danger'><b>The hull buckles! Seawater erupts through the breach!</b></span>")
+	visible_message("<span class='danger'><b>船体变形了! 海水从破口喷涌而入!</b></span>")
 	playsound(src, 'sound/machines/submarine/hull_breach.ogg', 90, 1)
 
 	// Find adjacent deck turfs and start continuous flooding
@@ -57,26 +57,26 @@
 	// Undo inflow rate on adjacent deck turfs
 	for(var/turf/floor/sub_deck/D in range(1, src))
 		D.water_inflow_rate = max(0, D.water_inflow_rate - SUB_BREACH_INFLOW_BASE)
-	visible_message("<span class='notice'>The hull breach is sealed.</span>")
+	visible_message("<span class='notice'>船体破口已封堵.</span>")
 
 /turf/wall/sub_hull/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/weapon/weldingtool))
 		if(breached)
-			to_chat(user, "<span class='notice'>You begin welding the hull breach shut...</span>")
+			to_chat(user, "<span class='notice'>你开始焊接船体破口...</span>")
 			playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 			if(do_after(user, 1200, src))
 				repair_breach()
 				playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 		else if(hull_integrity < max_hull_integrity)
-			to_chat(user, "<span class='notice'>You begin welding cracks in the hull...</span>")
+			to_chat(user, "<span class='notice'>你开始焊接船体上的裂缝...</span>")
 			playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 			if(do_after(user, 1200, src))
 				hull_integrity = min(max_hull_integrity, hull_integrity + round(max_hull_integrity * 0.5))
 				overlays.Cut()
-				to_chat(user, "<span class='notice'>You repair the hull. Integrity: [hull_integrity]/[max_hull_integrity]</span>")
+				to_chat(user, "<span class='notice'>你修复了船体. 完整度: [hull_integrity]/[max_hull_integrity]</span>")
 				playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 		else
-			to_chat(user, "<span class='notice'>The hull is in good condition.</span>")
+			to_chat(user, "<span class='notice'>船体状况良好.</span>")
 		return
 	..()
 
@@ -103,23 +103,23 @@
 /turf/wall/sub_bulkhead/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/weapon/weldingtool))
 		if(health >= max_health && watertight)
-			to_chat(user, "<span class='notice'>[src] is already in good condition.</span>")
+			to_chat(user, "<span class='notice'>[src]已经状况良好.</span>")
 			return
 		if(!watertight)
-			to_chat(user, "<span class='notice'>You begin welding the bulkhead seals back into place...</span>")
+			to_chat(user, "<span class='notice'>你开始将舱壁密封重新焊回原位...</span>")
 			playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 			if(do_after(user, 80, src))
 				watertight = TRUE
 				health = min(max_health, health + 60)
 				icon_state = initial(icon_state)
-				to_chat(user, "<span class='notice'>The bulkhead seals are restored. Watertight integrity re-established.</span>")
+				to_chat(user, "<span class='notice'>舱壁密封已恢复. 水密完整性已重建.</span>")
 				playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 		else
-			to_chat(user, "<span class='notice'>You begin welding cracks in the bulkhead...</span>")
+			to_chat(user, "<span class='notice'>你开始焊接舱壁上的裂缝...</span>")
 			playsound(src.loc, 'sound/machines/submarine/gas.ogg', 50, 1)
 			if(do_after(user, 40, src))
 				health = min(max_health, health + 30)
-				to_chat(user, "<span class='notice'>You repair some structural damage on the bulkhead.</span>")
+				to_chat(user, "<span class='notice'>你修复了舱壁上的一些结构损伤.</span>")
 		return
 	..()
 
@@ -127,11 +127,11 @@
 	health -= damage
 	if(health <= 0)
 		watertight = FALSE
-		visible_message("<span class='warning'>The bulkhead crumples! It no longer holds back water.</span>")
+		visible_message("<span class='warning'>舱壁垮塌了! 它再也挡不住水了.</span>")
 		icon_state = "damaged"
 	else if(health < max_health * 0.5)
 		watertight = FALSE
-		visible_message("<span class='warning'>The bulkhead buckles under pressure! Seals are compromised.</span>")
+		visible_message("<span class='warning'>舱壁在压力下变形! 密封已失效.</span>")
 
 /turf/wall/sub_bulkhead/sub_shielding
 	name = "lead reactor shielding"
@@ -346,7 +346,7 @@
 			if(prob(15) && istype(L, /mob/living/human))
 				var/mob/living/human/H = L
 				H.losebreath = max(H.losebreath + 3, 3)
-				to_chat(H, "<span class='danger'>Water fills your lungs!</span>")
+				to_chat(H, "<span class='danger'>水灌满了你的肺!</span>")
 				playsound(src, 'sound/machines/submarine/flood.ogg', 40, 1)
 		else if(water_depth >= 100)
 			// Waist deep: moderate drowning risk
@@ -355,12 +355,12 @@
 				H.losebreath = max(H.losebreath + 1, 1)
 				H.adjustOxyLoss(4)
 			if(prob(5))
-				to_chat(L, "<span class='warning'>You struggle to breathe above the rising water.</span>")
+				to_chat(L, "<span class='warning'>你在上涨的水面之上挣扎着呼吸.</span>")
 				playsound(src, 'sound/machines/submarine/alarm_flooding.ogg', 30, 1)
 		else if(water_depth >= 50)
 			// Ankle deep: annoying, minor oxygen drain
 			if(prob(2))
-				to_chat(L, "<span class='notice'>Water sloshes around your boots.</span>")
+				to_chat(L, "<span class='notice'>水在你的靴子周围晃荡.</span>")
 
 // Update the turf's visual appearance based on water depth
 /turf/floor/sub_deck/proc/refresh_water_overlay()
@@ -444,7 +444,7 @@
 		for(var/mob/living/human/H in src)
 			H.losebreath = max(H.losebreath + 1, 1)
 			if(prob(3))
-				to_chat(H, "<span class='danger'>The air is thick with CO2!</span>")
+				to_chat(H, "<span class='danger'>空气中充满了二氧化碳!</span>")
 
 	// Low oxygen: damage and messages
 	if(oxygen_moles < 5)
@@ -454,7 +454,7 @@
 				H.adjustOxyLoss(2)
 				last_damage_tick = world.time
 				if(prob(8))
-					to_chat(H, "<span class='danger'>You gasp for air — the oxygen is gone!</span>")
+					to_chat(H, "<span class='danger'>你大口喘气 -- 氧气已经耗尽了!</span>")
 
 	// Ventilation: if a vent is active, equalize with duct network
 	if(vent_active && vent_id)
@@ -508,9 +508,9 @@
 		to_chat(user, water_desc)
 
 	if(oxygen_moles < 5)
-		to_chat(user, "<span class='warning'>The air smells stale and oxygen-depleted.</span>")
+		to_chat(user, "<span class='warning'>空气闻起来污浊,氧气已经耗尽.</span>")
 	if(co2_moles > 3)
-		to_chat(user, "<span class='danger'>The CO2 concentration is dangerously high!</span>")
+		to_chat(user, "<span class='danger'>二氧化碳浓度已达到危险水平!</span>")
 
 // ============================================================
 // Compartment Floor Subtypes - pre-configured for mapmaking

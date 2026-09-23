@@ -7,7 +7,7 @@
 
 
 /obj/structure/pot
-	name = "Pot"
+	name = "锅"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "empty_pot"
 	layer = 2.9
@@ -44,10 +44,10 @@
 	if (!istype(H))
 		return
 	if (istype(I, /obj/item/weapon/wrench))
-		visible_message("<span class='warning'>[H] starts to [anchored ? "unsecure" : "secure"] the pot [anchored ? "from" : "to"] the ground.</span>")
+		visible_message("<span class='warning'>[H] 开始 [anchored ? "unsecure" : "secure"] 锅 [anchored ? "from" : "to"] 地面.</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(H,50,src))
-			visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] the pot [anchored ? "from" : "to"] the ground.</span>")
+			visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] 锅 [anchored ? "from" : "to"] 地面.</span>")
 			anchored = !anchored
 		return
 	else if ((istype(I, /obj/item/weapon/reagent_containers/food/drinks) || istype(I, /obj/item/weapon/reagent_containers/glass)) && state == STATE_EMPTY)
@@ -55,16 +55,16 @@
 			return
 		var/datum/reagent/R = I.reagents.get_master_reagent()
 		if (!R || !I.reagents.reagent_list.len)
-			to_chat(H, "<span class = 'warning'>There's nothing in \the [I].</span>")
+			to_chat(H, "<span class = 'warning'>\the [I] 里什么都没有.</span>")
 			return
 		if (!istype(R, /datum/reagent/water))
 			if (I.reagents.total_volume >= reagents.maximum_volume)
-				to_chat(H, "<span class = 'notice'>The pot can't hold any more reagents.</span>")
+				to_chat(H, "<span class = 'notice'>锅里装不下更多试剂了.</span>")
 			else
 				for (var/datum/reagent/RR in I.reagents.reagent_list)
 					reagents.add_reagent(RR.id, RR.volume)
 				I.reagents.clear_reagents()
-				visible_message("<span class = 'notice'>[H] pours the contents of [I] into the pot.</span>")
+				visible_message("<span class = 'notice'>[H] 将 [I] 中的内容倒入锅中.</span>")
 		else
 			var/rem = min(R.volume, 100)
 			I.reagents.remove_reagent(R.id, rem)
@@ -73,7 +73,7 @@
 			if (fullness == 100)
 				state = STATE_WATER
 				update_icon()
-			to_chat(H, "<span class = 'notice'>[H] fills the pot with some water. It's about [fullness]% full.</span>")
+			to_chat(H, "<span class = 'notice'>[H] 往锅里装了些水. 大约装到 [fullness]% 满.</span>")
 			return
 	else if (!istype(I, /obj/item/kitchen/snack_bowl) || !istype(I, /obj/item/kitchen/wood_bowl))
 		if (istype(I, /obj/item/weapon/reagent_containers/food))
@@ -83,25 +83,25 @@
 			if (istype(I, /obj/item/weapon/reagent_containers/food/drinks))
 				if (I.reagents && I.reagents.reagent_list.len)
 					if (I.reagents.total_volume >= reagents.maximum_volume)
-						to_chat(H, "<span class = 'notice'>The pot can't hold any more reagents.</span>")
+						to_chat(H, "<span class = 'notice'>锅里装不下更多试剂了.</span>")
 					else
 						for (var/datum/reagent/R in I.reagents.reagent_list)
 							reagents.add_reagent(R.id, R.volume)
 						I.reagents.clear_reagents()
-						visible_message("<span class = 'notice'>[H] pours the contents of [I] into the pot.</span>")
+						visible_message("<span class = 'notice'>[H] 将 [I] 中的内容倒入锅中.</span>")
 			else if (istype(I, /obj/item/weapon/reagent_containers/food/condiment))
 				var/obj/item/weapon/reagent_containers/food/condiment/C = I
 				C.standard_pour_into(H, src)
 			else
 				if (contents.len >= 15)
-					to_chat(H, "<span class = 'warning'>There's too much in the pot already.</span>")
+					to_chat(H, "<span class = 'warning'>锅里已经有太多东西了.</span>")
 					return
 				if (istype(I, /obj/item/weapon/reagent_containers/food/snacks/stew))
-					to_chat(H, "<span class = 'warning'>This won't fit in the pot.</span>")
+					to_chat(H, "<span class = 'warning'>这个装不进锅里.</span>")
 					return
 				H.remove_from_mob(I)
 				I.loc = src
-				visible_message("<span class = 'notice'>[H] puts [I] in the pot.</span>")
+				visible_message("<span class = 'notice'>[H] 将 [I] 放入锅中.</span>")
 				stew_ticks = max(stew_ticks - 5, 0)
 				if (state == STATE_WATER)
 					state = STATE_BOILING
@@ -159,7 +159,7 @@
 		return
 	for (var/obj/item/I in contents)
 		H.put_in_any_hand_if_possible(I, prioritize_active_hand = TRUE)
-		visible_message("<span class = 'notice'>[H] takes [I.name] from the pot of boiling water.</span>")
+		visible_message("<span class = 'notice'>[H] 从沸水锅中取出 [I.name].</span>")
 		break
 
 /obj/structure/pot/process()
@@ -169,7 +169,7 @@
 			var/boiling = 0
 			for (var/obj/item/weapon/reagent_containers/food/F in contents)
 				if (!F.boiled && prob(10))
-					visible_message("<span class = 'notice'>[F] finishes boiling.</span>")
+					visible_message("<span class = 'notice'>[F] 煮好了.</span>")
 					if (BOIL_MAP[F.type])
 						var/newtype = BOIL_MAP[F.type]
 						new newtype (src)
@@ -195,7 +195,7 @@
 					state = STATE_STEWING
 					bowls = min(round(contents.len/3) + 3,10) // 1 object = 3 bowls. 10 objects = 6 bowls
 					initial_bowls = bowls
-					visible_message("<span class = 'notice'>The liquid in the pot turns into a stew.</span>")
+					visible_message("<span class = 'notice'>锅里的液体变成了炖菜.</span>")
 					stew_desc = "stew with "
 					stew_nutriment_desc.Cut()
 					for (var/obj/item/I in contents)
@@ -233,13 +233,13 @@
 /obj/structure/pot/examine(mob/user)
 	..(user)
 	if (state == STATE_STEWING && stew_desc)
-		to_chat(user, "<span class = 'notice'>You can see a [lowertext(stew_desc)].</span>")
+		to_chat(user, "<span class = 'notice'>你能看到一个 [lowertext(stew_desc)].</span>")
 	else if (state == STATE_EMPTY)
-		to_chat(user, "<span class = 'notice'>It's an empty pot.</span>")
+		to_chat(user, "<span class = 'notice'>这是一个空锅.</span>")
 	else if (state == STATE_WATER)
-		to_chat(user, "<span class = 'notice'>It's a pot full of water.</span>")
+		to_chat(user, "<span class = 'notice'>这是一个装满水的锅.</span>")
 	else if (state == STATE_BOILING)
-		to_chat(user, "<span class = 'notice'>It's a pot with some things boiling inside.</span>")
+		to_chat(user, "<span class = 'notice'>这是一个里面煮着东西的锅.</span>")
 		var/message = "You can see "
 		for (var/obj/item/I in contents)
 			message += I.name
@@ -260,7 +260,7 @@
 	set category = null
 	if (state == STATE_EMPTY)
 		return
-	visible_message("<span class = 'warning'>[usr] starts to empty the pot...</span>")
+	visible_message("<span class = 'warning'>[usr] 开始清空锅...</span>")
 	if (do_after(usr, 100, src))
-		visible_message("<span class = 'warning'>[usr] finishes emptying the pot.</span>")
+		visible_message("<span class = 'warning'>[usr] 清空了锅.</span>")
 		state = STATE_EMPTY

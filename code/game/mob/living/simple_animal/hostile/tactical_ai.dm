@@ -362,7 +362,7 @@
 			H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), sharp=1, edge=1)
 		else
 			affecting.droplimb(FALSE, DROPLIMB_EDGE)
-			visible_message("\The [src] bites off [H]'s limb!")
+			visible_message("\The [src]咬断了[H]的肢体!")
 			for(var/mob/living/human/NB in view(6, src))
 				NB.mood -= 10
 		do_attack_animation(H)

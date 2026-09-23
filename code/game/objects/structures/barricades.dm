@@ -1,6 +1,6 @@
 /obj/structure/barricade
-	name = "wood structure"
-	desc = "A wooden frame."
+	name = "木制结构"
+	desc = "一个木制框架."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "barricade"
 	
@@ -83,7 +83,7 @@
 	if (istype(W, /obj/item/weapon/poster/religious))
 		to_chat(user, SPAN_NOTICE("You start placing the [W] on \the [src]..."))
 		if (do_after(user, 7 SECONDS, src))
-			visible_message("[user] places the [W] on \the [src].")
+			visible_message("[user]将[W]放置在\the [src]上.")
 			var/obj/structure/poster/religious/RP = new/obj/structure/poster/religious(get_turf(src))
 			var/obj/item/weapon/poster/religious/P = W
 			RP.religion = P.religion
@@ -96,7 +96,7 @@
 	if (istype(W, /obj/item/weapon/poster/faction))
 		to_chat(user, SPAN_NOTICE("You start placing the [W] on \the [src]..."))
 		if (do_after(user, 7 SECONDS, src))
-			visible_message("[user] places \the [W] on the [src].")
+			visible_message("[user]将\the [W]放置在[src]上.")
 			var/obj/structure/poster/faction/RP = new/obj/structure/poster/faction(get_turf(src))
 			var/obj/item/weapon/poster/faction/P = W
 			RP.faction = P.faction
@@ -118,7 +118,7 @@
 		try_destroy()
 	else
 		if (istype(W,/obj/item/weapon) || !istype(W,/obj/item/weapon/wrench) || !istype(W,/obj/item/weapon/hammer)) //No weapons can harm me! If not weapon and not a wrench.
-			to_chat(user, "You uselessly hit the wall!")
+			to_chat(user, "你徒劳地击打墙壁!")
 		return
 	..()
 
@@ -179,16 +179,16 @@
 	try_destroy()
 
 /obj/structure/barricade/horizontal
-	name = "wood barrier"
-	desc = "A wood wall constructed from interwoven logs."
+	name = "木制屏障"
+	desc = "一堵由交织原木建造的木墙."
 	icon_state = "woodbarricade_horizontal"
 	flammable = TRUE
 	protection_chance = 85
 	layer = 2.98
 
 /obj/structure/barricade/magic
-	name = "magical barrier"
-	desc = "A spell-spawned magical barricade. It shimmers with arcane energy."
+	name = "魔法屏障"
+	desc = "一道由法术生成的法术路障. 它闪烁着奥术能量."
 	icon_state = "magic_barricade"
 	flammable = TRUE
 	protection_chance = 90
@@ -200,8 +200,8 @@
 
 
 /obj/structure/barricade/vertical
-	name = "wood barrier"
-	desc = "A wood wall constructed from interwoven logs."
+	name = "木制屏障"
+	desc = "一堵由交织原木建造的木墙."
 	icon_state = "woodbarricade_vertical"
 	flammable = TRUE
 	protection_chance = 85
@@ -219,8 +219,8 @@
 /obj/structure/barricade/steel
 	material = "steel"
 	material_name = "steel"
-	name = "steel barrier"
-	desc = "A sturdy steel construction."
+	name = "钢制屏障"
+	desc = "一个坚固的钢结构."
 	flammable = FALSE
 	protection_chance = 90
 	health = 700
@@ -230,8 +230,8 @@
 	..(_loc)
 
 /obj/structure/barricade/sandstone_h
-	name = "sandstone wall"
-	desc = "A wall of sandstone blocks."
+	name = "砂岩墙"
+	desc = "一堵由砂岩块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brick"
 	health = 300
@@ -243,8 +243,8 @@
 	crushable = FALSE
 
 /obj/structure/barricade/sandstone_v
-	name = "sandstone wall"
-	desc = "A wall of sandstone blocks."
+	name = "砂岩墙"
+	desc = "一堵由砂岩块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brick2"
 	health = 300
@@ -256,8 +256,8 @@
 	crushable = FALSE
 
 /obj/structure/barricade/sandstone_h/crenelated
-	name = "crenelated sandstone wall"
-	desc = "A wall of sandstone blocks."
+	name = "带垛口的砂岩墙"
+	desc = "一堵由砂岩块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brick_c"
 	health = 300
@@ -268,8 +268,8 @@
 	can_damage = FALSE
 
 /obj/structure/barricade/sandstone_v/crenelated
-	name = "crenelated sandstone wall"
-	desc = "A wall of sandstone blocks."
+	name = "带垛口的砂岩墙"
+	desc = "一堵由砂岩块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brick_c2"
 	health = 300
@@ -367,8 +367,8 @@
 		qdel(src)
 		return
 /obj/structure/barricade/antitank
-	name = "czech hedgehog"
-	desc = "A static anti-tank obstacle defense made of metal angle beams."
+	name = "捷克刺猬"
+	desc = "一种由金属角钢制成的静态反坦克障碍防御工事."
 	icon_state = "antitank"
 	material = "steel"
 	health = 2709
@@ -390,8 +390,8 @@
 		..()
 
 /obj/structure/barricade/debris
-	name = "debris"
-	desc = "A wall of rubble and debris."
+	name = "瓦砾"
+	desc = "一堵由碎石和瓦砾组成的墙."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "debris1"
 	material = "stone"
@@ -405,7 +405,7 @@
 		icon_state = "debris[rand(1,4)]"
 
 /obj/structure/barricade/debris/brick
-	name = "brick debris"
+	name = "砖块瓦砾"
 	icon_state = "brick1"
 	health = 450
 	maxhealth = 450
@@ -415,8 +415,8 @@
 		icon_state = "brick[rand(1,2)]"
 
 /obj/structure/barricade/stone_h
-	name = "stone wall"
-	desc = "A wall of stone blocks."
+	name = "石墙"
+	desc = "一堵由石块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "stone_brick"
 	material = "stone"
@@ -428,8 +428,8 @@
 	crushable = FALSE
 
 /obj/structure/barricade/stone_v
-	name = "stone wall"
-	desc = "A wall of stone blocks."
+	name = "石墙"
+	desc = "一堵由石块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "stone_brick2"
 	material = "stone"
@@ -441,8 +441,8 @@
 	crushable = FALSE
 
 /obj/structure/barricade/stone_h/crenelated
-	name = "crenelated stone wall"
-	desc = "A wall of stone blocks."
+	name = "带垛口的石墙"
+	desc = "一堵由石块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "stone_brick_c"
 	material = "stone"
@@ -452,8 +452,8 @@
 	protection_chance = 75
 
 /obj/structure/barricade/stone_v/crenelated
-	name = "crenelated stone wall"
-	desc = "A wall of stone blocks."
+	name = "带垛口的石墙"
+	desc = "一堵由石块砌成的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "stone_brick_c2"
 	material = "stone"
@@ -556,8 +556,8 @@
 		return
 
 /obj/structure/barricade/stone_h/cliffside
-	name = "cliffside"
-	desc = "A cliffside. It seems like you can put a ladder on this."
+	name = "崖壁"
+	desc = "一处崖壁.看起来你可以在上面放一把梯子."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "cliffside"
 	health = 30000
@@ -571,8 +571,8 @@
 	icon_state = "cliffside_corner"
 
 /obj/structure/barricade/jap_h
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with some red shingles."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着一些红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_h"
 	material = "stone"
@@ -607,8 +607,8 @@
 		return
 
 /obj/structure/barricade/jap_h_l
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with some red shingles."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着一些红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_h_l"
 	material = "stone"
@@ -643,8 +643,8 @@
 		return
 
 /obj/structure/barricade/jap_h_r
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with some red shingles."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着一些红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_h_r"
 	material = "stone"
@@ -679,8 +679,8 @@
 		return
 
 /obj/structure/barricade/jap_v
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with red shingling."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_v"
 	material = "stone"
@@ -715,8 +715,8 @@
 		return
 
 /obj/structure/barricade/jap_v_t
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with red shingling."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_v_t"
 	material = "stone"
@@ -751,8 +751,8 @@
 		return
 
 /obj/structure/barricade/jap_v_b
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with red shingling."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "jap_wall_v_b"
 	material = "stone"
@@ -787,8 +787,8 @@
 		return
 
 /obj/structure/barricade/tires
-	name = "pile of tires"
-	desc = "A pile of old tires."
+	name = "轮胎堆"
+	desc = "一堆旧轮胎."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "tire3a"
 	health = 200
@@ -802,8 +802,8 @@
 	name = "pile of tires"
 
 /obj/structure/barricade/hescobastion
-	name = "hesco bastion"
-	desc = "A collapsible wire mesh container filled with sand. Very sturdy."
+	name = "赫斯科防爆墙"
+	desc = "一个装满沙子的可折叠金属网容器.非常坚固."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "hescobastion"
 	health = 600
@@ -820,8 +820,8 @@
 	name = "hesco bastion"
 
 /obj/structure/barricade/construction
-	name = "construction barrier"
-	desc = "A barrier indicating an area of construction works."
+	name = "施工围栏"
+	desc = "一种标示施工区域的围栏."
 	icon_state = "construction1"
 	health = 50
 	maxhealth = 50
@@ -853,8 +853,8 @@
 		pixel_y = 6
 
 /obj/structure/barricade/steel_crowd
-	name = "steel crowd control barrier"
-	desc = "A steel barrier used to control pedestrian traffic."
+	name = "钢制人群控制围栏"
+	desc = "一种用于控制人流量的钢制围栏."
 	icon_state = "crowd_barrier"
 	health = 50
 	maxhealth = 50
@@ -870,8 +870,8 @@
 	icon_state = "crowd_barrier"
 
 /obj/structure/barricade/velvet_rope
-	name = "velvet rope barrier"
-	desc = "A cushy red velvet rope strewn between two golden poles."
+	name = "天鹅绒绳索围栏"
+	desc = "一条柔软的红天鹅绒绳索拉在两根金色柱子之间."
 	icon_state = "velvet_rope"
 	health = 20
 	maxhealth = 20
@@ -887,8 +887,8 @@
 	icon_state = "velvet_rope"
 
 /obj/structure/shelf
-	name = "shelf"
-	desc = "A store shelf."
+	name = "货架"
+	desc = "一个商店货架."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "shelf0"
 
@@ -896,20 +896,20 @@
 	if (user.a_intent == I_HELP)
 		user.drop_from_inventory(W)
 		W.forceMove(loc)
-		to_chat(user, "You put \the [W] on the [src].")
+		to_chat(user, "你把\the [W]放在了[src]上.")
 	else
 		..()
 
 /obj/structure/shelf/palette
-	name = "wooden palette"
-	desc = "A wooden palette which is used by forklifts"
+	name = "木托盘"
+	desc = "一种供叉车使用的木托盘"
 	icon_state = "palette"
 	anchored = FALSE
 	density = TRUE
 
 /obj/structure/barricade/car
-	name = "car"
-	desc = "An abandoned car."
+	name = "汽车"
+	desc = "一辆被遗弃的汽车."
 	icon = 'icons/obj/obj64x42.dmi'
 	icon_state = "car1"
 	health = 450
@@ -927,8 +927,8 @@
 
 
 /obj/structure/barricade/jap
-	name = "shingled stone wall"
-	desc = "A wall of stone blocks with some red shingles."
+	name = "木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着一些红色木瓦."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "japwall0"
 	var/base_icon_state = "japwall"
@@ -995,8 +995,8 @@
 		return
 
 /obj/structure/barricade/jap/tall
-	name = "tall shingled stone wall"
-	desc = "A wall of stone blocks with some red shingles. This one is rather tall."
+	name = "高木瓦石墙"
+	desc = "一堵由石块砌成的墙,上面铺着一些红色木瓦.这一堵相当高."
 	icon = 'icons/turf/tallwalls.dmi'
 	icon_state = "japwall0"
 	base_icon_state = "japwall"

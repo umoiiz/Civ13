@@ -8,8 +8,8 @@
  * Beds
  */
 /obj/structure/bed
-	name = "bed"
-	desc = "This is used to lie in, sleep in or strap on."
+	name = "床"
+	desc = "它可用于躺卧, 睡觉或绑缚."
 	icon = 'icons/obj/bed_chair.dmi'
 	icon_state = "bed"
 	anchored = TRUE
@@ -24,8 +24,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/bed/fieldbed
-	name = "field bed"
-	desc = "This is an easy to move field bed for sleeping while on the move."
+	name = "行军床"
+	desc = "这是一种便于移动的行军床, 供在移动途中睡觉使用."
 	icon_state = "fieldbed"
 	base_icon = "fieldbed"
 	material = "steel"
@@ -35,8 +35,8 @@
 	material = "wood"
 
 /obj/structure/bed/hammock
-	name = "hammock"
-	desc = "A rope bed, hanging from the ceiling."
+	name = "吊床"
+	desc = "一张悬挂在天花板上的绳床."
 	applies_material_colour = FALSE
 	material = "rope"
 	icon_state = "hammockf"
@@ -148,7 +148,7 @@
 /obj/structure/bed/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/stack))
 		if (padding_material)
-			to_chat(user, "\The [src] is already padded.")
+			to_chat(user, "\The [src] 已经装有衬垫了.")
 			return
 		var/obj/item/stack/C = W
 		if (C.amount < 1) // How??
@@ -161,28 +161,28 @@
 			if (M.material && (M.material.flags & MATERIAL_PADDING))
 				padding_type = "[M.material.name]"
 		if (!padding_type)
-			to_chat(user, "You cannot pad \the [src] with that.")
+			to_chat(user, "你不能用那个给 \the [src] 加衬垫.")
 			return
 		C.use(1)
 		if (!istype(loc, /turf))
 			user.drop_from_inventory(src)
 			loc = get_turf(src)
-		to_chat(user, "You add padding to \the [src].")
+		to_chat(user, "你给 \the [src] 加上了衬垫.")
 		add_padding(padding_type)
 		return
 
 	else if (istype(W, /obj/item/weapon/wirecutters))
 		if (!padding_material)
-			to_chat(user, "\The [src] has no padding to remove.")
+			to_chat(user, "\The [src] 没有可移除的衬垫.")
 			return
-		to_chat(user, "You remove the padding from \the [src].")
+		to_chat(user, "你移除了 \the [src] 的衬垫.")
 		playsound(src, 'sound/items/Wirecutter.ogg', 100, TRUE)
 		remove_padding()
 
 	else if (istype(W, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/G = W
 		var/mob/living/affecting = G.affecting
-		user.visible_message("<span class='notice'>[user] attempts to buckle [affecting] into \the [src]!</span>")
+		user.visible_message("<span class='notice'>[user] 试图将 [affecting] 扣入 \the [src]!</span>")
 		if (do_after(user, 20, src))
 			affecting.loc = loc
 			spawn(0)
@@ -214,8 +214,8 @@
 		padding_material.place_sheet(get_turf(src))
 
 /obj/structure/bed/psych
-	name = "divan"
-	desc = "For prime comfort during psychiatric evaluations."
+	name = "沙发床"
+	desc = "在精神评估期间提供极致舒适."
 	icon_state = "psychbed"
 	base_icon = "psychbed"
 
@@ -226,7 +226,7 @@
 	..(newloc,"wood","cotton")
 
 /obj/structure/bed/roller
-	name = "roller bed"
+	name = "滚轮床"
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "down"
 	anchored = FALSE
@@ -242,7 +242,7 @@
 		if (buckled_mob)
 			user_unbuckle_mob(user)
 		else
-			visible_message("[user] collapses \the [name].")
+			visible_message("[user] 折叠了 \the [name].")
 			new/obj/item/roller(get_turf(src))
 			spawn(0)
 				qdel(src)
@@ -290,15 +290,15 @@
 	if ((over_object == usr && (in_range(src, usr) || usr.contents.Find(src))))
 		if (!ishuman(usr))	return
 		if (buckled_mob)	return FALSE
-		visible_message("[usr] collapses \the [name].")
+		visible_message("[usr] 折叠了 \the [name].")
 		new/obj/item/roller(get_turf(src))
 		spawn(0)
 			qdel(src)
 		return
 
 /obj/item/roller
-	name = "roller bed"
-	desc = "A collapsed roller bed that can be carried around."
+	name = "滚轮床"
+	desc = "一张折叠后可以随身携带的滚轮床."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	w_class = ITEM_SIZE_LARGE // Can't be put in backpacks. Oh well.
@@ -313,7 +313,7 @@
 	if (istype(W,/obj/item/roller_holder))
 		var/obj/item/roller_holder/RH = W
 		if (!RH.held)
-			to_chat(user, "<span class='notice'>You collect the roller bed.</span>")
+			to_chat(user, "<span class='notice'>你收起了滚轮床.</span>")
 			loc = RH
 			RH.held = src
 			return
@@ -321,8 +321,8 @@
 	..()
 
 /obj/item/roller_holder
-	name = "roller bed rack"
-	desc = "A rack for carrying a collapsed roller bed."
+	name = "滚轮床架"
+	desc = "用于携带折叠滚轮床的架子."
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	slot_flags = SLOT_BACK
@@ -336,10 +336,10 @@
 /obj/item/roller_holder/attack_self(mob/user as mob)
 
 	if (!held)
-		to_chat(user, "<span class='notice'>The rack is empty.</span>")
+		to_chat(user, "<span class='notice'>架子上是空的.</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You deploy the roller bed.</span>")
+	to_chat(user, "<span class='notice'>你展开了滚轮床.</span>")
 	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(user.loc)
 	R.add_fingerprint(user)
 	qdel(held)
@@ -348,8 +348,8 @@
 
 ////////////////sofa///////////////////
 /obj/structure/bed/sofa
-	name = "old sofa"
-	desc = "A sofa where you can rest."
+	name = "旧沙发"
+	desc = "一张可以休息的沙发."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "sofa_forward"
 	anchored = TRUE
@@ -385,8 +385,8 @@
 /////////////Updated Sofa//////////////
 
 /obj/structure/bed/custsofa
-	name = "sofa"
-	desc = "A sofa where you can rest."
+	name = "沙发"
+	desc = "一张可以休息的沙发."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "custsofa_middle"
 	anchored = TRUE
@@ -438,8 +438,8 @@
 
 ////////////////sofa but actually a chair not a bed///////////////////
 /obj/structure/bed/chair/sofa
-	name = "sofa"
-	desc = "A sofa where you can rest."
+	name = "沙发"
+	desc = "一张可以休息的沙发."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "sofa_forward"
 	anchored = TRUE

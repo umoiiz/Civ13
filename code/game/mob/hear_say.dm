@@ -93,9 +93,9 @@
 	if ((sdisabilities & DEAF) || ear_deaf || find_trait("Deaf"))
 		if (!language || !(language.flags & INNATE)) // INNATE is the flag for audible-emote-language, so we don't want to show an "x talks but you cannot hear them" message if it's set
 			if (speaker == src)
-				to_chat(src, "<span class='warning'>You cannot hear yourself speak!</span>")
+				to_chat(src, "<span class='warning'>你听不到自己说话!</span>")
 			else
-				to_chat(src, "<span class='name'>[alt_name]</span> talks but you cannot hear.")
+				to_chat(src, "<span class='name'>[alt_name]</span> 在说话,但你听不见.")
 	else
 		if (language)
 			on_hear_say("<span class='name'>[alt_name] <span class = 'small_message'>([language.name])</span> </span> [track][language.format_message(message, verb)]",speaker, alt_message)
@@ -114,7 +114,7 @@
 			if (H.partial_languages[lname] >= language.difficulty)
 				H.add_language("[lname]", FALSE)
 				H.add_note("Known Languages", "[language.name]")
-				to_chat(H, "<span class = 'notice'>You've learned how to speak <b>[language.name]</b> from hearing it so much.</span>")
+				to_chat(H, "<span class = 'notice'>你听得太多,已经学会了说 <b>[language.name]</b>.</span>")
 
 
 /mob/proc/on_hear_say(var/message, var/mob/speaker = null, var/message2 = "")
@@ -187,7 +187,7 @@
 
 	if ((sdisabilities & DEAF) || ear_deaf || find_trait("Deaf"))
 		if (prob(20))
-			to_chat(src, "<span class='warning'>You feel the radio vibrate but can hear nothing from it!</span>")
+			to_chat(src, "<span class='warning'>你感觉到无线电在振动,但听不到任何声音!</span>")
 	else
 		var/fontsize = 2
 		var/full_message = ""
@@ -269,7 +269,7 @@
 
 	if ((sdisabilities & DEAF) || ear_deaf || find_trait("Deaf"))
 		if (prob(20))
-			to_chat(src, "<span class='warning'>You feel the telephone vibrate but can hear nothing from it!</span>")
+			to_chat(src, "<span class='warning'>你感觉到电话在振动,但听不到任何声音!</span>")
 	else
 		var/fontsize = 2
 		var/contactname = " "
@@ -332,7 +332,7 @@
 	message = replacetext(message,";","")
 	if ((sdisabilities & DEAF) || ear_deaf || find_trait("Deaf"))
 		if (prob(20))
-			to_chat(src, "<span class='warning'>You feel the voicepipe vibrate but can hear nothing from it!</span>")
+			to_chat(src, "<span class='warning'>你感觉到传声筒在振动,但听不到任何声音!</span>")
 	else
 		var/fontsize = 2
 		var/full_message = ""

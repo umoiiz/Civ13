@@ -38,7 +38,7 @@
 				line += " no.[i+10+j]@\[[temp_atom.x], [temp_atom.y], [temp_atom.z]\]; "
 		world << line*/
 
-	to_chat(world, "There are [count] objects of type [type_path] on z-level [num_level]")
+	to_chat(world, "在z-level [num_level]上有[count]个类型为[type_path]的对象")
 
 
 /client/proc/count_objects_all()
@@ -65,5 +65,5 @@
 				line += " no.[i+10+j]@\[[temp_atom.x], [temp_atom.y], [temp_atom.z]\]; "
 		world << line*/
 
-	to_chat(world, "There are [count] objects of type [type_path] in the game world")
+	to_chat(world, "游戏世界中有[count]个类型为[type_path]的对象")
 

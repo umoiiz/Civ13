@@ -62,7 +62,7 @@
 	round_sticker_packs_given += H.ckey
 	var/obj/item/sticker_pack/special/SP = new /obj/item/sticker_pack/special(get_turf(H))
 	H.equip_to_slot_if_possible(SP, slot_l_hand, FALSE, TRUE)
-	to_chat(H, "<span class='notice' style='font-size:2em'><b>A mysterious package appears in your hands - a Civ Cards sticker pack!</b></span>")
+	to_chat(H, "<span class='notice' style='font-size:2em'><b>一个神秘包裹出现在你手中 - 一包Civ Cards贴纸!</b></span>")
 
 /obj/map_metadata/wizard_boy/update_win_condition()
 	return
@@ -385,7 +385,7 @@
 			moldy_men += ckey
 			if (sabotage)
 				sabotage.add_member(ckey)
-			to_chat(H, "<span class='danger'>A dark presence fills you... You are now a <b>Moldy Man</b>, an agent of Lord Moldywart! Survive until the round ends to claim victory. Other Moldy Men can recognise you by examining you. Sabotage the school to earn points for the Grand Ritual!</span>")
+			to_chat(H, "<span class='danger'>一股黑暗力量充满了你... 你现在是一个<b>霉男</b>, 霉地魔大人的爪牙! 存活到回合结束即可宣告胜利. 其他霉男可以通过检查你认出你. 破坏学校来为大仪式赚取分数!</span>")
 			log_admin("[ckey] has been made a Moldy Man.")
 			return TRUE
 	return FALSE
@@ -400,7 +400,7 @@
 		if (H.client && H.client.ckey == ckey)
 			if (H.mind)
 				H.mind.special_role = null
-			to_chat(H, "<span class='notice'>The dark presence leaves you. You are no longer a Moldy Man.</span>")
+			to_chat(H, "<span class='notice'>黑暗力量离开了你. 你不再是霉男.</span>")
 	return TRUE
 
 /obj/map_metadata/wizard_boy/proc/get_moldy_man_info()
@@ -797,14 +797,14 @@ var/wizard_style = {"
 			color = "#0000CF"
 		if("Mustardweasel")
 			color = "#FFD700"
-	to_chat(C, "<font size=4>You have been sorted into <b><span style='color:[color];'>[winning_house]</span></b>!</font>")
+	to_chat(C, "<font size=4>你已被分入<b><span style='color:[color];'>[winning_house]</span></b>!</font>")
 	return TRUE
 
 /obj/map_metadata/wizard_boy/proc/process_arest(mob/living/target, time = 5)
 	if (!target || !target.client)
 		return
 	
-	to_chat(target, "<span class='danger'>You have been sentenced to [time] minutes in the magical slammer!</span>")
+	to_chat(target, "<span class='danger'>你已被判处[time]分钟魔法禁闭!</span>")
 	
 	spawn(0)
 		var/remaining = time
@@ -816,7 +816,7 @@ var/wizard_style = {"
 				break
 			
 			if (remaining > 0)
-				to_chat(target, "<span class='notice'>You have [remaining] minutes remaining in your sentence.</span>")
+				to_chat(target, "<span class='notice'>你的刑期还剩[remaining]分钟.</span>")
 		
 		if (target && target.client)
 			var/list/release_turfs = latejoin_turfs["PoliceTeleporterRelease"]
@@ -825,4 +825,4 @@ var/wizard_style = {"
 				if (isturf(release_point))
 					target.forceMove(release_point)
 			
-			to_chat(target, "<span class='notice'>Your sentence is complete. You have been released from the magical slammer.</span>")
+			to_chat(target, "<span class='notice'>你的刑期已满. 你已被释放出魔法禁闭.</span>")

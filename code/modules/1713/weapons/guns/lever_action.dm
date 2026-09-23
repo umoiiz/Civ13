@@ -2,9 +2,9 @@
 //All the leveraction weapons
 
 /obj/item/weapon/gun/projectile/leveraction
-	name = "leveraction rifle"
+	name = "杠杆式步枪"
 	icon = 'icons/obj/guns/rifles.dmi'
-	desc = "A simple rifle using a lever-action mechanism."
+	desc = "一种使用杠杆式机构的简单步枪."
 	icon_state = "winchester"
 	item_state = "shotgun"
 	base_icon = "shotgun"
@@ -49,7 +49,7 @@
 /obj/item/weapon/gun/projectile/leveraction/special_check(mob/user)
 //	var/mob/living/human/H = user
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险还开着,你无法用\the [src]开火!</span>")
 		return FALSE
 /*
 	if (loaded.len <= 0)
@@ -63,7 +63,7 @@
 		return FALSE
 */
 	if (!(user.has_empty_hand(both = FALSE)))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能用\the [src]开火!</span>")
 		return FALSE
 	return ..()
 
@@ -89,11 +89,11 @@
 /obj/item/weapon/gun/projectile/leveraction/proc/pump(mob/M as mob)
 	playsound(M, cocked_sound, 60, TRUE)
 	if (!chambered)
-		M.visible_message("<span class='warning'>[M] cycles the [src]!</span>","<span class='warning'>You cycle the [src]!</span>")
+		M.visible_message("<span class='warning'>[M]拉动[src]完成上膛!</span>","<span class='warning'>你拉动[src]完成上膛!</span>")
 	else if (chambered && chambered.BB == null)
-		M.visible_message("<span class='warning'>[M] cycles the [src], ejecting a spent casing!</span>","<span class='warning'>You cycle the [src], ejecting a spent casing!</span>")
+		M.visible_message("<span class='warning'>[M]拉动[src]完成上膛,退出一枚空弹壳!</span>","<span class='warning'>你拉动[src]完成上膛,退出一枚空弹壳!</span>")
 	else
-		M.visible_message("<span class='warning'>[M] cycles the [src], ejecting an unused casing!</span>","<span class='warning'>You cycle the [src], ejecting an unused casing!</span>")
+		M.visible_message("<span class='warning'>[M]拉动[src]完成上膛,退出一枚未使用的弹壳!</span>","<span class='warning'>你拉动[src]完成上膛,退出一枚未使用的弹壳!</span>")
 
 	if (chambered)//We have a shell in the chamber
 		chambered.loc = get_turf(src)//Eject casing
@@ -121,8 +121,8 @@
 
 */
 /obj/item/weapon/gun/projectile/leveraction/winchesterm1873
-	name = "Winchester M1873"
-	desc = "A lever-action rifle with a 14-round tube, chambered in .44-40 rounds."
+	name = "温彻斯特M1873"
+	desc = "一种杠杆式步枪,14发管式弹仓,使用.44-40弹药."
 	force = 9
 	icon_state = "winchester1873"
 	caliber = "a44"
@@ -135,8 +135,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/winchesterm1876
-	name = "Winchester M1876"
-	desc = "A lever-action rifle with a 13-round tube, chambered in .44-40 rounds."
+	name = "温彻斯特M1876"
+	desc = "一种杠杆式步枪,13发管式弹仓,使用.44-40弹药."
 	force = 9
 	icon_state = "winchester1876"
 	caliber = "a44"
@@ -149,8 +149,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/winchesterm1886
-	name = "Winchester M1886"
-	desc = "A lever-action rifle with a 9-round tube, chambered in .45-70 rounds."
+	name = "温彻斯特M1886"
+	desc = "一种杠杆式步枪,9发管式弹仓,使用.45-70弹药."
 	force = 9
 	icon_state = "winchester1886"
 	caliber = "a4570"
@@ -163,8 +163,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/winchesterm1892
-	name = "Winchester M1892"
-	desc = "A lever-action rifle with a 12-round tube, chambered in .44-40 rounds."
+	name = "温彻斯特M1892"
+	desc = "一种杠杆式步枪,12发管式弹仓,使用.44-40弹药."
 	force = 9
 	icon_state = "winchester1886"
 	caliber = "a44"
@@ -177,8 +177,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/winchesterm1873/gold
-	name = "Golden Winchester M1873"
-	desc = "A lever-action rifle with a 14-round tube, chambered in .44-40 rounds."
+	name = "黄金温彻斯特M1873"
+	desc = "一种杠杆式步枪,14发管式弹仓,使用.44-40弹药."
 	force = 9
 	icon_state = "goldwinchester"
 	caliber = "a44"
@@ -191,8 +191,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/evansrepeater
-	name = "Evans repeating rifle"
-	desc = "A lever-action rifle with a 28-round tube, chambered in .44-40 rounds."
+	name = "埃文斯连发步枪"
+	desc = "一种杠杆式步枪,28发管式弹仓,使用.44-40弹药."
 	force = 9
 	icon_state = "evans_repeating_rifle"
 	caliber = "a44"
@@ -205,8 +205,8 @@
 	accuracy = 5
 
 /obj/item/weapon/gun/projectile/leveraction/henryrepeater
-	name = "Henry repeating rifle"
-	desc = "A lever-action rifle with a 15-round tube, chambered in .44-40 rounds."
+	name = "亨利连发步枪"
+	desc = "一种杠杆式步枪,15发管式弹仓,使用.44-40弹药."
 	force = 8
 	icon_state = "henry_rifle"
 	caliber = "a44"
@@ -219,8 +219,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/leveraction/cowboy_repeater
-	name = "Cowboy Repeater"
-	desc = "A lever-action rifle with a 7-round tube, chambered in .357 Magnum rounds."
+	name = "牛仔连发步枪"
+	desc = "一种杠杆式步枪,7发管式弹仓,使用.357马格南弹药."
 	force = 9
 	icon_state = "cowboy_repeater"
 	caliber = "a357"

@@ -5,7 +5,7 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/blood
 	name = "blood"
 	var/dryname = "dried blood"
-	desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
+	desc = "它又厚又黏. 也许是厨师的料理?"
 	var/drydesc = "It's dry and crusty. Someone is not doing their job."
 	gender = PLURAL
 	density = FALSE
@@ -132,7 +132,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/drip
 	name = "drips of blood"
-	desc = "It's red."
+	desc = "它是红色的."
 	gender = PLURAL
 	icon = 'icons/effects/drip.dmi'
 	icon_state = "1"
@@ -146,7 +146,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/writing
 	icon_state = "tracks"
-	desc = "It looks like a writing in blood."
+	desc = "看起来像是用血写的字."
 	gender = NEUTER
 	random_icon_states = list("writing1","writing2","writing3","writing4","writing5")
 	amount = FALSE
@@ -163,11 +163,11 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/writing/examine(mob/user)
 	..(user)
-	to_chat(user, "It reads: <font color='[basecolor]'>\"[message]\"</font>")
+	to_chat(user, "上面写着: <font color='[basecolor]'>\"[message]\"</font>")
 
 /obj/effect/decal/cleanable/blood/gibs
 	name = "gibs"
-	desc = "They look bloody and gruesome."
+	desc = "它们血迹斑斑,惨不忍睹."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -227,7 +227,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/mucus
 	name = "mucus"
-	desc = "Disgusting mucus."
+	desc = "恶心的黏液."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE

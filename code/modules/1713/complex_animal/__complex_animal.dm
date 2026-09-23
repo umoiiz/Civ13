@@ -81,7 +81,7 @@
 		if (nutrition <= 0)
 			adjustBruteLoss(1)
 			nutrition = 5
-			visible_message("\The [src] is starving!")
+			visible_message("\The [src]正在挨饿!")
 
 	if (stat == UNCONSCIOUS)
 		return -1
@@ -98,11 +98,11 @@
 			if (targetmob)
 				if (get_dist(src, targetmob) <= 1)
 					if (targetmob.stat == DEAD)
-						visible_message("\The [src] eats \the [targetmob]!")
+						visible_message("\The [src]吃掉了\the [targetmob]!")
 						nutrition += targetmob.mob_size*12
 						qdel (targetmob)
 					else
-						visible_message("\The [src] attacks \the [targetmob]!")
+						visible_message("\The [src]攻击了\the [targetmob]!")
 						do_attack_animation(targetmob)
 						targetmob.health -= rand(8,13)
 		else
@@ -200,7 +200,7 @@ called after H added to knows_about_mobs() */
 	var/dmg = P.damage * random_decimal(0.7,1.3)
 	if (prob(33))
 		dmg /= rand(5,10)
-		visible_message("<span class = 'warning'>The [P.name] just grazes \the [src].</span>")
+		visible_message("<span class = 'warning'>这个[P.name]只是擦伤了\the [src].</span>")
 	apply_damage(dmg)
 	if (client)
 		var/m_faction = P.firer.faction

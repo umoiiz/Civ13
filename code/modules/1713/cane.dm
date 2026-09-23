@@ -1,6 +1,6 @@
 /obj/item/weapon/cane
-	name = "cane"
-	desc = "A cane used to walk with."
+	name = "手杖"
+	desc = "一根用来行走的手杖."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "woodcane"
 	item_state = "woodcane"

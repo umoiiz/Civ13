@@ -7,7 +7,7 @@
  */
 
 /obj/item/weapon/paper
-	name = "sheet of paper"
+	name = "纸张"
 	gender = NEUTER
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
@@ -44,7 +44,7 @@
 
 /obj/item/weapon/paper/official
 	base_icon = "official"
-	name = "official paper"
+	name = "官方文件"
 	icon_state = "Decree_empty"
 	var/faction = ""
 	var/color1 = "#000000"
@@ -52,75 +52,75 @@
 
 /obj/item/weapon/paper/official/fna
 	base_icon = "official"
-	name = "official fna document"
+	name = "官方FNA文件"
 	icon_state = "Decree_empty"
 	faction = ""
 	color1 = "#000000"
 	color2 = "#FFFFFF"
 
 /obj/item/weapon/paper/official/fna/document
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign Nations Alliance (FNA)."
+	name = "官方FNA文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件."
 	icon_state = "fna_doc"
 
 /obj/item/weapon/official/fna/document_stamped
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign nations Alliance (FNA), which also appears to be stamped."
+	name = "官方FNA文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件, 上面似乎还盖有印章."
 	icon_state = "fna_doc_stamped"
 
 /obj/item/weapon/official/fna/document_stamped2
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign nations Alliance (FNA), which also appears to be stamped."
+	name = "官方FNA文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件,上面似乎还盖有印章."
 	icon_state = "fna_doc_stamped2"
 
 /obj/item/weapon/official/fna/document_stamped3
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign nations Alliance (FNA), which also appears to be stamped."
+	name = "FNA官方文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件,上面似乎还盖有印章."
 	icon_state = "fna_doc_stamped3"
 
 /obj/item/weapon/official/fna/document_denied
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign nations Alliance (FNA), which also appears to be stamped for denial."
+	name = "FNA官方文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件,上面似乎还盖有拒绝印章."
 	icon_state = "fna_doc_denied"
 
 /obj/item/weapon/official/fna/document_approved
-	name = "Official FNA Document"
-	desc = "An official document printed by the Foreign nations Alliance (FNA), which also appears to be stamped for approval."
+	name = "FNA官方文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方文件,上面似乎还盖有批准印章."
 	icon_state = "fna_doc_approved"
 
 /obj/item/weapon/official/fna/document_warrant
-	name = "Official FNA Document"
-	desc = "An official warrant printed by the Foreign nations Alliance (FNA), which also appears to be stamped and contains details and a photograph of the targeted individual."
+	name = "FNA官方文件"
+	desc = "一份由外国国家联盟(FNA)印制的官方逮捕令,上面似乎还盖有印章,并包含目标个人的详细信息和照片."
 	icon_state = "fna_warrant"
 
 /obj/item/weapon/paper/entry_permit
-	name = "entry permit"
-	desc = "A permit granting right of entry to a specified country"
+	name = "入境许可"
+	desc = "一份授予进入指定国家权利的许可证"
 	icon_state = "entry_permit"
 
 /obj/item/weapon/paper/asylum
-	name = "asylum grant"
-	desc = "an official document granting political asylum to the recipient in a specified country"
+	name = "庇护批准"
+	desc = "一份授予接收者在指定国家政治庇护的官方文件"
 	icon_state = "asylum_grant"
 
 /obj/item/weapon/paper/id_supp
-	name = "id supplement"
-	desc = "A small document supplement detailing physical appearance"
+	name = "身份补充文件"
+	desc = "一份详细描述外貌特征的小型补充文件"
 	icon_state = "id_supp"
 
 /obj/item/weapon/paper/vaccine
-	name = "vaccine certificate"
-	desc = "an official medical certificate confirming that a person has been vaccinated against certain disease(s)"
+	name = "疫苗证书"
+	desc = "一份官方医疗证书,确认某人已接种针对某些疾病的疫苗"
 	icon_state = "vaccine_cert"
 
 /obj/item/weapon/paper/diplomatic_auth
-	name = "diplomatic authorisation"
-	desc = "an official document from an international organisation confirming the diplomatic status and diplomatic right to travel of the recipient"
+	name = "外交授权"
+	desc = "一份来自国际组织的官方文件,确认接收者的外交身份和外交旅行权利"
 	icon_state = "diplomatic_auth"
 
 /obj/item/weapon/paper/entry_ticket
-	name = "entry ticket"
-	desc = "A simple small ticket granting right of entry"
+	name = "入场券"
+	desc = "一张授予进入权利的简单小票"
 	icon_state = "entry_ticket"
 
 /obj/item/weapon/paper/official/New()
@@ -252,7 +252,7 @@
 			return
 		//crumple dat paper
 		info = stars(info,85)
-		user.visible_message("\The [user] crumples \the [src] into a ball!")
+		user.visible_message("\The [user]把\the [src]揉成一团!")
 		if (map.ordinal_age <= 1)
 			if (info)
 				icon_state = "scrollpaper1_scrap"
@@ -422,12 +422,12 @@
 		if (istype(P, /obj/item/weapon/flame/lighter/zippo))
 			class = "rose"
 
-		user.visible_message("<span class='[class]'>[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!</span>", \
+		user.visible_message("<span class='[class]'>[user]把\the [P]举到\the [src]前,看起来\he 想把它烧掉!</span>", \
 		"<span class='[class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
 
 		spawn(20)
 			if (get_dist(src, user) < 2 && user.get_active_hand() == P && P.lit)
-				user.visible_message("<span class='[class]'>[user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>", \
+				user.visible_message("<span class='[class]'>[user]直接烧穿了\the [src],把它化为灰烬.灰烬在空中飘荡,随后落在地上堆成一堆.</span>", \
 				"<span class='[class]'>You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>")
 
 				if (user.get_inactive_hand() == src)
@@ -543,7 +543,7 @@
 				loc = get_turf(h_user)
 				if (h_user.client)	h_user.client.screen -= src
 				h_user.put_in_hands(B)
-		to_chat(user, "<span class='notice'>You clip the [P.name] to [(name == "paper") ? "the paper" : name].</span>")
+		to_chat(user, "<span class='notice'>你把[P.name]夹到了[(name == "paper") ? "the paper" : name]上.</span>")
 		loc = B
 		P.loc = B
 
@@ -599,15 +599,15 @@
  * Premade paper
  */
 /obj/item/weapon/paper/Court/british
-	name = "Crown Court Judgement"
+	name = "皇家法院判决书"
 	info = "For crimes against the crown, the offender is sentenced to:<BR>\n<BR>\n"
 
 /obj/item/weapon/paper/Court/pirates
-	name = "Ship Judgement"
+	name = "船上判决书"
 	info = "For crimes against the crew, the offender is sentenced to:<BR>\n<BR>\n"
 
 /obj/item/weapon/paper/crumpled
-	name = "paper scrap"
+	name = "纸片"
 	icon_state = "scrap"
 
 /obj/item/weapon/paper/crumpled/update_icon()

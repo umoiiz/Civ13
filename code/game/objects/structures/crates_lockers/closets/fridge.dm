@@ -1,6 +1,6 @@
 
 /obj/structure/closet/fridge
-	name = "refrigerator"
+	name = "冰箱"
 	icon_state = "fridge1"
 	icon_closed = "fridge"
 	icon_opened = "fridgeopen"
@@ -19,17 +19,17 @@
 /obj/structure/closet/fridge/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/wrench))
 		if (powersource)
-			to_chat(user, "<span class='notice'>Remove the cables first.</span>")
+			to_chat(user, "<span class='notice'>先拆下电缆.</span>")
 			return
-		visible_message("<span class='warning'>[user] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+		visible_message("<span class='warning'>[user]开始[anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"]地面.</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(user,50,src))
-			visible_message("<span class='warning'>[user] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+			visible_message("<span class='warning'>[user] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"]地面.</span>")
 			anchored = !anchored
 			return
 	if (istype(W, /obj/item/stack/cable_coil))
 		if (powersource)
-			to_chat(user, "There's already a cable connected here! Split it further from the [src].")
+			to_chat(user, "这里已经连接了一根电缆!把它从[src]上再分开一些.")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		powersource = CC.place_turf(get_turf(src), user, turn(get_dir(user,src),180))
@@ -53,7 +53,7 @@
 						NCOO.connections += powersource
 					if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 						powersource.connections += NCOO
-					to_chat(user, "You connect the two cables.")
+					to_chat(user, "你连接了两根电缆.")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 				if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)
@@ -61,16 +61,16 @@
 						NCOC.connections += powersource
 					if (!(NCOC in powersource.connections) && !list_cmp(powersource.connections, NCOC.connections))
 						powersource.connections += NCOC
-		to_chat(user, "You connect the cable to the [src].")
+		to_chat(user, "你把电缆连接到了[src]上.")
 	else
 		..()
 
 /obj/structure/closet/fridge/icebox
-	name = "ice box"
+	name = "冰柜"
 	powerneeded = 0
 
 /obj/structure/closet/fridge/icecreamcooler
-	name = "icecream cooler"
+	name = "冰淇淋冷藏箱"
 	icon_state = "icecream_cooler1"
 	icon_closed = "icecream_cooler"
 	icon_opened = "icecream_cooler_open"

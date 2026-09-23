@@ -605,14 +605,14 @@
 	var/thirsty_percentage = "[round(thirsty_coeff*100)]%"
 
 	if (thirsty_coeff <= 0)
-		to_chat(H, "<span class = 'danger'>You're dehydrating.</span>")
+		to_chat(H, "<span class = 'danger'>你正在脱水.</span>")
 	else
-		to_chat(H, "<span class = 'warning'>You're about [thirsty_percentage] hydrated.</span>")
+		to_chat(H, "<span class = 'warning'>你的水分大约还有[thirsty_percentage].</span>")
 
 	if (hungry_coeff <= 0)
-		to_chat(H, "<span class = 'danger'>You're starving.</span>")
+		to_chat(H, "<span class = 'danger'>你正在挨饿.</span>")
 	else
-		to_chat(H, "<span class = 'warning'>You're about [hungry_percentage] full.</span>")
+		to_chat(H, "<span class = 'warning'>你的饱食度大约还有[hungry_percentage].</span>")
 
 //--------------------------------------------------nutrition end---------------------------------------------------------
 
@@ -758,10 +758,10 @@
 		L.set_face_dir()
 
 		if (!L.facing_dir)
-			to_chat(L, "You are no longer facing anything.")
+			to_chat(L, "你不再面向任何东西.")
 			icon_state = "fixeye"
 		else
-			to_chat(L, "You are now facing [dir2text(L.facing_dir)].")
+			to_chat(L, "你现在面向[dir2text(L.facing_dir)].")
 			icon_state = "fixeye_on"
 		update_icon()
 
@@ -806,25 +806,25 @@
 			if("charge") //10% damage buff
 				parentmob.tactic = "aim"
 				icon_state = "aim"
-				to_chat(parentmob, "<span class='warning'>You will now focus on aiming.</span>")
+				to_chat(parentmob, "<span class='warning'>你现在会专注于瞄准.</span>")
 				update_icon()
 				return
 			if("aim") //10% accuracy buff
 				parentmob.tactic = "rush"
 				icon_state = "rush"
-				to_chat(parentmob, "<span class='warning'>You will now focus on rushing.</span>")
+				to_chat(parentmob, "<span class='warning'>你现在会专注于冲锋.</span>")
 				update_icon()
 				return
 			if("rush") // 15% cooldown buff
 				parentmob.tactic = "defend"
 				icon_state = "defend"
-				to_chat(parentmob, "<span class='warning'>You will now focus on defending.</span>")
+				to_chat(parentmob, "<span class='warning'>你现在会专注于防御.</span>")
 				update_icon()
 				return
 			if("defend") //20% dodge/parry buff
 				parentmob.tactic = "charge"
 				icon_state = "charge"
-				to_chat(parentmob, "<span class='warning'>You will now focus on charging.</span>")
+				to_chat(parentmob, "<span class='warning'>你现在会专注于突进.</span>")
 				update_icon()
 				return
 
@@ -876,9 +876,9 @@
 				icon_state = "mood1"
 		if(old_icon && old_icon != icon_state)
 			if(L && old_mood > L.mood)
-				to_chat(L, "<span class='warning'>My mood gets worse.</span>")
+				to_chat(L, "<span class='warning'>我的心情变差了.</span>")
 			else
-				to_chat(L, "<span class='info'>My mood gets better.</span>")
+				to_chat(L, "<span class='info'>我的心情变好了.</span>")
 //-----------------------mov_intent------------------------------
 /obj/screen/mov_intent
 	name = "mov_intent"
@@ -892,7 +892,7 @@
 	if (C.stat == DEAD)
 		return
 	if (C.legcuffed)
-		to_chat(C, "<span class='notice'>You are legcuffed! You cannot run until you get [C.legcuffed] removed!</span>")
+		to_chat(C, "<span class='notice'>你被腿铐锁住了!在[C.legcuffed]被移除之前你无法奔跑!</span>")
 		C.m_intent = "walk"	//Just incase
 		update_icon()
 		return TRUE
@@ -1013,11 +1013,11 @@
 /obj/screen/mode/Click()
 	if (parentmob.defense_intent == I_DODGE)
 		parentmob.defense_intent = I_PARRY
-		to_chat(parentmob, "<span class='warning'>You will now parry.</span>")
+		to_chat(parentmob, "<span class='warning'>你现在会进行格挡.</span>")
 		update_icon()
 	else
 		parentmob.defense_intent = I_DODGE
-		to_chat(parentmob, "<span class='warning'>You will now dodge.</span>")
+		to_chat(parentmob, "<span class='warning'>你现在会进行闪避.</span>")
 		update_icon()
 /obj/screen/mode/update_icon()
 	switch (parentmob.defense_intent)

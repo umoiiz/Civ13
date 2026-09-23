@@ -1,7 +1,7 @@
 //WANDS
 /obj/item/weapon/material/magic/wand
-	name = "magic wand"
-	desc = "Sparkly."
+	name = "魔法魔杖"
+	desc = "闪闪发光."
 	icon = 'icons/obj/magic_weapons.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_magic.dmi',
@@ -258,7 +258,7 @@
 						M.show_chat_overlay(H, "<i>[S.name]!</i>", "#dea30d")
 				if (S.sound_effect)
 					playsound(user.loc, S.sound_effect, 75, FALSE)
-				H.visible_message("<span style=color:'#dea30d'><b>[user]</b> uses <i>[S.name]!</i></span>")
+				H.visible_message("<span style=color:'#dea30d'><b>[user]</b>使用了<i>[S.name]!</i></span>")
 				playsound(user.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
 				if (S.skill_level >= 80)
 					for (var/mob/living/simple_animal/wizard/bobby/B in view(7, H))
@@ -330,8 +330,8 @@
 
 // Sub-type: Wizard's wand starts with the default kit
 /obj/item/weapon/material/magic/wand/wizard
-	name = "wizard's wand"
-	desc = "Use with care."
+	name = "巫师魔杖"
+	desc = "小心使用."
 
 // Hotkey verbs for quick-casting spells (bound to keys 5-9 via macros)
 /mob/living/human/verb/cast_quick_spell_5()

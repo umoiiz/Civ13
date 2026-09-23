@@ -22,8 +22,8 @@
 	//TO-DO: Check what the parent proc actually does
 
 /obj/item/stack/money
-	name = "gold coins"
-	desc = "Shiny gold coins."
+	name = "金币"
+	desc = "闪亮的金币."
 	singular_name = "coin"
 	icon_state = "goldcoin_pile"
 	flags = CONDUCT
@@ -39,16 +39,16 @@
 	var/novariants = TRUE
 
 /obj/item/stack/money/cents
-	name = "Dollar Cents"
-	desc = "Small coins that represent fractions of a dollar"
+	name = "美元分币"
+	desc = "代表美元零头的小额硬币"
 	singular_name = "cent"
 	icon_state = "silvercoin_pile"
 	amount = 1
 	value = 0.04
 
 /obj/item/stack/money/real
-	name = "spanish reales"
-	desc = "A small silver coin."
+	name = "西班牙里亚尔"
+	desc = "一种小银币."
 	singular_name = "coin"
 	icon_state = "real"
 	amount = 1
@@ -74,8 +74,8 @@
 	icon_state = "real[icon_suffix]"
 
 /obj/item/stack/money/rubles
-	name = "Soviet Ruble"
-	desc = "A Soviet 1 ruble banknote."
+	name = "苏联卢布"
+	desc = "一张苏联1卢布纸币."
 	singular_name = "ruble"
 	icon_state = "ruble"
 	amount = 1
@@ -105,8 +105,8 @@
 	amount = 500
 
 /obj/item/stack/money/francs
-	name = "French franc"
-	desc = "A French 1 franc banknote."
+	name = "法国法郎"
+	desc = "一张法国1法郎纸币."
 	singular_name = "franc"
 	icon_state = "franc_1"
 	amount = 1
@@ -193,8 +193,8 @@
 // -------------------------------------------------
 
 /obj/item/stack/money/fictional/arstotzkacredit
-	name = "Arstotzka Credit"
-	desc = "The singular banknote of the official Arstotzka Credit, minted and printed by the Ministry of Trade, and seen as the only legal tender within the borders of Arstotzka. Glory to Arstotzka."
+	name = "阿尔斯托兹卡信用币"
+	desc = "官方阿尔斯托兹卡信用币的单张纸币,由贸易部铸造并印刷,被视为阿尔斯托兹卡境内唯一的法定货币.阿尔斯托兹卡万岁."
 	singular_name = "Arstotzka Credit"
 	icon_state = "arstotzkacredit"
 	amount = 1
@@ -206,8 +206,8 @@
 // -------------------------------------------------
 
 /obj/item/stack/money/asian/fengshui
-	name = "Feng Shui Coin"
-	desc = "An ancient chinese currency, adopting a unique design as it is quite larger than more conventional currency and features a square-shaped hole in the middle, as well as chinese writing embedded in its design. Typically made of copper alloys."
+	name = "风水币"
+	desc = "一种中国古代货币,采用独特设计,比常规货币大得多,中央有一个方形孔洞,其设计中还嵌有汉字.通常由铜合金制成."
 	singular_name = "coin"
 	icon_state = "fengshui"
 	amount = 1
@@ -219,40 +219,40 @@
 // -------------------------------------------------
 
 /obj/item/stack/money/european/britpound
-	name = "1 British Pound"
-	desc = "A coin representing the 1 British Pound Sterling, its outer ring made of gold coloured nickel-brass, and its inner ring a silver coloured nickel-plated alloy. Engraved upon it is a side-view of the British monarch."
+	name = "1英镑"
+	desc = "代表1英镑硬币,其外环由金色的镍黄铜制成,内环为银色的镀镍合金.其上刻有英国君主的侧面像."
 	singular_name = "coin"
 	icon_state = "britpound"
 	amount = 1
 	value = 1
 
 /obj/item/stack/money/european/britpound5
-	name = "5 British Pound"
-	desc = "A 5 British Pound Sterling banknote, with the British monarch's face imprinted upon it, and coined by the Bank of England."
+	name = "5英镑"
+	desc = "一张5英镑纸币,上面印有英国君主的面容,由英格兰银行发行."
 	singular_name = "5 Pound note"
 	icon_state = "5britpound"
 	amount = 1
 	value = 5
 
 /obj/item/stack/money/european/britpound10
-	name = "10 British Pound"
-	desc = "A 10 British Pound Sterling banknote, with the British monarch's face imprinted upon it, and coined by the Bank of England."
+	name = "10英镑"
+	desc = "一张10英镑纸币,上面印有英国君主的面容,由英格兰银行发行."
 	singular_name = "10 Pound note"
 	icon_state = "10britpound"
 	amount = 1
 	value = 10
 
 /obj/item/stack/money/european/britpound20
-	name = "20 British Pound"
-	desc = "A 20 British Pound Sterling banknote, with the British monarch's face imprinted upon it, and coined by the Bank of England."
+	name = "20英镑"
+	desc = "一张20英镑纸币,上面印有英国君主的面容,由英格兰银行发行."
 	singular_name = "20 Pound note"
 	icon_state = "20britpound"
 	amount = 1
 	value = 20
 
 /obj/item/stack/money/european/britpound50
-	name = "50 British Pound"
-	desc = "A 50 British Pound Sterling banknote, with the British monarch's face imprinted upon it, and coined by the Bank of England."
+	name = "50英镑"
+	desc = "一张50英镑纸币,上面印有英国君主的面容,由英格兰银行发行."
 	singular_name = "50 Pound note"
 	icon_state = "50britpound"
 	amount = 1
@@ -264,72 +264,72 @@
 // -------------------------------------------------
 
 /obj/item/stack/money/european/euro
-	name = "1 Euro Coin"
-	desc = "A 1 Euro coin, with a symbol of one of the member states engraved upon it, its silver-coloured inner ring made of a cooper-nickel alloy, and its gold-coloured outer ring made of a copper-zinc-nickel alloy"
+	name = "1欧元硬币"
+	desc = "一枚1欧元硬币,上面刻有某个成员国的象征,其银色内环由铜镍合金制成,金色外环由铜锌镍合金制成"
 	singular_name = "coin"
 	icon_state = "euro"
 	amount = 1
 	value = 1
 
 /obj/item/stack/money/european/euro2
-	name = "2 Euro Coin"
-	desc = "A 2 Euro coin, with a symbol of one of the member states engraved upon it, its gold-coloured inner ring made of a copper-zinc-nickel alloy, and its silver-coloured outer ring made of a cooper-nickel alloy"
+	name = "2欧元硬币"
+	desc = "一枚2欧元硬币,上面刻有某个成员国的象征,其金色内环由铜锌镍合金制成,银色外环由铜镍合金制成"
 	singular_name = "coin"
 	icon_state = "2euro"
 	amount = 1
 	value = 2
 
 /obj/item/stack/money/european/euro5
-	name = "5 Euro Note"
-	desc = "A 5 Euro banknote, depicting bridges and arches/doorways in Classical architecture with a mixture of green, blue and a touch of yellow. Imprinted upon it is the flag of the European Union"
+	name = "5欧元纸币"
+	desc = "一张5欧元纸币,描绘了古典建筑风格的桥梁和拱门/门廊,混合了绿色,蓝色和一抹黄色.上面印有欧洲联盟的旗帜"
 	singular_name = "5 Euro note"
 	icon_state = "5euro"
 	amount = 1
 	value = 5
 
 /obj/item/stack/money/european/euro10
-	name = "10 Euro Note"
-	desc = "A 10 Euro banknote, depicting bridges and arches/doorways in Romanesque architecture with a mixture of various shades of red. Imprinted upon it is the flag of the European Union"
+	name = "10欧元纸币"
+	desc = "一张10欧元纸币,描绘了罗曼式建筑风格的桥梁和拱门/门廊,混合了各种深浅的红色.上面印有欧洲联盟的旗帜"
 	singular_name = "10 Euro note"
 	icon_state = "10euro"
 	amount = 1
 	value = 10
 
 /obj/item/stack/money/european/euro20
-	name = "20 Euro Note"
-	desc = "A 20 Euro banknote, depicting bridges and arches/doorways in Gothic architecture with a mixture of shades of blue, some red and a touch of green. Imprinted upon it is the flag of the European Union"
+	name = "20欧元纸币"
+	desc = "一张20欧元纸币,描绘了哥特式建筑风格的桥梁和拱门/门廊,混合了深浅不一的蓝色,一些红色和一抹绿色.上面印有欧洲联盟的旗帜"
 	singular_name = "20 Euro note"
 	icon_state = "20euro"
 	amount = 1
 	value = 20
 
 /obj/item/stack/money/european/euro50
-	name = "50 Euro Note"
-	desc = "A 50 Euro banknote, depicting bridges and arches/doorways in the Rennaissance era with a mixture of yellow, orange and a touch of brown. Imprinted upon it is the flag of the European Union"
+	name = "50欧元纸币"
+	desc = "一张50欧元纸币,描绘了文艺复兴时期的桥梁和拱门/门廊,混合了黄色,橙色和一抹棕色.上面印有欧洲联盟的旗帜"
 	singular_name = "50 Euro note"
 	icon_state = "50euro"
 	amount = 1
 	value = 50
 
 /obj/item/stack/money/european/euro100
-	name = "100 Euro Note"
-	desc = "A 100 Euro banknote, depicting bridges and arches/doorways in the Baroque and Rococo style with a mixture of green and yellow. Imprinted upon it is the flag of the European Union"
+	name = "100欧元纸币"
+	desc = "一张100欧元纸币,描绘了巴洛克和洛可可风格的桥梁和拱门/门廊,混合了绿色和黄色.上面印有欧洲联盟的旗帜"
 	singular_name = "100 Euro note"
 	icon_state = "100euro"
 	amount = 1
 	value = 100
 
 /obj/item/stack/money/european/euro200
-	name = "200 Euro Note"
-	desc = "A 200 Euro banknote, depicting bridges and arches/doorways in Art Noveau style with a mixture of ywllow, some blue and some brown. Imprinted upon it is the flag of the European Union"
+	name = "200欧元纸币"
+	desc = "一张200欧元纸币,描绘了新艺术风格的桥梁和拱门/门廊,混合了黄色,一些蓝色和一些棕色.上面印有欧洲联盟的旗帜"
 	singular_name = "200 Euro note"
 	icon_state = "200euro"
 	amount = 1
 	value = 200
 
 /obj/item/stack/money/european/euro500
-	name = "500 Euro Note"
-	desc = "A 500 Euro banknote, depicting bridges and arches/doorways in Modern architecture with a mixture of purple and a touch of gold. Imprinted upon it is the flag of the European Union"
+	name = "500欧元纸币"
+	desc = "一张500欧元纸币,描绘了现代建筑风格的桥梁和拱门/门廊,混合了紫色和一抹金色.上面印有欧洲联盟的旗帜"
 	singular_name = "500 Euro note"
 	icon_state = "500euro"
 	amount = 1
@@ -393,8 +393,8 @@
 	icon_state = "[initial(icon_state)][icon_suffix]"
 
 /obj/item/stack/money/yen
-	name = "yen"
-	desc = "A japanese 1 yen coin."
+	name = "日元"
+	desc = "一枚日本1日元硬币."
 	singular_name = "yen"
 	icon_state = "yen"
 	amount = 1
@@ -440,8 +440,8 @@
 	icon_state = "yen[icon_suffix]"
 
 /obj/item/stack/money/dollar
-	name = "spanish dollars"
-	desc = "A silver coin, also called piece of eight, worth 8 reales."
+	name = "西班牙元"
+	desc = "一种银币,也称为八里亚尔币,价值8里亚尔."
 	singular_name = "dollar"
 	icon_state = "5dollar"
 	amount = 1
@@ -486,8 +486,8 @@
 		return ..()
 
 /obj/item/stack/money/dollar100
-	name = "100 Dollar Bill"
-	desc = "Paper bank note valued at one-hundred dollars"
+	name = "100美元钞票"
+	desc = "面值为一百美元的纸币"
 	singular_name = "100 Dollar note"
 	icon_state = "100dollar"
 	value = 100
@@ -514,8 +514,8 @@
 	//TO-DO: Check if the parent update_icon proc has to be called
 
 /obj/item/stack/money/escudo
-	name = "spanish escudos"
-	desc = "A gold coin. Worth 16 reales."
+	name = "西班牙埃斯库多"
+	desc = "一种金币.价值16里亚尔."
 	singular_name = "coin"
 	icon_state = "escudo"
 	amount = 1
@@ -542,8 +542,8 @@
 	icon_state = "escudo[icon_suffix]"
 
 /obj/item/stack/money/doubloon
-	name = "spanish doubloons"
-	desc = "A large gold coin, the largest in circulation. Worth 32 reales."
+	name = "西班牙多布隆"
+	desc = "一种大金币,是流通中最大的金币.价值32里亚尔."
 	singular_name = "coin"
 	icon_state = "dobloon"
 	amount = 1
@@ -570,8 +570,8 @@
 	icon_state = "dobloon[icon_suffix]"
 
 /obj/item/stack/money/goldnugget
-	name = "gold nuggets"
-	desc = "A shiny gold nugget."
+	name = "金块"
+	desc = "一块闪亮的金块."
 	singular_name = "nugget"
 	icon_state = "goldnugget"
 	force = WEAPON_FORCE_WEAK
@@ -584,8 +584,8 @@
 	flags = CONDUCT
 
 /obj/item/cursedtreasure
-	name = "cursed treasure"
-	desc = "A piece of native jewelry, with a strange glow..."
+	name = "被诅咒的宝藏"
+	desc = "一件土著珠宝,散发着奇异的光芒..."
 	icon_state = "goldstuff1"
 	force = WEAPON_FORCE_WEAK
 	throwforce = WEAPON_FORCE_NORMAL
@@ -598,8 +598,8 @@
 	icon_state = "goldstuff[rand(1,3)]"
 
 /obj/structure/oil_deposits
-	name = "oil deposit"
-	desc = "This deposit doesn't have a owner yet."
+	name = "石油矿藏"
+	desc = "此矿藏目前还没有主人."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "nboard_oil"
 	anchored = TRUE
@@ -625,7 +625,7 @@
 
 /obj/structure/oil_deposits/proc/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>[src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>[src]碎成了碎片!</span>")
 		qdel(src)
 		return
 
@@ -644,19 +644,19 @@
 
 /obj/structure/oil_deposits/attack_hand(mob/living/human/user as mob)
 	if (user.civilization == "none")
-		to_chat(user, "You are not part of a faction!")
+		to_chat(user, "你不属于任何阵营!")
 		return
 	else if (faction == null)
 		faction = user.civilization
 		desc = "Belongs to the [faction]. Stored oil: [storedvalue]."
-		to_chat(user, "You set the oil deposit faction as [faction].")
+		to_chat(user, "你将石油矿藏的阵营设为[faction].")
 		return
 	else
 		..()
 
 /obj/item/stack/money/goldvaluables
-	name = "gold valuables"
-	desc = "A bunch of valuables."
+	name = "黄金贵重品"
+	desc = "一堆贵重物品."
 	singular_name = "gold valuable"
 	icon_state = "goldstuff1"
 	force = WEAPON_FORCE_WEAK
@@ -673,8 +673,8 @@
 	icon_state = "goldstuff[rand(1,3)]"
 
 /obj/item/stack/money/gems
-	name = "gems"
-	desc = "Assorted precious gems."
+	name = "宝石"
+	desc = "各式各样的珍贵宝石."
 	singular_name = "gem"
 	icon_state = "gem1"
 	force = WEAPON_FORCE_WEAK
@@ -690,8 +690,8 @@
 	icon_state = "gem[rand(1,2)]"
 
 /obj/item/stack/money/pearls
-	name = "pearls"
-	desc = "A bunch of pearls. Looks valuable!"
+	name = "珍珠"
+	desc = "一堆珍珠.看起来很值钱!"
 	singular_name = "nugget"
 	icon_state = "pearls1"
 	force = WEAPON_FORCE_HARMLESS
@@ -707,8 +707,8 @@
 	icon_state = "pearls[rand(1,2)]"
 
 /obj/item/stack/money/coppercoin
-	name = "copper coins"
-	desc = "A small copper coin. Worth 1/10th of a silver coin or 1/40th of a gold coin."
+	name = "铜币"
+	desc = "一枚小铜币.价值1/10枚银币或1/40枚金币."
 	singular_name = "copper coin"
 	icon_state = "coppercoin_pile"
 	amount = 1
@@ -738,8 +738,8 @@
 	amount = 20
 
 /obj/item/stack/money/silvercoin
-	name = "silver coins"
-	desc = "A small silver coin. Worth 1/4th of a gold coin or 10 copper coins."
+	name = "银币"
+	desc = "一枚小银币.价值1/4枚金币或10枚铜币."
 	singular_name = "silver coin"
 	icon_state = "silvercoin_pile"
 	amount = 1
@@ -772,8 +772,8 @@
 	amount = 200
 
 /obj/item/stack/money/goldcoin
-	name = "gold coins"
-	desc = "A small gold coin. Worth 4 silver coins or 40 copper coins."
+	name = "金币"
+	desc = "一枚小金币.价值4枚银币或40枚铜币."
 	singular_name = "gold coin"
 	icon_state = "goldcoin_pile"
 	amount = 1
@@ -798,8 +798,8 @@
 	icon_state = "goldcoin_pile[icon_suffix]"
 
 /obj/item/stack/money/bitcoin
-	name = "bitcoin"
-	desc = "A physical bitcoin."
+	name = "比特币"
+	desc = "一枚实体比特币."
 	singular_name = "bitcoin"
 	icon_state = "bitcoin"
 	amount = 1
@@ -832,8 +832,8 @@
 /////////////////////////SKYRIM/////////////////////////////
 
 /obj/item/stack/money/septim
-	name = "septim"
-	desc = "A single septim coin."
+	name = "塞普蒂姆"
+	desc = "一枚 septim 硬币."
 	singular_name = "septim"
 	icon_state = "septim"
 	amount = 1

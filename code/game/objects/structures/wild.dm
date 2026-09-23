@@ -135,7 +135,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/fire_act(temperature)
 	if (prob(35 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 // it's windy out
@@ -153,7 +153,7 @@ var/list/seed_list_jungle
 		return TRUE
 	else if (istype(mover, /obj/item/projectile))
 		if (prob(75) && density)
-			visible_message("<span class = 'warning'>\The [mover.name] hits \the [src]!</span>")
+			visible_message("<span class = 'warning'>\The [mover.name]击中了\the [src]!</span>")
 			return FALSE
 		else
 			return TRUE
@@ -195,7 +195,7 @@ var/list/seed_list_jungle
 	if (health <= 0)
 		if (stored_unit)
 			release_stored()
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]被击碎了!</span>")
 		qdel(src)
 		return
 
@@ -210,7 +210,7 @@ var/list/seed_list_jungle
 ///////////////////////Trees////////////////////////////
 
 /obj/structure/wild/tree
-	name = "small tree"
+	name = "小树"
 	icon_state = "tree"
 	deadicon = "icons/obj/flora/wild.dmi"
 	deadicon_state = "deadtree"
@@ -240,7 +240,7 @@ var/list/seed_list_jungle
 		..()
 
 /obj/structure/wild/tree/cactus
-	name = "cactus"
+	name = "仙人掌"
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "cactus"
 	deadicon = 'icons/obj/flora/bigtrees.dmi'
@@ -252,7 +252,7 @@ var/list/seed_list_jungle
 	pixel_x = -16
 
 /obj/structure/wild/tree/dead_tree
-	name = "dead tree"
+	name = "枯树"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_1"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -270,7 +270,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/tree/dead_tree/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]被击碎了!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/wood(get_turf(src))
 		dropwood.amount = rand(4,7)
 		dropwood.update_strings()
@@ -278,7 +278,7 @@ var/list/seed_list_jungle
 		return
 
 /obj/structure/wild/tree/dead_tree/destroyed
-	name = "destroyed tree"
+	name = "被摧毁的树"
 	icon = 'icons/obj/flora/destroyedtrees.dmi'
 	icon_state = "1"
 	deadicon = 'icons/obj/flora/destroyedtrees.dmi'
@@ -295,7 +295,7 @@ var/list/seed_list_jungle
 	icon_state = "[rand(1,7)]"
 
 /obj/structure/wild/tree/live_tree
-	name = "tree"
+	name = "树"
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "tree_1"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -343,7 +343,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/tree/live_tree/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/wood(get_turf(src))
 		dropwood.amount = 7
 		dropwood.update_strings()
@@ -355,7 +355,7 @@ var/list/seed_list_jungle
 		return
 
 /obj/structure/wild/tree/live_tree/snow
-	name = "tree"
+	name = "树"
 	icon = 'icons/obj/flora/bigtrees_winter.dmi'
 	icon_state = "tree_1"
 	deadicon = 'icons/obj/flora/deadtrees_winter.dmi'
@@ -375,7 +375,7 @@ var/list/seed_list_jungle
 	deadicon = 'icons/obj/flora/bigtrees_winter.dmi'
 
 /obj/structure/wild/tree/live_tree/pine
-	name = "pinetree"
+	name = "松树"
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "new_pine_1"
 	deadicon = 'icons/obj/flora/pinetrees.dmi'
@@ -423,7 +423,7 @@ var/list/seed_list_jungle
 
 
 /obj/structure/wild/tree/live_tree/pine/snow
-	name = "pinetree"
+	name = "松树"
 	icon = 'icons/obj/flora/pinetrees_snow.dmi'
 	icon_state = "new_pine_1"
 	sways = FALSE
@@ -437,13 +437,13 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/tree/fire_act(temperature)
 	if (prob(15 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] collapses.</span>")
+		visible_message("<span class = 'warning'>\The [src]倒下了.</span>")
 		qdel(src)
 
 ///////////////////////Palm Tree////////////////////////////
 
 /obj/structure/wild/palm
-	name = "palm tree"
+	name = "棕榈树"
 	icon = 'icons/obj/flora/palm.dmi'
 	icon_state = "palm1"
 	deadicon = 'icons/obj/flora/palm.dmi'
@@ -494,12 +494,12 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/palm/fire_act(temperature)
 	if (prob(45 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] collapses.</span>")
+		visible_message("<span class = 'warning'>\The [src]倒下了.</span>")
 		qdel(src)
 
 /obj/structure/wild/tree/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/wood(get_turf(src))
 		dropwood.amount = 4
 		dropwood.update_strings()
@@ -508,7 +508,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/palm/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/wood(get_turf(src))
 		dropwood.amount = 3
 		dropwood.update_strings()
@@ -527,7 +527,7 @@ var/list/seed_list_jungle
 ///////////////////////Bushes////////////////////////////
 
 /obj/structure/wild/bush
-	name = "bush"
+	name = "灌木"
 	icon_state = "small_bush"
 	deadicon = 'icons/obj/flora/wild.dmi'
 	deadicon_state = "burnedbush1"
@@ -538,19 +538,19 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/bush/fire_act(temperature)
 	if (prob(55 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		if (prob(18))
 			new/obj/structure/wild/burnedbush(src.loc)
 		qdel(src)
 
 /obj/structure/wild/bush/big
-	name = "large bush"
+	name = "大灌木"
 	icon_state = "big_bush"
 	deadicon = 'icons/obj/flora/wild.dmi'
 	deadicon_state = "burnedbush2"
 
 /obj/structure/wild/burnedbush
-	name = "dead twigs"
+	name = "枯枝"
 	icon_state = "burnedbush1"
 	deadicon = 'icons/obj/flora/wild.dmi'
 	deadicon_state = "burnedbush1"
@@ -561,7 +561,7 @@ var/list/seed_list_jungle
 	maxhealth = 20
 
 /obj/structure/wild/junglebush
-	name = "small vegetation"
+	name = "小型植被"
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "1"
 	deadicon = 'icons/obj/flora/dead_jungleflora.dmi'
@@ -577,11 +577,11 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/junglebush/fire_act(temperature)
 	if (prob(55 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/structure/wild/smallbush
-	name = "small bush"
+	name = "小灌木"
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "smallbush1"
 	deadicon = 'icons/obj/flora/wild.dmi'
@@ -608,7 +608,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/smallbush/fire_act(temperature)
 	if (prob(65 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/structure/wild/smallbush/New()
@@ -616,7 +616,7 @@ var/list/seed_list_jungle
 	icon_state = "smallbush[rand(1,42)]"
 
 /obj/structure/wild/smallbush/winter
-	name = "small bush"
+	name = "小灌木"
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowgrass1"
 	opacity = FALSE
@@ -626,7 +626,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/smallbush/winter/fire_act(temperature)
 	if (prob(15 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/structure/wild/smallbush/winter/New()
@@ -637,7 +637,7 @@ var/list/seed_list_jungle
 		icon_state = "snowbush[rand(1,6)]"
 
 /obj/structure/wild/burnedtree
-	name = "burned tree"
+	name = "烧毁的树"
 	icon_state = "burnedtree1"
 	deadicon = 'icons/obj/flora/wild.dmi'
 	deadicon_state = "burnedtree1"
@@ -654,7 +654,7 @@ var/list/seed_list_jungle
 	deadicon_state = "burnedtree[rand(1,5)]"
 
 /obj/structure/wild/tree_stump
-	name = "tree stump"
+	name = "树桩"
 	icon_state = "tree_stump"
 	deadicon = 'icons/obj/flora/wild.dmi'
 	deadicon_state = "tree_stump"
@@ -665,7 +665,7 @@ var/list/seed_list_jungle
 	maxhealth = 50
 
 /obj/structure/wild/tallgrass
-	name = "tall grass"
+	name = "高草"
 	icon = 'icons/obj/flora/wild.dmi'
 	icon_state = "tall_grass_1"
 	deadicon = 'icons/obj/flora/wild.dmi'
@@ -677,7 +677,7 @@ var/list/seed_list_jungle
 	maxhealth = 20
 
 /obj/structure/wild/flowers
-	name = "flowers"
+	name = "花"
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "flower1"
 	deadicon = 'icons/obj/flora/ausflora.dmi'
@@ -693,11 +693,11 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/tallgrass/fire_act(temperature)
 	if (prob(55 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/structure/wild/tallgrass2
-	name = "tall grass"
+	name = "高草"
 	icon = 'icons/obj/flora/wild.dmi'
 	icon_state = "tall_grass_6"
 	deadicon = 'icons/obj/flora/wild.dmi'
@@ -707,7 +707,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/tallgrass2/fire_act(temperature)
 	if (prob(55 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/structure/wild/tallgrass/New()
@@ -776,7 +776,7 @@ var/list/seed_list_jungle
 		..()
 
 /obj/structure/wild/jungle
-	name = "jungle tree"
+	name = "丛林树"
 	icon = 'icons/obj/flora/jungletreesmaller.dmi'
 	icon_state = "tree1"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -804,12 +804,12 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/jungle/fire_act(temperature)
 	if (prob(25 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] collapses.</span>")
+		visible_message("<span class = 'warning'>\The [src]倒下了.</span>")
 		qdel(src)
 
 //these are under the jungle subtype so they dont change sprites during the winter.
 /obj/structure/wild/jungle/acacia
-	name = "acacia tree"
+	name = "金合欢树"
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "african_acacia"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -821,7 +821,7 @@ var/list/seed_list_jungle
 	max_branches = 2
 
 /obj/structure/wild/jungle/acacia/dead
-	name = "dead acacia tree"
+	name = "枯死的金合欢树"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "african_acacia_dead"
 	deadicon_state = "african_acacia_dead"
@@ -848,7 +848,7 @@ var/list/seed_list_jungle
 	deadicon_state = "tree_[rand(1,5)]"
 
 /obj/structure/wild/jungle/medpine
-	name = "mediterranean pine tree"
+	name = "地中海松树"
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "med_pine"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -860,9 +860,9 @@ var/list/seed_list_jungle
 	max_branches = 2
 
 /obj/structure/wild/jungle/yucca
-	name = "Joshua tree"
+	name = "约书亚树"
 	icon = 'icons/obj/flora/bigtrees.dmi'
-	desc = "A desert tree, also known as Yucca."
+	desc = "一种沙漠树木,也被称为丝兰."
 	icon_state = "joshua_2"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
 	deadicon_state = "joshua_2"
@@ -878,7 +878,7 @@ var/list/seed_list_jungle
 	deadicon_state = icon_state
 
 /obj/structure/wild/jungle/medpine/dead
-	name = "dead mediterranean pine tree"
+	name = "枯死的地中海松树"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "med_pine_dead"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -900,7 +900,7 @@ var/list/seed_list_jungle
 	deadicon_state = "med_pine_dead"
 
 /obj/structure/wild/jungle/cherry
-	name = "cherry blossom tree"
+	name = "樱花树"
 	icon = 'icons/obj/flora/bigtrees.dmi'
 	icon_state = "cherry_blossom_1"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -912,7 +912,7 @@ var/list/seed_list_jungle
 	max_branches = 2
 
 /obj/structure/wild/jungle/cherry/dead
-	name = "dead cherry blossom tree"
+	name = "枯死的樱花树"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "tree_1"
 	deadicon = 'icons/obj/flora/deadtrees.dmi'
@@ -937,7 +937,7 @@ var/list/seed_list_jungle
 	if (health <= 0)
 		if (stored_unit)
 			release_stored()
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/wood(get_turf(src))
 		dropwood.amount = 7
 		dropwood.update_strings()
@@ -963,7 +963,7 @@ var/list/seed_list_jungle
 		..()
 
 /obj/structure/wild/largejungle
-	name = "large jungle bush"
+	name = "大丛林灌木"
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "bush1"
 	deadicon = "none"
@@ -1009,8 +1009,8 @@ var/list/seed_list_jungle
 		icon_state = "rocks[rand(1,3)]"
 
 /obj/structure/wild/junglebush/cinchona
-	name = "cinchona"
-	desc = "you can extract quinine from it."
+	name = "金鸡纳树"
+	desc = "你可以从中提取奎宁."
 	icon = 'icons/obj/flora/plants.dmi'
 	icon_state = "cinchona1"
 	opacity = FALSE
@@ -1123,7 +1123,7 @@ var/list/seed_list_jungle
 			return
 
 /obj/structure/wild/bamboo
-	name = "bamboo"
+	name = "竹子"
 	icon = 'icons/obj/flora/bamboo.dmi'
 	icon_state = "bamboowall1"
 	deadicon = "none"
@@ -1143,7 +1143,7 @@ var/list/seed_list_jungle
 
 /obj/structure/wild/bamboo/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		var/obj/item/stack/material/wood/dropwood = new /obj/item/stack/material/bamboo(get_turf(src))
 		dropwood.amount = 5
 		dropwood.update_strings()

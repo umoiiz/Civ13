@@ -142,7 +142,7 @@
 
 //Called when the mob is hit with an item in combat. Returns the blocked result
 /mob/living/proc/hit_with_weapon(obj/item/I, mob/living/user, var/effective_force, var/hit_zone)
-	visible_message("<span class='danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] with the [I.name] by [user]!</span>")
+	visible_message("<span class='danger'>[src]被[user]用[I.name][I.attack_verb.len? pick(I.attack_verb) : "attacked"]了!</span>")
 
 	var/blocked = run_armor_check(hit_zone, "melee", damage_source = I)
 	standard_weapon_hit_effects(I, user, effective_force, blocked, hit_zone)
@@ -183,11 +183,11 @@
 			miss_chance = max(15*(distance-2), FALSE)
 
 		if (prob(miss_chance))
-			visible_message("<span class = 'notice'>\The [O] misses [src] narrowly!</span>")
+			visible_message("<span class = 'notice'>\The [O]差点击中[src]!</span>")
 			playsound(src, "miss_sound", 50, TRUE, -6)
 			return
 
-		visible_message("<span class = 'red'>[src] has been hit by [O].</span>")
+		visible_message("<span class = 'red'>[src]被[O]击中了.</span>")
 		var/armor = run_armor_check(null, "melee", damage_source = AM)
 
 		if (armor < 2)
@@ -219,7 +219,7 @@
 		if (O.throw_source && momentum >= THROWNOBJ_KNOCKBACK_SPEED)
 			var/dir = get_dir(O.throw_source, src)
 
-			visible_message("<span class = 'red'>[src] staggers under the impact!</span>","<span class = 'red'>You stagger under the impact!</span>")
+			visible_message("<span class = 'red'>[src]在冲击下踉跄了!</span>","<span class = 'red'>你在冲击下踉跄了!</span>")
 			throw_at(get_edge_target_turf(src,dir),1,momentum)
 
 			if (!O || !src) return
@@ -232,7 +232,7 @@
 
 				if (T)
 					loc = T
-					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
+					visible_message("<span class='warning'>[src]被[O]钉在了墙上!</span>","<span class='warning'>你被[O]钉在了墙上!</span>")
 					anchored = TRUE
 					pinned += O
 
@@ -271,7 +271,7 @@
 	adjustBruteLoss(damage)
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [name] ([ckey])</font>")
 	attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
-	visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
+	visible_message("<span class='danger'>[user]已[attack_message][src]!</span>")
 	user.do_attack_animation(src)
 	spawn(1) updatehealth()
 	return TRUE
@@ -347,7 +347,7 @@ var/obj/human_fire_overlay_lying = null
 	apply_damage(ceil(fire_stacks/3)+1, BURN, "chest", FALSE) // because fire does 0.2 damage per tick
 	if (prob((fire_stacks * 10) + 5))
 		if (!lying)
-			visible_message("<span class = 'danger'>[src] falls over in pain.</span>")
+			visible_message("<span class = 'danger'>[src]痛苦地倒下了.</span>")
 		Weaken(fire_stacks+1)
 
 	if (ishuman(src))

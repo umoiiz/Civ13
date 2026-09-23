@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/stationary/maxim
 	name = "Maxim 1895"
-	desc = "Russian version of the original Maxim machinegun, on cart mount. Uses Russian 7.62x54mm rounds."
+	desc = "原版马克沁机枪的俄罗斯版本, 安装在轮式枪架上. 使用俄罗斯7.62x54mm弹药."
 	icon_state = "maxim"
 	base_icon = "maxim"
 	caliber = "a762x54_weak"
@@ -16,7 +16,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/maxim/ww2
 	name = "Maxim"
-	desc = "Russian version of the original Maxim machinegun, on cart mount. Uses Russian 7.62x54mm rounds."
+	desc = "原版马克沁机枪的俄罗斯版本, 安装在轮式枪架上. 使用俄罗斯7.62x54mm弹药."
 	icon_state = "maxim_ww2"
 	base_icon = "maxim_ww2"
 	hardness = 90
@@ -33,7 +33,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/mg08
 	name = "Maschinengewehr 08"
-	desc = "German Heavy Maxim machinegun, based on the original Maxim. Uses 7.92x57mm Mauser rounds."
+	desc = "德国重型马克沁机枪, 基于原版马克沁. 使用7.92x57mm毛瑟弹药."
 	icon_state = "mg08"
 	base_icon = "mg08"
 	caliber = "a792x57_weak"
@@ -49,7 +49,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/pkm
 	name = "PKM machine gun"
-	desc = "Soviet Heavy PKM machinegun. Uses 7.62x54mm rounds."
+	desc = "苏联重型PKM机枪. 使用7.62x54mm弹药."
 	icon_state = "pkm"
 	base_icon = "pkm"
 	caliber = "a762x54_weak"
@@ -64,7 +64,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/dshk
 	name = "DShK machine gun"
-	desc = "Soviet Heavy DShK machinegun, can also be as anti vehicle gun against some lightly armored vehicles. Uses 12.7x108mm rounds."
+	desc = "苏联重型DShK机枪, 也可作为反载具枪对付一些轻装甲载具. 使用12.7x108mm弹药."
 	icon_state = "dshk"
 	base_icon = "dshk"
 	caliber = "a127"
@@ -79,7 +79,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/nsvt
 	name = "NSVT machine gun"
-	desc = "Modern Soviet Heavy NSVT machinegun, can also be as anti vehicle gun against some lightly armored vehicles. Uses 12.7x108mm rounds."
+	desc = "现代苏联重型NSVT机枪, 也可作为反载具枪对付一些轻装甲载具. 使用12.7x108mm弹药."
 	icon_state = "nsvt"
 	base_icon = "nsvt"
 	caliber = "a127"
@@ -114,7 +114,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/foldable/pkm
 	name = "Foldable PKM machine gun"
-	desc = "Soviet Heavy foldable PKM machinegun. Chambered in 7.62x54mm rounds."
+	desc = "苏联重型可折叠PKM机枪. 发射7.62x54mm弹药."
 	icon_state = "pkm_foldable"
 	base_icon = "pkm_foldable"
 	caliber = "a762x54_weak"
@@ -132,7 +132,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/vickers
 	name = "Vickers machine gun"
-	desc = "A water-cooled heavy machinegun. Chambered in .303 british rounds."
+	desc = "水冷式重型机枪. 发射.303英国弹药."
 	icon_state = "vickers"
 	base_icon = "vickers"
 	caliber = "a303_weak"
@@ -148,7 +148,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/vickers/type24
 	name = "Type 24 machine gun"
-	desc = "A water-cooled heavy machinegun. Chambered in 7.92x57mm mauser rounds."
+	desc = "水冷式重型机枪. 发射7.92x57mm毛瑟弹药."
 	icon_state = "vickers"
 	base_icon = "vickers"
 	caliber = "a792x57_weak"
@@ -162,7 +162,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/stationary/hotchkiss1914
 	name = "Hotchkiss M1914 machine gun"
-	desc = "A french heavy machinegun. Chambered in 8x50mm Lebel."
+	desc = "一挺法国重机枪. 使用8x50mm勒贝尔弹."
 	icon_state = "hotchkiss1914"
 	base_icon = "hotchkiss1914"
 	caliber = "a8x50_weak"
@@ -173,8 +173,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/type3
-	name = "Type 3 machine gun"
-	desc = "A japanese heavy machinegun based on the French Hotchkiss. Chambered in 6.5x50mm Arisaka."
+	name = "三年式重机枪"
+	desc = "一挺基于法国哈奇开斯设计的日本重机枪. 使用6.5x50mm有坂弹."
 	icon_state = "type3"
 	base_icon = "type3"
 	caliber = "a65x50_weak"
@@ -185,8 +185,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/type98
-	name = "Type 92 machine gun"
-	desc = "A japanese heavy machinegun. Chambered in 7.7x58mm Arisaka."
+	name = "九二式重机枪"
+	desc = "一挺日本重机枪. 使用7.7x58mm有坂弹."
 	icon_state = "type92hmg"
 	base_icon = "type92hmg"
 	caliber = "a77x58"
@@ -205,8 +205,8 @@
 	icon_state = "type92hmg[ammo_magazine ? round(ammo_magazine.stored_ammo.len, 5) : "_empty"]"
 
 /obj/structure/type92tripod
-	name = "Type 92 Tripod"
-	desc = "A tripod for the Type 92 HMG. Slap the gun on it to make use of it."
+	name = "九二式三脚架"
+	desc = "九二式重机枪的三脚架. 把枪架上去即可使用."
 	icon = 'icons/obj/guns/mgs.dmi'
 	icon_state = "type92hmg_stand"
 	anchored = FALSE
@@ -219,7 +219,7 @@
 			new /obj/item/weapon/gun/projectile/automatic/stationary/type98(src.loc)
 			qdel(src)
 			qdel(W)
-			visible_message("<span class='danger'>[H] starts assembling the Type 92 HMG.</span>", "<span class='danger'>You start assembling the Type 92 HMG.</span>")
+			visible_message("<span class='danger'>[H]开始组装九二式重机枪.</span>", "<span class='danger'>你开始组装九二式重机枪.</span>")
 			return
 	else
 		to_chat(usr, SPAN_WARNING("You cant put that on the tripod!"))
@@ -240,8 +240,8 @@
 	visible_message(SPAN_WARNING("[usr] starts to disassemble the [src]."))
 
 /obj/item/weapon/type92tripod
-	name = "Type 92 HMG tripod"
-	desc = "Used to make gun emplacements"
+	name = "九二式重机枪三脚架"
+	desc = "用于搭建机枪阵地"
 	icon = 'icons/obj/guns/mgs.dmi'
 	icon_state = "tripod"
 	slot_flags = SLOT_BACK
@@ -261,16 +261,16 @@
 			return
 		else
 			var/mob/living/human/H = user
-			visible_message("<span class='danger'>[H] starts placing the Type 92 Tripod.</span>", "<span class='danger'>You start placing the Type 92 Tripod.</span>")
+			visible_message("<span class='danger'>[H]开始放置九二式三脚架.</span>", "<span class='danger'>你开始放置九二式三脚架.</span>")
 			if (do_after(H, 20, H.loc) && src)
 				qdel(src)
 				new/obj/structure/type92tripod(get_step(H, H.dir), H)
-				visible_message("<span class='danger'>[user] finishes placing the Type 92 Tripod.</span>")
+				visible_message("<span class='danger'>[user]完成了九二式三脚架的放置.</span>")
 				return
 
 /obj/item/weapon/type92hmg
-	name = "Dismounted Type 92 HMG"
-	desc = "Slap this on a Type 92 Tripod to assemble the weapon. It's useless otherwise."
+	name = "拆卸的九二式重机枪"
+	desc = "把它架到九二式三脚架上即可组装成武器. 否则毫无用处."
 	icon = 'icons/obj/guns/mgs.dmi'
 	icon_state = "type92hmg_item"
 	slot_flags = SLOT_BACK
@@ -308,8 +308,8 @@
 
 
 /obj/item/weapon/gun/projectile/automatic/stationary/breda30
-	name = "Breda 30 machine gun"
-	desc = "The Fucile Mitragliatore Breda modello 30 is a Italian light machinegun that entered service in 1930. The design of the gun is rather impractical and often makes for long reload times. Chambered in 6.5x52mm Carcano."
+	name = "布雷达30轻机枪"
+	desc = "菲亚特-米特拉利亚托雷-布雷达30型是一挺于1930年服役的意大利轻机枪. 该枪的设计相当不实用, 往往导致装填时间过长. 使用6.5x52mm卡尔卡诺弹."
 	icon_state = "type92hmg"
 	base_icon = "type92hmg"
 	caliber = "a65x52"
@@ -331,14 +331,14 @@
 	icon_state = "type92hmg[ammo_magazine ? round(ammo_magazine.stored_ammo.len, 5) : "_empty"]"
 
 /obj/item/weapon/gun/projectile/automatic/stationary/breda30/hull
-	name = "vehicle mounted Breda 30 machine gun"
+	name = "车载布雷达30轻机枪"
 	anchored = TRUE
 	density = FALSE
 	can_turn = FALSE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/solothurn
-	name = "Solothurn S-18/1000"
-	desc = "The Solothurn S18/1000 20mm is a Swiss anti-tank rifle. It is a later variant of the S-18/100 with modifications for a higher muzzle velocity, as well as a larger cartridge size. The more powerful ammunition resulted in significant recoil, which was problematic for the gunner, and its size made portability difficult."
+	name = "索罗通S-18/1000"
+	desc = "索罗通S18/1000 20mm是一支瑞士反坦克步枪. 它是S-18/100的后期型号, 经过改装以获得更高的枪口初速以及更大的弹药尺寸. 更强大的弹药带来了显著的后坐力, 对射手而言颇为棘手, 而其尺寸也使其难以携带."
 	icon_state = "type92hmg"
 	base_icon = "type92hmg"
 	caliber = "a20"
@@ -361,18 +361,18 @@
 	icon_state = "type92hmg[ammo_magazine ? round(ammo_magazine.stored_ammo.len, 5) : "_empty"]"
 
 /obj/item/weapon/gun/projectile/automatic/stationary/solothurn/italian
-	name = "Fucile Controcarri S Mod.39"
-	desc = "An Italian variant of the Swiss Solothurn S18/1000 20mm anti-tank rifle. It is a later variant of the S-18/100 with modifications for a higher muzzle velocity, as well as a larger cartridge size. The more powerful ammunition resulted in significant recoil, which was problematic for the gunner, and its size made portability difficult."
+	name = "菲亚特反坦克步枪S Mod.39"
+	desc = "瑞士索罗通S18/1000 20mm反坦克步枪的意大利型号. 它是S-18/100的后期型号, 经过改装以获得更高的枪口初速以及更大的弹药尺寸. 更强大的弹药带来了显著的后坐力, 对射手而言颇为棘手, 而其尺寸也使其难以携带."
 
 /obj/item/weapon/gun/projectile/automatic/stationary/solothurn/italian/stationary
-	name = "vehicle mounted Fucile Controcarri S Mod.39"
+	name = "车载菲亚特反坦克步枪S Mod.39"
 	anchored = TRUE
 	density = FALSE
 	can_turn = FALSE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/browning
-	name = "M1919A1 browning machine gun"
-	desc = "An american heavy machinegun. Chambered in 30-06. rounds."
+	name = "M1919A1勃朗宁机枪"
+	desc = "一挺美国重机枪. 使用30-06弹."
 	icon_state = "browning"
 	base_icon = "browning"
 	caliber = "a3006"
@@ -390,8 +390,8 @@
 	icon_state = "browning[ammo_magazine ? round(ammo_magazine.stored_ammo.len, 50) : "_empty"]"
 
 /obj/item/weapon/gun/projectile/automatic/stationary/m2browning
-	name = "M2HB browning machine gun"
-	desc = "An american heavy machinegun. Chambered in .50 cal rounds."
+	name = "M2HB勃朗宁机枪"
+	desc = "一挺美国重机枪. 使用.50口径弹."
 	icon_state = "m2"
 	base_icon = "m2"
 	caliber = "a50cal"
@@ -406,8 +406,8 @@
 	accuracy = 1
 
 /obj/item/weapon/gun/projectile/automatic/stationary/mg34
-	name = "MG 34 machine gun"
-	desc = "A german heavy machinegun. Chambered in 7.92x57 Mauser."
+	name = "MG 34机枪"
+	desc = "一挺德国重机枪. 使用7.92x57毛瑟弹."
 	icon_state = "mg34hmg"
 	base_icon = "mg34hmg"
 	caliber = "a792x57_weak"
@@ -421,8 +421,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/mg3
-	name = "MG 3 machine gun"
-	desc = "A german heavy machinegun. Chambered in 7.62x51mm rounds."
+	name = "MG 3机枪"
+	desc = "一挺德国重机枪. 使用7.62x51mm弹."
 	icon_state = "mg3"
 	base_icon = "mg3"
 	caliber = "a792x57_weak"
@@ -436,8 +436,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/fnmag
-	name = "FN MAG machine gun"
-	desc = "A Belgian general-purpose machine gun, designed in the early 1950s by Ernest Vervier. It has been used by more than 80 countries and it has been made under licence in several countries."
+	name = "FN MAG机枪"
+	desc = "一挺比利时通用机枪, 由欧内斯特·韦尔维耶于20世纪50年代初设计. 它已被80多个国家使用, 并在多个国家获得授权生产."
 	icon_state = "mg3"
 	base_icon = "mg3"
 	caliber = "a792x57_weak"
@@ -451,8 +451,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/blugoslavia
-	name = "BHMG-21 machine gun"
-	desc = "A Blugoslavian heavy machinegun. Uses 7.62x54mm rounds."
+	name = "BHMG-21机枪"
+	desc = "一挺布卢戈斯拉夫重机枪. 使用7.62x54mm弹."
 	icon_state = "pkm"
 	base_icon = "pkm"
 	caliber = "a762x54"
@@ -466,8 +466,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/stationary/redmenia
-	name = "RK-42 stationary machine gun"
-	desc = "A Redmenian heavy machinegun. Uses 5.56x45mm rounds."
+	name = "RK-42固定机枪"
+	desc = "一挺雷德梅尼亚重机枪. 使用5.56x45mm弹."
 	icon_state = "nsvt"
 	base_icon = "nsvt"
 	caliber = "a556x45"
@@ -483,8 +483,8 @@
 // Autocannons
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon
-	name = "30mm autocannon"
-	desc = "An autocannon capable of putting pretty big holes in people."
+	name = "30mm机炮"
+	desc = "一门能在人身上打出相当大的窟窿的机炮."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a30"
@@ -512,8 +512,8 @@
 	return TRUE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon/shipunov2a42 // BMD-2
-	name = "Shipunov 2A42 30mm autocannon"
-	desc = "The 30mm 2A42 autocannon was developed as a replacement for the 2A28 Grom. It fires 30mm rounds."
+	name = "什普诺夫2A42 30mm机炮"
+	desc = "30mm 2A42机炮是作为2A28格罗姆的替代品而研发的. 它发射30mm弹."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a30"
@@ -528,8 +528,8 @@
 	full_auto = TRUE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon/shipunov2a72 // BTR-80
-	name = "Shipunov 2A72 30mm autocannon"
-	desc = "A lighter simplified variant of the 2A42 with a lower number of parts, a longer barrel, and higher muzzle velocity, but also a lower rate of fire. It fires 30mm rounds."
+	name = "什普诺夫2A72 30mm机炮"
+	desc = "2A42的轻型简化型号, 零件数量更少, 枪管更长, 枪口初速更高, 但射速也更低. 它发射30mm弹."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a30"
@@ -544,8 +544,8 @@
 	full_auto = TRUE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon/bushmaster // CV-90
-	name = "Bushmaster III 35mm autocannon"
-	desc = "The Bushmaster III is a chain gun, like the other members of the Bushmaster family, which grants it great dependability and safety from ammunition cook-off even though it does result in lower rates of fire."
+	name = "大毒蛇III 35mm机炮"
+	desc = "大毒蛇III是一门链式机炮, 与大毒蛇家族的其他成员一样, 这赋予了它极高的可靠性和防止弹药自燃的安全性, 尽管这确实导致了较低的射速."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a35"
@@ -560,8 +560,8 @@
 	full_auto = TRUE
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon/bushmaster/bradley
-	name = "M242 'Bushmaster' 25mm autocannon"
-	desc = "An electrically driven, chain-fed gun used for engaging various targets."
+	name = "M242\"大毒蛇\"25mm机炮"
+	desc = "一门电力驱动, 弹链供弹的机炮, 用于打击各种目标."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a25"
@@ -576,8 +576,8 @@
 	ammo_type = /obj/item/ammo_casing/a25mm_ap
 
 /obj/item/weapon/gun/projectile/automatic/stationary/autocannon/red
-	name = "30mm autocannon"
-	desc = "An autocannon capable of firing 20 rounds per minute."
+	name = "30mm机炮"
+	desc = "一门每分钟可发射20发弹的机炮."
 	icon_state = "autocannon"
 	base_icon = "autocannon"
 	caliber = "a30"
@@ -595,8 +595,8 @@
 // ATGMs
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm
-	name = "Stationary ATGM"
-	desc = "An ATGM system capable of taking out armored targets. This one is firmly bolted to the ground."
+	name = "固定式反坦克导弹"
+	desc = "一种能够摧毁装甲目标的反坦克导弹系统. 这一具被牢牢固定在地面上."
 	icon_state = "atgm"
 	base_icon = "atgm"
 	caliber = "rocket"
@@ -626,7 +626,7 @@
 			user.remove_from_mob(I)
 			I.loc = src
 			rockets += I
-			user.visible_message("[user] loads a [I] into \the [src].", "You load a [I] into \the [src].")
+			user.visible_message("[user]将[I]装入\the [src].", "你将[I]装入\the [src].")
 			update_icon()
 			return
 		else
@@ -645,9 +645,9 @@
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/handle_click_empty(mob/user)
 	if (rockets.len <= 0)
 		if (user)
-			user.visible_message("*click click*", SPAN_DANGER("*click*"))
+			user.visible_message("*咔哒咔哒*", SPAN_DANGER("*click*"))
 		else
-			visible_message("*click click*")
+			visible_message("*咔哒咔哒*")
 		playsound(loc, 'sound/weapons/empty.ogg', 100, TRUE)
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/consume_next_projectile()
@@ -681,22 +681,22 @@
 		icon_state = "[base_icon]_empty"
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/kornet
-	name = "9K135 Kornet"
-	desc = "A highly accurate, Russian laser-guided anti-tank missile system with long-range capabilities and advanced armor penetration, designed for modern battlefield engagements."
+	name = "9K135短号"
+	desc = "一种高精度, 俄罗斯激光制导反坦克导弹系统, 具备远程打击能力和先进穿甲能力, 专为现代战场交战而设计."
 	icon_state = "kornet_atgm"
 	base_icon = "kornet_atgm"
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/bgm_tow
-	name = "BGM-71 TOW"
-	desc = "A wire-guided anti-tank missile, known for its effectiveness against armored vehicles at long distances."
+	name = "BGM-71陶式"
+	desc = "一种线导反坦克导弹, 以其在远距离上对装甲车辆的有效性而闻名."
 	icon_state = "bgm71_tow_atgm"
 	base_icon = "bgm71_tow_atgm"
 
 // Foldable ATGMs
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable
-	name = "Foldable ATGM"
-	desc = "An ATGM system capable of taking out armored targets. You can move this one around by right-clicking it and pressing 'Retrieve'"
+	name = "可折叠反坦克导弹"
+	desc = "一种能够摧毁装甲目标的反坦克导弹系统. 你可以通过右键点击它并按下\"取回\"来移动这一具."
 	icon_state = "foldable_atgm"
 	base_icon = "foldable_atgm"
 	var/path = /obj/item/weapon/foldable/atgm
@@ -724,15 +724,15 @@
 		visible_message(SPAN_WARNING("[usr] retrieves the [src] from the ground."))
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable/kornet
-	name = "9K135 Kornet"
-	desc = "A highly accurate, Russian laser-guided anti-tank missile system with long-range capabilities and advanced armor penetration, designed for modern battlefield engagements."
+	name = "9K135短号"
+	desc = "一种高精度, 俄罗斯激光制导反坦克导弹系统, 具备远程打击能力和先进穿甲能力, 专为现代战场交战而设计."
 	icon_state = "kornet_atgm"
 	base_icon = "kornet_atgm"
 	path = /obj/item/weapon/foldable/atgm/kornet
 
 /obj/item/weapon/gun/projectile/automatic/stationary/atgm/foldable/bgm_tow
-	name = "BGM-71 TOW"
-	desc = "A wire-guided anti-tank missile, known for its effectiveness against armored vehicles at long distances."
+	name = "BGM-71陶式"
+	desc = "一种线导反坦克导弹, 以其在远距离上对装甲车辆的有效性而闻名."
 	icon_state = "bgm71_tow_atgm"
 	base_icon = "bgm71_tow_atgm"
 	path = /obj/item/weapon/foldable/atgm/bgm_tow

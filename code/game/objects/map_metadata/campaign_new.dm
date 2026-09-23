@@ -101,7 +101,7 @@
 /////////////////////////////////
 
 /obj/structure/pepelsibirsk_radio/supply_radio/no_scam/campaign
-	name = "long range high-sensitivity supply radio"
+	name = "远程高灵敏度补给电台"
 
 /obj/structure/pepelsibirsk_radio/supply_radio/no_scam/campaign/cafr
 	factionarea = "SupplyCAFR"
@@ -276,7 +276,7 @@
 					if (((money) - round(money)) > 0)
 						new/obj/item/stack/money/coppercoin(loc, round(((money) - round(money)), 0.01) * 100)	//This should never happen, but just in case
 					money = 0
-					to_chat(user, "You don't have enough money for this item.")
+					to_chat(user, "你没有足够的钱购买此物品.")
 				break
 	else
 		if((round(money) >= 1)) //giving money back
@@ -287,7 +287,7 @@
 		return
 
 /obj/structure/pepelsibirsk_radio/supply_radio/no_scam/campaign/update_cost(final_list, final_cost, choice, user)
-	to_chat(user, "Your [final_list[1]] will arrive in 60 seconds.")
+	to_chat(user, "你的[final_list[1]]将在60秒后到达.")
 	spawn(1 MINUTE)
 		var/list/turfs = list()
 		if (faction_treasury != "craftable")
@@ -298,7 +298,7 @@
 		spawnpoint = pick(turfs)
 		var/tpath = final_list[2]
 		new tpath(get_turf(spawnpoint))
-		to_chat(user, "Your [final_list[1]] has arrived.")
+		to_chat(user, "你的[final_list[1]]已到达.")
 	return
 
 // CAMPAIGN METATATA //
@@ -535,7 +535,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>CAFR</b> has retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>CAFR</b>重新夺回了目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -658,7 +658,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>CAFR</b> has retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>CAFR</b>重新夺回了目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -762,7 +762,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>CAFR</b> has retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>CAFR</b>重新夺回了目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -924,7 +924,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>CAFR</b> has retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>CAFR</b>重新夺回了目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -1024,7 +1024,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>CAFR</b> has retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>CAFR</b>重新夺回了目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -1097,9 +1097,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Southern Road</b>: [a1_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>南部道路</b>: [a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Southern Road</b>: Nobody</big>")
+			to_chat(world, "<big><b>南部道路</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -1125,9 +1125,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Mountain Ledge</b>: [a2_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>山崖</b>: [a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Mountain Ledge</b>: Nobody</big>")
+			to_chat(world, "<big><b>山崖</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -1153,9 +1153,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Mountain Tunnels</b>: [a3_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>山间隧道</b>: [a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Mountain Tunnels</b>: Nobody</big>")
+			to_chat(world, "<big><b>山间隧道</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -1181,12 +1181,12 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Northern Road</b>: [a4_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>北部道路</b>: [a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Northern Road</b>: Nobody</big>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Central Asian Federal Republic: [cafr_points]</big>")
-	to_chat(world, "<big>Turkestan Soviet Federative Socialist Republic: [tsfsr_points]</big>")
+			to_chat(world, "<big><b>北部道路</b>: 无人</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>中亚联邦共和国: [cafr_points]</big>")
+	to_chat(world, "<big>突厥斯坦苏维埃联邦社会主义共和国: [tsfsr_points]</big>")
 	spawn(300)
 		points_check()
 

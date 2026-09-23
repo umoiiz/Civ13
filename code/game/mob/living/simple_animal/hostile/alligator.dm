@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/alligator
 	name = "alligator"
-	desc = "probably not safe to get close to it..."
+	desc = "靠近它可能不安全..."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "alligator"
 	icon_living = "alligator"
@@ -34,7 +34,7 @@
 
 /mob/living/simple_animal/hostile/mirelurk
 	name = "mirelurk"
-	desc = "Looks like a huge crab."
+	desc = "看起来像只巨大的螃蟹."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mirelurk"
 	icon_living = "mirelurk"

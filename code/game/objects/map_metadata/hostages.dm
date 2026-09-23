@@ -201,6 +201,6 @@
 /obj/map_metadata/hostages/proc/hostage_msg()
 	check_hostages()
 	spawn(1)
-		to_chat(world, "<font size = 4><span class = 'notice'><b>Current Status:</b></font><br><font size = 3>Hostages Rescued: [rescued_hostages]/[total_hostages]<br>Hostages Held: [held_hostages]/[total_hostages]<br>Hostages Dead: [dead_hostages]/[total_hostages]<br>U.S. SOF Points: [faction1_points] - Insurgent Points: [faction2_points]</span></font>")
+		to_chat(world, "<font size = 4><span class = 'notice'><b>当前状态:</b></font><br><font size = 3>已解救的人质: [rescued_hostages]/[total_hostages]<br>被扣押的人质: [held_hostages]/[total_hostages]<br>已死亡的人质: [dead_hostages]/[total_hostages]<br>美军特种作战部队积分: [faction1_points] - 叛乱分子积分: [faction2_points]</span></font>")
 	spawn(3000)
 		hostage_msg()

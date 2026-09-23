@@ -1,7 +1,7 @@
 
 /obj/item/weapon/flamethrower
-	name = "M2 Flamethrower hoose"
-	desc = "Use with a flamethrower fuel tank to set your enemies on fire."
+	name = "M2火焰喷射器软管"
+	desc = "与火焰喷射器燃料罐搭配使用,让你的敌人着火."
 	icon = 'icons/obj/guns/gun.dmi'
 	icon_state = "m2_flamethrower"
 	item_state = "m2_flamethrower"
@@ -114,8 +114,8 @@
 			distance++
 
 /obj/item/weapon/reagent_containers/glass/flamethrower
-	name = "M2 Flamethrower backpack"
-	desc = "A flamethrower backpack. Up to 100 liters of gasoline."
+	name = "M2火焰喷射器背包"
+	desc = "一个火焰喷射器背包.最多可装100升汽油."
 	icon = 'icons/obj/guns/gun.dmi'
 	icon_state = "m2_flamethrower_back"
 	item_state = "m2_flamethrower"
@@ -142,13 +142,13 @@
 	reagents.add_reagent("gasoline",100)
 
 /obj/item/weapon/flamethrower/flammenwerfer
-	name = "Flammenwerfer hoose"
+	name = "Flammenwerfer软管"
 	icon_state = "flammenwerfer"
 	item_state = "flammenwerfer"
 	base_icon = "flammenwerfer"
 
 /obj/item/weapon/reagent_containers/glass/flamethrower/flammenwerfer
-	name = "Flammenwerfer backpack"
+	name = "Flammenwerfer背包"
 	icon_state = "flammenwerfer_back"
 	item_state = "flammenwerfer"
 
@@ -157,13 +157,13 @@
 	reagents.add_reagent("gasoline",100)
 
 /obj/item/weapon/flamethrower/type100
-	name = "Type100 Flamethrower hose"
+	name = "百式火焰喷射器软管"
 	icon_state = "type100_flamethrower"
 	item_state = "type100_flamethrower"
 	base_icon = "type100_flamethrower"
 
 /obj/item/weapon/reagent_containers/glass/flamethrower/type100
-	name = "Type100 Flamethrower Canister"
+	name = "百式火焰喷射器罐"
 	icon_state = "type100_flamethrower_back"
 	item_state = "type100_flamethrower"
 
@@ -172,8 +172,8 @@
 	reagents.add_reagent("gasoline",100)
 
 /obj/item/weapon/flamethrower/eins
-	name = "Einstossflammenwerfer 46 hose"
-	desc = "Single use flamethrower hose, aim carefully."
+	name = "Einstossflammenwerfer 46软管"
+	desc = "一次性火焰喷射器软管,请小心瞄准."
 	w_class = ITEM_SIZE_NORMAL
 	slot_flags = SLOT_BELT|SLOT_POCKET|SLOT_SHOULDER
 	max_range = 5
@@ -182,8 +182,8 @@
 	base_icon = "eins"
 
 /obj/item/weapon/reagent_containers/glass/flamethrower/eins //until someone makes it so the eins is just a single item that you can fire and drop there will be a canister
-	name = "Einstossflammenwerfer 46 canister"
-	desc = "A eins single use flamethrower canister. put it on your back to use it with the hose."
+	name = "Einstossflammenwerfer 46罐"
+	desc = "一个Einstoss一次性火焰喷射器罐.背在背上即可与软管搭配使用."
 	icon_state = "eins_back"
 	item_state = "eins_back"
 	slowdown = 0.2
@@ -196,14 +196,14 @@
 	reagents.add_reagent("gasoline",5)
 
 /obj/item/weapon/flamethrower/lpo
-	name = "LPO50 Flamethrower hose"
+	name = "LPO50火焰喷射器软管"
 	icon_state = "lpo_flamethrower"
 	item_state = "lpo_flamethrower"
 	base_icon = "lpo_flamethrower"
 	max_range = 5 //effective maximum range is 50m
 
 /obj/item/weapon/reagent_containers/glass/flamethrower/lpo
-	name = "LPO50 Flamethrower Canister"
+	name = "LPO50火焰喷射器罐"
 	icon_state = "lpo_flamethrower_back"
 	item_state = "lpo_flamethrower_back"
 	volume = 150
@@ -213,13 +213,13 @@
 	reagents.add_reagent("gasoline",150)
 
 /obj/item/weapon/flamethrower/roks2
-	name = "ROKS2 Flamethrower hose"
+	name = "ROKS2火焰喷射器软管"
 	icon_state = "roks2_flamethrower"
 	item_state = "roks2_flamethrower"
 	base_icon = "roks2_flamethrower"
 
 /obj/item/weapon/reagent_containers/glass/flamethrower/roks2
-	name = "ROKS2 Flamethrower Canister"
+	name = "ROKS2火焰喷射器罐"
 	icon_state = "roks2_flamethrower_back"
 	item_state = "roks2_flamethrower"
 
@@ -228,8 +228,8 @@
 	reagents.add_reagent("gasoline",100)
 
 /obj/item/weapon/reagent_containers/glass/flamethrower_mg
-	name = "Stationary Flamethrower Tank"
-	desc = "A flamethrower tank. Up to 200 liters of gasoline."
+	name = "固定式火焰喷射器罐"
+	desc = "一个火焰喷射器罐.最多可装200升汽油."
 	icon = 'icons/obj/guns/gun.dmi'
 	icon_state = "coaxflam_ammo"
 	item_icons = list(

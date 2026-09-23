@@ -1,5 +1,5 @@
 /obj/item/weapon/clipboard
-	name = "clipboard"
+	name = "写字板"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "clipboard"
 	item_state = "clipboard"
@@ -112,7 +112,7 @@
 					usr.drop_item()
 					W.loc = src
 					haspen = W
-					to_chat(usr, "<span class='notice'>You slot the pen into \the [src].</span>")
+					to_chat(usr, "<span class='notice'>你将笔插入\the [src].</span>")
 
 		else if (href_list["write"])
 			var/obj/item/weapon/P = locate(href_list["write"])
@@ -172,7 +172,7 @@
 			var/obj/item/P = locate(href_list["top"])
 			if (P && (P.loc == src) && istype(P, /obj/item/weapon/paper) )
 				toppaper = P
-				to_chat(usr, "<span class='notice'>You move [P.name] to the top.</span>")
+				to_chat(usr, "<span class='notice'>你将[P.name]移到最上面.</span>")
 
 		//Update everything
 		attack_self(usr)

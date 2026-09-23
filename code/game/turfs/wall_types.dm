@@ -109,7 +109,7 @@ turf/wall/generic_wall/New(var/newloc)
 
 /turf/wall/stone/marble
 	name = "marble block wall"
-	desc = "A marble block wall."
+	desc = "一面大理石块墙."
 	icon_state = "marble_block_wall0"
 	icon = 'icons/turf/walls.dmi'
 	flags = TURF_HAS_EDGES | SMOOTH_ONLY_WITH_ITSELF

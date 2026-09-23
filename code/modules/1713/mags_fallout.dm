@@ -1,5 +1,5 @@
 /obj/item/ammo_magazine/service_rifle
-	name = "service rifle magazine (5.56x45mm)"
+	name = "制式步枪弹匣 (5.56x45mm)"
 	icon_state = "service_rifle"
 	attached_icon_state = "service_rifle_mag"
 	mag_type = MAGAZINE

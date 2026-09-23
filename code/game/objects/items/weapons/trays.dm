@@ -2,10 +2,10 @@
  * Trays - Agouri
  */
 /obj/item/weapon/tray
-	name = "tray"
+	name = "托盘"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "tray"
-	desc = "A metal tray to lay food on."
+	desc = "一个用来盛放食物的金属托盘."
 	force = WEAPON_FORCE_NORMAL
 	throwforce = WEAPON_FORCE_NORMAL
 	throw_speed = TRUE
@@ -69,7 +69,7 @@
 			break
 
 	if (protected)
-		to_chat(M, "<span class='warning'>You get slammed in the face with the tray, against your mask!</span>")
+		to_chat(M, "<span class='warning'>托盘隔着你的面罩狠狠砸在你的脸上!</span>")
 		if (prob(33))
 			add_blood(H)
 			if (H.wear_mask)
@@ -97,7 +97,7 @@
 			return
 
 	else //No eye or head protection, tough luck!
-		to_chat(M, "<span class='warning'>You get slammed in the face with the tray!</span>")
+		to_chat(M, "<span class='warning'>托盘狠狠砸在你的脸上!</span>")
 		if (prob(33))
 			add_blood(M)
 			var/turf/location = H.loc
@@ -128,7 +128,7 @@
 /obj/item/weapon/tray/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/material/kitchen/rollingpin))
 		if (cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			user.visible_message("<span class='warning'>[user]用[W]猛击[src]!</span>")
 			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, TRUE)
 			cooldown = world.time
 	else

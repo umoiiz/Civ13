@@ -1,6 +1,6 @@
 /obj/item/weapon/reagent_containers/spray
-	name = "spray bottle"
-	desc = "A spray bottle, with an unscrewable top."
+	name = "喷雾瓶"
+	desc = "一个带可拧下顶盖的喷雾瓶."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "cleaner"
 	item_state = "cleaner"
@@ -29,7 +29,7 @@
 			return
 
 	if (reagents.total_volume < amount_per_transfer_from_this)
-		to_chat(user, "<span class='notice'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='notice'>\The [src] 是空的!</span>")
 		return
 
 	Spray_at(A, user, proximity)
@@ -51,7 +51,7 @@
 
 /obj/item/weapon/reagent_containers/spray/proc/Spray_at(atom/A as mob|obj, mob/user as mob, proximity)
 	if (A.density && proximity)
-		A.visible_message("[usr] sprays [A] with [src].")
+		A.visible_message("[usr]用[src]喷洒[A].")
 		reagents.splash(A, amount_per_transfer_from_this)
 	else
 		spawn(0)
@@ -70,11 +70,11 @@
 		return
 	amount_per_transfer_from_this = next_in_list(amount_per_transfer_from_this, possible_transfer_amounts)
 	spray_size = next_in_list(spray_size, spray_sizes)
-	to_chat(user, "<span class='notice'>You adjusted the pressure nozzle. You'll now use [amount_per_transfer_from_this] units per spray.</span>")
+	to_chat(user, "<span class='notice'>你调整了压力喷嘴. 现在每次喷洒将使用 [amount_per_transfer_from_this] 单位.</span>")
 
 /obj/item/weapon/reagent_containers/spray/examine(mob/user)
 	if (..(user, FALSE) && loc == user)
-		to_chat(user, "[round(reagents.total_volume)] units left.")
+		to_chat(user, "剩余 [round(reagents.total_volume)] 单位.")
 	return
 
 /obj/item/weapon/reagent_containers/spray/verb/empty()
@@ -86,21 +86,21 @@
 	if (WWinput(usr, "Are you sure you want to empty the spray bottle?", "Empty Bottle", "Yes", list("Yes", "No")) != "Yes")
 		return
 	if (isturf(usr.loc))
-		to_chat(usr, "<span class='notice'>You empty \the [src] onto the floor.</span>")
+		to_chat(usr, "<span class='notice'>你把 \the [src] 倒在地板上.</span>")
 		reagents.splash(usr.loc, reagents.total_volume)
 
 //space cleaner
 /obj/item/weapon/reagent_containers/spray/cleaner
-	name = "Cleaner"
-	desc = "BLAM!-brand non-foaming cleaner!"
+	name = "清洁剂"
+	desc = "BLAM!牌无泡清洁剂!"
 
 /obj/item/weapon/reagent_containers/spray/cleaner/New()
 	..()
 	reagents.add_reagent("cleaner", volume)
 
 /obj/item/weapon/reagent_containers/spray/sterilizine
-	name = "sterilizine"
-	desc = "Great for hiding incriminating bloodstains and sterilizing scalpels."
+	name = "消毒灵"
+	desc = "非常适合掩盖罪证血迹和给手术刀消毒."
 	volume = 75
 
 /obj/item/weapon/reagent_containers/spray/sterilizine/New()
@@ -109,8 +109,8 @@
 	reagents.add_reagent("cleaner", volume * 0.34)
 
 /obj/item/weapon/reagent_containers/spray/pepper
-	name = "pepperspray"
-	desc = "A capsule of pepperspray, used to blind and down an opponent quickly."
+	name = "胡椒喷雾"
+	desc = "一罐胡椒喷雾,用于迅速致盲并击倒对手."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "pepperspray"
 	item_state = "pepperspray"
@@ -124,21 +124,21 @@
 
 /obj/item/weapon/reagent_containers/spray/pepper/examine(mob/user)
 	if (..(user, TRUE))
-		to_chat(user, "The safety is [safety ? "on" : "off"].")
+		to_chat(user, "保险栓处于[safety ? "on" : "off"]状态.")
 
 /obj/item/weapon/reagent_containers/spray/pepper/attack_self(var/mob/user)
 	safety = !safety
-	to_chat(usr, "<span class = 'notice'>You switch the safety [safety ? "on" : "off"].</span>")
+	to_chat(usr, "<span class = 'notice'>你将保险栓切换到[safety ? "on" : "off"].</span>")
 
 /obj/item/weapon/reagent_containers/spray/pepper/Spray_at(atom/A as mob|obj)
 	if (safety)
-		to_chat(usr, "<span class = 'warning'>The safety is on!</span>")
+		to_chat(usr, "<span class = 'warning'>保险栓处于开启状态!</span>")
 		return
 	..()
 
 /obj/item/weapon/reagent_containers/spray/waterflower
-	name = "water flower"
-	desc = "A seemingly innocent sunflower...with a twist."
+	name = "喷水花"
+	desc = "一朵看似无辜的向日葵...却另有玄机."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "sunflower"
 	item_state = "sunflower"
@@ -155,8 +155,8 @@
 //////////////////////////////////SPRAYER///////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/spray/chemsprayer
-	name = "chem sprayer"
-	desc = "A utility used to spray large amounts of reagent in a given area."
+	name = "化学喷雾器"
+	desc = "一种用于在指定区域喷洒大量试剂的工具."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "chemsprayer"
 	item_state = "chemsprayer"

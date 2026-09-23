@@ -76,7 +76,7 @@ var/global/datum/external_relations/external_relations = new()
 /obj/map_metadata/pepelsibirsk/seasons()
 	if (real_season == "FALL")
 		season = "WINTER"
-		to_chat(world, "<big>The <b>Winter</b> has started.</big>")
+		to_chat(world, "<big><b>冬季</b> 已经开始.</big>")
 		change_weather_somehow()
 		spawn(1200)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -134,7 +134,7 @@ var/global/datum/external_relations/external_relations = new()
 		real_season = "WINTER"
 	else if (real_season == "SPRING")
 		season = "SUMMER"
-		to_chat(world, "<big>The <b>Summer</b> has started.</big>")
+		to_chat(world, "<big><b>夏季</b> 已经开始.</big>")
 		change_weather_somehow()
 		spawn(300)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -167,11 +167,11 @@ var/global/datum/external_relations/external_relations = new()
 		real_season = "SUMMER"
 	else if (real_season == "WINTER")
 		season = "SPRING"
-		to_chat(world, "<big>The weather is getting warmer in other places of the world, but not here. It is now <b>Spring</b>.</big>")
+		to_chat(world, "<big>世界其他地方的天气正在变暖,但这里不是.现在是 <b>春季</b>.</big>")
 		real_season = "SPRING"
 	else if (real_season == "SUMMER")
 		season = "FALL"
-		to_chat(world, "<big>The warmth of summer abruptly ends, being replaced with strong winds and rain, swiftly turning to snowstorms and ice. It is now <b>Fall</b>.</big>")
+		to_chat(world, "<big>夏季的温暖骤然结束,取而代之的是强风和降雨,迅速转为暴风雪和冰封.现在是 <b>秋季</b>.</big>")
 		spawn(1200)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
 				TREES.change_season()
@@ -270,17 +270,17 @@ var/global/datum/external_relations/external_relations = new()
 					else
 						S = new /mob/living/simple_animal/hostile/human/ww2_soviet(spawn_loc)
 					S.pathfind_target = city_center
-				to_chat(world, "<br><font size =3><span class='user'>An invasion from Pepelsibirsk-1 has started!</font></span>")
+				to_chat(world, "<br><font size =3><span class='user'>来自Pepelsibirsk-1的入侵已经开始!</font></span>")
 		invasion_subsystem()
 	return
 
 /obj/map_metadata/pepelsibirsk/proc/check_relations_msg()
-	to_chat(world, "<font size = 4><span class = 'notice'><b>Diplomatic Relations:</b></font></span>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>People's Republic of China: <b>[CHINA_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Union of Soviet Socialist Republics: <b>[SOVIET_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>United States of the Pacific: <b>[PACIFIC_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Naroddnygorod: <b>[CIV_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Pepelsibirsk-1: <b>[MIL_RELATIONS]</b></span></font>")
+	to_chat(world, "<font size = 4><span class = 'notice'><b>外交关系:</b></font></span>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>中华人民共和国: <b>[CHINA_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>苏维埃社会主义共和国联盟: <b>[SOVIET_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>太平洋合众国: <b>[PACIFIC_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>纳罗德尼戈罗德: <b>[CIV_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>佩佩尔西比尔斯克-1: <b>[MIL_RELATIONS]</b></span></font>")
 	spawn(5 MINUTES)
 		check_relations_msg()
 	return
@@ -301,9 +301,9 @@ var/global/datum/external_relations/external_relations = new()
 	if(quarter >=5)
 		quarter = 1
 		year++
-		to_chat(world, "<font size = 3><span class = 'notice'><b>The year has advanced to [year].</b></font></span>")
+		to_chat(world, "<font size = 3><span class = 'notice'><b>年份已推进至 [year] 年.</b></font></span>")
 	else
-		to_chat(world, "<font size = 3><span class = 'notice'><b>The quarter has advanced to Q[quarter].</b></font></span>")
+		to_chat(world, "<font size = 3><span class = 'notice'><b>季度已推进至第 [quarter] 季度.</b></font></span>")
 	return
 
 /obj/map_metadata/pepelsibirsk/proc/time_update()
@@ -357,10 +357,10 @@ var/global/datum/external_relations/external_relations = new()
 
 	if (length(traders) > 1)
 		traders[length(traders)] = "and [traders[length(traders)]]"
-		to_chat(world, "<font size = 4><span class = 'notice'>[jointext(traders, ", ")] have arrived to trade.</b></font></span>")
+		to_chat(world, "<font size = 4><span class = 'notice'>[jointext(traders, ", ")] 已前来进行贸易.</b></font></span>")
 		world.log << "[jointext(traders, ", ")] have arrived to trade."
 	else
-		to_chat(world, "<font size = 4><span class = 'notice'>Due to poor relations, no one has arrived to trade.</b></font></span>")
+		to_chat(world, "<font size = 4><span class = 'notice'>由于关系恶劣,无人前来进行贸易.</b></font></span>")
 		world.log << "Due to poor relations, no one has arrived to trade."
 
 	spawn(30 MINUTES)
@@ -369,8 +369,8 @@ var/global/datum/external_relations/external_relations = new()
 
 ////// PEPELSIBIRSK PERSONAL DOCUMENTS //////
 /obj/item/weapon/personal_documents
-	name = "Personal Documents"
-	desc = "The identification papers of a citizen."
+	name = "个人证件"
+	desc = "一名公民的身份证明文件."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "passport"
 	item_state = "paper"
@@ -394,8 +394,8 @@ var/global/datum/external_relations/external_relations = new()
 				var/mob/living/human/H = loc
 				document_name = H.real_name
 				owner = H
-				name = "[document_name]'s personal documents"
-				desc = "The identification papers of <b>[document_name]</b>."
+				name = "[document_name]的个人证件"
+				desc = "<b>[document_name]</b>的身份证明文件."
 				var/job = "Working"
 				if (istype(H.original_job, /datum/job/civilian/civnomad))
 					switch(H.nationality)
@@ -412,14 +412,14 @@ var/global/datum/external_relations/external_relations = new()
 /obj/item/weapon/personal_documents/examine(mob/user)
 	..(user)
 	to_chat(user, "<span class='info'>*---------*</span>")
-	to_chat(user, "<b><span class='info'>Hair:</b> [document_details[1]]</span>")
-	to_chat(user, "<b><span class='info'>Gender:</b> [document_details[2]]</span>")
-	to_chat(user, "<b><span class='info'>Age:</b> [document_details[3]] years</span>")
-	to_chat(user, "<b><span class='info'>Employment and Citizenship Status:</b> [document_details[4]]</span>")
+	to_chat(user, "<b><span class='info'>头发:</b> [document_details[1]]</span>")
+	to_chat(user, "<b><span class='info'>性别:</b> [document_details[2]]</span>")
+	to_chat(user, "<b><span class='info'>年龄:</b> [document_details[3]] 岁</span>")
+	to_chat(user, "<b><span class='info'>就业与公民身份状态:</b> [document_details[4]]</span>")
 	to_chat(user, "<span class='info'>*---------*</span>")
 	if (guardnotes.len)
 		for(var/i in guardnotes)
-			to_chat(user, "NOTE: [i]")
+			to_chat(user, "注意: [i]")
 		to_chat(user, "<span class='info'>*---------*</span>")
 
 /obj/item/weapon/personal_documents/attackby(var/obj/item/I, var/mob/living/human/H)
@@ -442,14 +442,14 @@ var/global/datum/external_relations/external_relations = new()
 
 ////// TRADING CODE ////// (it's my magnum opus -Terrariola)
 /obj/structure/pepelsibirsk_radio //does nothing too important, ignore
-	name = "If you see this, talk to an admin."
-	desc = "THIS SHOULD NOT EXIST. -Terrariola"
+	name = "如果你看到这条信息,请联系管理员."
+	desc = "这不应该存在. -Terrariola"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supply_radio"
 
 /obj/structure/pepelsibirsk_radio/supply_radio
-	name = "long range supply radio"
-	desc = "Use this to request supplies to be delivered to the city."
+	name = "远程补给无线电"
+	desc = "用它来请求将补给运送至城市."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supply_radio"
 	var/money = 0
@@ -505,8 +505,8 @@ var/global/datum/external_relations/external_relations = new()
 	)
 
 /obj/structure/pepelsibirsk_radio/supply_radio/no_scam
-	name = "long range high-sensitivity supply radio"
-	desc = "Use this to request supplies to be delivered to the city. It appears like the microphone on it is set to much too high sensitivity for you to safely arrange a scam."
+	name = "远程高灵敏度补给无线电"
+	desc = "用它来请求将补给运送至城市. 它上面的麦克风灵敏度似乎被调得太高了,以至于你无法安全地策划一场骗局."
 	can_scam = FALSE
 
 /obj/structure/pepelsibirsk_radio/supply_radio/proc/update_cost(final_list, final_cost, choice, user, scam)
@@ -519,9 +519,9 @@ var/global/datum/external_relations/external_relations = new()
 	else if (choice == "Pepelsibirsk 1 (MIL)" && scam == "Yes, scam them!")
 		MIL_RELATIONS -= final_cost*0.08
 	if (scam != "Yes, scam them!")
-		to_chat(user, "Your item will arrive in 60 seconds. Relations with [choice] have increased by [final_cost*0.02].")
+		to_chat(user, "你的物品将在60秒后送达. 与[choice]的关系提升了[final_cost*0.02].")
 	else if (scam == "Yes, scam them!")
-		to_chat(user, "Your item will arrive in 60 seconds. Relations with [choice] have decreased by [final_cost*0.08].")
+		to_chat(user, "你的物品将在60秒后送达. 与[choice]的关系下降了[final_cost*0.08].")
 	spawn(1 MINUTE)
 		var/list/turfs = list()
 		if (faction_treasury != "craftable")
@@ -532,7 +532,7 @@ var/global/datum/external_relations/external_relations = new()
 		spawnpoint = pick(turfs)
 		var/tpath = final_list[2]
 		new tpath(get_turf(spawnpoint))
-		to_chat(user, "Your [final_list[1]] has arrived.")
+		to_chat(user, "你的[final_list[1]]已送达.")
 	return
 
 /obj/structure/pepelsibirsk_radio/supply_radio/proc/purchase(user, choice, catalogue)
@@ -579,7 +579,7 @@ var/global/datum/external_relations/external_relations = new()
 					if (((money) - round(money)) > 0)
 						new/obj/item/stack/money/coppercoin(loc, round(((money) - round(money)), 0.01) * 100)	//This should never happen, but just in case
 					money = 0
-					to_chat(user, "You don't have enough money for this item.")
+					to_chat(user, "你的钱不够购买此物品.")
 				break
 	else
 		if((round(money) >= 1)) //giving money back
@@ -611,12 +611,12 @@ var/global/datum/external_relations/external_relations = new()
 	if (choice == "Narodnyygorod (CIV)")
 		catalogue = civ_catalogue
 		if (CIV_RELATIONS <= 25 )
-			to_chat(user, "Your relations with this faction are too low!")
+			to_chat(user, "你与该派系的关系太低了!")
 			return
 	else if (choice == "Pepelsibirsk 1 (MIL)")
 		catalogue = mil_catalogue
 		if (MIL_RELATIONS <= 25 )
-			to_chat(user, "Your relations with this faction are too low!")
+			to_chat(user, "你与该派系的关系太低了!")
 			return
 	purchase(user, choice, catalogue)
 	return
@@ -631,13 +631,13 @@ var/global/datum/external_relations/external_relations = new()
 		qdel(W)
 		return
 	else
-		to_chat(user, "You need to use rubles.")
+		to_chat(user, "你需要使用卢布.")
 		return
 
 
 /obj/structure/pepelsibirsk_radio/export_radio
-	name = "long range export radio"
-	desc = "Use this to export resources."
+	name = "远程出口无线电"
+	desc = "用它来出口资源."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "export_radio"
 	var/money = 0
@@ -653,7 +653,7 @@ var/global/datum/external_relations/external_relations = new()
 
 /obj/structure/pepelsibirsk_radio/export_radio/attackby(var/obj/item/W as obj, var/mob/living/human/user as mob)
 	if (W.value == 0)
-		to_chat(user, "There is no demand for this item.")
+		to_chat(user, "此物品没有需求.")
 		return
 	else
 		if (CIV_RELATIONS >= 25)
@@ -671,7 +671,7 @@ var/global/datum/external_relations/external_relations = new()
 				marketval = 0
 				return
 		else
-			to_chat(user, "Your relations with Narodnyygorod are too low!")
+			to_chat(user, "你与纳罗德尼戈罗德的关系太低了!")
 			return
 
 
@@ -791,8 +791,8 @@ var/global/datum/external_relations/external_relations = new()
 			enemy_attacks()
 
 /obj/structure/anti_air_crate
-	name = "anti-air crate"
-	desc = "A supply crate used to make SAM sites."
+	name = "防空箱"
+	desc = "用于建造防空导弹阵地的补给箱."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "supply_crate"
 	anchored = FALSE
@@ -846,8 +846,8 @@ var/global/datum/external_relations/external_relations = new()
 	return
 
 /obj/structure/warehouse_book
-	name = "warehouse inventory"
-	desc = "A document containing a list of all goods in the warehouse."
+	name = "仓库库存"
+	desc = "一份包含仓库中所有货物清单的文件."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book_qm"
 	layer = 3.2

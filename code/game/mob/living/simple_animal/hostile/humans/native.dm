@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/native
 	name = "native"
-	desc = "Seems ferocious."
+	desc = "看起来很凶猛."
 	icon_state = "native_melee1"
 	icon_dead = "native_melee1_dead"
 	response_help = "pushes"
@@ -35,7 +35,7 @@
 
 /mob/living/simple_animal/hostile/human/native/bigboi
 	name = "giant native"
-	desc = "A massive native, better avoided."
+	desc = "一个巨大的土著, 最好避开."
 	maxHealth = 300
 	health = 300
 	move_to_delay = 5
@@ -54,7 +54,7 @@
 
 /mob/living/simple_animal/hostile/human/native/ranged
 	name = "native"
-	desc = "Seems ferocious."
+	desc = "看起来很凶猛."
 	icon_state = "native_ranged1"
 	icon_dead = "native_ranged1_dead"
 	emote_see = list("stares", "prepares an arrow")
@@ -84,7 +84,7 @@
 /mob/living/simple_animal/hostile/human/voyage/slave
 	name = "slave"
 	icon_state = "slave1"
-	desc = "An african slave from a local plantation."
+	desc = "一个来自当地种植园的非洲奴隶."
 	icon_dead = "slave1_dead"
 	response_help = "pushes"
 	response_disarm = "shoves"

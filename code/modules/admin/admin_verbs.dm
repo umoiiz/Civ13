@@ -384,7 +384,7 @@ var/list/admin_verbs_magic = list(
 	verbs.Remove(/client/proc/hide_most_verbs, admin_verbs_hideable)
 	verbs += /client/proc/show_verbs
 
-	to_chat(src, "<span class='interface'>Most of your adminverbs have been hidden.</span>")
+	to_chat(src, "<span class='interface'>你的大部分管理员指令已被隐藏.</span>")
 
 	return
 
@@ -395,7 +395,7 @@ var/list/admin_verbs_magic = list(
 	remove_admin_verbs()
 	verbs += /client/proc/show_verbs
 
-	to_chat(src, "<span class='interface'>Almost all of your adminverbs have been hidden.</span>")
+	to_chat(src, "<span class='interface'>你的几乎所有管理员指令已被隐藏.</span>")
 
 	return
 
@@ -406,7 +406,7 @@ var/list/admin_verbs_magic = list(
 	verbs -= /client/proc/show_verbs
 	add_admin_verbs()
 
-	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
+	to_chat(src, "<span class='interface'>你的所有管理员指令现在可见.</span>")
 
 
 /client/proc/admin_ghost()
@@ -421,13 +421,13 @@ var/list/admin_verbs_magic = list(
 		if (ghost.can_reenter_corpse)
 			ghost.reenter_corpse()
 		else
-			to_chat(ghost, "<font color='red'>Error:  Aghost:  Can't reenter corpse, mentors that use adminHUD while aghosting are not permitted to enter their corpse again.</font>")
+			to_chat(ghost, "<font color='red'>错误:  Aghost:  无法重新进入尸体, 在幽灵状态下使用adminHUD的导师不允许再次进入其尸体.</font>")
 			return
 
 
 
 	else if (istype(mob,/mob/new_player))
-		to_chat(src, "<font color='red'>Error: Aghost: Can't admin-ghost whilst in the lobby. Join or Observe first.</font>")
+		to_chat(src, "<font color='red'>错误: Aghost: 无法在大厅中管理员幽灵. 请先加入或观察.</font>")
 	else
 		//ghostize
 		if (ishuman(mob))
@@ -448,15 +448,15 @@ var/list/admin_verbs_magic = list(
 	set desc = "Toggles ghost-like invisibility (Don't abuse this)"
 	if (holder && mob)
 		if (istype(mob, /mob/observer))
-			to_chat(mob, "<span class = 'warning'>You're already invisible!</span>")
+			to_chat(mob, "<span class = 'warning'>你已经是隐形的了!</span>")
 			return
 		if (mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.invisibility = initial(mob.invisibility)
-			to_chat(mob, "<span class = 'red'><b>Invisimin off. Invisibility reset.</b></span>")
+			to_chat(mob, "<span class = 'red'><b>隐身模式关闭. 隐形已重置.</b></span>")
 			mob.alpha = max(mob.alpha + 100, 255)
 		else
 			mob.invisibility = INVISIBILITY_OBSERVER
-			to_chat(mob, "\green <b>Invisimin on. You are now as invisible as a ghost.</b>")
+			to_chat(mob, "\green <b>隐身模式开启. 你现在像幽灵一样隐形.</b>")
 			mob.alpha = max(mob.alpha - 100, 0)
 
 /client/var/visible_in_who = TRUE
@@ -467,9 +467,9 @@ var/list/admin_verbs_magic = list(
 	if (holder && mob)
 		visible_in_who = !visible_in_who
 		if (visible_in_who)
-			to_chat(mob, "<span class = 'notice'>You are now <b>visible</b> in Staffwho.</span>")
+			to_chat(mob, "<span class = 'notice'>你现在在Staffwho中<b>可见</b>.</span>")
 		else
-			to_chat(mob, "<span class = 'notice'>You are <b>no longer visible</b> in Staffwho.</span>")
+			to_chat(mob, "<span class = 'notice'>你在Staffwho中<b>不再可见</b>.</span>")
 
 /client/proc/player_panel()
 	set name = "Player Panel"
@@ -531,11 +531,11 @@ var/list/admin_verbs_magic = list(
 	if (!check_rights(R_SPAWN))
 		return
 	if (!mob || !mob.loc)
-		to_chat(src, "<span class = 'warning'>You can't drop a bomb here.</span>")
+		to_chat(src, "<span class = 'warning'>你不能在这里投放炸弹.</span>")
 		return
 
 	if (!processes.explosion || !processes.explosion.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't drop a bomb right now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在不能投放炸弹.</span>")
 		return
 
 	var/turf/epicenter = mob.loc
@@ -557,7 +557,7 @@ var/list/admin_verbs_magic = list(
 			var/flash_range = WWinput(src, "Flash range (in tiles):", "Drop Bomb", 1, "num")
 			if (max(devastation_range, heavy_impact_range, light_impact_range, flash_range) >= 10)
 				if (!check_rights(R_PERMISSIONS, 0))
-					to_chat(src, "<span class = 'danger'>You need Manager+ permissions to drop a custom bomb this big.</span>")
+					to_chat(src, "<span class = 'danger'>你需要Manager+权限才能投放这么大的自定义炸弹.</span>")
 					return
 			explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range)
 	message_admins("[key] creating an admin explosion at [epicenter.loc].", key)
@@ -569,11 +569,11 @@ var/list/admin_verbs_magic = list(
 	if (!check_rights(R_SPAWN))
 		return
 	if (!mob || !mob.loc)
-		to_chat(src, "<span class = 'warning'>You can't drop an airstrike here.</span>")
+		to_chat(src, "<span class = 'warning'>你不能在这里投放空袭.</span>")
 		return
 
 	if (!processes.explosion || !processes.explosion.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't drop an airstrike right now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在不能投放空袭.</span>")
 		return
 
 	var/turf/epicenter = mob.loc
@@ -647,10 +647,10 @@ var/list/admin_verbs_magic = list(
 	if (config)
 		if (config.log_hrefs)
 			config.log_hrefs = FALSE
-			to_chat(src, "<b>Stopped logging hrefs</b>")
+			to_chat(src, "<b>已停止记录hrefs</b>")
 		else
 			config.log_hrefs = TRUE
-			to_chat(src, "<b>Started logging hrefs</b>")
+			to_chat(src, "<b>已开始记录hrefs</b>")
 
 /client/proc/change_human_appearance_admin()
 	set name = "Change Mob Appearance - Admin"
@@ -677,7 +677,7 @@ var/list/admin_verbs_magic = list(
 	if (!H) return
 
 	if (!H.client)
-		to_chat(usr, "Only mobs with clients can alter their own appearance.")
+		to_chat(usr, "只有带有客户端的生物才能改变自己的外观.")
 		return
 
 	switch(WWinput(src, "Do you wish for [H] to be allowed to select whitelisted races?", "Alter Mob Appearance", "No", list("Yes","No","Cancel")))
@@ -708,7 +708,7 @@ var/list/admin_verbs_magic = list(
 	var/mob/living/human/M = WWinput(src, "Select a mob.", "Edit Appearance", WWinput_first_choice(human_mob_list), WWinput_list_or_null(human_mob_list))
 
 	if (!istype(M, /mob/living/human))
-		to_chat(usr, "<span class = 'red'>You can only do this to humans!</span>")
+		to_chat(usr, "<span class = 'red'>你只能对人类这样做!</span>")
 		return
 
 	switch(WWinput(src, "Are you sure you wish to edit this mob's appearance?", "Edit Appearance", "Yes", list("Yes","No")))
@@ -774,7 +774,7 @@ var/list/admin_verbs_magic = list(
 			if (J.current_positions >= J.total_positions && J.total_positions != -1)
 				jobs += J.title
 		if (!jobs.len)
-			to_chat(usr, "There are no fully staffed jobs.")
+			to_chat(usr, "没有满员的工作岗位.")
 			return
 		var/job = input("Please select job slot to free", "Free job slot")  as null|anything in jobs
 		if (job)
@@ -811,7 +811,7 @@ var/global/list/global_colour_matrix = null
 		if("special")
 			global_colour_matrix = list()
 			var/global_colour_matrix_temp = list()
-			to_chat(src, "<span class='notice'>Input num between 0 and 1.</span>")
+			to_chat(src, "<span class='notice'>请输入0到1之间的数字.</span>")
 			for(var/i = 0, i <= 9, i++)
 				switch(i)
 					if(1)
@@ -839,10 +839,10 @@ var/global/list/global_colour_matrix = null
 	set category = "Server"
 
 	if (config.useapprovedlist == TRUE)
-		to_chat(src, "Server is already \"Approved Only\".")
+		to_chat(src, "服务器已经是\"仅限批准\".")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/conf_1 = input("Are you sure you wan't to restrict the server to Approved players?") in list ("Yes", "No")
@@ -856,10 +856,10 @@ var/global/list/global_colour_matrix = null
 	set category = "Server"
 
 	if (config.useapprovedlist == FALSE)
-		to_chat(src, "Server is already open to everyone.")
+		to_chat(src, "服务器已经对所有人开放.")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/conf_1 = input("Are you sure you wan't to open the server to everyone?") in list ("Yes", "No")
@@ -873,10 +873,10 @@ var/global/list/global_colour_matrix = null
 	set category = "Server"
 
 	if (config.use_job_whitelist == TRUE)
-		to_chat(src, "Whitelisted Jobs are already restricted.")
+		to_chat(src, "白名单职位已经受限.")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/conf_1 = input("Are you sure you wan't to restrict the whitelisted jobs to whitelisted players?") in list ("Yes", "No")
@@ -891,10 +891,10 @@ var/global/list/global_colour_matrix = null
 	set category = "Server"
 
 	if (config.use_job_whitelist == FALSE)
-		to_chat(src, "Whitelisted jobs are already open to everyone.")
+		to_chat(src, "白名单职位已经对所有人开放.")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/conf_1 = input("Are you sure you wan't to open the whitelisted jobs to everyone?") in list ("Yes", "No")
@@ -910,7 +910,7 @@ var/global/list/global_colour_matrix = null
 	set category = "Server"
 
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	var/new_state = !disable_campaign_whitelist
@@ -919,7 +919,7 @@ var/global/list/global_colour_matrix = null
 		return
 	else
 		disable_campaign_whitelist = new_state
-		to_chat(world, "<font size=3>Campaign faction whitelist has been <b>[new_state ? "disabled" : "enabled"]</b>. Anyone can now [new_state ? "pick their campaign faction." : "only join as whitelisted factions."]</font>")
+		to_chat(world, "<font size=3>战役阵营白名单已被<b>[new_state ? "disabled" : "enabled"]</b>. 现在任何人都可以[new_state ? "pick their campaign faction." : "only join as whitelisted factions."]</font>")
 
 
 /client/proc/enable_fov()
@@ -927,27 +927,27 @@ var/global/list/global_colour_matrix = null
 	set category = "Special"
 
 	if (config.disable_fov == FALSE)
-		to_chat(src, "Field of View mechanic is already enabled.")
+		to_chat(src, "视野机制已经启用.")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	config.disable_fov = FALSE
-	to_chat(world, "<font size = 3>Fields of view are now <b>enabled</b>.</font>")
+	to_chat(world, "<font size = 3>视野现已<b>启用</b>.</font>")
 	return
 /client/proc/disable_fov()
 	set name = "Disable FOV"
 	set category = "Special"
 
 	if (config.disable_fov == TRUE)
-		to_chat(src, "Field of View mechanic is already disabled.")
+		to_chat(src, "视野机制已经禁用.")
 		return
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 	config.disable_fov = TRUE
-	to_chat(world, "<font size = 3>Fields of view are now <b>disabled</b>.</font>")
+	to_chat(world, "<font size = 3>视野现已<b>禁用</b>.</font>")
 	return
 
 
@@ -956,7 +956,7 @@ var/global/list/global_colour_matrix = null
 	set category = "Special"
 
 	if (!check_rights(R_ADMIN))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 	var/count=0
 	for(var/mob/living/human/H in world)
@@ -974,11 +974,11 @@ var/global/list/global_colour_matrix = null
 	if (!check_rights(R_SPAWN))
 		return
 	if (!mob || !mob.loc)
-		to_chat(src, "<span class = 'warning'>You can't create a radiation emission here.</span>")
+		to_chat(src, "<span class = 'warning'>你不能在这里制造辐射放射.</span>")
 		return
 
 	if (!processes.explosion || !processes.explosion.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't create a radiation emission now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在不能制造辐射放射.</span>")
 		return
 
 	var/turf/epicenter = mob.loc
@@ -1006,23 +1006,23 @@ var/global/list/global_colour_matrix = null
 	var/warning = input("Do you want to give a 30 second warning before the nuke hits?") in list ("Yes", "No")
 
 	if (!mob || !mob.loc)
-		to_chat(src, "<span class = 'warning'>You can't create a radiation emission here.</span>")
+		to_chat(src, "<span class = 'warning'>你不能在这里制造辐射放射.</span>")
 		return
 
 	if (!processes.explosion || !processes.explosion.fires_at_gamestates.Find(ticker.current_state))
-		to_chat(src, "<span class = 'warning'>You can't create a radiation emission now.</span>")
+		to_chat(src, "<span class = 'warning'>你现在不能制造辐射放射.</span>")
 		return
 
 	var/turf/epicenter = mob.loc
 	var/warningtimer = 5
 	if (warning == "Yes")
-		to_chat(world, "<font size=3 color='red'><center>ATTENTION<br>A nuclear missile is incoming! Take cover!</center></font>")
+		to_chat(world, "<font size=3 color='red'><center>注意<br>核导弹来袭! 寻找掩护!</center></font>")
 		var/warning_sound = sound('sound/misc/siren.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 		for (var/mob/M in player_list)
 			M.client << warning_sound
 		warningtimer = 330
 	spawn(warningtimer)
-		to_chat(world, "<font size=4 color='red'>A nuclear explosion has happened! <br><i>(Game might freeze/lag for a while while processing, please wait)</i></font>")
+		to_chat(world, "<font size=4 color='red'>核爆炸已经发生! <br><i>(处理时游戏可能会冻结/卡顿一段时间, 请稍候)</i></font>")
 		nuke_map(epicenter, 200, 180, 0)
 		message_admins("[key] nuked the map at ([epicenter.x],[epicenter.y],[epicenter.z]) in area [epicenter.loc.name].", key)
 		log_game("[key] nuked the map at ([epicenter.x],[epicenter.y],[epicenter.z]) in area [epicenter.loc.name].")

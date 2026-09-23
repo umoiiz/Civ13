@@ -1,6 +1,6 @@
 /obj/item/weapon/dice
 	name = "d6"
-	desc = "A dice with six sides."
+	desc = "一枚六面骰子."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "d66"
 	w_class = ITEM_SIZE_TINY
@@ -13,7 +13,7 @@
 
 /obj/item/weapon/dice/d20
 	name = "d20"
-	desc = "A dice with twenty sides. The prefered dice to throw at the GM."
+	desc = "一枚二十面骰子.用来砸GM的首选骰子."
 	icon_state = "d20"
 	sides = 20
 
@@ -41,25 +41,25 @@
 	icon_state = "[name][result]"
 	if(initial(icon_state) == "d00")
 		result = (result - 1)*10
-	user.visible_message("<span class='notice'>[user] has thrown [src]. It lands on [result]. [comment]</span>", \
+	user.visible_message("<span class='notice'>[user] 掷出了 [src].结果是 [result]. [comment]</span>", \
 						 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
 						 "<span class='notice'>You hear [src] landing on [result]. [comment]</span>")
 
 /obj/item/weapon/dice/d2
 	name = "d2"
-	desc = "A die with two sides. Coins are undignified!"
+	desc = "一枚两面骰子.硬币太不体面了!"
 	icon_state = "d2"
 	sides = 2
 
 /obj/item/weapon/dice/d4
 	name = "d4"
-	desc = "A dice with four sides. Nerd caltrop."
+	desc = "一枚四面骰子.书呆子的铁蒺藜."
 	icon_state = "d4"
 	sides = 4
 
 /obj/item/weapon/dice/d8
 	name = "d8"
-	desc = "A dice with eight sides. The prefered dice to throw at the enemy."
+	desc = "一枚八面骰子.用来砸敌人的首选骰子."
 	icon_state = "d8"
 	sides = 8
 
@@ -71,19 +71,19 @@ obj/item/weapon/dice/d10
 
 /obj/item/weapon/dice/d00
 	name = "d00"
-	desc = "A die with ten sides. Works better for d100 rolls than a golfball."
+	desc = "一枚十面骰子.用来掷d100比高尔夫球好用."
 	icon_state = "d00"
 	sides = 10
 
 /obj/item/weapon/dice/d12
 	name = "d12"
-	desc = "A die with twelve sides. There's an air of neglect about it."
+	desc = "一枚十二面骰子.它身上有种被冷落的气息."
 	icon_state = "d12"
 	sides = 12
 
 /obj/item/weapon/storage/pill_bottle/dice
-	name = "bag of dice"
-	desc = "It's a small container with dice inside."
+	name = "一袋骰子"
+	desc = "一个小容器,里面装着骰子."
 	icon = 'icons/obj/dice.dmi'
 	icon_state = "dicebag"
 

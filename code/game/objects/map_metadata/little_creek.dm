@@ -67,7 +67,7 @@
 
 
 /obj/structure/carriage
-	name = "Stagecoach Load"
+	name = "驿站马车装载"
 	desc = ""
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "miningcaropen"
@@ -96,7 +96,7 @@
 			else if (H.original_job_title == "East Side Gang")
 				faction2val += (W.value*W.amount)
 			desc = "West Side: [faction1val]. East Side: [faction2val]."
-			to_chat(user, "You place \the [W] inside \the [src].")
+			to_chat(user, "你将 \the [W] 放入 \the [src].")
 		qdel(W)
 		if (faction1val >= 750)
 			map.update_win_condition()
@@ -107,5 +107,5 @@
 
 /obj/structure/carriage/proc/timer()
 	spawn(4000)
-		to_chat(world, "<big>Current status: West Side Gang: <b>[faction1val]/700</b>. East Side Gang: <b>[faction2val]/700</b>.")
+		to_chat(world, "<big>当前状态: 西区帮: <b>[faction1val]/700</b>. 东区帮: <b>[faction2val]/700</b>.")
 		timer()

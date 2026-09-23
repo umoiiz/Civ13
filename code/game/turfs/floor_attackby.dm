@@ -37,7 +37,7 @@
 			//if no support >> cave starts to fall
 			if (!supportfound)
 				if (prob(80))
-					visible_message("The mine is unstable! Some rocks get loose and fall around!")
+					visible_message("矿井不稳定!一些岩石松动并坠落四周!")
 					playsound(src,'sound/effects/rocksfalling.ogg',75,0,2)
 					for (var/mob/living/human/M in range(1, src))
 						M.adjustBruteLoss(rand(9,21))
@@ -46,7 +46,7 @@
 					if (!istype(DT, /turf/floor/dirt/underground))
 						DT.ChangeTurf(/turf/floor/dirt/underground/empty)
 				else
-					visible_message("The mine starts to cave in!")
+					visible_message("矿井开始塌陷!")
 					playsound(src,'sound/effects/rocksfalling.ogg',100,0,6)
 					for (var/mob/living/human/M in range(2, src))
 						M.adjustBruteLoss(rand(28,39))
@@ -113,11 +113,11 @@
 
 	if (istype(src, /turf/floor/dirt))
 		if (C.fertilizer_value > 0)
-			to_chat(user,"You start fertilizing the dirt...")
+			to_chat(user,"你开始给泥土施肥...")
 			var/mob/living/human/H = user
 			var/turf/floor/dirt/D = src
 			if (do_after(user, 60/H.getStatCoeff("farming"), src))
-				to_chat(user,"You fertilize the dirt around this plot.")
+				to_chat(user,"你给这块地周围的泥土施了肥。")
 				for (D in range(1,src))
 					if(D.soil_nutrition + C.fertilizer_value <= D.max_soil_nutrition) // Do not let players over fertilize the dirt
 						D.soil_nutrition += C.fertilizer_value
@@ -186,7 +186,7 @@
 					if (!do_after(user, (60/(H.getStatCoeff("strength"))/SH.usespeed)))
 						H.shoveling = FALSE
 						return
-					user.visible_message("<span class = 'notice'>[user] shovels snow into a pile.</span>", "<span class = 'notice'>You shovel snow into a pile.</span>")
+					user.visible_message("<span class = 'notice'>[user]将雪铲成一堆。</span>", "<span class = 'notice'>你将雪铲成一堆。</span>")
 					H.shoveling = FALSE
 					H.adaptStat("strength", 1)
 					T.available_snow -= 1
@@ -200,10 +200,10 @@
 				else if (istype(T, /turf/floor/dirt) && istype(H))
 					if (T.available_dirt > 0)
 						H.shoveling = TRUE
-						user.visible_message("<span class = 'notice'>[user] starts to shovel dirt into a pile.</span>", "<span class = 'notice'>You start to shovel dirt into a pile.</span>")
+						user.visible_message("<span class = 'notice'>[user]开始将泥土铲成一堆。</span>", "<span class = 'notice'>你开始将泥土铲成一堆。</span>")
 						playsound(src,'sound/effects/shovelling.ogg',100,1)
 						if (do_after(user, (60/(H.getStatCoeff("strength"))/SH.usespeed)))
-							user.visible_message("<span class = 'notice'>[user] shovels dirt into a pile.</span>", "<span class = 'notice'>You shovel dirt into a pile.</span>")
+							user.visible_message("<span class = 'notice'>[user]将泥土铲成一堆。</span>", "<span class = 'notice'>你将泥土铲成一堆。</span>")
 							H.shoveling = FALSE
 							H.adaptStat("strength", 1)
 							T.available_dirt -= 1
@@ -211,14 +211,14 @@
 						else
 							H.shoveling = FALSE
 					else
-						to_chat(user, "<span class='notice'>All the loose dirt has been shoveled out of this spot already.</span>")
+						to_chat(user, "<span class='notice'>这个地点的松散泥土已经全部被铲走了。</span>")
 				else if (istype(T, /turf/floor/beach/sand) && istype(H))
 					if (T.available_sand > 0)
 						H.shoveling = TRUE
-						user.visible_message("<span class = 'notice'>[user] starts to shovel sand into a pile.</span>", "<span class = 'notice'>You start to shovel sand into a pile.</span>")
+						user.visible_message("<span class = 'notice'>[user]开始将沙子铲成一堆。</span>", "<span class = 'notice'>你开始将沙子铲成一堆。</span>")
 						playsound(src,'sound/effects/shovelling.ogg',100,1)
 						if (do_after(user, (40/(H.getStatCoeff("strength"))/SH.usespeed)))
-							user.visible_message("<span class = 'notice'>[user] shovels sand into a pile.</span>", "<span class = 'notice'>You shovel sand into a pile.</span>")
+							user.visible_message("<span class = 'notice'>[user]将沙子铲成一堆。</span>", "<span class = 'notice'>你将沙子铲成一堆。</span>")
 							H.shoveling = FALSE
 							H.adaptStat("strength", 1)
 							T.available_sand -= 1
@@ -230,10 +230,10 @@
 
 		else
 			if (radiation > 0 && (istype(src, /turf/floor/dirt) || istype(src, /turf/floor/grass)))
-				user.visible_message("<span class = 'notice'>[user] starts to clean the irradiated soil.</span>", "<span class = 'notice'>You start to clean the irradiated soil.</span>")
+				user.visible_message("<span class = 'notice'>[user]开始清理受污染的土壤。</span>", "<span class = 'notice'>你开始清理受污染的土壤。</span>")
 				playsound(src,'sound/effects/shovelling.ogg',100,1)
 				if (do_after(user, (150/(H.getStatCoeff("strength"))/SH.usespeed)))
-					user.visible_message("<span class = 'notice'>[user] finishes cleaning the irradiated soil.</span>", "<span class = 'notice'>You finish cleaning the irradiated soil.</span>")
+					user.visible_message("<span class = 'notice'>[user]完成了清理受污染的土壤。</span>", "<span class = 'notice'>你完成了清理受污染的土壤。</span>")
 					H.adaptStat("strength", 1)
 					radiation *= 0.1
 					if (istype(src, /turf/floor/grass/jungle))
@@ -245,9 +245,9 @@
 			else
 				return ..(C, user)
 	else if (istype(C, /obj/item/weapon/poster/religious) && istype(get_turf(src), /turf/floor/dirt/underground))
-		user.visible_message("<span class='notice'>[user] starts placing the [C] on the [src]...</span>", "<span class='notice'>You start placing the [C] on the [src]...</span>")
+		user.visible_message("<span class='notice'>[user]开始将[C]放置在[src]上...</span>", "<span class='notice'>你开始将[C]放置在[src]上...</span>")
 		if (do_after(user, 70, src))
-			user.visible_message("<span class='notice'>[user] places the [C] on the [src].</span>", "<span class='notice'>You place the [C] on the [src].</span>")
+			user.visible_message("<span class='notice'>[user]将[C]放置在[src]上。</span>", "<span class='notice'>你将[C]放置在[src]上。</span>")
 			var/obj/structure/poster/religious/RP = new/obj/structure/poster/religious(get_turf(src))
 			var/obj/item/weapon/poster/religious/P = C
 			RP.religion = P.religion
@@ -258,9 +258,9 @@
 			qdel(C)
 			return
 	else if (istype(C, /obj/item/weapon/poster/faction) && istype(get_turf(src), /turf/floor/dirt/underground))
-		user.visible_message("<span class='notice'>[user] starts placing the [C] on the [src]...</span>", "<span class='notice'>You start placing the [C] on the [src]...</span>")
+		user.visible_message("<span class='notice'>[user]开始将[C]放置在[src]上...</span>", "<span class='notice'>你开始将[C]放置在[src]上...</span>")
 		if (do_after(user, 70, src))
-			user.visible_message("<span class='notice'>[user] places the [C] on the [src].</span>", "<span class='notice'>You place the [C] on the [src].</span>")
+			user.visible_message("<span class='notice'>[user]将[C]放置在[src]上。</span>", "<span class='notice'>你将[C]放置在[src]上。</span>")
 			var/obj/structure/poster/faction/RP = new/obj/structure/poster/faction(get_turf(src))
 			var/obj/item/weapon/poster/faction/P = C
 			RP.faction = P.faction
@@ -281,7 +281,7 @@
 
 			// Set mining_in_progress to TRUE to indicate the process has started
 			T.mining_in_progress = TRUE
-			user.visible_message("<span class = 'notice'>[user] starts to break the rock with \the [C.name].</span>", "<span class = 'notice'>You start to break the rock with \the [C.name].</span>")
+			user.visible_message("<span class = 'notice'>[user]开始用\the [C.name]砸碎岩石。</span>", "<span class = 'notice'>你开始用\the [C.name]砸碎岩石。</span>")
 			playsound(src,'sound/effects/pickaxe.ogg',100,1)
 			if (do_after(user, (240/(H.getStatCoeff("strength"))/SH.usespeed)))
 				collapse_check()
@@ -344,7 +344,7 @@
 				if (O.density && O.flags & ON_BORDER && O.dir == initial_direction)
 					to_chat(user, SPAN_WARNING("There is already \a [O.name] in this direction!"))
 					return
-			user.visible_message("<span class='danger'>[user] starts constructing the base of a sandbag wall.</span>", "<span class='danger'>You start constructing the base of a sandbag wall.</span>")
+			user.visible_message("<span class='danger'>[user]开始建造沙袋墙的地基。</span>", "<span class='danger'>你开始建造沙袋墙的地基。</span>")
 			if (do_after(user, sandbag_time, user.loc))
 				var/current_direction = user.dir
 				if (current_direction & EAST)
@@ -360,7 +360,7 @@
 				qdel(C)
 				var/obj/structure/window/barrier/sandbag/incomplete/sb = new/obj/structure/window/barrier/sandbag/incomplete(src, user, current_direction)
 				sb.progress = progress
-				user.visible_message("<span class='danger'>[user] finishes constructing the base of a sandbag wall. Anyone can now add to it.</span>", "<span class='notice'>You finish constructing the base of a sandbag wall. Anyone can now add to it.</span>")
+				user.visible_message("<span class='danger'>[user]完成了沙袋墙地基的建造。现在任何人都可以继续添加。</span>", "<span class='notice'>你完成了沙袋墙地基的建造。现在任何人都可以继续添加。</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 3)
@@ -388,7 +388,7 @@
 				if (O.density && O.flags & ON_BORDER && O.dir == initial_direction)
 					to_chat(user, SPAN_WARNING("There is already \a [O.name] in this direction!"))
 					return
-			user.visible_message("<span class='danger'>[user] starts constructing the base of a dirt barricade.</span>", "<span class='danger'>You start constructing the base of a dirt barricade.</span>")
+			user.visible_message("<span class='danger'>[user]开始建造泥土路障的地基。</span>", "<span class='danger'>你开始建造泥土路障的地基。</span>")
 			if (do_after(user, sandbag_time, user.loc))
 				// Recheck user's direction before creating the barrier
 				var/current_direction = user.dir
@@ -405,7 +405,7 @@
 				qdel(C)
 				var/obj/structure/window/barrier/incomplete/sandbag = new/obj/structure/window/barrier/incomplete(src, user, current_direction)
 				sandbag.progress = progress
-				user.visible_message("<span class='danger'>[user] finishes constructing the base of a dirt barricade. Anyone can now add to it.</span>", "<span class='notice'>You finish constructing the base of a dirt barricade. Anyone can now add to it.</span>")
+				user.visible_message("<span class='danger'>[user]完成了泥土路障地基的建造。现在任何人都可以继续添加。</span>", "<span class='notice'>你完成了泥土路障地基的建造。现在任何人都可以继续添加。</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 3)
@@ -433,7 +433,7 @@
 				if (O.density && O.flags & ON_BORDER && O.dir == initial_direction)
 					to_chat(user, SPAN_WARNING("There is already \a [O.name] in this direction!"))
 					return
-			user.visible_message("<span class='danger'>[user] starts constructing the base of a snow barricade.</span>", "<span class='danger'>You start constructing the base of a snow barricade.</span>")
+			user.visible_message("<span class='danger'>[user]开始建造雪制路障的地基。</span>", "<span class='danger'>你开始建造雪制路障的地基。</span>")
 			if (do_after(user, sandbag_time, user.loc))
 				// Recheck user's direction before creating the snowwall
 				var/current_direction = user.dir
@@ -450,7 +450,7 @@
 				qdel(C)
 				var/obj/structure/window/barrier/snowwall/sandbag = new/obj/structure/window/barrier/snowwall/incomplete(src, user, current_direction)
 				sandbag.progress = progress
-				user.visible_message("<span class='danger'>[user] finishes constructing the base of a snow barricade. Anyone can now add to it.</span>", "<span class='notice'>You finish constructing the base of a snow barricade. Anyone can now add to it.</span>")
+				user.visible_message("<span class='danger'>[user]完成了雪制路障地基的建造。现在任何人都可以继续添加。</span>", "<span class='notice'>你完成了雪制路障地基的建造。现在任何人都可以继续添加。</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 3)
@@ -465,9 +465,9 @@
 				return
 			if (ishuman(user))
 				H.adaptStat("farming", 1)
-			H.visible_message("<span class='notice'>[user] places some of \the [C] in the ploughed field.</span>",
-								"<span class='notice'>You place [C] in the ploughed field.</span>",
-								"<span class='notice'>Your hear something poking around in dirt.</span>")
+			H.visible_message("<span class='notice'>[user]将一些\the [C]放入耕好的田地里。</span>",
+								"<span class='notice'>你将[C]放入耕好的田地里。</span>",
+								"<span class='notice'>你听到泥土里有什么东西在翻动。</span>")
 			if (istype(C, /obj/item/stack/medical/advanced/herbs))
 				TS = new /obj/item/stack/farming/seeds/herbs
 				TS.spawn_plant(src)
@@ -550,7 +550,7 @@
 
 			if (src == get_step(user, user.dir))
 				if (WWinput(user, "This will start building a floor cover [dir2text(user.dir)] of you.", "Floor Cover Construction", "Continue", list("Continue", "Stop")) == "Continue")
-					user.visible_message("<span class='danger'>[user] starts constructing the floor cover.</span>", "<span class='danger'>You start constructing the floor cover.</span>")
+					user.visible_message("<span class='danger'>[user]开始建造地面覆盖物。</span>", "<span class='danger'>你开始建造地面覆盖物。</span>")
 					if (do_after(user, covers_time, user.loc))
 						if (!istype(src, /turf/floor/beach/water/deep/saltwater) || map.ID == MAP_VOYAGE)
 							qdel(C)
@@ -558,7 +558,7 @@
 								new/obj/covers/repairedfloor/ship(src, user)
 							else
 								new/obj/covers/repairedfloor(src, user)
-							user.visible_message("<span class='danger'>[user] finishes placing the floor cover.</span>", "<span class = 'notice'>You finish placing the floor cover.</span>")
+							user.visible_message("<span class='danger'>[user]完成了地面覆盖物的铺设。</span>", "<span class = 'notice'>你完成了地面覆盖物的铺设。</span>")
 							if (ishuman(user))
 								var/mob/living/human/H = user
 								H.adaptStat("crafting", 3)
@@ -951,11 +951,11 @@
 					to_chat(user, SPAN_NOTICE("All the loose snow has been shoveled out of this spot already."))
 					return
 				H.shoveling = TRUE
-				user.visible_message("<span class = 'notice'>[user] starts to collect snow into a pile.</span>", "<span class = 'notice'>You start to collect snow into a pile.</span>")
+				user.visible_message("<span class = 'notice'>[user]开始把雪堆成一堆.</span>", "<span class = 'notice'>你开始把雪堆成一堆.</span>")
 				playsound(src,'sound/effects/shovelling.ogg',100,1)
 				if (!do_after(user, rand(25,30)))
 					H.shoveling = FALSE
-				user.visible_message("<span class = 'notice'>[user] collects the snow into a pile.</span>", "<span class = 'notice'>You collect the snow into a pile.</span>")
+				user.visible_message("<span class = 'notice'>[user]把雪堆成了一堆.</span>", "<span class = 'notice'>你把雪堆成了一堆.</span>")
 				H.shoveling = FALSE
 				H.adaptStat("strength", 1)
 				T.available_snow -= 1
@@ -969,10 +969,10 @@
 			else if (istype(T, /turf/floor/dirt) && istype(H) && !H.shoveling)
 				if (T.available_dirt > 0)
 					H.shoveling = TRUE
-					user.visible_message("<span class = 'notice'>[user] starts to collect dirt into a pile.</span>", "<span class = 'notice'>You start to collect dirt into a pile.</span>")
+					user.visible_message("<span class = 'notice'>[user]开始把泥土堆成一堆.</span>", "<span class = 'notice'>你开始把泥土堆成一堆.</span>")
 					playsound(src,'sound/effects/shovelling.ogg',100,1)
 					if (do_after(user, rand(25,30)))
-						user.visible_message("<span class = 'notice'>[user] collects the dirt into a pile.</span>", "<span class = 'notice'>You collect the dirt into a pile.</span>")
+						user.visible_message("<span class = 'notice'>[user]把泥土堆成了一堆.</span>", "<span class = 'notice'>你把泥土堆成了一堆.</span>")
 						H.shoveling = FALSE
 						H.adaptStat("strength", 1)
 						T.available_dirt -= 1
@@ -980,14 +980,14 @@
 					else
 						H.shoveling = FALSE
 				else
-					to_chat(user, "<span class='notice'>All the loose dirt has been shoveled out of this spot already.</span>")
+					to_chat(user, "<span class='notice'>这个位置的松散泥土已经全部被铲走了.</span>")
 			else if (istype(T, /turf/floor/beach/sand) && istype(H) && !H.shoveling)
 				if (T.available_sand > 0)
 					H.shoveling = TRUE
-					user.visible_message("<span class = 'notice'>[user] starts to collect sand into a pile.</span>", "<span class = 'notice'>You start to collect sand into a pile.</span>")
+					user.visible_message("<span class = 'notice'>[user]开始把沙子堆成一堆.</span>", "<span class = 'notice'>你开始把沙子堆成一堆.</span>")
 					playsound(src,'sound/effects/shovelling.ogg',100,1)
 					if (do_after(user, rand(45,60)))
-						user.visible_message("<span class = 'notice'>[user] collects the sand into a pile.</span>", "<span class = 'notice'>You collect the sand into a pile.</span>")
+						user.visible_message("<span class = 'notice'>[user]把沙子堆成了一堆.</span>", "<span class = 'notice'>你把沙子堆成了一堆.</span>")
 						H.shoveling = FALSE
 						H.adaptStat("strength", 1)
 						T.available_sand -= 1
@@ -1028,13 +1028,13 @@
 			var/digging_tunnel_time = 400
 			digging_tunnel_time /= user.getStatCoeff("strength")
 			digging_tunnel_time /= (user.getStatCoeff("crafting") * user.getStatCoeff("crafting"))
-			user.visible_message("<span class='danger'>[user] starts digging a tunnel entrance!</span>", "<span class='danger'>You start digging a tunnel entrance.</span>")
+			user.visible_message("<span class='danger'>[user]开始挖掘隧道入口!</span>", "<span class='danger'>你开始挖掘隧道入口.</span>")
 			if (do_after(user, digging_tunnel_time, user.loc))
 				if (!TB.is_diggable)
 					return
 				new/obj/structure/multiz/ladder/ww2/tunneltop(locate(user.x, user.y, user.z+1))
 				new/obj/structure/multiz/ladder/ww2/tunnelbottom(user.loc)
-				user.visible_message("<span class='danger'>[user] finishes digging the tunnel entrance.</span>", "<span class='danger'>You finish digging the tunnel entrance.</span>")
+				user.visible_message("<span class='danger'>[user]挖好了隧道入口.</span>", "<span class='danger'>你挖好了隧道入口.</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 1)
@@ -1042,12 +1042,12 @@
 			return
 		else
 			if (user.z <= 1)
-				to_chat(user, "<span class='notice'>You can't dig a tunnel here, the bedrock is right below.</span>")
+				to_chat(user, "<span class='notice'>你无法在这里挖掘隧道,基岩就在下面.</span>")
 				return
 			var/digging_tunnel_time = 200
 			digging_tunnel_time /= user.getStatCoeff("strength")
 			digging_tunnel_time /= (user.getStatCoeff("crafting") * user.getStatCoeff("crafting"))
-			user.visible_message("<span class='danger'>[user] starts digging a tunnel entrance!</span>", "<span class='danger'>You start digging a tunnel entrance.</span>")
+			user.visible_message("<span class='danger'>[user]开始挖掘隧道入口!</span>", "<span class='danger'>你开始挖掘隧道入口.</span>")
 			if (do_after(user, digging_tunnel_time, user.loc))
 				if (!TO.is_diggable)
 					return
@@ -1056,17 +1056,17 @@
 				var/turf/BL = get_turf(locate(user.x, user.y, user.z-1))
 				if (istype(BL, /turf/floor/dirt/underground))
 					BL.ChangeTurf(/turf/floor/dirt)
-				user.visible_message("<span class='danger'>[user] finishes digging the tunnel entrance.</span>", "<span class='danger'>You finish digging the tunnel entrance.</span>")
+				user.visible_message("<span class='danger'>[user]挖好了隧道入口.</span>", "<span class='danger'>你挖好了隧道入口.</span>")
 				if (ishuman(user))
 					var/mob/living/human/H = user
 					H.adaptStat("crafting", 1)
 					H.adaptStat("strength", 1)
 			return
 	else if (locate(/obj/structure/multiz/) in user.loc)
-		to_chat(user, "<span class='warning'>There already is something here.</span>")
+		to_chat(user, "<span class='warning'>这里已经有东西了.</span>")
 		return
 	else if (!TO.is_diggable)
-		to_chat(user, "<span class='warning'>You cannot dig a hole here!</span>")
+		to_chat(user, "<span class='warning'>你无法在这里挖洞!</span>")
 		return
 
 /turf/floor/beach/water/attack_hand(var/mob/living/human/H)

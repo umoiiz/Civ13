@@ -1,5 +1,5 @@
 /obj/structure/bookcase
-	name = "bookcase"
+	name = "书柜"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book-0"
 	anchored = TRUE
@@ -148,9 +148,9 @@
 		anchored = !anchored
 	else if (istype(O,/obj/item/weapon/hammer))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin dismantling \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始拆解\the [src].</span>")
 		if (do_after(user,25,src))
-			to_chat(user, "<span class='notice'>You dismantle \the [src].</span>")
+			to_chat(user, "<span class='notice'>你拆解了\the [src].</span>")
 			new /obj/item/stack/material/woodplank(get_turf(src))
 			for (var/obj/item/weapon/book/b in contents)
 				b.loc = (get_turf(src))
@@ -159,41 +159,41 @@
 		if (!map.civilizations || map.ID == MAP_TRIBES || map.ID == MAP_FOUR_KINGDOMS || map.ID == MAP_THREE_TRIBES)
 			return
 		if(!contents.len)
-			to_chat(user, "The [name] is empty.")
+			to_chat(user, "[name]是空的.")
 			return
 		check_research()
 		if (user.original_job_title == "Nomad")
 			if (map.age1_done == FALSE)
 				if (world.time < 36000 && ( (map.custom_civs[user.civilization][1] >= 19) || (map.custom_civs[user.civilization][2] >= 19) || (map.custom_civs[user.civilization][3] >= 19)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(36000-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(36000-world.time)/600]分钟后再次研究.")
 					return
 			else if (map.age1_done == TRUE && map.age2_done == FALSE)
 				if (world.time < map.age2_timer && ( (map.custom_civs[user.civilization][1] >= map.age1_top) || (map.custom_civs[user.civilization][2] >= map.age1_top) || (map.custom_civs[user.civilization][3] >= map.age1_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age2_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age2_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age2_done == TRUE && map.age3_done == FALSE)
 				if (world.time < map.age3_timer && ( (map.custom_civs[user.civilization][1] >= map.age2_top) || (map.custom_civs[user.civilization][2] >= map.age2_top) || (map.custom_civs[user.civilization][3] >= map.age2_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age3_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age3_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age3_done == TRUE && map.age4_done == FALSE)
 				if (world.time < map.age4_timer && ( (map.custom_civs[user.civilization][1] >= map.age3_top) || (map.custom_civs[user.civilization][2] >= map.age3_top) || (map.custom_civs[user.civilization][3] >= map.age3_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age4_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age4_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age4_done == TRUE && map.age5_done == FALSE)
 				if (world.time < map.age5_timer && ( (map.custom_civs[user.civilization][1] >= map.age4_top) || (map.custom_civs[user.civilization][2] >= map.age4_top) || (map.custom_civs[user.civilization][3] >= map.age4_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age5_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age5_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age5_done == TRUE && map.age6_done == FALSE)
 				if (world.time < map.age6_timer && ( (map.custom_civs[user.civilization][1] >= map.age5_top) || (map.custom_civs[user.civilization][2] >= map.age5_top) || (map.custom_civs[user.civilization][3] >= map.age5_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age6_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age6_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age6_done == TRUE && map.age7_done == FALSE)
 				if (world.time < map.age7_timer && ( (map.custom_civs[user.civilization][1] >= map.age6_top) || (map.custom_civs[user.civilization][2] >= map.age6_top) || (map.custom_civs[user.civilization][3] >= map.age6_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age7_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age7_timer-world.time)/600]分钟后再次研究.")
 					return
 			if (map.age7_done == TRUE && map.age8_done == FALSE)
 				if (world.time < map.age8_timer && ( (map.custom_civs[user.civilization][1] >= map.age7_top) || (map.custom_civs[user.civilization][2] >= map.age7_top) || (map.custom_civs[user.civilization][3] >= map.age7_top)) )
-					to_chat(user, "You are too advanced in one of these research types or are too fast. You can research again in [(map.age8_timer-world.time)/600] minutes.")
+					to_chat(user, "你在其中一种研究类型上进度过高或速度过快.你可以在[(map.age8_timer-world.time)/600]分钟后再次研究.")
 					return
 
 		var/current_tribesmen = (alive_civilians.len/map.availablefactions.len)
@@ -226,7 +226,7 @@
 					map.custom_civs[user.civilization][2] += sum_m
 					map.custom_civs[user.civilization][3] += sum_h
 			else
-				to_chat(user, "You don't belong to any faction.")
+				to_chat(user, "你不属于任何阵营.")
 				return
 
 			if (user.civilization == civname_a)
@@ -291,7 +291,7 @@
 					map.civf_research[3] += sum_h
 
 			user.adaptStat("philosophy", 1*current_research)
-			to_chat(user, "You finish studying these documents. The knowledge gained will be useful in the development of our society.")
+			to_chat(user, "你研究完了这些文件.获得的知识将有助于我们社会的发展.")
 		sum_i = null
 		sum_m = null
 		sum_h = null

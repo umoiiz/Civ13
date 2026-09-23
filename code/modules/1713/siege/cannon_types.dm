@@ -1,5 +1,5 @@
 /obj/structure/cannon/modern
-	name = "field cannon"
+	name = "野战炮"
 	icon = 'icons/obj/cannon.dmi'
 	icon_state = "modern_cannon"
 	ammotype = /obj/item/cannon_ball/shell
@@ -13,8 +13,8 @@
 	w_class = ITEM_SIZE_GARGANTUAN
 
 /obj/structure/cannon/modern/naval
-	name = "naval cannon"
-	desc = "A giant artillery cannon usually mounted on a ship."
+	name = "舰炮"
+	desc = "通常安装在舰船上的巨型火炮."
 	icon = 'icons/obj/ship_cannon.dmi'
 	icon_state = "naval_cannon"
 	ammotype = /obj/item/cannon_ball/shell/naval
@@ -43,7 +43,7 @@
 		interact(user)
 
 /obj/structure/cannon/modern/naval/n380
-	name = "380mm naval cannon"
+	name = "380毫米舰炮"
 	ammotype = /obj/item/cannon_ball/shell/naval/HE380
 	firedelay = 1
 	maxrange = 150
@@ -56,7 +56,7 @@
 	naval_position = "right"
 
 /obj/structure/cannon/modern/naval/n150
-	name = "150mm naval cannon"
+	name = "150毫米舰炮"
 	ammotype = /obj/item/cannon_ball/shell/naval/HE150
 	firedelay = 1
 	maxrange = 80
@@ -69,8 +69,8 @@
 	naval_position = "right"
 
 /obj/structure/naval_cannon_control
-	name = "naval battery control"
-	desc = "Controls the rotation of a naval battery."
+	name = "舰炮炮塔控制"
+	desc = "控制舰炮炮塔的旋转."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gate_control"
 	anchored = TRUE
@@ -106,8 +106,8 @@
 		to_chat(user, SPAN_WARNING("The turret turned too recently. Try again in a bit"))
 
 /obj/structure/cannon/modern/tank
-	name = "tank cannon"
-	desc = "A barebones cannon made to be carried by vehicles."
+	name = "坦克炮"
+	desc = "一种供车辆搭载的简易火炮."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "tank_cannon"
 	ammotype = /obj/item/cannon_ball/shell/tank
@@ -126,8 +126,8 @@
 		w_class = caliber/2
 
 /obj/structure/cannon/modern/tank/autoloader
-	name = "tank cannon with autoloader"
-	desc = "A barebones cannon made to be carried by vehicles."
+	name = "带自动装弹机的坦克炮"
+	desc = "一种供车辆搭载的简易火炮."
 	autoloader = TRUE
 
 /obj/structure/cannon/modern/voyage
@@ -136,7 +136,7 @@
 	maxrange = 35
 	distance = 20
 	caliber = 75
-	name = "cannon"
+	name = "火炮"
 	icon = 'icons/obj/cannon.dmi'
 	density = TRUE
 	icon_state = "cannon"
@@ -229,29 +229,29 @@
 				playsound(t1, "artillery_out_distance", 100, TRUE)
 
 /obj/structure/cannon/modern/tank/german75
-	name = "7.5cm KwK 40"
-	desc = "A 75mm German tank-based cannon."
+	name = "7.5厘米 KwK 40"
+	desc = "一门75毫米德国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 75
 
 /obj/structure/cannon/modern/tank/american75
-	name = "75mm M3 gun"
-	desc = "A 75mm american tank-based cannon."
+	name = "75毫米 M3 炮"
+	desc = "一门75毫米美国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 75
 
 /obj/structure/cannon/modern/tank/american76
-	name = "76mm M32 gun"
-	desc = "A 76.2mm American tank-based cannon."
+	name = "76毫米 M32 炮"
+	desc = "一门76.2毫米美国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 76.2
 
 /obj/structure/cannon/modern/tank/russian76/americanfield
-	name = "76.2mm M5 gun"
-	desc = "A 76.2mm american anti-tank cannon."
+	name = "76.2毫米 M5 炮"
+	desc = "一门76.2毫米美国反坦克炮."
 	icon_state = "feldkanone18"
 	icon = 'icons/obj/cannon.dmi'
 	maxrange = 30
@@ -263,84 +263,84 @@
 		gunner_chair = new /obj/structure/bed/chair/gunner(src)
 
 /obj/structure/cannon/modern/tank/american90
-	name = "90mm M41 gun"
-	desc = "A 90mm American tank-based cannon."
+	name = "90毫米 M41 炮"
+	desc = "一门90毫米美国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 90
 
 /obj/structure/cannon/modern/tank/japanese57
-	name = "Type 97 Cannon"
-	desc = "A 57mm Japanese tank-based cannon."
+	name = "97式炮"
+	desc = "一门57毫米日本坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 57
 
 /obj/structure/cannon/modern/tank/japanese37
-	name = "Type 94 Cannon"
-	desc = "A 37mm Japanese tank-based cannon."
+	name = "94式炮"
+	desc = "一门37毫米日本坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 37
 
 /obj/structure/cannon/modern/tank/german88
-	name = "8.8 cm KwK 36"
-	desc = "A 88mm German tank-based cannon."
+	name = "8.8厘米 KwK 36"
+	desc = "一门88毫米德国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 88
 
 /obj/structure/cannon/modern/tank/omwtc10
-	name = "OMW-TC 100mm"
-	desc = "A 100mm Redmenian tank-based cannon."
+	name = "OMW-TC 100毫米"
+	desc = "一门100毫米雷德梅尼亚坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 100
 
 /obj/structure/cannon/modern/tank/autoloader/omwtc10
-	name = "OMW-TC 100mm"
-	desc = "A 100mm Redmenian tank-based cannon."
+	name = "OMW-TC 100毫米"
+	desc = "一门100毫米雷德梅尼亚坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 100
 
 /obj/structure/cannon/modern/tank/autoloader/t90a
-	name = "2A46 125mm"
-	desc = "A 125mm Russian tank-based cannon."
+	name = "2A46 125毫米"
+	desc = "一门125毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 125
 
 /obj/structure/cannon/modern/tank/leopard
-	name = "Rheinmetall 120 mm L/55"
-	desc = "A 120 mm German tank-based cannon."
+	name = "莱茵金属 120毫米 L/55"
+	desc = "一门120毫米德国坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 120
 
 /obj/structure/cannon/modern/tank/challenger2
-	name = "L30A1 120mm"
-	desc = "The L30A1, officially designated Gun 120mm Tk L30, is a British-designed 120mm rifled tank gun, installed in the turrets of Challenger 2 main battle tanks."
+	name = "L30A1 120毫米"
+	desc = "L30A1, 正式编号为 Gun 120mm Tk L30, 是一款英国设计的120毫米线膛坦克炮, 安装在挑战者2主战坦克的炮塔上."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 120
 
 /obj/structure/cannon/modern/tank/m1a1_abrams
-	name = "M256 120mm"
-	desc = "The M256 is an American 120 mm smoothbore tank gun. It uses a German-designed Rh-120 L44 gun tube and combustible cartridges with an American-designed mount, cradle and recoil mechanism."
+	name = "M256 120毫米"
+	desc = "M256是一款美国120毫米滑膛坦克炮. 它使用德国设计的Rh-120 L44炮管和可燃药筒, 以及美国设计的炮架, 摇架和后坐装置."
 	maxrange = 35
 	caliber = 120
 
 /obj/structure/cannon/modern/tank/baftkn75
-	name = "BAF TKN 75mm"
-	desc = "A 75mm Blugoslavian tank-based cannon."
+	name = "BAF TKN 75毫米"
+	desc = "一门75毫米布鲁戈斯拉夫坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 30
 	caliber = 75
 
 /obj/structure/cannon/modern/tank/german88/field
-	name = "8.8 cm Pak 43 cannon"
-	desc = "A 88mm German anti-tank cannon."
+	name = "8.8厘米 Pak 43 炮"
+	desc = "一门88毫米德国反坦克炮."
 	icon_state = "feldkanone18"
 	icon = 'icons/obj/cannon.dmi'
 	maxrange = 38
@@ -352,30 +352,30 @@
 		gunner_chair = new /obj/structure/bed/chair/gunner(src)
 
 /obj/structure/cannon/modern/tank/russian122
-	name = "122mm M1943 D-25T"
-	desc = "A 122mm Russian tank-based cannon."
+	name = "122毫米 M1943 D-25T"
+	desc = "一门122毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 27
 	caliber = 122
 
 /obj/structure/cannon/modern/tank/russian76
-	name = "76mm M1940 F-34"
-	desc = "A 76.2 mm Russian tank-based cannon."
+	name = "76毫米 M1940 F-34"
+	desc = "一门76.2毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 27
 	caliber = 76.2
 
 /obj/structure/cannon/modern/tank/russian45
-	name = "45mm M1932 20-K"
-	desc = "A 45mm Russian tank-based cannon."
+	name = "45毫米 M1932 20-K"
+	desc = "一门45毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 45
 	anchored = TRUE
 
 /obj/structure/cannon/modern/tank/russian45/field
-	name = "45mm M1932 field cannon"
-	desc = "A 45mm fast firing anti-tank cannon."
+	name = "45毫米 M1932 野战炮"
+	desc = "一门45毫米速射反坦克炮."
 	icon_state = "feldkanone18"
 	icon = 'icons/obj/cannon.dmi'
 	maxrange = 30
@@ -388,23 +388,23 @@
 		gunner_chair = new /obj/structure/bed/chair/gunner(src)
 
 /obj/structure/cannon/modern/tank/italian47
-	name = "47mm 47/32 mod.35"
-	desc = "An 45mm Italian tank-based cannon."
+	name = "47毫米 47/32 mod.35"
+	desc = "一门45毫米意大利坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 25
 	caliber = 47
 	anchored = TRUE
 
 /obj/structure/cannon/modern/tank/russian85
-	name = "85mm S-53"
-	desc = "A 85mm Russian tank-based cannon."
+	name = "85毫米 S-53"
+	desc = "一门85毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 33
 	caliber = 85
 	anchored = TRUE
 
 /obj/structure/cannon/modern/tank/russian85/su85
-	desc = "A 85mm SU-85 Russian tank-based cannon."
+	desc = "一门85毫米SU-85俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 35
 	caliber = 85
@@ -413,8 +413,8 @@
 /obj/structure/cannon/modern/tank/russian85/kv1
 
 /obj/structure/cannon/modern/tank/russian85/field
-	name = "85mm M1939 52-K cannon"
-	desc = "A 85mm Russian anti-air cannon converted for anti-tank use."
+	name = "85毫米 M1939 52-K 炮"
+	desc = "一门由85毫米俄罗斯高射炮改装而成的反坦克炮."
 	icon_state = "feldkanone18"
 	icon = 'icons/obj/cannon.dmi'
 	maxrange = 38
@@ -426,37 +426,37 @@
 		gunner_chair = new /obj/structure/bed/chair/gunner(src)
 
 /obj/structure/cannon/modern/tank/russian100
-	name = "100mm D10S"
-	desc = "A 100mm Russian tank-based cannon."
+	name = "100毫米 D10S"
+	desc = "一门100毫米俄罗斯坦克炮."
 	icon_state = "tank_cannon"
 	maxrange = 33
 	caliber = 100
 	anchored = TRUE
 
 /obj/structure/cannon/modern/tank/russian115
-	name = "115mm 2A20"
-	desc = "A 115mm Russian tank-based cannon."
+	name = "115毫米 2A20"
+	desc = "一门115毫米俄式坦克炮。"
 	icon_state = "tank_cannon"
 	maxrange = 33
 	caliber = 115
 	anchored = TRUE
 
 /obj/structure/cannon/modern/tank/bmv75
-	name = "BMV-TC 75mm"
-	desc = "A 75mm Redmenian tank-based cannon."
+	name = "BMV-TC 75毫米"
+	desc = "一门75毫米雷德梅尼亚坦克炮。"
 	icon_state = "tank_cannon"
 	maxrange = 30
 	caliber = 75
 
 /obj/structure/cannon/modern/tank/smf75
-	name = "SMF TKN 75mm"
-	desc = "A 75mm Blugoslavian tank-based cannon."
+	name = "SMF TKN 75毫米"
+	desc = "一门75毫米布卢戈斯拉夫坦克炮。"
 	icon_state = "tank_cannon"
 	maxrange = 30
 	caliber = 75
 
 /obj/structure/cannon/mortar
-	name = "mortar"
+	name = "迫击炮"
 	icon = 'icons/obj/cannon_ball.dmi'
 	layer = MOB_LAYER + 1 //just above mobs
 	density = TRUE
@@ -482,7 +482,7 @@
 	var/path
 
 /obj/structure/cannon/mortar/foldable/type89
-	name = "Type 89 Mortar"
+	name = "89式迫击炮"
 	icon_state = "type89"
 	anchored = TRUE
 	ammotype = /obj/item/cannon_ball/mortar_shell/type89 || /obj/item/weapon/grenade/ww2/type91
@@ -492,7 +492,7 @@
 	path = /obj/item/weapon/foldable/type89_mortar
 
 /obj/structure/cannon/mortar/foldable/generic
-	name = "foldable mortar"
+	name = "折叠迫击炮"
 	icon_state = "mortar"
 	anchored = TRUE
 	ammotype = /obj/item/cannon_ball/mortar_shell
@@ -526,7 +526,7 @@
 /obj/structure/cannon/mortar/foldable/attackby(obj/item/I as obj, mob/M as mob)
 	if (istype(I, ammotype))
 		if (loaded.len)
-			to_chat(M, "<span class = 'warning'>There's already a [loaded[1]] loaded.</span>")
+			to_chat(M, "<span class = 'warning'>已经装填了[loaded[1]]。</span>")
 			return
 		// load first and only slot
 		if (do_after(M, 45, src, can_move = TRUE))
@@ -536,7 +536,7 @@
 				loaded += I
 
 /obj/structure/cannon/davycrockett
-	name = "M29 Davy Crockett"
+	name = "M29戴维·克罗克特"
 	icon = 'icons/obj/cannon.dmi'
 	layer = MOB_LAYER + 1 //just above mobs
 	density = TRUE
@@ -564,8 +564,8 @@
 		icon_state = "m29_davy_crockett_empty"
 
 /obj/structure/cannon/rocket
-	name = "rocket artillery"
-	desc = "An artillery piece that fires dumb rockets, very inaccurate but deadly in numbers."
+	name = "火箭炮"
+	desc = "一种发射无制导火箭的火炮,精度极差但数量多时致命。"
 	icon = 'icons/obj/cannon.dmi'
 	icon_state = "modern_rocket"
 	ammotype = /obj/item/cannon_ball/rocket
@@ -582,8 +582,8 @@
 	see_amount_loaded = TRUE
 
 /obj/structure/cannon/rocket/nebelwerfer
-	name = "Nebelwerfer"
-	desc = "German 158mm rocket artillery. So loud."
+	name = "内贝尔维尔弗"
+	desc = "德国158毫米火箭炮。声音真大。"
 	icon = 'icons/obj/cannon.dmi'
 	icon_state = "nebelwerfer"
 	ammotype = /obj/item/cannon_ball/rocket

@@ -1,6 +1,6 @@
 /obj/item/weapon/keypad
-	name = "keypad"
-	desc = "A keypad for locking doors and containers."
+	name = "键盘锁"
+	desc = "用于锁门和容器的键盘锁."
 	icon = 'icons/obj/doors/locks.dmi'
 	icon_state = "keypad"
 	flags = CONDUCT

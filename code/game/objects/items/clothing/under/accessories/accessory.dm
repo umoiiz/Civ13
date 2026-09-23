@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory
-	name = "tie"
-	desc = "A neosilk clip-on tie."
+	name = "领带"
+	desc = "一条新丝质夹扣领带。"
 	icon = 'icons/obj/clothing/ties.dmi'
 	icon_state = "bluetie"
 	item_state = ""	//no inhands
@@ -46,7 +46,7 @@
 	loc = has_suit
 	has_suit.overlays += get_inv_overlay()
 
-	to_chat(user, "<span class='notice'>You attach \the [src] to \the [has_suit].</span>")
+	to_chat(user, "<span class='notice'>你将\the [src]系到了\the [has_suit]上。</span>")
 	add_fingerprint(user)
 
 /obj/item/clothing/accessory/proc/on_removed(var/mob/user)

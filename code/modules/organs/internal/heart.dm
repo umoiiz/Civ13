@@ -1,5 +1,5 @@
 /obj/item/organ/heart
-	name = "heart"
+	name = "心脏"
 	icon_state = "heart-on"
 	organ_tag = "heart"
 	parent_organ = "chest"

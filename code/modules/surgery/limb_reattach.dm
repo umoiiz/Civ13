@@ -24,12 +24,12 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = tool
-		user.visible_message("[user] starts attaching [E.name] to [target]'s [E.amputation_point].", \
+		user.visible_message("[user]开始将[E.name]连接到[target]的[E.amputation_point]上.", \
 		"You start attaching [E.name] to [target]'s [E.amputation_point].")
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = tool
-		user.visible_message("<span class='notice'>[user] has attached [target]'s [E.name] to the [E.amputation_point].</span>",	\
+		user.visible_message("<span class='notice'>[user]已将[target]的[E.name]连接到[E.amputation_point]上.</span>",	\
 		"<span class='notice'>You have attached [target]'s [E.name] to the [E.amputation_point].</span>")
 		user.drop_from_inventory(E)
 		E.replaced(target)
@@ -39,7 +39,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = tool
-		user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
+		user.visible_message("<span class='warning'> [user]的手滑了,损伤了[target]的[E.amputation_point]!</span>", \
 		"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
 		target.apply_damage(10, BRUTE, null, sharp=1)
 
@@ -60,12 +60,12 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = target.get_organ(target_zone)
-		user.visible_message("[user] starts connecting tendons and muscles in [target]'s [E.amputation_point] with [tool].", \
+		user.visible_message("[user]开始用[tool]连接[target]的[E.amputation_point]中的肌腱和肌肉.", \
 		"You start connecting tendons and muscle in [target]'s [E.amputation_point].")
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = target.get_organ(target_zone)
-		user.visible_message("<span class='notice'>[user] has connected tendons and muscles in [target]'s [E.amputation_point] with [tool].</span>",	\
+		user.visible_message("<span class='notice'>[user]用[tool]连接了[target]的[E.amputation_point]中的肌腱和肌肉.</span>",	\
 		"<span class='notice'>You have connected tendons and muscles in [target]'s [E.amputation_point] with [tool].</span>")
 		E.status &= ~ORGAN_DESTROYED
 		if (E.children)
@@ -77,6 +77,6 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/E = tool
-		user.visible_message("<span class='warning'> [user]'s hand slips, damaging [target]'s [E.amputation_point]!</span>", \
+		user.visible_message("<span class='warning'> [user]的手滑了,损坏了[target]的[E.amputation_point]!</span>", \
 		"<span class='warning'> Your hand slips, damaging [target]'s [E.amputation_point]!</span>")
 		target.apply_damage(10, BRUTE, null, sharp=1)

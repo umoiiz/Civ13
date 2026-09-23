@@ -30,7 +30,7 @@
 
 	for (var/p in forbidden_varedit_object_types)
 		if ( istype(O,p) )
-			to_chat(usr, "<span class = 'red'>It is forbidden to edit this object's variables.</span>")
+			to_chat(usr, "<span class = 'red'>禁止编辑此对象的变量.</span>")
 			return
 
 	var/list/names = list()
@@ -55,43 +55,43 @@
 		if (!check_rights(R_DEBUG))	return
 
 	if (isnull(var_value))
-		to_chat(usr, "Unable to determine variable type.")
+		to_chat(usr, "无法确定变量类型.")
 
 	else if (isnum(var_value))
-		to_chat(usr, "Variable appears to be <b>NUM</b>.")
+		to_chat(usr, "变量似乎是<b>NUM</b>.")
 		default = "num"
 		dir = TRUE
 
 	else if (istext(var_value))
-		to_chat(usr, "Variable appears to be <b>TEXT</b>.")
+		to_chat(usr, "变量似乎是<b>TEXT</b>.")
 		default = "text"
 
 	else if (isloc(var_value))
-		to_chat(usr, "Variable appears to be <b>REFERENCE</b>.")
+		to_chat(usr, "变量似乎是<b>REFERENCE</b>.")
 		default = "reference"
 
 	else if (isicon(var_value))
-		to_chat(usr, "Variable appears to be <b>ICON</b>.")
+		to_chat(usr, "变量似乎是<b>ICON</b>.")
 		var_value = "\icon[getFlatIcon(var_value)]"
 		default = "icon"
 
 	else if (istype(var_value,/atom) || istype(var_value,/datum))
-		to_chat(usr, "Variable appears to be <b>TYPE</b>.")
+		to_chat(usr, "变量似乎是<b>TYPE</b>.")
 		default = "type"
 
 	else if (istype(var_value,/list))
-		to_chat(usr, "Variable appears to be <b>LIST</b>.")
+		to_chat(usr, "变量似乎是<b>LIST</b>.")
 		default = "list"
 
 	else if (istype(var_value,/client))
-		to_chat(usr, "Variable appears to be <b>CLIENT</b>.")
+		to_chat(usr, "变量似乎是<b>CLIENT</b>.")
 		default = "cancel"
 
 	else
-		to_chat(usr, "Variable appears to be <b>FILE</b>.")
+		to_chat(usr, "变量似乎是<b>FILE</b>.")
 		default = "file"
 
-	to_chat(usr, "Variable contains: [var_value]")
+	to_chat(usr, "变量包含: [var_value]")
 	if (dir)
 		switch(var_value)
 			if (1)
@@ -113,7 +113,7 @@
 			else
 				dir = null
 		if (dir)
-			to_chat(usr, "If a direction, direction is: [dir]")
+			to_chat(usr, "如果是方向, 方向为: [dir]")
 
 	var/class = input("What kind of variable?","Variable Type",default) as null|anything in list("text",
 		"num","type","icon","file","empty list", "proccall","edit referenced object","restore to default")

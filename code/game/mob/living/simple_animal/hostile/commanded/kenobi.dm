@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/kenobi
 	name = "Kenobi"
-	desc = "A monkey dawning a japanese uniform. fucking weeb."
+	desc = "一只穿着日本军服的猴子. 该死的二次元."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "monkey_kenobi"
 	icon_dead = "monkey_kenobi_dead"
@@ -64,9 +64,9 @@
 			if (health > 0)
 				if (istype(src, /mob/living/simple_animal/hostile/human/kenobi))
 					if (prob(30))
-						M.visible_message("<span class = 'notice'>[M] tells \the [src] that he is a good soldier!</span>")
+						M.visible_message("<span class = 'notice'>[M]告诉\the [src]他是个好士兵!</span>")
 					else
-						M.visible_message("<span class = 'notice'>[M] pats \the [src]'s head!</span>")
+						M.visible_message("<span class = 'notice'>[M]拍了拍\the [src]的头!</span>")
 				else
 					M.visible_message("<span class = 'notice'>[M] [response_help] \the [src].</span>")
 
@@ -100,7 +100,7 @@
 			G.affecting = src
 			LAssailant = M
 
-			M.visible_message("<span class = 'red'>[M] has grabbed [src] passively!</span>")
+			M.visible_message("<span class = 'red'>[M]被动地抓住了[src]!</span>")
 			M.do_attack_animation(src)
 
 		if (I_HARM)
@@ -123,13 +123,13 @@
 		var/obj/item/weapon/leash/L = O
 		if (L.onedefined == FALSE)
 			L.S1 = src
-			to_chat(user, "You tie \the [src] with the leash.")
+			to_chat(user, "你用牵引绳拴住了\the [src].")
 			L.onedefined = TRUE
 			return
 		else if (L.onedefined == TRUE && (src in range(3,L.S1)))
 			L.S2 = src
 			L.S2.following_mob = L.S1
-			to_chat(user, "You tie \the [src] to \the [L.S1] with the leash. It will now follow \the [L.S1].")
+			to_chat(user, "你用牵引绳将\the [src]拴到了\the [L.S1]上. 它现在会跟随\the [L.S1].")
 			qdel(L)
 			return
 	else if (istype(O, /obj/item/stack/medical))
@@ -150,7 +150,7 @@
 			return TRUE
 	else if (!O.sharp || istype(O, /obj/item/weapon/macuahuitl))
 		if (!O.force && !istype(O, /obj/item/stack/medical/bruise_pack))
-			visible_message("<span class='notice'>[user] gently taps [src] with \the [O].</span>")
+			visible_message("<span class='notice'>[user]用\the [O]轻轻敲了敲[src].</span>")
 		else
 			var/tgt = user.targeted_organ
 			if (user.targeted_organ == "random")
@@ -158,9 +158,9 @@
 			O.attack(src, user, tgt)
 	else if (O.sharp && !istype(src, /mob/living/simple_animal/hostage))
 		if (!istype(O, /obj/item/weapon/reagent_containers) && user.a_intent == I_HARM && stat == DEAD)
-			user.visible_message("<span class = 'notice'>[user] starts to butcher [src].</span>")
+			user.visible_message("<span class = 'notice'>[user]开始肢解[src].</span>")
 			if (do_after(user, 30, src))
-				user.visible_message("<span class = 'notice'>[user] butchers [src].</span>")
+				user.visible_message("<span class = 'notice'>[user]肢解了[src].</span>")
 				var/amt = butcher_yield()
 				var/namt = amt-2
 				if (namt <= 0)
@@ -230,9 +230,9 @@
 				crush()
 				qdel(src)
 		if (!istype(O, /obj/item/weapon/reagent_containers) && user.a_intent == I_GRAB && stat == DEAD)
-			user.visible_message("<span class = 'notice'>[user] starts to skin and butcher [src].</span>")
+			user.visible_message("<span class = 'notice'>[user]开始剥皮并肢解[src].</span>")
 			if (do_after(user, 100, src))
-				user.visible_message("<span class = 'notice'>[user] skins and butchers [src].</span>")
+				user.visible_message("<span class = 'notice'>[user]剥皮并肢解了[src].</span>")
 				var/amt = butcher_yield()
 				var/namt = amt-2
 				if (namt <= 0)

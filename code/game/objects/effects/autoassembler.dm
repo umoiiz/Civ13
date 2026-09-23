@@ -3,7 +3,7 @@
 
 /obj/effect/autoassembler
 	name = "auto assembler"
-	desc = "automatically assembles a vehicle in range."
+	desc = "自动在范围内组装一辆载具."
 	icon = 'icons/mob/screen/effects.dmi'
 	icon_state = "AA"
 	invisibility = 101

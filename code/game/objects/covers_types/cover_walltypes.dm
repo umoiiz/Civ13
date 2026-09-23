@@ -63,7 +63,7 @@
 
 /obj/covers/wood_wall
 	name = "soft wood wall"
-	desc = "A wood wall."
+	desc = "一堵木墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "b_wood_wall"
 	passable = FALSE
@@ -103,7 +103,7 @@
 			return TRUE
 /obj/covers/wood_wall/medieval
 	name = "medieval wall"
-	desc = "A dark-ages wall."
+	desc = "一堵黑暗时代风格的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "medieval0"
 	base_icon_state = "medieval"
@@ -119,21 +119,21 @@
 
 /obj/covers/wood_wall/medieval/x
 	name = "medieval wall crossbeam"
-	desc = "A dark-ages wall with an x shaped support."
+	desc = "一堵带有X形支撑的黑暗时代风格的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "medieval_wall_x"
 	health = 335
 
 /obj/covers/wood_wall/medieval/y/r
 	name = "medieval wall crossbeam"
-	desc = "A dark-ages wall with an slanted support."
+	desc = "一堵带有斜向支撑的黑暗时代风格的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "medieval_wall_y1"
 	health = 335
 
 /obj/covers/wood_wall/medieval/y/l
 	name = "medieval wall crossbeam"
-	desc = "A dark-ages wall with an slanted support."
+	desc = "一堵带有斜向支撑的黑暗时代风格的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "medieval_wall_y2"
 	health = 335
@@ -148,7 +148,7 @@
 
 /obj/covers/wood_wall/oriental
 	name = "oriental wall"
-	desc = "A east-oriental style wall."
+	desc = "一堵东方式风格的墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "oriental"
 	health = 330
@@ -161,7 +161,7 @@
 
 /obj/covers/wood_wall/oriental/doorway
 	name = "oriental doorway"
-	desc = "A east-oriental style doorway."
+	desc = "一个东方式风格的门道."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "oriental-door"
 	density = FALSE
@@ -194,7 +194,7 @@
 
 /obj/covers/wood_wall/shoji
 	name = "shoji wall"
-	desc = "A shoji paper wall."
+	desc = "一堵障子纸墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "shoji_wall2"
 	passable = TRUE
@@ -211,7 +211,7 @@
 
 /obj/covers/wood_wall/shoji_divider
 	name = "shoji dividing wall"
-	desc = "A shoji paper wall. This one is more meant to divide rooms."
+	desc = "一堵障子纸墙. 这一堵更多是用来分隔房间的."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "shoji_wall"
 	passable = TRUE
@@ -228,7 +228,7 @@
 
 /obj/covers/wood_wall/bamboo
 	name = "bamboo wall"
-	desc = "A wall made from bamboo."
+	desc = "一堵竹子制成的墙."
 	icon = 'icons/obj/bamboostuff.dmi'
 	icon_state = "bamboo"
 	health = 230
@@ -244,7 +244,7 @@
 
 /obj/covers/wood_wall/log
 	name = "log wall"
-	desc = "A log wall."
+	desc = "一堵原木墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "log_wall"
 	passable = FALSE
@@ -268,7 +268,7 @@
 
 /obj/covers/stone_wall
 	name = "rough stone wall"
-	desc = "A rough stone wall."
+	desc = "一堵粗糙的石墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "b_stone_wall"
 	passable = FALSE
@@ -304,13 +304,13 @@
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把尖刀.")
 				qdel(I)
 	..()
 
 /obj/covers/stone_wall/plain
 	name = "smooth stone wall"
-	desc = "A smooth stone wall."
+	desc = "一堵光滑的石墙."
 
 /obj/covers/stone_wall/plain/attackby(obj/item/W as obj, mob/user as mob)
 	var/mob/living/human/H = user
@@ -382,7 +382,7 @@
 
 /obj/covers/marble_wall
 	name = "rough marble wall"
-	desc = "A rough marble wall."
+	desc = "一堵粗糙的大理石墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "b_marble_wall"
 	passable = TRUE
@@ -411,14 +411,14 @@
 		..()
 /obj/covers/marble_wall/plain
 	name = "smooth marble wall"
-	desc = "A smooth marble wall."
+	desc = "一堵光滑的大理石墙."
 
 /obj/covers/marble_wall/plain/attackby(obj/item/W as obj, mob/user as mob)
 	var/mob/living/human/H = user
 	if(istype(W, /obj/item/weapon/chisel))
 		var design = "smooth"
 		if (!istype(H.l_hand, /obj/item/weapon/hammer) && !istype(H.r_hand, /obj/item/weapon/hammer))
-			to_chat(user, "<span class = 'warning'>You need to have a hammer in one of your hands to use a chisel.</span>")
+			to_chat(user, "<span class = 'warning'>你需要有一只手拿着锤子才能使用凿子.</span>")
 			return
 		else
 			var/display = list("Smooth", "Carved Brick", "Cobbled", "Tiled", "Cancel")
@@ -426,18 +426,18 @@
 			if (input == "Cancel")
 				return
 			else if  (input == "Smooth")
-				to_chat(user, "<span class='notice'>You will now carve the smooth design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻光滑图案!</span>")
 				design = "smooth"
 			else if  (input == "Carved Brick")
-				to_chat(user, "<span class='notice'>You will now carve the brick design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻砖块图案!</span>")
 				design = "carvedbrick"
 			else if  (input == "Cobbled")
-				to_chat(user, "<span class='notice'>You will now carve the cobbled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻鹅卵石图案!</span>")
 				design = "cobbled"
 			else if  (input == "Tiled")
-				to_chat(user, "<span class='notice'>You will now carve the tiled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻瓷砖图案!</span>")
 				design = "tiled"
-			visible_message("<span class='danger'>[user] starts to chisel a design!</span>", "<span class='danger'>You start chiseling a design.</span>")
+			visible_message("<span class='danger'>[user]开始凿刻一个图案!</span>", "<span class='danger'>你开始凿刻一个图案.</span>")
 			playsound(src,'sound/effects/pickaxe.ogg',60,1)
 			if (do_after(user, 60, src))
 			//Designs possible are "smooth", "carvedbrick", "cobbled", "tiled"
@@ -468,18 +468,18 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨尖了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把尖刀.")
 				qdel(I)
 	..()
 
 /obj/covers/sandstone_wall
 	name = "sandstone tiled wall"
-	desc = "A sandstone tiled wall."
+	desc = "一堵砂岩瓷砖墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brick"
 	passable = TRUE
@@ -501,18 +501,18 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨尖了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把尖刀.")
 				qdel(I)
 	..()
 
 /obj/covers/sandstone_smooth_wall //just a parent to the real smooth sandstone wall.
 	name = "rough sandstone wall"
-	desc = "A rough sandstone wall."
+	desc = "一堵粗糙的砂岩墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_smooth"
 	passable = TRUE
@@ -534,25 +534,25 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨尖了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把尖刀.")
 				qdel(I)
 	..()
 
 /obj/covers/sandstone_smooth_wall/plain
 	name = "smooth sandstone wall"
-	desc = "A smooth sandstone wall."
+	desc = "一堵光滑的砂岩墙."
 
 /obj/covers/sandstone_smooth_wall/plain/attackby(obj/item/W as obj, mob/user as mob)
 	var/mob/living/human/H = user
 	if(istype(W, /obj/item/weapon/chisel))
 		var design = "smooth"
 		if (!istype(H.l_hand, /obj/item/weapon/hammer) && !istype(H.r_hand, /obj/item/weapon/hammer))
-			to_chat(user, "<span class = 'warning'>You need to have a hammer in one of your hands to use a chisel.</span>")
+			to_chat(user, "<span class = 'warning'>你需要有一只手拿着锤子才能使用凿子.</span>")
 			return
 		else
 			var/display = list("Smooth", "Cobbled", "Tiled", "Cancel")
@@ -560,15 +560,15 @@
 			if (input == "Cancel")
 				return
 			else if  (input == "Smooth")
-				to_chat(user, "<span class='notice'>You will now carve the smooth design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻光滑图案!</span>")
 				design = "smooth"
 			else if  (input == "Cobbled")
-				to_chat(user, "<span class='notice'>You will now carve the cobbled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻鹅卵石图案!</span>")
 				design = "cobbled"
 			else if  (input == "Tiled")
-				to_chat(user, "<span class='notice'>You will now carve the tiled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻瓷砖图案!</span>")
 				design = "tiled"
-			visible_message("<span class='danger'>[user] starts to chisel a design!</span>", "<span class='danger'>You start chiseling a design.</span>")
+			visible_message("<span class='danger'>[user]开始凿刻一个图案!</span>", "<span class='danger'>你开始凿刻一个图案.</span>")
 			playsound(src,'sound/effects/pickaxe.ogg',60,1)
 			if (do_after(user, 60, src))
 			//Designs possible are "smooth", "cobbled", "tiled"
@@ -592,7 +592,7 @@
 
 /obj/covers/sandstone_wall/classic
 	name = "sandstone block wall"
-	desc = "A sandstone block wall."
+	desc = "一堵砂岩块墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_block_wall0"
 	base_icon_state = "sandstone_block_wall"
@@ -600,13 +600,13 @@
 
 /obj/covers/sandstone_wall/classic/red
 	name = "red sandstone block wall"
-	desc = "A red sandstone block wall."
+	desc = "一堵红砂岩块墙."
 	icon_state = "redsandstone_block_wall0"
 	base_icon_state = "redsandstone_block_wall"
 
 /obj/covers/sandstone_wall/brick
 	name = "sandstone brick wall"
-	desc = "A sandstone brick wall."
+	desc = "一堵砂岩砖墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandstone_brickwall0"
 	base_icon_state = "sandstone_brickwall"
@@ -628,14 +628,14 @@
 
 /obj/covers/sandstone_wall/egyptian
 	name = "egyptian sandstone wall"
-	desc = "An egyptian-style sandstone wall."
+	desc = "一堵埃及风格的砂岩墙."
 	icon_state = "new_egyptian0"
 	base_icon_state = "new_egyptian"
 	adjusts = TRUE
 
 /obj/covers/sandstone_wall/fortress
 	name = "sandstone fortress brick wall"
-	desc = "A dense sandstone fortress brick wall."
+	desc = "一堵厚实的砂岩堡垒砖墙."
 	icon_state = "sandstone_fortress0"
 	base_icon_state = "sandstone_fortress"
 	adjusts = TRUE
@@ -645,7 +645,7 @@
 
 /obj/covers/dirt_wall
 	name = "dirt wall"
-	desc = "A dirt wall."
+	desc = "一堵泥土墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "drydirt_wall"
 	passable = TRUE
@@ -665,7 +665,7 @@
 
 /obj/covers/straw_wall
 	name = "straw wall"
-	desc = "A straw wall. Looks flimsy."
+	desc = "一堵稻草墙. 看起来很脆弱."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "straw_wallh"
 	passable = TRUE
@@ -683,7 +683,7 @@
 
 /obj/covers/vault
 	name = "vault wall"
-	desc = "A very strong wall of concrete."
+	desc = "一堵非常坚固的混凝土墙."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "vault"
 	passable = TRUE
@@ -703,7 +703,7 @@
 
 /obj/covers/divider_wall
 	name = "divider wall"
-	desc = "A divider wall so you don't see what's next to you. Looks flimsy."
+	desc = "一堵隔断墙,这样你就看不到旁边是什么了. 看起来很脆弱."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "divider0"
 	base_icon_state = "divider"
@@ -723,7 +723,7 @@
 
 /obj/covers/tent
 	name = "tent wall"
-	desc = "A tent wall to protect you against the elements, neat! It looks flimsy though."
+	desc = "一堵帐篷墙,为你遮风挡雨,不错! 不过看起来很脆弱."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "tent0"
 	base_icon_state = "tent"
@@ -743,7 +743,7 @@
 
 /obj/covers/slate
 	name = "slatestone wall"
-	desc = "A slate wall."
+	desc = "一堵板岩墙."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "slate"
 	passable = TRUE
@@ -762,7 +762,7 @@
 
 /obj/covers/sovietwall
 	name = "Soviet tiles wall"
-	desc = "A cheap tiled wall."
+	desc = "一堵廉价的瓷砖墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sovietwall_one"
 	passable = TRUE
@@ -781,60 +781,60 @@
 
 /obj/covers/wood_wall/aztec
 	name = "aztec wood wall"
-	desc = "A wood wall, in aztec style."
+	desc = "一堵阿兹特克风格的木墙."
 	icon_state = "aztec0"
 	base_icon_state = "aztec"
 	adjusts = TRUE
 
 /obj/covers/wood_wall/nordic
 	name = "nordic wood wall"
-	desc = "A wood wall, in northern european style."
+	desc = "一堵北欧风格的木墙."
 	icon_state = "nordic0"
 	base_icon_state = "nordic"
 	adjusts = TRUE
 
 /obj/covers/stone_wall/mayan
 	name = "mayan stone wall"
-	desc = "A mayan-style stone wall."
+	desc = "一堵玛雅风格的石墙."
 	icon_state = "mayan0"
 	base_icon_state = "mayan"
 	adjusts = TRUE
 
 /obj/covers/stone_wall/classic
 	name = "stone block wall"
-	desc = "A stone block wall."
+	desc = "一堵石块墙."
 	icon_state = "stone_block_wall0"
 	base_icon_state = "stone_block_wall"
 	adjusts = TRUE
 
 /obj/covers/marble_wall/classic
 	name = "marble block wall"
-	desc = "A marble block wall."
+	desc = "一堵大理石块墙."
 	icon_state = "marble_block_wall0"
 	base_icon_state = "marble_block_wall"
 	adjusts = TRUE
 
 /obj/covers/marble_wall/grecian //adjustable
 	name = "grecian stone wall"
-	desc = "A grecian stone wall, it is emblazened with motifs."
+	desc = "一堵希腊石墙,上面饰有图案."
 	icon_state = "grecian0"
 	base_icon_state = "grecian"
 	adjusts = TRUE
 
 /obj/covers/stone_wall/roman
 	name = "roman stone wall"
-	desc = "A roman-style stone wall."
+	desc = "一堵罗马风格的石墙."
 	icon_state = "roman0"
 	base_icon_state = "roman"
 	adjusts = TRUE
 
 /obj/covers/stone_wall/roman/modern
 	name = "tiled white brick wall"
-	desc = "A contempoary white stone wall."
+	desc = "一堵现代风格的白色石墙."
 
 /obj/covers/stone_wall/brick
 	name = "stone brick wall"
-	desc = "A stone brick wall."
+	desc = "一堵石砖墙."
 	icon_state = "new_stonebrick0"
 	base_icon_state = "new_stonebrick"
 	adjusts = TRUE
@@ -843,7 +843,7 @@
 
 /obj/covers/stone_wall/fortress
 	name = "fortress brick wall"
-	desc = "A dense fortress brick wall."
+	desc = "一堵厚实的堡垒砖墙."
 	icon_state = "fortress_brickwall0"
 	base_icon_state = "fortress_brickwall"
 	adjusts = TRUE

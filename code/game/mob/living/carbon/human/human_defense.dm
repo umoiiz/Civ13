@@ -214,7 +214,7 @@ bullet_act
 					last_harmed = Huser
 					Huser.civilization = "Killer"
 	if (istype(P, /obj/item/projectile/shell))
-		visible_message("<span class = 'danger'>[src] gets blown up by \the [P]!</span>")
+		visible_message("<span class = 'danger'>[src]被\the [P]炸飞了!</span>")
 		gib()
 		spawn (0.01)
 			qdel(P)
@@ -232,7 +232,7 @@ bullet_act
 		if (wear_mask && istype(wear_mask, /obj/item/weapon/grenade))
 			var/obj/item/weapon/grenade/G = wear_mask
 			if (!G.active)
-				visible_message("<span class = 'danger'>The grenade in [src]'s mouth goes off!</span>")
+				visible_message("<span class = 'danger'>[src]嘴里的手雷爆炸了!</span>")
 				G.active = TRUE
 				G.prime()
 
@@ -271,7 +271,7 @@ bullet_act
 			SH = r_hand
 		if (istype(P, /obj/item/projectile/arrow/arrow))
 			if (prob(min(SH.base_block_chance,92)))
-				visible_message("<span class = 'warning'>[src] blocks the arrow with the [SH.name]!</span>")
+				visible_message("<span class = 'warning'>[src]用[SH.name]挡住了箭矢!</span>")
 				P.blockedhit = TRUE
 				SH.health -= 2
 				//ARROW FALL STUFF HERE
@@ -295,12 +295,12 @@ bullet_act
 						new/obj/item/ammo_casing/arrow/modern(get_turf(src))
 					else
 						new/obj/item/ammo_casing/arrow(get_turf(src))
-					visible_message("<span class = 'warning'>The arrow falls to the ground!</span>")
+					visible_message("<span class = 'warning'>箭矢掉到了地上!</span>")
 				else
-					visible_message("<span class = 'warning'>The arrow shatters!</span>")
+					visible_message("<span class = 'warning'>箭矢碎裂了!</span>")
 		else if (istype(P, /obj/item/projectile/arrow/bolt))
 			if (prob(min(SH.base_block_chance,92)))
-				visible_message("<span class = 'warning'>[src] blocks the bolt with the [SH.name]!</span>")
+				visible_message("<span class = 'warning'>[src]用[SH.name]挡住了弩矢!</span>")
 				P.blockedhit = TRUE
 				SH.health -= 2
 				//ARROW FALL STUFF HERE
@@ -324,9 +324,9 @@ bullet_act
 						new/obj/item/ammo_casing/bolt/modern(get_turf(src))
 					else
 						new/obj/item/ammo_casing/bolt(get_turf(src))
-					visible_message("<span class = 'warning'>The bolt falls to the ground!</span>")
+					visible_message("<span class = 'warning'>弩矢掉到了地上!</span>")
 				else
-					visible_message("<span class = 'warning'>The bolt shatters!</span>")
+					visible_message("<span class = 'warning'>弩矢碎裂了!</span>")
 	if (shield_check)
 		P.blockedhit = TRUE
 		if (shield_check < 0)
@@ -357,7 +357,7 @@ bullet_act
 
 					if (lastMovedRecently(accuracy_check = TRUE))
 						if (prob(graze_chance_multiplier * max(distcheck - 7, 0)))
-							visible_message("<span class = 'warning'>[src] is just grazed by the bullet!</span>")
+							visible_message("<span class = 'warning'>[src]只是被子弹擦伤了!</span>")
 							adjustBruteLoss(pick(14,15))
 							P.useless = TRUE
 							qdel(P)
@@ -395,7 +395,7 @@ bullet_act
 								break
 					if (slammed_into.density)
 						spawn (1)
-							visible_message("<span class = 'danger'>[src] flies back from the force of the blast and slams into \the [slammed_into]!</span>")
+							visible_message("<span class = 'danger'>[src]被爆炸的冲击力掀飞,撞上了\the [slammed_into]!</span>")
 						Weaken(3)
 						adjustBruteLoss(rand(20,30))
 						if (client)
@@ -407,7 +407,7 @@ bullet_act
 					if (!map || !map.check_caribbean_block(src, behind))
 						forceMove(behind)
 						spawn (1)
-							visible_message("<span class = 'danger'>[src] flies back from the force of the blast!</span>")
+							visible_message("<span class = 'danger'>[src]被爆炸的冲击力掀飞了!</span>")
 
 		// get weakened too
 		if (prob(P.KD_chance*0.5))
@@ -595,7 +595,7 @@ bullet_act
 				
 /mob/living/proc/check_shields(var/damage = FALSE, var/atom/damage_source = null, var/mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if (magic_shield)
-		visible_message("<span class='warning'>The shimmering bubble of denial around [src] blocks [attack_text]!</span>")
+		visible_message("<span class='warning'>[src]周围闪烁的否定气泡挡住了[attack_text]!</span>")
 		return TRUE
 	return FALSE
 
@@ -618,7 +618,7 @@ bullet_act
 	var/hit_zone = get_zone_with_miss_chance(target_zone, src)
 
 	if (!hit_zone)
-		user.visible_message("<span class='danger'>\The [user] misses [src] with \the [I]!</span>", "<span class='danger'>You miss [src] with \the [I]!")
+		user.visible_message("<span class='danger'>\The [user]用\the [I]没有击中[src]!</span>", "<span class='danger'>你用\the [I]没有击中[src]!")
 		return null
 
 	if (check_shields(I.force, I, user, target_zone, "the [I.name]"))
@@ -642,10 +642,10 @@ bullet_act
 		if (prob(50))
 			if (prob(65))
 				if (user != src)
-					user.visible_message("<span class='danger'>[user] has tried to strike [src]'s [affecting.name] with \the [I.name] but missed!</span>", "<span class='danger'>You tried to strike [src]'s [affecting.name] with \the [I.name] but missed!</span>")
+					user.visible_message("<span class='danger'>[user]试图用\the [I.name]击打[src]的[affecting.name],但没击中!</span>", "<span class='danger'>你试图用\the [I.name]击打[src]的[affecting.name],但没击中!</span>")
 					return
 				else
-					user.visible_message("<span class = 'danger'>[user] has tried to strike \his [affecting.name] with \the [I.name] but missed!</span>", "<span class = 'danger'>You tried to strike yourself with \the [I.name] but missed!</span>")
+					user.visible_message("<span class = 'danger'>[user]试图用\the [I.name]击打\his [affecting.name],但没击中!</span>", "<span class = 'danger'>你试图用\the [I.name]击打自己,但没击中!</span>")
 					return
 			else
 				switch(hit_zone)
@@ -663,26 +663,26 @@ bullet_act
 		if (prob(25))
 			if (prob(60))
 				if (user != src)
-					user.visible_message("<span class='danger'>[user] has tried to strike [src]'s [affecting.name] with \the [I.name] but missed!</span>", "<span class='danger'>You tried to strike [src]'s [affecting.name] with \the [I.name] but <b>missed!</span>")
+					user.visible_message("<span class='danger'>[user]试图用\the [I.name]击打[src]的[affecting.name],但没击中!</span>", "<span class='danger'>你试图用\the [I.name]击打[src]的[affecting.name],但<b>没击中!</span>")
 					return
 				else
-					user.visible_message("<span class = 'danger'>[user] has tried to strike \his [affecting.name] with \the [I.name] but missed!</span>", "<span class = 'danger'>You tried to strike yourself with \the [I.name] but missed!</span>")
+					user.visible_message("<span class = 'danger'>[user]试图用\the [I.name]击打\his [affecting.name],但没击中!</span>", "<span class = 'danger'>你试图用\the [I.name]击打自己,但没击中!</span>")
 					return
 			else
 				affecting = get_organ("chest")
 	else if (hit_zone == "head")
 		if (prob(18))
 			if (user != src)
-				user.visible_message("<span class='danger'>[user] has tried to strike [src]'s [affecting.name] with \the [I.name] but <b>missed!</b></span>", "<span class='danger'>You tried to strike [src]'s [affecting.name] with \the [I.name] but <b>missed!</b></span>")
+				user.visible_message("<span class='danger'>[user]试图用\the [I.name]击打[src]的[affecting.name],但<b>没击中!</b></span>", "<span class='danger'>你试图用\the [I.name]击打[src]的[affecting.name],但<b>没击中!</b></span>")
 				return
 			else
-				user.visible_message("<span class = 'danger'>[user] has tried to strike \his [affecting.name] with \the [I.name] but missed!</span>", "<span class = 'danger'>You tried to strike yourself with \the [I.name] but missed!</span>")
+				user.visible_message("<span class = 'danger'>[user]试图用\the [I.name]击打\his [affecting.name],但没击中!</span>", "<span class = 'danger'>你试图用\the [I.name]击打自己,但没击中!</span>")
 				return
 	if(user != src)
-		user.visible_message("<span class= 'danger'>[src] has been [I.attack_verb.len? pick(I.attack_verb) : "attacked"] in the [affecting.name] with \the [I.name] by [user]!</span>", \
+		user.visible_message("<span class= 'danger'>[src]被[user]用\the [I.name][I.attack_verb.len? pick(I.attack_verb) : "attacked"]了[affecting.name]!</span>", \
 							"<span class = 'danger'>You have [I.attack_verb.len? pick(I.attack_verb) : "attacked"] [src] in the [affecting.name] with \the [I.name]")
 	else
-		user.visible_message("<span class = 'danger'>[user] has [I.attack_verb.len? pick(I.attack_verb) : "attacked"] \himself in the [affecting.name] with \the [I.name]!</span>", "<span class = 'danger'>You have [I.attack_verb.len? pick(I.attack_verb) : "attacked"] yourself in the [affecting.name] with \the [I.name]!</span>")
+		user.visible_message("<span class = 'danger'>[user]用\the [I.name][I.attack_verb.len? pick(I.attack_verb) : "attacked"]了\him self的[affecting.name]!</span>", "<span class = 'danger'>你用\the [I.name][I.attack_verb.len? pick(I.attack_verb) : "attacked"]了自己的[affecting.name]!</span>")
 	receive_damage()
 	instadeath_check()
 	var/blocked = run_armor_check(hit_zone, "melee", I.armor_penetration, "Your armor has protected your [affecting.name].", "Your armor has softened the blow to your [affecting.name].", damage_source = I)
@@ -736,9 +736,9 @@ bullet_act
 	if(I.sharp && prob(I.force/10) && !(affecting.status & ORGAN_ARTERY_CUT))
 		affecting.sever_artery()
 		if(affecting.artery_name == "carotid artery")
-			user.visible_message("<span class='danger'><b>[user] slices [src]'s throat!</b></span>", "<span class='danger'><b>You start slicing [src]'s throat!</b></span>")
+			user.visible_message("<span class='danger'><b>[user]割开了[src]的喉咙!</b></span>", "<span class='danger'><b>你开始割开[src]的喉咙!</b></span>")
 		else
-			user.visible_message("<span class='danger'><b>[user] slices open [src]'s [affecting.artery_name] artery!</b></span>", "<span class='danger'><b>You slice open [src]'s [affecting.artery_name] artery!</b></span>")
+			user.visible_message("<span class='danger'><b>[user]割开了[src]的[affecting.artery_name]动脉!</b></span>", "<span class='danger'><b>你割开了[src]的[affecting.artery_name]动脉!</b></span>")
 			mood -= 5
 
 	//Finally if we pass all that, we cut the limb off. This should reduce the number of one hit sword kills.
@@ -756,7 +756,7 @@ bullet_act
 
 	if(I.damtype == BRUTE && !I.edge && prob(I.force * (hit_zone == "mouth" ? 6 : 0)) && O)//Knocking out teeth.
 		if(O.knock_out_teeth(get_dir(user, src), round(rand(28, 38) * ((I.force*1.5)/100))))
-			user.visible_message("<span class='danger'>Some of [src]'s teeth sail off in an arc!</span>", \
+			user.visible_message("<span class='danger'>[src]的一些牙齿呈弧形飞了出去!</span>", \
 								"<span class='userdanger'>Some of your teeth sail off in an arc!</span>")
 
 	else if ((I.damtype == BRUTE || I.damtype == HALLOSS) && prob(5 + (effective_force)))
@@ -764,17 +764,17 @@ bullet_act
 			if (headcheck(hit_zone))
 				//Harder to score a stun but if you do it lasts a bit longer
 				if (prob(effective_force/8))
-					src.visible_message("<span class='danger'>[src] [species.knockout_message]</span>", "<span class='userdanger'>You are knocked out!</span>")
+					src.visible_message("<span class='danger'>[src] [species.knockout_message]</span>", "<span class='userdanger'>你被击晕了!</span>")
 					Paralyse(7/(blocked+1))
 			else
 				//Easier to score a stun but lasts less time
 				if (prob(effective_force/5))
-					src.visible_message("<span class='danger'>[src] has been knocked down!</span>", "<span class='userdanger'>You are knocked down!</span>")
+					src.visible_message("<span class='danger'>[src]被击倒了!</span>", "<span class='userdanger'>你被击倒了!</span>")
 					apply_effect(1, WEAKEN, blocked)
 
 	if (prob(I.force * (hit_zone == "mouth" ? 5 : 0)) && O) //Will the teeth fly out?
 		if (O.knock_out_teeth(get_dir(user, src), round(rand(28, 38) * ((I.force*1.5)/100))))
-			user.visible_message("<span class='danger'>Some of [src]'s teeth sail off in an arc!</span>", \
+			user.visible_message("<span class='danger'>[src]的一些牙齿呈弧形飞了出去!</span>", \
 								"<span class='userdanger'>Some of your teeth sail off in an arc!</span>")
 		//Apply blood
 		if (!(I.flags & NOBLOODY))
@@ -804,11 +804,11 @@ bullet_act
 		if (istype(user, /mob/living/human))
 			var/mob/living/human/HH = user
 			if (prob(6*HH.getStatCoeff("dexterity")))
-				src.visible_message("<span class='danger'>[src] has been knocked down!</span>", "<span class='danger'><h4>You are knocked down!</h4></span>")
+				src.visible_message("<span class='danger'>[src]被击倒了!</span>", "<span class='danger'><h4>你被击倒了!</h4></span>")
 				Weaken(2)
 		else
 			if (prob(6))
-				src.visible_message("<span class='danger'>[src] has been knocked down!</span>", "<span class='danger'><h4>You are knocked down!</h4></span>")
+				src.visible_message("<span class='danger'>[src]被击倒了!</span>", "<span class='danger'><h4>你被击倒了!</h4></span>")
 				Weaken(2)
 	instadeath_check()
 
@@ -816,7 +816,7 @@ bullet_act
 	if (!organ || (organ.dislocated == 2) || (organ.dislocated == -1) || blocked >= 2)
 		return FALSE
 	if (prob(W.force / (blocked+1)))
-		user.visible_message("<span class='danger'><b>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses","dislocates")]!</b></span>", "<span class='danger'><b>Your [organ.joint] [pick("gives way","caves in","crumbles","collapses","dislocates")]!")
+		user.visible_message("<span class='danger'><b>[src]的[organ.joint][pick("gives way","caves in","crumbles","collapses","dislocates")]!</b></span>", "<span class='danger'><b>你的[organ.joint][pick("gives way","caves in","crumbles","collapses","dislocates")]!")
 		organ.dislocate(1)
 		return TRUE
 	return FALSE
@@ -832,7 +832,7 @@ bullet_act
 			if (canmove && !restrained())
 				if (isturf(O.loc))
 					put_in_active_hand(O)
-					visible_message("<span class='warning'>[src] catches \the [O]!</span>")
+					visible_message("<span class='warning'>[src]抓住了\the [O]!</span>")
 					throw_mode_off()
 					return
 
@@ -893,7 +893,7 @@ bullet_act
 				mood -= 8
 				spawn(2)
 					qdel(O)
-				visible_message("<b><span class = 'red'>[src] has been hit in the [hit_area] by [O].</span></b>")
+				visible_message("<b><span class = 'red'>[src]的[hit_area]被[O]击中了.</span></b>")
 		else if (istype(O, /obj/item/weapon/reagent_containers/food/snacks/egg) || istype(O, /obj/item/weapon/reagent_containers/food/snacks/turkeyegg))
 			var/obj/structure/pillory/pillory = null
 			for(var/obj/structure/pillory/P in loc)
@@ -903,7 +903,7 @@ bullet_act
 				mood -= 3
 				spawn(2)
 					qdel(O)
-				visible_message("<b><span class = 'red'>[src] has been hit in the [hit_area] by [O].</span></b>")
+				visible_message("<b><span class = 'red'>[src]的[hit_area]被[O]击中了.</span></b>")
 		else if (istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/tomato))
 			var/obj/structure/pillory/pillory = null
 			for(var/obj/structure/pillory/P in loc)
@@ -913,9 +913,9 @@ bullet_act
 				mood -= 2
 				spawn(2)
 					qdel(O)
-				visible_message("<b><span class = 'red'>[src] has been hit in the [hit_area] by [O].</span></b>")
+				visible_message("<b><span class = 'red'>[src]的[hit_area]被[O]击中了.</span></b>")
 		else
-			visible_message("<span class = 'red'>[src] has been hit in the [hit_area] by [O].</span>")
+			visible_message("<span class = 'red'>[src]的[hit_area]被[O]击中了.</span>")
 		var/armor = run_armor_check(affecting, "melee", O.armor_penetration, "Your armor has protected your [hit_area].", "Your armor has softened hit to your [hit_area].", damage_source = AM) //I guess "melee" is the best fit here
 
 		if(armor < 100)
@@ -969,7 +969,7 @@ bullet_act
 		if (O.throw_source && momentum >= THROWNOBJ_KNOCKBACK_SPEED)
 			var/dir = get_dir(O.throw_source, src)
 
-			visible_message("<span class = 'red'>[src] staggers under the impact!</span>","<span class = 'red'>You stagger under the impact!</span>")
+			visible_message("<span class = 'red'>[src]在冲击下踉跄了!</span>","<span class = 'red'>你在冲击下踉跄了!</span>")
 			throw_at(get_edge_target_turf(src,dir),1,momentum)
 
 			if (!O || !src) return
@@ -979,7 +979,7 @@ bullet_act
 
 				if (T)
 					loc = T
-					visible_message("<span class='warning'>[src] is pinned to the wall by [O]!</span>","<span class='warning'>You are pinned to the wall by [O]!</span>")
+					visible_message("<span class='warning'>[src]被[O]钉在了墙上!</span>","<span class='warning'>你被[O]钉在了墙上!</span>")
 					anchored = TRUE
 					pinned += O
 
@@ -1099,8 +1099,8 @@ bullet_act
 	if(kickdam)
 		playsound(user.loc, 'sound/weapons/kick.ogg', 50, 0)
 		apply_damage(kickdam, BRUTE, hit_zone, armour)
-		user.visible_message("<span class= 'danger'>[user] kicks [src] in the [affecting.name]!</span>", "<span class = 'danger'>You kicked [src] in the [affecting.name]!</span>")
+		user.visible_message("<span class= 'danger'>[user]踢中了[src]的[affecting.name]!</span>", "<span class = 'danger'>你踢中了[src]的[affecting.name]!</span>")
 		admin_attack_log(user, src, "Has kicked [src]", "Has been kicked by [user].")
 	else
-		user.visible_message("<span class= 'danger'>[user] tried to kick [src] in the [affecting.name], but missed!</span>", "<span class = 'danger'>You tried to kick [src] in the [affecting.name], but missed!</span>")
+		user.visible_message("<span class= 'danger'>[user]试图踢[src]的[affecting.name],但没踢中!</span>", "<span class = 'danger'>你试图踢[src]的[affecting.name],但没踢中!</span>")
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1)

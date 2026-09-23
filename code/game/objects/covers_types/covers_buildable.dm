@@ -1,6 +1,6 @@
 /obj/covers/dirt_wall/blocks
 	name = "dirt blocks wall"
-	desc = "A dirt blocks wall."
+	desc = "一堵泥土块墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "drysod_wall"
 	passable = TRUE
@@ -18,7 +18,7 @@
 
 /obj/covers/dirt_wall/blocks/incomplete
 	name = "dirt blocks wall"
-	desc = "A dirt blocks wall."
+	desc = "一堵泥土块墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "drysod_wall_inc1"
 	passable = TRUE
@@ -51,18 +51,18 @@
 /obj/covers/dirt_wall/blocks/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (W.type == /obj/item/weapon/barrier)
 		if (stage == 3)
-			to_chat(user, "You start adding dirt to the wall...")
+			to_chat(user, "你开始往墙上添加泥土...")
 			if (do_after(user, 20, src) && W)
-				to_chat(user, "You finish adding dirt to the wall, completing it.")
+				to_chat(user, "你完成了往墙上添加泥土,将其建成.")
 				qdel(W)
 				new /obj/covers/dirt_wall/blocks(loc)
 				qdel(src)
 				return
 		else if (stage <= 2)
-			to_chat(user, "You start adding dirt to the wall...")
+			to_chat(user, "你开始往墙上抹泥土...")
 			if (do_after(user, 20, src))
 				if (stage <= 2)
-					to_chat(user, "You finish adding dirt to the wall.")
+					to_chat(user, "你完成了往墙上抹泥土.")
 					stage = (stage+1)
 					icon_state = "drysod_wall_inc[stage]"
 					base_icon_state = icon_state
@@ -73,7 +73,7 @@
 
 /obj/covers/clay_wall
 	name = "clay block wall"
-	desc = "A clay block wall."
+	desc = "一面黏土块墙."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claybrickwall"
 	passable = TRUE
@@ -93,7 +93,7 @@
 
 /obj/covers/clay_wall/claydoorway //if you actually wanted to summon one.
 	name = "clay block doorway"
-	desc = "A clay block doorway."
+	desc = "一个黏土块门道."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "clay_doorway"
 	passable = TRUE
@@ -103,7 +103,7 @@
 
 /obj/covers/clay_wall/incomplete
 	name = "clay block wall"
-	desc = "A clay block wall."
+	desc = "一面黏土块墙."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claybrickwall_inc1"
 	passable = TRUE
@@ -137,9 +137,9 @@
 /obj/covers/clay_wall/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/clay/claybricks/fired))
 		if (stage >= 2)
-			to_chat(user, "You start adding clay blocks to the wall...")
+			to_chat(user, "你开始往墙上添加黏土块...")
 			if (do_after(user, 20, src) && W)
-				to_chat(user, "You finish adding clay blocks to the wall, completing it.")
+				to_chat(user, "你完成了往墙上添加黏土块, 将其建成.")
 				qdel(W)
 				var/obj/covers/clay_wall/S = new /obj/covers/clay_wall(loc)
 				qdel(src)
@@ -155,10 +155,10 @@
 					qdel(S)
 				return
 		else if (stage <= 1)
-			to_chat(user, "You start adding clay blocks to the wall...")
+			to_chat(user, "你开始往墙上添加黏土块...")
 			if (do_after(user, 20, src))
 				if (stage <= 1)
-					to_chat(user, "You finish clay block to the wall.")
+					to_chat(user, "你完成了往墙上添加黏土块.")
 					stage += 1
 					icon_state = "claybrickwall_inc[stage]"
 					base_icon_state = icon_state
@@ -169,7 +169,7 @@
 
 /obj/covers/clay_wall/sumerian
 	name = "sumerian clay wall"
-	desc = "A sumerian style clay wall."
+	desc = "一面苏美尔风格的黏土墙."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "sumerian-wall"
 	passable = TRUE
@@ -187,14 +187,14 @@
 
 /obj/covers/clay_wall/sumerian/doorway //if you actually wanted to summon one.
 	name = "sumerian clay doorway"
-	desc = "A sumerian style clay doorway."
+	desc = "一个苏美尔风格的黏土门道."
 	icon_state = "sumerian-door"
 	density = FALSE
 	opacity = FALSE
 
 /obj/covers/clay_wall/sumerian/incomplete
 	name = "sumerian clay wall"
-	desc = "A sumerian style clay wall."
+	desc = "一面苏美尔风格的黏土墙."
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "sumerian-wall_inc1"
 	passable = TRUE
@@ -228,9 +228,9 @@
 /obj/covers/clay_wall/sumerian/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/clay/claybricks/fired))
 		if (stage >= 2)
-			to_chat(user, "You start adding clay to the wall...")
+			to_chat(user, "你开始往墙上添加黏土...")
 			if (do_after(user, 20, src) && W)
-				to_chat(user, "You finish adding clay to the wall, completing it.")
+				to_chat(user, "你完成了往墙上添加黏土, 将其建成.")
 				qdel(W)
 				var/obj/covers/clay_wall/sumerian/S = new /obj/covers/clay_wall/sumerian(loc)
 				qdel(src)
@@ -260,10 +260,10 @@
 						S.dir = WEST
 				return
 		else if (stage <= 1)
-			to_chat(user, "You start adding clay blocks to the wall...")
+			to_chat(user, "你开始往墙上添加黏土块...")
 			if (do_after(user, 20, src))
 				if (stage <= 1)
-					to_chat(user, "You finish adding clay to the wall.")
+					to_chat(user, "你完成了往墙上添加黏土.")
 					stage += 1
 					icon_state = "sumerian-wall_inc[stage]"
 					base_icon_state = icon_state
@@ -274,7 +274,7 @@
 
 /obj/covers/brick_wall
 	name = "brick wall"
-	desc = "A red brick wall."
+	desc = "一面红砖墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "new_brick0"
 	base_icon_state = "new_brick"
@@ -298,18 +298,18 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨利了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把简易刀具.")
 				qdel(I)
 	..()
 
 /obj/covers/tiled_wall
 	name = "tiled wall"
-	desc = "A tiled wall"
+	desc = "一面瓷砖墙"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "tiles0"
 	base_icon_state = "tiles"
@@ -332,18 +332,18 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨利了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把简易刀具.")
 				qdel(I)
 	..()
 
 /obj/covers/cement_wall
 	name = "concrete wall"
-	desc = "A concrete wall."
+	desc = "一面混凝土墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "cement_wall0"
 	base_icon_state = "cement_wall"
@@ -367,12 +367,12 @@
 	if (istype(I,/obj/item/weapon/material/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/material/kitchen/utensil/fork) || istype(I,/obj/item/weapon/material/kitchen/utensil/chopsticks))
 		if (I.shiv < 10)
 			I.shiv++
-			visible_message("<span class='warning'>[U] sharpens \the [I] on \the [src]!</span>")
+			visible_message("<span class='warning'>[U]在\the [src]上磨利了\the [I]!</span>")
 			if (I.shiv >= 10)
 				U.drop_from_inventory(I)
 				var/obj/item/weapon/material/kitchen/utensil/knife/shank/SHK = new /obj/item/weapon/material/kitchen/utensil/knife/shank(U,I.material.name)
 				U.put_in_hands(SHK)
-				to_chat(U, "\The [I] turns into a shank.")
+				to_chat(U, "\The [I]变成了一把简易刀具.")
 				qdel(I)
 	..()
 
@@ -388,7 +388,7 @@
 
 /obj/covers/cement_wall/incomplete
 	name = "incomplete concrete wall"
-	desc = "A cement brick wall."
+	desc = "一面水泥砖墙."
 	icon = 'icons/turf/walls.dmi'
 	base_icon_state = "cement_wall_inc"
 	icon_state = "cement_wall_inc0"
@@ -424,9 +424,9 @@
 
 /obj/covers/cement_wall/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/clay/advclaybricks/fired/cement))
-		to_chat(user, "You start adding cement to the wall...")
+		to_chat(user, "你开始往墙上添加水泥...")
 		if (do_after(user, 20, src) && W)
-			to_chat(user, "You finish adding cement to the wall, completing it.")
+			to_chat(user, "你完成了往墙上添加水泥, 将其建成.")
 			qdel(W)
 			new /obj/covers/cement_wall(loc)
 			qdel(src)
@@ -435,7 +435,7 @@
 
 /obj/covers/brick_wall/incomplete
 	name = "incomplete brick wall"
-	desc = "A red brick wall."
+	desc = "一面红砖墙."
 	icon = 'icons/turf/walls.dmi'
 	base_icon_state = "new_brick_inc"
 	icon_state = "new_brick_inc0"
@@ -470,9 +470,9 @@
 
 /obj/covers/brick_wall/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/clay/advclaybricks/fired))
-		to_chat(user, "You start adding bricks to the wall...")
+		to_chat(user, "你开始往墙上添加砖块...")
 		if (do_after(user, 20, src) && W)
-			to_chat(user, "You finish adding bricks to the wall, completing it.")
+			to_chat(user, "你完成了往墙上添加砖块, 将其建成.")
 			var/choice = WWinput(user, "What type of wall?","Brick Walls","Wall",list("Wall","Window","Full Window"))
 			if (choice == "Wall")
 				qdel(W)
@@ -493,7 +493,7 @@
 
 /obj/covers/generic_wall
 	name = "simple wall"
-	desc = "A generic wall."
+	desc = "一面普通墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "generic0"
 	base_icon_state = "generic"
@@ -517,7 +517,7 @@
 
 /obj/covers/metal
 	name = "metal wall"
-	desc = "A wall of metal panelling."
+	desc = "一面金属板墙."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "metal0"
 	base_icon_state = "metal"
@@ -538,7 +538,7 @@
 
 /obj/covers/shipwindow
 	name = "windscreen"
-	desc = "A gap large gap in the structure of the ship skinned with a windscreen."
+	desc = "船体结构上一个用挡风玻璃覆盖的大缺口."
 	icon = 'icons/obj/windows.dmi'
 	icon_state = "windowmetal"
 	base_icon_state = "windowmetal"

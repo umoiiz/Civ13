@@ -1,6 +1,6 @@
 /mob/living/simple_animal/leech
 	name = "leech"
-	desc = "A bloodsucking leech."
+	desc = "一只吸血水蛭."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "leech"
 	icon_living = "leech"
@@ -18,15 +18,15 @@
 
 /mob/living/simple_animal/leech/attack_hand(mob/living/human/M as mob)
 	if (stat == DEAD)
-		to_chat(M, "This leech is dead, no point in picking it up.")
+		to_chat(M, "这只水蛭已经死了,捡起来没有意义.")
 	else
 		M.put_in_hands(new/obj/item/weapon/leech)
-		to_chat(M, "You pick up the leech.")
+		to_chat(M, "你捡起了水蛭.")
 		qdel(src)
 
 /obj/item/weapon/leech
-	name = "leech"
-	desc = "A bloodsucking leech."
+	name = "水蛭"
+	desc = "一只吸血水蛭."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "leech_h"
 	var/fill = 0
@@ -47,9 +47,9 @@
 			return
 
 /obj/item/weapon/leech/attack(var/mob/living/human/C, var/mob/living/user)
-	visible_message("[user] starts to attach the leech to [C]...")
+	visible_message("[user]开始将水蛭附着到[C]上...")
 	if (do_after(user,150,src))
-		visible_message("[user] has finished leeching [C].")
+		visible_message("[user]完成了对[C]的吸血.")
 		fill = 1
 		C.adjustToxLoss(-7)
 		C.vessel.remove_reagent("blood", 85)

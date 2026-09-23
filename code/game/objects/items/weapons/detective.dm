@@ -7,8 +7,8 @@
 	var/track_blood = FALSE
 
 /obj/item/weapon/reagent_containers/glass/rag
-	name = "cleaning rag"
-	desc = "For cleaning up messes, you suppose."
+	name = "清洁抹布"
+	desc = "你想,是用来清理脏乱的."
 	w_class = ITEM_SIZE_TINY
 	icon = 'icons/obj/trash.dmi'
 	icon_state = "rag"
@@ -31,7 +31,7 @@
 
 /obj/item/weapon/reagent_containers/glass/rag/attack_self(mob/user as mob)
 	if (on_fire)
-		user.visible_message("<span class='warning'>\The [user] stamps out [src].</span>", "<span class='warning'>You stamp out [src].</span>")
+		user.visible_message("<span class='warning'>\The [user] 踩灭了 [src].</span>", "<span class='warning'>你踩灭了 [src].</span>")
 		user.unEquip(src)
 		extinguish()
 	else
@@ -52,9 +52,9 @@
 			if (cont)
 				ignite()
 				if (on_fire)
-					visible_message("<span class='warning'>\The [user] lights [src] with [W].</span>")
+					visible_message("<span class='warning'>\The [user] 用 [W] 点燃了 [src].</span>")
 				else
-					to_chat(user, "<span class='warning'>You manage to singe [src], but fail to light it. Maybe you should wet it.</span>")
+					to_chat(user, "<span class='warning'>你成功烧焦了 [src],但没能点燃它.也许你该把它弄湿.</span>")
 	. = ..()
 	update_name()
 
@@ -83,25 +83,25 @@
 
 	if (reagents.total_volume)
 		var/target_text = trans_dest? "\the [trans_dest]" : "\the [user.loc]"
-		user.visible_message("<span class='danger'>\The [user] begins to wring out [src] over [target_text].</span>", "<span class='notice'>You begin to wring out [src] over [target_text].</span>")
+		user.visible_message("<span class='danger'>\The [user] 开始在 [target_text] 上方拧干 [src].</span>", "<span class='notice'>你开始在 [target_text] 上方拧干 [src].</span>")
 
 		if (do_after(user, reagents.total_volume*5, progress = FALSE)) //50 for a fully soaked rag
 			if (trans_dest)
 				reagents.trans_to(trans_dest, reagents.total_volume)
 			else
 				reagents.splash(user.loc, reagents.total_volume)
-			user.visible_message("<span class='danger'>\The [user] wrings out [src] over [target_text].</span>", "<span class='notice'>You finish to wringing out [src].</span>")
+			user.visible_message("<span class='danger'>\The [user] 在 [target_text] 上方拧干了 [src].</span>", "<span class='notice'>你拧干了 [src].</span>")
 			update_name()
 
 /obj/item/weapon/reagent_containers/glass/rag/proc/wipe_down(atom/A, mob/user)
 	if (!reagents.total_volume)
-		to_chat(user, "<span class='warning'>The [initial(name)] is dry!</span>")
+		to_chat(user, "<span class='warning'>[initial(name)] 是干的!</span>")
 	else
-		user.visible_message("\The [user] starts to wipe down [A] with [src]!")
+		user.visible_message("\The [user] 开始用 [src] 擦拭 [A]!")
 		reagents.splash(A, TRUE) //get a small amount of liquid on the thing we're wiping.
 		update_name()
 		if (do_after(user,30, progress = FALSE))
-			user.visible_message("\The [user] finishes wiping off the [A]!")
+			user.visible_message("\The [user] 擦完了 [A]!")
 			A.clean_blood()
 
 /obj/item/weapon/reagent_containers/glass/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
@@ -109,16 +109,16 @@
 		if (do_after(user, 20, get_turf(user)))
 			var/mob/living/M = target
 			if (on_fire)
-				user.visible_message("<span class='danger'>\The [user] hits [target] with [src]!</span>",)
+				user.visible_message("<span class='danger'>\The [user] 用 [src] 击中了 [target]!</span>",)
 				user.do_attack_animation(src)
 				M.IgniteMob()
 			else if (reagents.total_volume)
 				if (user.targeted_organ == "mouth")
 					user.do_attack_animation(src)
 					user.visible_message(
-						"<span class='danger'>\The [user] smothers [target] with [src]!</span>",
-						"<span class='warning'>You smother [target] with [src]!</span>",
-						"You hear some struggling and muffled cries of surprise"
+						"<span class='danger'>\The [user] 用 [src] 闷住了 [target]!</span>",
+						"<span class='warning'>你用 [src] 闷住了 [target]!</span>",
+						"你听到一些挣扎声和含糊的惊呼声"
 						)
 
 					//it's inhaled, so... maybe CHEM_BLOOD doesn't make a whole lot of sense but it's the best we can do for now
@@ -136,11 +136,11 @@
 
 	if (istype(A, /obj/structure/reagent_dispensers))
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='warning'>\The [src] is already soaked.</span>")
+			to_chat(user, "<span class='warning'>\The [src] 已经湿透了.</span>")
 			return
 
 		if (A.reagents && A.reagents.trans_to_obj(src, reagents.maximum_volume))
-			user.visible_message("<span class='notice'>\The [user] soaks [src] using [A].</span>", "<span class='notice'>You soak [src] using [A].</span>")
+			user.visible_message("<span class='notice'>\The [user] 用 [A] 浸湿了 [src].</span>", "<span class='notice'>你用 [A] 浸湿了 [src].</span>")
 			update_name()
 		return
 
@@ -176,7 +176,7 @@
 
 	//also copied from matches
 	if (reagents.get_reagent_amount("plasma")) // the plasma explodes when exposed to fire
-		visible_message("<span class='danger'>\The [src] conflagrates violently!</span>")
+		visible_message("<span class='danger'>\The [src] 猛烈地燃烧起来!</span>")
 		var/datum/effect/effect/system/reagents_explosion/e = new()
 		e.set_up(round(reagents.get_reagent_amount("plasma") / 2.5, TRUE), get_turf(src), FALSE, FALSE)
 		e.start()
@@ -197,7 +197,7 @@
 	//rags sitting around with TRUE second of burn time left is dumb.
 	//ensures players always have a few seconds of burn time left when they light their rag
 	if (burn_time <= 5)
-		visible_message("<span class='warning'>\The [src] falls apart!</span>")
+		visible_message("<span class='warning'>\The [src] 散架了!</span>")
 		new /obj/effect/decal/cleanable/ash(get_turf(src))
 		qdel(src)
 	update_name()
@@ -205,7 +205,7 @@
 
 /obj/item/weapon/reagent_containers/glass/rag/process()
 	if (!can_ignite())
-		visible_message("<span class='warning'>\The [src] burns out.</span>")
+		visible_message("<span class='warning'>\The [src] 烧尽了.</span>")
 		extinguish()
 
 	//copied from matches

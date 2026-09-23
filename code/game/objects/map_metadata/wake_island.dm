@@ -100,9 +100,9 @@
 			jap_points++
 		if (a1_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<font size=3>The [prev_control] have lost the <b>West Artillery Battery!</b><font>")
+				to_chat(world, "<font size=3>[prev_control]已失去<b>西炮兵阵地!</b><font>")
 			else
-				to_chat(world, "<font size=3>The [a1_control] have captured the <b>West Artillery Battery!</b><font>")
+				to_chat(world, "<font size=3>[a1_control]已占领<b>西炮兵阵地!</b><font>")
 		c1 = 0
 		c2 = 0
 		prev_control = a2_control
@@ -123,9 +123,9 @@
 			jap_points++
 		if (a2_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<font size=3>The [prev_control] have lost the <b>East Artillery Battery!</b><font>")
+				to_chat(world, "<font size=3>[prev_control]已失去<b>东炮兵阵地!</b><font>")
 			else
-				to_chat(world, "<font size=3>The [a2_control] have captured the <b>East Artillery Battery!</b><font>")
+				to_chat(world, "<font size=3>[a2_control]已占领<b>东炮兵阵地!</b><font>")
 		c1 = 0
 		c2 = 0
 		prev_control = a3_control
@@ -146,12 +146,12 @@
 			jap_points++
 		if (a3_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<font size=3>The [prev_control] have lost the <b>Village!</b><font>")
+				to_chat(world, "<font size=3>[prev_control]已失去<b>村庄!</b><font>")
 			else
-				to_chat(world, "<font size=3>The [a3_control] have captured the <b>Village!</b><font>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Americans: [usa_points]</big>")
-	to_chat(world, "<big>Japanese: [jap_points]</big>")
+				to_chat(world, "<font size=3>[a3_control]已占领<b>村庄!</b><font>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>美军: [usa_points]</big>")
+	to_chat(world, "<big>日军: [jap_points]</big>")
 	spawn(300)
 		points_check()
 

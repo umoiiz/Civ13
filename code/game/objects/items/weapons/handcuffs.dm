@@ -1,6 +1,6 @@
 /obj/item/weapon/handcuffs
-	name = "handcuffs"
-	desc = "Use this to keep prisoners in line."
+	name = "手铐"
+	desc = "用这个来让囚犯守规矩."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "handcuff"
@@ -29,9 +29,9 @@
 		if(can_place(C, user))
 			place_handcuffs(C, user)
 		else
-			to_chat(user, "<span class='danger'>You need to have a firm grip on [C] before you can put \the [src] on!</span>")
+			to_chat(user, "<span class='danger'>你需要牢牢抓住 [C],才能把 \the [src] 铐上!</span>")
 	else
-		to_chat(user, "<span class='warning'>\The [C] is already handcuffed!</span>")
+		to_chat(user, "<span class='warning'>\The [C] 已经被铐上了!</span>")
 
 
 /obj/item/weapon/handcuffs/proc/can_place(var/mob/target, var/mob/user)
@@ -56,7 +56,7 @@
 		to_chat(user, SPAN_DANGER("\The [H] needs at least two wrists before you can cuff them together!"))
 		return FALSE
 
-	user.visible_message("<span class='danger'>\The [user] is attempting to put [cuff_type] on \the [H]!</span>", "<span class='notice'>You are trying to put [cuff_type] on \the [H]!</span>", "You hear a tight click.")
+	user.visible_message("<span class='danger'>\The [user] 正试图把 [cuff_type] 铐在 \the [H] 上!</span>", "<span class='notice'>你正试图把 [cuff_type] 铐在 \the [H] 上!</span>", "你听到一声清脆的咔嗒声.")
 
 	if (!do_after(user,8, target))
 		return FALSE
@@ -73,7 +73,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(H)
 
-	user.visible_message("<span class='danger'>\The [user] has put [cuff_type] on \the [H]!</span>", "<span class='notice'>You have put [cuff_type] on \the [H]!</span>")
+	user.visible_message("<span class='danger'>\The [user] 把 [cuff_type] 铐在了 \the [H] 上!</span>", "<span class='notice'>你把 [cuff_type] 铐在了 \the [H] 上!</span>")
 
 	// Apply cuffs.
 	var/obj/item/weapon/handcuffs/cuffs = src
@@ -97,7 +97,7 @@ var/last_chew = FALSE
 	var/obj/item/organ/external/O = H.organs_by_name[H.hand?"l_hand":"r_hand"]
 	if (!O) return
 
-	H.visible_message("<span class='warning'>\The [H] chews on \his [O.name]!</span>", "<span class='warning'>You chew on your [O.name]!</span>")
+	H.visible_message("<span class='warning'>\The [H] 咀嚼着 \his [O.name]!</span>", "<span class='warning'>你咀嚼着你的 [O.name]!</span>")
 	attack_log(H, "chewed on their [O.name]!")
 
 	if (O.take_damage(3,0,1,1,"teeth marks"))
@@ -107,8 +107,8 @@ var/last_chew = FALSE
 
 
 /obj/item/weapon/handcuffs/cable
-	name = "cable restraints"
-	desc = "Looks like some cables tied together. Could be used to tie something up."
+	name = "线缆束缚带"
+	desc = "看起来像是几根线缆绑在一起.可以用来绑住什么东西."
 	icon_state = "cuff_white"
 	breakouttime = 300 //Deciseconds = 30s
 	cuff_sound = 'sound/weapons/cablecuff.ogg'
@@ -139,28 +139,28 @@ var/last_chew = FALSE
 	color = "#ffffff"
 
 /obj/item/weapon/handcuffs/rope
-	name = "rope handcuffs"
-	desc = "Use this to keep prisoners in line."
+	name = "绳索手铐"
+	desc = "用这个来让囚犯守规矩."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "ropecuffs"
 	flammable = TRUE
 
 /obj/item/weapon/handcuffs/old
-	name = "iron handcuffs"
-	desc = "Use this to keep prisoners in line."
+	name = "铁手铐"
+	desc = "用这个来让囚犯守规矩."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "oldcuff"
 	flammable = TRUE
 
 /obj/item/weapon/handcuffs/strips
-	name = "strip cuffs"
-	desc = "Use this to keep prisoners in line."
+	name = "扎带手铐"
+	desc = "用这个让囚犯守规矩."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "strips"
 	flammable = TRUE
 
 /obj/item/weapon/handcuffs/zip
-	name = "zip ties"
+	name = "扎带"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "cuff_zip"
 	flammable = TRUE

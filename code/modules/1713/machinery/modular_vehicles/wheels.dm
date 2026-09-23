@@ -1,8 +1,8 @@
 //////////////DRIVING WHEELS///////////////////////
 
 /obj/item/vehicleparts/wheel/modular
-	name = "vehicle wheel"
-	desc = "Used to steer a vehicle."
+	name = "载具车轮"
+	desc = "用于操控载具。"
 	icon_state = "wheel_b"
 	item_state = "wheel_b"
 	var/obj/structure/bed/chair/drivers/drivingchair = null
@@ -26,12 +26,12 @@
 		for(var/obj/structure/vehicleparts/frame/VP in O.loc)
 			if (VP.axis != control.axis)
 				if (mob)
-					to_chat(mob, "<span class='warning'>You can't turn, something is in the way!</span>")
+					to_chat(mob, "<span class='warning'>你无法转向,有东西挡住了!</span>")
 				return FALSE
 		for(var/obj/effect/pseudovehicle/PV in O.loc)
 			if (PV.link != control.axis)
 				if (mob)
-					to_chat(mob, "<span class='warning'>You can't turn, something is in the way!</span>")
+					to_chat(mob, "<span class='warning'>你无法转向,有东西挡住了!</span>")
 				return FALSE
 	if (newdir == "left")
 		if (!control.axis.do_matrix(dir,TURN_LEFT(control.axis.dir), newdir))
@@ -60,7 +60,7 @@
 			wheel.control.axis.wheel = null
 		wheel.Destroy()
 		wheel = null
-	visible_message("<span class='danger'>The [name] gets destroyed!</span>")
+	visible_message("<span class='danger'>[name]被摧毁了!</span>")
 	..()
 
 /obj/item/vehicleparts/wheel/modular/attack_self(mob/living/human/H)
@@ -77,7 +77,7 @@
 	if (!control.axis.engine.fueltank)
 		return
 	if (!control.axis.engine.fueltank.reagents)
-		to_chat(H, "There is not enough fuel!")
+		to_chat(H, "燃料不足!")
 		return
 	if (!control.axis.engine.on && control.axis.engine.fueltank.reagents.total_volume > 0)
 		control.axis.currentspeed = 0
@@ -93,7 +93,7 @@
 		return
 	else if (control.axis.engine && control.axis.engine.fueltank)
 		if (control.axis && control.axis.engine && control.axis.engine.fueltank && control.axis.engine.fueltank.reagents.total_volume <= 0)
-			to_chat(H, "There is not enough fuel!")
+			to_chat(H, "燃料不足!")
 			return
 	if (control.axis.currentspeed < 0)
 		control.axis.currentspeed = 0
@@ -106,7 +106,7 @@
 		control.axis.vehicle_m_delay = spd
 		if (control.axis.currentspeed == 1 && !control.axis.moving)
 			control.axis.moving = TRUE
-			to_chat(H, "You put the vehicle into first gear.")
+			to_chat(H, "你将载具挂入一挡。")
 			playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 			control.axis.add_transporting()
 			control.axis.startmovementloop()
@@ -115,7 +115,7 @@
 		else
 			control.axis.vehicle_m_delay = spd
 			if (control.axis.currentspeed < control.axis.speedlist.len+1)
-				to_chat(H, "You increase the speed.")
+				to_chat(H, "你加快了速度。")
 				playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 			return
 
@@ -125,7 +125,7 @@
 		return
 	if (control && control.axis && control.axis.engine && control.axis.engine.fueltank && (control.axis.currentspeed <= 0 || control.axis.engine.fueltank.reagents.total_volume <= 0))
 		if (control.axis.engine.on)
-			to_chat(user, "You turn off the [control.axis.engine].")
+			to_chat(user, "你关闭了[control.axis.engine]。")
 			control.axis.engine.on = FALSE
 			control.axis.moving = FALSE
 			control.axis.currentspeed = 0
@@ -139,19 +139,19 @@
 		spd = control.axis.get_speed()
 		if (spd <= 0 || control.axis.currentspeed == 0)
 			control.axis.moving = FALSE
-			to_chat(user, "You stop the [control.axis].")
+			to_chat(user, "你停下了[control.axis]。")
 			for (var/obj/structure/vehicleparts/movement/W in control.axis.wheels)
 				W.update_icon()
 			return
 		else
 			control.axis.vehicle_m_delay = spd
-			to_chat(user, "You reduce the speed.")
+			to_chat(user, "你减慢了速度。")
 			playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 			return
 
 /obj/structure/bed/chair/drivers
-	name = "driver's seat"
-	desc = "Where you drive the vehicle."
+	name = "驾驶座"
+	desc = "你驾驶载具的地方。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "driver_car"
 	anchored = FALSE
@@ -163,7 +163,7 @@
 		wheel.drivingchair = src
 
 /obj/structure/bed/chair/drivers/tank
-	name = "tank driver's seat"
+	name = "坦克驾驶座"
 	icon_state = "driver_tank"
 	flammable = FALSE
 
@@ -194,7 +194,7 @@
 				wheel.control.axis.moving = FALSE
 				wheel.control.axis.currentspeed = 0
 				wheel.control.axis.engine.update_icon()
-				to_chat(user, "You stop the [wheel.control.axis].")
+				to_chat(user, "你停下了[wheel.control.axis]。")
 				for (var/obj/structure/vehicleparts/movement/W in wheel.control.axis.wheels)
 					W.update_icon()
 	return M
@@ -206,7 +206,7 @@
 	if (axis)
 		axis.driver = buckled_mob
 	if (buckled_mob && istype(buckled_mob, /mob/living/human) && buckled_mob.put_in_active_hand(wheel) == FALSE)
-		to_chat(buckled_mob, "Your hands are full!")
+		to_chat(buckled_mob, "你的双手都占满了!")
 		return
 
 /obj/structure/bed/chair/drivers/attackby(var/obj/item/I, var/mob/living/human/H)
@@ -220,7 +220,7 @@
 /obj/structure/bed/chair/drivers/attack_hand( var/mob/living/human/H)
 	if (wheel && buckled_mob && H == buckled_mob && wheel.loc != H)
 		if (buckled_mob.put_in_active_hand(wheel))
-			to_chat(H, "You grab the wheel.")
+			to_chat(H, "你握住了方向盘。")
 			if (map.ID == MAP_THE_ART_OF_THE_DEAL)
 				if (H.stat != DEAD && H.civilization != "Sheriff Office" && H.civilization != "Paramedics" && H.civilization != "Government")
 					for(var/list/L in map.vehicle_registrations)
@@ -262,8 +262,8 @@
 		..()
 
 /obj/structure/bed/chair/mgunner
-	name = "machinegunner's seat"
-	desc = "A seat with a course machinegun."
+	name = "机枪手座位"
+	desc = "一个配有航向机枪的座位."
 	icon_state = "officechair_white"
 	anchored = FALSE
 	flammable = FALSE
@@ -287,7 +287,7 @@
 /obj/structure/bed/chair/mgunner/post_buckle_mob()
 	if (buckled_mob && istype(buckled_mob, /mob/living/human) && mg)
 		if(buckled_mob.put_in_active_hand(mg) == FALSE)
-			to_chat(buckled_mob, "Your hands are full!")
+			to_chat(buckled_mob, "你的双手已占满!")
 			return
 
 /obj/structure/bed/chair/mgunner/dt28/New()
@@ -339,8 +339,8 @@
 
 ////////GUNNER///////////
 /obj/structure/bed/chair/gunner
-	name = "gunner's seat"
-	desc = "A seat next to the gun trigger."
+	name = "射手座位"
+	desc = "一个位于机枪扳机旁的座位."
 	icon_state = "officechair_white"
 	anchored = FALSE
 	flammable = FALSE
@@ -393,7 +393,7 @@
 			buckled_mob.start_using_turret(turret)
 		if (istype(buckled_mob, /mob/living/human))
 			if(buckled_mob.put_in_active_hand(controls) == FALSE)
-				to_chat(buckled_mob, "Your hands are full!")
+				to_chat(buckled_mob, "你的双手已占满!")
 				return
 			else
 				controls.azoom.Grant(buckled_mob)
@@ -555,8 +555,8 @@
 
 ////////LOADER CHAIR////////
 /obj/structure/bed/chair/loader
-	name = "loader's seat"
-	desc = "A seat at the gun loader's position."
+	name = "装填手座位"
+	desc = "一个位于机枪装填手位置的座位."
 	icon_state = "officechair_white"
 	anchored = FALSE
 	flammable = FALSE
@@ -621,8 +621,8 @@
 
 //////////COMMANDER CHAIR/////////////
 /obj/structure/bed/chair/commander
-	name = "commander's seat"
-	desc = "The vehicle commander's seat, with a perisope."
+	name = "车长座位"
+	desc = "车长座位,配有潜望镜."
 	anchored = FALSE
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "commanders_seat"
@@ -693,7 +693,7 @@
 		if(turret)
 			turret.commander = buckled_mob
 		if (istype(buckled_mob, /mob/living/human) && buckled_mob.put_in_active_hand(periscope) == FALSE)
-			to_chat(buckled_mob, "Your hands are full!")
+			to_chat(buckled_mob, "你的双手已占满!")
 			return
 
 /obj/structure/bed/chair/commander/attackby(var/obj/item/I, var/mob/living/human/H)
@@ -708,7 +708,7 @@
 /obj/structure/bed/chair/commander/attack_hand( var/mob/living/human/H)
 	if (buckled_mob && H == buckled_mob && periscope.loc != H)
 		if (buckled_mob.put_in_active_hand(periscope))
-			to_chat(H, "You look through the periscope.")
+			to_chat(H, "你通过潜望镜观察.")
 			return
 	else
 		..()
@@ -716,8 +716,8 @@
 ///////COMMANDER NAVAL////////
 
 /obj/structure/bed/chair/commander/naval
-	name = "spotter's seat"
-	desc = "A spotter's seat with a long-range periscope."
+	name = "观察员座位"
+	desc = "一个配有远程潜望镜的观察员座位."
 	anchored = TRUE
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "commanders_seat"
@@ -729,8 +729,8 @@
 ///////COMMANDER NVG////////
 
 /obj/structure/bed/chair/commander/nvg
-	name = "commander's seat with night vision"
-	desc = "The vehicle commander's seat, with a perisope and night vision."
+	name = "带夜视仪的车长座位"
+	desc = "车长座位,配有潜望镜和夜视仪."
 	anchored = FALSE
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "commanders_seat"
@@ -743,10 +743,10 @@
 
 /obj/structure/bed/chair/commander/nvg/post_buckle_mob()
 	if (buckled_mob && istype(buckled_mob, /mob/living/human) && buckled_mob.put_in_active_hand(periscope) == FALSE)
-		to_chat(buckled_mob, "Your hands are full!")
+		to_chat(buckled_mob, "你的双手已占满!")
 		return
 	if(buckled_mob)
-		to_chat(buckled_mob, "You activate the optics on the [src].")
+		to_chat(buckled_mob, "你激活了[src]上的光学设备.")
 		if (overtype == "nvg")
 			buckled_mob.nvg = TRUE
 			buckled_mob.handle_vision()
@@ -757,7 +757,7 @@
 
 /obj/structure/bed/chair/commander/nvg/user_unbuckle_mob(mob/user)
 	if(buckled_mob)
-		to_chat(buckled_mob, "You deactivate the optics on the [src].")
+		to_chat(buckled_mob, "你关闭了[src]上的光学设备.")
 		if (overtype == "nvg")
 			buckled_mob.nvg = FALSE
 			buckled_mob.handle_vision()
@@ -786,7 +786,7 @@
 ///////COMMANDER THERMAL////////
 
 /obj/structure/bed/chair/commander/nvg/thermal
-	name = "commander's seat with thermal imaging"
-	desc = "The vehicle commander's seat, with a perisope and thermal imaging."
+	name = "带热成像仪的车长座位"
+	desc = "车长座位,配有潜望镜和热成像仪."
 	overtype = "thermal"
 

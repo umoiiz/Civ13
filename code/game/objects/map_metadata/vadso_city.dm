@@ -125,7 +125,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a1_name]</b>: <font color='[cust_color]'>[a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a1_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a1_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -155,7 +155,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a2_name]</b>: <font color='[cust_color]'>[a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a2_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a2_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -185,7 +185,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a3_name]</b>: <font color='[cust_color]'>[a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a3_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a3_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -215,7 +215,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a4_name]</b>: <font color='[cust_color]'>[a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a4_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a4_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -245,13 +245,13 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a5_name]</b>: <font color='[cust_color]'>[a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a5_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a5_name]</b>: 无人</big>")
 	spawn(600) // 1 minute
 		points_check()
 		spawn(5)
-			to_chat(world, "<big><b>Current Points:</b></big>")
-			to_chat(world, "<big>British: [british_points]</big>")
-			to_chat(world, "<big>Russian: [rus_points]</big>")
+			to_chat(world, "<big><b>当前分数:</b></big>")
+			to_chat(world, "<big>英军: [british_points]</big>")
+			to_chat(world, "<big>俄军: [rus_points]</big>")
 	
 	switch (a1_control)
 		if ("British Armed Forces")

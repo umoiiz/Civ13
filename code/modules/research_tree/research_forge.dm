@@ -11,8 +11,8 @@
 // ============================================================
 
 /obj/structure/research_forge
-	name = "resource forge"
-	desc = "A forge for melting down coins to expand what your faction's research infrastructure can support. Feed it copper, silver or gold coins to raise your faction's research bench limit."
+	name = "资源熔炉"
+	desc = "一座用于熔毁硬币以扩展你阵营研究基础设施支持能力的熔炉.投入铜币,银币或金币以提高你阵营的研究台上限."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "safe"
 	density = TRUE

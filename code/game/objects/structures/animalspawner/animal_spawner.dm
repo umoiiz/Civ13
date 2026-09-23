@@ -1,7 +1,7 @@
 /obj/structure/animalspawner
-	name = "Empty Cave"
+	name = "空洞穴"
 	icon = 'icons/obj/animal_spawner.dmi'
-	desc = "Thats a empty cave. It would look like a preferable place for animals to shelter."
+	desc = "那是个空洞穴.看起来像是动物们喜欢躲藏的地方."
 	anchored = TRUE
 	density = TRUE
 	var/females = 0
@@ -21,7 +21,7 @@
 /obj/structure/animalspawner/attackby(obj/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/material/pickaxe) && empty)
 		if (do_after(user,65,src))
-			to_chat(user, "<span class='notice'>You break apart \the [src].</span>")
+			to_chat(user, "<span class='notice'>你拆开了\the [src].</span>")
 			new /obj/item/stack/material/stone(loc)
 			new /obj/item/stack/material/stone(loc)
 			new /obj/item/stack/material/stone(loc)

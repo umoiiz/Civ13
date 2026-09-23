@@ -1,13 +1,13 @@
 /obj/item/gunbox
-	name = "equipment kit"
-	desc = "A secure box containing your sidearm."
+	name = "装备箱"
+	desc = "一个装有你的副武器的安全箱."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "ammo_can" //temp
 	flags = CONDUCT
 
 /obj/item/gunbox/police
-	name = "equipment kit"
-	desc = "A secure box containing your sidearm."
+	name = "装备箱"
+	desc = "一个装有你的副武器的安全箱."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "ammo_can" //temp
 
@@ -26,8 +26,8 @@
 		qdel(src)
 
 /obj/item/gunbox/emplacement
-	name = "equipment kit"
-	desc = "A secure box containing your emplacement choice."
+	name = "装备箱"
+	desc = "一个装有你所选安置设备的安全箱."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "ammo_can" //temp
 	flags = CONDUCT
@@ -51,8 +51,8 @@
 		qdel(src)
 
 /obj/item/gunbox/specialist
-	name = "equipment kit"
-	desc = "A secure box containing your specalist choice."
+	name = "装备箱"
+	desc = "一个装有你所选专家装备的安全箱."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "ammo_can" //temp
 	flags = CONDUCT

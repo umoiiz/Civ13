@@ -1,8 +1,8 @@
 //todo: toothbrushes
 
 /obj/structure/toilet
-	name = "toilet"
-	desc = "A porcelain throne."
+	name = "马桶"
+	desc = "一个瓷制王座."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = FALSE
@@ -32,7 +32,7 @@
 
 /obj/structure/toilet/attack_hand(mob/living/user as mob)
 	if (swirlie)
-		user.visible_message("<span class='danger'>[user] slams the toilet seat onto [swirlie.name]'s head!</span>", "<span class='notice'>You slam the toilet seat onto [swirlie.name]'s head!</span>", "You hear reverberating porcelain.")
+		user.visible_message("<span class='danger'>[user]将马桶圈砸在[swirlie.name]的头上!</span>", "<span class='notice'>你将马桶圈砸在[swirlie.name]的头上!</span>", "你听到瓷器回荡的声音.")
 		swirlie.adjustBruteLoss(8)
 		return
 	if (cistern && !open)
@@ -56,10 +56,10 @@
 
 /obj/structure/toilet/attackby(obj/item/I as obj, mob/living/user as mob)
 	if (istype(I, /obj/item/weapon/hammer) && !istype(src, /obj/structure/toilet/pit_latrine))
-		user.visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>", "<span class='warning'>You start to deconstruct \the [src].</span>", "<span class='warning'>You hear the sound of some ratchetting nearby.</span>")
+		user.visible_message("<span class='warning'>[user]开始拆解\the [src].</span>", "<span class='warning'>你开始拆解\the [src].</span>", "<span class='warning'>你听到附近有棘轮转动的声音.</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(user,50,src))
-			user.visible_message("<span class='warning'>[user] deconstructs \the [src].</span>", "<span class='warning'>You deconstruct \the [src].</span>", "<span class='warning'>You hear the sound of some ratchetting nearby.</span>")
+			user.visible_message("<span class='warning'>[user]拆解了\the [src].</span>", "<span class='warning'>你拆解了\the [src].</span>", "<span class='warning'>你听到附近有棘轮转动的声音.</span>")
 			qdel(src)
 			return
 	if (istype(I, /obj/item/weapon/material/kitchen/utensil/knife))
@@ -69,7 +69,7 @@
 		to_chat(user, SPAN_NOTICE("You start to [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]."))
 		playsound(loc, 'sound/effects/stonedoor_openclose.ogg', 50, TRUE)
 		if (do_after(user, 30, src))
-			user.visible_message("<span class='notice'>[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!</span>", "<span class='notice'>You [cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!</span>", "You hear a grinding noise.")
+			user.visible_message("<span class='notice'>[user] [cistern ? "replaces the lid on the cistern" : "lifts the lid off the cistern"]!</span>", "<span class='notice'>你[cistern ? "replace the lid on the cistern" : "lift the lid off the cistern"]!</span>", "你听到摩擦的声音.")
 			cistern = !cistern
 			if (!istype(src, /obj/structure/toilet/pit_latrine) && !istype(src, /obj/structure/toilet/outhouse))
 				update_icon()
@@ -77,11 +77,11 @@
 	if (istype(src, /obj/structure/toilet/pit_latrine))
 		if (istype(I, /obj/item/weapon/barrier))
 			var/obj/structure/toilet/pit_latrine/PT = src
-			visible_message("[user] throws the dirt into \the [src].", "You throw the dirt into \the [src].")
+			visible_message("[user]将泥土扔进\the [src].", "你将泥土扔进\the [src].")
 			PT.filled++
 			qdel(I)
 			if (PT.filled >= 4)
-				visible_message("The pit latrine gets covered.")
+				visible_message("坑式厕所被盖住了.")
 				qdel(src)
 				return
 	if (istype(I, /obj/item/weapon/grab))
@@ -93,14 +93,14 @@
 					to_chat(user, SPAN_NOTICE("[GM.name] needs to be on the toilet."))
 					return
 				if (open && !swirlie)
-					user.visible_message("<span class='danger'>[user] starts to give [GM.name] a swirlie!</span>", "<span class='notice'>You start to give [GM.name] a swirlie!</span>")
+					user.visible_message("<span class='danger'>[user]开始给[GM.name]洗马桶头!</span>", "<span class='notice'>你开始给[GM.name]洗马桶头!</span>")
 					swirlie = GM
 					if (do_after(user, 30, src))
-						user.visible_message("<span class='danger'>[user] gives [GM.name] a swirlie!</span>", "<span class='notice'>You give [GM.name] a swirlie!</span>", "You hear a toilet flushing.")
+						user.visible_message("<span class='danger'>[user]给[GM.name]洗了马桶头!</span>", "<span class='notice'>你给[GM.name]洗了马桶头!</span>", "你听到马桶冲水的声音.")
 						GM.adjustOxyLoss(5)
 					swirlie = null
 				else
-					user.visible_message("<span class='danger'>[user] slams [GM.name] into \the [src]!</span>", "<span class='notice'>You slam [GM.name] into the [src]!</span>")
+					user.visible_message("<span class='danger'>[user]将[GM.name]砸进\the [src]!</span>", "<span class='notice'>你将[GM.name]砸进[src]!</span>")
 					GM.adjustBruteLoss(8)
 			else
 				to_chat(user, SPAN_NOTICE("You need a tighter grip."))
@@ -114,7 +114,7 @@
 		user.drop_item()
 		I.loc = src
 		w_items += I.w_class
-		to_chat(user, "You carefully place \the [I] into the cistern.")
+		to_chat(user, "你小心地将\the [I]放入水箱.")
 		return
 
 /obj/structure/toilet/AltClick(var/mob/living/user)
@@ -125,11 +125,11 @@
 		var/obj/item/weapon/reagent_containers/O = user.get_active_hand()
 		if (O.reagents && O.reagents.total_volume)
 			O.reagents.clear_reagents()
-			to_chat(user, "<span class='notice'>You empty the [O] into the [src].</span>")
+			to_chat(user, "<span class='notice'>你将[O]倒入[src].</span>")
 
 /obj/structure/toilet/pit_latrine
-	name = "pit latrine"
-	desc = "A simple pit latrine, a hole dug in the ground to collect waste."
+	name = "坑式厕所"
+	desc = "一个简易的坑式厕所,在地上挖个洞来收集排泄物."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "pit_latrine3"
 	open = TRUE
@@ -157,8 +157,8 @@
 	return
 
 /obj/structure/toilet/pit_latrine/floorgrate
-	name = "floor drain"
-	desc = "A simple hole covered in a light grating, allows waste to be removed easily."
+	name = "地漏"
+	desc = "一个覆盖着轻质格栅的简易洞口,便于清除排泄物."
 	icon = 'icons/turf/flooring/decals.dmi'
 	icon_state = "techfloor_hole_left"
 	layer = 2.1
@@ -166,8 +166,8 @@
 	open = TRUE
 
 /obj/structure/toilet/outhouse
-	name = "outhouse"
-	desc = "An outhouse, more privacy than a pit latrine!"
+	name = "户外厕所"
+	desc = "一个户外厕所,比坑式厕所更有隐私!"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "outhouse_closed"
 	density = TRUE
@@ -239,8 +239,8 @@
 			M.crap_inside = FALSE
 
 /obj/structure/toilet/outhouse/male
-	name = "outhouse"
-	desc = "An outhouse, designated for males."
+	name = "户外厕所"
+	desc = "一个户外厕所,指定为男性使用."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "outhouse_male_closed"
 	icon_state_closed = "outhouse_male_closed"
@@ -250,8 +250,8 @@
 	not_disassemblable = TRUE
 
 /obj/structure/toilet/outhouse/female
-	name = "outhouse"
-	desc = "An outhouse, designated for females."
+	name = "户外厕所"
+	desc = "一个户外厕所,指定为女性使用."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "outhouse_female_closed"
 	icon_state_closed = "outhouse_female_closed"
@@ -261,8 +261,8 @@
 	not_disassemblable = TRUE
 
 /obj/structure/urinal
-	name = "urinal"
-	desc = "Satinary plumbing fixture designed for urination only. Or not."
+	name = "小便池"
+	desc = "专为排尿设计的卫生洁具. 或者不是."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "urinal"
 	density = FALSE
@@ -278,13 +278,13 @@
 			if(!GM.loc == get_turf(src))
 				to_chat(user, SPAN_WARNING("[GM.name] needs to be near \the [src]."))
 				return
-			user.visible_message("[user] slams [GM.name] into \the [src]!", "You slam [GM.name] into \the [src]!", "You hear the sound of a loud impact nearby.")
+			user.visible_message("[user]将[GM.name]猛撞进\the [src]!", "你将[GM.name]猛撞进\the [src]!", "你听到附近传来一声巨响.")
 			GM.adjustBruteLoss(8)
 	. = ..()
 
 /obj/structure/shower
-	name = "shower"
-	desc = "A basic, hot-and-cold shower system."
+	name = "淋浴器"
+	desc = "一个基本的冷热水淋浴系统."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower"
 	density = FALSE
@@ -326,8 +326,8 @@
 
 //BATHTUB FRAMEWORK V1//
 /obj/structure/shower/bathtub
-	name = "Wooden bathtub"
-	desc = "A crude wooden bathtub. It stinks."
+	name = "木制浴缸"
+	desc = "一个粗糙的木制浴缸. 它散发着臭味."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "w_bathtub"
 	can_buckle = TRUE
@@ -374,8 +374,8 @@
 	else
 		..()
 /obj/structure/shower/bathtub/wooden
-	name = "Wooden bathtub"
-	desc = "A crude wooden bathtub. It stinks."
+	name = "木制浴缸"
+	desc = "一个粗糙的木制浴缸. 它散发着臭味."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "w_bathtub"
 	cleanliness = 130
@@ -384,24 +384,24 @@
 
 			// EARLY COPPER AGE
 /obj/structure/shower/bathtub/stone
-	name = "stone bathtub"
-	desc = "A rudimentary stone bathtub, covered in moss."
+	name = "石制浴缸"
+	desc = "一个简陋的石制浴缸, 上面长满了苔藓."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "s_bathtub"
 	cleanliness = 160
 			// EARLY COPPER AGE
 			// LATE COPPER AGE
 /obj/structure/shower/bathtub/copper
-	name = "copper bathtub"
-	desc = "An acceptable copper bathtub. It's a little flimsy."
+	name = "铜制浴缸"
+	desc = "一个还算可以的铜制浴缸. 它有点不结实."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "c_bathtub"
 	cleanliness = 190
 			// LATE COPPER AGE
 			// LATE BRONZE  AGE
 /obj/structure/shower/bathtub/bronze
-	name = "bronze bathtub"
-	desc = "A fine bronze bathtub. It's comfortable."
+	name = "青铜浴缸"
+	desc = "一个精美的青铜浴缸. 它很舒适."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "b_bathtub"
 	cleanliness = 220
@@ -410,8 +410,8 @@
 
 			//BIG BATHTUB FRAMEWORK 1
 /obj/structure/shower/bathtub/big
-	name = "wooden public bathtub"
-	desc = "A crude wooden bathtub."
+	name = "木制公共浴缸"
+	desc = "一个粗糙的木制浴缸."
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "w_bathtub_b"
 	cleanliness = 80
@@ -447,48 +447,48 @@
 			//BIG BATHTUB FRAMEWORK 1
 			// LATE DARK AGE
 /obj/structure/shower/bathtub/big/wooden
-	name = "wooden public bathtub"
-	desc = "A crude wooden bathtub. It's huge and stinky and it has green mold all over it"
+	name = "木制公共浴缸"
+	desc = "一个粗糙的木制浴缸. 它又大又臭, 上面长满了绿色的霉菌"
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "w_bathtub_b"
 	cleanliness = 130
 			// LATE DARK  AGE
 			// LATE MIDDLE AGE
 /obj/structure/shower/bathtub/big/stone
-	name = "stone public bathtub"
-	desc = "A rudimentary stone bathtub, covered in moss."
+	name = "石制公共浴缸"
+	desc = "一个简陋的石制浴缸, 上面长满了苔藓."
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "s_bathtub_b"
 	cleanliness = 160
 			// LATE MIDDLE  AGE
 			// LATE RENAISSANCE AGE
 /obj/structure/shower/bathtub/big/copper
-	name = "copper public bathtub"
-	desc = "An acceptable copper bathtub. It's comfortable."
+	name = "铜制公共浴缸"
+	desc = "一个还算可以的铜制浴缸. 它很舒适."
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "c_bathtub_b"
 	cleanliness = 190
 			// LATE RENAISSANCE  AGE
 			// LATE IMPERIAL AGE
 /obj/structure/shower/bathtub/big/bronze
-	name = "bronze public bathtub"
-	desc = "A fine bronze bathtub, comfortable and clean."
+	name = "青铜公共浴缸"
+	desc = "一个精美的青铜浴缸, 舒适又干净."
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "b_bathtub_b"
 	cleanliness = 320
 			// LATE IMPERIAL  AGE
 			// LATE MODERN AGE
 /obj/structure/shower/bathtub/steel
-	name = "steel bathtub"
-	desc = "A modern steel bathtub, comfortable, clean and cool."
+	name = "钢制浴缸"
+	desc = "一个现代钢制浴缸, 舒适, 干净又凉爽."
 	icon = 'icons/obj/bathtub.dmi'
 	icon_state = "st_bathtub"
 	cleanliness = 250
 			// LATE MODERN  AGE
 			// LATE COLDWAR  AGE
 /obj/structure/shower/bathtub/big/steel
-	name = "steel public bathtub"
-	desc = "A modern bronze bathtub, comfortable, clean and cool."
+	name = "钢制公共浴缸"
+	desc = "一个现代青铜浴缸, 舒适, 干净又凉爽."
 	icon = 'icons/obj/bathtub_big.dmi'
 	icon_state = "st_bathtub_b"
 	cleanliness = 250
@@ -532,18 +532,18 @@
 	//	to_chat(user, "<span class='notice'>The water temperature seems to be [watertemp].</span>")
 	if (istype(I, /obj/item/weapon/wrench))
 		var/newtemp = WWinput(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve", WWinput_first_choice(temperature_settings), WWinput_list_or_null(temperature_settings))
-		user.visible_message("<span class='notice'>[user] begins to adjust the temperature valve with \the [I].</span>", "<span class='notice'>You begin to adjust the temperature valve with \the [I].</span>", "<span class='notice'>You hear the sound of a valve being adjusted nearby.</span>")
+		user.visible_message("<span class='notice'>[user]开始用\the [I]调节温度阀门.</span>", "<span class='notice'>你开始用\the [I]调节温度阀门.</span>", "<span class='notice'>你听到附近传来阀门被调节的声音.</span>")
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
 		if (do_after(user, 50, src))
 			watertemp = newtemp
-			user.visible_message("<span class='notice'>\The [user] adjusts \the [src] with \the [I].</span>", "<span class='notice'>You adjust the shower with \the [I].</span>")
+			user.visible_message("<span class='notice'>\The [user]用\the [I]调节\the [src].</span>", "<span class='notice'>你用\the [I]调节淋浴器.</span>")
 			add_fingerprint(user)
 
 	if (istype(I, /obj/item/weapon/hammer))
-		user.visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>", "<span class='warning'>You start to deconstruct \the [src].</span>", "<span class='warning'>You hear the sound of some ratchetting nearby.</span>")
+		user.visible_message("<span class='warning'>[user]开始拆解\the [src].</span>", "<span class='warning'>你开始拆解\the [src].</span>", "<span class='warning'>你听到附近传来棘轮转动的声音.</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(user,50,src))
-			user.visible_message("<span class='warning'>[user] deconstructs \the [src].</span>", "<span class='warning'>You deconstruct \the [src].</span>", "<span class='warning'>You hear the sound of some ratchetting nearby.</span>")
+			user.visible_message("<span class='warning'>[user]拆解了\the [src].</span>", "<span class='warning'>你拆解了\the [src].</span>", "<span class='warning'>你听到附近传来棘轮转动的声音.</span>")
 			qdel(src)
 			return
 
@@ -719,10 +719,10 @@
 
 
 /obj/structure/sink
-	name = "sink"
+	name = "水槽"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink"
-	desc = "A sink used for washing one's hands and face."
+	desc = "一个用来洗手和洗脸的水槽."
 	anchored = TRUE
 	var/busy = FALSE 	//Something's being washed at the moment
 	var/sound = 'sound/effects/sink.ogg'
@@ -770,7 +770,7 @@
 		to_chat(usr, SPAN_WARNING("\The [thing] is empty."))
 		return
 	// Clear the vessel.
-	user.visible_message("<span class='warning'>[usr] tips the contents of [thing] into [src].</span>", "<span class='notice'>You tip the contents of [thing] into [src].</span>", "<span class='notice'>You hear the sound of something being poured nearby.</span>")
+	user.visible_message("<span class='warning'>[usr]将[thing]中的内容倒入[src].</span>", "<span class='notice'>你将[thing]中的内容倒入[src].</span>", "<span class='notice'>你听到附近传来倾倒东西的声音.</span>")
 	if (thing && reagents)
 		thing.reagents.splash(src, reagents.total_volume)
 		thing.reagents.clear_reagents()
@@ -789,10 +789,10 @@
 		if (user.hand)
 			temp = H.organs_by_name["l_hand"]
 		if (temp && !temp.is_usable())
-			H.visible_message("<span class='warning'>[H] tries to move their [temp.name] towards the [src], but cannot!</span>", "<span class='notice'>You try to move your [temp.name] towards the [src], but cannot!</span>", "<span class='notice'>You hear the sound of shuffling nearby.</span>")
+			H.visible_message("<span class='warning'>[H]试图将[temp.name]移向[src], 但做不到!</span>", "<span class='notice'>你试图将[temp.name]移向[src], 但做不到!</span>", "<span class='notice'>你听到附近传来拖拽的声音.</span>")
 			return
 		if (H.a_intent == I_GRAB)
-			H.visible_message("[H] starts drinking some water from \the [src]...", "You start drinking some water from \the [src]...", "You hear the sound of something being consumed nearby.")
+			H.visible_message("[H]开始从\the [src]中喝一些水...", "你开始从\the [src]中喝一些水...", "你听到附近传来喝东西的声音.")
 			if (do_after(H,50,src))
 				var/watertype = "water"
 				if (radiation>0)
@@ -815,7 +815,7 @@
 					H.water += rand(40,50)
 				H.water += 75
 				H.bladder += 25
-				to_chat(H, "You drink some water from \the [src].")
+				to_chat(H, "你从\the [src]中喝了一些水.")
 				playsound(H.loc, "drink", rand(10, 50), TRUE)
 				return
 			else
@@ -844,10 +844,10 @@
 
 /obj/structure/sink/attackby(obj/item/O as obj, mob/living/user as mob)
 	if (busy && busy != user)
-		to_chat(user, "<span class='warning'>Someone's already washing here.</span>")
+		to_chat(user, "<span class='warning'>已经有人在这里洗了.</span>")
 		return
 	if (dry || volume <= 0)
-		to_chat(user, "<span class='warning'>\The [src] is dry!</span>")
+		to_chat(user, "<span class='warning'>\The [src]是干的!</span>")
 		return
 	var/obj/item/weapon/reagent_containers/RG = O
 	var/watertype = "water"
@@ -867,7 +867,7 @@
 				volume = 0
 				spawn(3)
 					update_icon()
-				user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")
+				user.visible_message("<span class='notice'>[user]用\the [src]将\the [RG]装满.</span>","<span class='notice'>你用\the [src]将\the [RG]装满.</span>")
 				playsound(loc, 'sound/effects/watersplash.ogg', 100, TRUE)
 				user.setClickCooldown(5)
 				return TRUE
@@ -887,7 +887,7 @@
 					volume -= min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)
 				spawn(3)
 					update_icon()
-				user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")
+				user.visible_message("<span class='notice'>[user]用\the [src]将\the [RG]装满.</span>","<span class='notice'>你用\the [src]将\the [RG]装满.</span>")
 				playsound(loc, 'sound/effects/watersplash.ogg', 100, TRUE)
 				user.setClickCooldown(5)
 				return TRUE
@@ -895,13 +895,13 @@
 
 	else if (istype(O, /obj/item/weapon/mop))
 		O.reagents.add_reagent(watertype, 5)
-		to_chat(user, "<span class='notice'>You wet \the [O] in \the [src].</span>")
+		to_chat(user, "<span class='notice'>你在\the [src]中弄湿了\the [O].</span>")
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		return
 	
 	else if (istype(O, /obj/item/weapon/soap) && dirty == TRUE && do_after(user, 100, src))
 		dirty = FALSE
-		to_chat(user, "You clean \the [src].")
+		to_chat(user, "你清洗了\the [src].")
 		qdel(O) // Whole soap bar is used, may need to change the reagents amount.
 		return
 
@@ -911,7 +911,7 @@
 	var/obj/item/I = O
 	if (!I || !istype(I,/obj/item)) return
 
-	to_chat(usr, "<span class='notice'>You start washing \the [I].</span>")
+	to_chat(usr, "<span class='notice'>你开始清洗\the [I].</span>")
 
 	busy = TRUE
 	sleep(40)
@@ -941,11 +941,11 @@
 
 
 /obj/structure/sink/kitchen
-	name = "kitchen sink"
+	name = "厨房水槽"
 	icon_state = "sink_alt"
 
 /obj/structure/sink/puddle	//splishy splashy ^_^
-	name = "puddle"
+	name = "水坑"
 	icon_state = "puddle"
 	sound = 'sound/effects/watersplash.ogg'
 	max_volume = 500
@@ -955,7 +955,7 @@
 	mosquito_limit = 0
 
 /obj/structure/sink/well
-	name = "well"
+	name = "水井"
 	icon_state = "well1"
 	sound = 'sound/effects/watersplash.ogg'
 	max_volume = 750
@@ -963,14 +963,14 @@
 	mosquito_limit = 0
 
 /obj/structure/sink/well/sandstone
-	name = "sandstone well"
+	name = "砂岩水井"
 	icon_state = "sandstone_well1"
 	sound = 'sound/effects/watersplash.ogg'
 	max_volume = 750
 	volume = 750
 
 /obj/structure/sink/well/marble
-	name = "marble well"
+	name = "大理石水井"
 	icon_state = "marble_well1"
 	sound = 'sound/effects/watersplash.ogg'
 	max_volume = 750
@@ -1118,7 +1118,7 @@
 //////////////////Fountains////////////////
 
 /obj/structure/fountain
-	name = "fountain"
+	name = "喷泉"
 	icon = 'icons/obj/fountain.dmi'
 	icon_state = "fountain"
 	bound_width = 64

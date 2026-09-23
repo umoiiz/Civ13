@@ -21,8 +21,8 @@
 
 
 /obj/item/clothing/glasses/nvg
-	name = "Night Vision Goggles"
-	desc = "Enhances vision in low-light conditions, allowing you to see clearly in the dark."
+	name = "夜视仪"
+	desc = "增强低光环境下的视力,让你在黑暗中也能看清."
 	icon_state = "nvg_off"
 	item_state = "nvg_off"
 	darkness_view = 7
@@ -41,8 +41,8 @@
 
 
 /obj/item/clothing/glasses/thermal
-	name = "Thermal Vision Goggles"
-	desc = "Greatly enhances vision of thermal objects."
+	name = "热成像仪"
+	desc = "大幅增强对热源物体的视觉感知."
 	icon_state = "thermal_off"
 	item_state = "thermal_off"
 	darkness_view = 7
@@ -63,8 +63,8 @@
 
 
 /obj/item/clothing/glasses/thermal/modern
-	name = "Modern Thermal Vision Goggles"
-	desc = "Modern Set of thermal vision goggles which also allow you to see in the dark."
+	name = "现代热成像仪"
+	desc = "一套现代热成像仪,同时也能让你在黑暗中看清."
 	icon_state = "thermal_off"
 	item_state = "thermal_off"
 	darkness_view = 7

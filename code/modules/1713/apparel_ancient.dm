@@ -21,8 +21,8 @@
 /*Roman Uniforms & Sandals*/
 
 /obj/item/clothing/shoes/roman
-	name = "sandals"
-	desc = "Basic leather sandals, going up to the knee."
+	name = "凉鞋"
+	desc = "基本款皮革凉鞋,高至膝盖。"
 	icon_state = "roman"
 	item_state = "roman"
 	force = WEAPON_FORCE_WEAK
@@ -30,29 +30,29 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/under/roman
-	name = "roman legionary uniform"
-	desc = "A red tunic covered with iron armor. Used by the roman army."
+	name = "罗马军团士兵制服"
+	desc = "覆有铁甲的红色束腰外衣。罗马军队使用。"
 	icon_state = "roman"
 	item_state = "roman"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/toga
-	name = "white toga"
-	desc = "A simple cloth toga."
+	name = "白色托加长袍"
+	desc = "一件简单的布制托加长袍。"
 	icon_state = "toga"
 	item_state = "toga"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/toga2
-	name = "half-shoulder white toga"
-	desc = "A simple cloth toga, covering just one of the shoulders."
+	name = "半肩白色托加长袍"
+	desc = "一件简单的布制托加长袍,仅覆盖一侧肩膀。"
 	icon_state = "toga2"
 	item_state = "toga2"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/roman_centurion
-	name = "roman centurion uniform"
-	desc = "A red tunic covered with iron armor, with added golden plates. Used by the roman army's centurions."
+	name = "罗马百夫长制服"
+	desc = "覆有铁甲的红色束腰外衣,附加金色甲片。罗马军队的百夫长使用。"
 	icon_state = "roman_centurion"
 	item_state = "roman_centurion"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -60,36 +60,36 @@
 /*Greek Uniforms*/
 
 /obj/item/clothing/under/greek1
-	name = "greek uniform"
-	desc = "A light tunic, covered with bronze and leather armor. Used by the hellenic armies."
+	name = "希腊制服"
+	desc = "覆有青铜和皮革甲的轻型束腰外衣。希腊军队使用。"
 	icon_state = "athens"
 	item_state = "athens"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/greek2
-	name = "greek uniform"
-	desc = "A light tunic, covered with bronze and leather armor. Used by the hellenic armies."
+	name = "希腊制服"
+	desc = "覆有青铜和皮革甲的轻型束腰外衣。希腊军队使用。"
 	icon_state = "thebes"
 	item_state = "thebes"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/greek3
-	name = "greek uniform"
-	desc = "A light tunic, covered with bronze and leather armor. Used by the hellenic armies."
+	name = "希腊制服"
+	desc = "覆有青铜和皮革甲的轻型束腰外衣。希腊军队使用。"
 	icon_state = "corinthia"
 	item_state = "corinthia"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/greek_commander
-	name = "greek commander uniform"
-	desc = "A light blue tunic covered by a bronze plate armor. Used by hellenic commanders."
+	name = "希腊指挥官制服"
+	desc = "覆有青铜板甲的浅蓝色束腰外衣。希腊指挥官使用。"
 	icon_state = "greek_commander"
 	item_state = "greek_commander"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/toxotai
-	name = "white tunic"
-	desc = "A light white tunic."
+	name = "白色束腰外衣"
+	desc = "一件轻便的白色束腰外衣。"
 	icon_state = "toxotai"
 	item_state = "toxotai"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -97,36 +97,36 @@
 /*Celtic Uniforms*/
 
 /obj/item/clothing/under/celtic_green
-	name = "green celtic trousers"
-	desc = "Celtic-style trousers, in green."
+	name = "绿色凯尔特长裤"
+	desc = "凯尔特风格长裤,绿色。"
 	icon_state = "celtic_green"
 	item_state = "celtic_green"
 	heat_protection = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/celtic_blue
-	name = "blue celtic trousers"
-	desc = "Celtic-style trousers, in blue."
+	name = "蓝色凯尔特长裤"
+	desc = "凯尔特风格长裤,蓝色。"
 	icon_state = "celtic_blue"
 	item_state = "celtic_blue"
 	heat_protection = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/celtic_red
-	name = "red celtic trousers"
-	desc = "Celtic-style trousers, in red."
+	name = "红色凯尔特长裤"
+	desc = "凯尔特风格长裤,红色。"
 	icon_state = "celtic_red"
 	item_state = "celtic_red"
 	heat_protection = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/celtic_short_braccae
-	name = "short celtic braccae"
-	desc = "Short, celtic-style wool trousers."
+	name = "凯尔特短裤"
+	desc = "凯尔特风格的短羊毛长裤。"
 	icon_state = "celtic_short_braccae"
 	item_state = "celtic_short_braccae"
 	heat_protection = LOWER_TORSO
 
 /obj/item/clothing/under/celtic_long_braccae
-	name = "long celtic braccae"
-	desc = "Long, celtic-style wool trousers."
+	name = "凯尔特长裤"
+	desc = "凯尔特风格的长羊毛长裤。"
 	icon_state = "celtic_long_braccae"
 	item_state = "celtic_long_braccae"
 	heat_protection = LOWER_TORSO|LEGS
@@ -134,22 +134,22 @@
 /*Mayan & Aztec Uniforms + Sandals*/
 
 /obj/item/clothing/under/mayan_loincloth
-	name = "mayan loincloth"
-	desc = "Mayan-style loincloth."
+	name = "玛雅缠腰布"
+	desc = "玛雅风格缠腰布."
 	icon_state = "mayan_loincloth"
 	item_state = "mayan_loincloth"
 	heat_protection = LOWER_TORSO
 
 /obj/item/clothing/under/aztec_loincloth
-	name = "aztec loincloth"
-	desc = "A loincloth fit for a ferocious aztec warrior."
+	name = "阿兹特克缠腰布"
+	desc = "适合凶猛阿兹特克战士的缠腰布."
 	icon_state = "aztec_loincloth"
 	item_state = "aztec_loincloth"
 	heat_protection = LOWER_TORSO
 
 /obj/item/clothing/shoes/aztec_sandals
-	name = "aztec sandals"
-	desc = "Basic leather sandals, hailing from the jungles."
+	name = "阿兹特克凉鞋"
+	desc = "来自丛林的基本皮革凉鞋."
 	icon_state = "aztec_sandals"
 	item_state = "aztec_sandals"
 	force = WEAPON_FORCE_WEAK
@@ -159,37 +159,37 @@
 /*Egyptian Uniforms*/
 
 /obj/item/clothing/under/pharaoh
-	name = "pharaohic shendyt"
-	desc = "A fancy, decorated shendyt."
+	name = "法老式申迪特"
+	desc = "华丽装饰的申迪特."
 	icon_state = "pharaoh"
 	item_state = "pharaoh"
 	heat_protection = LOWER_TORSO|UPPER_TORSO
 
 /obj/item/clothing/under/pharaoh2
-	name = "nemes shendyt"
-	desc = "A fancy, decorated shendyt."
+	name = "尼美斯申迪特"
+	desc = "华丽装饰的申迪特."
 	icon_state = "greatshendyt"
 	item_state = "greatshendyt"
 	heat_protection = LOWER_TORSO|UPPER_TORSO
 
 /*Ainu Things*/
 /obj/item/clothing/under/ainu
-	name = "ainu robes"
-	desc = "A set of robes worn by the ainu."
+	name = "阿伊努长袍"
+	desc = "阿伊努人穿的一套长袍."
 	icon_state = "ainu_robe"
 	item_state = "ainu_robe"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/ainu2
-	name = "ainu robes"
-	desc = "A set of robes worn by the ainu."
+	name = "阿伊努长袍"
+	desc = "阿伊努人穿的一套长袍."
 	icon_state = "ainu_robe2"
 	item_state = "ainu_robe2"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/head/ainu_bandana
-	name = "ainu bandana"
-	desc = "A bandana with intricate patterns."
+	name = "阿伊努头巾"
+	desc = "带有复杂图案的头巾."
 	icon_state = "ainu"
 	item_state = "ainu"
 	var/folded = FALSE
@@ -203,12 +203,12 @@
 		if (folded)
 			item_state = "ainu"
 			item_state_slots["slot_w_head"] = "ainu"
-			to_chat(usr, "<span class = 'danger'>You unfold your bandana.</span>")
+			to_chat(usr, "<span class = 'danger'>你展开你的头巾.</span>")
 			folded = FALSE
 		else if (!folded)
 			item_state = "ainu_smol"
 			item_state_slots["slot_w_head"] = "ainu_smol"
-			to_chat(usr, "<span class = 'danger'>You fold your bandana.</span>")
+			to_chat(usr, "<span class = 'danger'>你叠起你的头巾.</span>")
 			folded = TRUE
 	update_clothing_icon()
 
@@ -220,8 +220,8 @@
 	flags = CONDUCT
 
 /obj/item/clothing/suit/armor/ancient/scale
-	name = "segmented armor"
-	desc = "A thick and expensive segmented piece of iron armor, its scales protect the torso."
+	name = "分段甲"
+	desc = "一件厚重且昂贵的分段铁甲,其鳞片保护躯干."
 	icon_state = "scale_armor"
 	item_state = "scale_armor"
 	body_parts_covered = UPPER_TORSO
@@ -231,8 +231,8 @@
 	health = 47
 
 /obj/item/clothing/suit/armor/ancient/chainmail
-	name = "early Chainmail"
-	desc = "Wearable armor made of several small interlinked chains."
+	name = "早期锁子甲"
+	desc = "由多个小环互扣制成的可穿戴护甲."
 	icon_state = "early_chainmail"
 	item_state = "early_chainmail"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -242,8 +242,8 @@
 	health = 50
 
 /obj/item/clothing/suit/armor/ancient/linen
-	name = "linothorax armor"
-	desc = "A thick linen armor, covering the torso and lower body."
+	name = "亚麻胸甲"
+	desc = "一件厚重的亚麻护甲,覆盖躯干和下半身."
 	icon_state = "heavycloth_armor"
 	item_state = "heavycloth_armor"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
@@ -254,8 +254,8 @@
 	flags = FALSE
 
 /obj/item/clothing/suit/armor/ancient/bronze_lamellar
-	name = "bronze egyptian lamellar"
-	desc = "A bronze lamellar armor, used by soldiers of pharoahic dynasties."
+	name = "青铜埃及札甲"
+	desc = "一件青铜札甲,为法老王朝的士兵所使用."
 	icon_state = "egyptian_lamellar"
 	item_state = "egyptian_lamellar"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -265,8 +265,8 @@
 	health = 48
 
 /obj/item/clothing/suit/armor/ancient/bronze_lamellar/chinese
-	name = "bronze chinese lamellar"
-	desc = "A bronze lamellar armor, used by warriors of early chinese dynasties."
+	name = "青铜中国札甲"
+	desc = "一件青铜札甲,为中国早期王朝的战士所使用."
 	icon_state = "chinese_lamellar"
 	item_state = "chinese_lamellar"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -277,8 +277,8 @@
 
 
 /obj/item/clothing/suit/armor/ancient/scaled
-	name = "scaled armor"
-	desc = "An armor made of serveral scales made of bronze."
+	name = "鳞甲"
+	desc = "一件由若干青铜鳞片制成的护甲."
 	icon_state = "scaled_armor"
 	item_state = "scaled_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -289,8 +289,8 @@
 
 
 /obj/item/clothing/suit/armor/ancient/aztec_harness
-	name = "aztec harness"
-	desc = "A few metal plates on leather strips, covering the torso."
+	name = "阿兹特克挽具"
+	desc = "几块金属板固定在皮革条上,覆盖躯干."
 	icon_state = "aztec_harness"
 	item_state = "aztec_harness"
 	body_parts_covered = UPPER_TORSO
@@ -300,8 +300,8 @@
 	health = 18
 
 /obj/item/clothing/suit/armor/ancient/gator_scale_armor
-	name = "alligator scale armor"
-	desc = "A carefully cured & hardened alligator scale armor, covering the torso."
+	name = "鳄鱼鳞甲"
+	desc = "一件经过精心腌制和硬化的鳄鱼鳞甲,覆盖躯干."
 	icon_state = "gator_scale_armor"
 	item_state = "gator_scale_armor"
 	body_parts_covered = UPPER_TORSO
@@ -313,44 +313,44 @@
 /*Ancient Capes*/
 
 /obj/item/clothing/suit/cape
-	name = "red cape"
-	desc = "A long red cape."
+	name = "红色披风"
+	desc = "一件长红色披风."
 	icon_state = "redcape"
 	item_state = "redcape"
 
 /obj/item/clothing/suit/cape/blue
-	name = "blue cape"
-	desc = "A long blue cape."
+	name = "蓝色披风"
+	desc = "一件长蓝色披风."
 	icon_state = "bluecape"
 	item_state = "bluecape"
 
 /*Ancient Headpieces*/
 
 /obj/item/clothing/head/toxotai
-	name = "toxotai hat"
-	desc = "A wide brim hat, used by the toxotai."
+	name = "托克索泰帽"
+	desc = "一顶宽檐帽,为托克索泰所使用."
 	icon_state = "toxotai"
 	item_state = "toxotai"
 
 /obj/item/clothing/head/egyptian_headdress_black
-	name = "black egyptian headdress"
-	desc = "A plain sun-protective linen headdress, despite its black stripes."
+	name = "黑色埃及头饰"
+	desc = "一件朴素的防晒亚麻头饰,尽管带有黑色条纹."
 	icon_state = "egyptian_headdress_black"
 	item_state = "egyptian_headdress_black"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/egyptian_headdress_blue
-	name = "blue egyptian headdress"
-	desc = "A plain sun-protective blue linen headdress."
+	name = "蓝色埃及头饰"
+	desc = "一件朴素的防晒蓝色亚麻头饰."
 	icon_state = "egyptian_headdress_blue"
 	item_state = "egyptian_headdress_blue"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/egyptian_headdress_red
-	name = "red egyptian headdress"
-	desc = "A plain sun-protective red linen headdress."
+	name = "红色埃及头饰"
+	desc = "一件朴素的防晒红色亚麻头饰."
 	icon_state = "egyptian_headdress_red"
 	item_state = "egyptian_headdress_red"
 	flags_inv = BLOCKHEADHAIR
@@ -359,8 +359,8 @@
 /*Ancient Helmets*/
 
 /obj/item/clothing/head/helmet/roman
-	name = "roman legionary helmet"
-	desc = "The typical helmet of the roman army."
+	name = "罗马军团士兵头盔"
+	desc = "罗马军队的典型头盔."
 	icon_override = 'icons/obj/clothing/head.dmi'
 	icon_state = "roman"
 	item_state = "roman"
@@ -370,8 +370,8 @@
 	health = 35
 
 /obj/item/clothing/head/helmet/roman_decurion
-	name = "roman decurion helmet"
-	desc = "An iron helmet, used by decurions. Officers within the cavalry of the roman army."
+	name = "罗马十夫长头盔"
+	desc = "一件铁头盔,为十夫长所使用.罗马军队骑兵中的军官."
 	icon_override = 'icons/obj/clothing/head.dmi'
 	icon_state = "roman_d"
 	item_state = "roman_d"
@@ -381,8 +381,8 @@
 	health = 35
 
 /obj/item/clothing/head/helmet/roman_centurion
-	name = "roman centurion helmet"
-	desc = "An iron helmet, used by centurions. Officers within the infantry of the roman army."
+	name = "罗马百夫长头盔"
+	desc = "一件铁头盔,为百夫长所使用.罗马军队步兵中的军官."
 	icon_override = 'icons/obj/clothing/head.dmi'
 	icon_state = "roman_c"
 	item_state = "roman_c"
@@ -392,8 +392,8 @@
 	health = 35
 
 /obj/item/clothing/head/helmet/gladiator
-	name = "gladiator helmet"
-	desc = "A gladiator helmet."
+	name = "角斗士头盔"
+	desc = "一顶角斗士头盔."
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	body_parts_covered = HEAD|FACE|EYES
@@ -402,8 +402,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/solinvictus
-	name = "sol invictus helmet"
-	desc = "A gold adorned helmet with masqued visage and gold solar streaks. Worn by roman emperors."
+	name = "无敌太阳神头盔"
+	desc = "一顶饰有黄金、带有面具面容和金色太阳纹的头盔.为罗马皇帝所佩戴."
 	icon_state = "sol_invictus"
 	item_state = "sol_invictus"
 	body_parts_covered = HEAD|FACE|EYES
@@ -414,8 +414,8 @@
 	slowdown = 0.25
 
 /obj/item/clothing/head/helmet/anax
-	name = "greek anax helmet"
-	desc = "A reinforced bronze greek helmet, covering most of the face, with black plummage on top. Worn by hellenic kings."
+	name = "希腊阿纳克斯头盔"
+	desc = "一顶加固的青铜希腊头盔,覆盖大部分面部,顶部有黑色羽饰.为希腊国王所佩戴."
 	icon_state = "leonidas"
 	item_state = "leonidas"
 	body_parts_covered = HEAD|FACE|EYES
@@ -426,8 +426,8 @@
 	slowdown = 0.10
 
 /obj/item/clothing/head/helmet/greek
-	name = "greek helmet"
-	desc = "A bronze greek helmet, covering most of the face."
+	name = "希腊头盔"
+	desc = "一顶青铜希腊头盔,覆盖大部分面部."
 	icon_state = "new_greek"
 	item_state = "new_greek"
 	body_parts_covered = HEAD|FACE|EYES
@@ -436,8 +436,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/greek_commander
-	name = "lochagos helmet"
-	desc = "A bronze greek helmet, covering most of the face, with red plummage on top. Worn by hellenic lochagos."
+	name = "洛克哈戈斯头盔"
+	desc = "一顶青铜希腊头盔,覆盖大部分面部,顶部有红色羽饰.为希腊洛克哈戈斯所佩戴."
 	icon_state = "spartan"
 	item_state = "spartan"
 	body_parts_covered = HEAD|FACE|EYES
@@ -446,8 +446,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/greek_sl
-	name = "dimoerites helmet"
-	desc = "A bronze greek helmet, covering most of the face, with blue plummage on top. Worn by hellenic dimoerites."
+	name = "迪莫伊里泰斯头盔"
+	desc = "一顶青铜希腊头盔,覆盖大部分面部,顶部有蓝色羽饰.为希腊迪莫伊里泰斯所佩戴."
 	icon_state = "athenian"
 	item_state = "athenian"
 	body_parts_covered = HEAD|FACE|EYES
@@ -456,8 +456,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/egyptian
-	name = "egyptian war headdress"
-	desc = "A bronze egyptian headpiece, with an exposed face to relieve the wearer of heat."
+	name = "埃及战争头饰"
+	desc = "一件青铜埃及头饰,面部外露以减轻佩戴者的炎热."
 	icon_state = "egyptian_bronze_headdress"
 	item_state = "egyptian_bronze_headdress"
 	body_parts_covered = HEAD|EYES
@@ -468,8 +468,8 @@
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/helmet/phrigian
-	name = "bronze phrigian helmet"
-	desc = "A knob ended bronze phrigian helmet. With more emphasis on style than overall protection"
+	name = "青铜弗里吉亚头盔"
+	desc = "一顶带球状顶端的青铜弗里吉亚头盔.更注重风格而非整体防护."
 	icon_state = "phrigian_helmet"
 	item_state = "phrigian_helmet"
 	body_parts_covered = HEAD
@@ -478,8 +478,8 @@
 
 
 /obj/item/clothing/head/helmet/leather
-	name = "leather helmet"
-	desc = "A simple leather helmet."
+	name = "皮革头盔"
+	desc = "一顶简单的皮革头盔."
 	icon_state = "leatherhelmet"
 	item_state = "leatherhelmet"
 	body_parts_covered = HEAD
@@ -488,8 +488,8 @@
 	health = 20
 
 /obj/item/clothing/head/helmet/hatchigane
-	name = "hatchigane headband"
-	desc = "A armored leather headband of japanese design, it wears away petty attacks but will not withstand heavy blows."
+	name = "钵金头带"
+	desc = "一条日式设计的装甲皮革头带,能抵御轻微攻击但无法承受重击."
 	icon_state = "hatchigane"
 	item_state = "hatchigane"
 	body_parts_covered = HEAD
@@ -497,8 +497,8 @@
 	health = 15
 
 /obj/item/clothing/head/helmet/khepresh
-	name = "khepresh war crown"
-	desc = "A ornate egyptian war crown made of leather and gold. It is not as protective as bronze or iron, but practical for protecting your majesty."
+	name = "海普雷什战冠"
+	desc = "一顶由皮革和黄金制成的华丽埃及战冠.它不如青铜或铁那样具有防护性,但用于保护陛下颇为实用."
 	icon_state = "khepresh"
 	item_state = "khepresh"
 	body_parts_covered = HEAD
@@ -508,8 +508,8 @@
 	/* Nomads (Craftable) Helmets*/
 
 /obj/item/clothing/head/helmet/gladiator/nomads //nerfing it down for mass consumption
-	name = "gladiator helmet"
-	desc = "A gladiator helmet."
+	name = "角斗士头盔"
+	desc = "一顶角斗士头盔."
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	body_parts_covered = HEAD|FACE|EYES
@@ -518,8 +518,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/horned
-	name = "horned helmet"
-	desc = "A horned helmet, used by barbarians."
+	name = "角盔"
+	desc = "一顶角盔, 野蛮人使用."
 	icon_state = "barbarian" //"viking" can be used elsewise for wagner
 	item_state = "barbarian"
 	body_parts_covered = HEAD
@@ -528,8 +528,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/asterix
-	name = "winged helmet"
-	desc = "A winged helmet, used swift warriors who don't mind brutalistic stabs to the face."
+	name = "翼盔"
+	desc = "一顶翼盔, 供那些不介意面部遭受野蛮刺击的迅捷战士使用."
 	icon_state = "asterix"
 	item_state = "asterix"
 	body_parts_covered = HEAD
@@ -538,8 +538,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/egyptian/nomads
-	name = "egyptian war headdress"
-	desc = "A bronze egyptian headdress, with a exposed face to relieve the wearer of heat."
+	name = "埃及战冠"
+	desc = "一顶青铜埃及头冠, 面部外露以缓解佩戴者的炎热."
 	icon_state = "egyptian_bronze_headdress"
 	item_state = "egyptian_bronze_headdress"
 	body_parts_covered = HEAD|EYES
@@ -549,8 +549,8 @@
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/helmet/greek/nomads
-	name = "greek helmet"
-	desc = "A bronze greek helmet, covering most of the face."
+	name = "希腊头盔"
+	desc = "一顶青铜希腊头盔, 覆盖了大部分面部."
 	icon_state = "new_greek"
 	item_state = "new_greek"
 	body_parts_covered = HEAD|FACE|EYES
@@ -559,8 +559,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/greek_commander/nomads
-	name = "lochagos helmet"
-	desc = "A bronze greek helmet, covering most of the face, with red plummage on top. Worn by hellenic lochagos."
+	name = "洛克哈戈斯头盔"
+	desc = "一顶青铜希腊头盔, 覆盖了大部分面部, 顶部有红色羽饰. 由希腊洛克哈戈斯佩戴."
 	icon_state = "spartan"
 	item_state = "spartan"
 	body_parts_covered = HEAD|FACE|EYES
@@ -569,8 +569,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/greek_sl/nomads
-	name = "dimoerites helmet"
-	desc = "A bronze greek helmet, covering most of the face, with blue plummage on top. Worn by hellenic dimoerites."
+	name = "迪莫伊里特斯头盔"
+	desc = "一顶青铜希腊头盔, 覆盖了大部分面部, 顶部有蓝色羽饰. 由希腊迪莫伊里特斯佩戴."
 	icon_state = "athenian"
 	item_state = "athenian"
 	body_parts_covered = HEAD|FACE|EYES
@@ -579,8 +579,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/roman/nomads
-	name = "roman legionary helmet"
-	desc = "The typical helmet of the roman army."
+	name = "罗马军团头盔"
+	desc = "罗马军队的典型头盔."
 	icon_override = 'icons/obj/clothing/head.dmi'
 	icon_state = "roman"
 	item_state = "roman"
@@ -590,8 +590,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/chinese_warrior
-	name = "chinese warrior helmet"
-	desc = "A bronze helmet, used by early chinese dynasties."
+	name = "中国武士头盔"
+	desc = "一顶青铜头盔, 早期中国王朝使用."
 	icon_state = "bronze_chinese"
 	item_state = "bronze_chinese"
 	body_parts_covered = HEAD
@@ -602,61 +602,61 @@
 /*Royal & Laurel Headwear*/
 
 /obj/item/clothing/head/pharoah
-	name = "pharoah headdress"
-	desc = "A ornate, golden headdress."
+	name = "法老头冠"
+	desc = "一顶华丽的金色头冠."
 	icon_state = "pharoah_headdress"
 	item_state = "pharoah_headdress"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/nemes
-	name = "nemes headdress"
-	desc = "A fancy, golden headdress."
+	name = "尼美斯头巾"
+	desc = "一顶华丽的金色头巾."
 	icon_state = "nemes_headdress"
 	item_state = "nemes_headdress"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/doublecrown //replaced by hedjet/deshret/pschent following
-	name = "double crown"
-	desc = "A double-coloured cloth crown."
+	name = "双冠"
+	desc = "一顶双色布冠."
 	icon_state = "doublecrown"
 	item_state = "doublecrown"
 
 /obj/item/clothing/head/hedjet
-	name = "hedjet crown"
-	desc = "A egyptian crown made from cloth. It is often worn by pharoahs ruling over the floodplains." //historically the northern pharoahs nearer to the nile delta
+	name = "海杰特王冠"
+	desc = "一顶由布料制成的埃及王冠. 通常由统治洪泛平原的法老佩戴." //historically the northern pharoahs nearer to the nile delta
 	icon_state = "hedjet"
 	item_state = "hedjet"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/deshret
-	name = "deshret crown"
-	desc = "A red egyptian crown made from cloth. It is often worn by pharoahs ruling over desert dunes." //historically the southern pharoahs nearer to the nubian desert
+	name = "德什雷特王冠"
+	desc = "一顶由布料制成的红色埃及王冠. 通常由统治沙漠沙丘的法老佩戴." //historically the southern pharoahs nearer to the nubian desert
 	icon_state = "deshret"
 	item_state = "deshret"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/pschent
-	name = "pschent crown"
-	desc = "A combined red and white egyptian crown made from cloth. Combined of deshret & hedjet; it represents divine authority over their domain." //worn by herod, of a united egyptian kingdom.
+	name = "普斯肯特王冠"
+	desc = "一顶由布料制成的红白相间的埃及王冠. 由德什雷特与海杰特组合而成; 它代表着对其领地的神圣权威." //worn by herod, of a united egyptian kingdom.
 	icon_state = "pschent"
 	item_state = "pschent"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/head/laurelcrown
-	name = "laurel crown"
-	desc = "A crown made of laurel."
+	name = "月桂冠"
+	desc = "一顶由月桂制成的王冠."
 	icon_state = "laurelcrown"
 	item_state = "laurelcrown"
 	body_parts_covered = FALSE
 
 /obj/item/clothing/head/laurelcrown/gold
-	name = "gold laurel crown"
-	desc = "A crown made of gold, imitating a laurel crown."
+	name = "金月桂冠"
+	desc = "一顶由黄金制成的王冠, 模仿月桂冠."
 	icon_state = "laurelcrown_gold"
 	item_state = "laurelcrown_gold"
 	body_parts_covered = FALSE
@@ -664,8 +664,8 @@
 /* Religious Headwear*/
 
 /obj/item/clothing/head/fiendish
-	name = "fiendish headdress"
-	desc = "A menacing headdress, preferred by cults & covens."
+	name = "恶魔头饰"
+	desc = "一顶险恶的头饰, 受邪教与女巫团青睐."
 	icon_state = "fiendish"
 	item_state = "fiendish"
 	flags_inv = BLOCKHEADHAIR
@@ -675,8 +675,8 @@
 
 
 /obj/item/clothing/head/semitic_cap
-	name = "semitic cap"
-	desc = "A yellow knob-headed hat applied to denote jews amongst themselves and those ruling over them."
+	name = "闪米特帽"
+	desc = "一顶黄色圆头帽, 用于在犹太人之间以及统治他们的人之间标示犹太人."
 	icon_state = "semitic_cap"
 	item_state = "semitic_cap"
 	flags_inv = BLOCKHEADHAIR
@@ -684,82 +684,82 @@
 /*Pelts*/
 
 /obj/item/clothing/head/bearpelt
-	name = "bearpelt headcover"
-	desc = "A bear pelt turned into a headcover."
+	name = "熊皮头罩"
+	desc = "一张熊皮制成的头罩."
 	icon_state = "bearpelt"
 	item_state = "bearpelt"
 	flags_inv = BLOCKHEADHAIR
 	cold_protection = HEAD
 
 /obj/item/clothing/head/wolfpelt
-	name = "wolfpelt headcover"
-	desc = "A wolf pelt turned into a headcover."
+	name = "狼皮头罩"
+	desc = "一张狼皮制成的头罩."
 	icon_state = "wolfpelt"
 	item_state = "wolfpelt"
 	flags_inv = BLOCKHEADHAIR
 	cold_protection = HEAD
 
 /obj/item/clothing/head/wolfpelt/white
-	name = "white wolfpelt headcover"
-	desc = "A wolf pelt turned into a headcover."
+	name = "白狼皮头罩"
+	desc = "一张狼皮制成的头罩."
 	icon_state = "whitewolfpelt"
 	item_state = "whitewolfpelt"
 
 /obj/item/clothing/head/pantherpelt
-	name = "pantherpelt headcover"
-	desc = "A panther pelt turned into a headcover."
+	name = "豹皮头罩"
+	desc = "一张豹皮制成的头罩."
 	icon_state = "pantherpelt"
 	item_state = "pantherpelt"
 	flags_inv = BLOCKHEADHAIR
 	cold_protection = HEAD
 
 /obj/item/clothing/head/lionpelt
-	name = "lionpelt headcover"
-	desc = "A lion pelt turned into a headcover."
+	name = "狮皮头罩"
+	desc = "一张狮皮制成的头罩."
 	icon_state = "lionpelt"
 	item_state = "lionpelt"
 	flags_inv = BLOCKHEADHAIR
 	cold_protection = HEAD
 
 /obj/item/clothing/head/gatorpelt
-	name = "alligator pelt headcover"
-	desc = "A alligator pelt turned into a headcover."
+	name = "鳄鱼皮头罩"
+	desc = "一张鳄鱼皮制成的头罩."
 	icon_state = "gatorpelt"
 	item_state = "gatorpelt"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD
 
 /obj/item/clothing/head/foxpelt
-	name = "foxpelt headcover"
-	desc = "A fox pelt turned into a headcover."
+	name = "狐皮头罩"
+	desc = "一张狐皮制成的头罩."
 	icon_state = "foxpelt"
 	item_state = "foxpelt"
 	flags_inv = BLOCKHEADHAIR
 	cold_protection = HEAD
 
 /obj/item/clothing/head/foxpelt/white
-	name = "white foxpelt headcover"
-	desc = "A fox pelt turned into a headcover."
+	name = "白狐皮头罩"
+	desc = "一张狐皮制成的头罩."
 	icon_state = "whitefoxpelt"
 	item_state = "whitefoxpelt"
 
 /obj/item/clothing/head/sheeppelt
-	name = "sheep-pelt headcover"
-	desc = "A sheep pelt turned into a headcover. The thick wool helps keep the cold off your body."
+	name = "羊皮头罩"
+	desc = "一张羊皮制成的头罩. 厚实的羊毛有助于为你的身体御寒."
 	icon_state = "sheeppelt"
 	item_state = "sheeppelt"
 	cold_protection = HEAD|ARMS
 
 /obj/item/clothing/head/goatpelt
-	name = "goatpelt headcover"
-	desc = "A goat pelt turned into a headcover. The light loose fur helps keep the sun's rays off your body."
+	name = "山羊皮头罩"
+	desc = "一张山羊皮制成的头罩. 轻盈松散的毛皮有助于为你的身体遮挡阳光."
 	icon_state = "goatpelt"
 	item_state = "goatpelt"
 	heat_protection = HEAD|ARMS
 
 /obj/item/clothing/head/bisonpelt
-	name = "bisonpelt headcover"
-	desc = "A bison pelt turned into a headcover. The thick matted fur keeps the cold off your body; the horns are just for show."
+	name = "野牛皮头罩"
+	desc = "一张野牛皮制成的头罩. 厚实缠结的毛皮为你的身体御寒; 牛角只是装饰."
 	icon_state = "bisonpelt"
 	item_state = "bisonpelt"
 	cold_protection = HEAD|ARMS
@@ -771,8 +771,8 @@
 	min_cold_protection_temperature = COAT_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/suit/storage/coat/fur
-	name = "fur coat"
-	desc = "A thick fur coat, great for the winter."
+	name = "毛皮大衣"
+	desc = "一件厚实的毛皮大衣, 非常适合冬天."
 	icon_state = "fur_jacket1"
 	item_state = "fur_jacket1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -784,40 +784,40 @@
 	flags_inv = BLOCKHEADHAIR
 
 /obj/item/clothing/suit/storage/coat/fur/brown
-	name = "brown fur coat"
-	desc = "A thick brown fur coat, great for the winter."
+	name = "棕色毛皮大衣"
+	desc = "一件厚实的棕色毛皮大衣, 非常适合冬天."
 	icon_state = "fur_jacket1"
 	item_state = "fur_jacket1"
 	specific = TRUE
 	colorn = 1
 
 /obj/item/clothing/suit/storage/coat/fur/white
-	name = "white fur coat"
-	desc = "A thick white fur coat, great for the winter."
+	name = "白色毛皮大衣"
+	desc = "一件厚实的白色毛皮大衣, 非常适合冬天."
 	icon_state = "fur_jacket4"
 	item_state = "fur_jacket4"
 	specific = TRUE
 	colorn = 4
 
 /obj/item/clothing/suit/storage/coat/fur/black
-	name = "black fur coat"
-	desc = "A thick black fur coat, great for the winter."
+	name = "黑色毛皮大衣"
+	desc = "一件厚实的黑色毛皮大衣, 非常适合冬天."
 	icon_state = "fur_jacket3"
 	item_state = "fur_jacket3"
 	specific = TRUE
 	colorn = 3
 
 /obj/item/clothing/suit/storage/coat/fur/grey
-	name = "grey fur coat"
-	desc = "A thick grey fur coat, great for the winter."
+	name = "灰色毛皮大衣"
+	desc = "一件厚实的灰色毛皮大衣, 非常适合冬天."
 	icon_state = "fur_jacket2"
 	item_state = "fur_jacket2"
 	specific = TRUE
 	colorn = 2
 
 /obj/item/clothing/suit/storage/coat/fur/pink
-	name = "human skin coat"
-	desc = "A coat made of human skin. Spooky..."
+	name = "人皮大衣"
+	desc = "一件由人皮制成的大衣. 真吓人..."
 	icon_state = "fur_jacket5"
 	item_state = "fur_jacket5"
 	specific = TRUE
@@ -840,7 +840,7 @@
 	if (ishuman(usr))
 		var/mob/living/human/H = usr
 		if (H.head)
-			to_chat(usr, "<span class = 'warning'>You cannot put your hood up, the [H.head] is in the way!</span>")
+			to_chat(usr, "<span class = 'warning'>你无法戴上兜帽, [H.head]挡住了!</span>")
 			return
 	if (hood)
 		icon_state = "fur_jacket[colorn]"
@@ -848,7 +848,7 @@
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT
 		item_state_slots["slot_wear_suit"] = "fur_jacket[colorn]"
-		to_chat(usr, "<span class = 'danger'>You take off your coat's hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你脱下大衣的兜帽.</span>")
 		update_icon()
 		hood = FALSE
 		usr.update_inv_head(1)
@@ -860,7 +860,7 @@
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT|HEAD
 		item_state_slots["slot_wear_suit"] = "fur_jacket[colorn]h"
-		to_chat(usr, "<span class = 'danger'>You cover your head with your coat's hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你用大衣的兜帽罩住头部.</span>")
 		update_icon()
 		hood = TRUE
 		usr.update_inv_head(1)
@@ -870,8 +870,8 @@
 /*Fur Shoes*/
 
 /obj/item/clothing/shoes/fur
-	name = "fur boots"
-	desc = "Dense fur boots."
+	name = "毛皮靴"
+	desc = "厚实的毛皮靴."
 	icon_state = "fur"
 	item_state = "fur"
 	force = WEAPON_FORCE_WEAK
@@ -884,36 +884,36 @@
 	var/specific = FALSE
 
 /obj/item/clothing/shoes/fur/black
-	name = "black fur boots"
-	desc = "Dense fur boots."
+	name = "黑色毛皮靴"
+	desc = "厚实的毛皮靴。"
 	icon_state = "fur3"
 	item_state = "fur3"
 	specific = TRUE
 
 /obj/item/clothing/shoes/fur/brown
-	name = "brown fur boots"
-	desc = "Dense fur boots."
+	name = "棕色毛皮靴"
+	desc = "厚实的毛皮靴。"
 	icon_state = "fur1"
 	item_state = "fur1"
 	specific = TRUE
 
 /obj/item/clothing/shoes/fur/white
-	name = "white fur boots"
-	desc = "Dense fur boots."
+	name = "白色毛皮靴"
+	desc = "厚实的毛皮靴。"
 	icon_state = "fur4"
 	item_state = "fur4"
 	specific = TRUE
 
 /obj/item/clothing/shoes/fur/grey
-	name = "grey fur boots"
-	desc = "Dense fur boots."
+	name = "灰色毛皮靴"
+	desc = "厚实的毛皮靴。"
 	icon_state = "fur2"
 	item_state = "fur2"
 	specific = TRUE
 
 /obj/item/clothing/shoes/fur/pink
-	name = "human skin boots"
-	desc = "Human skin boots."
+	name = "人皮靴"
+	desc = "人皮靴。"
 	icon_state = "fur5"
 	item_state = "fur5"
 	specific = TRUE
@@ -928,8 +928,8 @@
 /*Ancient Facemasks & Covers*/
 
 /obj/item/clothing/mask/redkerchief
-	name = "red kerchief"
-	desc = "A piece of light cloth, worn around the neck."
+	name = "红色头巾"
+	desc = "一块轻质布料,围在脖子上。"
 	icon_state = "redkerchief"
 	item_state = "redkerchief"
 	flags_inv = 0
@@ -937,8 +937,8 @@
 	var/toggled = FALSE
 
 /obj/item/clothing/mask/shemagh
-	name = "shemagh"
-	desc = "A piece of light cloth, used to protect the head and face."
+	name = "阿拉伯头巾"
+	desc = "一块轻质布料,用于保护头部和面部。"
 	icon_state = "shemagh0"
 	item_state = "shemagh0"
 	var/usedstate = "shemagh1"
@@ -951,8 +951,8 @@
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/shemagh/redkerchief
-	name = "red kerchief"
-	desc = "A piece of light cloth, worn around the neck."
+	name = "红色头巾"
+	desc = "一块轻质布料,围在脖子上。"
 	icon_state = "redkerchief0"
 	item_state = "redkerchief0"
 	usedstate = "redkerchief1"
@@ -962,8 +962,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/clothing/mask/shemagh/bluekerchief
-	name = "blue kerchief"
-	desc = "A piece of light cloth, worn around the neck."
+	name = "蓝色头巾"
+	desc = "一块轻质布料,围在脖子上。"
 	icon_state = "bluekerchief0"
 	item_state = "bluekerchief0"
 	usedstate = "bluekerchief1"
@@ -972,8 +972,8 @@
 	flags_inv = 0
 	w_class = ITEM_SIZE_SMALL
 /obj/item/clothing/mask/shemagh/yellowkerchief
-	name = "yellow kerchief"
-	desc = "A piece of light cloth, worn around the neck."
+	name = "黄色头巾"
+	desc = "一块轻质布料,围在脖子上。"
 	icon_state = "yellowkerchief0"
 	item_state = "yellowkerchief0"
 	usedstate = "yellowkerchief1"
@@ -983,8 +983,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/clothing/mask/shemagh/greykerchief
-	name = "grey kerchief"
-	desc = "A piece of light cloth, worn around the neck."
+	name = "灰色头巾"
+	desc = "一块轻质布料,围在脖子上。"
 	icon_state = "greykerchief0"
 	item_state = "greykerchief0"
 	usedstate = "greykerchief1"
@@ -1017,7 +1017,7 @@
 		item_state = unusedstate
 		body_parts_covered = 0
 		flags_inv = 0
-		to_chat(usr, "<span class = 'danger'>You adjust the [name].</span>")
+		to_chat(usr, "<span class = 'danger'>你调整了[name]。</span>")
 		update_icon()
 		toggled = FALSE
 		usr.update_inv_wear_mask(1)
@@ -1027,7 +1027,7 @@
 		item_state = usedstate
 		body_parts_covered = partscovered
 		flags_inv = HIDEFACE
-		to_chat(usr, "<span class = 'danger'>You adjust the [name].</span>")
+		to_chat(usr, "<span class = 'danger'>你调整了[name]。</span>")
 		update_icon()
 		toggled = TRUE
 		usr.update_inv_wear_mask(1)
@@ -1038,39 +1038,39 @@
 	/* Asian Uniforms*/
 
 /obj/item/clothing/under/kimono
-	name = "white kimono"
-	desc = "A plain kimono in popular asian style, with simplistic underwear concealed beneath." //skipping the notion that its skintight.
+	name = "白色和服"
+	desc = "一件流行的亚洲风格素色和服,内衬简约内衣。" //skipping the notion that its skintight.
 	icon_state = "kimono"
 	item_state = "kimono"
 
 	/* Asian Uniforms - End*/
 
 /obj/item/clothing/under/towel  //this was incorrectly reported as a exterior suit, it is actually a interior uniform
-	name = "white towel"
-	desc = "A simple towel to wrap around yourself."
+	name = "白色毛巾"
+	desc = "一条简单的毛巾,可以裹在身上。"
 	icon_state = "towel"
 	item_state = "towel"
 	heat_protection = LOWER_TORSO
 
 /obj/item/clothing/head/helmet/anax/aries //op fantasy helm
-	name = "aries helmet"
-	desc = "A reinforced bronze greek helmet, covering most of the face, with red plummage on top. Worn by dieties and avatars of destruction such as aries."
+	name = "白羊座头盔"
+	desc = "一顶加固的青铜希腊头盔,覆盖大部分面部,顶部有红色羽饰。由战神阿瑞斯等毁灭之神与化身佩戴。"
 	icon_state = "aries"
 	item_state = "aries"
 	armor = list(melee = 70, arrow = 60, gun = 20, energy = 15, bomb = 60, bio = 20, rad = FALSE)
 	health = 60
 
 /obj/item/clothing/head/helmet/anax/athena
-	name = "athena helmet"
-	desc = "A reinforced bronze greek helmet, covering most of the face, with blue plummage on top and a gold laurel. Chosen helm of the god of tactical warfare and knowledge athena herself."
+	name = "雅典娜头盔"
+	desc = "一顶加固的青铜希腊头盔,覆盖大部分面部,顶部有蓝色羽饰和金色桂冠。战术战争与智慧女神雅典娜本人的选定头盔。"
 	icon_state = "athena"
 	item_state = "athena"
 	armor = list(melee = 70, arrow = 60, gun = 20, energy = 15, bomb = 60, bio = 20, rad = FALSE)
 	health = 60
 
 /obj/item/clothing/head/helmet/asterix/apollo
-	name = "conspicious gaelic helmet"
-	desc = "The gold winged helmet of the god of the sun and light, as well a a messenger of olympus. The wearer feels energized to move quickly"
+	name = "显眼的盖尔头盔"
+	desc = "太阳与光明之神的金色带翼头盔,同时也是奥林匹斯的信使。佩戴者感到精力充沛,行动迅速"
 	icon_state = "apollo"
 	item_state = "apollo"
 	armor = list(melee = 50, arrow = 40, gun = 5, energy = 15, bomb = 50, bio = 20, rad = FALSE)
@@ -1078,8 +1078,8 @@
 	slowdown = -0.25 //actually reduces your slowdown
 
 /obj/item/clothing/head/helmet/asterix/conspicious //R.I.P Albert Uzdero / René Goscinny respectively.
-	name = "conspicious gaelic helmet"
-	desc = "A hard to miss winged helmet with white & black trimmings and modest red necktie, often worn by chieftains."
+	name = "显眼的盖尔头盔"
+	desc = "一顶难以忽视的带翼头盔,带有黑白饰边和适度的红色领带,常由酋长佩戴。"
 	icon_state = "vitalstatistix"
 	item_state = "vitalstatistix"
 	flags_inv = BLOCKHEADHAIR
@@ -1087,8 +1087,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/egyptian/anubis
-	name = "bronze anubis headdress"
-	desc = "A bronze egyptian headpiece, with the visage of the god anubis; god of the dead."
+	name = "青铜阿努比斯头饰"
+	desc = "一件青铜埃及头饰,带有死神阿努比斯的面容。"
 	icon_state = "anubis"
 	item_state = "anubis"
 	flags_inv = BLOCKHAIR
@@ -1096,8 +1096,8 @@
 	health = 60
 
 /obj/item/clothing/head/helmet/egyptian/osiris
-	name = "bronze osirus headdress"
-	desc = "A bronze egyptian headpiece, with the visage of the god osiris; god of the underworld."
+	name = "青铜奥西里斯头饰"
+	desc = "一件青铜埃及头饰,带有冥界之神奥西里斯的面容。"
 	icon_state = "osiris"
 	item_state = "osiris"
 	flags_inv = BLOCKHAIR
@@ -1105,16 +1105,16 @@
 	health = 60
 
 /obj/item/clothing/head/atef
-	name = "atef crown"
-	desc = "A white egyptian crown made from cloth adorned with plumes of feathers. The preferred crown of egyptian dieties."
+	name = "阿特夫王冠"
+	desc = "一顶由布料制成的白色埃及王冠,饰有羽毛。埃及神明偏爱的王冠。"
 	icon_state = "deshret"
 	item_state = "deshret"
 	flags_inv = BLOCKHEADHAIR
 	heat_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/anubis
-	name = "anubis mask"
-	desc = "A bronze mask in the form of a the egyptian god of the dead, anubis."
+	name = "阿努比斯面具"
+	desc = "一个青铜面具,形似埃及死神阿努比斯。"
 	icon_state = "anubis"
 	item_state = "anubis"
 	flags_inv = HIDEFACE
@@ -1127,22 +1127,22 @@
 	flags = CONDUCT
 
 /obj/item/clothing/under/mummywappings
-	name = "linnen wrappings"
+	name = "亚麻裹布"
 	icon = 'icons/mob/uniform.dmi'
 	icon_state = "mummy"
 	item_state = "mummy"
 	canremove = FALSE
-	desc = "The musty wrappings seem to disintigrate as you examine them."
+	desc = "当你检查这些发霉的裹布时,它们似乎正在瓦解。"
 
 /obj/item/clothing/mask/necklace/christian/gold
-	name = "christian gold necklace"
-	desc = " A golden necklace with a christian cross. It is made out of gold. Looks expensive."
+	name = "基督教金项链"
+	desc = "一条带有基督教十字架的金项链。由黄金制成。看起来很昂贵。"
 	icon_state = "necklace_christian_gold"
 	item_state = "necklace_christian_gold"
 
 /obj/item/clothing/mask/osiris
-	name = "osiris mask"
-	desc = "A mask in the form of a the egyptian god of the underworld, osiris."
+	name = "奥西里斯面具"
+	desc = "一个面具,形似埃及冥界之神奥西里斯。"
 	icon_state = "osiris"
 	item_state = "osiris"
 	flags_inv = HIDEFACE
@@ -1155,8 +1155,8 @@
 	heat_protection = FACE|EYES
 
 /obj/item/clothing/mask/stone
-	name = "stone mask"
-	desc = "A stone mask with a masculine apperance with fangs."
+	name = "石面具"
+	desc = "一个具有男性外观和獠牙的石面具。"
 	icon_state = "stone_mask"
 	item_state = "stone_mask"
 	flags_inv = HIDEFACE
@@ -1168,8 +1168,8 @@
 	heat_protection = FACE|EYES
 
 /obj/item/clothing/mask/stone_jewelled
-	name = "jewelled stone mask"
-	desc = "A jewelled stone mask, possibly sometype of honorific attire?"
+	name = "镶宝石石面具"
+	desc = "一个镶有宝石的石面具,可能是某种荣誉服饰?"
 	icon_state = "stone_mask_jeweled"
 	item_state = "stone_mask_jeweled"
 	flags_inv = HIDEFACE
@@ -1181,8 +1181,8 @@
 	heat_protection = FACE|EYES
 
 /obj/item/clothing/suit/armor/god_pharoah //copied broadly from /obj/item/clothing/suit/armor/sauronarmor
-	name = "pharoahic armor of the gods"
-	desc = "The armor of the divine gods of the desert"
+	name = "神明法老盔甲"
+	desc = "沙漠神圣诸神的盔甲"
 	icon_state = "settra"
 	item_state = "settra"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1193,8 +1193,8 @@
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO|ARMS
 
 /obj/item/clothing/head/helmet/yellow_ninja
-	name = "yellow ninja headband"
-	desc = "A armored leather headband of japanese design, wearing it makes you feel faster and the urge to flail your arms behind you as you run."
+	name = "黄色忍者头带"
+	desc = "一条日式设计的装甲皮革头带,佩戴它让你感觉更快,并有一种奔跑时把手臂甩在身后的冲动。"
 	icon_state = "yellow_ninja"
 	item_state = "yellow_ninja"
 	body_parts_covered = HEAD

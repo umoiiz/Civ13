@@ -1,5 +1,5 @@
 /obj/structure/wild/berrybush
-	name = "berry bush"
+	name = "浆果灌木"
 	icon = 'icons/obj/flora/berries.dmi'
 	icon_state = "tintobush_1"
 	deadicon = 'icons/obj/flora/berries.dmi'
@@ -17,7 +17,7 @@
 
 /obj/structure/wild/berrybush/fire_act(temperature)
 	if (prob(55 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		if (prob(18))
 			new/obj/structure/wild/burnedbush(src.loc)
 		qdel(src)
@@ -25,17 +25,17 @@
 /obj/structure/wild/berrybush/attack_hand(mob/user as mob)
 	if (user.a_intent == I_GRAB && ishuman(user) && berries > 0)
 		var/mob/living/human/H = user
-		to_chat(H, "You start foraging for some berries...")
+		to_chat(H, "你开始采集浆果...")
 		if (do_after(user, 80, src))
 			if (src && berries >= 1)
-				to_chat(H, "You collect some berries.")
+				to_chat(H, "你采集了一些浆果.")
 				new btype(get_turf(src))
 				berries--
 				berryproc()
 			else
-				to_chat(user, "There are no berries to harvest here.")
+				to_chat(user, "这里没有浆果可采.")
 		else
-			to_chat(user, "You stop foraging.")
+			to_chat(user, "你停止了采集.")
 	else
 		..()
 /obj/structure/wild/berrybush/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -43,7 +43,7 @@
 	if(istype(W, /obj/item/weapon/berriesgatherer))
 		if (ishuman(user) && berries > 0)
 			//var/mob/living/human/H = user
-			to_chat(H, "You start gathering some berries...")
+			to_chat(H, "你开始收集浆果...")
 			if (do_after(user, 80, src))
 				if (src && berries >= 1)
 					new btype(get_turf(src))
@@ -54,63 +54,63 @@
 					berries--
 					berryproc()
 				else
-					to_chat(user, "There are no berries to harvest here.")
+					to_chat(user, "这里没有浆果可采.")
 			else
-				to_chat(user, "You stop gathering berries.")
+				to_chat(user, "你停止了收集浆果.")
 	else
 		..()
 
 /obj/structure/wild/berrybush/tinto
-	name = "tinto berry bush"
+	name = "廷托浆果灌木"
 	icon_state = "tintobush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/tinto
 
 /obj/structure/wild/berrybush/amar
-	name = "amar berry bush"
+	name = "阿玛尔浆果灌木"
 	icon_state = "amarbush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/amar
 
 /obj/structure/wild/berrybush/azul
-	name = "azul berry bush"
+	name = "阿祖尔浆果灌木"
 	icon_state = "azulbush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/azul
 
 /obj/structure/wild/berrybush/majo
-	name = "majo berry bush"
+	name = "马乔浆果灌木"
 	icon_state = "majobush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/majo
 
 /obj/structure/wild/berrybush/narco
-	name = "narco berry bush"
+	name = "纳科浆果灌木"
 	icon_state = "narcobush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/narco
 
 /obj/structure/wild/berrybush/zelenyy
-	name = "zelenyy berry bush"
+	name = "泽列尼浆果灌木"
 	icon_state = "zelenyybush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/zelenyy
 
 /obj/structure/wild/berrybush/marron
-	name = "marron berry bush"
+	name = "马龙浆果灌木"
 	icon_state = "marronbush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/marron
 
 /obj/structure/wild/berrybush/corcairghorm
-	name = "corcairghorm berry bush"
+	name = "科尔凯尔戈姆浆果灌木"
 	icon_state = "corcairghormbush_1"
 	berries = 1
 	btype = /obj/item/weapon/reagent_containers/food/snacks/grown/berries/corcairghorm
 
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries
-	name = "berries"
+	name = "浆果"
 	icon = 'icons/obj/flora/berries.dmi'
 	icon_state = "tintoberry"
 	satisfaction = 3
@@ -134,8 +134,8 @@
 					nutriment_desc = list("disgusting food" = 1)
 
 /obj/item/berryseeds
-	name = "berry seeds"
-	desc = "Seeds of some sort of berry."
+	name = "浆果种子"
+	desc = "某种浆果的种子."
 	icon = 'icons/obj/flora/berries.dmi'
 	icon_state = "berryseeds"
 	var/bushtype = /obj/structure/wild/berrybush
@@ -147,41 +147,41 @@
 		qdel(src)
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/tinto
-	name = "tinto berries"
+	name = "廷托浆果"
 	icon_state = "tintoberry"
 	randeffect = "tinto"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/azul
-	name = "azul berries"
+	name = "阿祖尔浆果"
 	icon_state = "azulberry"
 	randeffect = "azul"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/amar
-	name = "amar berries"
+	name = "阿玛尔浆果"
 	icon_state = "amarberry"
 	randeffect = "amar"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/majo
-	name = "majo berries"
+	name = "马乔浆果"
 	icon_state = "majoberry"
 	randeffect = "majo"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/narco
-	name = "narco berries"
+	name = "纳科浆果"
 	icon_state = "narcoberry"
 	randeffect = "narco"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/zelenyy
-	name = "zelenyy berries"
+	name = "泽列尼浆果"
 	icon_state = "zelenyyberry"
 	randeffect = "zelenyy"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/marron
-	name = "marron berries"
+	name = "马龙浆果"
 	icon_state = "marronberry"
 	randeffect = "marron"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/corcairghorm
-	name = "corcairghorm berries"
+	name = "科尔凯尔戈姆浆果"
 	icon_state = "corcairghormberry"
 	randeffect = "corcairghorm"

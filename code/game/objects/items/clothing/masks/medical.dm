@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/muzzle
-	name = "muzzle"
-	desc = "To stop that awful noise."
+	name = "口套"
+	desc = "为了阻止那可怕的噪音."
 	icon_state = "muzzle"
 	item_state = "muzzle"
 	body_parts_covered = FACE
@@ -9,8 +9,8 @@
 	heat_protection = 0
 
 /obj/item/clothing/mask/muzzle/tape
-	name = "length of tape"
-	desc = "It's a robust DIY muzzle!"
+	name = "一段胶带"
+	desc = "这是一个结实的自制口套!"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "tape_cross"
 	item_state = null
@@ -28,8 +28,8 @@
 	..()
 
 /obj/item/clothing/mask/plaguedoctor //ye olde gasmask for quacks.
-	name = "plague doctor's mask"
-	desc = "A covid shaped mask stuffed with herbs to better protect against malanges & plagues."
+	name = "瘟疫医生面具"
+	desc = "一个新冠形状的面具,里面塞满了草药,以更好地抵御瘴气和瘟疫."
 	icon_state = "plaguedoctor"
 	item_state = "plaguedoctor"
 	flags_inv = HIDEFACE
@@ -40,8 +40,8 @@
 	restricts_view = 1
 
 /obj/item/clothing/mask/sterile
-	name = "sterile mask"
-	desc = "A thin surgical mask, worn by medical professionals to stop the spread of disease or transmission."
+	name = "无菌口罩"
+	desc = "一种薄薄的外科口罩,由医疗专业人员佩戴,以阻止疾病的传播或传染."
 	icon_state = "sterile"
 	item_state = "sterile"
 	body_parts_covered = FACE
@@ -58,7 +58,7 @@
 			item_state = "sterile"
 			icon_state = "sterile"
 			item_state_slots["slot_mask"] = "sterile"
-			to_chat(usr, "<span class = 'danger'>You put up your mask.</span>")
+			to_chat(usr, "<span class = 'danger'>你戴上了你的面具.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 		else if (!toggled)
@@ -66,6 +66,6 @@
 			item_state = "sterile_down"
 			icon_state = "sterile_down"
 			item_state_slots["slot_mask"] = "sterile_down"
-			to_chat(usr, "<span class = 'danger'>You put down your mask flaps.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了你的面具护片.</span>")
 			toggled = TRUE
 			update_clothing_icon()

@@ -76,7 +76,7 @@
 		//////////////////////////////////////creator, type, points, symbol, color1, color2, clergy style
 		var/newnamev = list("[newname]" = list(H,choosetype,0, choosesymbol,choosecolor1,choosecolor2,chooseclergy))
 		map.custom_religions += newnamev
-		to_chat(usr, "<big>You are now the leader of the <b>[newname]</b> religion.</big>")
+		to_chat(usr, "<big>你现在是<b>[newname]</b>宗教的领袖.</big>")
 		switch(chooseclergy)
 			if ("Shamans")
 				if (H.gender == "male")
@@ -124,7 +124,7 @@
 			U.religion_type = "none"
 			U.religion_style = "none"
 			U.religious_leader = FALSE
-			to_chat(usr, "You left your religion. You are now an atheist.")
+			to_chat(usr, "你离开了你的宗教. 你现在是一名无神论者.")
 	else
 		to_chat(usr, SPAN_WARNING("You cannot leave your religion in this map."))
 		return
@@ -150,7 +150,7 @@
 
 				if ("Shamans")
 					U.religious_clergy = "Shamans"
-					to_chat(U, "<big>You become a Shaman for the [U.religion]!</big>")
+					to_chat(U, "<big>你成为了[U.religion]的萨满!</big>")
 					if (U.gender == "male")
 						U.fully_replace_character_name(U.real_name,"Shaman [U.name]")
 					else
@@ -159,11 +159,11 @@
 
 				if ("Priests")
 					if (U.getStatCoeff("philosophy") < 1.75)
-						to_chat(U, "<span class='danger'>Your philosophy skill is too low. You need 1.75 or more to become a priest.</span>")
+						to_chat(U, "<span class='danger'>你的哲学技能太低了. 你需要1.75或更高才能成为牧师.</span>")
 						return
 					else
 						U.religious_clergy = "Priests"
-						to_chat(U, "<big>You become a Priest for the [U.religion]!</big>")
+						to_chat(U, "<big>你成为了[U.religion]的牧师!</big>")
 						if (U.gender == "male")
 							U.fully_replace_character_name(U.real_name,"Priest [U.name]")
 						else
@@ -172,11 +172,11 @@
 
 				if ("Monks")
 					if (U.getStatCoeff("philosophy") < 1.5)
-						to_chat(U, "<span class='danger'>Your philosophy skill is too low. You need 1.5 or more to become a monk.</span>")
+						to_chat(U, "<span class='danger'>你的哲学技能太低了. 你需要1.5或更高才能成为修士.</span>")
 						return
 					else
 						U.religious_clergy = "Monks"
-						to_chat(U, "<big>You become a Monk for the [U.religion]!</big>")
+						to_chat(U, "<big>你成为了[U.religion]的修士!</big>")
 						if (U.gender == "male")
 							U.fully_replace_character_name(U.real_name,"Brother [U.name]")
 						else
@@ -185,11 +185,11 @@
 
 				if ("Clerics")
 					if (U.getStatCoeff("philosophy") < 2.2)
-						to_chat(U, "<span class='danger'>Your philosophy skill is too low. You need 2.2 or more to become a cleric.</span>")
+						to_chat(U, "<span class='danger'>你的哲学技能太低了. 你需要2.2或更高才能成为教士.</span>")
 						return
 					else
 						U.religious_clergy = "Clerics"
-						to_chat(U, "<big>You become a Cleric for the [U.religion]!</big>")
+						to_chat(U, "<big>你成为了[U.religion]的教士!</big>")
 						if (U.gender == "male")
 							U.fully_replace_character_name(U.real_name,"Venerable [U.name]")
 						else
@@ -198,7 +198,7 @@
 
 				if ("Cultists")
 					U.religious_clergy = "Cultists"
-					to_chat(U, "<big>You become a Cultist of the [U.religion]!</big>")
+					to_chat(U, "<big>你成为了[U.religion]的信徒!</big>")
 	else
 		to_chat(usr, SPAN_WARNING("You cannot join the clergy on this map."))
 		return
@@ -213,10 +213,10 @@
 
 
 /obj/item/weapon/book/holybook
-	name = "holy book"
+	name = "圣书"
 	icon_state = "holybook"
 	title = "Holy Book"
-	desc = "A blank book."
+	desc = "一本空白的书."
 	var/religion = "none"
 	var/religion_type = "none"
 	flammable = TRUE
@@ -241,13 +241,13 @@
 
 /obj/item/weapon/book/holybook/attack_self(var/mob/living/human/user as mob)
 	if (user.religion == religion && religion != "none")
-		to_chat(user, "You stare at the glorious holy book of your religion.")
+		to_chat(user, "你凝视着你宗教的荣耀圣书.")
 	else if (user.religion != religion && religion != "none" && !user.religious_leader && user.religious_clergy == FALSE)
 		if (user.religion != "none")
 			if (map.custom_religions[user.religion][7] == "Clerics")
 				to_chat(user, ("You can't abandon a Clerical religion!"))
 				return
-		to_chat(user, "You start reading the [title]...")
+		to_chat(user, "你开始阅读[title]...")
 		if (do_after(user, 900, src))
 			var/choice = WWinput(user, "After reading the [title], you feel attracted to the [religion] religion. Do you want to convert?", "[title]", "Yes", list("Yes","No"))
 			if (choice == "No")
@@ -265,10 +265,10 @@
 
 
 /obj/item/weapon/poster/religious
-	name = "rolled religious poster"
+	name = "卷起的宗教海报"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "poster_rolled"
-	desc = "A rolled poster."
+	desc = "一张卷起的海报."
 	var/religion = "none"
 	var/symbol = "Cross"
 	var/color1 = "#000000"
@@ -284,10 +284,10 @@
 			desc = "This is a rolled [religion] religion propaganda poster. Ready to deploy."
 
 /obj/structure/poster/religious
-	name = "religious poster"
+	name = "宗教海报"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "poster_base"
-	desc = "A blank poster."
+	desc = "一张空白海报."
 	var/religion = "none"
 	var/symbol = "Cross"
 	var/color1 = "#000000"
@@ -317,9 +317,9 @@
 
 /obj/structure/poster/religious/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.sharp)
-		user.visible_message("<span class ='danger'>[user] starts ripping off \the [src]!</span>", "<span class ='danger'>You start ripping off \the [src]!</span>")
+		user.visible_message("<span class ='danger'>[user]开始撕下\the [src]!</span>", "<span class ='danger'>你开始撕下\the [src]!</span>")
 		if (do_after(user, 70, src))
-			user.visible_message("<span class ='warning'>[user] rips \the [src]!</span>", "<span class = 'warning'>You rip off \the [src]!</span>")
+			user.visible_message("<span class ='warning'>[user]撕下了\the [src]!</span>", "<span class = 'warning'>你撕下了\the [src]!</span>")
 			overlays.Cut()
 			icon_state = "poster_ripped"
 			color = color2
@@ -364,18 +364,18 @@ obj/structure/altar
 		if (istype(W, /obj/item/clothing/accessory/armband/talisman))
 			var/obj/item/clothing/accessory/armband/talisman/T = W
 			if (T.religion != religion)
-				to_chat(user, "You start destroying \the [W] in the name of your religion, [religion]...")
+				to_chat(user, "你开始以你宗教[religion]的名义摧毁\the [W]...")
 				if (do_after(user, 100, src))
-					to_chat(user, "You destroy \the [W]!")
+					to_chat(user, "你摧毁了\the [W]!")
 					map.custom_religions[religion][3] += 3
 					qdel(W)
 					return
 		else if (istype(W, /obj/item/weapon/book/holybook))
 			var/obj/item/weapon/book/holybook/T = W
 			if (T.religion != religion)
-				to_chat(user, "You start destroying \the [W] in the name of your religion, [religion]...")
+				to_chat(user, "你开始以你宗教[religion]的名义摧毁\the [W]...")
 				if (do_after(user, 100, src))
-					to_chat(user, "You destroy \the [W]!")
+					to_chat(user, "你摧毁了\the [W]!")
 					map.custom_religions[religion][3] += 10
 					qdel(W)
 					return
@@ -409,7 +409,7 @@ obj/structure/altar/attack_hand(mob/living/human/H as mob)
 			if ("Worshipping Session")
 				if (!session)
 					session = TRUE
-					visible_message("[H] starts holding a worshipping session of the [religion] religion...")
+					visible_message("[H]开始举行[religion]宗教的礼拜仪式...")
 					var/list/currlist = list()
 					for (var/mob/living/human/A in range(3, loc))
 						if (A.stat == 0 && A != H && A.religion == religion)
@@ -420,7 +420,7 @@ obj/structure/altar/attack_hand(mob/living/human/H as mob)
 							if (AA.stat == 0 && (AA in currlist))
 								currlist2 += AA
 						map.custom_religions[religion][3] += currlist2.len*0.8
-						visible_message("[H] finishes the worshipping session of the [religion] religion.")
+						visible_message("[H]结束了[religion]宗教的礼拜仪式.")
 						session = FALSE
 						return
 					else
@@ -512,10 +512,10 @@ obj/structure/altar/iron
 /* Religious Banners*/
 
 /obj/structure/banner/religious
-	name = "religious banner"
+	name = "宗教旗帜"
 	icon = 'icons/obj/cross.dmi'
 	icon_state = "wall_banner"
-	desc = "A white banner."
+	desc = "一面白色旗帜."
 	var/religion = "none"
 	var/symbol = "Cross"
 	var/color1 = "#000000"
@@ -544,9 +544,9 @@ obj/structure/altar/iron
 
 /obj/structure/banner/religious/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.sharp)
-		user.visible_message("<span class ='danger'>[user] starts ripping off \the [src]!</span>", "<span class ='danger'>You start ripping off \the [src]!</span>")
+		user.visible_message("<span class ='danger'>[user]开始撕下\the [src]!</span>", "<span class ='danger'>你开始撕下\the [src]!</span>")
 		if (do_after(user, 130, src))
-			user.visible_message("<span class ='warning'>[user] rips \the [src]!</span>", "<span class = 'warning'>You rip off \the [src]!</span>")
+			user.visible_message("<span class ='warning'>[user]撕下了\the [src]!</span>", "<span class = 'warning'>你撕下了\the [src]!</span>")
 			qdel(src)
 	else
 		..()

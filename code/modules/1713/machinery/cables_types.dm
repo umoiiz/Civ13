@@ -8,7 +8,7 @@
 ////////////////////////////////
 
 /obj/item/stack/cable_coil
-	name = "cable coil"
+	name = "电缆卷"
 	gender = NEUTER //That's a cable coil sounds better than that's some cable coils
 	icon = 'icons/obj/machines/power.dmi'
 	icon_state = "coil"
@@ -16,7 +16,7 @@
 	max_amount = 50
 	amount = 10
 	var/cable_color = "red"
-	desc = "A coil of insulated power cable."
+	desc = "一卷绝缘电力电缆."
 	throwforce = 0
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 3
@@ -35,8 +35,8 @@
 	update_icon()
 
 /obj/item/connector
-	name = "cable connector"
-	desc = "A cable connector, used to merge or split cables."
+	name = "电缆连接器"
+	desc = "一个电缆连接器,用于合并或分接电缆."
 	w_class = ITEM_SIZE_TINY
 	layer = 3.92
 	icon = 'icons/obj/machines/power.dmi'
@@ -52,7 +52,7 @@
 	set src in range(1, usr)
 
 	if (!anchored)
-		to_chat(usr, "Place it first.")
+		to_chat(usr, "请先放置它.")
 		return
 
 	if (tilepos == "over")
@@ -75,7 +75,7 @@
 				CLC.connections += CLD
 	user.drop_from_inventory(src)
 	anchored = TRUE
-	to_chat(user, "You connect the cables on this tile.")
+	to_chat(user, "你连接了该地砖上的电缆.")
 	return
 /obj/item/connector/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/wrench))
@@ -115,16 +115,16 @@
 		return
 
 	if(!isturf(T))
-		to_chat(user, "<span class='warning'>You can't lay a cable here!")
+		to_chat(user, "<span class='warning'>你不能在这里铺设电缆!")
 		return
 
 	if(amount < 1) // Out of cable
-		to_chat(user, "<span class='warning'>There is no cable left!</span>")
+		to_chat(user, "<span class='warning'>没有剩余的电缆了!</span>")
 		qdel(src)
 		return
 
 	if(get_dist(T,user) > 1) // Too far
-		to_chat(user, "<span class='warning'>You can't lay cable at a place that far away!</span>")
+		to_chat(user, "<span class='warning'>你不能在那么远的地方铺设电缆!</span>")
 		return
 
 	var/dirn
@@ -142,7 +142,7 @@
 		currdir = "vertical"
 	for(var/obj/structure/cable/LC in T)
 		if(LC.tiledir == currdir)
-			to_chat(user, "<span class='warning'>There's already a cable at that position with the same direction!</span>")
+			to_chat(user, "<span class='warning'>该位置已经有一根相同方向的电缆了!</span>")
 			return
 
 	var/obj/structure/cable/C = new /obj/structure/cable(T)
@@ -170,7 +170,7 @@
 					NCOO.connections += C
 				if (!(NCOO in C.connections) && !list_cmp(C.connections, NCOO.connections))
 					C.connections += NCOO
-				to_chat(user, "You connect the two cables.")
+				to_chat(user, "你连接了两根电缆.")
 
 		for(var/obj/structure/cable/NCOC in get_turf(get_step(C,opdir2)))
 			if ((NCOC.tiledir == C.tiledir) && NCOC != C)
@@ -178,7 +178,7 @@
 					NCOC.connections += C
 				if (!(NCOC in C.connections) && !list_cmp(C.connections, NCOC.connections))
 					C.connections += NCOC
-				to_chat(user, "You connect the two cables.")
+				to_chat(user, "你连接了两根电缆.")
 	var/list/turflist = list()
 	for(var/obj/structure/cable/CL in get_turf(user))
 		turflist += CL
@@ -189,7 +189,7 @@
 			if (!(CLD in CLC.connections) && CLC != CLD)
 				CLC.connections += CLD
 	if (turflist.len > 1)
-		to_chat(user, "You connect the cables on this tile.")
+		to_chat(user, "你连接了该地砖上的电缆.")
 	return C
 
 //////////////////////////////

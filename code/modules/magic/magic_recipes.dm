@@ -41,7 +41,7 @@
 	if (reagents.get_reagent_amount("darkness_powder") >= 1)
 		var/vol = reagents.get_reagent_amount("darkness_powder")
 		reagents.remove_reagent("darkness_powder", vol)
-		visible_message("<span class='warning'>The container shatters and releases a billowing cloud of absolute darkness!</span>")
+		visible_message("<span class='warning'>容器碎裂开来, 释放出一团翻涌的绝对黑暗!</span>")
 		var/datum/effect/effect/system/smoke_spread/chem/S = new /datum/effect/effect/system/smoke_spread/chem
 		S.attach(location)
 		S.set_up(reagents, vol * 0.4, FALSE, location)
@@ -53,7 +53,7 @@
 	if (reagents.get_reagent_amount("toad_mixture") >= 1)
 		var/vol = reagents.get_reagent_amount("toad_mixture")
 		reagents.remove_reagent("toad_mixture", vol)
-		visible_message("<span class='danger'>The container shatters and detonates with a thunderous BOOM!</span>")
+		visible_message("<span class='danger'>容器碎裂开来, 伴随着雷鸣般的轰隆声爆炸了!</span>")
 		playsound(location, 'sound/effects/explosion1.ogg', 100, FALSE, -3)
 		spawn(5)
 			explosion(location, max(0, round(vol/30) - 1), round(vol/20), round(vol/10), round(vol/5))
@@ -128,7 +128,7 @@
 	// Drinking it is just unpleasant, no actual effect.
 	M.make_dizzy(3)
 	if (prob(20))
-		to_chat(M, "<span class='warning'>Your mouth fills with the taste of coal dust and disappointing evenings.</span>")
+		to_chat(M, "<span class='warning'>你的嘴里充满了煤灰和令人失望的夜晚的味道.</span>")
 
 
 // ---- 7. Toad Mixture (The Exploding Toad) ----
@@ -149,7 +149,7 @@
 	// If somehow drunk, it's immediately and catastrophically bad.
 	M.adjustBruteLoss(15 * removed)
 	M.adjustBurnLoss(10 * removed)
-	to_chat(M, "<span class='danger'>Something reacts violently inside you. You made a terrible mistake.</span>")
+	to_chat(M, "<span class='danger'>你体内有什么东西发生了剧烈反应. 你犯了一个可怕的错误.</span>")
 	M.emote("scream")
 
 

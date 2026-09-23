@@ -85,7 +85,7 @@
 		return
 	if (map.nomads == TRUE || map.ID == MAP_NATIONSRP || map.ID == MAP_NATIONSRP_TRIPLE || map.ID == MAP_NATIONSRPMED || map.ID == MAP_NATIONSRP_WW2 || map.ID == MAP_NATIONSRP_COLDWAR || map.ID == MAP_NATIONSRP_COLDWAR_CMP)
 		if (U.civilization == "none")
-			to_chat(usr, "You are not part of any faction.")
+			to_chat(usr, "你不属于任何阵营.")
 			return
 		else
 			var/confirmation = WWinput(src, "Are you sure you want to leave your faction? You won't be able to re-join it for 24 hours, and everyone will know you're a former member.", "", "Stay in faction", list("Leave", "Stay in faction"))
@@ -116,7 +116,7 @@
 	title = ""
 	leader = FALSE
 	faction_perms = list(0,0,0,0)
-	to_chat(src, "You left your faction. You are now a Nomad.")
+	to_chat(src, "你离开了你的阵营. 你现在是一名游民.")
 	remove_commander()
 	remove_faction_symbol_editor()
 	return TRUE
@@ -132,7 +132,7 @@
 		return
 	if (map.civilizations == TRUE || map.ID == MAP_NATIONSRP || map.ID == MAP_NATIONSRP_TRIPLE || map.ID == MAP_NATIONSRPMED || map.ID == MAP_NATIONSRP_WW2 || map.ID == MAP_NATIONSRP_COLDWAR || map.ID == MAP_NATIONSRP_COLDWAR_CMP)
 		if (U.civilization == "none")
-			to_chat(usr, "You are not part of any faction.")
+			to_chat(usr, "你不属于任何阵营.")
 			return
 		else
 			var/list/civ_data = map.custom_civs[U.civilization]
@@ -148,7 +148,7 @@
 						return
 					else
 						map.custom_civs[U.civilization][4] = choice2
-						visible_message("<big>[choice2] is the new leader of [U.civilization]!</big>")
+						visible_message("<big>[choice2]是[U.civilization]的新领袖!</big>")
 						var/mob/living/human/CM = choice2
 						CM.make_commander()
 						CM.make_title_changer()
@@ -181,7 +181,7 @@
 		return
 	if (map.civilizations == TRUE || map.ID == MAP_NATIONSRP || map.ID == MAP_NATIONSRP_TRIPLE || map.ID == MAP_NATIONSRPMED || map.ID == MAP_NATIONSRP_WW2 || map.ID == MAP_NATIONSRP_COLDWAR || map.ID == MAP_NATIONSRP_COLDWAR_CMP)
 		if (U.civilization == "none")
-			to_chat(usr, "You are not part of any faction.")
+			to_chat(usr, "你不属于任何阵营.")
 			return
 		else
 			if (map.custom_civs[U.civilization][4] != null)
@@ -190,7 +190,7 @@
 
 			else if (map.custom_civs[U.civilization][4] == null)
 				map.custom_civs[U.civilization][4] = U
-				visible_message("<big>[U] is now the Leader of [U.civilization]!</big>")
+				visible_message("<big>[U]现在是[U.civilization]的领袖!</big>")
 				U.leader = TRUE
 				U.faction_perms = list(1,1,1,1)
 				U.make_title_changer()
@@ -210,7 +210,7 @@
 		if (istype(usr, /mob/living/human))
 			var/mob/living/human/H = usr
 			if (H.civilization == "none")
-				to_chat(usr, "You are not part of any faction.")
+				to_chat(usr, "你不属于任何阵营.")
 				return
 			else
 				if (H.faction_perms[3] == 0)
@@ -233,7 +233,7 @@
 						else
 							U.title = inp
 							U.name = "[U.title] [U.name]"
-							to_chat(src, "[src] is now a [U.title].")
+							to_chat(src, "[src]现在是一名[U.title].")
 							return
 	else if (map.ID == MAP_VOYAGE)
 		var/list/closemobs = list("Cancel")
@@ -259,7 +259,7 @@
 					U.title = inp
 					U.original_job_title = inp
 					U.name = "[U.title] [U.name]"
-				to_chat(usr, "[U.real_name] has been assigned the job of [inp].")
+				to_chat(usr, "[U.real_name]被分配了[inp]的职务.")
 				var/job_msg = "You have been assigned to the job of [inp]."
 				WWalert(U, job_msg, "Job Assignment")
 				return
@@ -276,7 +276,7 @@
 		if (istype(usr, /mob/living/human))
 			var/mob/living/human/H = usr
 			if (H.civilization == "none")
-				to_chat(usr, "You are not part of any faction.")
+				to_chat(usr, "你不属于任何阵营.")
 				return
 			else
 				if (H.faction_perms[3] == 0)
@@ -295,11 +295,11 @@
 						U = choice2
 						if (U && U.title != "")
 							U.fully_replace_character_name(U.real_name,replacetext(U.real_name,"[U.title] ",""))
-							to_chat(usr, "[src]'s title of [U.title] has been removed by [usr].")
+							to_chat(usr, "[src]的[U.title]头衔已被[usr]移除.")
 							U.title = ""
 							return
 						else
-							to_chat(usr, "[src] has no title.")
+							to_chat(usr, "[src]没有头衔.")
 							return
 	else if (map.ID == MAP_VOYAGE)
 		var/list/closemobs = list("Cancel")
@@ -313,13 +313,13 @@
 			U = choice2
 			if (U && U.title != "")
 				U.fully_replace_character_name(U.real_name,replacetext(U.real_name,"[U.title] ",""))
-				to_chat(usr, "[U]'s job of [U.title] has been removed by [usr].")
+				to_chat(usr, "[U]的[U.title]职务已被[usr]移除.")
 				U.original_job_title = "Pirate"
 				U.title = ""
 				WWalert(U,"Your job has been removed. You are now a basic sailor.","Job Assignment")
 				return
 			else
-				to_chat(usr, "[U] has no job assigned.")
+				to_chat(usr, "[U]没有被分配职务.")
 				return
 	else
 		to_chat(usr, SPAN_WARNING("You cannot give titles in this map."))
@@ -330,10 +330,10 @@
 
 
 /obj/structure/banner/faction
-	name = "faction banner"
+	name = "阵营旗帜"
 	icon = 'icons/obj/banners.dmi'
 	icon_state = "banner_a"
-	desc = "A white banner."
+	desc = "一面白色旗帜."
 	var/bstyle = "banner_a"
 	var/faction = "none"
 	var/symbol = "cross"
@@ -379,17 +379,17 @@
 
 /obj/structure/banner/faction/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.sharp)
-		user.visible_message("<span class ='danger'>[user] starts ripping off \the [src]!</span>", "<span class ='danger'>You start ripping off \the [src]!</span>")
+		user.visible_message("<span class ='danger'>[user]开始撕下\the [src]!</span>", "<span class ='danger'>你开始撕下\the [src]!</span>")
 		if (do_after(user, 130, src))
-			user.visible_message("<span class ='warning'>[user] rips \the [src]!</span>", "<span class = 'warning'>You rip off \the [src]!</span>")
+			user.visible_message("<span class ='warning'>[user]撕下了\the [src]!</span>", "<span class = 'warning'>你撕下了\the [src]!</span>")
 			qdel(src)
 	else
 		..()
 
 /obj/structure/banner/faction/team
 	var/team = null
-	name = "team banner"
-	desc = "A sports team banner."
+	name = "队伍旗帜"
+	desc = "一面运动队旗帜."
 
 /obj/structure/banner/faction/team/New()
 	..()
@@ -430,10 +430,10 @@
 /obj/structure/banner/faction/team/team2
 
 /obj/item/weapon/poster/faction
-	name = "rolled faction poster"
+	name = "卷起的阵营海报"
 	icon = 'icons/obj/banners.dmi'
 	icon_state = "poster_rolled"
-	desc = "A rolled poster."
+	desc = "一张卷起的海报."
 	var/faction = "none"
 	var/color1 = "#000000"
 	var/color2 = "#FFFFFF"
@@ -492,10 +492,10 @@
 			desc = "This is a rolled [faction] propaganda poster. Ready to deploy."
 
 /obj/structure/poster/faction
-	name = "faction propaganda poster"
+	name = "阵营宣传海报"
 	icon = 'icons/obj/banners.dmi'
 	icon_state = "prop_lead"
-	desc = "A blank poster."
+	desc = "一张空白海报."
 	var/faction = "none"
 	var/color1 = "#000000"
 	var/color2 = "#FFFFFF"
@@ -522,9 +522,9 @@
 
 /obj/structure/poster/faction/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.sharp)
-		user.visible_message("<span class ='danger'>[user] starts ripping off \the [src]!</span>", "<span class ='danger'>You start ripping off \the [src]!</span>")
+		user.visible_message("<span class ='danger'>[user]开始撕下\the [src]!</span>", "<span class ='danger'>你开始撕下\the [src]!</span>")
 		if (do_after(user, 70, src))
-			user.visible_message("<span class ='warning'>[user] rips \the [src]!</span>", "<span class = 'warning'>You rip off \the [src]!</span>")
+			user.visible_message("<span class ='warning'>[user]撕下了\the [src]!</span>", "<span class = 'warning'>你撕下了\the [src]!</span>")
 			overlays.Cut()
 			icon_state = "poster_ripped"
 			color = color2

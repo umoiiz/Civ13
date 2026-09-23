@@ -131,7 +131,7 @@
 
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The [current_winner] has lost control of the Hotel!</font>")
+			to_chat(world, "<font size = 3>[current_winner]已失去对酒店的控制!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

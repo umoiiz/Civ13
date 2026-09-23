@@ -23,7 +23,7 @@
 
 /obj/structure/simple_door/key_door/anyone/nordic
 	material = "log"
-	name = "nordic"
+	name = "北欧"
 	unique_door_name = "nordic"
 	icon_state = "nordic"
 	override_material = TRUE
@@ -31,7 +31,7 @@
 
 /obj/structure/simple_door/key_door/anyone/aztec
 	material = "wood"
-	name = "aztec"
+	name = "阿兹特克"
 	unique_door_name = "aztec"
 	icon_state = "aztec"
 	override_material = TRUE
@@ -39,7 +39,7 @@
 
 /obj/structure/simple_door/key_door/anyone/roman
 	material = "stone"
-	name = "roman"
+	name = "罗马"
 	unique_door_name = "roman"
 	icon_state = "roman"
 	override_material = TRUE
@@ -47,88 +47,88 @@
 
 /obj/structure/simple_door/key_door/anyone/blast
 	material = "steel"
-	name = "Blast Door"
+	name = "防爆门"
 	unique_door_name = "Blast door"
 	icon_state = "blast"
 	health = 500
 
 /obj/structure/simple_door/key_door/anyone/doubledoor
 	material = null
-	name = "large double"
-	desc = "A large set of improper doors. if you can see this, report this to a developer."
+	name = "大型双开门"
+	desc = "一组大型的不合规门. 如果你看到这个, 请向开发者报告."
 	unique_door_name = "doubledoor"
 	icon = 'icons/obj/doors/material_doors_fwoosh.dmi'
 	health = 200
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/wood
-	name = "large wood double"
+	name = "大型木制双开门"
 	material = "wood"
-	desc = "A large set of wood doors. With enough effort they could be soon broken through."
+	desc = "一组大型木门. 只要用力足够, 很快就能打破."
 	health = 150
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/bamboo
-	name = "large bamboo double"
+	name = "大型竹制双开门"
 	material = "bamboo"
-	desc = "A large set of bamboo doors. With enough effort they could be soon broken through."
+	desc = "一组大型竹门. 只要用力足够, 很快就能打破."
 	health = 150
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/bone //for tribes
-	name = "large bone double"
+	name = "大型骨制双开门"
 	material = "bone"
-	desc = "A large set of bone doors."
+	desc = "一组大型骨门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/marble
-	name = "large marble double"
+	name = "大型大理石双开门"
 	material = "marble"
-	desc = "A large set of marble doors."
+	desc = "一组大型大理石石门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/stone
-	name = "large stone double"
+	name = "大型石制双开门"
 	material = "stone"
-	desc = "A large set of stone doors."
+	desc = "一组大型石门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/sandstone
-	name = "large stone double"
+	name = "大型石制双开门"
 	material = "sandstone"
-	desc = "A large set of sandstone doors."
+	desc = "一组大型砂岩门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/tin
-	name = "large tin double"
+	name = "大型锡制双开门"
 	material = "tin"
 	health = 150
-	desc = "A large set of tin doors. With enough effort they could be soon broken through."
+	desc = "一组大型锡门. 只要用力足够, 很快就能打破."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/lead
-	name = "large lead double"
+	name = "大型铅制双开门"
 	material = "lead"
-	desc = "A large set of lead doors."
+	desc = "一组大型铅门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/copper
-	name = "large copper double"
+	name = "大型铜制双开门"
 	material = "copper"
-	desc = "A large set of copper doors."
+	desc = "一组大型铜门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/bronze
-	name = "large bronze double"
+	name = "大型青铜双开门"
 	material = "bronze"
 	health = 250
-	desc = "A large set of well built and sturdy bronze doors."
+	desc = "一组建造精良且坚固的青铜门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/iron
-	name = "large iron double"
+	name = "大型铁制双开门"
 	material = "iron"
 	health = 300
-	desc = "A large set of strong iron doors."
+	desc = "一组坚固的铁门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/steel
-	name = "large reinforced steel double"
+	name = "大型强化钢制双开门"
 	material = "steel"
 	health = 400
-	desc = "A large set of reinforced steel doors."
+	desc = "一组强化钢门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/steel/store_door
-	name = "double store doors"
-	desc = "A large steel and glass double door."
+	name = "双开商店门"
+	desc = "一扇大型钢化玻璃双开门."
 	health = 150
 	icon = 'icons/obj/doors/material_doors.dmi'
 	basic_icon = "storedoor"
@@ -139,14 +139,14 @@
 	initial_opacity = 0
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/silver
-	name = "large silver double"
+	name = "大型银制双开门"
 	material = "silver"
-	desc = "A large set of shimmering silver doors."
+	desc = "一组闪闪发光的银门."
 
 /obj/structure/simple_door/key_door/anyone/doubledoor/gold
-	name = "large gold double"
+	name = "大型金制双开门"
 	material = "gold"
-	desc = "A large set of glimmering gold doors."
+	desc = "一组微微发光的金门."
 
 /obj/structure/simple_door/key_door/anyone/singledoor/New(var/newloc,var/material_name)
 	..(newloc, "wood")
@@ -187,11 +187,11 @@
 	override_material = TRUE
 
 /obj/structure/simple_door/key_door/anyone/high_sec
-	name = "secure door"
+	name = "安全门"
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'
 	basic_icon = "secure"
 	icon_state = "secure"
-	desc = "A sturdy secure sliding door."
+	desc = "一扇坚固的安全滑动门."
 	material = "steel"
 	override_material = TRUE
 	

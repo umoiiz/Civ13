@@ -1,8 +1,8 @@
 //All the flintlock weapons
 
 /obj/item/weapon/gun/projectile/flintlock
-	name = "flintlock musket"
-	desc = "A simple flintlock musket of the early XVIII century."
+	name = "燧发滑膛枪"
+	desc = "一把十八世纪初的简单燧发滑膛枪."
 	icon = 'icons/obj/guns/ancient.dmi'
 	icon_state = "musket"
 	item_state = "musket"
@@ -64,10 +64,10 @@
 /obj/item/weapon/gun/projectile/flintlock/special_check(mob/user)
 //	var/mob/living/human/H = user
 	if (!cocked)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the weapon is uncocked!</span>")
+		to_chat(user, "<span class='warning'>武器未处于待击状态时你无法发射\the [src]!</span>")
 		return FALSE
 	if (!(user.has_empty_hand(both = FALSE)) && !istype(src, /obj/item/weapon/gun/projectile/flintlock/pistol) && !istype(src, /obj/item/weapon/gun/projectile/flintlock/blunderbuss/pistol) && !istype(src, /obj/item/weapon/gun/projectile/flintlock/pistoletmodelean1733) && !istype(src, /obj/item/weapon/gun/projectile/flintlock/duellingpistol) && !istype(src, /obj/item/weapon/gun/projectile/flintlock/pistoletmodeleanxiii))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能发射\the [src]!</span>")
 		return FALSE
 	return ..()
 
@@ -98,8 +98,8 @@
 	item_state = initial(item_state)
 
 /obj/item/weapon/gun/projectile/flintlock/musket
-	name = "flintlock musket"
-	desc = "A simple flintlock musket of the early XVIII century."
+	name = "燧发滑膛枪"
+	desc = "一把十八世纪初的简单燧发滑膛枪."
 	force = 12
 	caliber = "musketball"
 	weight = 6.0
@@ -108,8 +108,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/m1752
-	name = "M1752 mosquete"
-	desc = "A simple spanish musket of the early XVIII century."
+	name = "M1752 滑膛枪"
+	desc = "一把十八世纪初的简单西班牙滑膛枪."
 	force = 11.5
 	caliber = "musketball"
 	weight = 6.0
@@ -120,8 +120,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/jezail
-	name = "Jezail musket"
-	desc = "A very simple Arabic musket of the early XVIII century."
+	name = "杰撒伊滑膛枪"
+	desc = "一把十八世纪初的非常简单的阿拉伯滑膛枪."
 	force = 10
 	caliber = "musketball"
 	weight = 5.0
@@ -132,8 +132,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/kabyle
-	name = "Kabyle musket"
-	desc = "A very simple North-African musket of the early XVIII century."
+	name = "卡拜尔滑膛枪"
+	desc = "一把十八世纪初的非常简单的北非滑膛枪."
 	force = 10.2
 	caliber = "musketball"
 	weight = 4.7
@@ -144,8 +144,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/brownbess
-	name = "Brownbess musket"
-	desc = "A simple english musket of the early XVIII century."
+	name = "褐贝斯滑膛枪"
+	desc = "一把十八世纪初的简单英国滑膛枪."
 	force = 11
 	caliber = "musketball"
 	weight = 5.9
@@ -156,8 +156,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/charleville
-	name = "Charleville mousquet"
-	desc = "A simple french musket of the early XVIII century."
+	name = "沙勒维尔滑膛枪"
+	desc = "一把十八世纪初的简单法国滑膛枪."
 	force = 11.3
 	caliber = "musketball"
 	weight = 5.6
@@ -168,8 +168,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/plexico
-	name = "flintlock musket"
-	desc = "A finer flintlock musket, this one seems to be made out of ebony and steel."
+	name = "燧发滑膛枪"
+	desc = "一把更精致的燧发滑膛枪, 这把似乎由乌木和钢材制成."
 	force = 12
 	caliber = "musketball"
 	weight = 6.0
@@ -180,8 +180,8 @@
 	accuracy = 1
 
 /obj/item/weapon/gun/projectile/flintlock/springfield
-	name = "Springfield M1861 Musket"
-	desc = "A simple flintlock musket of the 1860's used commonly in the civil war."
+	name = "斯普林菲尔德 M1861 滑膛枪"
+	desc = "一把十九世纪六十年代的简单燧发滑膛枪, 常用于南北战争."
 	force = 12
 	caliber = "musketball"
 	weight = 6.0
@@ -193,8 +193,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/springfield1795
-	name = "Springfield 1795 Musket"
-	desc = "The Model 1795 was the first musket to be produced in the United States."
+	name = "斯普林菲尔德 1795 滑膛枪"
+	desc = "1795型是美国生产的第一款滑膛枪."
 	force = 12
 	caliber = "musketball"
 	weight = 5.0
@@ -206,8 +206,8 @@
 	accuracy = 1
 
 /obj/item/weapon/gun/projectile/flintlock/musketoon
-	name = "flintlock musketoon"
-	desc = "A smaller version of the flintlock musket, this gun is favored by seamen due to being compact, albeit less accurate."
+	name = "燧发短滑膛枪"
+	desc = "燧发滑膛枪的缩小版本, 因其紧凑而深受水手喜爱, 尽管精度较低."
 	icon_state = "compactmusket"
 	item_state = "musketoon"
 	force = 8
@@ -219,8 +219,8 @@
 	accuracy = 5
 
 /obj/item/weapon/gun/projectile/flintlock/crude
-	name = "crude musket"
-	desc = "A crude, homemade version of a musket. Not very reliable and accurate."
+	name = "粗糙滑膛枪"
+	desc = "一把粗糙的自制滑膛枪. 不太可靠, 精度也不高."
 	icon_state = "crude"
 	item_state = "musketoon"
 	force = 8
@@ -233,8 +233,8 @@
 /obj/item/weapon/gun/projectile/flintlock/pistol
 	// less accurate than rifles against still targets, but better against moving targets
 	// less accurate than semiautos but with the same ratios
-	name = "flintlock pistol"
-	desc = "A typical flintlock pistol. Good for short ranges, useless otherwise."
+	name = "燧发手枪"
+	desc = "一把典型的燧发手枪. 适合近距离, 除此之外毫无用处."
 	icon_state = "flintpistol"
 	item_state = "pistol"
 	shake_strength = 2
@@ -259,8 +259,8 @@
 
 /obj/item/weapon/gun/projectile/flintlock/blunderbuss
 	stat = "heavy"
-	name = "Blunderbuss"
-	desc = "A enlarged version of the musketoon, it can fire bigger bullets. Useless at long range."
+	name = "雷铳"
+	desc = "短滑膛枪的放大版本, 可以发射更大的子弹. 远距离毫无用处."
 	icon_state = "blunderbuss"
 	item_state = "blunderbuss"
 	shake_strength = 4
@@ -281,8 +281,8 @@
 	KD_chance = KD_CHANCE_HIGH
 
 /obj/item/weapon/gun/projectile/flintlock/pistoletmodelean1733
-	name = "Pistolet modèle An 1733"
-	desc = "A typical French pistol. Used by Calvary units."
+	name = "1733年式手枪"
+	desc = "一把典型的法国手枪. 由骑兵部队使用."
 	icon_state = "pistolet_modele1733"
 	item_state = "pistol"
 	shake_strength = 2.1
@@ -307,8 +307,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/flintlock/duellingpistol
-	name = "Duelling Flintlock"
-	desc = "A typical flintlock. Used by gentlemen who take part in duels."
+	name = "决斗燧发枪"
+	desc = "一把典型的燧发枪. 由参加决斗的绅士使用."
 	icon_state = "flintlock_duelingpistol"
 	item_state = "pistol"
 	shake_strength = 2.5
@@ -330,8 +330,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/flintlock/pistoletmodeleanxiii
-	name = "Pistolet modèle An XIII"
-	desc = "A typical French pistol. Used by Calvary units."
+	name = "XIII年式手枪"
+	desc = "一把典型的法国手枪. 由骑兵部队使用."
 	icon_state = "pistolet_modele13"
 	item_state = "pistol"
 	shake_strength = 2.1
@@ -356,8 +356,8 @@
 
 /obj/item/weapon/gun/projectile/flintlock/blunderbuss/pistol
 	stat = "heavy"
-	name = "Blunderbuss Pistol"
-	desc = "A enlarged version of the musketoon, it can fire bigger bullets. This one has been designed so it can be used with one hand. Useless at medium range."
+	name = "雷铳手枪"
+	desc = "短滑膛枪的放大版本, 可以发射更大的子弹. 这把被设计成可以单手使用. 中距离毫无用处."
 	icon_state = "flintlock_blunderbusspistol"
 	item_state = "pistol"
 	shake_strength = 5

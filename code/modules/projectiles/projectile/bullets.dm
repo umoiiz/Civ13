@@ -1,5 +1,5 @@
 /obj/item/projectile/bullet
-	name = "bullet"
+	name = "子弹"
 	icon_state = "bullet"
 	damage = 60
 	damage_type = BRUTE
@@ -67,7 +67,7 @@
 
 //For projectiles that actually represent clouds of projectiles
 /obj/item/projectile/bullet/pellet
-	name = "shrapnel" //'shrapnel' sounds more dangerous (i.e. cooler) than 'pellet'
+	name = "弹片" //'shrapnel' sounds more dangerous (i.e. cooler) than 'pellet'
 	damage = 20
 	icon_state = "pellets" //TODO: would be nice to have it's own icon state
 	var/pellets = 10		//number of pellets
@@ -138,7 +138,7 @@
 	damage = 60
 
 /obj/item/projectile/bullet/pistol/rubber //"rubber" bullets
-	name = "rubber bullet"
+	name = "橡胶弹"
 	check_armor = "melee"
 	damage = 2
 	agony = 25
@@ -151,7 +151,7 @@
 //Should do about 80 damage at 1 tile distance (adjacent), and 50 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
 /obj/item/projectile/bullet/pellet/rubber
-	name = "rubbershot"
+	name = "橡胶弹丸"
 	damage = 0
 	pellets = 10
 	spread_step = 10
@@ -161,7 +161,7 @@
 	icon_state = "pellets"
 
 /obj/item/projectile/bullet/pellet/rubberball
-	name = "rubber ball"
+	name = "橡胶球"
 	damage = 2
 	pellets = 12
 	base_spread = 5

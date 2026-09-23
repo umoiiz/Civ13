@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/police
 	name = "Police Officer"
-	desc = "He keeps you safe. He is here to help you. He is your friend."
+	desc = "他保护你的安全. 他是来帮助你的. 他是你的朋友."
 	icon_state = "police1"
 	icon_dead = "police1_dead"
 	response_help = "pushes"

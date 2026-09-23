@@ -99,7 +99,7 @@ var/list/preferences_datums = list()
 	if (!user || !user.client)	return
 
 	if (!get_mob_by_key(client_ckey))
-		to_chat(user, "<span class='danger'>No mob exists for the given client!</span>")
+		to_chat(user, "<span class='danger'>给定客户端不存在对应的生物!</span>")
 		return
 
 	var/dat = {"

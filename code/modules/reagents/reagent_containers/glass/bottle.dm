@@ -2,8 +2,8 @@
 //Not to be confused with /obj/item/weapon/reagent_containers/food/drinks/bottle
 
 /obj/item/weapon/reagent_containers/glass/bottle
-	name = "bottle"
-	desc = "A small bottle."
+	name = "瓶子"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = null
 	item_state = "atoxinbottle"
@@ -60,8 +60,8 @@
 			overlays += lid
 
 /obj/item/weapon/reagent_containers/glass/bottle/adrenaline
-	name = "adrenaline bottle"
-	desc = "A small bottle. Contains adrenaline - used to stabilize patients."
+	name = "肾上腺素瓶"
+	desc = "一个小瓶子。含有肾上腺素 - 用于稳定病人。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
@@ -71,8 +71,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/opium
-	name = "opium bottle"
-	desc = "A small bottle. Contains opium - a strong painkiller."
+	name = "鸦片瓶"
+	desc = "一个小瓶子。含有鸦片 - 一种强效止痛药。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
@@ -82,8 +82,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/toxin
-	name = "toxin bottle"
-	desc = "A small bottle of toxins. Do not drink, it is poisonous."
+	name = "毒素瓶"
+	desc = "一小瓶毒素。不要喝,有毒。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-3"
 
@@ -93,8 +93,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/cyanide
-	name = "cyanide bottle"
-	desc = "A small bottle of cyanide. Bitter almonds?"
+	name = "氰化物瓶"
+	desc = "一小瓶氰化物。苦杏仁味?"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-3"
 
@@ -104,8 +104,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/stoxin
-	name = "soporific bottle"
-	desc = "A small bottle of soporific. Just the fumes make you sleepy."
+	name = "安眠药瓶"
+	desc = "一小瓶安眠药。光是闻到气味就让人犯困。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-3"
 
@@ -115,8 +115,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/chloralhydrate
-	name = "Chloral Hydrate Bottle"
-	desc = "A small bottle of Choral Hydrate. Mickey's Favorite!"
+	name = "水合氯醛瓶"
+	desc = "一小瓶水合氯醛。米老鼠的最爱!"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-3"
 
@@ -126,8 +126,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/antitoxin
-	name = "dylovene bottle"
-	desc = "A small bottle. Contains dylovene - counters poisons."
+	name = "二乙烯瓶"
+	desc = "一个小瓶子。含有二乙烯 - 可中和毒素。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
@@ -137,8 +137,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/mutagen
-	name = "unstable mutagen bottle"
-	desc = "A small bottle. Contains unstable mutagen - randomly changes the DNA structure of whoever comes in contact."
+	name = "不稳定诱变剂瓶"
+	desc = "一个小瓶子。含有不稳定诱变剂 - 会随机改变接触者的DNA结构。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-1"
 
@@ -148,8 +148,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/ammonia
-	name = "ammonia bottle"
-	desc = "A small bottle."
+	name = "氨水瓶"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-1"
 
@@ -159,8 +159,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/diethylamine
-	name = "diethylamine bottle"
-	desc = "A small bottle."
+	name = "二乙胺瓶"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
@@ -170,8 +170,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/acetone
-	name = "acetone bottle"
-	desc = "A small bottle."
+	name = "丙酮瓶"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-2"
 
@@ -181,8 +181,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/potassium_chloride
-	name = "potassium chloride bottle"
-	desc = "A small bottle."
+	name = "氯化钾瓶"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 
@@ -192,8 +192,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/carbon
-	name = "carbon bottle"
-	desc = "A small bottle."
+	name = "碳瓶"
+	desc = "一个小瓶子。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-3"
 
@@ -203,8 +203,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/pacid
-	name = "Polytrinic Acid Bottle"
-	desc = "A small bottle. Contains polytrinic acid"
+	name = "多聚烟酸瓶"
+	desc = "一个小瓶子。含有多聚烟酸"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 	New()
@@ -213,8 +213,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/adminordrazine
-	name = "Adminordrazine Bottle"
-	desc = "A small bottle. Contains the liquid essence of the gods."
+	name = "Adminordrazine瓶"
+	desc = "一个小瓶子。含有众神的液体精华。"
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "holyflask"
 	New()
@@ -223,8 +223,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/capsaicin
-	name = "Capsaicin Bottle"
-	desc = "A small bottle. Contains hot sauce."
+	name = "辣椒素瓶"
+	desc = "一个小瓶子。含有辣酱。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 	New()
@@ -233,8 +233,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/glass/bottle/frostoil
-	name = "Frost Oil Bottle"
-	desc = "A small bottle. Contains cold sauce."
+	name = "霜油瓶"
+	desc = "一个小瓶子。含有冷酱。"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle-4"
 	New()

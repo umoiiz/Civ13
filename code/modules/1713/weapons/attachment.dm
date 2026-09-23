@@ -27,7 +27,7 @@ Current Defines (_defines/attachment.dm)
 	var/ergonomics = 1
 
 /obj/item/weapon/attachment/proc/attached(mob/user, obj/item/weapon/gun/G)
-	to_chat(user, "<span class = 'notice'>You start to attach [src] to the [G].</span>")
+	to_chat(user, "<span class = 'notice'>你开始将[src]安装到[G]上.</span>")
 	if (do_after(user, 15, user))
 		user.unEquip(src)
 		A_attached = TRUE
@@ -38,7 +38,7 @@ Current Defines (_defines/attachment.dm)
 		G.attachments += src
 		G.update_attachment_actions(user)
 		G.ergonomics *= src.ergonomics
-		to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+		to_chat(user, "<span class = 'notice'>你将[src]安装到[G]上.</span>")
 	else
 		return
 
@@ -52,7 +52,7 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上拆下[src].")
 	else
 		return//
 
@@ -65,7 +65,7 @@ Current Defines (_defines/attachment.dm)
 	if (attachments.len)
 		for (var/obj/item/weapon/attachment/A in attachments)
 			if (!(istype(A,/obj/item/weapon/attachment/scope/iron_sights)))
-				to_chat(user, "<span class='notice'>It has [A] attached.</span>")
+				to_chat(user, "<span class='notice'>它已安装[A]。</span>")
 
 /obj/item/weapon/gun/dropped(mob/user)
 	..()
@@ -108,7 +108,7 @@ Current Defines (_defines/attachment.dm)
 	if (!I || !user)
 		return
 	if (user.get_inactive_hand() != src)
-		to_chat(user, "You must be holding the [src] to add attachments.")
+		to_chat(user, "你必须手持[src]才能添加配件。")
 		return
 	attach_A(I, user)
 
@@ -121,22 +121,22 @@ Current Defines (_defines/attachment.dm)
 				if (attachment_slots & ATTACH_IRONSIGHTS)
 					A.attached(user, src)
 				else
-					to_chat(user, "You already have iron sights.")
+					to_chat(user, "你已经有机械瞄具了。")
 			if (ATTACH_SCOPE)
 				if (attachment_slots & ATTACH_SCOPE)
 					A.attached(user, src, FALSE)
 				else
-					to_chat(user, "You fumble around with the attachment.")
+					to_chat(user, "你笨拙地摆弄着配件。")
 			if (ATTACH_STOCK)
 				if (attachment_slots & ATTACH_STOCK)
 					A.attached(user, src, FALSE)
 				else
-					to_chat(user, "You fumble around with the attachment.")
+					to_chat(user, "你笨拙地摆弄着配件。")
 			if (ATTACH_BARREL)
 				if (attachment_slots & ATTACH_BARREL)
 					A.attached(user, src, FALSE)
 				else
-					to_chat(user, "You fumble around with the attachment.")
+					to_chat(user, "你笨拙地摆弄着配件。")
 			if (ATTACH_UNDER)
 				if (attachment_slots & ATTACH_UNDER)
 					A.attached(user, src, FALSE)
@@ -151,7 +151,7 @@ Current Defines (_defines/attachment.dm)
 //Scope code is found in code/modules/WW2/weapons/zoom.dm
 
 /obj/item/weapon/attachment/bayonet
-	name = "bayonet"
+	name = "刺刀"
 	icon = 'icons/obj/gun_att.dmi'
 	icon_state = "bayonet"
 	item_state = "knife"
@@ -172,7 +172,7 @@ Current Defines (_defines/attachment.dm)
 	..()
 	if(atk_mode == SLASH)
 		atk_mode = STAB
-		to_chat(user, "<span class='notice'>You will now stab.</span>")
+		to_chat(user, "<span class='notice'>你现在会进行刺击。</span>")
 		edge = FALSE
 		sharp = TRUE
 		attack_verb = list("stabbed")
@@ -181,7 +181,7 @@ Current Defines (_defines/attachment.dm)
 
 	else if(atk_mode == STAB)
 		atk_mode = SLASH
-		to_chat(user, "<span class='notice'>You will now slash.</span>")
+		to_chat(user, "<span class='notice'>你现在会进行劈砍。</span>")
 		attack_verb = list("slashed", "diced")
 		hitsound = "slash_sound"
 		edge = TRUE
@@ -198,12 +198,12 @@ Current Defines (_defines/attachment.dm)
 		G.verbs += verbs
 		G.attachments += src
 		if (user)
-			to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 		G.bayonet = src
 		G.update_icon()
 	else
 		if (user)
-			to_chat(user, "<span class = 'notice'>You start to attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你开始将[src]安装到[G]上。</span>")
 		if (do_after(user, 15, user))
 			A_attached = TRUE
 			G.attachment_slots -= attachment_type
@@ -213,7 +213,7 @@ Current Defines (_defines/attachment.dm)
 			if (user)
 				user.unEquip(src)
 				G.update_attachment_actions(user)
-				to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+				to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 			loc = G
 			G.bayonet = src
 			G.update_icon()
@@ -229,14 +229,14 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		G.bayonet = null
 		G.update_icon()
 	else
 		return
 
 /obj/item/weapon/attachment/bayonet/flag
-	name = "japanese flag"
+	name = "日本国旗"
 	icon_state = "jap_flag"
 	item_state = "jap_flag"
 	sharp = FALSE
@@ -260,14 +260,14 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		G.shake_strength = initial(G.shake_strength)
 		G.update_icon()
 	else
 		return
 
 /obj/item/weapon/attachment/scope/iron_sights
-	name = "iron sights"
+	name = "机械瞄具"
 	attachment_type = ATTACH_IRONSIGHTS
 	zoom_amt = ZOOM_CONSTANT
 
@@ -275,32 +275,32 @@ Current Defines (_defines/attachment.dm)
 	return
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope
-	name = "sniper scope"
+	name = "狙击镜"
 	icon = 'icons/obj/gun_att.dmi'
 	icon_state = "sniper_scope"
-	desc = "You can attach this to rifles... or use them as binoculars. Amplifies 8x."
+	desc = "你可以将其安装到步枪上...或将其用作双筒望远镜。放大8倍。"
 	mount = "sniper_scope_mount"
 	max_zoom = ZOOM_CONSTANT*2
 
 /// JAPANESE ///
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/type97
-	name = "Type 97 Optic"
-	desc = "You can attach this to japanese arisaka rifles."
+	name = "九七式瞄准镜"
+	desc = "你可以将其安装到日本有坂步枪上。"
 	icon_state = "type97"
 	mount = "type97_cronstein"
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/type99
-	name = "Type 99 Optic"
-	desc = "You can attach this to japanese mgs."
+	name = "九九式瞄准镜"
+	desc = "你可以将其安装到日本机枪上。"
 	icon_state = "type99"
 	mount = "type99_cronstein"
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/type99/type96
-	name = "Type 96 Optic"
+	name = "九六式瞄准镜"
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/type97tank
-	name = "Type 97 Scope"
-	desc = "You can attach this to the type 97 heavy tank rifle."
+	name = "九七式瞄准镜"
+	desc = "你可以将其安装到九七式反坦克步枪上。"
 	icon_state = "type97_tank"
 	mount = "type97_tank"
 
@@ -308,7 +308,7 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/apx
 	name = "APX"
-	desc = "You can attach this to french ww1 sniper rifles"
+	desc = "你可以将其安装到法国一战狙击步枪上"
 	icon_state = "apx"
 	mount = "apx_cronstein"
 
@@ -316,33 +316,33 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/pu
 	name = "PU"
-	desc = "You can attach this scope to sniper Mosin-Nagan and SVT rifles"
+	desc = "你可以将此瞄准镜安装到莫辛-纳甘狙击步枪和SVT步枪上"
 	icon_state = "pu"
 	mount = "kochetov"
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/pu/ppu8
 	name = "PPU-8"
-	desc = "You can attach this scope to DTM machinegun."
+	desc = "你可以将此瞄准镜安装到DTM机枪上。"
 	icon_state = "ppu8"
 	mount = "dt_mount"
 	max_zoom = ZOOM_CONSTANT+2
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/pso1
 	name = "PSO-1"
-	desc = "You can attach this scope to any rifle with dovetail rail"
+	desc = "你可以将此瞄准镜安装到任何带有燕尾槽导轨的步枪上"
 	icon_state = "pso1"
 	mount = "dovetail"
 	max_zoom = ZOOM_CONSTANT+3
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/pso4
 	name = "PSO-4"
-	desc = "You can attach this scope to any rifle with dovetail rail"
+	desc = "你可以将此瞄准镜安装到任何带有燕尾槽导轨的步枪上"
 	icon_state = "pso4"
 	mount = "dovetail"
 	max_zoom = ZOOM_CONSTANT+4
 	ergonomics = 1.15
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/spp
 	name = "SPP"
-	desc = "Optical sight designed for heavy machineguns. You can attach this scope to any rifle with dovetail rail"
+	desc = "为重型机枪设计的光学瞄准镜。你可以将此瞄准镜安装到任何带有燕尾槽导轨的步枪上"
 	icon_state = "spp"
 	mount = "dovetail"
 	max_zoom = ZOOM_CONSTANT+3
@@ -351,13 +351,13 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/zf39
 	name = "ZF-39"
-	desc = "You can attach this to Kar98 rifles."
+	desc = "你可以将其安装到Kar98步枪上。"
 	icon_state = "zf39"
 	mount = "swept_back"
 	max_zoom = ZOOM_CONSTANT+3
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/zf4
 	name = "ZF-4"
-	desc = "You can attach this to FG42, StG44 and G42 rifles."
+	desc = "你可以将其安装到FG42、StG44和G42步枪上。"
 	icon_state = "zf4"
 	mount = "swept_back"
 	max_zoom = ZOOM_CONSTANT+2
@@ -366,19 +366,19 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/m84
 	name = "M84"
-	desc = "You can attach this to Springfield sniper rifles."
+	desc = "你可以将其安装到斯普林菲尔德狙击步枪上。"
 	icon_state = "m84"
 	mount = "picatinny"
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/acog
 	name = "ACOG"
-	desc = "You can attach this to any rifle with a Picatinny rail."
+	desc = "你可以将其安装到任何带有皮卡汀尼导轨的步枪上。"
 	icon_state = "acog"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT+3
 	ergonomics = 1.25
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/elcan
 	name = "Elcan"
-	desc = "You can attach this to any rifle with Picatinny rail."
+	desc = "你可以将其安装到任何带有皮卡汀尼导轨的步枪上。"
 	icon_state = "elcan"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT+2
@@ -389,7 +389,7 @@ Current Defines (_defines/attachment.dm)
 	icon_state = "elcan_winter"
 /obj/item/weapon/attachment/scope/adjustable/sniper_scope/vortex_viper
 	name = "Viper Vortex"
-	desc = "You can attach this to any rifle with picatinny rail"
+	desc = "你可以将其安装到任何带有皮卡汀尼导轨的步枪上"
 	icon_state = "vortex_viper"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT * 3
@@ -404,7 +404,7 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		//This should only be temporary until more attachment icons are made, then we switch to adding/removing icon masks
 		if (istype(G, /obj/item/weapon/gun/projectile))
 			var/obj/item/weapon/gun/projectile/W = G
@@ -441,7 +441,7 @@ Current Defines (_defines/attachment.dm)
 			G.attachments += src
 			G.update_attachment_actions(user)
 			G.ergonomics *= src.ergonomics
-			to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 			if (istype(G, /obj/item/weapon/gun/projectile))
 				var/obj/item/weapon/gun/projectile/W = G
 				W.update_icon()
@@ -462,7 +462,7 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/scope/adjustable/advanced/attached(mob/user, obj/item/weapon/gun/G, var/quick = FALSE)
 	if(!G.scope_mounts.Find(src.mount))
-		to_chat(user, "[src.name] can't be attached!")
+		to_chat(user, "[src.name]无法安装!")
 		return
 	if (quick)
 		A_attached = TRUE
@@ -484,7 +484,7 @@ Current Defines (_defines/attachment.dm)
 			G.verbs += verbs
 			G.attachments += src
 			G.update_attachment_actions(user)
-			to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 			G.ergonomics *= src.ergonomics
 			G.scope = src
 			G.update_icon()
@@ -499,7 +499,7 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		G.scope = null
 		G.ergonomics /= src.ergonomics
 		G.update_icon()
@@ -507,24 +507,24 @@ Current Defines (_defines/attachment.dm)
 		return
 
 /obj/item/weapon/attachment/scope/adjustable/advanced/reddot
-	name = "red dot sight"
+	name = "红点瞄准镜"
 	icon_state = "reddot"
-	desc = "A red dot laser sight. Increases accuracy and gives a slight magnification."
+	desc = "红点激光瞄准镜。提高精准度并提供轻微放大。"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT+1
 	ergonomics = 2
 
 /obj/item/weapon/attachment/scope/adjustable/advanced/holographic
-	name = "holographic sight"
-	desc = "A reflector holographic sight. Does not give magnification but greatly reduces parallax error."
+	name = "全息瞄准镜"
+	desc = "反射式全息瞄准镜。不提供放大但大幅减少视差误差。"
 	icon_state = "holographic"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT
 	ergonomics = 2.5
 
 /obj/item/weapon/attachment/scope/adjustable/advanced/nvs
-	name = "night vision scope"
-	desc = "A bulky scope that allows images be produced in levels of light approaching total darkness."
+	name = "夜视瞄准镜"
+	desc = "一个笨重的瞄准镜,可在接近完全黑暗的光线条件下生成图像。"
 	icon_state = "nvs"
 	mount = "picatinny"
 	max_zoom = ZOOM_CONSTANT
@@ -539,7 +539,7 @@ Current Defines (_defines/attachment.dm)
 
 /obj/item/weapon/attachment/under/attached(mob/user, obj/item/weapon/gun/G, var/quick = FALSE)
 	if(!G.under_mounts.Find(src.mount))
-		to_chat(user, "[src.name] can't be attached!")
+		to_chat(user, "[src.name]无法安装!")
 		return
 	if (quick)
 		A_attached = TRUE
@@ -562,7 +562,7 @@ Current Defines (_defines/attachment.dm)
 			G.attachments += src
 			G.update_attachment_actions(user)
 			G.ergonomics *= src.ergonomics
-			to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 			G.under = src
 			G.update_icon()
 		else
@@ -577,33 +577,33 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		G.under = null
 		G.ergonomics /= src.ergonomics
 		G.update_icon()
 	else
 		return
 /obj/item/weapon/attachment/under/laser
-	name = "laser pointer"
+	name = "激光指示器"
 	icon_state = "laser"
-	desc = "A basic laser pointer, increases accuracy by a bit."
+	desc = "一个基础的激光指示器,略微提高精准度。"
 	ergonomics = 1.25
 
 /obj/item/weapon/attachment/under/foregrip
-	name = "foregrip"
+	name = "前握把"
 	icon_state = "foregrip"
-	desc = "A foregrip, to increase stability when firing."
+	desc = "一个前握把,用于提高射击时的稳定性。"
 	ergonomics = 1.5
 
 /obj/item/weapon/attachment/under/foregrip/alt
-	name = "foregrip"
+	name = "前握把"
 	icon_state = "foregrip_alt"
-	desc = "A foregrip, to increase stability when firing."
+	desc = "一个前握把,用于提高射击时的稳定性。"
 	ergonomics = 1.5
 
 /obj/item/weapon/gun/launcher/grenade/underslung/proc/attached(mob/user, obj/item/weapon/gun/G, var/quick = FALSE)
 	if(!G.under_mounts.Find(src.mount))
-		to_chat(user, "[src.name] can't be attached!")
+		to_chat(user, "[src.name]无法安装!")
 		return
 	if (quick)
 		A_attached = TRUE
@@ -620,7 +620,7 @@ Current Defines (_defines/attachment.dm)
 			loc = G
 			G.attachments += src
 			G.update_attachment_actions(user)
-			to_chat(user, "<span class = 'notice'>You attach [src] to the [G].</span>")
+			to_chat(user, "<span class = 'notice'>你将[src]安装到了[G]上。</span>")
 			G.launcher = src
 			G.update_icon()
 		else
@@ -633,7 +633,7 @@ Current Defines (_defines/attachment.dm)
 		dropped(user)
 		A_attached = FALSE
 		loc = get_turf(src)
-		to_chat(user, "You remove [src] from the [G].")
+		to_chat(user, "你从[G]上卸下了[src]。")
 		G.launcher = null
 		G.update_icon()
 	else
@@ -648,8 +648,8 @@ Current Defines (_defines/attachment.dm)
 /obj/item/weapon/attachment/silencer
 	icon = 'icons/obj/gun_att.dmi'
 	icon_state = "silencer"
-	name = "silencer"
-	desc = "A gun silencer."
+	name = "消音器"
+	desc = "一个枪械消音器。"
 	attachment_type = ATTACH_BARREL
 	var/reduction = 50
 	var/caliber = "multicaliber"
@@ -708,49 +708,49 @@ Current Defines (_defines/attachment.dm)
 
 // Improvised
 /obj/item/weapon/attachment/silencer/plastic_bottle
-	name = "plastic bottle suppressor"
+	name = "塑料瓶消音器"
 	icon_state = "plastic_bottle_suppressor"
-	desc = "This suppressor might not even work, but it's worth a try."
+	desc = "这个消音器可能根本没用,但值得一试."
 	reduction = 5
 	fits = list("smg", "rifle")
 	ergonomics = 1
 
 /obj/item/weapon/attachment/silencer/oil_filter
-	name = "oil filter suppressor"
+	name = "机油滤清器消音器"
 	icon_state = "oil_filter_suppressor"
-	desc = "A makeshift suppressor."
+	desc = "一个简易消音器."
 	reduction = 35
 	fits = list("smg", "rifle")
 	ergonomics = 1.1
 
 // Normal
 /obj/item/weapon/attachment/silencer/pistol
-	name = "pistol suppressor"
+	name = "手枪消音器"
 	icon_state = "modern_pistol_suppressor"
-	desc = "A pistol suppressor."
+	desc = "一个手枪消音器."
 	reduction = 50
 	fits = list("pistol")
 	ergonomics = 1.2
 
 /obj/item/weapon/attachment/silencer/pistol/ww2
-	name = "pistol suppressor"
+	name = "手枪消音器"
 	icon_state = "ww2_pistol_suppressor"
-	desc = "A pistol suppressor."
+	desc = "一个手枪消音器."
 	reduction = 35
 	ergonomics = 1.15
 
 /obj/item/weapon/attachment/silencer/rifle
-	name = "rifle suppressor"
+	name = "步枪消音器"
 	icon_state = "modern_rifle_suppressor"
-	desc = "A rifle suppressor."
+	desc = "一个步枪消音器."
 	reduction = 50
 	fits = list("rifle")
 	ergonomics = 2
 
 /obj/item/weapon/attachment/silencer/rifle/srm
-	name = "srm suppressor"
+	name = "SRM消音器"
 	icon_state = "srm_silencer"
-	desc = "A 9x39 SRM suppressor."
+	desc = "一个9x39 SRM消音器."
 	reduction = 50
 	fits = list("rifle")
 	ergonomics = 2
@@ -759,7 +759,7 @@ Current Defines (_defines/attachment.dm)
 /obj/item/weapon/attachment/silencer/rifle/pbs1
 	name = "PBS-1"
 	icon_state = "pbs1"
-	desc = "A 7.62x39 AKM suppressor."
+	desc = "一个7.62x39 AKM消音器."
 	reduction = 50
 	fits = list("rifle")
 	ergonomics = 2
@@ -768,47 +768,47 @@ Current Defines (_defines/attachment.dm)
 /obj/item/weapon/attachment/silencer/rifle/pbs4
 	name = "PBS-4"
 	icon_state = "pbs1"
-	desc = "A 5.45x39 AK74 suppressor."
+	desc = "一个5.45x39 AK74消音器."
 	reduction = 50
 	fits = list("rifle")
 	ergonomics = 2
 	caliber = "a545x39"
 
 /obj/item/weapon/attachment/silencer/rifle/ww2
-	name = "rifle suppressor"
+	name = "步枪消音器"
 	icon_state = "ww2_rifle_suppressor"
-	desc = "A rifle suppressor."
+	desc = "一个步枪消音器."
 	reduction = 35
 	ergonomics = 1.5
 
 /obj/item/weapon/attachment/silencer/rifle/ww2/bramid
 	name = "Bramid"
 	icon_state = "bramid"
-	desc = "Mosin rifle suppressor."
+	desc = "莫辛步枪消音器."
 	reduction = 50
 	fits = list("rifle")
 	ergonomics = 1.5
 	caliber = "a762x54"
 
 /obj/item/weapon/attachment/silencer/smg
-	name = "smg suppressor"
+	name = "冲锋枪消音器"
 	icon_state = "modern_smg_suppressor"
-	desc = "A smg suppressor."
+	desc = "一个冲锋枪消音器."
 	reduction = 50
 	fits = list("smg")
 	ergonomics = 1.5
 
 /obj/item/weapon/attachment/silencer/smg/ww2
-	name = "smg suppressor"
+	name = "冲锋枪消音器"
 	icon_state = "ww2_smg_suppressor"
-	desc = "A smg suppressor."
+	desc = "一个冲锋枪消音器."
 	reduction = 35
 	ergonomics = 1.25
 
 /obj/item/weapon/attachment/silencer/shotgun
-	name = "shotgun suppressor"
+	name = "霰弹枪消音器"
 	icon_state = "modern_shotgun_suppressor"
-	desc = "A shotgun suppressor."
+	desc = "一个霰弹枪消音器."
 	reduction = 40
 	fits = list("shotgun")
 	ergonomics = 1.5

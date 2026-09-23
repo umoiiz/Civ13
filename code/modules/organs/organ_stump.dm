@@ -1,5 +1,5 @@
 /obj/item/organ/external/stump
-	name = "limb stump"
+	name = "残肢"
 	icon_name = ""
 	dislocated = -1
 

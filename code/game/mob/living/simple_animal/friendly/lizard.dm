@@ -1,6 +1,6 @@
 /mob/living/simple_animal/lizard
 	name = "lizard"
-	desc = "A cute tiny lizard."
+	desc = "一只可爱的小蜥蜴."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "lizard"
 	icon_living = "lizard"
@@ -19,15 +19,15 @@
 
 /mob/living/simple_animal/proc/eat_insects()
 	for (var/mob/living/simple_animal/mosquito/M in range(1,src))
-		visible_message("\The [src] eats \the [M]!")
+		visible_message("\The [src]吃掉了\the [M]!")
 		qdel(M)
 		adjustBruteLoss(-1)
 	for (var/mob/living/simple_animal/fly/F in range(1,src))
-		visible_message("\The [src] eats \the [F]!")
+		visible_message("\The [src]吃掉了\the [F]!")
 		qdel(F)
 		adjustBruteLoss(-1)
 	for (var/mob/living/simple_animal/cockroach/C in range(1,src))
-		visible_message("\The [src] eats \the [C]!")
+		visible_message("\The [src]吃掉了\the [C]!")
 		qdel(C)
 		adjustBruteLoss(-1)
 
@@ -37,7 +37,7 @@
 
 /mob/living/simple_animal/frog
 	name = "frog"
-	desc = "A cute tiny frog."
+	desc = "一只可爱的小青蛙."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "frog"
 	icon_living = "frog"
@@ -56,11 +56,11 @@
 
 /mob/living/simple_animal/frog/Life()
 	for (var/mob/living/simple_animal/mosquito/M in range(1,src))
-		visible_message("\The [src] eats \the [M]!")
+		visible_message("\The [src]吃掉了\the [M]!")
 		qdel(M)
 		adjustBruteLoss(-1)
 	for (var/mob/living/simple_animal/fly/F in range(1,src))
-		visible_message("\The [src] eats \the [F]!")
+		visible_message("\The [src]吃掉了\the [F]!")
 		qdel(F)
 		adjustBruteLoss(-1)
 	if (prob(1) && prob(17)) //roughly every 10 mins
@@ -79,14 +79,14 @@
 	..()
 /mob/living/simple_animal/frog/poisonous
 	name = "poisonous frog"
-	desc = "A tiny, colorful frog. Poisonous!"
+	desc = "一只小巧多彩的青蛙.有毒!"
 	icon_state = "frog_poisonous"
 	icon_living = "frog_poisonous"
 	icon_dead = "frog_poisonous-dead"
 
 /obj/item/weapon/reagent_containers/food/snacks/frogegg
-	name = "frog eggs"
-	desc = "A bunch of small frog eggs"
+	name = "蛙卵"
+	desc = "一堆小蛙卵"
 	icon_state = "amphibianeggs_1"
 	icon = 'icons/mob/animal.dmi'
 	nutriment_amt = 1
@@ -132,7 +132,7 @@
 
 /mob/living/simple_animal/ianthasaurus
 	name = "ianthasaurus"
-	desc = "A cute tiny ianthasaurus."
+	desc = "一只可爱的小花蜥龙."
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "ianthasaurus"
 	icon_living = "ianthasaurus"
@@ -157,7 +157,7 @@
 
 /mob/living/simple_animal/tiktaalik
 	name = "tiktaalik"
-	desc = "A cute tiny amphibian like fish with fin legs."
+	desc = "一只可爱的小型两栖类鱼,长着鳍状的腿."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "tiktaalik"
 	icon_living = "tiktaalik"
@@ -180,7 +180,7 @@
 
 /mob/living/simple_animal/ichthyostega
 	name = "ichthyostega"
-	desc = "An early amphibian with fully formed legs."
+	desc = "一种早期两栖动物,拥有完全成形的腿."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "ichthyostega"
 	icon_living = "ichthyostega"
@@ -203,7 +203,7 @@
 
 /mob/living/simple_animal/beelzebufo
 	name = "beelzebufo"
-	desc = "A creepy giant frog."
+	desc = "一只令人毛骨悚然的巨型青蛙."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "beelzebufo"
 	icon_living = "beelzebufo"

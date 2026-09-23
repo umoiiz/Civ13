@@ -132,7 +132,7 @@ var/list/vocal_emotes = list(
 
 				if (client)
 					if (client.prefs.muted & MUTE_IC)
-						to_chat(src, "<span class = 'red'>You cannot send IC messages (muted).</span>")
+						to_chat(src, "<span class = 'red'>你无法发送IC消息(已被禁言)。</span>")
 						return
 					if (client.handle_spam_prevention(message,MUTE_IC))
 						return
@@ -796,17 +796,17 @@ var/list/vocal_emotes = list(
 				handle_shit()
 
 			if ("help")
-				to_chat(src, {"blink, blink_r, blush, bow-(none)/mob, burp, choke, chuckle, clap, collapse, cough,)
-	cry, drool, eyebrow, frown, gasp, giggle, groan, grumble, handshake, hug-(none)/mob,
-	grin, laugh, look-(none)/mob, moan, mumble, nod, point-atom, raise, salute, shake, shiver, shrug,
-	sigh, signal-#1-10, smile, sneeze, sniff, snore, stare-(none)/mob, scream, surrender, tremble, twitch,
-	wink, yawn, charge, piss, poop"})
+				to_chat(src, {"眨眼, 眨眼_r, 脸红, 鞠躬-(无)/生物, 打嗝, 窒息, 轻笑, 鼓掌, 倒下, 咳嗽,)
+	哭泣, 流口水, 挑眉, 皱眉, 喘气, 咯咯笑, 呻吟, 抱怨, 握手, 拥抱-(无)/生物,
+	咧嘴笑, 大笑, 看-(无)/生物, 呻吟, 咕哝, 点头, 指向原子, 举起, 敬礼, 摇晃, 颤抖, 耸肩,
+	叹气, 信号-#1-10, 微笑, 打喷嚏, 嗅, 打鼾, 凝视-(无)/生物, 尖叫, 投降, 发抖, 抽搐,
+	眨眼, 打哈欠, 冲锋, 撒尿, 拉屎"})
 
 			else
-				to_chat(src, "<span class = 'notice'>Unusable emote '[act]'. Say *help for a list.</span>")
+				to_chat(src, "<span class = 'notice'>无法使用的表情'[act]'。输入*help查看列表。</span>")
 
 		if (muzzled && m_type == 2)
-			to_chat(src, "<span class = 'warning'>You are unable to make noises while something is in your mouth.</span>")
+			to_chat(src, "<span class = 'warning'>当嘴里有东西时你无法发出声音。</span>")
 			return
 
 		if (message)

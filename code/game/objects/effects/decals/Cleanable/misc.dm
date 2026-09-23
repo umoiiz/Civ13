@@ -1,6 +1,6 @@
 /obj/effect/decal/cleanable/generic
 	name = "clutter"
-	desc = "Someone should clean that up."
+	desc = "该有人清理一下了."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -10,7 +10,7 @@
 
 /obj/effect/decal/cleanable/ash
 	name = "ashes"
-	desc = "Ashes to ashes, dust to dust."
+	desc = "尘归尘,土归土."
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
@@ -24,7 +24,7 @@
 /obj/effect/decal/cleanable/ash/attackby(obj/item/weapon/reagent_containers/glass/C as obj, mob/user as  mob )
 	if (istype(C))
 		C.reagents.add_reagent("ash", 1)
-		to_chat(user, "You collect ash into the [C.name].")
+		to_chat(user, "你把灰烬收进[C.name].")
 		qdel(src)
 		return
 
@@ -37,7 +37,7 @@
 
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
-	desc = "Someone should clean that up."
+	desc = "该有人清理一下了."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -48,7 +48,7 @@
 
 /obj/effect/decal/cleanable/flour
 	name = "flour"
-	desc = "It's still good. Four second rule!"
+	desc = "它还挺好的. 四秒规则!"
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -59,7 +59,7 @@
 
 /obj/effect/decal/cleanable/greenglow
 	name = "glowing goo"
-	desc = "Jeez. I hope that's not for lunch."
+	desc = "天哪. 希望那不是午餐."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -72,7 +72,7 @@
 
 /obj/effect/decal/cleanable/foam
 	name = "foam"
-	desc = "White foam from a fire extinguisher."
+	desc = "灭火器喷出的白色泡沫."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -86,7 +86,7 @@
 
 /obj/effect/decal/cleanable/cobweb
 	name = "cobweb"
-	desc = "Somebody should remove that."
+	desc = "该有人清理一下了."
 	density = FALSE
 	anchored = TRUE
 	layer = 3
@@ -95,7 +95,7 @@
 
 /obj/effect/decal/cleanable/molten_item
 	name = "gooey grey mass"
-	desc = "It looks like a melted... something."
+	desc = "看起来像是融化的...什么东西."
 	density = FALSE
 	anchored = TRUE
 	layer = 3
@@ -105,7 +105,7 @@
 
 /obj/effect/decal/cleanable/cobweb2
 	name = "cobweb"
-	desc = "Somebody should remove that."
+	desc = "该有人清理一下了."
 	density = FALSE
 	anchored = TRUE
 	layer = 3
@@ -115,7 +115,7 @@
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit
 	name = "vomit"
-	desc = "Gosh, how unpleasant."
+	desc = "天哪,真恶心."
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -137,7 +137,7 @@
 		..()
 /obj/effect/decal/cleanable/tomato_smudge
 	name = "tomato smudge"
-	desc = "It's red."
+	desc = "它是红色的."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -147,7 +147,7 @@
 
 /obj/effect/decal/cleanable/egg_smudge
 	name = "smashed egg"
-	desc = "Seems like this one won't hatch."
+	desc = "看来这个孵不出来了."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -157,7 +157,7 @@
 
 /obj/effect/decal/cleanable/pie_smudge //honk
 	name = "smashed pie"
-	desc = "It's pie cream from a cream pie."
+	desc = "这是奶油派的奶油."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -167,7 +167,7 @@
 
 /obj/effect/decal/cleanable/fruit_smudge
 	name = "smudge"
-	desc = "Some kind of fruit smear."
+	desc = "某种水果的污渍."
 	density = FALSE
 	anchored = TRUE
 	layer = 2

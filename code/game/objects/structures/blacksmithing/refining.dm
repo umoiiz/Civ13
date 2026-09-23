@@ -1,7 +1,7 @@
 ////Furnaces////
 /obj/structure/furnace
-	name = "bloomery"
-	desc = "An industrial bloomery, used to smelter iron into sponge iron. Can also be used to recycle materials."
+	name = "锻铁炉"
+	desc = "一座工业锻铁炉,用于将铁冶炼成海绵铁.也可用于回收材料."
 	icon = 'icons/obj/metallurgy.dmi'
 	icon_state = "bloomery"
 	layer = 2.9
@@ -29,17 +29,17 @@
 	if (H.a_intent == I_HELP)
 		if (istype(I, /obj/item/weapon/wrench) || (istype(I, /obj/item/weapon/hammer)))
 			if (istype(I, /obj/item/weapon/wrench))
-				visible_message("<span class='warning'>[H] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[H]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面.</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+					visible_message("<span class='warning'>[H][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面.</span>")
 					anchored = !anchored
 					return
 			else if (istype(I, /obj/item/weapon/hammer))
-				visible_message("<span class='warning'>[H] starts to deconstruct \the [src].</span>")
+				visible_message("<span class='warning'>[H]开始拆除\the [src].</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] deconstructs \the [src].</span>")
+					visible_message("<span class='warning'>[H]拆除了\the [src].</span>")
 					empty()
 					qdel(src)
 					return
@@ -47,77 +47,77 @@
 		if (istype(I, /obj/item/stack/))
 			if (istype(I, /obj/item/stack/material/wood))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], smelting it.")
+				to_chat(H, "你将\the [I]放入\the [src],进行冶炼.")
 
 			else if (istype(I, /obj/item/stack/material/bamboo))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/weapon/branch))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/material/leaf))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/dung))
 				fuel += I.amount+1
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/ore/charcoal))
 				fuel += I.amount*2.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/ore/coal))
 				fuel += I.amount*3
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/material/woodplank))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/ore/iron))
 				iron += I.amount
-				to_chat(H, "You place \the [I] in \the [src].")
+				to_chat(H, "你将\the [I]放入\the [src].")
 
 			else
-				to_chat(H, "<span class = 'warning'>You can't smelt this.</span>")
+				to_chat(H, "<span class = 'warning'>你无法冶炼这个.</span>")
 				return
 
 			H.remove_from_mob(I)
 			I.loc = src
-			visible_message("<span class = 'notice'>[H] puts [I] in \the [name].</span>")
+			visible_message("<span class = 'notice'>[H]将[I]放入\the [name].</span>")
 			qdel(I)
 			return
 		else if (istype(I, /obj/item/weapon/material))
 			var/obj/item/weapon/material/MT = I
 			if (MT.get_material_name() == "wood")
 				fuel += 1
-				to_chat(H, "You break \the [MT] and put it into the [src], refueling it.")
+				to_chat(H, "你打碎\the [MT]并将其放入[src],为其添加燃料.")
 				qdel(I)
 			else if (MT.get_material_name() == "bronze")
-				to_chat(H, "You smelt \the [MT] into bronze ingots.")
+				to_chat(H, "你将\the [MT]冶炼成青铜锭.")
 				new/obj/item/stack/material/bronze(src.loc)
 				qdel(I)
 			else if (MT.get_material_name() == "copper")
-				to_chat(H, "You smelt \the [MT] into copper ingots.")
+				to_chat(H, "你将\the [MT]冶炼成铜锭.")
 				new/obj/item/stack/material/copper(src.loc)
 				qdel(I)
 			else if (MT.get_material_name() == "tin")
-				to_chat(H, "You smelt \the [MT] into tin ingots.")
+				to_chat(H, "你将\the [MT]冶炼成锡锭.")
 				new/obj/item/stack/material/tin(src.loc)
 				qdel(I)
 			else if (MT.get_material_name() == "iron")
-				to_chat(H, "You smelt \the [MT] into iron ingots.")
+				to_chat(H, "你将\the [MT]冶炼成铁锭.")
 				new/obj/item/stack/material/iron(src.loc)
 				qdel(I)
 			else if (MT.get_material_name() == "steel")
-				to_chat(H, "You smelt \the [MT] into steel sheets.")
+				to_chat(H, "你将\the [MT]冶炼成钢板.")
 				new/obj/item/stack/material/steel(src.loc)
 				qdel(I)
 		else if (istype(I, /obj/item) && I.basematerials.len)
-			to_chat(H, "You put \the [I] into \the [src] to recycle it.")
+			to_chat(H, "你将\the [I]放入\the [src]进行回收.")
 			if (I.basematerials[1] == "tin")
 				new/obj/item/stack/material/tin(src.loc)
 			qdel(I)
@@ -129,17 +129,17 @@
 
 /obj/structure/furnace/attack_hand(var/mob/living/human/H)
 	if (!on && fuel > 1)
-		visible_message("<span class = 'notice'>[H] turns the [name] on.</span>")
+		visible_message("<span class = 'notice'>[H]打开了[name].</span>")
 		on = TRUE
 		fuel -=2
 		update_icon()
 		spawn (250)
 			on = FALSE
 			update_icon()
-			visible_message("<span class = 'notice'>The [name] finishes smelting.</span>")
+			visible_message("<span class = 'notice'>[name]完成了冶炼.</span>")
 			process()
 	else
-		to_chat(H, "<span class = 'warning'>The [name] doesn't have enough fuel! Fill it with wood or coal.</span>")
+		to_chat(H, "<span class = 'warning'>[name]没有足够的燃料!请用木头或煤炭填充.</span>")
 
 
 /obj/structure/furnace/process()
@@ -160,8 +160,8 @@
 
 ////////ADVANCED METALLURGY STUFF/////////
 /obj/structure/furnace/blast_furnace
-	name = "blast furnace"
-	desc = "An industrial blast furnace, used to make advanced alloys."
+	name = "高炉"
+	desc = "一座工业高炉,用于制造高级合金."
 	icon = 'icons/obj/metallurgy.dmi'
 	icon_state = "blast_furnace"
 	base_state = "blast_furnace"
@@ -172,17 +172,17 @@
 	if (H.a_intent == I_HELP)
 		if (istype(I, /obj/item/weapon/wrench) || (istype(I, /obj/item/weapon/hammer)))
 			if (istype(I, /obj/item/weapon/wrench))
-				visible_message("<span class='warning'>[H] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[H]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面.</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+					visible_message("<span class='warning'>[H][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面.</span>")
 					anchored = !anchored
 					return
 			else if (istype(I, /obj/item/weapon/hammer))
-				visible_message("<span class='warning'>[H] starts to deconstruct \the [src].</span>")
+				visible_message("<span class='warning'>[H]开始拆除\the [src].</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] deconstructs \the [src].</span>")
+					visible_message("<span class='warning'>[H]拆除了\the [src].</span>")
 					empty()
 					qdel(src)
 					return
@@ -190,53 +190,53 @@
 		if (istype(I, /obj/item/stack/))
 			if (istype(I, /obj/item/stack/material/wood))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], smelting it.")
+				to_chat(H, "你将\the [I]放入\the [src],进行冶炼.")
 
 			else if (istype(I, /obj/item/stack/material/bamboo))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/weapon/branch))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/material/leaf))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/dung))
 				fuel += I.amount+1
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/ore/charcoal))
 				fuel += I.amount*2.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/ore/coal))
 				fuel += I.amount*3
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			else if (istype(I, /obj/item/stack/material/woodplank))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 
 			if (istype(I, /obj/item/stack/ore/iron))
 				iron += I.amount
-				to_chat(H, "You place \the [I] in \the [src].")
+				to_chat(H, "你将\the [I]放入\the [src].")
 			else
-				to_chat(H, "<span class = 'warning'>You can't smelt this.</span>")
+				to_chat(H, "<span class = 'warning'>你无法冶炼这个.</span>")
 				return
 
 			H.remove_from_mob(I)
 			I.loc = src
-			visible_message("<span class = 'notice'>[H] puts [I] in \the [name].</span>")
+			visible_message("<span class = 'notice'>[H]将[I]放入\the [name].</span>")
 			qdel(I)
 			return
 		else if (istype(I, /obj/item/weapon/material))
 			var/obj/item/weapon/material/MT = I
 			if (MT.get_material_name() == "wood")
 				fuel += 1
-				to_chat(H, "You break \the [MT] and put it into the [src], refueling it.")
+				to_chat(H, "你打碎\the [MT]并将其放入[src],为其添加燃料.")
 				qdel(I)
 	else
 		..()
@@ -250,21 +250,21 @@
 
 ////////ADVANCED METALLURGY STUFF/////////
 /obj/structure/furnace/kiln
-	name = "clay kiln"
-	desc = "A clay brick kiln, used for metallurgy."
+	name = "黏土窑"
+	desc = "一座黏土砖窑,用于冶金."
 	icon = 'icons/obj/metallurgy.dmi'
 	icon_state = "clay_kiln"
 	base_state = "clay_kiln"
 
 /obj/structure/furnace/kiln/stone
-	name = "stone kiln"
-	desc = "A stone kiln, used for metallurgy."
+	name = "石窑"
+	desc = "一座石窑,用于冶金."
 	icon_state = "stone_kiln"
 	base_state = "stone_kiln"
 
 /obj/structure/furnace/kiln/sandstone
-	name = "sandstone kiln"
-	desc = "A sandstone kiln, used for metallurgy."
+	name = "砂岩窑"
+	desc = "一座砂岩窑,用于冶金."
 	icon_state = "sandstone_kiln"
 	base_state = "sandstone_kiln"
 
@@ -274,17 +274,17 @@
 	if (H.a_intent == I_HELP)
 		if (istype(I, /obj/item/weapon/wrench) || (istype(I, /obj/item/weapon/hammer)))
 			if (istype(I, /obj/item/weapon/wrench))
-				visible_message("<span class='warning'>[H] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[H]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面.</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+					visible_message("<span class='warning'>[H][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面.</span>")
 					anchored = !anchored
 					return
 			else if (istype(I, /obj/item/weapon/hammer))
-				visible_message("<span class='warning'>[H] starts to deconstruct \the [src].</span>")
+				visible_message("<span class='warning'>[H]开始拆除\the [src].</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(H,50,src))
-					visible_message("<span class='warning'>[H] deconstructs \the [src].</span>")
+					visible_message("<span class='warning'>[H]拆除了\the [src].</span>")
 					empty()
 					qdel(src)
 					return
@@ -292,61 +292,61 @@
 		if (istype(I, /obj/item/stack/))
 			if (istype(I, /obj/item/stack/material/wood))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], smelting it.")
+				to_chat(H, "你将\the [I]放入\the [src],进行冶炼.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/material/bamboo))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/weapon/branch))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/material/leaf))
 				fuel += I.amount+0.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/dung))
 				fuel += I.amount+1
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/ore/charcoal))
 				fuel += I.amount*2.5
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/ore/coal))
 				fuel += I.amount*3
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 			else if (istype(I, /obj/item/stack/material/woodplank))
 				fuel += I.amount
-				to_chat(H, "You place \the [I] in \the [src], refueling it.")
+				to_chat(H, "你将\the [I]放入\the [src],为其添加燃料.")
 				qdel(I)
 				return
 
 			for (var/obj/item/weapon/clay/mold/MCC in contents)
-				to_chat(H, "<span class = 'warning'>\The [name] is full.</span>")
+				to_chat(H, "<span class = 'warning'>\The [name] 已满。</span>")
 				return
 
 		else if (istype(I, /obj/item/weapon/material))
 			var/obj/item/weapon/material/MT = I
 			if (MT.get_material_name() == "wood")
 				fuel += 1
-				to_chat(H, "You break \the [MT] and put it into the [src], refueling it.")
+				to_chat(H, "你打破 \the [MT] 并将其放入 [src],为其补充燃料。")
 				qdel(I)
 		if (istype(I, /obj/item/weapon/clay/mold))
 			var/obj/item/weapon/clay/mold/MC = I
 			if (MC.fired && MC.capacity == 0 && MC.max_capacity > 0 && MC.contents_materials.len)
 				H.remove_from_mob(I)
 				I.loc = src
-				visible_message("<span class = 'notice'>[H] puts [I] in \the [name].</span>")
+				visible_message("<span class = 'notice'>[H] 将 [I] 放入 \the [name]。</span>")
 				return
 
 /obj/structure/furnace/kiln/process()

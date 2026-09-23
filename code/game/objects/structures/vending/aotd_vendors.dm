@@ -1,7 +1,7 @@
 
 /obj/structure/vending/sales/menu
-	name = "menu"
-	desc = "Place your order here!"
+	name = "菜单"
+	desc = "在这里点餐!"
 	sound_type = 'sound/effects/deskbell.ogg'
 	icon_state = "menu"
 
@@ -70,8 +70,8 @@
 	)
 
 /obj/structure/vending/business_apparel
-	name = "equipment rack"
-	desc = "All the equipment you need for that special business meeting."
+	name = "装备架"
+	desc = "你参加那场特殊商务会议所需的所有装备."
 	icon_state = "apparel_german2"
 	products = list(
 		/obj/item/stack/medical/bruise_pack/gauze = 10,
@@ -91,8 +91,8 @@
 	)
 
 /obj/structure/vending/undercover_apparel
-	name = "undercover apparel"
-	desc = "All the equipment needed for undercover missions."
+	name = "便衣装备"
+	desc = "执行卧底任务所需的所有装备."
 	icon_state = "apparel_german2"
 	products = list(
 		/obj/item/clothing/suit/storage/jacket/charcoal_suit = 10,
@@ -119,12 +119,12 @@
 		if (user.civilization == "Sheriff Office")
 			..()
 		else
-			to_chat(user, "You do not have access to this.")
+			to_chat(user, "你无权使用这个.")
 			return
 
 /obj/structure/vending/sales/business_weapons
-	name = "weapon and ammo rack"
-	desc = "When you need to pack that extra punch."
+	name = "武器和弹药架"
+	desc = "当你需要打出额外一击时."
 	icon_state = "weapons_sof"
 	products = list(
 		/obj/item/weapon/gun/projectile/pistol/colthammerless = 5,
@@ -188,8 +188,8 @@
 		..()
 
 /obj/structure/vending/police_equipment
-	name = "police equipment"
-	desc = "All the equipment to keep your officers in top shape."
+	name = "警用装备"
+	desc = "让你的警员保持最佳状态的所有装备."
 	icon_state = "apparel_german2"
 	products = list(
 		/obj/item/stack/medical/bruise_pack/gauze = 15,
@@ -224,12 +224,12 @@
 		if (user.civilization == "Sheriff Office")
 			..()
 		else
-			to_chat(user, "You do not have access to this.")
+			to_chat(user, "你无权使用这个.")
 			return
 
 /obj/structure/vending/police_weapons
-	name = "lethal police weapons"
-	desc = "When the baton is not enough."
+	name = "致命警用武器"
+	desc = "当警棍不够用时."
 	icon_state = "weapons_sof"
 	products = list(
 	/obj/item/weapon/gun/projectile/shotgun/pump/remington870 = 10,
@@ -248,12 +248,12 @@
 		if (user.civilization == "Sheriff Office")
 			..()
 		else
-			to_chat(user, "You do not have access to this.")
+			to_chat(user, "你无权使用这个.")
 			return
 
 /obj/structure/vending/police_weapons/ltl
-	name = "less than lethal police weapons"
-	desc = "Baton +."
+	name = "非致命警用武器"
+	desc = "警棍+."
 	icon_state = "equipment_usa"
 	products = list(
 	/obj/item/weapon/gun/projectile/shotgun/pump/remington870 = 10,
@@ -278,5 +278,5 @@
 		if (user.civilization == "Sheriff Office")
 			..()
 		else
-			to_chat(user, "You do not have access to this.")
+			to_chat(user, "你无权使用这个.")
 			return

@@ -150,7 +150,7 @@ var/global/list/image/fluidtrack_cache=list()
 /obj/effect/decal/cleanable/blood/tracks/footprints
 	name = "wet footprints"
 	dryname = "dried footprints"
-	desc = "Whoops..."
+	desc = "哎呀..."
 	drydesc = "Whoops..."
 	coming_state = "human1"
 	going_state  = "human2"
@@ -159,11 +159,11 @@ var/global/list/image/fluidtrack_cache=list()
 /obj/effect/decal/cleanable/blood/tracks/wheels
 	name = "wet tracks"
 	dryname = "dried tracks"
-	desc = "Whoops..."
+	desc = "哎呀..."
 	drydesc = "Whoops..."
 	coming_state = "wheels"
 	going_state  = ""
-	desc = "They look like tracks left by wheels."
+	desc = "看起来像是车轮留下的痕迹."
 	gender = PLURAL
 	random_icon_states = null
 	amount = FALSE

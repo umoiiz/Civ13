@@ -124,7 +124,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a1_name]</b>: <font color='[cust_color]'>[a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a1_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a1_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -154,7 +154,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a2_name]</b>: <font color='[cust_color]'>[a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a2_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a2_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -184,7 +184,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a3_name]</b>: <font color='[cust_color]'>[a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a3_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a3_name]</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -214,7 +214,7 @@
 				cust_color = "white"
 			to_chat(world, "<big><b>[a4_name]</b>: <font color='[cust_color]'>[a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>[a4_name]</b>: Nobody</big>")
+			to_chat(world, "<big><b>[a4_name]</b>: 无人</big>")
 
 	switch (a1_control)
 		if ("Dutch Royal Army")
@@ -268,9 +268,9 @@
 	spawn(600) // 1 minute
 		points_check()
 		spawn(5)
-			to_chat(world, "<big><b>Current Points:</b></big>")
-			to_chat(world, "<big>Dutch: [dutch_points]</big>")
-			to_chat(world, "<big>Russian: [rus_points]</big>")
+			to_chat(world, "<big><b>当前分数:</b></big>")
+			to_chat(world, "<big>荷兰人: [dutch_points]</big>")
+			to_chat(world, "<big>俄罗斯人: [rus_points]</big>")
 
 /obj/map_metadata/operation_falcon/update_win_condition()
 	if (processes.ticker.playtime_elapsed > 3000)
@@ -396,8 +396,8 @@ var/global/list/fob_names_nato = list("Alpha", "Bravo", "Charlie", "Delta", "Ech
 var/global/list/fob_names_russian = list("Anna", "Boris", "Dmitri", "Yelena", "Ivan", "Konstantin", "Leonid", "Mikhail", "Nikolai")
 
 /obj/structure/fob_spawnpoint
-	name = "FOB"
-	desc = "A heavy garrison. Used to spawn in reinforcements close to the frontline."
+	name = "前进作战基地"
+	desc = "一个重型驻防点.用于在前线附近生成增援."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "fob"
 	anchored = TRUE
@@ -475,8 +475,8 @@ var/global/list/fob_names_russian = list("Anna", "Boris", "Dmitri", "Yelena", "I
 	return // Can only be blown up by explosives
 
 /obj/structure/supply_crate
-	name = "supply crate"
-	desc = "A supply crate used to make FOBs and other various structures. This crate belongs to nobody."
+	name = "补给箱"
+	desc = "用于建造前进作战基地和其他各种结构的补给箱.此补给箱不属于任何人."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "supply_crate"
 	anchored = FALSE
@@ -611,8 +611,8 @@ var/global/list/fob_names_russian = list("Anna", "Boris", "Dmitri", "Yelena", "I
 
 
 /obj/structure/milsim
-	name = "PARENT OBJECT"
-	desc = "DO NOT USE."
+	name = "父对象"
+	desc = "请勿使用."
 	icon = 'icons/obj/obj64x96.dmi'
 	anchored = TRUE
 	flammable = FALSE
@@ -643,8 +643,8 @@ var/global/list/fob_names_russian = list("Anna", "Boris", "Dmitri", "Yelena", "I
 	return // Can only be blown up by explosives
 
 /obj/structure/milsim/anti_air
-	name = "Anti-Air SAM site"
-	desc = "This is an Anti-Air Surface to Air Missile site for defence against aircraft."
+	name = "防空导弹阵地"
+	desc = "这是一个用于防御飞机的防空地对空导弹阵地."
 	icon_state = "namas_open"
 	health = 1000
 	bound_width = 64

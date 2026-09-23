@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/gorilla
 	name = "gorilla"
-	desc =  "The largest member of the great-apes, their fierce reputation misrepresents their gentle nature unless provoked."
+	desc =  "大型猿类中体型最大的成员, 它们凶猛的恶名掩盖了它们温和的本性, 除非被激怒."
 	icon = 'icons/mob/animals_32x64.dmi'
 	icon_state = "gorilla_crawling"
 	icon_living = "gorilla_crawling"
@@ -26,7 +26,7 @@
 
 /mob/living/simple_animal/hostile/gorilla/gigantopithecus
 	name = "giganthopithecus"
-	desc =  "The largest ape to have ever lived, powerfully stocked with muscle and inhuman intelligence."
+	desc =  "史上体型最大的猿类, 肌肉发达, 拥有非人的智慧."
 	icon_state = "gigantopithecus"
 	icon_living = "gigantopithecus"
 	icon_dead = "gigantopithecus_dead"
@@ -50,12 +50,12 @@
 
 /mob/living/simple_animal/hostile/gorilla/gigantopithecus/bigfoot
 	name = "bigfoot"
-	desc =  "A elusive creatures of myth, long believed to be surviving members of a dying race."
+	desc =  "神话中难以捉摸的生物, 长久以来被认为是某个濒危种族的幸存者."
 	behaviour = "scared"
 
 /mob/living/simple_animal/hostile/gorilla/gigantopithecus/yeti
 	name = "yeti"
-	desc =  "A elusive creatures of myth, you would be lucky to have never encountered its predatory appetite."
+	desc =  "神话中难以捉摸的生物, 若你从未遭遇过它的掠食胃口, 那算是你走运."
 	icon_state = "yeti"
 	icon_living = "yeti"
 	icon_dead = "yeti_dead"

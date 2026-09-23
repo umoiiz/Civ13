@@ -80,8 +80,8 @@
 	last_fire = world.time
 
 /obj/item/weapon/gun/projectile/automatic/madsen
-	name = "Madsen light machine gun"
-	desc = "The Madsen Machine Gun, is a light machine gun designed in Denmark in the 1896. Many countries ordered models of it in different calibers. This one is 7.62x54mmR, mosin rounds."
+	name = "麦德森轻机枪"
+	desc = "麦德森机枪,是一种1896年在丹麦设计的轻机枪.许多国家订购了不同口径的型号.这一款是7.62x54mmR,莫辛弹药."
 	icon_state = "madsen"
 	item_state = "madsen"
 	base_icon = "madsen"
@@ -96,8 +96,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/type99
-	name = "Type 99 light machinegun"
-	desc = "The Type 99 light machine Gun, is a Japanese light machine gun refitted to fit the new 7.7x58mm cartridge rather than the old 6.50x50mm rounds."
+	name = "九九式轻机枪"
+	desc = "九九式轻机枪,是一种日本轻机枪,改装以适配新的7.7x58mm弹药,而非旧的6.50x50mm弹药."
 	icon_state = "type99lmg"
 	item_state = "type99lmg"
 	base_icon = "type99lmg"
@@ -118,8 +118,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/automatic/type99/type97tank
-	name = "Type 97 tank machinegun"
-	desc = "The Type 97 tank machine Gun, is a Japanese machine gun based on the ZB26 designed specifically for tank use."
+	name = "九七式车载机枪"
+	desc = "九七式车载机枪,是一种基于ZB26设计的日本机枪,专为坦克使用而设计."
 	scope_mounts = list("type97_tank")
 	magazine_type = /obj/item/ammo_magazine/type99/type97
 	good_mags = list(/obj/item/ammo_magazine/type99/type97)
@@ -133,8 +133,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/automatic/type96
-	name = "Type 96 light machinegun"
-	desc = "The Type 96 light machine Gun, is a Japanese light machine gun chambered in 6.50x50mm rounds."
+	name = "九六式轻机枪"
+	desc = "九六式轻机枪,是一种使用6.50x50mm弹药的日本轻机枪."
 	icon_state = "type96lmg"
 	item_state = "type96lmg"
 	base_icon = "type96lmg"
@@ -158,7 +158,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/dp28
 	name = "DP-28"
-	desc = "The DP-28 light machinegun. This one is in 7.62x54mmR."
+	desc = "DP-28轻机枪.这一款使用7.62x54mmR."
 	icon_state = "dp"
 	item_state = "dp"
 	base_icon = "dp"
@@ -180,7 +180,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/dp28/dt28
 	name = "DT-28"
-	desc = "The DT-28 light machinegun. Designed to be places in vehicles. This one is in 7.62x54mmR."
+	desc = "DT-28轻机枪.设计用于放置在载具内.这一款使用7.62x54mmR."
 	icon_state = "dt"
 	item_state = "dt"
 	base_icon = "dt"
@@ -200,7 +200,7 @@
 		folded = FALSE
 		recoil *= 1.5
 		icon_state = "[base_icon]_folded"
-		to_chat(usr, "You extend the stock on \the [src].")
+		to_chat(usr, "你展开\the [src]的枪托.")
 		equiptimer = 15
 		set_stock()
 		update_icon()
@@ -208,7 +208,7 @@
 		recoil /= 1.5
 		folded = TRUE
 		icon_state = "[base_icon]"
-		to_chat(usr, "You collapse the stock on \the [src].")
+		to_chat(usr, "你折叠\the [src]的枪托.")
 		equiptimer = 7
 		set_stock()
 		update_icon()
@@ -221,7 +221,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/dp28/dt28/dtm28
 	name = "DTM-28"
-	desc = "The DTM-28 light machinegun. Designed to be places in vehicles. This one is in 7.62x54mmR."
+	desc = "DTM-28轻机枪.设计用于放置在载具内.这一款使用7.62x54mmR."
 	icon_state = "dtm"
 	base_icon = "dtm"
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_SCOPE
@@ -232,7 +232,7 @@
 		SP.attached(null,src,TRUE)
 /obj/item/weapon/gun/projectile/automatic/bar
 	name = "M1918A2 BAR"
-	desc = "The BAR, is a light machine gun (LMG) This one is chambered in .30-06 rounds."
+	desc = "BAR,是一种轻机枪(LMG).这一款使用.30-06弹药."
 	icon_state = "bar"
 	item_state = "bar"
 	base_icon = "bar"
@@ -250,8 +250,8 @@
 
 ///////////////////////////M1919A6//////////////////////
 /obj/item/weapon/gun/projectile/automatic/browning_lmg
-	name = "M1919A6 Browning LMG"
-	desc = "An American squad support machinegun. Uses 30-06 rounds. Very heavy to carry around."
+	name = "M1919A6 勃朗宁轻机枪"
+	desc = "一种美国班用支援机枪.使用30-06弹药.携带起来非常沉重."
 	icon_state = "browlmg"
 	item_state = "browlmg"
 	base_icon = "browlmg"
@@ -329,7 +329,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/manual/mg34
 	name = "MG34"
-	desc = "German light machinegun chambered in 7.92x57mm Mauser. An utterly devastating support weapon."
+	desc = "德国轻机枪,使用7.92x57mm毛瑟弹药.一种极具毁灭性的支援武器."
 	icon_state = "mg34"
 	item_state = "mg34"
 	base_icon = "mg34"
@@ -355,7 +355,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/manual/m249
 	name = "M249 SAW"
-	desc = "An American variant of the Belgian FN Minimi machinegun chambered in 5.56x45mm NATO rounds. Sucessor of the M60."
+	desc = "比利时FN Minimi机枪的美国变体,使用5.56x45mm北约弹药.M60的继任者."
 	icon_state = "m249"
 	item_state = "m249"
 	base_icon = "m249"
@@ -403,7 +403,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/manual/mg34/mg3
 	name = "MG3"
-	desc = "Modern German light machinegun chambered in 7.62x51mm. An utterly devastating support weapon."
+	desc = "现代德国轻机枪,使用7.62x51mm弹药.一种极具毁灭性的支援武器."
 	icon_state = "mg3"
 	base_icon = "mg3"
 	caliber = "a762x51_weak"
@@ -433,8 +433,8 @@
 		LS.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/automatic/manual/rpd
-	name = "RPD machine gun"
-	desc = "A soviet machinegun chambered in 7.62x39 rounds."
+	name = "RPD机枪"
+	desc = "一种苏联机枪,使用7.62x39弹药."
 	icon_state = "rpd"
 	item_state = "rpd"
 	base_icon = "rpd"
@@ -463,8 +463,8 @@
 
 ////////////////////////////Breda 30/////////////////////////////////////////
 /obj/item/weapon/gun/projectile/automatic/breda30
-	name = "Breda 30"
-	desc = "The Fucile Mitragliatore Breda modello 30 is a Italian light machinegun that entered service in 1930. The design of the gun is rather impractical and often makes for long reload times. Chambered in 6.5x52mm Carcano."
+	name = "布雷达30"
+	desc = "Fucile Mitragliatore Breda modello 30是一种意大利轻机枪,于1930年服役.该枪的设计相当不实用,常常导致装填时间过长.使用6.5x52mm卡尔卡诺弹药."
 	icon_state = "breda30"
 	item_state = "mg34"
 	base_icon = "breda30"
@@ -530,7 +530,7 @@
 ///////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/gun/projectile/automatic/m60
 	name = "M60"
-	desc = "An american machinegun chambered in 7.62x51mm NATO rounds. Heavy and handles like a pig."
+	desc = "一种美国机枪,使用7.62x51mm北约弹药.沉重且操控笨拙."
 	icon_state = "m60"
 	item_state = "m60"
 	base_icon = "m60"
@@ -553,8 +553,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/pkm
-	name = "PKM machine gun"
-	desc = "A soviet machinegun chambered in 7.62x54mmR rounds."
+	name = "PKM机枪"
+	desc = "一种苏联机枪,使用7.62x54mmR弹药."
 	icon_state = "pkmp"
 	item_state = "pkmp"
 	base_icon = "pkmp"
@@ -590,8 +590,8 @@
 		icon_state = "[base_icon]"
 
 /obj/item/weapon/gun/projectile/automatic/pkm/pkp
-	name = "PKP machine gun"
-	desc = "A modernized soviet PKM machinegun chambered in 7.62x54mmR rounds."
+	name = "PKP机枪"
+	desc = "一种现代化的苏联PKM机枪,使用7.62x54mmR弹药."
 	icon_state = "pkp"
 	base_icon = "pkp"
 	recoil = 25
@@ -617,8 +617,8 @@
 
 
 /obj/item/weapon/gun/projectile/automatic/rpk74
-	name = "RPK-74 machine gun"
-	desc = "A soviet machinegun chambered in 5.45x39 rounds."
+	name = "RPK-74机枪"
+	desc = "一种苏联机枪,使用5.45x39弹药."
 	icon_state = "rpk74"
 	item_state = "rpk74"
 	base_icon = "rpk74"
@@ -644,8 +644,8 @@
 	scope_mounts = list ("dovetail")
 
 /obj/item/weapon/gun/projectile/automatic/rpk74/rpk16
-	name = "RPK-16 machine gun"
-	desc = "A modernized russian RPK-74 machinegun chambered in 5.45x39 rounds."
+	name = "RPK-16机枪"
+	desc = "一种现代化的俄罗斯RPK-74机枪,使用5.45x39弹药."
 	icon_state = "rpk16"
 	base_icon = "rpk16"
 	attachment_slots = ATTACH_IRONSIGHTS|ATTACH_UNDER|ATTACH_SCOPE|ATTACH_BARREL
@@ -677,8 +677,8 @@
 	SL.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/automatic/rpk47
-	name = "RPK-47 machine gun"
-	desc = "A soviet machinegun chambered in 7.62x39 rounds."
+	name = "RPK-47机枪"
+	desc = "一种苏联机枪,使用7.62x39弹药."
 	icon_state = "rpk47"
 	item_state = "rpk47"
 	base_icon = "rpk47"
@@ -708,14 +708,14 @@
 	equiptimer = 18
 	load_delay = 19
 	weight = 4.7
-	name = "RPK-47M machine gun"
-	desc = "A modernized Soviet machinegun chambered in 7.62x39 rounds."
+	name = "RPK-47M机枪"
+	desc = "一种现代化的苏联机枪,使用7.62x39弹药."
 	recoil = 30
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/automatic/negev
-	name = "IWI Negev"
-	desc = "An israeli machinegun chambered in 5.56x45mm NATO rounds."
+	name = "IWI内格夫"
+	desc = "一种以色列机枪,使用5.56x45mm北约弹药."
 	icon_state = "negev"
 	item_state = "negev"
 	base_icon = "negev"
@@ -749,7 +749,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/nsv_utes
 	name = "NSV Utes"
-	desc = "A Soviet heavy machinegun, can also be as anti vehicle gun against some lightly armored vehicles. Uses 12.7x108mm rounds."
+	desc = "一种苏联重机枪,也可用作反载具枪械对付一些轻装甲载具.使用12.7x108mm弹药."
 	fire_sound = 'sound/weapons/guns/fire/ptrd.ogg'
 	icon_state = "nsvth"
 	item_state = "nsvth"
@@ -785,7 +785,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/mg13
 	name = "Maschinengewehr 13"
-	desc = "German light machine chambered in 7.92x57mm rounds."
+	desc = "德国轻机枪,使用7.92x57mm弹药."
 	icon_state = "mg13"
 	item_state = "mg13"
 	base_icon = "mg13"
@@ -821,7 +821,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/manual/c6
 	name = "C6 GPMG"
-	desc = "A Canadian License Produced FN MAG called the C6 GPMG, the main squad support weapon of the CAF."
+	desc = "加拿大授权生产的FN MAG,称为C6 GPMG,是加拿大武装部队的主要班用支援武器."
 	icon_state = "c6"
 	item_state = "c6"
 	base_icon = "c6"

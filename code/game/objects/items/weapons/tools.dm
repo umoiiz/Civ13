@@ -15,8 +15,8 @@
  * Wrench
  */
 /obj/item/weapon/wrench
-	name = "wrench"
-	desc = "A wrench with many common uses, usually held."
+	name = "扳手"
+	desc = "一把用途广泛的扳手,通常手持使用."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "wrench"
 	flags = CONDUCT
@@ -28,8 +28,8 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
 
 /obj/item/weapon/metalfile
-	name = "metalfile"
-	desc = "A metal file, maybe you could file through metal with this."
+	name = "金属锉刀"
+	desc = "一把金属锉刀,也许你可以用它锉穿金属."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "metalfile"
 	flags = CONDUCT
@@ -44,8 +44,8 @@
  * Fire Extinguisher
  */
 /obj/item/weapon/reagent_containers/glass/fire_extinguisher
-	name = "fire extinguisher"
-	desc = "An extinguisher for putting out fires, with a refill port for water."
+	name = "灭火器"
+	desc = "用于扑灭火灾的灭火器,带有注水口."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fire_extinguisher"
 	flags = CONDUCT
@@ -126,8 +126,8 @@
 		return
 
 /obj/item/weapon/reagent_containers/glass/fire_extinguisher/ww2
-	name = "fire extinguisher"
-	desc = "A fire extinguisher used to put out fires. You can fill it with water."
+	name = "灭火器"
+	desc = "用于扑灭火灾的灭火器.你可以往里面装水."
 	icon_state = "german_fire_extinguisher"
 	New()
 		..()
@@ -137,8 +137,8 @@
  * Screwdriver
  */
 /obj/item/weapon/screwdriver
-	name = "screwdriver"
-	desc = "Your archetypal flathead screwdriver, with a nice and heavy polymer handle."
+	name = "螺丝刀"
+	desc = "经典的一字螺丝刀,配有手感良好的重型聚合物手柄."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "screwdriver"
 	item_state = "screwdriver"
@@ -156,8 +156,8 @@
  * Hammers
  */
 /obj/item/weapon/hammer
-	name = "hammer"
-	desc = "Hit stuff apart with this."
+	name = "锤子"
+	desc = "用它把东西敲开."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "hammer"
 	item_state = "hammer"
@@ -173,8 +173,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/hammer/tribalhammer
-	name = "simple wooden mallet"
-	desc = "Hit stuff apart with this."
+	name = "简易木槌"
+	desc = "用它把东西敲开."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalhammer"
 	item_state = "tribalhammer"
@@ -190,8 +190,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/hammer/modern
-	name = "clawhammer"
-	desc = "For hitting things or pulling them apart."
+	name = "羊角锤"
+	desc = "用于敲打或撬开物体."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "hammer_modern"
 	item_state = "hammer_modern"
@@ -207,8 +207,8 @@
 	flammable = FALSE
 
 /obj/item/weapon/globe
-	name = "globe"
-	desc = "flat earthers hate this thing."
+	name = "地球仪"
+	desc = "地平说信徒讨厌这东西."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "globe"
 	item_state = "globe"
@@ -229,8 +229,8 @@
  */
 
 /obj/item/weapon/wirecutters
-	name = "wirecutters"
-	desc = "This cuts wires."
+	name = "剪线钳"
+	desc = "用来剪断电线."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "cutters-y"
 	flags = CONDUCT
@@ -258,8 +258,8 @@
  */
 
 /obj/item/weapon/crowbar
-	name = "crowbar"
-	desc = "Used to remove floors and to pry open doors."
+	name = "撬棍"
+	desc = "用于拆除地板和撬开门."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "crowbar"
 	flags = CONDUCT
@@ -276,8 +276,8 @@
  */
 
 /obj/item/weapon/saw
-	name = "saw"
-	desc = "Used for sawing logs into usable planks."
+	name = "锯子"
+	desc = "用于将原木锯成可用的木板."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "saw"
 	item_state = "saw"
@@ -292,8 +292,8 @@
 	attack_verb = list("cut", "slashed", "sawed")
 
 /obj/item/weapon/horn
-	name = "blowing horn"
-	desc = "Good for long range communication."
+	name = "号角"
+	desc = "适合远距离通讯."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalhorn"
 	flags = CONDUCT
@@ -318,8 +318,8 @@
 		return
 
 /obj/item/weapon/whistle
-	name = "whistle"
-	desc = "Good for ordering the troops to go over the top."
+	name = "哨子"
+	desc = "适合命令部队冲锋."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "whistle"
 	attack_verb = list("attacked", "whacked")
@@ -343,21 +343,21 @@
 		return
 
 /obj/item/weapon/whistle/death
-	name = "death whistle"
-	desc = "Good for terrifying enemy soldiers."
+	name = "死亡哨"
+	desc = "适合恐吓敌方士兵."
 	icon_state = "death_whistle"
 	whistle_sound = 'sound/effects/death-whistle.ogg'
 
 /obj/item/weapon/whistle/tin
-	name = "whistle"
-	desc = "A cheap whistle made from tin."
+	name = "哨子"
+	desc = "一个廉价的锡制哨子."
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "whistle"
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/siegeladder
-	name = "siege ladder"
-	desc = "A wood ladder, used to climb over walls."
+	name = "攻城梯"
+	desc = "一把木梯,用于翻越城墙."
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "siege_ladder"
 	var/depicon = "siege_ladder_dep"
@@ -389,16 +389,16 @@
 		..()
 
 /obj/item/weapon/siegeladder/metal
-	name = "ladder"
-	desc = "A metal ladder, good for climbing things."
+	name = "梯子"
+	desc = "一把金属梯子,适合攀爬."
 	icon_state = "metal_ladder"
 	depicon = "metal_ladder_dep"
 	flags = CONDUCT
 	flammable = FALSE
 
 /obj/item/weapon/siegeladder/grapplinghook
-	name = "grappling hook"
-	desc = "A grappling hook attached to a rope, good for climbing things."
+	name = "抓钩"
+	desc = "系有绳索的抓钩,适合攀爬."
 	icon_state = "grapplehook"
 	depicon = "grapplehook_dep"
 	w_class = ITEM_SIZE_NORMAL
@@ -406,8 +406,8 @@
 	slot_flags = SLOT_SHOULDER | SLOT_ID
 
 /obj/item/weapon/fishing
-	name = "fishing pole"
-	desc = "A classic fishing pole."
+	name = "鱼竿"
+	desc = "经典的鱼竿."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fishing"
 	slot_flags = SLOT_BACK
@@ -420,8 +420,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/fishing/net
-	name = "fishing net"
-	desc = "A classic fishing net, made of fiberous rope."
+	name = "渔网"
+	desc = "经典的渔网,由纤维绳索制成."
 	w_class = ITEM_SIZE_SMALL
 	icon_state = "fishing_net"
 	force = WEAPON_FORCE_WEAK
@@ -431,8 +431,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/fishing/modern
-	name = "fishing rod"
-	desc = "A modern fishing pole."
+	name = "钓鱼竿"
+	desc = "现代的鱼竿."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fishing_modern"
 	slot_flags = SLOT_BACK
@@ -444,8 +444,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/goldsceptre
-	name = "gold sceptre"
-	desc = "A sceptre made of gold."
+	name = "金色权杖"
+	desc = "一把黄金制成的权杖."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "goldsceptre"
 	flags = CONDUCT
@@ -459,8 +459,8 @@
  * Wrench
  */
 /obj/item/weapon/shears
-	name = "shears"
-	desc = "A tool used to collect wool from sheep."
+	name = "剪刀"
+	desc = "用于从羊身上采集羊毛的工具."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "shears"
 	flags = CONDUCT
@@ -474,8 +474,8 @@
 
 //////////////////////////////////////////////////////WELDER///////////////////////////////////////////////////////////
 /obj/item/weapon/weldingtool
-	name = "welding tool"
-	desc = "used to weld metals together"
+	name = "焊接工具"
+	desc = "用于将金属焊接在一起"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "ww2_welder_off"
 	var/on_state = "ww2_welder_on"
@@ -658,8 +658,8 @@ Shinobi's unfinished welder stuff - siro*/
 
 
 /obj/item/weapon/gongmallet
-	name = "gong mallet"
-	desc = "A wooden mallet used to hit a gong."
+	name = "锣槌"
+	desc = "用于敲锣的木槌."
 	icon_state = "gongmallet"
 	item_state = "gongmallet"
 	flags = CONDUCT
@@ -674,8 +674,8 @@ Shinobi's unfinished welder stuff - siro*/
 	flammable = TRUE
 
 /obj/item/weapon/compass
-	name = "compass"
-	desc = "An instrument containing a magnetized pointer which shows the direction of magnetic north and bearings from it."
+	name = "指南针"
+	desc = "一种装有磁化指针的仪器,可显示磁北方向及其方位角."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "compass"
 	slot_flags = SLOT_BELT | SLOT_POCKET | SLOT_ID
@@ -715,11 +715,11 @@ Shinobi's unfinished welder stuff - siro*/
 			pos_message = "You're in the <b>[pos_dir_y][pos_dir_x]</b> of the area."
 		else
 			pos_message = "You're in the <b>CENTER</b> of the area."
-		to_chat(usr, "You estimate your position to be <b>[pos_x];[pos_y]</b>. [pos_message]")
+		to_chat(usr, "你估计自己的位置在<b>[pos_x];[pos_y]</b>. [pos_message]")
 
 /obj/item/weapon/compass/modern
-	name = "navigation tablet"
-	desc = "A tablet programmed specifically to navigate people through rough terrain and to let them know where they are."
+	name = "导航平板"
+	desc = "一款专为在崎岖地形中导航并让人知晓自身位置而编程的平板电脑."
 	icon_state = "compass_modern"
 	slot_flags = SLOT_BELT
 	time = 3
@@ -753,8 +753,8 @@ Shinobi's unfinished welder stuff - siro*/
 		return
 
 /obj/item/weapon/compass/modern/tacmap
-	name = "tactical map"
-	desc = "A tablet programmed specifically to navigate combatants through rough terrain and to let them know where they are."
+	name = "战术地图"
+	desc = "一款专为在崎岖地形中引导战斗人员并让其知晓自身位置而编程的平板电脑."
 	var/image/img
 
 /obj/item/weapon/compass/modern/tacmap/New()
@@ -770,8 +770,8 @@ Shinobi's unfinished welder stuff - siro*/
 
 //////////////////////////////////////////LOCKPICK/////////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/lockpick
-	name = "lockpick"
-	desc = "A lockpick. Used to unlock chests and doors. It does require some skill though."
+	name = "开锁器"
+	desc = "一把开锁器.用于解锁箱子和门.不过需要一些技巧."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "lockpick"
 	flags = CONDUCT

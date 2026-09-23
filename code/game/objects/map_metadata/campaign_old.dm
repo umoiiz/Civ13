@@ -130,7 +130,7 @@
 		for (var/mob/living/simple_animal/civilian/CVL in T)
 			if(CVL.stat != DEAD)
 				if(istype(CVL, /mob/living/simple_animal/civilian/greenistani_ambassador) && CVL.stat != DEAD)
-					to_chat(world, "<font size=4><font color='blue'><b>Blugoslavia</b></font> has sucessfully evacuated the Greenistani Ambassador!</font></font>")
+					to_chat(world, "<font size=4><font color='blue'><b>蓝斯拉夫</b></font> 已成功撤离绿斯坦大使!</font></font>")
 				else
 					civilians_evacuated["Blugoslavia"]++
 				qdel(CVL)
@@ -138,7 +138,7 @@
 		for (var/mob/living/simple_animal/civilian/CVL in T)
 			if(CVL.stat != DEAD)
 				if(istype(CVL, /mob/living/simple_animal/civilian/greenistani_ambassador))
-					to_chat(world, "<font size=4><font color='red'><b>Redmenia</b></font> has sucessfully evacuated the Greenistani Ambassador!</font></font>")
+					to_chat(world, "<font size=4><font color='red'><b>红美尼亚</b></font> 已成功撤离绿斯坦大使!</font></font>")
 				else
 					civilians_evacuated["Redmenia"]++
 				qdel(CVL)	
@@ -272,11 +272,11 @@
 
 /obj/item/weapon/key/redfaction
 	code = 668643
-	name = "Redmenian Key"
+	name = "红美尼亚钥匙"
 
 /obj/item/weapon/key/bluefaction
 	code = 932145
-	name = "Blugoslavian Key"
+	name = "蓝斯拉夫钥匙"
 
 
 
@@ -345,7 +345,7 @@ var/no_loop_ca = FALSE
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>Redmenians</b> have retaken control over the objective!</font>")
+			to_chat(world, "<font size = 3><b>红美尼亚人</b> 已重新夺回目标控制权!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -406,7 +406,7 @@ var/no_loop_ca = FALSE
 	for (var/mob/M in player_list)
 		if (!new_player_mob_list.Find(M))
 			M.client << uploaded_sound
-			to_chat(M, "<font size=4>You hear the blood-curdling sound of rocket artillery being fired!</font>")
+			to_chat(M, "<font size=4>你听到火箭炮发射时令人毛骨悚然的声音!</font>")
 	spawn(40)
 		for (var/i = 1, i <= strikenum, i++)
 			spawn(i*4)
@@ -428,36 +428,36 @@ var/no_loop_ca = FALSE
 	for(var/obj/I in get_area_all_atoms(/area/caribbean/captured_equipment/faction1))
 		if(locate(I) in capturable_equipment)
 			captured_equipment_red += I.name
-	to_chat(world, "<big><b><font color='red'>Captured equipment Redmenia:</font></b></big>")
+	to_chat(world, "<big><b><font color='red'>缴获装备 红美尼亚:</font></b></big>")
 	if(captured_equipment_red.len)
 		to_chat(world, "<big>[jointext(captured_equipment_red,"\n")]</big>")
 	else
-		to_chat(world, "<big>No equipment was captured.</big>")
+		to_chat(world, "<big>没有缴获任何装备.</big>")
 
 /obj/map_metadata/campaign/proc/get_faction2_captured_equipment()
 	for(var/obj/I in get_area_all_atoms(/area/caribbean/captured_equipment/faction2))
 		if(locate(I) in capturable_equipment)
 			captured_equipment_blue += I.name
-	to_chat(world, "<big><b><font color='blue'>Captured equipment Blugoslavia:</font></b></big>")
+	to_chat(world, "<big><b><font color='blue'>缴获装备 蓝斯拉夫:</font></b></big>")
 	if(captured_equipment_blue.len)
 		to_chat(world, "<big>[jointext(captured_equipment_blue,"\n")]</big>")
 	else
-		to_chat(world, "<big>No equipment was captured.</big>")
+		to_chat(world, "<big>没有缴获任何装备.</big>")
 
 
 /obj/map_metadata/campaign/proc/after_round_checks()
-	to_chat(world, "Civilians Rescued:</b> <font color='blue'>Blugoslavia</font> [civilians_evacuated["Blugoslavia"]], <font color='red'>Redmenia</font> [civilians_evacuated["Redmenia"]]</big>")
-	to_chat(world, "<big><b>Civilians Killed:</b> <font color='blue'>Blugoslavia</font> [civilians_killed["Blugoslavia"]], <font color='red'>Redmenia</font> [civilians_killed["Redmenia"]], <font color='grey'>Unknown</font> [civilians_killed["Unknown"]]</big>")
+	to_chat(world, "平民获救:</b> <font color='blue'>蓝斯拉夫</font> [civilians_evacuated["Blugoslavia"]], <font color='red'>红美尼亚</font> [civilians_evacuated["Redmenia"]]</big>")
+	to_chat(world, "<big><b>平民死亡:</b> <font color='blue'>蓝斯拉夫</font> [civilians_killed["Blugoslavia"]], <font color='red'>红美尼亚</font> [civilians_killed["Redmenia"]], <font color='grey'>未知</font> [civilians_killed["Unknown"]]</big>")
 	spawn(5 SECONDS)
-		to_chat(world, "<big><b>AP mines placed: [ap_mines_placed]</b></big>")
-		to_chat(world, "<big><b>AT mines placed: [at_mines_placed]</b></big>")
+		to_chat(world, "<big><b>已放置反步兵地雷: [ap_mines_placed]</b></big>")
+		to_chat(world, "<big><b>已放置反坦克地雷: [at_mines_placed]</b></big>")
 		get_faction1_captured_equipment()
 		get_faction2_captured_equipment()
 
 ///////////Map Specific Objects///////////
 /obj/structure/altar/heads
-	name = "Mr. Taislenko's Collection"
-	desc = "To be filled with his requests."
+	name = "泰斯连科先生的收藏"
+	desc = "将根据他的要求填充."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "wood_chest"
 	flammable = FALSE
@@ -478,10 +478,10 @@ var/no_loop_ca = FALSE
 		switch(head_nationality)
 			if("Blugoslavia")
 				AW.scores["Blugoslavia"] += 1
-				to_chat(user, "Total heads inside: <b>[AW.scores["Blugoslavia"]]</b>")
+				to_chat(user, "内部总人头数: <b>[AW.scores["Blugoslavia"]]</b>")
 			if("Redmenia")
 				AW.scores["Redmenia"] += 1
-				to_chat(user, "Total heads inside: <b>[AW.scores["Redmenia"]]</b>")
+				to_chat(user, "内部总人头数: <b>[AW.scores["Redmenia"]]</b>")
 		return
 
 /obj/structure/altar/heads/examine(mob/user, distance)
@@ -491,21 +491,21 @@ var/no_loop_ca = FALSE
 		var/obj/map_metadata/campaign/AW = map
 		switch(H.faction_text)
 			if(BLUEFACTION)
-				to_chat(user, "Total heads inside: <b>[AW.scores["Blugoslavia"]]</b>")
+				to_chat(user, "内部总人头数: <b>[AW.scores["Blugoslavia"]]</b>")
 			if(REDFACTION)
-				to_chat(user, "Total heads inside: <b>[AW.scores["Redmenia"]]</b>")
+				to_chat(user, "内部总人头数: <b>[AW.scores["Redmenia"]]</b>")
 
 /obj/item/weapon/telephone/mobile/campaign
-	name = "telephone"
+	name = "电话"
 	icon_state = "telephone"
 	anchored = TRUE
 	update_icon()
 		icon_state = "telephone"
 
 /obj/item/weapon/telephone/mobile/campaign/blue
-	name = "Blue Command telephone"
+	name = "蓝色指挥部电话"
 	phonenumber = 9999
-	desc = "Used to communicate with the opposite faction. Number is 9999."
+	desc = "用于与对方阵营通讯. 号码是 9999."
 	icon_state = "telephone_blue"
 	update_icon()
 		icon_state = "telephone_blue"
@@ -516,9 +516,9 @@ var/no_loop_ca = FALSE
 		contacts += list(list("Red Command",1111))
 
 /obj/item/weapon/telephone/mobile/campaign/red
-	name = "Red Command telephone"
+	name = "红色指挥部电话"
 	phonenumber = 1111
-	desc = "Used to communicate with the opposite faction. Number is 1111."
+	desc = "用于与对方阵营通讯. 号码是 1111."
 	New()
 		..()
 		phone_numbers += phonenumber
@@ -539,27 +539,27 @@ var/no_loop_ca = FALSE
 		ring_phone(tgtnum,phonenumber, src, user)
 		spawn(200)
 			if (!connected || !origincall)
-				to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Nobody picked up the phone at [tgtnum].")
+				to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>在 [tgtnum] 无人接听电话.")
 				return
 	else if (connected)
 		connected = FALSE
 		if (origincall)
-			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You hang up the phone.")
+			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你挂断了电话.")
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话.")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话.")
 			origincall.connected = FALSE
 			origincall.origincall = null
 			origincall = null
 	else if (ringing && !ringingnum)
-		to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You hang up the phone.")
+		to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你挂断了电话.")
 		ringing = FALSE
 		if (origincall)
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话.")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话.")
 			origincall.origincall = null
 			origincall.connected = FALSE
 			origincall = null
@@ -570,8 +570,8 @@ var/no_loop_ca = FALSE
 			origincall.connected = phonenumber
 			origincall.ringing = FALSE
 			origincall.origincall = src
-			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You pick up the phone.")
+			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你接起了电话.")
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone picks up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人接起了电话.")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone picks up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人接起了电话.")

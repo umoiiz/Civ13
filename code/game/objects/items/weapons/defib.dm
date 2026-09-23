@@ -3,8 +3,8 @@
 
 //backpack item
 /obj/item/weapon/defibrillator
-	name = "defibrillator"
-	desc = "A device that delivers powerful shocks via detachable paddles to resuscitate incapacitated patients."
+	name = "除颤器"
+	desc = "一种通过可拆卸电极板释放强力电击来复苏失去意识患者的设备."
 	icon = 'icons/obj/defibrillator.dmi'
 	icon_state = "defibunit"
 	item_state = "defibunit"
@@ -83,13 +83,13 @@
 		reattach_paddles(user)
 	else if(istype(W, /obj/item/weapon/cell))
 		if(bcell)
-			to_chat(user, "<span class='notice'>\the [src] already has a cell.</span>")
+			to_chat(user, "<span class='notice'>\the [src]已经装有电池.</span>")
 		else
 			if(!user.unEquip(W))
 				return
 			W.forceMove(src)
 			bcell = W
-			to_chat(user, "<span class='notice'>You install a cell in \the [src].</span>")
+			to_chat(user, "<span class='notice'>你在\the [src]中装入了一块电池.</span>")
 			update_icon()
 
 	else if(isscrewdriver(W))
@@ -97,7 +97,7 @@
 			bcell.update_icon()
 			bcell.forceMove(get_turf(src.loc))
 			bcell = null
-			to_chat(user, "<span class='notice'>You remove the cell from \the [src].</span>")
+			to_chat(user, "<span class='notice'>你从\the [src]中取出了电池.</span>")
 			update_icon()
 	else
 		return ..()
@@ -110,7 +110,7 @@
 
 	var/mob/living/human/user = usr
 	if(!paddles)
-		to_chat(user, "<span class='warning'>The paddles are missing!</span>")
+		to_chat(user, "<span class='warning'>电极板不见了!</span>")
 		return
 
 	if(paddles.loc != src)
@@ -118,10 +118,10 @@
 		return
 
 	if(!slot_check())
-		to_chat(user, "<span class='warning'>You need to equip [src] before taking out [paddles].</span>")
+		to_chat(user, "<span class='warning'>你需要先装备[src], 才能取出[paddles].</span>")
 	else
 		if(!usr.put_in_hands(paddles)) //Detach the paddles into the user's hands
-			to_chat(user, "<span class='warning'>You need a free hand to hold the paddles!</span>")
+			to_chat(user, "<span class='warning'>你需要一只空手来握住电极板!</span>")
 		update_icon() //success
 
 //checks that the base unit is in the correct slot to be used
@@ -147,7 +147,7 @@
 	if(ismob(paddles.loc))
 		var/mob/M = paddles.loc
 		if(M.drop_from_inventory(paddles))
-			to_chat(user, "<span class='notice'>\The [paddles] snap back into the main unit.</span>")
+			to_chat(user, "<span class='notice'>\The [paddles]咔哒一声装回了主机.</span>")
 	paddles.forceMove(src)
 	update_icon()
 
@@ -156,8 +156,8 @@
 */
 
 /obj/item/weapon/defibrillator/compact
-	name = "compact defibrillator"
-	desc = "A belt-equipped defibrillator that can be rapidly deployed."
+	name = "紧凑型除颤器"
+	desc = "一种可挂在腰带上的除颤器, 能够快速部署."
 	icon_state = "defibcompact"
 	item_state = "defibcompact"
 	w_class = ITEM_SIZE_NORMAL
@@ -167,8 +167,8 @@
 	bcell = /obj/item/weapon/cell/standard
 
 /obj/item/weapon/defibrillator/compact/combat
-	name = "combat defibrillator"
-	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."
+	name = "战斗除颤器"
+	desc = "一种可挂在腰带上的血红色除颤器, 能够快速部署. 没有常规除颤器的限制或安全措施, 可以隔着太空服进行复苏."
 	paddles = /obj/item/weapon/shockpaddles/linked/combat
 
 /obj/item/weapon/defibrillator/compact/combat/loaded
@@ -183,8 +183,8 @@
 //paddles
 
 /obj/item/weapon/shockpaddles
-	name = "defibrillator paddles"
-	desc = "A pair of plastic-gripped paddles with flat metal surfaces that are used to deliver powerful electric shocks."
+	name = "除颤器电极板"
+	desc = "一对带塑料握柄、表面为扁平金属的电极板, 用于释放强力电击."
 	icon = 'icons/obj/defibrillator.dmi'
 	icon_state = "defibpaddles"
 	item_state = "defibpaddles"
@@ -238,13 +238,13 @@
 	if(busy)
 		return FALSE
 	if(!check_charge(chargecost))
-		to_chat(user, "<span class='warning'>\The [src] doesn't have enough charge left to do that.</span>")
+		to_chat(user, "<span class='warning'>\The [src]剩余电量不足以这么做.</span>")
 		return FALSE
 	if(!wielded)
-		to_chat(user, "<span class='warning'>You need to wield the paddles with both hands before you can use them on someone!</span>")
+		to_chat(user, "<span class='warning'>你需要双手持握电极板, 才能对他人使用!</span>")
 		return FALSE
 	if(cooldown)
-		to_chat(user, "<span class='warning'>\The [src] are re-energizing!</span>")
+		to_chat(user, "<span class='warning'>\The [src]正在重新充能!</span>")
 		return FALSE
 	return TRUE
 
@@ -352,10 +352,10 @@
 
 
 	//beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
-	user.visible_message("<span class='warning'>\The [user] begins to place [src] on [H]'s chest.</span>", "<span class='warning'>You begin to place [src] on [H]'s chest...</span>")
+	user.visible_message("<span class='warning'>\The [user]开始将[src]放到[H]的胸口.</span>", "<span class='warning'>你开始将[src]放到[H]的胸口...</span>")
 	if(!do_after(user, 30, H))
 		return
-	user.visible_message("<span class='notice'>\The [user] places [src] on [H]'s chest.</span>", "<span class='warning'>You place [src] on [H]'s chest.</span>")
+	user.visible_message("<span class='notice'>\The [user]将[src]放到了[H]的胸口.</span>", "<span class='warning'>你将[src]放到了[H]的胸口.</span>")
 	playsound(get_turf(src), 'sound/machines/defib_charge.ogg', 50, 0)
 
 	var/error = can_defib(H)
@@ -377,7 +377,7 @@
 		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 
-	H.visible_message("<span class='warning'>\The [H]'s body convulses a bit.</span>")
+	H.visible_message("<span class='warning'>\The [H]的身体抽搐了一下.</span>")
 	playsound(get_turf(src), "bodyfall", 50, 1)
 	playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 50, 1, -1)
 	set_cooldown(cooldowntime)
@@ -407,19 +407,19 @@
 /obj/item/weapon/shockpaddles/proc/do_electrocute(mob/living/human/H, mob/user, var/target_zone)
 	var/obj/item/organ/external/affecting = H.get_organ(target_zone)
 	if(!affecting)
-		to_chat(user, "<span class='warning'>They are missing that body part!</span>")
+		to_chat(user, "<span class='warning'>他们缺少那个身体部位!</span>")
 		return
 
 	//no need to spend time carefully placing the paddles, we're just trying to shock them
-	user.visible_message("<span class='danger'>\The [user] slaps [src] onto [H]'s [affecting.name].</span>", "<span class='danger'>You overcharge [src] and slap them onto [H]'s [affecting.name].</span>")
+	user.visible_message("<span class='danger'>\The [user] 将 [src] 拍在 [H] 的 [affecting.name] 上.</span>", "<span class='danger'>你将 [src] 过量充能并拍在 [H] 的 [affecting.name] 上.</span>")
 
 	//Just stop at awkwardly slapping electrodes on people if the safety is enabled
 	if(safety)
-		to_chat(user, "<span class='warning'>You can't do that while the safety is enabled.</span>")
+		to_chat(user, "<span class='warning'>保险开启时你无法这样做.</span>")
 		return
 
 	playsound(get_turf(src), 'sound/machines/defib_charge.ogg', 50, 0)
-	audible_message("<span class='warning'>\The [src] lets out a steadily rising hum...</span>")
+	audible_message("<span class='warning'>\The [src] 发出逐渐升高的嗡鸣声...</span>")
 
 	if(!do_after(user, chargetime, H))
 		return
@@ -430,7 +430,7 @@
 		playsound(get_turf(src), 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 
-	user.visible_message("<span class='danger'><i>\The [user] shocks [H] with \the [src]!</i></span>", "<span class='warning'>You shock [H] with \the [src]!</span>")
+	user.visible_message("<span class='danger'><i>\The [user] 用 \the 电击 [H] [src]!</i></span>", "<span class='warning'>你用 \the 电击 [H] [src]!</span>")
 	playsound(get_turf(src), 'sound/machines/defib_zap.ogg', 100, 1, -1)
 	playsound(loc, 'sound/weapons/Egloves.ogg', 100, 1, -1)
 	set_cooldown(cooldowntime)
@@ -480,7 +480,7 @@
 	H.setBrainLoss(brain_damage)
 
 /obj/item/weapon/shockpaddles/proc/make_announcement(var/message, var/msg_class)
-	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")
+	audible_message("<b>\The [src]</b> [message]", "\The [src] 微微震动.")
 
 /*/obj/item/weapon/shockpaddles/emag_act(mob/user)
 	if(safety)
@@ -540,7 +540,7 @@
 	return (base_unit.bcell && base_unit.bcell.checked_use(charge_amt))
 
 /obj/item/weapon/shockpaddles/linked/make_announcement(var/message, var/msg_class)
-	base_unit.audible_message("<b>\The [base_unit]</b> [message]", "\The [base_unit] vibrates slightly.")
+	base_unit.audible_message("<b>\The [base_unit]</b> [message]", "\The [base_unit] 微微震动.")
 
 #undef DEFIB_TIME_LIMIT
 #undef DEFIB_TIME_LOSS

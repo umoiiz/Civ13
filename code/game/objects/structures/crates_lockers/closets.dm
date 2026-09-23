@@ -1,6 +1,6 @@
 /obj/structure/closet
-	name = "closet"
-	desc = "It's a basic storage unit."
+	name = "储物柜"
+	desc = "这是一个基本的储物单元。"
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "closed"
 	density = TRUE
@@ -50,26 +50,26 @@
 		if(istype(src, /obj/structure/closet/crate/wall_mailbox))
 			var/obj/structure/closet/crate/wall_mailbox/WM = src
 			if (WM.contents_stored == 0)
-				to_chat(user, "It is empty.")
+				to_chat(user, "它是空的。")
 			else if  (WM.contents_stored <= 4 && WM.contents_stored != 0)
-				to_chat(user, "There is something inside.")
+				to_chat(user, "里面有东西。")
 			else if  (WM.contents_stored == 5)
-				to_chat(user, "It is full.")
+				to_chat(user, "它已满。")
 		else
 			var/content_size = FALSE
 			for (var/obj/item/I in contents)
 				if (!I.anchored)
 					content_size += ceil(I.w_class/2)
 			if (!content_size)
-				to_chat(user, "It is empty.")
+				to_chat(user, "它是空的。")
 			else if (storage_capacity > content_size*4)
-				to_chat(user, "It is barely filled.")
+				to_chat(user, "它几乎没装满。")
 			else if (storage_capacity > content_size*2)
-				to_chat(user, "It is less than half full.")
+				to_chat(user, "它不到一半满。")
 			else if (storage_capacity > content_size)
-				to_chat(user, "There is still some free space.")
+				to_chat(user, "还有一些空余空间。")
 			else
-				to_chat(user, "It is full.")
+				to_chat(user, "它已满。")
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if (!istype(mover, /obj/item/projectile))
@@ -172,7 +172,7 @@
 
 /obj/structure/closet/proc/toggle(mob/user as mob)
 	if (!(opened ? close() : open()))
-		to_chat(user, "<span class='notice'>It won't budge!</span>")
+		to_chat(user, "<span class='notice'>它纹丝不动!</span>")
 		return
 	update_icon()
 
@@ -225,17 +225,17 @@
 					locked = TRUE
 					opened = FALSE
 					custom_code = K.code
-					visible_message("<span class = 'notice'>[user] locks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user] 锁上了 \the [src]。</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 			if (K.code == custom_code)
 				locked = !locked
 				if (locked == 1)
-					visible_message("<span class = 'notice'>[user] locks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user] 锁上了 \the [src]。</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 				else if (locked == 0)
-					visible_message("<span class = 'notice'>[user] unlocks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user] 解锁了 \the [src]。</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 		else if (istype(W, /obj/item/weapon/storage/belt/keychain) && custom_code != 0)
@@ -243,23 +243,23 @@
 				if (KK.code == custom_code)
 					locked = !locked
 					if (locked == 1)
-						visible_message("<span class = 'notice'>[user] locks the [src].</span>")
+						visible_message("<span class = 'notice'>[user] 锁上了 [src]。</span>")
 						playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 						return
 					else if (locked == 0)
-						visible_message("<span class = 'notice'>[user] unlocks the [src].</span>")
+						visible_message("<span class = 'notice'>[user] 解锁了 [src]。</span>")
 						playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 						return
-			to_chat(user, "No key in this keychain matches the lock!")
+			to_chat(user, "这个钥匙串上没有钥匙能匹配这把锁!")
 			return
 		if (istype(W, /obj/item/weapon/key) && W.code != custom_code)
-			to_chat(user, "This key does not match this lock!")
+			to_chat(user, "这把钥匙与这把锁不匹配!")
 			return
 	if (istype(W, /obj/item/weapon/hammer) && user.a_intent == I_HARM)
 		if (!opened)
-			to_chat(user, "You need to open the crate first.")
+			to_chat(user, "你需要先打开箱子。")
 		else
-			visible_message("<span class='danger'>[user] begins to deconstruct the [src]!</span>")
+			visible_message("<span class='danger'>[user] 开始拆解 [src]!</span>")
 			playsound(get_turf(src), 'sound/effects/wood_cutting.ogg', 100)
 			user.do_attack_animation(src)
 			if (do_after(user, 50, user.loc))
@@ -280,11 +280,11 @@
 					content_size += ceil(I.w_class/2)
 				if (content_size < storage_capacity)
 					W.forceMove(src)
-					to_chat(user, "You throw \the [W] into \the [src].")
+					to_chat(user, "你将 \the [W] 扔进 \the [src]。")
 					update_icon()
 					return
 				else
-					to_chat(user, "<span class='warning'>\The [src] is too full!</span>")
+					to_chat(user, "<span class='warning'>\The [src] 太满了!</span>")
 					return
 			else
 				W.forceMove(loc)
@@ -322,12 +322,12 @@
 			return
 
 		if (!open())
-			to_chat(user, "<span class='notice'>It won't budge!</span>")
+			to_chat(user, "<span class='notice'>它纹丝不动!</span>")
 
 /obj/structure/closet/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	if (locked && !opened)
-		to_chat(user, "<span class='notice'>\The [src] is locked.</span>")
+		to_chat(user, "<span class='notice'>\The [src] 已上锁。</span>")
 		return
 	else
 		toggle(user)
@@ -343,14 +343,14 @@
 			return
 
 		if (locked)
-			to_chat(usr, "<span class='warning'>\The [src]is locked!</span>")
+			to_chat(usr, "<span class='warning'>\The [src]已上锁!</span>")
 			return
 
 		if (ishuman(usr))
 			add_fingerprint(usr)
 			toggle(usr)
 		else
-			to_chat(usr, "<span class='warning'>This mob type can't use this verb.</span>")
+			to_chat(usr, "<span class='warning'>这种生物类型无法使用此动词。</span>")
 	else
 		set src in oview(1)
 		set category = null
@@ -360,14 +360,14 @@
 			return
 
 		if (locked)
-			to_chat(usr, "<span class='warning'>\The [src]is locked!</span>")
+			to_chat(usr, "<span class='warning'>\The [src]已上锁!</span>")
 			return
 
 		if (ishuman(usr))
 			add_fingerprint(usr)
-			to_chat(usr, "<span class='warning'>you're gonna need to use something to open this</span>")
+			to_chat(usr, "<span class='warning'>你需要用什么东西来打开这个</span>")
 		else
-			to_chat(usr, "<span class='warning'>This mob type can't use this verb.</span>")
+			to_chat(usr, "<span class='warning'>这种生物类型无法使用此动词。</span>")
 
 /obj/structure/closet/update_icon()//Putting the welded stuff in updateicon() so it's easy to overwrite for special cases (Fridges, cabinets, and whatnot)
 	overlays.Cut()
@@ -382,7 +382,7 @@
 	if (!damage || !wallbreaker)
 		return
 	attack_animation(user)
-	visible_message("<span class='danger'>[user] [attack_message] the [src]!</span>")
+	visible_message("<span class='danger'>[user] [attack_message] 那个 [src]!</span>")
 	dump_contents()
 	spawn(1) qdel(src)
 	return TRUE
@@ -403,9 +403,9 @@
 	escapee.setClickCooldown(100)
 
 	//okay, so the closet is either welded or locked... resist!!!
-	to_chat(escapee, "<span class='warning'>You lean on the back of \the [src] and start pushing the door open. (this will take about [breakout_time] minutes)</span>")
+	to_chat(escapee, "<span class='warning'>你靠在 \the [src] 的后部,开始把门推开。(这大约需要 [breakout_time] 分钟)</span>")
 
-	visible_message("<span class='danger'>\The [src] begins to shake violently!</span>")
+	visible_message("<span class='danger'>\The [src] 开始剧烈晃动!</span>")
 
 	breakout = TRUE //can't think of a better way to do this right now.
 	for (var/i in TRUE to (6*breakout_time * 2)) //minutes * 6 * 5seconds * 2
@@ -426,8 +426,8 @@
 
 	//Well then break it!
 	breakout = FALSE
-	to_chat(escapee, "<span class='warning'>You successfully break out!</span>")
-	visible_message("<span class='danger'>\The [escapee] successfully broke out of \the [src]!</span>")
+	to_chat(escapee, "<span class='warning'>你成功挣脱了!</span>")
+	visible_message("<span class='danger'>\The [escapee] 成功从 \the [src] 中挣脱!</span>")
 	playsound(loc, 'sound/effects/grillehit.ogg', 100, TRUE)
 	break_open()
 	animate_shake()
@@ -448,8 +448,8 @@
 	anchored = TRUE
 
 /obj/structure/closet/safe
-	name = "safe"
-	desc = "A sturdy safe, with a keyslot."
+	name = "保险箱"
+	desc = "一个坚固的保险箱,带有一个钥匙孔。"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "safe"
 	icon_closed = "safe"

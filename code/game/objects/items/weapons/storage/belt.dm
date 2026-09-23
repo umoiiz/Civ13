@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/belt
-	name = "belt"
-	desc = "Can hold various things."
+	name = "腰带"
+	desc = "可以容纳各种东西."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "utilitybelt"
 	item_state = "utility"
@@ -18,7 +18,7 @@
 	set category = null
 
 	if (show_above_suit == -1)
-		to_chat(usr, "<span class='notice'>\The [src] cannot be worn above your suit!</span>")
+		to_chat(usr, "<span class='notice'>\The [src]不能穿戴在你的制服外面!</span>")
 		return
 	show_above_suit = !show_above_suit
 	update_icon()
@@ -29,7 +29,7 @@
 		M.update_inv_belt()
 
 /obj/item/weapon/storage/belt/press
-	name = "press belt"
+	name = "压带"
 
 /obj/item/weapon/storage/belt/press/New()
 	..()
@@ -43,13 +43,13 @@
 	new /obj/item/weapon/telephone/mobile(src)
 
 /obj/item/weapon/storage/belt/tactical
-	name = "combat belt"
+	name = "战斗腰带"
 	storage_slots = 8
 	max_w_class = 3
 	max_storage_space = 28
 
 /obj/item/weapon/storage/belt/security
-	name = "security belt"
+	name = "安保腰带"
 	icon_state = "security"
 	item_state = "security"
 	storage_slots = 9
@@ -57,7 +57,7 @@
 	max_storage_space = 34
 
 /obj/item/weapon/storage/belt/medical
-	name = "medical belt"
+	name = "医疗腰带"
 	can_hold = list(
 		/obj/item/stack/medical,
 		/obj/item/weapon/storage/pill_bottle,
@@ -85,8 +85,8 @@
 
 
 /obj/item/weapon/storage/belt/utility
-	name = "tool-belt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
-	desc = "Can hold various tools."
+	name = "工具腰带" //Carn: utility belt is nicer, but it bamboozles the text parsing.
+	desc = "可以容纳各种工具."
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	can_hold = list(
@@ -126,15 +126,15 @@
 
 
 /obj/item/weapon/storage/belt/security/tactical
-	name = "combat belt"
-	desc = "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
+	name = "战斗腰带"
+	desc = "可以容纳手铐和闪光弹等安保装备, 带有更多小包以提供更多存储空间."
 	icon_state = "swatbelt"
 	item_state = "swatbelt"
 	storage_slots = 9
 
 /obj/item/weapon/storage/belt/leather
-	name = "leather satchel"
-	desc = "Can hold some small stuff, like utensils, seeds, and food."
+	name = "皮革挎包"
+	desc = "可以容纳一些小东西, 比如餐具, 种子和食物."
 	icon_state = "belt_satchel"
 	item_state = "belt_holster"
 	storage_slots = 9
@@ -175,8 +175,8 @@
 	new /obj/item/stack/farming/seeds/flax(src)
 
 /obj/item/weapon/storage/belt/gator_belt //doesn't hold anything
-	name = "alligator scale belt"
-	desc = "A purely decorative alligator scale thin belt. It has no pockets or attachments for items"
+	name = "鳄鱼皮腰带"
+	desc = "一条纯装饰性的鳄鱼皮细腰带. 它没有口袋或用于挂载物品的附件"
 	icon_state = "gator_belt"
 	item_state = "gator_belt"
 	storage_slots = 0
@@ -184,8 +184,8 @@
 	max_storage_space = 0
 
 /obj/item/weapon/storage/belt/throwing
-	name = "throwing belt"
-	desc = "A belt made specifically to hold throwing weapons.."
+	name = "投掷腰带"
+	desc = "一条专为携带投掷武器而制作的腰带.."
 	icon_state = "belt_satchel"
 	item_state = "belt_holster"
 	storage_slots = 12
@@ -214,8 +214,8 @@
 	new /obj/item/weapon/material/thrown/kunai_normal(src)
 
 /obj/item/weapon/storage/belt/tacpouches
-	name = "Tactical Pouches"
-	desc = "A belt with 6 small pouches, that can fit items like magazines, knives, and other small things."
+	name = "战术小包"
+	desc = "一条带有6个小包的腰带, 可以装入弹匣, 刀具和其他小东西."
 	icon_state = "pouches"
 	item_state = "pouches"
 	storage_slots = 6

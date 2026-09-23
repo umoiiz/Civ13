@@ -1,6 +1,6 @@
 /obj/structure/rails
-	name = "rails"
-	desc = "Rails used by trains."
+	name = "铁轨"
+	desc = "火车使用的铁轨."
 	icon = 'icons/obj/vehicles/trains.dmi'
 	icon_state = "rails"
 	anchored = TRUE
@@ -102,15 +102,15 @@
 
 /obj/structure/rails/split/switcher
 	icon_state = "rails_split_f_left"
-	name = "rail switcher"
-	desc = "used to switch between two train tracks. It is set to go forward."
+	name = "轨道切换器"
+	desc = "用于在两条火车轨道之间切换. 它被设置为向前."
 	switched = "forward"
 	sw_direction = "left"
 
 /obj/structure/rails/split/switcher/right
 	icon_state = "rails_split_f_right"
-	name = "rail switcher"
-	desc = "used to switch between two train tracks. It is set to go forward."
+	name = "轨道切换器"
+	desc = "用于在两条火车轨道之间切换. 它被设置为向前."
 	switched = "forward"
 	sw_direction = "right"
 
@@ -121,8 +121,8 @@
 		icon_state = "rails_split_s_[sw_direction]"
 
 /obj/structure/rails/rotate
-	name = "rotating rail"
-	desc = "A rotating platform that allows wagons to switch direction."
+	name = "旋转轨道"
+	desc = "一个允许货车改变方向的旋转平台."
 	icon_state = "rails_rotate"
 
 /obj/structure/rails/rotate/verb/rotate_left()
@@ -138,7 +138,7 @@
 	for (var/obj/structure/trains/TR in loc)
 		TR.dir = dir
 	playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-	to_chat(usr, "You rotate the platform to the left.")
+	to_chat(usr, "你将平台向左旋转.")
 	return
 
 /obj/structure/rails/rotate/verb/rotate_right()
@@ -154,7 +154,7 @@
 	for (var/obj/structure/trains/TR in loc)
 		TR.dir = dir
 	playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-	to_chat(usr, "You rotate the platform to the right.")
+	to_chat(usr, "你将平台向右旋转.")
 	return
 
 /obj/structure/rails/rotate/attack_hand(mob/living/user as mob)
@@ -170,12 +170,12 @@
 	for (var/obj/structure/trains/TR in loc)
 		TR.dir = dir
 	playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-	to_chat(user, "You rotate the platform to the [dir2text(dir)].")
+	to_chat(user, "你将平台旋转到[dir2text(dir)].")
 	return
 /////////////////////////////////////////////////////////////////////////////////
 /obj/structure/train_lever
-	name = "rail switch lever"
-	desc = "A lever used to switch between tracks."
+	name = "轨道切换杆"
+	desc = "一根用于在轨道之间切换的控制杆."
 	icon = 'icons/obj/vehicles/train_lever.dmi'
 	icon_state = "lever_none"
 	anchored = TRUE
@@ -198,7 +198,7 @@
 			for (var/obj/structure/rails/split/switcher/S in range(2,src))
 				S.switched = "split"
 				S.update_icon()
-			visible_message("<span class = 'notice'>[user] moves the lever into the splitting position!</span>", "<span class = 'notice'>You move the lever into the splitting position!</span>")
+			visible_message("<span class = 'notice'>[user]将控制杆移动到分岔位置!</span>", "<span class = 'notice'>你将控制杆移动到分岔位置!</span>")
 			playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
 			return
 		else
@@ -206,7 +206,7 @@
 			for (var/obj/structure/rails/split/switcher/S in range(2,src))
 				S.switched = "forward"
 				S.update_icon()
-			visible_message("<span class = 'notice'>[user] moves the lever into the forward position!</span>", "<span class = 'notice'>You move the lever into the forward position!</span>")
+			visible_message("<span class = 'notice'>[user]将控制杆移动到向前位置!</span>", "<span class = 'notice'>你将控制杆移动到向前位置!</span>")
 			update_icon()
 			playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
 			return
@@ -214,8 +214,8 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 /obj/structure/trains
-	name = "wagon"
-	desc = "A wagon meant to be used on rails."
+	name = "货车"
+	desc = "一种用于轨道上的货车."
 	icon = 'icons/obj/vehicles/trains.dmi'
 	icon_state = "miningcar"
 	flammable = FALSE
@@ -247,16 +247,16 @@
 	for (var/obj/structure/trains/TR in get_step(src, dir))
 		if (TR.connected && TR.connected == src)
 			playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-			to_chat(usr, "You unhitch \the [src] from \the [connected].")
+			to_chat(usr, "你将\the [src]从\the [connected]上解开.")
 			connected = null
 			return TRUE
 		else if (!TR.connected)
 			if (dir == TR.dir || dir == OPPOSITE_DIR(TR.dir))
 				playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-				to_chat(usr, "You hitch \the [src] to \the [TR].")
+				to_chat(usr, "你将\the [src]挂到\the [TR]上.")
 				TR.connected = src
 				return TRUE
-	to_chat(usr, "There is no wagon to hitch \the [src] to.")
+	to_chat(usr, "没有可供\the [src]挂接的货车.")
 	return FALSE
 
 /obj/structure/trains/proc/check_connections()
@@ -361,7 +361,7 @@
 			var/obj/structure/trains/locomotive/L = src
 			if (L.fuel <= 0 && L.on)
 				automovement = FALSE
-				visible_message("\The [src]'s engine stalls.")
+				visible_message("\The [src]的引擎熄火了.")
 				set_light(0)
 				return FALSE
 			else if (L.on)
@@ -419,13 +419,13 @@
 			return FALSE
 		//push (or hit) wtv is in front...
 		for (var/obj/structure/trains/TF in tgtt)
-			visible_message("<span class = 'warning'>\The [src] hits \the [TF]!</span>")
+			visible_message("<span class = 'warning'>\The [src]撞上了\the [TF]!</span>")
 			automovement = FALSE
 			health -= 5
 			return FALSE
 		for (var/obj/O in tgtt)
 			if (O.density && !istype(O, /obj/structure/trains) && !istype(O, /obj/structure/rails))
-				visible_message("<span class = 'warning'>\The [src] hits \the [O]!</span>")
+				visible_message("<span class = 'warning'>\The [src]撞上了\the [O]!</span>")
 				O.ex_act(1.0)
 				health -= 15*O.w_class
 				automovement = FALSE
@@ -435,7 +435,7 @@
 			for (var/obj/structure/trains/TT in tgtt)
 				found = TRUE
 			if (!found)
-				visible_message("<span class = 'warning'>\The [src] hits \the [L]!</span>")
+				visible_message("<span class = 'warning'>\The [src]撞上了\the [L]!</span>")
 				health -= 8
 				automovement = FALSE
 				L.adjustBruteLoss(100)
@@ -498,13 +498,13 @@
 	update_icon()
 
 /obj/structure/trains/storage/miningcart
-	name = "mining cart"
-	desc = "A wooden mining cart, for underground rails."
+	name = "矿车"
+	desc = "一辆木制矿车,用于地下轨道."
 	icon_state = "miningcar"
 
 /obj/structure/trains/storage/tender
-	name = "tender wagon"
-	desc = "A wagon made to carry fuel for the engine."
+	name = "煤水车"
+	desc = "一种为引擎运载燃料的货车."
 	icon_state = "coal_wagon"
 	max_storage = 15
 	New()
@@ -512,13 +512,13 @@
 		storage.can_hold = list(/obj/item/stack/ore/coal, /obj/item/clothing/accessory/storage/sheath/katana/full, /obj/item/weapon/branch)
 
 /obj/structure/trains/storage/closed
-	name = "transport wagon"
-	desc = "A covered wagon with lots of internal space."
+	name = "运输货车"
+	desc = "一种带有顶棚且内部空间很大的货车."
 	icon_state = "closed_wagon"
 	max_storage = 8
 //////////////////////////////////////////////////////////////////////////////////
 /obj/structure/trains/transport
-	name = "flatbed cart"
+	name = "平板车"
 	icon_state = "flatbed"
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -532,9 +532,9 @@
 		var/obj/AM = M
 		if (istype(AM, /obj/item) || istype(AM, /obj/structure))
 			if (!AM.anchored)
-				visible_message("[user] starts dragging \the [AM] into \the [src]...", "You start dragging \the [AM] into \the [src]...")
+				visible_message("[user]开始将\the [AM]拖入\the [src]...", "你开始将\the [AM]拖入\the [src]...")
 				if (do_after(user, 50, src))
-					visible_message("[user] drags \the [AM] into \the [src].", "You drag \the [AM] into \the [src].")
+					visible_message("[user]将\the [AM]拖入\the [src].", "你将\the [AM]拖入\the [src].")
 					AM.forceMove(src.loc)
 					AM.anchored = TRUE
 					transporting += AM
@@ -542,27 +542,27 @@
 	if (M.loc == src.loc)
 		buckle_mob(M)
 		if (user == M)
-			to_chat(user, "You buckle yourself to \the [src].")
+			to_chat(user, "你将自己扣紧在\the [src]上.")
 		else
-			visible_message("[user] buckles [M] to \the [src].","You buckle [M] to \the [src].")
+			visible_message("[user]将[M]扣紧在\the [src]上.","你将[M]扣紧在\the [src]上.")
 		return
 	else
 		if (user == M)
-			to_chat(user, "You start climbing into \the [src]...")
+			to_chat(user, "你开始爬入\the [src]...")
 		else
-			visible_message("[user] starts dragging [M] into \the [src]...", "You start dragging [M] into \the [src]...")
+			visible_message("[user]开始将[M]拖入\the [src]...", "你开始将[M]拖入\the [src]...")
 		if (do_after(user, 50, src))
 			if (user == M)
-				to_chat(user, "You climb into \the [src].")
+				to_chat(user, "你爬入\the [src].")
 			else
-				visible_message("[user] drags [M] into \the [src].", "You drag [M] into \the [src].")
+				visible_message("[user]将[M]拖入\the [src].", "你将[M]拖入\the [src].")
 			M.forceMove(src.loc)
 		return
 /obj/structure/trains/transport/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/G = W
 		var/mob/living/affecting = G.affecting
-		user.visible_message("<span class='notice'>[user] attempts to buckle [affecting] into \the [src]!</span>")
+		user.visible_message("<span class='notice'>[user]试图将[affecting]扣紧在\the [src]上!</span>")
 		if (do_after(user, 20, src))
 			affecting.loc = loc
 			spawn(0)
@@ -614,18 +614,18 @@
 	if (!istype(usr, /mob/living))
 		return
 	for (var/obj/AM in transporting)
-		visible_message("[usr] unsecures \the [AM] from \the [src].")
+		visible_message("[usr]将\the [AM]从\the [src]上解开固定.")
 		AM.anchored = FALSE
 		transporting -= AM
 	return
 /obj/structure/trains/transport/flatbed
-	name = "flatbed wagon"
-	desc = "A wooden floor flatbed wagon, used to transport a variety of things."
+	name = "平板货车"
+	desc = "一种木制平板货车,用于运输各种物品."
 	icon_state = "flatbed_wagon"
 
 /obj/structure/trains/transport/cabin
-	name = "train cabin"
-	desc = "A windowed train cabin, made for the conductor."
+	name = "列车车厢"
+	desc = "一种带窗户的列车车厢,为列车员而设."
 	icon_state = "cabinfloor"
 	var/image/ovl
 	New()
@@ -635,7 +635,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /obj/structure/trains/locomotive
-	name = "locomotive"
+	name = "机车"
 	icon_state = "tractor"
 	train_speed = 4 //deciseconds of delay, so lower is better
 	locomotive = TRUE
@@ -650,13 +650,13 @@
 		return
 	if (on)
 		on = FALSE
-		visible_message("[user] turns off \the [src].", "You turn off \the [src].")
+		visible_message("[user]关闭了\the [src].", "你关闭了\the [src].")
 		automovement = FALSE
 		update_icon()
 		return ..()
 	else
 		on = TRUE
-		visible_message("[user] turns on \the [src].", "You turn on \the [src].")
+		visible_message("[user]打开了\the [src].", "你打开了\the [src].")
 		locomotive()
 		update_icon()
 		return ..()
@@ -689,8 +689,8 @@
 		return train_speed
 
 /obj/structure/trains/locomotive/coal
-	name = "steam locomotive"
-	desc = "A steam-powered locomotive. Works with coal, wood, and so on."
+	name = "蒸汽机车"
+	desc = "一种蒸汽动力机车.以煤炭,木材等为燃料."
 	icon_state = "locomotive"
 	train_speed = 5
 	max_fuel = 100
@@ -700,15 +700,15 @@
 	..()
 	var/aprfuel = fuel/max_fuel
 	if (aprfuel >= 0.8)
-		to_chat(user, "The combustion chamber seems full!")
+		to_chat(user, "燃烧室似乎是满的!")
 	else if (aprfuel < 0.8 && aprfuel >= 0.6)
-		to_chat(user, "The combustion chamber seems to be suficiently fueled.")
+		to_chat(user, "燃烧室的燃料似乎足够.")
 	else if (aprfuel < 0.6 && aprfuel >= 0.4)
-		to_chat(user, "The combustion chamber seems to be stable.")
+		to_chat(user, "燃烧室似乎处于稳定状态.")
 	else if (aprfuel < 0.4 && aprfuel >= 0.2)
-		to_chat(user, "The combustion chamber seems to be emptying.")
+		to_chat(user, "燃烧室似乎正在排空.")
 	else
-		to_chat(user, "The combustion chamber seems to be almost empty!")
+		to_chat(user, "燃烧室似乎几乎空了!")
 	return TRUE
 
 /obj/structure/trains/locomotive/coal/attackby(obj/item/W as obj, mob/user as mob)
@@ -716,43 +716,43 @@
 		var/obj/item/stack/S = W
 		if (istype(S, /obj/item/stack/ore/coal))
 			if (fuel>=max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber is full!</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室是满的!</span>")
 				return
 			else if ((S.amount*15)+fuel>max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber can't fit that much fuel! Try with a smaller amount.</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室装不下那么多燃料!试试少加一些.</span>")
 				return
 			fuel+= S.amount*15
 			qdel(W)
-			to_chat(user, "You refuel \the [src].")
+			to_chat(user, "你为\the [src]补充燃料.")
 			return
 		else if (istype(S, /obj/item/stack/material/wood || /material/wood/soft))
 			if (fuel>=max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber is full!</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室是满的!</span>")
 				return
 			else if ((S.amount*3)+fuel>max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber can't fit that much fuel! Try with a smaller amount.</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室装不下那么多燃料!试试少加一些.</span>")
 				return
 			fuel+= S.amount*3
 			qdel(W)
-			to_chat(user, "You refuel \the [src].")
+			to_chat(user, "你为\the [src]补充燃料.")
 			return
 		else if (istype(S, /obj/item/weapon/branch))
 			if (fuel>=max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber is full!</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室是满的!</span>")
 				return
 			else if ((S.amount*3)+fuel>max_fuel)
-				to_chat(user, "<span class = 'notice'>The combustion chamber can't fit that much fuel! Try with a smaller amount.</span>")
+				to_chat(user, "<span class = 'notice'>燃烧室装不下那么多燃料!试试少加一些.</span>")
 				return
 			fuel+= S.amount*3
 			qdel(W)
-			to_chat(user, "You refuel \the [src].")
+			to_chat(user, "你为\the [src]补充燃料.")
 			return
 	else
 		..()
 
 /obj/structure/rails/wide
-	name = "rails"
-	desc = "Rails used by trains."
+	name = "铁轨"
+	desc = "列车使用的铁轨."
 	icon = 'icons/obj/vehicles/trains.dmi'
 	icon_state = "middle" //Thanks жендос#0897 for the icons!
 	anchored = TRUE
@@ -763,8 +763,8 @@
 	layer = 2.5
 
 /obj/structure/rails/corner
-	name = "rails"
-	desc = "Rails used by trains."
+	name = "铁轨"
+	desc = "列车使用的铁轨."
 	icon = 'icons/obj/vehicles/trains.dmi'
 	icon_state = "corner" //Thanks жендос#0897 for the icons!
 	anchored = TRUE

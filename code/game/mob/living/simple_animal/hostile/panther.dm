@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/panther
 	name = "panther"
-	desc = "Better start running..."
+	desc = "最好开始跑吧..."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "panther"
 	icon_living = "panther"

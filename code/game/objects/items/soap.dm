@@ -1,7 +1,7 @@
 
 /obj/item/weapon/soap
-	name = "soap"
-	desc = "A cheap bar of soap. Doesn't smell."
+	name = "肥皂"
+	desc = "一块便宜的肥皂。没有气味。"
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "soap"
@@ -27,8 +27,8 @@
 	..()
 
 /obj/item/weapon/soap/lard
-	name = "lard soap"
-	desc = "A bit stinky and oily poorly shaped lard soap."
+	name = "猪油皂"
+	desc = "一块有点臭且油腻、形状粗糙的猪油皂。"
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "soap_lard_1"
@@ -66,9 +66,9 @@
 				if(S.washing) //No spam
 					return
 				if(src == user)
-					user.visible_message("<span class='notice'>[user] starts to wash himself with \the [W.name]</span>", "<span class = 'notice'>You start to wash yourself with \the [W.name].</span>")
+					user.visible_message("<span class='notice'>[user]开始用\the [W.name]清洗自己</span>", "<span class = 'notice'>你开始用\the [W.name]清洗自己。</span>")
 				else
-					user.visible_message("<span class='notice'>[user] start to wash [src.name] with \the [W.name]</span>", "<span class = 'notice'>You start to wash [src.name] with \the [W.name].</span>")
+					user.visible_message("<span class='notice'>[user]开始用\the [W.name]清洗[src.name]</span>", "<span class = 'notice'>你开始用\the [W.name]清洗[src.name]。</span>")
 				S.washing = TRUE
 				src.hygiene = HYGIENE_LEVEL_CLEAN //Very clean
 				if(do_after(user, 40))
@@ -81,10 +81,10 @@
 						S.update_icon()
 					if((world.time - src.soap_cooldown >= S.mood_boost_wait) || !soap_cooldown)
 						src.mood += 10 //Same mood boost as eating a delicious food
-						to_chat(src, "You really enjoy bathing with the [W.name]. You feel much better!")
+						to_chat(src, "你非常享受用[W.name]洗澡。你感觉好多了!")
 						src.soap_cooldown = world.time
 					else
-						to_chat(src, "You dont really enjoy bathing with the [W.name], you did that not long ago.")
+						to_chat(src, "你并不是很享受用[W.name]洗澡,你不久前才洗过。")
 				else
 					S.washing = FALSE //Moved before finishing the do_after
 			else

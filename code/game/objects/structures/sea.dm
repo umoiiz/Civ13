@@ -10,8 +10,8 @@
 					FC.generate_fish()
 
 /obj/structure/buoy
-	name = "buoy"
-	desc = "A colorful buoy, marking something."
+	name = "浮标"
+	desc = "一个色彩鲜艳的浮标,标记着什么东西."
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "buoy_rw0"
 	var/base_icon_state = "buoy_rw"
@@ -28,22 +28,22 @@
 		icon_state = "[base_icon_state]0"
 
 /obj/structure/buoy/red_white
-	name = "red and white buoy"
+	name = "红白浮标"
 
 /obj/structure/buoy/yellow
-	name = "yellow buoy"
+	name = "黄色浮标"
 	icon_state = "buoy_y0"
 	base_icon_state = "buoy_y"
 
 /obj/structure/buoy/orange
-	name = "orange buoy"
+	name = "橙色浮标"
 	icon_state = "buoy_o0"
 	base_icon_state = "buoy_o"
 
 /obj/structure/buoy/examine(mob/user)
 	..()
 	if (message != "")
-		to_chat(user, "It has a sign that says: <b>[message]</b>")
+		to_chat(user, "上面有一个牌子写着:<b>[message]</b>")
 
 /obj/structure/buoy/attackby(obj/item/I as obj, mob/user as mob)
 	if (istype(I, /obj/item/weapon/pen))
@@ -53,8 +53,8 @@
 
 //////////////////Crab Cage//////////////////////////////////
 /obj/structure/fishing_cage
-	name = "fishing cage"
-	desc = "A wooden fishing cage trap, used to get deep-sea lobsters, crabs, fish, etc."
+	name = "渔笼"
+	desc = "一个木制渔笼陷阱,用于捕捉深海龙虾、螃蟹、鱼等."
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "crabcage0"
 	var/base_icon_state = "crabcage"
@@ -73,14 +73,14 @@
 /obj/structure/fishing_cage/attack_hand(mob/user as mob)
 	if (found)
 		var/atom/FD = new found(loc)
-		to_chat(user, "You open the cage and find there is [FD] inside!")
+		to_chat(user, "你打开笼子,发现里面有[FD]!")
 		if (isitem(FD))
 			user.put_in_hands(FD)
 		found = null
 		generate_fish()
 		return
 	else
-		to_chat(user, "There is nothing in the cage.")
+		to_chat(user, "笼子里什么都没有.")
 		return
 
 /obj/structure/fishing_cage/proc/generate_fish()

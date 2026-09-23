@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/groundsloth
 	name = "giant ground sloth"
-	desc = "A very slow and peaceful giant, unless you poke it with a stick."
+	desc = "一个非常缓慢而平和的巨人,除非你用棍子戳它."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "giantgroundsloth_living"
 	icon_living = "giantgroundsloth_living"

@@ -24,7 +24,7 @@
 	..(gibbed)
 /mob/living/simple_animal/hostile/wizard/moldy_man
 	name = "Moldy Man"
-	desc = "A grey, damp figure in a dark robe that smells powerfully of mildew and old cheese. One of Lord Moldywart's followers."
+	desc = "一个灰色、潮湿的身影, 穿着散发着浓烈霉味和旧奶酪味的深色长袍. 霉地魔大人的追随者之一."
 	icon_state = "moldyman"
 	icon_living = "moldyman"
 	icon_dead = "moldyman_dead"
@@ -95,7 +95,7 @@
 			M.show_chat_overlay(src, "<i>Blockum!</i>", "#dea30d")
 	
 	playsound(src.loc, 'sound/effects/spells/blockum.ogg', 75, FALSE)
-	visible_message("<span style=color:'#dea30d'><b>[src]</b> uses <i>Blockum!</i></span>")
+	visible_message("<span style=color:'#dea30d'><b>[src]</b>使用了<i>布洛克姆!</i></span>")
 
 	spawn(5)
 		playsound(src.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
@@ -125,7 +125,7 @@
 	if(sound_file)
 		playsound(src.loc, sound_file, 75, FALSE)
 
-	visible_message("<span style=color:'#dea30d'><b>[src]</b> uses <i>[spell_name]</i></span>")
+	visible_message("<span style=color:'#dea30d'><b>[src]</b>使用了<i>[spell_name]</i></span>")
 
 	spawn(5)
 		playsound(src.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
@@ -206,7 +206,7 @@
 
 /mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant
 	name = "Moldy Lieutenant"
-	desc = "A senior follower of Lord Moldywart, more mold than man at this point."
+	desc = "霉地魔大人的一名资深追随者, 到了这个地步, 与其说是人, 不如说是霉菌."
 	icon_state = "moldy_lt"
 	icon_living = "moldy_lt"
 	icon_dead = "moldy_lt"
@@ -230,7 +230,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 
 /mob/living/simple_animal/hostile/wizard/moldywart
 	name = "Lord Moldywart"
-	desc = "He-Who-Must-Not-Be-Named-For-Legal-Reasons. A massive masked figure, radiating a cold and ancient malice."
+	desc = "因法律原因不可提及名字的那位. 一个巨大的蒙面身影, 散发着冰冷而古老的恶意."
 	icon_state = "moldywart"
 	icon_living = "moldywart"
 	icon_dead = "moldywart_dead"
@@ -309,7 +309,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 			M.show_chat_overlay(src, "<i>Blockum!</i>", "#dea30d")
 	
 	playsound(src.loc, 'sound/effects/spells/blockum.ogg', 75, FALSE)
-	visible_message("<span style=color:'#dea30d'><b>[src]</b> uses <i>Blockum!</i></span>")
+	visible_message("<span style=color:'#dea30d'><b>[src]</b>使用了<i>布洛克姆!</i></span>")
 
 	spawn(5)
 		playsound(src.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
@@ -329,7 +329,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 	if(sound_file)
 		playsound(src.loc, sound_file, 90, TRUE)
 
-	visible_message("<span style=color:'#dea30d'><b>Lord Moldywart</b> uses <i>[spell_call]</i></span>")
+	visible_message("<span style=color:'#dea30d'><b>霉地魔大人</b>使用了<i>[spell_call]</i></span>")
 
 	spawn(5)
 		playsound(src.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
@@ -464,7 +464,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 
 /mob/living/simple_animal/hostile/wizard/training_dummy
 	name = "Animated Training Dummy"
-	desc = "A straw-filled training dummy enchanted to test defensive magic."
+	desc = "一个填满稻草的训练假人, 被施了魔法以测试防御法术."
 	icon = 'icons/mob/npcs_wizards.dmi'
 	icon_state = "training_dummy"
 	icon_living = "training_dummy"
@@ -506,7 +506,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 				if (M.client && (M in view(7, src)))
 					M.show_chat_overlay(src, "<i>Zappus!</i>", "#6800a0")
 			playsound(src.loc, 'sound/effects/spells/zappus.ogg', 75, FALSE)
-			visible_message("<span style=color:'#6800a0'><b>[src]</b> uses <i>Zappus!</i></span>")
+			visible_message("<span style=color:'#6800a0'><b>[src]</b>使用了<i>扎普斯!</i></span>")
 			
 			var/obj/item/projectile/magic/zappus/slow_purple/bolt = new(src.loc)
 			bolt.firer = src
@@ -574,7 +574,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 			var/obj/map_metadata/wizard_boy/WB = map
 			if (WB.check_level(H.client.ckey) == "2")
 				WB.change_level(H.client.ckey, "3")
-				to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) has completed the G.E.M. trial and progressed to qualification level 3 (<b>G.E.M.</b>)!</font>")
+				to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) 已完成G.E.M.试炼, 并晋升至资格等级3 (<b>G.E.M.</b>)!</font>")
 			else
 				to_chat(H, SPAN_NOTICE("You have completed the trial! (You are not at C.O.A.L. level so you did not advance to G.E.M.)"))
 		else if (H)
@@ -618,7 +618,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 
 /mob/living/simple_animal/hostile/wizard/gloom
 	name = "Gloom"
-	desc = "A terrifying, hooded figure cloaked in tattered black rags. A soul-chilling cold radiates from its presence, and all hope seems to wither near it."
+	desc = "一个可怕的兜帽身影, 披着破烂的黑色破布. 它的存在散发着令人灵魂冻结的寒冷, 所有希望在它附近似乎都会枯萎."
 	icon = 'icons/mob/monsters_wizards.dmi'
 	icon_state = "gloom"
 	icon_living = "gloom"
@@ -685,7 +685,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 
 /mob/living/simple_animal/hostile/wizard/shrieking_shrub
 	name = "Shrieking Shrub"
-	desc = "A twisted, thorny bush with an unnervingly wide maw of jagged leaves. It vibrates constantly, emitting a faint, high-pitched whimper."
+	desc = "一丛扭曲、多刺的灌木, 长着一张令人不安的宽阔锯齿叶片巨口. 它不断振动, 发出微弱的高频呜咽声."
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	icon_state = "shrieking_shrub"
 	icon_living = "shrieking_shrub"
@@ -790,7 +790,7 @@ mob/living/simple_animal/hostile/wizard/moldy_man/lieutenant/death()
 
 /mob/living/simple_animal/hostile/wizard/sludge_monster
 	name = "Sludge Monster"
-	desc = "A heaving mass of foul, glowing ooze that leaves a trail of corrosion in its wake. It gurgles with a sound like a blocked drain."
+	desc = "一团起伏的恶臭、发光软泥, 所过之处留下腐蚀的痕迹. 它发出咕噜声, 听起来像堵塞的下水道."
 	icon = 'icons/mob/monsters_wizards.dmi'
 	icon_state = "sludge"
 	icon_living = "sludge"

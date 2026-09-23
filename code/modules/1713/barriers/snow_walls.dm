@@ -2,9 +2,9 @@
 // multidirectional collision behavior
 
 /obj/structure/window/barrier/snowwall
-	name = "snow barricade"
+	name = "雪地屏障"
 	icon_state = "snow_wall"
-	desc = "That's a snow barricade."
+	desc = "那是由雪构成的屏障."
 	icon = 'icons/obj/structures.dmi'
 	layer = MOB_LAYER + 0.01 //just above mobs
 	anchored = TRUE
@@ -15,9 +15,9 @@
 /obj/structure/window/barrier/snowwall/attack_hand(var/mob/user as mob)
 	if (locate(src) in range(user, 1)) // TODO: Somehow make the user face what they are dismantling.
 		if (dismantlable && user.a_intent == I_HARM)
-			visible_message("<span class='danger'>[user] starts dismantling the snow barricade.</span>", "<span class='danger'>You start dismantling the snow barricade.</span>")
+			visible_message("<span class='danger'>[user]开始拆除雪地屏障.</span>", "<span class='danger'>你开始拆除雪地屏障.</span>")
 			if (do_after(user, 200, src))
-				visible_message("<span class='danger'>[user] finishes dismantling the snow barricade.</span>", "<span class='danger'>You finish dismantling the snow barricade.</span>")
+				visible_message("<span class='danger'>[user]完成了拆除雪地屏障.</span>", "<span class='danger'>你完成了拆除雪地屏障.</span>")
 				var/turf = get_turf(src)
 
 				if (!istype(src, /obj/structure/window/barrier/snowwall/incomplete))
@@ -32,8 +32,8 @@
 
 //incomplete snowwall structures
 /obj/structure/window/barrier/snowwall/incomplete
-	name = "incomplete snow barricade"
-	desc = "This snow barricade is unfinished. Add a few more snow."
+	name = "未完成的雪地屏障"
+	desc = "这个雪地屏障尚未完工. 再加一些雪."
 	icon_state = "snow_wall_33%"
 	flammable = FALSE
 	incomplete = TRUE
@@ -52,13 +52,13 @@
 				icon_state = "snow_wall"
 				new/obj/structure/window/barrier/snowwall(loc, dir)
 				qdel(src)
-			visible_message("<span class='danger'>[user] adds snow onto \the [src].</span>")
+			visible_message("<span class='danger'>[user]将雪添加到\the [src]上.</span>")
 			qdel(O)
 	else
 		return
 
 /obj/item/weapon/snowwall
-	name = "snow pile"
+	name = "雪堆"
 	icon_state = "snow_pile"
 	icon = 'icons/obj/items.dmi'
 	w_class = ITEM_SIZE_TINY
@@ -67,18 +67,18 @@
 	flags = FALSE
 
 /obj/item/weapon/snowwall/attack_self(mob/user)
-	to_chat(user, "You start building the snow blocks wall...")
+	to_chat(user, "你开始建造雪块墙...")
 	if (do_after(user, 25, src))
-		to_chat(user, "You finish the placement of the snow blocks wall foundation.")
+		to_chat(user, "你完成了雪块墙地基的放置.")
 		new /obj/covers/snow_wall/blocks/incomplete(user.loc)
 		qdel(src)
 		return
 
 /obj/item/weapon/snowwall/attack_hand(mob/user)
 	if (user.a_intent == I_GRAB)
-		to_chat(user, "You start moulding the snow into some snowballs...")
+		to_chat(user, "你开始把雪捏成一些雪球...")
 		if (do_after(user,40,user.loc))
-			to_chat(user, "You finish the snowballs.")
+			to_chat(user, "你完成了雪球.")
 			new/obj/item/weapon/snowball(user.loc)
 			new/obj/item/weapon/snowball(user.loc)
 			new/obj/item/weapon/snowball(user.loc)
@@ -88,7 +88,7 @@
 
 /obj/covers/snow_wall/blocks
 	name = "snow blocks wall"
-	desc = "A snow blocks wall."
+	desc = "雪块墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "igloo_wall"
 	passable = TRUE
@@ -105,7 +105,7 @@
 
 /obj/covers/snow_wall/blocks/incomplete
 	name = "snow blocks wall"
-	desc = "A snow blocks wall."
+	desc = "雪块墙."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "igloo_wall_inc1"
 	passable = TRUE
@@ -124,18 +124,18 @@
 /obj/covers/snow_wall/blocks/incomplete/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/snowwall))
 		if (stage == 3)
-			to_chat(user, "You start adding snow to the wall...")
+			to_chat(user, "你开始往墙上添加雪...")
 			if (do_after(user, 20, src) && W)
-				to_chat(user, "You finish adding snow to the wall, completing it.")
+				to_chat(user, "你完成了往墙上添加雪, 将其完工.")
 				qdel(W)
 				new /obj/covers/snow_wall/blocks(loc)
 				qdel(src)
 				return
 		else if (stage <= 2)
-			to_chat(user, "You start adding snow to the wall...")
+			to_chat(user, "你开始往墙上添加雪...")
 			if (do_after(user, 20, src))
 				if (stage <= 2)
-					to_chat(user, "You finish adding snow to the wall.")
+					to_chat(user, "你完成了往墙上添加雪.")
 					stage = (stage+1)
 					icon_state = "igloo_wall_inc[stage]"
 					health = (20*stage)

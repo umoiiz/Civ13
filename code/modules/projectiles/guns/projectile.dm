@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile
-	name = "gun"
-	desc = "A gun that fires bullets."
+	name = "枪"
+	desc = "一把发射子弹的枪。"
 	icon_state = "musket"
 	w_class = ITEM_SIZE_NORMAL
 	var/base_icon = null
@@ -269,7 +269,7 @@
 					to_chat(user, SPAN_WARNING("[src] requires another magazine.</span>")) //wrong magazine
 					return
 				if (ammo_magazine)
-					to_chat(user, "<span class='warning'>[src] already has a magazine loaded.</span>") //already a magazine here)
+					to_chat(user, "<span class='warning'>[src]已经装好弹匣了。</span>") //already a magazine here)
 					return
 				user.remove_from_mob(AM)
 				if (src.is_laser_mg == TRUE)
@@ -285,12 +285,12 @@
 				if (cliploader)
 					if (src.ammo_magazine)
 						if (loaded.len >= ammo_magazine.max_ammo)
-							to_chat(user, "<span class='warning'>[src] is full!</span>")
+							to_chat(user, "<span class='warning'>[src]是满的!</span>")
 							return
 						var/count = FALSE
 						for (var/obj/item/ammo_casing/C in AM.stored_ammo)
 							if (src.ammo_magazine.stored_ammo.len >= src.ammo_magazine.max_ammo)
-								to_chat(user, "<span class='warning'>[src] is full!</span>")
+								to_chat(user, "<span class='warning'>[src]是满的!</span>")
 								break
 							if (C.caliber == caliber)
 								C.loc = src
@@ -298,16 +298,16 @@
 								AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
 								count++
 						if (count)
-							user.visible_message("[user] reloads [src].", "<span class='notice'>You load [count] round\s into \the [src].</span>")
+							user.visible_message("[user]为[src]重新装填.", "<span class='notice'>你将[count]发\s 子弹装入\the [src].</span>")
 							if (reload_sound) playsound(loc, reload_sound, 75, TRUE)
 							cock_gun(user)
 					else
-						to_chat(user, "<span class='warning'>[src] has no magazine!</span>")
+						to_chat(user, "<span class='warning'>[src]没有弹匣!</span>")
 						return
 
 				else
 					if (loaded.len >= max_shells)
-						to_chat(user, "<span class='warning'>[src] is full!</span>")
+						to_chat(user, "<span class='warning'>[src]已满!</span>")
 						return
 					var/count = FALSE
 					for (var/obj/item/ammo_casing/C in AM.stored_ammo)
@@ -319,7 +319,7 @@
 							AM.stored_ammo -= C //should probably go inside an ammo_magazine proc, but I guess less proc calls this way...
 							count++
 					if (count)
-						user.visible_message("[user] reloads [src].", "<span class='notice'>You load [count] round\s into \the [src].</span>")
+						user.visible_message("[user]为[src]重新装填.", "<span class='notice'>你将[count]发\s 子弹装入\the [src].</span>")
 						if (reload_sound) playsound(loc, reload_sound, 75, TRUE)
 						cock_gun(user)
 		AM.update_icon()
@@ -327,19 +327,19 @@
 	else if (istype(A, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = A
 		if (!(load_method & SINGLE_CASING))
-			to_chat(user, "<span class='warning'>You can't load \the [src] with a single casing!</span>")
+			to_chat(user, "<span class='warning'>你无法用单发弹壳为\the [src]装填!</span>")
 			return
 		if (caliber != C.caliber)
-			to_chat(user, "<span class='warning'>\The [C] is of the wrong caliber!</span>")
+			to_chat(user, "<span class='warning'>\The [C]的口径不对!</span>")
 			return //incompatible
 		if (loaded.len >= max_shells)
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, "<span class='warning'>[src]已满.</span>")
 			return
 
 		user.remove_from_mob(C)
 		C.loc = src
 		loaded.Insert(1, C) //add to the head of the list
-		user.visible_message("[user] inserts \a [C] into \the [src].", "<span class='notice'>You insert \a [C] into \the [src].</span>")
+		user.visible_message("[user]将\a [C]插入\the [src].", "<span class='notice'>你将\a [C]插入\the [src].</span>")
 		if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 
 	update_icon()
@@ -363,16 +363,16 @@
 					count++
 				loaded.Cut()
 			if (count)
-				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
+				user.visible_message("[user]为[src]卸下弹药.", "<span class='notice'>你从[src]中卸下[count]发\s 子弹.</span>")
 				if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 		else if (load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			user.visible_message("[user]从[src]中取出\a [C].", "<span class='notice'>你从[src]中取出\a [C].</span>")
 			if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 	else
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, "<span class='warning'>[src]是空的.</span>")
 	update_icon()
 
 /obj/item/weapon/gun/projectile/proc/tactical_reload(var/obj/item/A as obj, mob/user)
@@ -431,7 +431,7 @@
 	if(launcher)
 		if(do_after(usr, 5, src))
 			use_launcher = !use_launcher
-			to_chat(usr, "<span class='notice'>You [use_launcher ? "prepare the [launcher.name]." : "switch back to your gun."]</span>")
+			to_chat(usr, "<span class='notice'>你[use_launcher ? "prepare the [launcher.name]." : "switch back to your gun."]</span>")
 			playsound(src, 'sound/weapons/guns/interact/launcher_select.ogg', 50, 1)
 
 /obj/item/weapon/gun/projectile/AltClick()
@@ -443,8 +443,8 @@
 	if (auto_eject && ammo_magazine && ammo_magazine.stored_ammo && !ammo_magazine.stored_ammo.len)
 		ammo_magazine.loc = get_turf(loc)
 		user.visible_message(
-			"[ammo_magazine] falls out and clatters on the floor!",
-			"<span class='notice'>[ammo_magazine] falls out and clatters on the floor!</span>"
+			"[ammo_magazine]掉了出来,哐当一声落在地板上!",
+			"<span class='notice'>[ammo_magazine]掉了出来,哐当一声落在地板上!</span>"
 			)
 		if (auto_eject_sound)
 			playsound(user, auto_eject_sound, 40, TRUE)
@@ -455,14 +455,14 @@
 /obj/item/weapon/gun/projectile/examine(mob/user)
 	..(user)
 	if (ammo_magazine)
-		to_chat(user, "<span class='notice'>It has \a [ammo_magazine] loaded.</span>")
+		to_chat(user, "<span class='notice'>它装有\a [ammo_magazine].</span>")
 	if (!magazine_based)
 		to_chat(user, "<span class='notice'>[inexactAmmo()]</span>")
 	if (!(istype(src, /obj/item/weapon/gun/projectile/bow)))
 		if (serial == "")
-			to_chat(user, "<span class='warning'><b>The serial number has been filed out.</b></span>")
+			to_chat(user, "<span class='warning'><b>序列号已被锉掉.</b></span>")
 		else
-			to_chat(user, "<i>Serial no. <b>[serial]</b></i>")
+			to_chat(user, "<i>序列号 <b>[serial]</b></i>")
 
 /obj/item/weapon/gun/projectile/proc/getAmmo()
 	var/bullets = FALSE

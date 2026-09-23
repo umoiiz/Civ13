@@ -15,8 +15,8 @@
 		return
 
 	if (WWinput(target, "[usr] wants to give you \a [I]. Will you accept it?", null, "Yes", list("Yes","No")) == "No")
-		target.visible_message("<span class='notice'>\The [usr] tried to hand \the [I] to \the [target], \
-		but \the [target] didn't want it.</span>")
+		target.visible_message("<span class='notice'>\The [usr]试图将\the [I]递给\the [target],\
+		但\the [target]不想要它。</span>")
 		return
 
 	if (!I) return
@@ -38,7 +38,7 @@
 
 	if (usr.unEquip(I))
 		target.put_in_hands(I) // If this fails it will just end up on the floor, but that's fitting for things like dionaea.
-		target.visible_message("<span class='notice'>\The [usr] handed \the [I] to \the [target].</span>")
+		target.visible_message("<span class='notice'>\The [usr]将\the [I]递给了\the [target]。</span>")
 
 /mob/living/human/verb/recruit()
 	set category = null
@@ -61,29 +61,29 @@
 		return
 
 	if (user == src)
-		to_chat(user, "You cannot recruit yourself.")
+		to_chat(user, "你不能招募你自己。")
 		return
 
 	if (user.original_job_title != "Nomad" && !findtext(user.original_job_title,"Civilization"))
-		to_chat(user, "You can't recruit in this map.")
+		to_chat(user, "你无法在这张地图上招募。")
 		return
 
 	if (user.civilization == "none" || user.civilization == null)
-		to_chat(user, "You are not part of a faction.")
+		to_chat(user, "你不属于任何阵营。")
 		return
 
 	if (!user.leader || user.faction_perms[4] == 0)
-		to_chat(user, "You don't have the permissions to recruit.")
+		to_chat(user, "你没有招募的权限。")
 		return
 
 	if (!istype(src) || src.incapacitated() || src.client == null)
-		to_chat(user, "The target does not seem to respond...")
+		to_chat(user, "目标似乎没有回应...")
 		return
 
 	if (left_factions.len)
 		for (var/i in left_factions)
 			if (i[1]==user.civilization && i[2]>world.realtime)
-				to_chat(user, "You can't recruit [usr] since he has left your faction recently!")
+				to_chat(user, "你无法招募[usr],因为他最近离开了你的阵营!")
 				return
 	var/answer = WWinput(src, "[usr] wants to recruit you into his faction, [user.civilization]. Will you accept?", null, "Yes", list("Yes","No"))
 	if (answer == "Yes")
@@ -94,7 +94,7 @@
 			src.civilization = user.civilization
 		return
 	else if (answer == "No")
-		to_chat(usr, "[src] has rejected your offer.")
+		to_chat(usr, "[src]拒绝了你的邀请。")
 		return
 	else
 		return
@@ -120,15 +120,15 @@
 		return
 
 	if (!map.civilizations || user.civilization == "none" || user.civilization == null)
-		to_chat(user, "You are not part of a faction.")
+		to_chat(user, "你不属于任何阵营。")
 		return
 
 	if (!user.leader || user.faction_perms[1] == 0)
-		to_chat(user, "You don't have the permissions to change faction permissions.")
+		to_chat(user, "你没有更改阵营权限的权限。")
 		return
 
 	if (!istype(src) || src.incapacitated() || src.client == null)
-		to_chat(user, "The target does not seem to respond...")
+		to_chat(user, "目标似乎没有回应...")
 		return
 
 	var/answer = WWinput(user, "Add or Remove a permission?", null, "Add", list("Add","Remove","Cancel"))
@@ -161,33 +161,33 @@
 		var/list/a3list = list("Cancel")
 		if (faction_perms[1] == 1)
 			a3list += "Permission Management"
-			to_chat(src, "<big>You gained the Permission Management.</big>")
+			to_chat(src, "<big>你获得了权限管理权限。</big>")
 		if (faction_perms[2] == 1)
 			a3list += "Announcements"
-			to_chat(src, "<big>You gained the Announcement permission.</big>")
+			to_chat(src, "<big>你获得了公告权限。</big>")
 		if (faction_perms[3] == 1)
 			a3list += "Giving Titles"
-			to_chat(src, "<big>You gained the Title Giving permission.</big>")
+			to_chat(src, "<big>你获得了授予头衔权限。</big>")
 		if (faction_perms[4] == 1)
 			a3list += "Recruitment"
-			to_chat(src, "<big>You gained the Recruitment permission.</big>")
+			to_chat(src, "<big>你获得了招募权限。</big>")
 
 		var/answer3 = WWinput(user, "Which permission to remove?", null, "Cancel", a3list)
 		switch(answer3)
 			if ("Permission Management")
 				faction_perms[1] = 0
-				to_chat(src, "<big>You lost the Permission Management.</big>")
+				to_chat(src, "<big>你失去了权限管理权限。</big>")
 			if ("Announcements")
 				faction_perms[2] = 0
-				to_chat(src, "<big>You lost the Announcement permission.</big>")
+				to_chat(src, "<big>你失去了公告权限。</big>")
 				remove_commander()
 			if ("Giving Titles")
 				faction_perms[3] = 0
-				to_chat(src, "<big>You lost the Title Giving permission.</big>")
+				to_chat(src, "<big>你失去了授予头衔权限。</big>")
 				remove_title_changer()
 			if ("Recruitment")
 				faction_perms[4] = 0
-				to_chat(src, "<big>You lost the Recruitment permission.</big>")
+				to_chat(src, "<big>你失去了招募权限。</big>")
 			else
 				return
 	else

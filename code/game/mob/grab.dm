@@ -12,7 +12,7 @@
 	var/mouth_covered = FALSE
 
 /obj/item/weapon/grab
-	name = "grab"
+	name = "抓取"
 	icon = 'icons/mob/screen/1713Style.dmi'
 	icon_state = "reinforce"
 	flags = FALSE
@@ -158,13 +158,13 @@
 	switch(target_zone)
 		if ("mouth")
 			if (announce)
-				user.visible_message("<span class='warning'>\The [user] covers [target]'s mouth!</span>")
+				user.visible_message("<span class='warning'>\The [user] 捂住了 [target] 的嘴!</span>")
 				target.mouth_covered = TRUE
 			if (target.silent < 3)
 				target.silent = 3
 		if ("eyes")
 			if (announce)
-				assailant.visible_message("<span class='warning'>[assailant] covers [affecting]'s eyes!</span>")
+				assailant.visible_message("<span class='warning'>[assailant] 捂住了 [affecting] 的眼睛!</span>")
 			if (affecting.eye_blind < 3)
 				affecting.eye_blind = 3
 
@@ -236,16 +236,16 @@
 		if (!allow_upgrade)
 			return
 		if (!affecting.lying)
-			assailant.visible_message("<span class='warning'>[assailant] has grabbed [affecting] aggressively (now hands)!</span>")
+			assailant.visible_message("<span class='warning'>[assailant] 已强行抓住 [affecting] (现在用手)!</span>")
 		else
-			assailant.visible_message("<span class='warning'>[assailant] pins [affecting] down to the ground (now hands)!</span>")
+			assailant.visible_message("<span class='warning'>[assailant] 将 [affecting] 按倒在地 (现在用手)!</span>")
 			apply_pinning(affecting, assailant)
 
 		state = GRAB_AGGRESSIVE
 		icon_state = "grabbed1"
 		hud.icon_state = "reinforce1"
 	else if (state < GRAB_NECK)
-		assailant.visible_message("<span class='warning'>[assailant] has reinforced \his grip on [affecting] (now neck)!</span>")
+		assailant.visible_message("<span class='warning'>[assailant] 已加强 \his 对 [affecting] 的抓握 (现在掐住脖子)!</span>")
 		state = GRAB_NECK
 		icon_state = "grabbed+1"
 		assailant.set_dir(get_dir(assailant, affecting))
@@ -256,11 +256,11 @@
 		hud.name = "kill"
 		affecting.Stun(7) //7 ticks of ensured grab
 	else if (state < GRAB_UPGRADING)
-		assailant.visible_message("<span class='danger'>[assailant] starts to tighten \his grip on [affecting]'s neck!</span>")
+		assailant.visible_message("<span class='danger'>[assailant] 开始收紧 \his 对 [affecting] 脖子的抓握!</span>")
 		hud.icon_state = "kill1"
 
 		state = GRAB_KILL
-		assailant.visible_message("<span class='danger'>[assailant] has tightened \his grip on [affecting]'s neck!</span>") // This makes it so that you can't resist out of a strangulation, view comment on line 272 to see that this wasn't really strangling.
+		assailant.visible_message("<span class='danger'>[assailant] 已收紧 \his 对 [affecting] 脖子的抓握!</span>") // This makes it so that you can't resist out of a strangulation, view comment on line 272 to see that this wasn't really strangling.
 		affecting.attack_log += "\[[time_stamp()]\] <font color='orange'>Has been strangled (kill intent) by [assailant.name] ([assailant.ckey])</font>"
 		assailant.attack_log += "\[[time_stamp()]\] <font color='red'>Strangled (kill intent) [affecting.name] ([affecting.ckey])([affecting.stat])</font>"
 		msg_admin_attack("[key_name(assailant)] strangled (kill intent) [key_name(affecting)]", key_name(assailant), key_name(affecting))
@@ -303,7 +303,7 @@
 			switch(assailant.a_intent)
 				if (I_HELP)
 					if (force_down)
-						to_chat(assailant, "<span class='warning'>You are no longer pinning [affecting] to the ground.</span>")
+						to_chat(assailant, "<span class='warning'>你不再将 [affecting] 按倒在地.</span>")
 						force_down = FALSE
 						return
 					if(state >= GRAB_AGGRESSIVE)
@@ -342,7 +342,7 @@
 /obj/item/weapon/grab/proc/reset_kill_state()
 	if (state == GRAB_KILL)
 		if (assailant)
-			assailant.visible_message("<span class='warning'>[assailant] lost \his tight grip on [affecting]'s neck!</span>", "<span class = 'warning'>You have lost your tight grip on [affecting]'s neck 5!</span>")
+			assailant.visible_message("<span class='warning'>[assailant] 失去了对 \his 脖子的紧握![affecting]</span>", "<span class = 'warning'>你已失去对 [affecting] 脖子的紧握 5!</span>")
 		hud.icon_state = "kill"
 		state = GRAB_NECK
 

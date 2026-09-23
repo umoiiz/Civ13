@@ -1,6 +1,6 @@
 /obj/structure/beehive
-	name = "beehive"
-	desc = "A wooden box where beehives are kept for honey production and bee breeding."
+	name = "蜂箱"
+	desc = "一个用于生产蜂蜜和繁殖蜜蜂的木箱."
 	icon = 'icons/farming/beekeeping.dmi'
 	icon_state = "apiary"
 	density = 1
@@ -42,18 +42,18 @@
 /obj/structure/beehive/examine(var/mob/user)
 	..()
 	if (!closed)
-		to_chat(user, "The lid is open.")
+		to_chat(user, "盖子打开了.")
 	var/mob/living/human/H = user
 	if (H.getStatCoeff("farming")>= 1.6)
-		to_chat(user, "\The [src] is [bee_count ? "[round(bee_count)]% full" : "empty"].[bee_count > 90 ? " Colony is ready to split." : ""]")
+		to_chat(user, "\The [src] 是 [bee_count ? "[round(bee_count)]% full" : "empty"].[bee_count > 90 ? " Colony is ready to split." : ""]")
 		if (frames)
-			to_chat(user, "[frames] frames installed, [round(honeycombs / 100)] filled.")
+			to_chat(user, "已安装[frames]个巢框, [round(honeycombs / 100)]已填充.")
 			if (honeycombs < frames * 100)
-				to_chat(user, "Next frame is [round(honeycombs % 100)]% full.")
+				to_chat(user, "下一个巢框已填充[round(honeycombs % 100)]%.")
 		else
-			to_chat(user, "No frames installed.")
+			to_chat(user, "未安装巢框.")
 		if (smoked)
-			to_chat(user, "The hive is smoked.")
+			to_chat(user, "蜂箱已熏烟.")
 		return
 
 /obj/structure/beehive/attackby(var/obj/item/I, var/mob/user)
@@ -171,15 +171,15 @@
 	honeycombs = min(honeycombs + 0.1 * coef * min(trays, 5), frames * 100)
 
 /obj/item/bee_smoker
-	name = "bee smoker"
-	desc = "A device used to calm down bees before harvesting honey."
+	name = "蜂烟器"
+	desc = "一种在采收蜂蜜前让蜜蜂安静下来的装置."
 	icon = 'icons/farming/beekeeping.dmi'
 	icon_state = "beesmoker"
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/honey_frame
-	name = "beehive frame"
-	desc = "A frame for the beehive that the bees will fill with honeycombs."
+	name = "蜂巢框"
+	desc = "蜂巢的框架,蜜蜂会在其中填满蜂巢."
 	icon = 'icons/farming/beekeeping.dmi'
 	icon_state = "honeyframe"
 	w_class = ITEM_SIZE_SMALL
@@ -198,8 +198,8 @@
 		return
 
 /obj/item/honey_frame/filled
-	name = "filled beehive frame"
-	desc = "A frame for the beehive that the bees have filled with honeycombs."
+	name = "装满的蜂巢框"
+	desc = "蜂巢的框架,蜜蜂已在其中填满蜂巢."
 	honey = 20
 
 /obj/item/honey_frame/filled/New()
@@ -207,8 +207,8 @@
 	overlays += "honeycomb"
 
 /obj/item/bee_jar
-	name = "bee jar"
-	desc = "Contains a queen bee and some worker bees. Everything you'll need to start a hive!"
+	name = "蜜蜂罐"
+	desc = "内含一只蜂王和一些工蜂. 开始养蜂所需的一切!"
 	icon = 'icons/farming/beekeeping.dmi'
 	icon_state = "beejar"
 	var/full = 1

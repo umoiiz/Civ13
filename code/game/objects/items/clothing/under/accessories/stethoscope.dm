@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/stethoscope
-	name = "stethoscope"
-	desc = "A medical apparatus for listening to the sounds of the human body."
+	name = "听诊器"
+	desc = "一种用于听诊人体声音的医疗器具."
 	icon_state = "stethoscope"
 
 /obj/item/clothing/accessory/stethoscope/attack(mob/living/human/M, mob/living/human/user)
@@ -60,6 +60,6 @@
 							if (heartbeat)
 								sound_strength = "hear a weak"
 								sound = "pulse"
-				user.visible_message("[user] places [src] against [M]'s [body_part] and listens attentively.", "You place [src] against [their] [body_part]. You [sound_strength] [sound]. [M] [heartrate]")
+				user.visible_message("[user]将[src]贴在[M]的[body_part]上,专注地听着.", "你将[src]贴在[their][body_part]上.你[sound_strength][sound].[M][heartrate]")
 				return
 	return ..(M,user)

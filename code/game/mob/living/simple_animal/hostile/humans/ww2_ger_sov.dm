@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/ww2_german
 	name = "German Soldier"
-	desc = "A German soldier! He looks hostile!"
+	desc = "一个德国兵! 他看起来充满敌意!"
 	use_generated_appearance = TRUE
 	icon_state = "ww2_german_ranged1"
 	icon_dead = "bandit2_dead"
@@ -90,7 +90,7 @@
 
 /mob/living/simple_animal/hostile/human/ww2_soviet
 	name = "Soviet Soldier"
-	desc = "A Soviet soldier! He looks hostile!"
+	desc = "一个苏联兵! 他看起来充满敌意!"
 	use_generated_appearance = TRUE
 	icon_state = "ww2_soviet_ranged1"
 	icon_dead = "bandit2_dead"

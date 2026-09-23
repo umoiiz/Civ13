@@ -91,7 +91,7 @@
 
 /obj/map_metadata/eft_factory/proc/show_extractees()
 	if (extractees.len)
-		to_chat(world, "<big><b>Extracted:</b></big>")
+		to_chat(world, "<big><b>已撤离:</b></big>")
 		to_chat(world, "<big>[jointext(extractees[1],"\n")]</big>")
 	spawn(1 MINUTE)
 	show_extractees()
@@ -103,7 +103,7 @@
 	var/mob/living/human/H = A
 	if (!H.ckey)	return
 	if (H.stat != DEAD)
-		to_chat(H, "<big><font color='green'>Extracting, wait 10 seconds.</font></big>")
+		to_chat(H, "<big><font color='green'>撤离中,等待10秒。</font></big>")
 		if (do_after(H, 10 SECONDS, H, FALSE, can_move = TRUE))
 			if (istype(get_area(H), /area/caribbean/extract))
 				if (H.stat != DEAD)
@@ -111,7 +111,7 @@
 					for (var/obj/item/I in H.contents)
 						extracted_value += I.value
 					MEFT.extractees += list("[H.ckey]", extracted_value)
-					to_chat(world, "<big><font color='green'>[H.ckey] has extracted!</font></big>")
+					to_chat(world, "<big><font color='green'>[H.ckey]已撤离!</font></big>")
 					H.ghostize()
 					qdel(H)
 					return
@@ -127,43 +127,43 @@
 ///////////////////////////////Keys//////////////////////////////////////////////
 
 /obj/item/weapon/key/eft/gate0
-	name = "Gate 0 key"
+	name = "0号门钥匙"
 	code = "1110"
 
 /obj/item/weapon/key/eft/medgate
-	name = "Med Tent Gate key"
+	name = "医疗帐篷门钥匙"
 	code = "1111"
 
 /obj/item/weapon/key/eft/cellar
-	name = "Cellar key"
+	name = "地窖钥匙"
 	code = "1112"
 
 /obj/item/weapon/key/eft/pump
-	name = "Pumping Station front door key"
+	name = "泵站前门钥匙"
 	code = "1113"
 
 /obj/item/weapon/key/eft/pumpalt
-	name = "Pumping Station back door key"
+	name = "泵站后门钥匙"
 	code = "1114"
 
 ///////////////////////////////Doors//////////////////////////////////////////////
 
 /obj/structure/simple_door/key_door/eft/gate0
-	name = "Gate 0"
+	name = "0号门"
 	code = "1110"
 
 /obj/structure/simple_door/key_door/eft/medgate
-	name = "Med Tent Gate"
+	name = "医疗帐篷门"
 	code = "1111"
 
 /obj/structure/simple_door/key_door/eft/cellar
-	name = "Cellar Door"
+	name = "地窖门"
 	code = "1112"
 
 /obj/structure/simple_door/key_door/eft/pump
-	name = "Pumping Station front door"
+	name = "泵站前门"
 	code = "1113"
 
 /obj/structure/simple_door/key_door/eft/pumpalt
-	name = "Pumping Station back door"
+	name = "泵站后门"
 	code = "1114"

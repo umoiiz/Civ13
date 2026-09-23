@@ -17,9 +17,9 @@
 		return
 	owner.setClickCooldown(5) // Spam prevention, essentially.
 	if (owner.a_intent == I_HELP)
-		to_chat(owner, "<span class='warning'>You refrain from firing \the [aiming_with] as your intent is set to help.</span>")
+		to_chat(owner, "<span class='warning'>由于你的意图设为帮助,你克制住没有开火\the [aiming_with].</span>")
 		return
-	owner.visible_message("<span class='danger'>\The [owner] pulls the trigger reflexively!</span>")
+	owner.visible_message("<span class='danger'>\The [owner]反射性地扣动了扳机!</span>")
 	var/obj/item/weapon/gun/G = aiming_with
 	if (istype(G))
 		G.Fire(aiming_at, owner)

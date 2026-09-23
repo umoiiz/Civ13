@@ -1,7 +1,7 @@
 
 /obj/structure/computer/
-	name = "Parent Computer"
-	desc = "A simplistic computer. This is the parent object."
+	name = "母体计算机"
+	desc = "一台简易计算机。这是母体对象。"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "ibm_off"
 	var/internals = list()
@@ -28,10 +28,10 @@
 /obj/structure/computer/attackby(var/obj/item/W as obj, var/mob/living/human/H as mob)
 	if (istype(W, /obj/item/stack/cable_coil))
 		if (!anchored)
-			to_chat(H, "<span class='notice'>Fix the [src] in place with a wrench first.</span>")
+			to_chat(H, "<span class='notice'>先用扳手把 [src] 固定到位。</span>")
 			return
 		if (powersource)
-			to_chat(H, "There's already a cable connected here! Split it further from the [src].")
+			to_chat(H, "这里已经连接了一根电缆! 把它从 [src] 处进一步分开。")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		powersource = CC.place_turf(get_turf(src), H, turn(get_dir(H,src),180))
@@ -54,7 +54,7 @@
 						NCOO.connections += powersource
 					if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 						powersource.connections += NCOO
-					to_chat(H, "You connect the two cables.")
+					to_chat(H, "你把两根电缆连接起来。")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 				if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)
@@ -62,8 +62,8 @@
 						NCOC.connections += powersource
 					if (!(NCOC in powersource.connections) && !list_cmp(powersource.connections, NCOC.connections))
 						powersource.connections += NCOC
-					to_chat(H, "You connect the two cables.")
-		to_chat(H, "You connect the cable to the [src].")
+					to_chat(H, "你把两根电缆连接起来。")
+		to_chat(H, "你把电缆连接到 [src]。")
 
 	else
 		if (istype(W, /obj/item/weapon/disk/os))
@@ -73,25 +73,25 @@
 				src.programs = list()
 				src.boot(OSD.operatingsystem)
 				playsound(get_turf(src), 'sound/machines/computer/floppydisk.ogg', 100, TRUE)
-				to_chat(H, "You sucessfully install \the [src.operatingsystem] on this machine.")
+				to_chat(H, "你成功将 \the [src.operatingsystem] 安装到这台机器上。")
 			else
-				to_chat(H, "You already have this operating system installed.")
+				to_chat(H, "你已经安装了此操作系统。")
 				return
 		else if (istype(W, /obj/item/weapon/disk/program))
 			var/obj/item/weapon/disk/program/PD = W
 			if (!(operatingsystem in PD.compatible_os))
-				to_chat(H, "This operating system is not supported.")
+				to_chat(H, "不支持此操作系统。")
 				return
 			if (PD.included)
 				var/datum/program/NP = new PD.included
 				NP.origin = src
 				for(var/datum/program/EP in programs)
 					if (istype(EP,NP))
-						to_chat(H, "This program is already installed on this machine.")
+						to_chat(H, "此程序已安装在这台机器上。")
 						return
 				programs += NP
 				playsound(get_turf(src), 'sound/machines/computer/floppydisk.ogg', 100, TRUE)
-				to_chat(H, "You load \the [NP.name] into this machine.")
+				to_chat(H, "你将 \the [NP.name] 载入这台机器。")
 				return
 		else
 			..()
@@ -103,7 +103,7 @@
 	if(src.active)
 		name = "Turn Off"
 	if(!powersource && powerneeded)
-		to_chat(H, "<span class = 'notice'>You need to plug in the [src].</span>")
+		to_chat(H, "<span class = 'notice'>你需要先插上 [src]。</span>")
 		return
 	if (active)
 		active = FALSE
@@ -111,11 +111,11 @@
 		powersource.update_power(powerneeded,1)
 		powersource.currentflow -= powerneeded
 		powersource.lastupdate2 = world.time
-		to_chat(H, "You power off the [src].")
+		to_chat(H, "你关闭了 [src] 的电源。")
 		update_icon()
 		return
 	else if (!active && !powersource.powered)
-		to_chat(H, "<span class = 'notice'>There is not enough power to start the [src].</span>")
+		to_chat(H, "<span class = 'notice'>没有足够的电力来启动 [src]。</span>")
 		update_icon()
 		return
 	else if (!active && powersource.powered && ((powersource.powerflow-powersource.currentflow) >= powerneeded))
@@ -125,18 +125,18 @@
 		powersource.currentflow += powerneeded
 		powersource.lastupdate2 = world.time
 		power_on()
-		to_chat(H, "You power the [src].")
+		to_chat(H, "你启动了 [src] 的电源。")
 		update_icon()
 		return
 	else
-		to_chat(H, "<span class = 'notice'>There is not enough power to start the [src].</span>")
+		to_chat(H, "<span class = 'notice'>没有足够的电力来启动 [src]。</span>")
 		return
 /obj/structure/computer/attack_hand(var/mob/living/human/H)
 	if(src.active)
 		boot(operatingsystem)
 		do_html(H)
 	else
-		to_chat(H, "<span class = 'notice'>You need to turn the [src] on first!</span>")
+		to_chat(H, "<span class = 'notice'>你需要先打开 [src]!</span>")
 /obj/structure/computer/proc/power_on()
 	if (powered && active)
 		update_icon()
@@ -160,8 +160,8 @@
 			return
 
 /obj/structure/computer/nopower
-	name = "desktop computer"
-	desc = "A desktop computer running the latest version of Unga OS."
+	name = "台式计算机"
+	desc = "一台运行最新版 Unga OS 的台式计算机。"
 	icon_state = "ibm_on"
 	powered = TRUE
 	powerneeded = FALSE

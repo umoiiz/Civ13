@@ -1,7 +1,7 @@
 //Look Sir, free crabs!
 /mob/living/simple_animal/crab
 	name = "crab"
-	desc = "A hard-shelled crustacean. Seems quite content to lounge around all the time."
+	desc = "一种硬壳甲壳类动物。似乎很满足于整天懒洋洋地待着。"
 	icon_state = "crab"
 	icon_living = "crab"
 	icon_dead = "crab_dead"
@@ -23,7 +23,7 @@
 
 /mob/living/simple_animal/crab/small
 	name = "small crab"
-	desc = "A hard-shelled crustacean. it seems to look around for food trying to become a big boy."
+	desc = "一种硬壳甲壳类动物。它似乎在四处寻找食物,想长成个大块头。"
 	icon_state = "red_crab"
 	icon_living = "red_crab"
 	icon_dead = "red_crab_dead"
@@ -45,7 +45,7 @@
 
 /mob/living/simple_animal/crab/small/crab_san
 	name = "crab-san"
-	desc = "A hard-shelled crustacean soldier. it seems to look around for enemies to kill, being a soldier of the imperial army and all."
+	desc = "一种硬壳甲壳类士兵。它似乎在四处寻找可杀的敌人,毕竟它是帝国军队的士兵之类的。"
 	icon_state = "crab_san"
 	icon_living = "crab_san"
 	icon_dead = "crab_san_dead"
@@ -55,7 +55,7 @@
 
 /mob/living/simple_animal/crab/small/trilobite
 	name = "trilobite"
-	desc = "A hard-shelled artiopodan. it seems to be scavanging for food."
+	desc = "一种硬壳节肢动物。它似乎在四处觅食。"
 	icon_state = "trilobite_living"
 	icon_living = "trilobite_living"
 	icon_dead = "trilobite_dead"

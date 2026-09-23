@@ -85,11 +85,11 @@
 					src.mood += this_exp * change_mood_coefficient * 2 //10 times more than usual
 					if(!no_msg)
 						if (exp_skills_list[I] in list ("crafting", "swords", "bows", "farming", "throwing", "magic", "philosophy"))
-							to_chat(src, "<span class='good'>EUREKA!</span> <span class='notice'>You have learned much more about [exp_skills_list[I]].</span>")
+							to_chat(src, "<span class='good'>尤里卡!</span> <span class='notice'>你对[exp_skills_list[I]]有了更深入的了解.</span>")
 						if (exp_skills_list[I] in list ("rifle", "pistol", "machinegun"))
-							to_chat(src, "<span class='good'>EUREKA!</span> <span class='notice'>You have learned much more about [exp_skills_list[I]]s.</span>")
+							to_chat(src, "<span class='good'>尤里卡!</span> <span class='notice'>你对[exp_skills_list[I]]有了更深入的了解.</span>")
 						if (exp_skills_list[I] == "medical")
-							to_chat(src, "<span class='good'>EUREKA!</span> <span class='notice'>You have learned much more about medicine.</span>")
+							to_chat(src, "<span class='good'>尤里卡!</span> <span class='notice'>你对医学有了更深入的了解.</span>")
 				if (1) // breaktrough
 					if (exp_skills_list[I] in list ("strength", "dexterity", "stamina"))
 						src.adaptStat(exp_skills_list[I],this_exp) //no boost for physical stats
@@ -99,11 +99,11 @@
 					src.mood += this_exp * change_mood_coefficient / 5 * 2 //2 times more than usual
 					if(!no_msg)
 						if (exp_skills_list[I] in list ("crafting", "swords", "bows", "farming", "throwing", "magic", "philosophy"))
-							to_chat(src, "<span class='notice'>You learned little more about [exp_skills_list[I]].</span>")
+							to_chat(src, "<span class='notice'>你对[exp_skills_list[I]]的了解略有增加.</span>")
 						if (exp_skills_list[I] in list ("rifle", "pistol", "machinegun"))
-							to_chat(src, "<span class='notice'>You learned little more about [exp_skills_list[I]]s.</span>")
+							to_chat(src, "<span class='notice'>你对[exp_skills_list[I]]的了解略有增加.</span>")
 						if (exp_skills_list[I] == "medical")
-							to_chat(src, "<span class='notice'>You learned little more about medicine.</span>")
+							to_chat(src, "<span class='notice'>你对医学的了解略有增加.</span>")
 				if (-1) // fail
 					src.adaptStat(exp_skills_list[I],this_exp/2) //small mood decreasing, 1/2 exp gain
 					src.mood -= this_exp * change_mood_coefficient / 5
@@ -115,11 +115,11 @@
 					src.mood -= this_exp * change_mood_coefficient / 5 * 5 //5x mood decreasing for intellectual skills
 					if(!no_msg)
 						if (exp_skills_list[I] in list ("crafting", "swords", "bows", "farming", "throwing", "magic", "philosophy"))
-							to_chat(src, "<span class='notice'>You've lost a bit of [exp_skills_list[I]] skill.</span>")
+							to_chat(src, "<span class='notice'>你的[exp_skills_list[I]]技能略有退步.</span>")
 						if (exp_skills_list[I] in list ("rifle", "pistol", "machinegun"))
-							to_chat(src, "<span class='notice'>You've lost a bit of [exp_skills_list[I]]s skill.</span>")
+							to_chat(src, "<span class='notice'>你的[exp_skills_list[I]]技能略有退步.</span>")
 						if (exp_skills_list[I] == "medical")
-							to_chat(src, "<span class='notice'>You've lost a bit of medicine skill.</span>")
+							to_chat(src, "<span class='notice'>你的医学技能略有退步.</span>")
 				else // all as usual
 					src.adaptStat(exp_skills_list[I],this_exp)
 					src.mood += this_exp * change_mood_coefficient / 5 //small happiness boost, when succeeded (1*coefficient for each 10 seconds of work)
@@ -133,12 +133,12 @@
 	if(!not_movable)
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 		H.visible_message(
-			"<span class='notice'>You can see how [H.name] [anchored ? "un" : ""]fasten [src].</span>",
-			"<span class='notice'>You [anchored ? "un" : ""]fasten [src].</span>",
-			"<span class='notice'>Somebody fasten or unfasten something.</span>")
+			"<span class='notice'>你可以看到[H.name][anchored ? "un" : ""]如何系紧[src].</span>",
+			"<span class='notice'>你[anchored ? "un" : ""]系紧了[src].</span>",
+			"<span class='notice'>有人系紧或解开了什么东西.</span>")
 		anchored = !anchored
 	else
-		to_chat(H, "<span class='warning'>\The [src] is not movable.</span>")
+		to_chat(H, "<span class='warning'>\The [src]无法移动.</span>")
 
 //TO DO TODO: make this procedure global using
 /obj/structure/proc/hammer_action(var/mob/living/human/H, var/obj/item/weapon/W, var/work_amount = 50, var/list/components = list(), var/list/quantities = list())
@@ -155,21 +155,21 @@
 		I = clamp(I, 10, 300)
 		if (H.stats["stamina"][1]<H.stats["stamina"][2])
 			if (H.stats["stamina"][1]<I*STAMINA_LOSS_BASE_PER_DECISECOND_SDS_OF_WORK)
-				to_chat(H, "<span class='warning'>You must restore your stamina before dismantling [src].</span>")
+				to_chat(H, "<span class='warning'>你必须先恢复体力才能拆解[src].</span>")
 				return
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
 		H.visible_message(
-			"<span class='notice'>You can see how [H.name] begin dismantling \the [src].</span>",
-			"<span class='notice'>You begin dismantling \the [src].</span>",
-			"<span class='notice'>Somebody dismantling something.</span>")
+			"<span class='notice'>你可以看到[H.name]如何开始拆解\the [src].</span>",
+			"<span class='notice'>你开始拆解\the [src].</span>",
+			"<span class='notice'>有人正在拆解什么东西.</span>")
 		if (do_after(H, I , src))
 			H.stats["stamina"][1] -= I*STAMINA_LOSS_BASE_PER_DECISECOND_SDS_OF_WORK*0.15
 			H.mood -= I*MOOD_LOSS_PER_DECISECOND_OF_PHYSICAL_WORK*0.15
 			H.mood -= I*MOOD_LOSS_PER_DECISECOND_OF_MENTAL_WORK*0.85
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] dismantled \the [src].</span>",
-				"<span class='notice'>You dismantle \the [src].</span>",
-				"<span class='notice'>Somebody dismantled something.</span>")
+				"<span class='notice'>你可以看到[H.name]如何拆解了\the [src].</span>",
+				"<span class='notice'>你拆解了\the [src].</span>",
+				"<span class='notice'>有人拆解了什么东西.</span>")
 			H.give_exp(list("crafting","strength","dexterity","stamina"), list(85,5,5,5), I)
 			I = 1
 			for (var/P in components)
@@ -180,11 +180,11 @@
 			qdel(src)
 		else
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] stops dismantling \the [src].</span>",
-				"<span class='notice'>You stops dismantling \the [src].</span>",
-				"<span class='notice'>The ratchetting sounds are gone.</span>")
+				"<span class='notice'>你可以看到[H.name]如何停止拆解\the [src].</span>",
+				"<span class='notice'>你停止了拆解\the [src].</span>",
+				"<span class='notice'>棘轮声消失了.</span>")
 	else
-		to_chat(H, "<span class='warning'>\The [src] is not dissasemblable.</span>")
+		to_chat(H, "<span class='warning'>\The [src]无法被拆解.</span>")
 
 ////////////////////////////////////////////////////////////////////////
 //  Loom  //////////////////////////////////////////////////////////////
@@ -192,8 +192,8 @@
 // TO DO TODO: Reconsider the weaving process in a more realistic way (different technological levels
 //  	of weaving, a more detailed process: material -> threads -> fabric) e t.c.
 /obj/structure/loom
-	name = "loom"
-	desc = "A loom, used to transform cotton into cloth."
+	name = "织布机"
+	desc = "一台织布机,用于将棉花织成布料."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "loom"
 	anchored = TRUE
@@ -209,9 +209,9 @@
 /obj/structure/loom/proc/finish_work()
 	if (current_work)
 		current_user.visible_message(
-			"<span class='notice'>You can see how [current_user.name] made [current_work.name] on \a [src.name].</span>",
-			"<span class='notice'>You finish producing \the [current_work.name].</span>",
-			"<span class='notice'>The sounds of \the [src.name] were gone.</span>")
+			"<span class='notice'>你可以看到[current_user.name]如何在\a [src.name]上制作了[current_work.name].</span>",
+			"<span class='notice'>你完成了\the [current_work.name]的生产.</span>",
+			"<span class='notice'>\the [src.name]的声音消失了.</span>")
 		icon_state = "loom"
 		qdel(current_material)
 		var/obj/item/stack/this_production = new current_work.type(null, current_work.amount, FALSE) //deleting and creating for sterilization effect (we need really new object)
@@ -220,7 +220,7 @@
 		if (current_user.give_exp(list("crafting","dexterity"), list(67,33), work_time_amount) == -2)
 			var/newamount = clamp(ceil(this_production.amount/2+rand(1,ceil(this_production.amount/2))),ceil(this_production.amount/2),this_production.amount)
 			if (newamount < this_production.amount)
-				to_chat(current_user, "<span class='bad'>You produced [this_production.amount - newamount] less [this_production.name].</span>")
+				to_chat(current_user, "<span class='bad'>你少生产了[this_production.amount - newamount][this_production.name].</span>")
 				this_production.amount = newamount
 		current_user.mood -= work_time_amount*MOOD_LOSS_PER_DECISECOND_OF_MENTAL_WORK*0.67
 		current_user.mood -= work_time_amount*MOOD_LOSS_PER_DECISECOND_OF_PHYSICAL_WORK*0.33
@@ -234,18 +234,18 @@
 	if (!H.in_mood())
 		return
 	if(!anchored)
-		to_chat(H, "<span class='warning'>\The [src] needs to be fixed in place before anything can be woven.</span>")
+		to_chat(H, "<span class='warning'>\The [src]需要先固定到位才能进行编织.</span>")
 		return
 	if (current_work)
-		to_chat(H, "<span class='warning'>\The [src.name] is busy, wait for the weaver to finish work.</span>")
+		to_chat(H, "<span class='warning'>\The [src.name]正忙,等待织工完成工作.</span>")
 		return
 	current_work = new P(null, W.amount, FALSE) //in fact for information purpose only we really need new object
 	current_material = W
 	current_user = H
 	H.visible_message(
-		"<span class='notice'>You can see how [H.name] began to weave [W.name] on \a [src.name].</span>",
-		"<span class='notice'>You start to produce \the [current_work.name].</span>",
-		"<span class='notice'>You hear someone begin to weave on \the [src.name].</span>")
+		"<span class='notice'>你可以看到[H.name]如何开始在\a [src.name]上编织[W.name].</span>",
+		"<span class='notice'>你开始生产\the [current_work.name].</span>",
+		"<span class='notice'>你听到有人在\the [src.name]上开始编织.</span>")
 	icon_state = "loom1"
 	work_time_amount = round(1000/(W.amount*3+47)) //The efficiency increases with the amount of material. For 1 material we get 20 deciseconds, for 50 material - 254 deciseconds.
 	work_time_amount = work_time_amount*(0.67/H.getStatCoeff("crafting") + 0.33/H.getStatCoeff("dexterity"))
@@ -258,58 +258,58 @@
 		switch (rand(1,100)) //here are another algorithm because we don't know how much work was really done
 			if (1 to 20) //20% with no penalty... almost
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] pulls [W.name] out of [src.name], stopping work.</span>",
-					"<span class='notice'>You safely pull \the [W.name] from \the [src.name], stopping work.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]如何从[src.name]中抽出[W.name],停止了工作.</span>",
+					"<span class='notice'>你安全地从\the [src.name]中抽出\the [W.name],停止了工作.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				if (prob(25)) //5% to lose or gain some skill
 					if (prob(80)) //4% to lose
 						H.emote("sigh")
-						to_chat(H, "<span class='notice'>You've lost a bit of crafting skill.</span>")
+						to_chat(H, "<span class='notice'>你的制作技能略有退步.</span>")
 						H.adaptStat("crafting", -1)
 					else //1% to gain
 						H.emote("giggle")
-						to_chat(H, "<span class='notice'>You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>你对这门手艺有了更多了解.</span>")
 						H.adaptStat("crafting", 1)
 			if (21 to 50) //30% little mood decreasing
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] sighs and pulls [W.name] out of [src.name], stopping work.</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are a little upset.</span>",
-					"<span class='notice'>You hear an irritated murmur. The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]如何叹了口气,从[src.name]中抽出[W.name],停止了工作.</span>",
+					"<span class='notice'>你从\the [src.name]中抽出\the [W.name],停止了工作.你有点沮丧.</span>",
+					"<span class='notice'>你听到一声恼怒的低语.\the [src.name]的声音消失了.</span>")
 				H.mood -= 2
 			if (51 to 75) //25% nervously
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] nervously plucks [W.name] from \the [src.name], stopping work.</span>",
-					"<span class='notice'>You nervously pluck \the [W.name] from \the [src.name], stopping work. You are a some upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]如何紧张地从\the [src.name]中扯出[W.name],停止了工作.</span>",
+					"<span class='notice'>你紧张地从\the [src.name]中扯出\the [W.name],停止了工作.你有些沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				H.emote("sigh")
 				H.mood -= 4
 			if (76 to 90) //15% losing some material
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] plucks [W.name] from \the [src.name], stopping work and losing some [W.name].</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]如何从\the [src.name]中扯出[W.name],停止了工作并损失了一些[W.name].</span>",
+					"<span class='notice'>你从\the [src.name]中抽出\the [W.name],停止了工作.你很沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				W.amount = round(W.amount/2 + W.amount/10*rand(1,10))
-				to_chat(H, "<span class='bad'>You lose [current_work.amount - W.amount] [W.name]].</span>")
+				to_chat(H, "<span class='bad'>你失去了[current_work.amount - W.amount][W.name]\].</span>")
 				H.emote("cry")
 				H.mood -= 8
 				if (prob(33)) //5% to lose or gain some skill
 					if (prob(80)) //4% to gain
-						to_chat(H, "<span class='notice'>You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>你对这门手艺有了更多了解.</span>")
 						H.adaptStat("crafting", rand(1, clamp(current_work.amount-W.amount,1,5)))
 					else //1% to lose
-						to_chat(H, "<span class='notice'>You've lost a bit of crafting skill.</span>")
+						to_chat(H, "<span class='notice'>你的制作技能略有退步.</span>")
 						H.adaptStat("crafting", -1)
 			else //10% to lose all material
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] plucks [W.name] from \the [src.name], stopping work and losing some [W.name].</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are very upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]如何从\the [src.name]中扯出[W.name],停止了工作并损失了一些[W.name].</span>",
+					"<span class='notice'>你从\the [src.name]中抽出\the [W.name],停止了工作.你非常沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				if (prob(50)) //5% to breakthrough
 					if (prob(10)) //0.5% EUREKA!
-						to_chat(H, "<span class='notice'>But...</span> <span class='good'>EUREKA!</span> <span class='notice'>You have learned several times more about the craft.</span>")
+						to_chat(H, "<span class='notice'>但是...</span> <span class='good'>尤里卡!</span> <span class='notice'>你对这门手艺的了解增加了好几倍.</span>")
 						H.adaptStat("crafting", current_work.amount*2) //20 times more than usual. EUREKA!
 					else // 4.5% breakthrough
-						to_chat(H, "<span class='notice'>But... You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>但是...你对这门手艺有了更多了解.</span>")
 						H.adaptStat("crafting", rand(1, clamp(current_work.amount-W.amount,1,20))) //In fact three times more.
 				W.amount = 0
 				qdel(W)
@@ -354,8 +354,8 @@
 //  Mills  /////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 /obj/structure/mill
-	name = "mill"
-	desc = "A small mill, used to grind cereals into flour."
+	name = "磨坊"
+	desc = "一台小磨坊,用于将谷物磨成面粉."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "flour_mill"
 	anchored = TRUE
@@ -389,21 +389,21 @@
 				msg += ".</span>"
 			to_chat(user, msg)
 		else
-			to_chat(user, "<span class='notice'>It's empty.</span>")
+			to_chat(user, "<span class='notice'>里面是空的.</span>")
 	else
 		if (current_material)
-			to_chat(user, "<span class='notice'>Some grain are in.</span>")
+			to_chat(user, "<span class='notice'>里面有一些谷物.</span>")
 
 /obj/structure/mill/proc/finish_work()
 	if (current_work)
 		if (istype(src, /obj/structure/mill/large))
 			icon_state = "mill_large"
-			visible_message("<span class='notice'>You can see how [src.name] finish grind [current_material.name] to [current_work.name]</span>",
-				"<span class='notice'>The grinding sounds are gone.</span>")
+			visible_message("<span class='notice'>你可以看到[src.name]完成将[current_material.name]磨成[current_work.name]</span>",
+				"<span class='notice'>研磨声停止了.</span>")
 		else
 			icon_state = "flour_mill"
-			visible_message("<span class='notice'>You can see how [english_list(workers_list, src.name)] finish grind [current_material.name] in [src.name] to [current_work.name]</span>",
-				"<span class='notice'>The grinding sounds are gone.</span>")
+			visible_message("<span class='notice'>你可以看到[english_list(workers_list, src.name)]完成在[src.name]中将[current_material.name]磨成[current_work.name]</span>",
+				"<span class='notice'>研磨声停止了.</span>")
 			var/work_index = 1
 			for(var/mob/living/human/H in workers_list)
 				H.give_exp(list("strength", "stamina", "dexterity"), list(40, 40, 20), workers_work[work_index], TRUE, TRUE, 1, 0, 0, 0, 0)
@@ -419,37 +419,37 @@
 
 /obj/structure/mill/proc/produce(var/obj/item/weapon/reagent_containers/W, var/mob/living/human/H, var/obj/item/weapon/reagent_containers/P)
 	if(!anchored)
-		to_chat(H, "<span class='warning'>\The [src] needs to be locked in place before anything can be ground.</span>")
+		to_chat(H, "<span class='warning'>\The [src]需要先固定到位才能研磨任何东西.</span>")
 		return
 	if (!istype(src, /obj/structure/mill/large))
 		if (H.stats["stamina"][1] < H.stats["stamina"][2]*0.1)
-			to_chat(H, "<span class='warning'>You must restore your stamina before mill on [src].</span>")
+			to_chat(H, "<span class='warning'>你必须先恢复体力才能在[src]上研磨.</span>")
 			return
 		if (!H.in_mood())
 			return
 	if (current_work)
 		if (istype(src, /obj/structure/mill/large))
-			to_chat(H, "<span class='warning'>\The [src.name] is busy, wait for [src.name] finish work.</span>")
+			to_chat(H, "<span class='warning'>\The [src.name]正忙,等待[src.name]完成工作.</span>")
 			return
 		if (workers_list.len == 0)
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] continue grind [current_work.name] in \the [src.name].</span>",
-				"<span class='notice'>You continue produce \a [current_work.name].</span>",
-				"<span class='notice'>You hear how someone starts to grind something in [src].</span>")
+				"<span class='notice'>你可以看到[H.name]继续在\the [src.name]中研磨[current_work.name].</span>",
+				"<span class='notice'>你继续生产\a [current_work.name].</span>",
+				"<span class='notice'>你听到有人在[src]中开始研磨东西.</span>")
 		else
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] started to help grind [current_work.name] in \the [src.name].</span>",
-				"<span class='notice'>You started helping produce \a [current_work.name].</span>",
-				"<span class='notice'>The grinding sounds became more frequent.</span>")
+				"<span class='notice'>你可以看到[H.name]开始在\the [src.name]中帮忙研磨[current_work.name].</span>",
+				"<span class='notice'>你开始帮忙生产\a [current_work.name].</span>",
+				"<span class='notice'>研磨声变得更加频繁.</span>")
 	else
 		current_work = new P(null)
 		current_material = W
 		H.drop_item()
 		W.loc = null
 		H.visible_message(
-			"<span class='notice'>You can see how [H.name] began to grind [current_work.name] [istype(src, /obj/structure/mill/large) ? "on" : "in"] \the [src.name].</span>",
-			"<span class='notice'>You [istype(src, /obj/structure/mill/large) ? "put [current_work.name] to [src] for" : "start to"] produce \a [current_work.name].</span>",
-			"<span class='notice'>You hear how someone starts to grind something in [src].</span>")
+			"<span class='notice'>你可以看到[H.name]开始在[istype(src, /obj/structure/mill/large) ? "on" : "in"]\the [src.name]中研磨[current_work.name]</span>",
+			"<span class='notice'>你[istype(src, /obj/structure/mill/large) ? "put [current_work.name] to [src] for" : "start to"]生产\a [current_work.name].</span>",
+			"<span class='notice'>你听到有人在[src]中开始研磨东西.</span>")
 	if (istype(src, /obj/structure/mill/large))
 		icon_state = "mill_large1"
 		spawn(30+rand(1,30))
@@ -491,14 +491,14 @@
 			if (workers_list.len == 0)
 				icon_state = "flour_mill"
 				H.visible_message(
-					"<span class='notice'>You can see that [H.name] stops grinding [current_work.name] in [src.name].</span>",
-					"<span class='notice'>You [reason] grind \a [current_work.name].</span>",
-					"<span class='notice'>The grinding sounds are gone.</span>")
+					"<span class='notice'>你可以看到[H.name]停止在[src.name]中研磨[current_work.name].</span>",
+					"<span class='notice'>你[reason]研磨\a [current_work.name].</span>",
+					"<span class='notice'>研磨声停止了.</span>")
 			else
 				H.visible_message(
-					"<span class='notice'>You can see that [H.name] stops helping to grind [current_work.name] in [src.name].</span>",
-					"<span class='notice'>You [reason] helping grind \a [current_work.name].</span>",
-					"<span class='notice'>The grinding sounds have become more rare.</span>")
+					"<span class='notice'>你可以看到[H.name]停止在[src.name]中帮忙研磨[current_work.name].</span>",
+					"<span class='notice'>你[reason]帮忙研磨\a [current_work.name].</span>",
+					"<span class='notice'>研磨声变得更加稀少.</span>")
 		if (complete_percent>=100)
 			finish_work()
 
@@ -530,8 +530,8 @@
 	..(W, H)
 
 /obj/structure/mill/large
-	name = "mill"
-	desc = "A millstone that is used to grind grain into flour."
+	name = "磨坊"
+	desc = "一块用于将谷物磨成面粉的磨石."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "mill_large"
 	flammable = TRUE
@@ -572,8 +572,8 @@
 // ====================================================================
 // TO DO: Add dry_transform() procedure, which will replace the old mechanics of items with the mechanics of changing reagents in dried items.
 /obj/structure/dehydrator
-	name = "dehydrator"
-	desc = "A wood structure used to dry meat, fish, tobacco, and so on."
+	name = "脱水器"
+	desc = "一个木制结构,用于干燥肉类,鱼类,烟草等."
 	icon = 'icons/obj/food/dryer.dmi'
 	icon_state = "empty"
 	anchored = TRUE
@@ -742,12 +742,12 @@
 		return TRUE
 	if (!hang_on(W))
 		if (H)
-			to_chat(H, "<span class='warning'>There is not enough room for \the [W.name]!</span>")
+			to_chat(H, "<span class='warning'>没有足够的空间放置\the [W.name]!</span>")
 		return TRUE
 	if (H)
 		H.visible_message(
-			"<span class='notice'>You can see how [H.name] hangs \a [normal_item_name(W)] to dry.</span>",
-			"<span class='notice'>You hang \a [normal_item_name(W)] to dry.")
+			"<span class='notice'>你可以看到[H.name]挂着\a [normal_item_name(W)]进行干燥.</span>",
+			"<span class='notice'>你挂着\a [normal_item_name(W)]进行干燥.")
 		return TRUE
 	..(W, H, icon_x, icon_y)
 
@@ -757,8 +757,8 @@
 		if (!H.put_in_any_hand_if_possible(S, FALSE, TRUE, TRUE, TRUE))
 			H.drop_item(S)
 		H.visible_message(
-			"<span class='notice'>You can see how [H.name] removes \a [S.name] from \the [src].</span>",
-			"<span class='notice'>You remove \a [S.name] from \the [src].")
+			"<span class='notice'>你可以看到[H.name]从\the [src]中取出\a [S.name].</span>",
+			"<span class='notice'>你从\the [src]中取出\a [S.name].")
 	return TRUE
 
 /obj/structure/dehydrator/proc/dry_process(var/this_process = null)
@@ -829,7 +829,7 @@
 			//shoot throw slots, checking
 			S = take_product_by_x_y(shoot_x, shoot_y)
 			if (S)
-				S.visible_message("<span class = 'warning'>\The [S.name] gets pierced!</span>")
+				S.visible_message("<span class = 'warning'>\The [S.name]被刺穿了!</span>")
 				P.do_bullet_act(S, def_zone) //bullet hit to product
 				return FALSE
 			else
@@ -932,9 +932,9 @@
 // TO DO TODO: Rework this vague mechanism into a chemical reaction, and remake the jar itself into reagents_container like a large beaker, but with much less accurate transfer amounts
 // At this time it's infinity yeast generator... o_O ... yes.
 /obj/item/weapon/starterjar
-	name = "fermentation starter jar"
+	name = "发酵引子罐"
 	icon = 'icons/obj/drinks.dmi'
-	desc = "A glass jar, used to multiply yeast."
+	desc = "一个玻璃罐,用于繁殖酵母."
 	icon_state = "jar0"
 	item_state = "beaker"
 	var/fermenting = 0
@@ -944,11 +944,11 @@
 
 /obj/item/weapon/starterjar/attackby(obj/O as obj, mob/living/human/user as mob)
 	if (fermenting != 0)
-		to_chat(user, "<span class='warning'>This jar already has a starter culture inside!</span>")
+		to_chat(user, "<span class='warning'>这个罐子里已经有引子培养物了!</span>")
 		return
 	if (istype(O, /obj/item/weapon/reagent_containers/food/condiment/flour))
-		user.visible_message("<span class='notice'>[user.name] adds some flour to the jar.</span>",
-			"<span class='notice'>You add [O.name] to the jar.</span>")
+		user.visible_message("<span class='notice'>[user.name]往罐子里加了一些面粉.</span>",
+			"<span class='notice'>你往罐子里加了[O.name].</span>")
 		fermenting = 1
 		icon_state = "jarF"
 		fermenting_timer = world.time + 1600 + rand(0,200)
@@ -956,8 +956,8 @@
 		fermenting_process()
 		return
 	if (istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/wheat) || istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/oat) || istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/rice) || istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown/barley))
-		user.visible_message("<span class='notice'>[user.name] adds some grain to the jar.</span>",
-			"<span class='notice'>You add [O.name] to the jar.</span>")
+		user.visible_message("<span class='notice'>[user.name]往罐子里加了一些谷物.</span>",
+			"<span class='notice'>你往罐子里加了[O.name].</span>")
 		fermenting = 1
 		icon_state = "jarG"
 		fermenting_timer = world.time + 1000 + rand(0,1400) //wild yeast have more variety
@@ -965,8 +965,8 @@
 		fermenting_process()
 		return
 	else if (istype(O, /obj/item/weapon/reagent_containers/food/condiment/enzyme))
-		user.visible_message("<span class='notice'>[user.name] adds [O.name] to the jar.</span>",
-			"<span class='notice'>You add [O.name] to the jar.</span>")
+		user.visible_message("<span class='notice'>[user.name]往罐子里加了[O.name].</span>",
+			"<span class='notice'>你往罐子里加了[O.name].</span>")
 		fermenting = 2
 		fermenting_contents++
 		icon_state = "jar1"
@@ -975,9 +975,9 @@
 		return
 	else if (istype(O,/obj/item/weapon/hammer) || istype(O,/obj/item/weapon/hammer/modern))
 		playsound(loc, 'sound/weapons/smash.ogg', 75, 1)
-		to_chat(user, "<span class='notice'>You begin smashing apart \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始砸碎\the [src].</span>")
 		if (do_after(user, 25, src))
-			to_chat(user, "<span class='notice'>You smash apart \the [src].</span>")
+			to_chat(user, "<span class='notice'>你砸碎了\the [src].</span>")
 			new /obj/item/weapon/material/shard/glass(loc)
 			qdel(src)
 	else
@@ -985,7 +985,7 @@
 
 /obj/item/weapon/starterjar/proc/fermenting_process()
 	if (world.time>=fermenting_timer)
-		visible_message("The flour in the jar ferments.")
+		visible_message("罐子里的面粉发酵了.")
 		fermenting = 2
 		fermenting_contents = 1
 		icon_state = "jar1"
@@ -1006,7 +1006,7 @@
 
 /obj/item/weapon/starterjar/attack_self(var/mob/living/human/user as mob)
 	if (fermenting==2 && fermenting_contents>0)
-		to_chat(user, "You take some yeast out of the jar.")
+		to_chat(user, "你从罐子里取出了一些酵母.")
 		var/obj/item/weapon/reagent_containers/food/condiment/enzyme/Y = new/obj/item/weapon/reagent_containers/food/condiment/enzyme(null)
 		if (!user.put_in_any_hand_if_possible(Y))
 			Y.loc = usr.loc
@@ -1047,9 +1047,9 @@
 // TO DO TODO: If seeds genetics will be implemented, then seeds collector MUST be reworked as production collector
 // TO DO TODO: save-load mechanics MUST be in storage.dm - check it and fix it if needs.
 /obj/item/weapon/storage/seed_collector
-	name = "seed collector"
+	name = "种子收集器"
 	icon = 'icons/obj/storage.dmi'
-	desc = "To store your seeds."
+	desc = "用来存放你的种子."
 	icon_state = "seed_collector"
 	item_state = "backpack"
 	w_class = ITEM_SIZE_LARGE
@@ -1075,7 +1075,7 @@
 				if (S.amount+G.amount<=S.max_amount)
 					S.amount += G.amount
 					S.update_icon()
-					to_chat(user, "<span class='notice'>You put \the [S.name] into [src][S.amount==S.max_amount ? " to full stack" : ""].</span>")
+					to_chat(user, "<span class='notice'>你将\the [S.name]放入[src][S.amount==S.max_amount ? " to full stack" : ""].</span>")
 					qdel(G)
 					collected = TRUE
 					some_collected = TRUE
@@ -1084,16 +1084,16 @@
 					G.amount -= S.max_amount - S.amount
 					S.amount = S.max_amount
 					some_collected = TRUE
-					to_chat(user, "<span class='notice'>You put \the [S.name] into [src] to full stack.</span>")
+					to_chat(user, "<span class='notice'>你将\the [S.name]放入[src]直至堆满.</span>")
 		if (!collected)
 			if (can_be_inserted(G, TRUE))
-				to_chat(user, "<span class='notice'>You put \the [G.name] into [src], starting new stack[G.amount==G.max_amount ? " to full stack" : ""].</span>")
+				to_chat(user, "<span class='notice'>你将\the [G.name]放入[src],开始新的一堆[G.amount==G.max_amount ? " to full stack" : ""].</span>")
 				handle_item_insertion(G,TRUE)
 				some_collected = TRUE
 			else
 				some_not_collected = TRUE
 	if (some_not_collected)
-		to_chat(user, "<span class='warning'>Some seeds not fit into [src], make some space.</span>")
+		to_chat(user, "<span class='warning'>一些种子放不进[src],腾出一些空间.</span>")
 	if (src == user.s_active)
 		orient2hud(user)
 	return some_collected || some_not_collected
@@ -1126,9 +1126,9 @@
 // TO DO TODO: save-load mechanics MUST be in storage.dm - check it and fix it if needs.
 // TO DO TODO: Maybe need dirt collector, cotton collector and so on? What about other raw materials collectors? But: think for balance before.
 /obj/item/weapon/storage/ore_collector
-	name = "ore collector"
+	name = "矿石收集器"
 	icon = 'icons/obj/storage.dmi'
-	desc = "A leather bag, used to collect ores and raw stones."
+	desc = "一个皮革袋,用于收集矿石和原石."
 	icon_state = "ore_collector"
 	item_state = "backpack"
 	w_class = ITEM_SIZE_LARGE
@@ -1162,7 +1162,7 @@
 				if (S.amount+G.amount<=S.max_amount)
 					S.amount += G.amount
 					S.update_icon()
-					to_chat(user, "<span class='notice'>You put \the [S.name] into [src][S.amount==S.max_amount ? " to full stack" : ""].</span>")
+					to_chat(user, "<span class='notice'>你将\the [S.name]放入[src][S.amount==S.max_amount ? " to full stack" : ""].</span>")
 					qdel(G)
 					collected = TRUE
 					some_collected = TRUE
@@ -1171,10 +1171,10 @@
 					G.amount -= S.max_amount - S.amount
 					S.amount = S.max_amount
 					some_collected = TRUE
-					to_chat(user, "<span class='notice'>You put \the [S.name] into [src] to full stack.</span>")
+					to_chat(user, "<span class='notice'>你将\the [S.name]放入[src]直至堆满.</span>")
 		if (!collected)
 			if (can_be_inserted(G, TRUE))
-				to_chat(user, "<span class='notice'>You put \the [G.name] into [src], starting new stack[G.amount==G.max_amount ? " to full stack" : ""].</span>")
+				to_chat(user, "<span class='notice'>你将\the [G.name]放入[src],开始新的一堆[G.amount==G.max_amount ? " to full stack" : ""].</span>")
 				handle_item_insertion(G,TRUE)
 				some_collected = TRUE
 			else
@@ -1186,7 +1186,7 @@
 					if (!("stone" in not_collected))
 						not_collected += "stone"
 	if (some_not_collected)
-		to_chat(user, "<span class='warning'>Some [english_list(not_collected)] not fit into [src], make some space.</span>")
+		to_chat(user, "<span class='warning'>一些[english_list(not_collected)]放不进[src],腾出一些空间.</span>")
 	if (src == user.s_active)
 		orient2hud(user)
 	return some_collected || some_not_collected
@@ -1224,9 +1224,9 @@
 //  Produce basket (produce collector)  ////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/storage/produce_basket
-	name = "produce basket"
+	name = "农产品篮"
 	icon = 'icons/obj/storage.dmi'
-	desc = "A woven basket, used to collect fruits and vegetables."
+	desc = "一个编织篮,用于收集水果和蔬菜."
 	icon_state = "produce_basket"
 	item_state = "produce_basket"
 	w_class = ITEM_SIZE_LARGE
@@ -1303,8 +1303,8 @@
 //TO DO TODO: Make different types of blood/oil (look at glass.dm)
 //TO DO TODO: Clean fuckups with item/flashlight
 /obj/structure/oilwell
-	name = "wooden oil well"
-	desc = "An oil well, extracting petroleum to a barrel."
+	name = "木制油井"
+	desc = "一口油井,将石油提取到桶中."
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "oilwell"
 	anchored = TRUE
@@ -1345,7 +1345,7 @@
 					base.counter --
 					need_extract = TRUE
 					if (work_barrel.reagents.total_volume == work_barrel.reagents.maximum_volume)
-						visible_message("<span class='notice'>\The [work_barrel] in \the [src] filled up.</span>")
+						visible_message("<span class='notice'>\The [work_barrel]在\the [src]中装满了.</span>")
 						need_extract = FALSE
 		if (base.counter<1)
 			need_extract = TRUE //need to be sure, that spring will refiled
@@ -1374,11 +1374,11 @@
 		if (!work_barrel)
 			if (do_after(user, 35, src))
 				user.drop_item(src.loc)
-				user.visible_message("<span class='notice'>[user] puts \the [W] in \the [src].</span>",
-					"<span class='notice'>You put \the [W] in \the [src].</span>")
+				user.visible_message("<span class='notice'>[user]将\the [W]放入\the [src].</span>",
+					"<span class='notice'>你将\the [W]放入\the [src].</span>")
 				load_barrel()
 		else
-			to_chat(user, "<span class='warning'>There is already a connected [work_barrel].</span>")
+			to_chat(user, "<span class='warning'>已经有一个连接的[work_barrel]了.</span>")
 		return
 	if (istype(W,/obj/item/weapon/hammer))
 		hammer_action(user, W, 270, list("/obj/item/stack/material/wood"), list(30))
@@ -1387,13 +1387,13 @@
 
 /obj/structure/oilwell/attack_hand(var/mob/living/human/H)
 	if (work_barrel)
-		to_chat(H, "You start taking \the barrel from \the [src]...")
+		to_chat(H, "你开始从\the [src]中取出\the 桶...")
 		if (do_after(H, 35, src))
-			H.visible_message("<span class='notice'>[H] removes \the [work_barrel] from \the [src].</span>",
-				"<span class='notice'>You remove \the [work_barrel] from \the [src].</span>",)
+			H.visible_message("<span class='notice'>[H]从\the [src]中取出\the [work_barrel].</span>",
+				"<span class='notice'>你从\the [src]中取出\the [work_barrel].</span>",)
 			unload_barrel()
 	else
-		to_chat(H, "There is no container to remove from \the [src].")
+		to_chat(H, "没有容器可以从\the [src]中取出.")
 
 /obj/structure/oilwell/Destroy()
 	unload_barrel()
@@ -1427,8 +1427,8 @@
 //below are untouched original code of printing press... mostly untouched
 ////////////////////PRINTING/PRESS///////////////////////////
 /obj/structure/printingpress
-	name = "printing press"
-	desc = "Used to copy books and papers."
+	name = "印刷机"
+	desc = "用于复制书籍和文件."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "printingpress0"
 	anchored = TRUE
@@ -1458,7 +1458,7 @@
 			if (istype(W, /obj/item/weapon/book/language_book))
 				var/obj/item/weapon/book/language_book/LB = W
 				if (!LB.written)
-					to_chat(user, "<span class = 'warning'>You can't copy a language book with nothing in it!</span>")
+					to_chat(user, "<span class = 'warning'>你不能复制一本空无一物的语言书!</span>")
 					return
 			base += W
 			user.drop_from_inventory(W)
@@ -1469,7 +1469,7 @@
 			if (istype(W, /obj/item/weapon/book/language_book))
 				var/obj/item/weapon/book/language_book/LB = W
 				if (LB.written)
-					to_chat(user, "<span class = 'warning'>You can't copy over a written language book!</span>")
+					to_chat(user, "<span class = 'warning'>你不能复制一本写好的语言书!</span>")
 					return
 			copy += W
 			user.drop_from_inventory(W)
@@ -1482,9 +1482,9 @@
 		anchored = !anchored
 	else if (istype(W,/obj/item/weapon/hammer) || istype(W,/obj/item/weapon/hammer/modern))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin dismantling \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始拆解\the [src].</span>")
 		if (do_after(user,60,src))
-			to_chat(user, "<span class='notice'>You dismantle \the [src].</span>")
+			to_chat(user, "<span class='notice'>你拆解了\the [src].</span>")
 			for (var/i=1, i<=5, i++)
 				new /obj/item/stack/material/wood(loc) //5 out of 12 to craft
 			qdel(src)
@@ -1497,25 +1497,25 @@
 		return
 
 	if (isemptylist(base) && isemptylist(copy))
-		to_chat(H, "There is nothing inside the press.")
+		to_chat(H, "印刷机里什么都没有.")
 		return
 
 	if (isemptylist(copy))
 		for(var/obj/item/weapon/B in base)
-			to_chat(H, "You remove \the [B].")
+			to_chat(H, "你取出了\the [B].")
 			B.loc = get_turf(src)
 			base -= B
 		return
 
 	if (isemptylist(base))
 		for(var/obj/item/weapon/C in copy)
-			to_chat(H, "You remove \the [C].")
+			to_chat(H, "你取出了\the [C].")
 			C.loc = get_turf(src)
 			copy -= C
 		return
 	if (!isemptylist(base) && !isemptylist(copy))
 		if (base[1].type != copy[1].type)
-			to_chat(H, "Both documents must be of the same type.")
+			to_chat(H, "两份文件必须是同一类型.")
 			for(var/obj/item/weapon/C in copy)
 				C.loc = get_turf(src)
 				copy -= C
@@ -1530,11 +1530,11 @@
 			else if (istype(base[1], /obj/item/weapon/paper))
 				spawntimer = 90
 			copying = TRUE
-			visible_message("Copying \the [base[1]]...")
+			visible_message("正在复制\the [base[1]]...")
 			icon_state = "printingpress1"
 			if (do_after(H, spawntimer, src))
 				if (!isemptylist(base) && !isemptylist(copy))
-					visible_message("The printing press finishes copying.")
+					visible_message("印刷机完成了复制.")
 					icon_state = "printingpress0"
 					for(var/obj/item/weapon/B in base)
 						B.loc = get_turf(src)
@@ -1609,8 +1609,8 @@
 ////////////////////////////////////////////////////////////////////////
 //TO DO TODO: look to this code later, not now. Some fixes was implemented, but not detailed.
 /obj/structure/canner
-	name = "canner"
-	desc = "A pressure tool used to seal cans."
+	name = "封罐机"
+	desc = "一种用于密封罐头的压力工具."
 	icon = 'icons/obj/cans.dmi'
 	icon_state = "canner"
 	anchored = TRUE
@@ -1624,10 +1624,10 @@
 	if (istype(W, /obj/item/weapon/can))
 		var/obj/item/weapon/can/C = W
 		if (C.stored.len)
-			to_chat(H, "You start sealing \the [C]...")
+			to_chat(H, "你开始密封\the [C]...")
 			icon_state = "canner_active"
 			if (do_after(H, 50, H.loc))
-				to_chat(H, "You finish sealing \the [C].")
+				to_chat(H, "你完成了密封\the [C].")
 				C.open = FALSE
 				C.sealed = TRUE
 				C.update_icon()
@@ -1642,16 +1642,16 @@
 		return
 	if (istype(W, /obj/item/weapon/hammer))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(H, "<span class='notice'>You begin dismantling \the [src].</span>")
+		to_chat(H, "<span class='notice'>你开始拆解\the [src].</span>")
 		if (do_after(H, 50, src))
-			to_chat(H, "<span class='notice'>You dismantle \the [src].</span>")
+			to_chat(H, "<span class='notice'>你拆解了\the [src].</span>")
 			var/P = "/obj/item/stack/material/iron"
 			new P(loc, 4) //4 out of 7 to craft
 			qdel(src)
 
 /obj/item/weapon/can
-	name = "empty can"
-	desc = "A tin can that can keep food good for a long time. Can fit 5 units."
+	name = "空罐头"
+	desc = "一种能让食物长时间保鲜的铁罐. 可容纳5个单位."
 	icon = 'icons/obj/cans.dmi'
 	icon_state = "can_empty"
 	var/base_icon = "can"
@@ -1670,8 +1670,8 @@
 		flags |= CONDUCT
 
 /obj/item/weapon/can/small
-	name = "empty small can"
-	desc = "A tin can that can keep food good for a long time. Can fit 3 units."
+	name = "空小罐头"
+	desc = "一种能让食物长时间保鲜的铁罐. 可容纳3个单位."
 	icon_state = "small_can_empty"
 	base_icon = "small_can"
 	w_class = ITEM_SIZE_TINY
@@ -1680,8 +1680,8 @@
 	basematerials = list("tin", 0.3)
 
 /obj/item/weapon/can/large
-	name = "empty large can"
-	desc = "A tin can that can keep food good for a long time. Can fit 10 units."
+	name = "空大罐头"
+	desc = "一种能让食物长时间保鲜的铁罐. 可容纳10个单位."
 	icon_state = "large_can_empty"
 	base_icon = "large_can"
 	w_class = ITEM_SIZE_NORMAL
@@ -1704,7 +1704,7 @@
 			stored += W
 			H.drop_from_inventory(W)
 			W.forceMove(src)
-			to_chat(H, "You put \the [W] in \the [src].")
+			to_chat(H, "你将\the [W]放入了\the [src].")
 			icon_state = "[base_icon]_open"
 			if (stored.len==1)
 				name = "[brand]canned [W]"
@@ -1724,13 +1724,13 @@
 			else
 				S.satisfaction *= 1.5 //food that is already bad will taste worse when canned
 		else
-			to_chat(H, "<span class='notice'>\the [src] is full!</span>")
+			to_chat(H, "<span class='notice'>\the [src]已满!</span>")
 		return
 	if (istype(W, /obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/attachment/bayonet))
 		if (!open)
 			open = TRUE
 			update_icon()
-			to_chat(H, "You open \the [src].")
+			to_chat(H, "你打开了\the [src].")
 		return
 	..()
 
@@ -1740,7 +1740,7 @@
 			I.loc = user.loc
 			stored -= I
 			user.put_in_active_hand(I)
-			to_chat(user, "You remove \the [I] from \the [src].")
+			to_chat(user, "你从\the [src]中取出了\the [I].")
 			if (!stored.len)
 				name = "empty [brand]can"
 				icon_state = "[base_icon]_empty"
@@ -1854,8 +1854,8 @@
 // TO DO TODO: Think about what if game continues after saving??? Yes, think it in details.
 // TO DO TODO: Maybe a rough estimate of the quantity from the whole like in examine() make more global procedure?
 /obj/structure/compost
-	name = "compost bin"
-	desc = "A wood box, used to turn trash and scraps into fertilizer."
+	name = "堆肥箱"
+	desc = "一个木箱, 用于将垃圾和残渣转化为肥料."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "compostbin"
 	anchored = TRUE
@@ -1870,23 +1870,23 @@
 	if (!..(user, TRUE))
 		return
 	if (current==0)
-		to_chat(user, "<span class='notice'>It's empty</span>")
+		to_chat(user, "<span class='notice'>它是空的</span>")
 	else if (current<1)
-		to_chat(user, "<span class='notice'>There is mixed waste, but not enough to start the composting process.</span>")
+		to_chat(user, "<span class='notice'>有混合废弃物, 但不足以开始堆肥过程.</span>")
 	else if (current<2.5)
-		to_chat(user, "<span class='notice'>The [src] is less than a quarter full, the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]不到四分之一满, 堆肥过程正在进行中.</span>")
 	else if (current<3.3)
-		to_chat(user, "<span class='notice'>The [src] is less than a third full, the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]不到三分之一满, 堆肥过程正在进行中.</span>")
 	else if (current>=10)
-		to_chat(user, "<span class='notice'>The [src] is full and the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]已满, 堆肥过程正在进行中.</span>")
 	else if (current>7.5)
-		to_chat(user, "<span class='notice'>The [src] is more than three-quarters full and the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]超过四分之三满, 堆肥过程正在进行中.</span>")
 	else if (current>6.6)
-		to_chat(user, "<span class='notice'>The [src] is more than two-thirds full and the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]超过三分之二满, 堆肥过程正在进行中.</span>")
 	else if (current>5)
-		to_chat(user, "<span class='notice'>The [src] is more than half full and the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]超过一半满, 堆肥过程正在进行中.</span>")
 	else
-		to_chat(user, "<span class='notice'>The [src] is less than half full and the composting process is in progress.</span>")
+		to_chat(user, "<span class='notice'>[src]不到一半满, 堆肥过程正在进行中.</span>")
 
 /obj/structure/compost/New()
 	..()
@@ -1895,13 +1895,13 @@
 /obj/structure/compost/proc/add(var/obj/item/W, var/mob/living/human/H, amount_to_add)
 	current += amount_to_add
 	if (H)
-		H.visible_message("<span class='warning'>[H] place \the [W] in \the [src], composting it.</span>",
-			"<span class='notice'>You place \the [W] in \the [src], composting it.</span>")
+		H.visible_message("<span class='warning'>[H]将\the [W]放入\the [src], 进行堆肥.</span>",
+			"<span class='notice'>你将\the [W]放入\the [src], 进行堆肥.</span>")
 	qdel(W)
 
 /obj/structure/compost/attackby(var/obj/item/W as obj, var/mob/living/human/H as mob)
 	if (current>=10)
-		to_chat(H, "<span class='warning'>The compost bin is full!</span>")
+		to_chat(H, "<span class='warning'>堆肥箱已满!</span>")
 		return
 	var/list/allow_types = list(/obj/item/weapon/reagent_containers/food, /obj/item/stack/material/leaf, /obj/item/stack/farming/seeds,
 		/obj/item/stack/material/poppy, /obj/item/stack/material/tobacco, /obj/item/stack/material/tobacco_green, /obj/item/stack/material/coca,
@@ -1918,13 +1918,13 @@
 	if (istype(W,/obj/item/weapon/hammer))
 		hammer_action(H, W, 150, list("/obj/item/stack/material/wood"), list(7))
 		return TRUE
-	to_chat(H, "<span class='warning'>\the [W] is not suitable for compost.</span>")
+	to_chat(H, "<span class='warning'>\the [W]不适合用于堆肥.</span>")
 
 /obj/structure/compost/proc/auto_load(var/mob/living/human/H)
 	for (var/obj/item/W in src.loc)
 		if (current>=10)
 			if (H)
-				to_chat(H, "<span class='warning'>The compost bin is full!</span>")
+				to_chat(H, "<span class='warning'>堆肥箱已满!</span>")
 			break
 		if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/poo)) //poo and fertilizer not need compost, but we have now storage for poo
 			if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/poo/fertilizer))
@@ -1964,7 +1964,7 @@
 			compost()
 	else
 		spawn(rand(800,1000))
-			visible_message("The composted material begins to degrade.")
+			visible_message("堆肥材料开始降解.")
 			spawn(rand(800,1000))
 				current--
 				new/obj/item/weapon/reagent_containers/food/snacks/poo/fertilizer(loc)
@@ -1997,8 +1997,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/structure/sawmill
-	name = "Primitive Saw Mill"
-	desc = "A small saw mill, used to cut logs into planks. This crude machine only produces 1 plank per log."
+	name = "原始锯木厂"
+	desc = "一个小型锯木厂, 用于将原木切割成木板. 这台简陋的机器每根原木只能生产1块木板."
 	icon = 'icons/obj/plankage.dmi'
 	icon_state = "primitive_sawmill"
 	anchored = TRUE
@@ -2012,16 +2012,16 @@
 	var/tmp/work_time_amount = 0
 
 /obj/structure/sawmill/large
-	name = "Large Saw Mill"
-	desc = "A large saw mill, used to cut logs into planks. This one produces 2 planks per log."
+	name = "大型锯木厂"
+	desc = "一个大型锯木厂, 用于将原木切割成木板. 这台每根原木能生产2块木板."
 	icon = 'icons/obj/plankage_64.dmi'
 	icon_state = "sawmill"
 	bound_width = 64
 	bound_height = 32
 
 /obj/structure/sawmill/powered
-	name = "Powered Saw Mill"
-	desc = "A large powered saw mill, used to cut logs into planks. This one produces 4 planks per log."
+	name = "动力锯木厂"
+	desc = "一个大型动力锯木厂, 用于将原木切割成木板. 这台每根原木能生产4块木板."
 	icon = 'icons/obj/plankage_64.dmi'
 	bound_width = 64
 	bound_height = 32
@@ -2047,9 +2047,9 @@
 	check_power()
 	if (current_work)
 		current_user.visible_message(
-			"<span class='notice'>You can see how [current_user.name] made [current_work.name] on \a [src.name].</span>",
-			"<span class='notice'>You finish producing \the [current_work.name].</span>",
-			"<span class='notice'>The sounds of \the [src.name] were gone.</span>")
+			"<span class='notice'>你可以看到[current_user.name]是如何在\a [src.name]上制作[current_work.name]的.</span>",
+			"<span class='notice'>你完成了生产\the [current_work.name].</span>",
+			"<span class='notice'>\the [src.name]的声音消失了.</span>")
 		if (istype(src, /obj/structure/sawmill/large))
 			icon_state = "sawmill"
 		else if (istype(src, /obj/structure/sawmill/powered))
@@ -2063,7 +2063,7 @@
 		if (current_user.give_exp(list("crafting","dexterity"), list(67,33), work_time_amount) == -2)
 			var/newamount = clamp(ceil(this_production.amount/2+rand(1,ceil(this_production.amount/2))),ceil(this_production.amount/2),this_production.amount)
 			if (newamount < this_production.amount)
-				to_chat(current_user, "<span class='bad'>You produced [this_production.amount - newamount] less [this_production.name] due epic fail.</span>")
+				to_chat(current_user, "<span class='bad'>由于严重失误, 你少生产了[this_production.amount - newamount] [this_production.name].</span>")
 				this_production.amount = newamount
 		current_user.mood -= work_time_amount*MOOD_LOSS_PER_DECISECOND_OF_MENTAL_WORK*0.67
 		current_user.mood -= work_time_amount*MOOD_LOSS_PER_DECISECOND_OF_PHYSICAL_WORK*0.33
@@ -2078,13 +2078,13 @@
 	if (!H.in_mood())
 		return
 	if(!anchored)
-		to_chat(H, "<span class='warning'>\The [src] needs to be fixed in place before anything can be cut.</span>")
+		to_chat(H, "<span class='warning'>\The [src]需要先固定到位才能切割任何东西.</span>")
 		return
 	if(istype(src, /obj/structure/sawmill/powered) && powered == FALSE)
-		to_chat(H, "<span class='warning'>\The [src] needs to be powered before anything can be cut.</span>")
+		to_chat(H, "<span class='warning'>\The [src]需要先通电才能切割任何东西.</span>")
 		return
 	if (current_work)
-		to_chat(H, "<span class='warning'>\The [src.name] is busy, wait for the saw blade to finish cutting.</span>")
+		to_chat(H, "<span class='warning'>\The [src.name]正忙, 等待锯片完成切割.</span>")
 		return
 	if (istype(src, /obj/structure/sawmill/large))
 		current_work = new P(null, W.amount * 10, FALSE) //in fact for information purpose only we really need new object
@@ -2103,9 +2103,9 @@
 	current_material = W
 	current_user = H
 	H.visible_message(
-		"<span class='notice'>You can see how [H.name] began to cut [W.name] on \a [src.name].</span>",
-		"<span class='notice'>You start to produce \the [current_work.name].</span>",
-		"<span class='notice'>You hear someone begin to cut on \the [src.name].</span>")
+		"<span class='notice'>你可以看到[H.name]是如何在\a [src.name]上开始切割[W.name]的.</span>",
+		"<span class='notice'>你开始生产\the [current_work.name].</span>",
+		"<span class='notice'>你听到有人在\the [src.name]上开始切割.</span>")
 	work_time_amount = work_time_amount*(0.67/H.getStatCoeff("crafting") + 0.33/H.getStatCoeff("dexterity"))
 	if (do_after(H, work_time_amount, src.loc))
 		playsound(loc, 'sound/effects/woodfile.ogg', 100, TRUE)
@@ -2122,58 +2122,58 @@
 		switch (rand(1,100)) //here are another algorithm because we don't know how much work was really done
 			if (1 to 20) //20% with no penalty... almost
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] pulls [W.name] out of [src.name], stopping work.</span>",
-					"<span class='notice'>You safely pull \the [W.name] from \the [src.name], stopping work.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]将[W.name]从[src.name]中拉出, 停止了工作.</span>",
+					"<span class='notice'>你安全地将\the [W.name]从\the [src.name]中拉出, 停止了工作.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				if (prob(25)) //5% to lose or gain some skill
 					if (prob(80)) //4% to lose
 						H.emote("sigh")
-						to_chat(H, "<span class='notice'>You've lost a bit of crafting skill.</span>")
+						to_chat(H, "<span class='notice'>你失去了一点制作技能.</span>")
 						H.adaptStat("crafting", -1)
 					else //1% to gain
 						H.emote("giggle")
-						to_chat(H, "<span class='notice'>You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>你对这门手艺又多了解了一点.</span>")
 						H.adaptStat("crafting", 1)
 			if (21 to 50) //30% little mood decreasing
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] sighs and pulls [W.name] out of [src.name], stopping work.</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are a little upset.</span>",
-					"<span class='notice'>You hear an irritated murmur. The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]叹了口气, 将[W.name]从[src.name]中拉出, 停止了工作.</span>",
+					"<span class='notice'>你将\the [W.name]从\the [src.name]中拉出, 停止了工作. 你有点沮丧.</span>",
+					"<span class='notice'>你听到一声恼怒的低语. \the [src.name]的声音消失了.</span>")
 				H.mood -= 2
 			if (51 to 75) //25% nervously
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] nervously plucks [W.name] from \the [src.name], stopping work.</span>",
-					"<span class='notice'>You nervously pluck \the [W.name] from \the [src.name], stopping work. You are a some upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]紧张地将[W.name]从\the [src.name]中拔出, 停止了工作.</span>",
+					"<span class='notice'>你紧张地将\the [W.name]从\the [src.name]中拔出, 停止了工作. 你有些沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				H.emote("sigh")
 				H.mood -= 4
 			if (76 to 90) //15% losing some material
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] plucks [W.name] from \the [src.name], stopping work and losing some [W.name].</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]将[W.name]从\the [src.name]中拔出, 停止了工作并失去了一些[W.name].</span>",
+					"<span class='notice'>你将\the [W.name]从\the [src.name]中拉出, 停止了工作. 你很沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				W.amount = round(W.amount/2 + W.amount/10*rand(1,10))
-				to_chat(H, "<span class='bad'>You lose [current_work.amount - W.amount] [W.name]].</span>")
+				to_chat(H, "<span class='bad'>你失去了[current_work.amount - W.amount] [W.name]\].</span>")
 				H.emote("cry")
 				H.mood -= 8
 				if (prob(33)) //5% to lose or gain some skill
 					if (prob(80)) //4% to gain
-						to_chat(H, "<span class='notice'>You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>你对这门手艺又多了解了一点.</span>")
 						H.adaptStat("crafting", rand(1, clamp(current_work.amount-W.amount,1,5)))
 					else //1% to lose
-						to_chat(H, "<span class='notice'>You've lost a bit of crafting skill.</span>")
+						to_chat(H, "<span class='notice'>你失去了一点制作技能.</span>")
 						H.adaptStat("crafting", -1)
 			else //10% to lose all material
 				H.visible_message(
-					"<span class='notice'>You see how [H.name] plucks [W.name] from \the [src.name], stopping work and losing some [W.name].</span>",
-					"<span class='notice'>You pull \the [W.name] from \the [src.name], stopping work. You are very upset.</span>",
-					"<span class='notice'>The sounds of \the [src.name] gone.</span>")
+					"<span class='notice'>你看到[H.name]从\the [src.name]中拔出[W.name],停止了工作并失去了一些[W.name].</span>",
+					"<span class='notice'>你从\the [src.name]中拔出\the [W.name],停止了工作.你非常沮丧.</span>",
+					"<span class='notice'>\the [src.name]的声音消失了.</span>")
 				if (prob(50)) //5% to breakthrough
 					if (prob(10)) //0.5% EUREKA!
-						to_chat(H, "<span class='notice'>But...</span> <span class='good'>EUREKA!</span> <span class='notice'>You have learned several times more about the craft.</span>")
+						to_chat(H, "<span class='notice'>但是...</span><span class='good'>我发现了!</span><span class='notice'>你对这门手艺的了解增加了好几倍.</span>")
 						H.adaptStat("crafting", current_work.amount*2) //20 times more than usual. EUREKA!
 					else // 4.5% breakthrough
-						to_chat(H, "<span class='notice'>But... You learned a little more about the craft.</span>")
+						to_chat(H, "<span class='notice'>但是...你对这门手艺多了一点了解.</span>")
 						H.adaptStat("crafting", rand(1, clamp(current_work.amount-W.amount,1,20))) //In fact three times more.
 				W.amount = 0
 				qdel(W)
@@ -2197,7 +2197,7 @@
 		return
 	if (istype(W, /obj/item/stack/cable_coil))
 		if (powersource)
-			to_chat(H, "There's already a cable connected here! Split it further from the [src].")
+			to_chat(H, "这里已经连接了一根电缆!把它从[src]处再分开一些.")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		powersource = CC.place_turf(get_turf(src), H, turn(get_dir(H,src),180))
@@ -2221,7 +2221,7 @@
 						NCOO.connections += powersource
 					if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 						powersource.connections += NCOO
-					to_chat(H, "You connect the two cables.")
+					to_chat(H, "你连接了两根电缆.")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 				if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)
@@ -2229,7 +2229,7 @@
 						NCOC.connections += powersource
 					if (!(NCOC in powersource.connections) && !list_cmp(powersource.connections, NCOC.connections))
 						powersource.connections += NCOC
-		to_chat(H, "You connect the cable to the [src].")
+		to_chat(H, "你将电缆连接到[src].")
 	else
 		..()
 	..(W, H)

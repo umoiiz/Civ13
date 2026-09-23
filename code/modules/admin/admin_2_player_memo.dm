@@ -11,11 +11,11 @@
 				return
 			if ("")
 				F.dir.Remove(ckey)
-				to_chat(src, "<b>Memo removed</b>")
+				to_chat(src, "<b>备忘录已移除</b>")
 				return
 		if ( findtext(memo,"<script",1,0) )
 			return
-		to_chat(F[ckey],"Server Memo from <b>[capitalize(key)]</b> on [time2text(world.realtime,"(DDD) DD MMM hh:mm")]<br><i>[memo]</i>")
+		to_chat(F[ckey],"来自<b>[capitalize(key)]</b>的服务器备忘录, 时间 [time2text(world.realtime,"(DDD) DD MMM hh:mm")]<br><i>[memo]</i>")
 		message_admins("[key] has set a player memo:<br>[memo]", key)
 
 //show all memos
@@ -36,6 +36,6 @@
 			_ckey = ckey
 		if (_ckey)
 			F.dir.Remove(_ckey)
-			to_chat(src, "<b>Removed Memo created by [_ckey].</b>")
+			to_chat(src, "<b>已移除由[_ckey]创建的备忘录.</b>")
 
 #undef ENABLE_MEMOS

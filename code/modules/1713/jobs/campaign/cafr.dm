@@ -1,6 +1,6 @@
 /obj/item/clothing/under/afghanka/cafr
-	name = "cafr afghanka uniform"
-	desc = "A heavily weathered Afghanka uniform with a CAFR patch on the front."
+	name = "中亚联邦共和国阿富汗卡制服"
+	desc = "一件严重磨损的阿富汗卡制服,正面带有中亚联邦共和国臂章."
 	icon_state = "cafr_afghanka_open"
 	item_state = "cafr_afghanka_open"
 
@@ -15,27 +15,27 @@
 			item_state = "cafr_afghanka_open"
 			icon_state = "cafr_afghanka_open"
 			item_state_slots["w_uniform"] = "cafr_afghanka_open"
-			to_chat(usr, "You <b>open up</b> the collar of your uniform.")
+			to_chat(usr, "你<b>打开</b>了制服的衣领.")
 			adjusted = FALSE
 			update_clothing_icon()
 		else if (!adjusted)
 			item_state = "cafr_afghanka_closed"
 			icon_state = "cafr_afghanka_closed"
 			item_state_slots["w_uniform"] = "cafr_afghanka_closed"
-			to_chat(usr, "You <b>close up</b> the collar of your uniform.")
+			to_chat(usr, "你<b>合上</b>了制服的衣领.")
 			adjusted = TRUE
 			update_clothing_icon()
 
 /obj/item/clothing/under/cafr_newiform
-	name = "cafr uniform"
-	desc = "A camouflage uniform issued by the Central Asian Federal Republic."
+	name = "中亚联邦共和国制服"
+	desc = "一件由中亚联邦共和国配发的迷彩制服."
 	icon_state = "cafr_newiform"
 	item_state = "cafr_newiform"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/jacket/afghanka/cafr
-	name = "cafr afghanka coat"
-	desc = "An Afghanka coat made with the CAFR camouflage pattern."
+	name = "中亚联邦共和国阿富汗卡大衣"
+	desc = "一件采用中亚联邦共和国迷彩图案制成的阿富汗卡大衣."
 	icon_state = "cafr_pattern_afghanka"
 	item_state = "cafr_pattern_afghanka"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS

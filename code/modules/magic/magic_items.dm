@@ -1,8 +1,8 @@
 // Magic Items and Potions
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/not_butter_beer
-	name = "I-Can't-Believe-It's-Not-Butter-Beer"
-	desc = "Wait, is it actually butter beer? No, you can't believe it's not!"
+	name = "我简直不敢相信这不是黄油啤酒"
+	desc = "等等,它真的是黄油啤酒吗?不,你简直不敢相信它不是!"
 	icon_state = "oldstyle_beer"
 	item_state = "beer"
 	volume = 50
@@ -29,8 +29,8 @@
 
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/green_goop
-	name = "Professor Snip's Green Goop"
-	desc = "A rare potion flask containing a bubbling green fluid."
+	name = "斯尼普教授的绿色黏糊"
+	desc = "一个稀有的药剂瓶,里面装着冒泡的绿色液体。"
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "potion_green"
 	item_state = "beer"
@@ -57,8 +57,8 @@
 	M.adjustToxLoss(1.0 * removed)
 
 /obj/item/weapon/reagent_containers/food/snacks/chocotoad
-	name = "Choco-Toad"
-	desc = "A chocolate toad. Eating one instantly restores 50 Juice."
+	name = "巧克力蟾蜍"
+	desc = "一只巧克力蟾蜍。吃下一只立刻恢复50点果汁。"
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "chocotoad"
 	volume = 10
@@ -80,113 +80,113 @@
 	slot_flags = SLOT_BELT | SLOT_POCKET
 
 /obj/item/wand_part/badger_hair
-	name = "Badger hair"
-	desc = "A tuft of badger fur infused with martial instinct. It forms a combat-savvy wand core."
+	name = "獾毛"
+	desc = "一簇注入武斗本能的獾毛。它形成一种擅长战斗的魔杖杖芯。"
 	icon_state = "badger_hair"
 
 /obj/item/wand_part/pigeon_feather
-	name = "Pigeon feather"
-	desc = "A sleek feather that flutters with movement magic. It helps a wand cast and blink quickly."
+	name = "鸽子羽毛"
+	desc = "一根光滑的羽毛,随移动魔法飘动。它帮助魔杖快速施法和闪现。"
 	icon_state = "pigeon_feather"
 
 /obj/item/wand_part/copper_wire
-	name = "Copper wire"
-	desc = "A copper filament that conducts arcane power while inviting volatile overcasts. It reduces juice cost at a risk."
+	name = "铜线"
+	desc = "一根传导奥术力量的铜丝,同时会招致不稳定的过载施法。它以风险为代价降低果汁消耗。"
 	icon_state = "copper_wire"
 
 /obj/item/wand_part/pocket_lint
-	name = "Pocket lint"
-	desc = "A handful of soft lint scavenged from pockets. Its unpredictable energy makes a wand wildly unstable."
+	name = "口袋绒毛"
+	desc = "一把从口袋里捡来的柔软绒毛。它不可预测的能量让魔杖极度不稳定。"
 	icon_state = "pocket_lint"
 
 /obj/item/wand_part/asbestos
-	name = "Asbestos fibre"
-	desc = "Fibrous asbestos wadding that resists flame. It keeps a wand fireproof at a poisonous cost."
+	name = "石棉纤维"
+	desc = "耐火的纤维状石棉填料。它以有毒的代价让魔杖防火。"
 	icon_state = "asbestos"
 
 /obj/item/wand_part/fox_fur
-	name = "Fox fur"
-	desc = "A strip of fox fur with a cunning sheen. It silences a wand's magic while slowing its spellcasting."
+	name = "狐狸毛"
+	desc = "一条带有狡黠光泽的狐狸毛。它让魔杖的魔法无声,同时减慢其施法速度。"
 	icon_state = "fox_fur"
 
 /obj/item/wand_part/chewing_gum
-	name = "Used chewing gum"
-	desc = "Scraped from the underside of Professor Snip's desk. Highly unhygienic and incredibly sticky."
+	name = "用过的口香糖"
+	desc = "从斯尼普教授桌子底下刮下来的。极不卫生且极其黏。"
 	icon_state = "chewing_gum"
 
 /obj/item/wand_part/cassette_tape
-	name = "Tangled cassette tape"
-	desc = "Magnetic tape ripped from a confiscated 1980s synth-pop mixtape. It crackles with unstable, looping energy."
+	name = "缠结的磁带"
+	desc = "从一盘被没收的1980年代合成器流行混音带中扯出的磁带。它噼啪作响,带有不稳定、循环的能量。"
 	icon_state = "cassette_tape"
 
 /obj/item/wand_part/sheep_wool
-	name = "Damp sheep wool"
-	desc = "Snagged on a barbed-wire fence near the Mop Ball pitch. Smells strongly of rain and lanolin."
+	name = "潮湿的羊毛"
+	desc = "挂在拖把球球场附近的铁丝网围栏上。闻起来有强烈的雨水和羊毛脂味。"
 	icon_state = "sheep_wool"
 
 /obj/item/wand_part/rat_tail
-	name = "Feral rat tail"
-	desc = "Found in the dark corners of the Slatepie common room. The essence of a true survivor, but ultimately a coward."
+	name = "野鼠尾巴"
+	desc = "在板岩派公共休息室的黑暗角落里找到的。一个真正幸存者的本质,但终究是个懦夫。"
 	icon_state = "rat_tail"
 
 /obj/item/wand_part/spark_plug
-	name = "Rusted spark plug"
-	desc = "Plucked from a broken-down tractor in Farmer Evans' field. Heavy, metallic, and surges with raw kinetic energy."
+	name = "生锈的火花塞"
+	desc = "从农夫埃文斯田里一台坏掉的拖拉机上拔下来的。沉重、金属感十足,并涌动着原始动能。"
 	icon_state = "spark_plug"
 
 /obj/item/wand_part/gnat_wing
-	name = "Golden gnat wing"
-	desc = "So fast it hums. It wants to fly away, even when stuffed inside a piece of wood."
+	name = "金蚊翅膀"
+	desc = "快得嗡嗡作响。它想飞走,即使被塞进一块木头里。"
 	icon_state = "gnat_wing"
 
 /obj/item/wand_part/gloom_thread
-	name = "Gloom-weave thread"
-	desc = "Freezing cold to the touch. It feels like holding pure depression."
+	name = "暗纹丝线"
+	desc = "触感冰冷刺骨. 握着它就像握住了纯粹的绝望."
 	icon_state = "gloom_thread"
 
 /obj/item/wand_part/pine_wood
-	name = "Pine wood"
-	desc = "A splinter-prone pine branch. It is a common wand chassis with balanced magic traits."
+	name = "松木"
+	desc = "一根容易劈裂的松木枝. 这是一种常见的魔杖基材, 具有均衡的魔法特性."
 	icon_state = "pine_wood"
 
 /obj/item/wand_part/mdf_board
-	name = "MDF board"
-	desc = "A dense MDF segment that absorbs juice and swells when wet. It makes a wand cheap but fragile."
+	name = "中密度纤维板"
+	desc = "一块致密的中密度纤维板, 遇水会吸收汁液并膨胀. 它能让魔杖变得便宜但脆弱."
 	icon_state = "mdf_board"
 
 /obj/item/wand_part/balsa_wood
-	name = "Balsa wood"
-	desc = "A featherlight balsa slat. It is fast and fragile, and a wand built from it snaps easily in melee."
+	name = "轻木"
+	desc = "一根轻如羽毛的轻木板条. 它迅捷而脆弱, 用它制成的魔杖在近战中很容易折断."
 	icon_state = "balsa_wood"
 
 /obj/item/wand_part/snooker_cue
-	name = "Snooker cue"
-	desc = "A polished snooker cue shaft. It gives a wand strong melee power at the expense of cast speed."
+	name = "斯诺克球杆"
+	desc = "一根抛光过的斯诺克球杆杆身. 它赋予魔杖强大的近战威力, 但会牺牲施法速度."
 	icon_state = "snooker_cue"
 
 /obj/item/wand_part/fibreglass
-	name = "Fibreglass"
-	desc = "A whippy strip of fibreglass. It makes a wand lash out on overcasts and cast very quickly."
+	name = "玻璃纤维"
+	desc = "一条富有弹性的玻璃纤维条. 它能让魔杖在过度施法时猛烈甩出, 并且施法速度极快."
 	icon_state = "fibreglass"
 
 /obj/item/wand_part/driftwood
-	name = "Driftwood"
-	desc = "A piece of bleached driftwood with elemental resonance. It smells faintly of the sea and enhances spell efficiency."
+	name = "浮木"
+	desc = "一块带有元素共鸣的漂白浮木. 它散发着淡淡的海水气息, 能增强法术效率."
 	icon_state = "driftwood"
 
 /obj/item/wand_part/stale_chip
-	name = "Stale chip (French fry)"
-	desc = "Dropped during Tuesday's lunch service by Lunch Lady Doris and hardened over months into an indestructible, rock-like substance."
+	name = "不新鲜的薯条"
+	desc = "周二午餐服务时被食堂多丽丝大妈掉落, 经过数月硬化成了一种坚不可摧、岩石般的物质."
 	icon_state = "stale_chip"
 
 /obj/item/wand_part/shrub_root
-	name = "Shrieking shrub root"
-	desc = "A thick, vibrating root that constantly emits a faint, high-pitched whimper. It is incredibly magically volatile."
+	name = "尖啸灌木根"
+	desc = "一根粗壮、不断振动的根须, 持续发出微弱的高频呜咽声. 它具有极强的魔法不稳定性."
 	icon_state = "shrub_root"
 
 /obj/item/wand_part/cap_truncheon
-	name = "C.A.P. truncheon"
-	desc = "Standard-issue Ministry police baton. Carved from dense, magic-resistant mahogany and weighted with lead."
+	name = "C.A.P. 警棍"
+	desc = "魔法实践治安局的制式警棍. 由致密、抗魔法的红木雕刻而成, 并以铅加重."
 	icon_state = "cap_truncheon"
 
 /obj/effect/spawner/objspawner/wandpart
@@ -326,16 +326,16 @@
 	timer = 1800
 
 /obj/item/weapon/basketball/mopball
-	name = "mop ball"
-	desc = "A ball used for playing mop ball. It is slightly bouncy and very dirty."
+	name = "拖把球"
+	desc = "用于玩拖把球的球. 它略有弹性, 而且非常脏."
 
 // ============================================================
 // BRENDA'S "SPECIAL RESERVE" WELSH RUM
 // ============================================================
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/welsh_rum
-	name = "Brenda's \"Special Reserve\" Welsh Rum"
-	desc = "A grimy bottle with a handwritten label that reads 'Property of B. Brenda - Touch this and I'll break your wand arm.'"
+	name = "布伦达的\"特别珍藏\"威尔士朗姆酒"
+	desc = "一个肮脏的瓶子, 上面有手写标签, 写着\"B. 布伦达的财产 - 碰这个我就打断你的魔杖胳膊.\""
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "rumbottle"
 	item_state = "beer"
@@ -346,8 +346,8 @@
 		reagents.add_reagent("welsh_rum", 60)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/welsh_rum/empty
-	name = "empty bottle of Brenda's rum"
-	desc = "An empty bottle. The smell of cheap rum and despair still lingers."
+	name = "布伦达朗姆酒的空瓶"
+	desc = "一个空瓶子. 廉价朗姆酒和绝望的气味依然萦绕不散."
 	icon_state = "rumbottle"
 	value = 1
 	New()
@@ -377,8 +377,8 @@
 // ============================================================
 
 /obj/item/clothing/suit/chameleon_mac
-	name = "\"Chameleon\" Mac"
-	desc = "A smelly, translucent 1980s plastic raincoat. Brenda swears it's woven from invisible beasts; it's actually highly reflective Ministry-grade plastic. Stand still and you'll vanish."
+	name = "\"变色龙\"雨衣"
+	desc = "一件有异味、半透明的1980年代塑料雨衣. 布伦达发誓它是用隐形兽编织的; 实际上它是高度反光的魔法部级塑料. 站着不动你就会消失."
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "mac_jacket"
 	item_state = "mac_jacket"
@@ -440,8 +440,8 @@
 // ============================================================
 
 /obj/item/weapon/reagent_containers/food/snacks/ditch_weed
-	name = "Cwm-Plwd Ditch-Weed"
-	desc = "A glowing, radioactive-looking weed harvested from the toxic runoff pipe behind the potion dungeons. Eating it will violently mutate your eyes."
+	name = "库姆-普卢德沟渠草"
+	desc = "一种从魔药地牢后面的有毒排水管中采集的发光、看起来有放射性的杂草. 吃下它会剧烈地使你的眼睛发生变异."
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "ditch_weed"
 	volume = 5
@@ -468,8 +468,8 @@
 // ============================================================
 
 /obj/item/weapon/storage/tesco_bag
-	name = "\"Bottomless\" Tesco Carrier Bag"
-	desc = "A crinkled, slightly sticky plastic grocery bag from a non-magical supermarket. Brenda charmed it herself in the pub's cellar. It can hold a ludicrous amount of stuff - but sharp objects might tear it."
+	name = "\"无底\"乐购购物袋"
+	desc = "一个来自非魔法超市的皱巴巴、略带黏性的塑料购物袋. 布伦达亲自在酒吧地窖里给它施了咒. 它能装下多得离谱的东西 - 但尖锐物品可能会把它划破."
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "tesco_bag"
 	item_state = "plasticbag"
@@ -503,8 +503,8 @@
 // ============================================================
 
 /obj/item/weapon/dead_zone_battery
-	name = "\"Dead-Zone\" Car Battery"
-	desc = "A rusted lead-acid battery pulled from an old car. Anti-magic copper runes are crudely etched into the casing. When activated, it grounds out all arcane frequencies in a wide area."
+	name = "\"死区\"汽车电池"
+	desc = "一块从旧汽车上拆下的生锈铅酸电池. 外壳上粗糙地刻着反魔法铜符文. 激活时, 它会将大范围内所有奥术频率接地消除."
 	icon = 'icons/obj/magic_items.dmi'
 	icon_state = "car_battery"
 	item_state = "car_battery"
@@ -541,7 +541,7 @@
 
 /obj/effect/null_zone
 	name = "null zone"
-	desc = "The air feels dead and heavy here."
+	desc = "这里的空气感觉死寂而沉重."
 	invisibility = 101
 	anchored = TRUE
 	density = FALSE

@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/wolf
 	name = "grey wolf"
-	desc = "Better start running..."
+	desc = "最好开始跑吧..."
 	icon_state = "greywolf"
 	icon_living = "greywolf"
 	icon_dead = "greywolf_dead"
@@ -103,7 +103,7 @@
 				var/mob/living/simple_animal/hostile/wolf/female/B = new/mob/living/simple_animal/hostile/wolf/female(loc)
 				B.cub = TRUE
 				B.btype = btype
-			visible_message("A wolf cub has been born!")
+			visible_message("一只狼崽出生了!")
 
 /mob/living/simple_animal/hostile/wolf/white
 	name = "white wolf"

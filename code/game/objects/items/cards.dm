@@ -14,8 +14,8 @@
 	flags = FALSE
 	
 /obj/item/weapon/deck/cards
-	name = "deck of cards"
-	desc = "A simple deck of playing cards."
+	name = "一副纸牌"
+	desc = "一副简单的扑克牌."
 	icon_state = "deck"
 
 /obj/item/weapon/deck/cards/New()
@@ -57,7 +57,7 @@
 		for (var/datum/playingcard/P in H.cards)
 			cards += P
 		qdel(O)
-		to_chat(user, "You place your cards on the bottom of \the [src].")
+		to_chat(user, "你把你的牌放到\the [src]的底部.")
 		return
 	..()
 
@@ -76,7 +76,7 @@
 	var/mob/living/human/user = usr
 
 	if (!cards.len)
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆里没有牌了.")
 		return
 
 	var/obj/item/weapon/hand/H
@@ -94,8 +94,8 @@
 	H.cards += P
 	cards -= P
 	H.update_icon()
-	user.visible_message("\The [user] draws a card.")
-	to_chat(user, "It's the [P].")
+	user.visible_message("\The [user]抽了一张牌.")
+	to_chat(user, "是[P].")
 
 /obj/item/weapon/deck/verb/deal_card()
 
@@ -107,7 +107,7 @@
 	if (usr.stat || !Adjacent(usr)) return
 
 	if (!cards.len)
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆里没有牌了.")
 		return
 
 	var/list/players = list()
@@ -129,9 +129,9 @@
 	H.concealed = TRUE
 	H.update_icon()
 	if (user==target)
-		user.visible_message("\The [user] deals a card to \himself.")
+		user.visible_message("\The [user]给\him self发了一张牌.")
 	else
-		user.visible_message("\The [user] deals a card to \the [target].")
+		user.visible_message("\The [user]给\the [target]发了一张牌.")
 	H.throw_at(get_step(target,target.dir),10,1,H)
 
 /obj/item/weapon/hand/attackby(obj/O as obj, mob/user as mob)
@@ -154,7 +154,7 @@
 		newcards += P
 		cards -= P
 	cards = newcards
-	user.visible_message("\The [user] shuffles [src].")
+	user.visible_message("\The [user]洗了[src].")
 
 /obj/item/weapon/deck/MouseDrop(atom/over)
 	if (!usr || !over) return
@@ -163,14 +163,14 @@
 	if (!ishuman(over) || !(over in viewers(3))) return
 
 	if (!cards.len)
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆里没有牌了.")
 		return
 
 	deal_at(usr, over)
 
 /obj/item/weapon/pack/
-	name = "card pack"
-	desc = "For those with disposible income."
+	name = "卡包"
+	desc = "献给那些有闲钱的人."
 
 	icon_state = "card_pack"
 	icon = 'icons/obj/playing_cards.dmi'
@@ -180,7 +180,7 @@
 
 
 /obj/item/weapon/pack/attack_self(var/mob/user as mob)
-	user.visible_message("[user] rips open \the [src]!")
+	user.visible_message("[user]撕开了\the [src]!")
 	var/obj/item/weapon/hand/H = new()
 
 	H.cards += cards
@@ -192,8 +192,8 @@
 	user.put_in_active_hand(H)
 
 /obj/item/weapon/hand
-	name = "hand of cards"
-	desc = "Some playing cards."
+	name = "一手牌"
+	desc = "一些扑克牌."
 	icon = 'icons/obj/playing_cards.dmi'
 	icon_state = "empty"
 	w_class = ITEM_SIZE_TINY
@@ -222,7 +222,7 @@
 	H.concealed = FALSE
 	H.update_icon()
 	update_icon()
-	usr.visible_message("\The [usr] plays \the [discarding].")
+	usr.visible_message("\The [usr]打出了\the [discarding].")
 	H.loc = get_step(usr,usr.dir)
 
 	if (!cards.len)
@@ -231,14 +231,14 @@
 /obj/item/weapon/hand/attack_self(var/mob/user as mob)
 	concealed = !concealed
 	update_icon()
-	user.visible_message("\The [user] [concealed ? "conceals" : "reveals"] their hand.")
+	user.visible_message("\The [user][concealed ? "conceals" : "reveals"]了他们的手牌.")
 
 /obj/item/weapon/hand/examine(mob/user)
 	..(user)
 	if ((!concealed || loc == user) && cards.len)
-		to_chat(user, "It contains: ")
+		to_chat(user, "它包含: ")
 		for (var/datum/playingcard/P in cards)
-			to_chat(user, "The [P.name].")
+			to_chat(user, "[P.name].")
 
 /obj/item/weapon/hand/update_icon(var/direction = FALSE)
 

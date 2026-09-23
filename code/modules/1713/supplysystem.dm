@@ -1,6 +1,6 @@
 /obj/structure/supplybook
-	name = "supply orders book"
-	desc = "Use this to request supplies to be delivered to the colony. Only merchants have access to it and only the governor can order ammunition."
+	name = "补给订单簿"
+	desc = "用它来请求将补给品运送到殖民地. 只有商人可以使用它, 并且只有总督才能订购弹药."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook"
 	var/money = 0
@@ -53,8 +53,8 @@
 	return ..()
 
 /obj/structure/exportbook
-	name = "exporting book"
-	desc = "Use this to export colony products and exchange money. Only merchants and governors have access to it."
+	name = "出口簿"
+	desc = "用它来出口殖民地产品并换取金钱. 只有商人和总督可以使用它."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook2"
 	var/money = 0
@@ -81,7 +81,7 @@
 	not_disassemblable = TRUE
 /obj/structure/supplybook/attack_hand(var/mob/living/human/user as mob)
 	if (user.original_job_title != "Gobernador" && user.original_job_title != "Governador" && user.original_job_title != "Governeur" && user.original_job_title != "Governor" && user.original_job_title != "British Governor" && user.original_job_title != "British Merchant"  && user.original_job_title != "Merchant" && user.original_job_title != "Trader" && user.original_job_title != "Mercador" && user.original_job_title != "Comerciante" && user.original_job_title != "Marchand" && user.original_job_title != "Mayor" && user.original_job_title != "Kaufmann" && user.original_job_title != "Freiherr" && user.original_job_title != "Pirate Quartermaster")
-		to_chat(user, "Only the merchants have access to the international shipping companies. Negotiate with one.")
+		to_chat(user, "只有商人可以使用国际航运公司. 去和其中一家谈判吧.")
 		return
 
 	var/list/final_list = list()
@@ -101,7 +101,7 @@
 	else
 		import_tax_rate = input(user, "Set the import tax rate: (0%-100%)") as num
 		import_tax_rate = Clamp(import_tax_rate, 0, 100)
-		to_chat(user, "Setting import tax to [import_tax_rate]%")
+		to_chat(user, "将进口税设置为 [import_tax_rate]%")
 		change_import_tax(import_tax_rate)
 		New()
 		for (var/list/i in items_for_sale)
@@ -124,10 +124,10 @@
 	var/final_cost = (final_list[4]/age_modifier)+((final_list[4]/age_modifier)*(import_tax_rate/100))
 
 	if (isemptylist(final_list))
-		to_chat(user, "Uh oh - something went wrong! Ping an admin!")
+		to_chat(user, "哎呀 - 出错了! 请联系管理员!")
 		return
 	if(final_list[4] > money)
-		to_chat(user, "You don't have enough money to buy that crate!")
+		to_chat(user, "你没有足够的钱购买那个板条箱!")
 // giving change back
 		if (money <= 50 && money > 0)
 			if (map.ordinal_age >= 4)
@@ -190,11 +190,11 @@
 		else if (money == 0)
 			return
 		else if (money > 1600)
-			to_chat(user, "Too much money to pay you back! Buy something else to reduce the money deposited.")
+			to_chat(user, "需要退还的钱太多了! 买点别的东西来减少存入的钱.")
 			return
 	else if (final_cost <= money)
 		money -= final_cost
-		to_chat(user, "You have successfully purchased the crate. It will arrive soon.")
+		to_chat(user, "你成功购买了板条箱. 它很快就会到达.")
 		spawn(600) // 1 minute
 			var/list/turfs = list()
 			if (faction_treasury != "craftable")
@@ -212,7 +212,7 @@
 				spawnpoint = pick(turfs)
 			var/tpath = final_list[3]
 			new tpath(get_turf(spawnpoint))
-			to_chat(user, "A shipment has arrived.")
+			to_chat(user, "一批货物已到达.")
 
 // giving change back, and taxes
 		if (money <= 50 && money > 0)
@@ -320,7 +320,7 @@
 		else if (money == 0)
 			return
 		else if (money > 10000)
-			to_chat(user, "Too much money to pay you back! Buy something else to reduce the money deposited.")
+			to_chat(user, "需要退还的钱太多了! 买点别的东西来减少存入的钱.")
 			return
 
 /obj/structure/supplybook/attackby(var/obj/item/stack/W as obj, var/mob/living/human/H as mob)
@@ -329,18 +329,18 @@
 		qdel(W)
 		return
 	else
-		to_chat(H, "You need to use either money or another form of currency (gold, pearls, valuable items).")
+		to_chat(H, "你需要使用金钱或其他形式的货币 (黄金, 珍珠, 贵重物品).")
 		return
 
 /obj/structure/exportbook/attackby(var/obj/item/W as obj, var/mob/living/human/H as mob)
 	if (H.original_job_title != "British Merchant"  && H.original_job_title != "Merchant" && H.original_job_title != "Trader" && H.original_job_title != "Mercador" && H.original_job_title != "Comerciante" && H.original_job_title != "Marchand" && H.original_job_title != "Kaufmann")
 		if (H.original_job_title != "Gobernador" && H.original_job_title != "Governador" && H.original_job_title != "Governeur" && H.original_job_title != "Governor" && H.original_job_title != "British Governor" && H.original_job_title != "British Merchant"  && H.original_job_title != "Merchant" && H.original_job_title != "Trader" && H.original_job_title != "Mercador" && H.original_job_title != "Comerciante" && H.original_job_title != "Marchand" && H.original_job_title != "Mayor" && H.original_job_title != "Kaufmann" && H.original_job_title != "Freiherr" && H.original_job_title != "Pirate Quartermaster")
-			to_chat(H, "Only the merchants have access to the international shipping companies. Negotiate with one.")
+			to_chat(H, "只有商人可以使用国际航运公司. 去和其中一家谈判吧.")
 			return
 	else
 		New() //Updating the export tax
 		if (W.value == 0)
-			to_chat(H, "There is no demand for this item.")
+			to_chat(H, "这件物品没有需求.")
 			return
 		else
 			if (istype(W, /obj/item/stack/money) && done == FALSE)
@@ -409,7 +409,7 @@
 						done = FALSE
 						return
 					else if (moneyin > 1600 && W && marketval > 0)
-						to_chat(H, "Too much money! Split it into smaller stacks first.")
+						to_chat(H, "钱太多了! 先把它分成更小的堆.")
 						marketval = 0
 						done = FALSE
 						return
@@ -533,7 +533,7 @@
 						done = FALSE
 						return
 					else if (moneyin > 1600 && W && marketval > 0)
-						to_chat(H, "This item is too expensive! You can't find a buyer for it.")
+						to_chat(H, "这件物品太贵了! 你找不到买家.")
 						marketval = 0
 						done = FALSE
 						return
@@ -545,12 +545,12 @@
 /obj/structure/exportbook/attack_hand(var/mob/living/human/H as mob)
 	if (H.original_job_title != "British Merchant"  && H.original_job_title != "Merchant" && H.original_job_title != "Trader" && H.original_job_title != "Mercador" && H.original_job_title != "Comerciante" && H.original_job_title != "Marchand" && H.original_job_title != "Banker" && H.original_job_title != "Kaufmann" && H.original_job_title != "Pirate Quartermaster")
 		if (H.original_job_title != "Gobernador" && H.original_job_title != "Governador" && H.original_job_title != "Governeur" && H.original_job_title != "Governor" && H.original_job_title != "British Governor" && H.original_job_title != "British Merchant"  && H.original_job_title != "Merchant" && H.original_job_title != "Trader" && H.original_job_title != "Mercador" && H.original_job_title != "Comerciante" && H.original_job_title != "Marchand" && H.original_job_title != "Mayor"&& H.original_job_title != "Freiherr" && H.original_job_title != "Kaufmann")
-			to_chat(H, "Only the merchants have access to the international shipping companies. Negotiate with one.")
+			to_chat(H, "只有商人可以使用国际航运公司. 去和其中一家谈判吧.")
 			return
 		else
 			var/set_export_tax = input(H, "Set the export tax rate: (0%-100%)") as num
 			set_export_tax = Clamp(set_export_tax, 0, 100)
-			to_chat(H, "Setting export tax to [set_export_tax]%")
+			to_chat(H, "将出口税设置为 [set_export_tax]%")
 			change_export_tax(set_export_tax)
 			New()
 			return

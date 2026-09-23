@@ -1,6 +1,6 @@
 /obj/item/clothing/under/football
-	name = "Unga Bunga jersey"
-	desc = "A football jersey of the Unga Bunga United, U.B.U."
+	name = "Unga Bunga球衣"
+	desc = "Unga Bunga联队,U.B.U.的足球球衣."
 	icon_state = "football_red"
 	item_state = "football_red"
 	force = 0.0
@@ -8,66 +8,66 @@
 	var/player_number = 0
 
 /obj/item/clothing/under/football/flamengo
-	name = "flamengo shirt with yellow shorts"
-	desc = "A C.R. Flamengo football shirt, with yellow swimming trunks."
+	name = "弗拉门戈球衣配黄色短裤"
+	desc = "一件C.R.弗拉门戈足球球衣,配黄色泳裤."
 	icon_state = "flamengo"
 	item_state = "flamengo"
 	player_number = 10
 
 /obj/item/clothing/under/football/red
-	name = "Unga Bunga jersey"
-	desc = "A football jersey of the Unga Bunga United, U.B.U."
+	name = "Unga Bunga球衣"
+	desc = "Unga Bunga联队,U.B.U.的足球球衣."
 	icon_state = "football_red"
 	item_state = "football_red"
 
 /obj/item/clothing/under/football/red/goalkeeper
-	name = "Unga Bunga goalkeeper jersey"
-	desc = "A football jersey of the goalkeeper of Unga Bunga United, U.B.U."
+	name = "Unga Bunga守门员球衣"
+	desc = "Unga Bunga联队,U.B.U.守门员的足球球衣."
 	icon_state = "football_red_gk"
 	item_state = "football_red_gk"
 
 /obj/item/clothing/under/football/blue
-	name = "Chad Town jersey"
-	desc = "A football jersey of the Chad Town Football Club, C.T.F.C."
+	name = "Chad Town球衣"
+	desc = "Chad Town足球俱乐部,C.T.F.C.的足球球衣."
 	icon_state = "football_blue"
 	item_state = "football_blue"
 
 /obj/item/clothing/under/football/blue/goalkeeper
-	name = "Chad Town goalkeeper jersey"
-	desc = "A football jersey of the goalkeeper of Chad Town Football Club, C.T.F.C."
+	name = "Chad Town守门员球衣"
+	desc = "Chad Town足球俱乐部,C.T.F.C.守门员的足球球衣."
 	icon_state = "football_blue_gk"
 	item_state = "football_blue_gk"
 
 // Campaign
 
 /obj/item/clothing/under/football/red_campaign
-	name = "Redmenia jersey"
-	desc = "A football jersey of the Redmenia United, U.B.U."
+	name = "Redmenia球衣"
+	desc = "Redmenia联队,U.B.U.的足球球衣."
 	icon_state = "football_red"
 	item_state = "football_red"
 
 /obj/item/clothing/under/football/red_campaign/goalkeeper
-	name = "Redmenia goalkeeper jersey"
-	desc = "A football jersey of the goalkeeper of Redmenia United, U.B.U."
+	name = "Redmenia守门员球衣"
+	desc = "Redmenia联队,U.B.U.守门员的足球球衣."
 	icon_state = "football_red_gk"
 	item_state = "football_red_gk"
 
 /obj/item/clothing/under/football/blue_campaign
-	name = "Blugoslavia jersey"
-	desc = "A football jersey of the Blugoslavia Football Club, C.T.F.C."
+	name = "Blugoslavia球衣"
+	desc = "Blugoslavia足球俱乐部,C.T.F.C.的足球球衣."
 	icon_state = "football_blue"
 	item_state = "football_blue"
 
 /obj/item/clothing/under/football/blue_campaign/goalkeeper
-	name = "Blugoslavia goalkeeper jersey"
-	desc = "A football jersey of the goalkeeper of Blugoslavia Football Club, C.T.F.C."
+	name = "Blugoslavia守门员球衣"
+	desc = "Blugoslavia足球俱乐部,C.T.F.C.守门员的足球球衣."
 	icon_state = "football_blue_gk"
 	item_state = "football_blue_gk"
 
 ///////////CUSTOM JERSEY//////////////
 /obj/item/clothing/under/football/custom
-	name = "football jersey"
-	desc = "A football team's official jersey."
+	name = "足球球衣"
+	desc = "一支足球队的官方球衣."
 	var/uncolored = FALSE
 	var/shirt_color = 0
 	var/shorts_color = 0
@@ -192,7 +192,7 @@
 		apply_overlays()
 		user << browse(null, "window=football_jersey")
 	else
-		to_chat(user, "<span class='notice'>You must set at least the shirt and shorts colors.</span>")
+		to_chat(user, "<span class='notice'>你至少必须设置上衣和短裤的颜色.</span>")
 		show_jersey_ui(user)
 //for automatic assignement of colors, ie, roundstart
 /obj/item/clothing/under/football/custom/proc/apply_overlays()
@@ -250,8 +250,8 @@
 		return
 /////////SHOES////////////////////////
 /obj/item/clothing/shoes/football
-	name = "football trainers"
-	desc = "A pair of football trainers."
+	name = "足球训练鞋"
+	desc = "一双足球训练鞋."
 	icon_state = "football"
 	item_state = "football"
 	armor = list(melee = 60, arrow = 5, gun = FALSE, energy = 25, bomb = 50, bio = 10, rad = FALSE)
@@ -261,13 +261,13 @@
 
 ////////////GLOVES/////////////////
 /obj/item/clothing/gloves/goalkeeper/red
-	name = "goalkeeper gloves"
+	name = "守门员手套"
 	icon_state = "latex"
 	item_state = "latex"
 	color = "#ffffff"
 
 /obj/item/clothing/gloves/goalkeeper/blue
-	name = "goalkeeper gloves"
+	name = "守门员手套"
 	icon_state = "latex"
 	item_state = "latex"
 	color = "#ffffff"
@@ -275,8 +275,8 @@
 /mob/living/human/var/obj/item/football/football = null
 
 /obj/item/football
-	name = "ball"
-	desc = "A classic black and white football."
+	name = "足球"
+	desc = "一个经典的黑白足球."
 	icon = 'icons/obj/football.dmi'
 	icon_state = "football"
 	force = 0.0
@@ -341,7 +341,7 @@
 			MF.reset_ball()
 			MF.teams[team][2] += 1
 			var/obj/item/football/FB = A
-			to_chat(world, "<font size=4 color='orange'>GOAL! <b>[FB.last_owner ? FB.last_owner : "Unknown"] [FB.last_owner ? "([FB.last_owner.ckey])" : ""]</b> scores for <b>[team]</b>!</font>")
+			to_chat(world, "<font size=4 color='orange'>进球! <b>[FB.last_owner ? FB.last_owner : "Unknown"] [FB.last_owner ? "([FB.last_owner.ckey])" : ""]</b>为<b>[team]</b>得分!</font>")
 			var/scorer = " [FB.last_owner.name] ([FB.last_owner.ckey]) <b>([FB.last_owner.team])</b>"
 			FB.last_owner = null
 			FB.owner = null
@@ -371,8 +371,8 @@
 /////////////////TEAM CREATOR/////////////////////
 
 /obj/structure/submitter
-	name = "Team Registration Terminal"
-	desc = "Register your team here!"
+	name = "队伍注册终端"
+	desc = "在这里注册你的队伍!"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "1980_computer_on"
 	var/active = FALSE
@@ -389,7 +389,7 @@
 	if (!active)
 		return
 	mob.setClickCooldown(40)
-	to_chat(mob, "You take a blank kit from the Terminal. You can now customise it.")
+	to_chat(mob, "你从终端取了一个空白套件.你现在可以自定义它了.")
 	new/obj/item/clothing/under/football/custom(loc)
 	return
 
@@ -451,7 +451,7 @@ function startTeam(uniform_type) {
 	else if (mob.r_hand && istype(mob.r_hand, /obj/item/clothing/under/football/custom))
 		CU = mob.r_hand
 	if (!CU)
-		to_chat(mob, "<span class='notice'>You need to hold a customized jersey to submit it.</span>")
+		to_chat(mob, "<span class='notice'>你需要手持一件自定义球衣才能提交.</span>")
 		return
 	var/action = href_list["action"]
 	if (!action)
@@ -543,8 +543,8 @@ function startTeam(uniform_type) {
 /////////////////GOALPOSTS/////////////////
 
 /obj/structure/goalpost
-	name = "goalpost"
-	desc = "A goalpost"
+	name = "球门柱"
+	desc = "一个球门柱."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "goalpostX"
 	flammable = FALSE
@@ -565,8 +565,8 @@ function startTeam(uniform_type) {
 ///////////////////////////////////BASKETBALL///////////////////////////////////////
 
 /obj/structure/basketball_hoop
-	name = "basketball hoop"
-	desc = "A basketball hoop."
+	name = "篮球架"
+	desc = "一个篮球架."
 	icon = 'icons/obj/basketball.dmi'
 	icon_state = "hoop"
 	flammable = FALSE
@@ -578,8 +578,8 @@ function startTeam(uniform_type) {
 /obj/item/weapon/basketball
 	icon = 'icons/obj/basketball.dmi'
 	icon_state = "basketball"
-	name = "basketball"
-	desc = "Here's your chance, time to sign up for the NBA."
+	name = "篮球"
+	desc = "你的机会来了,是时候报名参加NBA了."
 	force = 0
 	throwforce = 0
 	throw_speed = 1.5
@@ -600,16 +600,16 @@ function startTeam(uniform_type) {
 	if (istype(W, /obj/item/weapon/grab) && get_dist(src,user)<2)
 		var/obj/item/weapon/grab/G = W
 		if(G.state<2)
-			to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")
+			to_chat(user, "<span class='warning'>你需要更好的抓握力才能这么做!</span>")
 			return
 		G.affecting.loc = src.loc
 		G.affecting.Weaken(5)
-		visible_message("<span class='warning'>[G.assailant] dunks [G.affecting] into the [src]!</span>", 3)
+		visible_message("<span class='warning'>[G.assailant]将[G.affecting]扣进了[src]!</span>", 3)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item) && get_dist(src,user)<2)
 		user.drop_item(src.loc)
-		visible_message("<span class='notice'>[user] dunks [W] into the [src]!</span>", 3)
+		visible_message("<span class='notice'>[user]将[W]扣进了[src]!</span>", 3)
 		return
 
 /obj/structure/basketball_hoop/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)

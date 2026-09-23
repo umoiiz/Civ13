@@ -1,6 +1,6 @@
 /obj/structure/barricade/wood_pole // TODO move this and procs to barricade.dm
-	name = "wood pole"
-	desc = "A simple wood pole. You can attach stuff to it."
+	name = "木杆"
+	desc = "一根简单的木杆. 你可以把东西挂在上面."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wood_pole_good"
 	health = 50
@@ -21,8 +21,8 @@
 	icon_state = "wood_pole_good"
 
 /obj/structure/grille/fence
-	name = "fence"
-	desc = "An old wooden fence."
+	name = "栅栏"
+	desc = "一道老旧的木栅栏."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "fence"
 	health = 16
@@ -49,14 +49,14 @@
 		icon_state = "[initial(icon_state)]3"
 
 /obj/structure/grille/fence/picket
-	name = "picket fence"
-	desc = "A traditional wooden fence."
+	name = "尖桩栅栏"
+	desc = "一道传统的木栅栏."
 	icon_state = "picket"
 	health = 30
 
 /obj/structure/grille/fence/steel_picket
-	name = "metal fence"
-	desc = "A traditional metal fence."
+	name = "金属栅栏"
+	desc = "一道传统的金属栅栏."
 	icon_state = "steel_picket"
 	health = 60
 	flammable = FALSE
@@ -111,8 +111,8 @@
 	..()
 
 /obj/structure/grille/logfence
-	name = "palisade"
-	desc = "A wooden palisade."
+	name = "木桩栅栏"
+	desc = "一道木制栅栏."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "palisade"
 	health = 32
@@ -121,16 +121,16 @@
 	flammable = TRUE
 
 /obj/structure/grille/ironfence
-	name = "iron fence"
-	desc = "A wrought iron fence."
+	name = "铁栅栏"
+	desc = "一道锻铁栅栏."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "iron_fence"
 	health = 70
 	hitsound = 'sound/weapons/blade_parry1.ogg'
 
 /obj/structure/grille/metalsheetfence
-	name = "metal fence"
-	desc = "A sheet metal fence."
+	name = "金属栅栏"
+	desc = "一道金属板栅栏."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "metal_fence1"
 	health = 80
@@ -170,8 +170,8 @@
 	icon_state = "metal_fence5"
 
 /obj/structure/grille/metalsheetfence/corner
-	name = "metal-sheet fence"
-	desc = "A woven steel fence."
+	name = "金属板栅栏"
+	desc = "一道编织钢栅栏."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "metal_fence_corner1"
 	health = 120
@@ -189,8 +189,8 @@
 //////////////CHAIN-LINK FENCES////////////////
 
 /obj/structure/grille/chainlinkfence
-	name = "chain-link fence"
-	desc = "A woven steel fence."
+	name = "铁丝网栅栏"
+	desc = "一道编织钢栅栏."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "chainlinkfence"
 	health = 50
@@ -217,32 +217,32 @@
 /obj/structure/grille/chainlinkfence/attackby(obj/item/W, mob/living/human/user)
 	if(istype(W, /obj/item/weapon/wirecutters))
 		if(!cuttable)
-			to_chat(user, "<span class='notice'>This section of the fence can't be cut.</span>")
+			to_chat(user, "<span class='notice'>这段栅栏无法被切开.</span>")
 			return
 		if(invulnerable)
-			to_chat(user, "<span class='notice'>This fence is too strong to cut through.</span>")
+			to_chat(user, "<span class='notice'>这道栅栏太坚固了,无法切开.</span>")
 			return
 		var/current_stage = hole_size
 		if(current_stage >= 3)
-			to_chat(user, "<span class='notice'>This fence has been completely cut already.</span>")
+			to_chat(user, "<span class='notice'>这道栅栏已经被完全切开了.</span>")
 			return
 
-		user.visible_message("<span class='danger'>\The [user] starts cutting through \the [src] with \the [W].</span>",\
+		user.visible_message("<span class='danger'>\The [user]开始用\the [W]切开\the [src].</span>",\
 		"<span class='danger'>You start cutting through \the [src] with \the [W].</span>")
 
 		if(do_after(user, (120/user.getStatCoeff("crafting")), src))
 			if(current_stage == hole_size)
 				switch(++hole_size)
 					if (1)
-						visible_message("<span class='notice'>\The [user] cuts into \the [src] some more.</span>")
+						visible_message("<span class='notice'>\The [user]继续切入\the [src].</span>")
 						climbable = FALSE
 					if (2)
-						visible_message("<span class='notice'>\The [user] cuts into \the [src] some more.</span>")
-						to_chat(user, "<span class='info'>You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger.</span>")
+						visible_message("<span class='notice'>\The [user]继续切入\the [src].</span>")
+						to_chat(user, "<span class='info'>你现在大概能从那洞里钻过去了. 不过如果你把它弄得更大些,爬过去会快得多.</span>")
 						climbable = TRUE
 					if (3)
-						visible_message("<span class='notice'>\The [user] completely cuts through \the [src].</span>")
-						to_chat(user, "<span class='info'>The hole in \the [src] is now big enough to walk through.</span>")
+						visible_message("<span class='notice'>\The [user]完全切开了\the [src].</span>")
+						to_chat(user, "<span class='info'>\the [src]上的洞现在大到可以走过去了.</span>")
 						climbable = FALSE
 
 				update_cut_status()
@@ -285,8 +285,8 @@
 ///////CHAIN-LINK FENCE DOOR /////////////
 
 /obj/structure/grille/chainlinkfence/door
-	name = "chain-link fence door"
-	desc = "A woven steel fence door."
+	name = "铁丝网栅栏门"
+	desc = "一道编织钢栅栏门."
 	icon_state = "chainlinkfence_door"
 	cuttable = FALSE
 	var/open = FALSE
@@ -308,15 +308,15 @@
 /obj/structure/grille/chainlinkfence/door/proc/toggle(mob/user)
 	switch(open)
 		if(FALSE)
-			user.visible_message("<span class='warning'>\The [user] opens \the [src].</span>",
-								"<span class='notice'>You open \the [src].</span>",
-								"You hear something being opened.")
+			user.visible_message("<span class='warning'>\The [user]打开了\the [src].</span>",
+								"<span class='notice'>你打开了\the [src].</span>",
+								"你听到有什么东西被打开了.")
 
 			open = TRUE
 		if(TRUE)
-			user.visible_message("<span class='warning'>\The [user] closes \the [src].</span>",
-								"<span class='notice'>You close \the [src].</span>",
-								"You hear something being closed.")
+			user.visible_message("<span class='warning'>\The [user]关上了\the [src].</span>",
+								"<span class='notice'>你关上了\the [src].</span>",
+								"你听到有什么东西被关上了.")
 
 			open = FALSE
 
@@ -338,8 +338,8 @@
 ////////////////////wallclock////////////////////////////
 
 /obj/structure/wallclock
-	name = "standing clock"
-	desc = "A classic standing clock."
+	name = "落地钟"
+	desc = "一座经典的落地钟."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wall_clock"
 	flammable = TRUE
@@ -348,42 +348,42 @@
 	anchored = TRUE
 /obj/structure/wallclock/examine(mob/user)
 	..()
-	to_chat(user, "<big>It is now [clock_time()].</big>")
+	to_chat(user, "<big>现在是[clock_time()].</big>")
 
 //////////Props/////////////////////////////
 
 /obj/structure/props/server
-	name = "server hub"
-	desc = "A big and scary looking server connecting other servers."
+	name = "服务器中枢"
+	desc = "一台看起来又大又吓人的服务器,用于连接其他服务器."
 	icon = 'icons/obj/machines/servers.dmi'
 	icon_state = "hub"
 
 /obj/structure/props/server/controller
-	name = "server controller"
-	desc = "A controller for a server... and stuff... You have no clue what this is used for."
+	name = "服务器控制器"
+	desc = "一个服务器的控制器... 之类的... 你完全不知道这玩意儿是干什么用的."
 	icon_state = "controller"
 
 /obj/structure/props/server/processor
-	name = "server processor"
-	desc = "A processor to process stuff into stuff, weird IT department with their names..."
+	name = "服务器处理器"
+	desc = "一个把东西处理成东西的处理器, IT部门起名字真是够奇怪的..."
 	icon_state = "processor"
 
 /obj/structure/props/server/comm
-	name = "communication server"
-	desc = "A communication server to communicate with other servers and people, do I really need to explain this?"
+	name = "通信服务器"
+	desc = "一台用于与其他服务器和人员通信的通信服务器, 我真的需要解释这个吗?"
 	icon_state = "comm_server"
 
 /obj/structure/transformer
-	name = "power transformer"
-	desc = "A big, heavy duty, power transformer turning high voltage electricity into low voltage electricity to be used by the consumer or else."
+	name = "电力变压器"
+	desc = "一台大型重型电力变压器, 把高压电转换成低压电供用户使用, 不然呢."
 	icon = 'icons/obj/machines/servers.dmi'
 	icon_state = "controller"
 
 //////////More Props/////////////////////////////
 
 /obj/structure/props/junk
-	name = "junk"
-	desc = "A pile of junk."
+	name = "废品"
+	desc = "一堆废品."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "Junk_1"
 	flammable = TRUE
@@ -397,8 +397,8 @@
 	icon_state = "Junk_[rand(1,14)]"
 
 /obj/structure/props/barrel
-	name = "barrel"
-	desc = "A barrel with god knows what in it."
+	name = "桶"
+	desc = "一个桶, 天知道里面装了什么."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "barrel1"
 	flammable = FALSE
@@ -412,8 +412,8 @@
 	icon_state = "barrel[rand(1,5)]"
 
 /obj/structure/props/fueltank
-	name = "fueltank"
-	desc = "A huge industrial fueltank."
+	name = "燃料罐"
+	desc = "一个巨大的工业燃料罐."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "fueltank"
 	flammable = FALSE
@@ -426,8 +426,8 @@
 	bound_height = 64
 
 /obj/structure/props/stove
-	name = "gas stove"
-	desc = "A gas stove."
+	name = "煤气灶"
+	desc = "一个煤气灶."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "stove"
 	flammable = FALSE
@@ -441,8 +441,8 @@
 	icon_state = "gasstove"
 
 /obj/structure/props/radiator
-	name = "radiator"
-	desc = "A heat exchanger."
+	name = "散热器"
+	desc = "一个热交换器."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "radiator"
 	flammable = FALSE
@@ -455,8 +455,8 @@
 /////////Pipes/////////////////////////////
 
 /obj/structure/props/piping/pipe
-	name = "pipe"
-	desc = "A big pipe."
+	name = "管道"
+	desc = "一根大管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "s_pipe"
 	flammable = FALSE
@@ -471,8 +471,8 @@
 	layer = 1
 
 /obj/structure/props/piping/broken_pipe
-	name = "broken pipe"
-	desc = "A big broken pipe."
+	name = "破损的管道"
+	desc = "一根破损的大管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "pipe-b"
 	flammable = FALSE
@@ -487,8 +487,8 @@
 	layer = 1
 
 /obj/structure/props/piping/pipe_up
-	name = "pipe"
-	desc = "A big pipe."
+	name = "管道"
+	desc = "一根大管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "pipe-t"
 	flammable = FALSE
@@ -503,8 +503,8 @@
 	layer = 1
 
 /obj/structure/props/piping/small/pipe
-	name = "small pipe"
-	desc = "A pipe."
+	name = "小管道"
+	desc = "一根管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "s_pipe2_thin"
 	flammable = FALSE
@@ -519,8 +519,8 @@
 	layer = 1
 
 /obj/structure/props/piping/small/pipex
-	name = "small pipe"
-	desc = "A pipe."
+	name = "小管道"
+	desc = "一根管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "s_pipe_connection4_thin"
 	flammable = FALSE
@@ -535,8 +535,8 @@
 	layer = 1
 
 /obj/structure/props/piping/small/pipel
-	name = "small pipe"
-	desc = "A small L-shaped pipe."
+	name = "小管道"
+	desc = "一根L形小管道."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "s_pipe_turn"
 	flammable = FALSE
@@ -551,8 +551,8 @@
 	layer = 1
 
 /obj/structure/props/piping/small/pipet
-	name = "small pipe"
-	desc = "A small T-shaped pipe."
+	name = "小管道"
+	desc = "一个小型T形管."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "s_pipe_connection3_thin"
 	flammable = FALSE
@@ -569,8 +569,8 @@
 /////////////////////////////////////////////////////////
 
 /obj/structure/props/bathtub
-	name = "bathtub"
-	desc = "A bathtub."
+	name = "浴缸"
+	desc = "一个浴缸."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "bathtub"
 	flammable = FALSE
@@ -581,8 +581,8 @@
 	anchored = TRUE
 
 /obj/structure/props/djtable
-	name = "DJ table"
-	desc = "A DJ table."
+	name = "DJ台"
+	desc = "一个DJ台."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "djtable"
 	flammable = TRUE
@@ -593,8 +593,8 @@
 	anchored = TRUE
 
 /obj/structure/props/coatrack
-	name = "coat rack"
-	desc = "A coat rack."
+	name = "衣帽架"
+	desc = "一个衣帽架."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "coatrack"
 	flammable = FALSE
@@ -604,8 +604,8 @@
 	opacity = FALSE
 
 /obj/structure/props/sofa
-	name = "sofa"
-	desc = "A sofa."
+	name = "沙发"
+	desc = "一个沙发."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "sofa_forward_left"
 	flammable = TRUE
@@ -640,8 +640,8 @@
 
 
 /obj/structure/potted_plant
-	name = "potted plant"
-	desc = "A potted plant."
+	name = "盆栽"
+	desc = "一盆盆栽."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "potted_plant"
 	flammable = TRUE
@@ -649,8 +649,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/props/hookah
-	name = "hookah"
-	desc = "A glass pipe used to smoke tobacco or other substances."
+	name = "水烟壶"
+	desc = "一种用于吸食烟草或其他物质的玻璃管."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "hookah1"
 	flammable = FALSE
@@ -665,8 +665,8 @@
 	icon_state = pickhookah
 
 /obj/structure/props/bong
-	name = "bong"
-	desc = "A glass pipe used to smoke cannabis or other substances."
+	name = "大麻烟枪"
+	desc = "一种用于吸食大麻或其他物质的玻璃管."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "bong"
 	flammable = FALSE
@@ -677,8 +677,8 @@
 
 
 /obj/structure/props/bike
-	name = "motorbike"
-	desc = "A motorbike."
+	name = "摩托车"
+	desc = "一辆摩托车."
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "bike"
 	flammable = FALSE
@@ -689,8 +689,8 @@
 	bound_width = 64
 
 /obj/structure/props/car_wreck
-	name = "car wreck"
-	desc = "Looks like it has been here for a while."
+	name = "汽车残骸"
+	desc = "看起来已经在这里有一段时间了."
 	icon = 'icons/obj/vehicles/wip_vehicles.dmi'
 	icon_state = "car_wreck"
 	flammable = FALSE
@@ -716,8 +716,8 @@
 	bound_height = 64
 
 /obj/structure/props/watts_tower
-	name = "sculpture tower"
-	desc = "An achitectural scultpural tower."
+	name = "雕塑塔"
+	desc = "一座建筑雕塑塔."
 	icon = 'icons/obj/decals_widest.dmi'
 	icon_state = "watts_tower"
 	flammable = FALSE
@@ -730,8 +730,8 @@
 	layer = MOB_LAYER+1
 
 /obj/structure/props/engineprops
-	name = "generic"
-	desc = "A generic engine prop."
+	name = "通用"
+	desc = "一个通用引擎道具."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline_static"
 	flammable = FALSE
@@ -742,48 +742,48 @@
 	anchored = TRUE
 	not_movable = TRUE
 /obj/structure/props/engineprops/gas
-	name = "gasoline engine"
-	desc = "A gasoline engine in operation."
+	name = "汽油发动机"
+	desc = "一台运转中的汽油发动机."
 	icon_state = "gasoline_on"
 /obj/structure/props/engineprops/frunace
-	name = "furnace"
-	desc = "A furnace in operation."
+	name = "熔炉"
+	desc = "一座运转中的熔炉."
 	icon_state = "furnace_open_on"
 /obj/structure/props/engineprops/turbine
-	name = "turbine engine"
-	desc = "A turbine engine in operation."
+	name = "涡轮发动机"
+	desc = "一台运转中的涡轮发动机."
 	icon_state = "turbine_on"
 /obj/structure/props/engineprops/diesel
-	name = "diesel engine"
-	desc = "A diesel engine in operation."
+	name = "柴油发动机"
+	desc = "一台运转中的柴油发动机."
 	icon_state = "biodiesel_on"
 /obj/structure/props/engineprops/hotbulb
-	name = "hotbulb engine"
-	desc = "A hotbulb engine in operation."
+	name = "热球发动机"
+	desc = "一台运转中的热球发动机."
 	icon_state = "hotbulb_on"
 /obj/structure/props/engineprops/dieselgeni
-	name = "diesel generator"
-	desc = "A diesel generator in operation."
+	name = "柴油发电机"
+	desc = "一台运转中的柴油发电机."
 	icon_state = "diesel_on"
 /obj/structure/props/engineprops/hesselman
-	name = "hesselman engine"
-	desc = "A hesselman engine in operation."
+	name = "黑塞尔曼发动机"
+	desc = "一台运转中的黑塞尔曼发动机."
 	icon_state = "hesselman_on"
 /obj/structure/props/engineprops/steam
-	name = "steam engine"
-	desc = "A steam engine in operation."
+	name = "蒸汽机"
+	desc = "一台运转中的蒸汽机."
 	icon_state = "steam_on"
 /obj/structure/props/engineprops/aeolipile
-	name = "aeolipile engine"
-	desc = "An aeolipile in operation."
+	name = "汽转球引擎"
+	desc = "一个运转中的汽转球."
 	icon_state = "aeolipile_on"
 /obj/structure/props/engineprops/reactor
-	name = "reactor housing"
-	desc = "A reactor housing for nuclear fission/fussion."
+	name = "反应堆外壳"
+	desc = "一个用于核裂变/聚变的反应堆外壳."
 	icon_state = "reactor_3"
 /obj/structure/props/engineprops/big
-	name = "large engine"
-	desc = "A running engine. This one seems rather large."
+	name = "大型发动机"
+	desc = "一台运转中的发动机. 这个似乎相当大."
 	icon = 'icons/obj/engines64.dmi'
 	icon_state = "static_engine_on"
 	bound_width = 64
@@ -791,8 +791,8 @@
 	bound_x = 32
 
 /obj/structure/props/engineprops/waterpump
-	name = "large pump"
-	desc = "A pump of rather considerable size."
+	name = "大型泵"
+	desc = "一个相当大的泵."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "waterpump"
 	bound_width = 96
@@ -801,8 +801,8 @@
 	anchored = TRUE
 	not_movable = TRUE
 /obj/structure/props/random/container
-	name = "a shipping container"
-	desc = "6 metal sides, two of which open. A hard concept to improve."
+	name = "一个集装箱"
+	desc = "6面金属, 其中两面可以打开. 一个很难改进的概念."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "container1"
 	bound_width = 96
@@ -811,8 +811,8 @@
 	not_movable = TRUE
 	density = TRUE
 /obj/structure/props/random/podlock
-	name = "podlock"
-	desc = "Sturdy pod lock, should stop anything short of a breaching charge."
+	name = "吊舱锁"
+	desc = "坚固的吊舱锁, 应该能挡住除破门炸药以外的任何东西."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "blast"
 	anchored = TRUE
@@ -828,8 +828,8 @@
 	icon_state = "container5"
 
 /obj/structure/props/machineprops/refinery
-	name = "smoking cylinder"
-	desc = "This stack is definitely producing steam or maybe smoke. You are not sure what it is up to."
+	name = "冒烟圆柱"
+	desc = "这个烟囱肯定在产生蒸汽或者也许是烟雾. 你不确定它在搞什么."
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "refinery1"
 	bound_width = 32
@@ -839,8 +839,8 @@
 /* Computer props */
 
 /obj/structure/props/computerprops
-	name = "access terminal"
-	desc = "The screen is on and the buttons all work but you aren't sure you know which ones to push."
+	name = "访问终端"
+	desc = "屏幕亮着, 按钮也都能用, 但你不确定该按哪些."
 	light_range = 2
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "1980_computer_on"
@@ -890,8 +890,8 @@
 /* Broken Helicopter Parts */
 
 /obj/structure/broken_hind
-	name = "Mi-24 remains"
-	desc = "The remains of a Soviet helicopter."
+	name = "Mi-24残骸"
+	desc = "一架苏联直升机的残骸."
 	icon = 'icons/obj/decals_huge.dmi'
 	icon_state = "brokenhind"
 	flammable = FALSE
@@ -906,8 +906,8 @@
 	crushable = FALSE
 
 /obj/structure/broken_hind_tail
-	name = "helicopter tail"
-	desc = "The tail of a helicopter."
+	name = "直升机尾部"
+	desc = "一架直升机的尾部."
 	icon = 'icons/obj/decals_huge.dmi'
 	icon_state = "brokenhind_tail"
 	flammable = FALSE
@@ -922,8 +922,8 @@
 	crushable = FALSE
 
 /obj/structure/props/marketstall
-	name = "market stall"
-	desc = "A market stall."
+	name = "市场摊位"
+	desc = "一个市场摊位."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "propstall1"
 	flammable = TRUE
@@ -937,8 +937,8 @@
 		icon_state ="propstall[rand(1,4)]"
 
 /obj/structure/props/keyboard
-	name = "electric keyboard"
-	desc = "An electric keyboard."
+	name = "电子琴"
+	desc = "一台电子琴."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "keyboard"
 	flammable = FALSE
@@ -949,8 +949,8 @@
 	anchored = TRUE
 
 /obj/structure/props/dj
-	name = "DJ table"
-	desc = "A DJ setup for makin' sick beats."
+	name = "DJ台"
+	desc = "一套用来制作超赞节拍的DJ设备."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "djtable"
 	flammable = FALSE
@@ -961,8 +961,8 @@
 	anchored = TRUE
 
 /obj/structure/props/micstand
-	name = "microphone stand"
-	desc = "A mic-stand."
+	name = "麦克风支架"
+	desc = "一个麦克风支架."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "microphone_stand"
 	flammable = FALSE
@@ -973,8 +973,8 @@
 	anchored = TRUE
 
 /obj/structure/props/power_transformer
-	name = "power transformer"
-	desc = "A static device transforming electrical voltage from one level or phase to another. "
+	name = "电力变压器"
+	desc = "一种将电压从一个等级或相位转换到另一个等级的静态设备."
 	icon = 'icons/obj/powertransformer.dmi'
 	icon_state = "powertransformer"
 	flammable = FALSE
@@ -1012,185 +1012,185 @@
 
 /obj/structure/flag/pirates
 	icon_state = "pirates"
-	name = "Pirate flag"
-	desc = "A black and white pirate flags with skull and bones."
+	name = "海盗旗"
+	desc = "一面带有骷髅和交叉骨的黑白海盗旗."
 
 /obj/structure/flag/black
 	icon_state = "black"
-	name = "Black flag"
-	desc = "A black flag."
+	name = "黑旗"
+	desc = "一面黑旗."
 
 /obj/structure/flag/white
 	icon_state = "white"
-	name = "White flag"
-	desc = "A white flag."
+	name = "白旗"
+	desc = "一面白旗."
 
 /obj/structure/flag/french
 	icon_state = "french"
-	name = "French flag"
-	desc = "The French flag, white with golden fleur-de-lys."
+	name = "法国国旗"
+	desc = "法国国旗,白色底配金色鸢尾花."
 
 /obj/structure/flag/french_modern
 	icon_state = "french2"
-	name = "French flag"
-	desc = "The modern french tricoleur."
+	name = "法国国旗"
+	desc = "现代法国三色旗."
 
 /obj/structure/flag/french_monarchist
 	icon_state = "french3"
-	name = "French flag"
-	desc = "The french monarchist flag."
+	name = "法国国旗"
+	desc = "法国君主主义旗帜."
 
 
 /obj/structure/flag/spanish
 	icon_state = "spanish"
-	name = "Spanish Flag"
-	desc = "The Spanish flag, white with a red cross of burgundy."
+	name = "西班牙国旗"
+	desc = "西班牙国旗,白色底配勃艮第红色十字."
 
 /obj/structure/flag/spanish_modern
 	icon_state = "spanish2"
-	name = "Spanish Flag"
-	desc = "The modern yellow and red spanish flag."
+	name = "西班牙国旗"
+	desc = "现代黄红西班牙国旗."
 
 /obj/structure/flag/italian
 	icon_state = "italian"
-	name = "Italian Flag"
-	desc = "The modern italian flag."
+	name = "意大利国旗"
+	desc = "现代意大利国旗."
 
 /obj/structure/flag/british
 	icon_state = "british"
-	name = "British flag"
-	desc = "The Union Jack."
+	name = "英国国旗"
+	desc = "联合杰克旗."
 
 /obj/structure/flag/portuguese
 	icon_state = "portuguese"
-	name = "Portuguese flag"
-	desc = "A white flag with the Portuguese Coat of Arms in the middle."
+	name = "葡萄牙国旗"
+	desc = "中间带有葡萄牙国徽的白旗."
 
 /obj/structure/flag/dutch
 	icon_state = "netherlands"
-	name = "Dutch Flag"
-	desc = "The tricolor Dutch flag."
+	name = "荷兰国旗"
+	desc = "荷兰三色旗."
 
 /obj/structure/flag/dutch_old
 	icon_state = "netherlands_old"
-	name = "Dutch Flag"
-	desc = "The tricolor Dutch flag."
+	name = "荷兰国旗"
+	desc = "荷兰三色旗."
 
 /obj/structure/flag/japanese
 	icon_state = "japanese"
-	name = "Imperial Japanese flag"
-	desc = "The Imperial Japanese flag."
+	name = "大日本帝国国旗"
+	desc = "大日本帝国国旗."
 
 /obj/structure/flag/russian
 	icon_state = "russian"
-	name = "Russian flag"
-	desc = "The tricolor Russian flag."
+	name = "俄罗斯国旗"
+	desc = "俄罗斯三色旗."
 
 /obj/structure/flag/russian
 	icon_state = "russian"
-	name = "Russian flag"
-	desc = "The tricolor Russian flag."
+	name = "俄罗斯国旗"
+	desc = "俄罗斯三色旗."
 
 /obj/structure/flag/soviet
 	icon_state = "soviet"
-	name = "Soviet Union Flag"
-	desc = "The Soviet flag."
+	name = "苏联国旗"
+	desc = "苏联国旗."
 
 /obj/structure/flag/us
 	icon_state = "us"
-	name = "USA flag"
-	desc = "The US flag."
+	name = "美国国旗"
+	desc = "美国国旗."
 
 /obj/structure/flag/german
 	icon_state = "german"
-	name = "German flag"
-	desc = "The German flag."
+	name = "德国国旗"
+	desc = "德国国旗."
 
 /obj/structure/flag/german_modern
 	icon_state = "german2"
-	name = "German flag"
-	desc = "The German flag."
+	name = "德国国旗"
+	desc = "德国国旗."
 
 /obj/structure/flag/confed
 	icon_state = "confed"
-	name = "Confederate flag"
-	desc = "The Confederate flag"
+	name = "邦联国旗"
+	desc = "邦联国旗"
 
 /obj/structure/flag/reich
 	icon_state = "reich"
-	name = "Third Reich Flag"
-	desc = "The Third Reich war flag."
+	name = "第三帝国国旗"
+	desc = "第三帝国战旗."
 
 /obj/structure/flag/chinese
 	icon_state = "chinese"
-	name = "Republic of China Flag"
-	desc = "The Republic of China flag."
+	name = "中华民国国旗"
+	desc = "中华民国国旗."
 
 /obj/structure/flag/filipino
 	icon_state = "filipino"
-	name = "Philippines Republic"
-	desc = "The Republic of the Philippines flag."
+	name = "菲律宾共和国"
+	desc = "菲律宾共和国国旗."
 
 /obj/structure/flag/filipino_war
 	icon_state = "filipino_wartime"
-	name = "Philippines Republic"
-	desc = "The Republic of the Philippines flag. This one flipped for wartime."
+	name = "菲律宾共和国"
+	desc = "菲律宾共和国国旗.这面是战时翻转版本."
 
 /obj/structure/flag/nva
 	icon_state = "nva"
-	name = "North Vietnam Flag"
-	desc = "The flag of North Vietnam."
+	name = "北越国旗"
+	desc = "北越国旗."
 
 /obj/structure/flag/vietcong
 	icon_state = "vietcong"
-	name = "Vietcong Flag"
-	desc = "The flag of the National Liberation Front of Vietnam."
+	name = "越共旗帜"
+	desc = "越南民族解放阵线旗帜."
 
 /obj/structure/flag/redmenia
 	icon_state = "redmenia"
-	name = "Redmenia Flag"
-	desc = "The flag of Redmenia."
+	name = "雷德梅尼亚国旗"
+	desc = "雷德梅尼亚国旗."
 
 /obj/structure/flag/blugoslavia
 	icon_state = "blugoslavia"
-	name = "Blugoslavia Flag"
-	desc = "The flag of Blugoslavia."
+	name = "布鲁戈斯拉维亚国旗"
+	desc = "布鲁戈斯拉维亚国旗."
 
 /obj/structure/flag/cafr
 	icon_state = "cafr"
-	name = "CAFR Flag"
-	desc = "The flag of the Central Asian Federal Republic."
+	name = "中亚联邦共和国国旗"
+	desc = "中亚联邦共和国国旗."
 
 /obj/structure/flag/pole
 	icon_state = "flagpole_blank"
-	name = "Flagpole"
-	desc = "Flagless, apply cloth or a flag."
+	name = "旗杆"
+	desc = "无旗帜,可挂上布料或旗帜."
 
 /obj/structure/flag/bearclan
 	icon_state = "bearclan"
-	name = "Bearclan Banner"
-	desc = "A Bearclan banner."
+	name = "熊族旗帜"
+	desc = "熊族旗帜."
 
 /obj/structure/flag/ravenclan
 	icon_state = "ravenclan"
-	name = "Raven Banner"
-	desc = "A Ravenclan banner."
+	name = "渡鸦旗帜"
+	desc = "渡鸦族旗帜."
 
 /obj/structure/flag/objective
 	icon_state = "white"
-	name = "Objective Flag"
-	desc = "An objective flag."
+	name = "目标旗帜"
+	desc = "一面目标旗帜."
 
 /obj/structure/flag/objective/one
-	name = "Objective Flag one"
+	name = "目标旗帜一"
 /obj/structure/flag/objective/two
-	name = "Objective Flag two"
+	name = "目标旗帜二"
 /obj/structure/flag/objective/three
-	name = "Objective Flag three"
+	name = "目标旗帜三"
 /obj/structure/flag/objective/four
-	name = "Objective Flag four"
+	name = "目标旗帜四"
 /obj/structure/flag/objective/five
-	name = "Objective Flag five"
+	name = "目标旗帜五"
 
 /obj/structure/flag/campaign
 	var/faction_text = null
@@ -1209,7 +1209,7 @@
 						var/warning_sound = sound('sound/effects/siren_once.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 						for (var/mob/M in player_list)
 							M.client << warning_sound
-						to_chat(world, "<font size = 5><b>REDMENIA HAS RECAPTURED THEIR CAPITAL.</b></font>")
+						to_chat(world, "<font size = 5><b>雷德梅尼亚已夺回其首都.</b></font>")
 					if (BLUEFACTION)
 						icon_state = "blugoslavia"
 						name = "Blugoslavia Flag"
@@ -1217,8 +1217,8 @@
 						var/warning_sound = sound('sound/effects/siren_once.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 						for (var/mob/M in player_list)
 							M.client << warning_sound
-						to_chat(world, "<font size = 5><b>BLUGOSLAVIA HAS RECAPTURED THEIR CAPITAL.</b></font>")
-				to_chat(user, "You succesfully hoist your own flag! <br><font size = 5><span class = 'good'>Long live [capitalize(icon_state)]!</span></font>")
+						to_chat(world, "<font size = 5><b>布鲁戈斯拉维亚已夺回其首都.</b></font>")
+				to_chat(user, "你成功升起了自己的旗帜!<br><font size = 5><span class = 'good'>[capitalize(icon_state)]万岁!</span></font>")
 		else
 			to_chat(user, SPAN_NOTICE("You begin hoisting your own flag..."))
 			if (do_after(user, 10 SECONDS, src))
@@ -1231,7 +1231,7 @@
 						var/warning_sound = sound('sound/effects/siren_once.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 						for (var/mob/M in player_list)
 							M.client << warning_sound
-						to_chat(world, "<font size = 5><b>REDMENIA HAS CAPTURED THE BLUGOSLAVIAN CAPITAL.</b></font>")
+						to_chat(world, "<font size = 5><b>雷德梅尼亚已占领布鲁戈斯拉维亚首都.</b></font>")
 					if (BLUEFACTION)
 						icon_state = "blugoslavia"
 						name = "Blugoslavia Flag"
@@ -1239,22 +1239,22 @@
 						var/warning_sound = sound('sound/effects/siren_once.ogg', repeat = FALSE, wait = TRUE, channel = 777)
 						for (var/mob/M in player_list)
 							M.client << warning_sound
-						to_chat(world, "<font size = 5><b>BLUGOSLAVIA HAS CAPTURED THE REDMENIAN CAPITAL.</b></font>")
-				to_chat(user, "You succesfully hoist your own flag! <br><font size = 5><span class = 'good'>Long live [capitalize(icon_state)]!</span></font>")
+						to_chat(world, "<font size = 5><b>布鲁戈斯拉维亚已占领雷德梅尼亚首都.</b></font>")
+				to_chat(user, "你成功升起了自己的旗帜!<br><font size = 5><span class = 'good'>[capitalize(icon_state)]万岁!</span></font>")
 	else
 		to_chat(user, SPAN_WARNING("Long live [capitalize(icon_state)]!"))
 
 /obj/structure/flag/campaign/redmenia
 	icon_state = "redmenia"
-	name = "Redmenia Flag"
-	desc = "The flag of Redmenia."
+	name = "雷德梅尼亚国旗"
+	desc = "雷德梅尼亚国旗."
 	faction_text = REDFACTION
 	original_faction = REDFACTION
 
 /obj/structure/flag/campaign/blugoslavia
 	icon_state = "blugoslavia"
-	name = "Blugoslavia Flag"
-	desc = "The flag of Blugoslavia."
+	name = "蓝斯拉夫旗帜"
+	desc = "蓝斯拉夫的旗帜."
 	faction_text = BLUEFACTION
 	original_faction = BLUEFACTION
 
@@ -1267,7 +1267,7 @@
 				qdel(W)
 			qdel(src)
 		else
-			to_chat(H, "You need atleast five cloth to do that!")
+			to_chat(H, "你至少需要五块布料才能做那个!")
 	else if(istype(W, /obj/item/flagmaker))
 		new /obj/structure/flag/pole/custom(src.loc)
 		qdel(src)
@@ -1276,8 +1276,8 @@
 	..()
 /obj/structure/flag/pole/custom
 	icon_state = "cust_flag"
-	name = "Flag"
-	desc = "A flag."
+	name = "旗帜"
+	desc = "一面旗帜."
 	var/uncolored = TRUE
 	var/flagcolor
 	var/symbol
@@ -1286,7 +1286,7 @@
 /obj/structure/flag/pole/custom/attackby(obj/item/W as obj, var/mob/living/human/H)
 	if(istype(W, /obj/item/weapon))
 		if(W.sharp)
-			to_chat(H, "You tear down the flag!")
+			to_chat(H, "你扯下了旗帜!")
 			new/obj/structure/flag/pole(src.loc)
 			qdel(src)
 
@@ -1319,7 +1319,7 @@
 		else if(input == "None")
 			symbol = "cust_f_blank"
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	if (!symbolcolor)
 		var/input = WWinput(H, "Symbol Color - Choose a color:", "Symbol Color" , "#000000", "color")
 		if (input == null || input == "")
@@ -1343,8 +1343,8 @@
 	..()
 
 /obj/structure/wallframe
-	name = "wall frame"
-	desc = "A wooden wall frame, add something like paper, bamboo bundles or wood to it.."
+	name = "木墙框架"
+	desc = "一个木制墙框架, 往里面加点纸, 竹捆或木头之类的东西.."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wall_frame"
 	flammable = TRUE
@@ -1375,7 +1375,7 @@
 					qdel(src)
 					W.amount -= 6
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	else if(istype(W, /obj/item/weapon/paper))
 		var/input
 		var/display = list("Shoji Door - 1", "Shoji Wall - 1", "Shoji Divider - 1", "Shoji Window - 1", "Cancel")
@@ -1408,7 +1408,7 @@
 					qdel(src)
 					qdel(W)
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	else if(istype(W, /obj/item/stack/material/bamboo))
 		var/input = WWinput(H, "What wall would you like to make?", "Building", "Cancel",list ("Bamboo Wall - 3", "Bamboo Doorway - 2", "Bamboo Window - 2", "Cancel"))
 		if (input == "Cancel")
@@ -1437,7 +1437,7 @@
 					qdel(src)
 					W.amount -= 2
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	else if(istype(W, /obj/item/stack/material/woodplank))
 		playsound(loc, 'sound/effects/woodfile.ogg', 100, TRUE) //rip_pack.ogg
 		if(W.amount >= 10)
@@ -1446,13 +1446,13 @@
 				qdel(src)
 				W.amount -= 10
 		else
-			to_chat(H, "<span class='notice'>You need 10 planks to build the wall!</span>")
+			to_chat(H, "<span class='notice'>你需要10块木板来建造墙壁!</span>")
 
 /* Bamboo Wall-Frame*/
 
 /obj/structure/wallframe/bamboo
-	name = "bamboo wall frame"
-	desc = "A bamboo wall frame, add something like paper, bamboo bundles or wood to it."
+	name = "竹墙框架"
+	desc = "一个竹制墙框架, 往里面加点纸, 竹捆或木头之类的东西."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wall_frame_bamboo"
 
@@ -1518,7 +1518,7 @@
 					qdel(src)
 					W.amount -= 6
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	else if(istype(W, /obj/item/weapon/paper))
 		var/input
 		var/display = list("Shoji Door - 1", "Shoji Wall - 1", "Shoji Divider - 1", "Shoji Window - 1", "Cancel")
@@ -1551,7 +1551,7 @@
 					qdel(src)
 					qdel(W)
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 	else if(istype(W, /obj/item/stack/material/bamboo))
 		var/input = WWinput(H, "What wall would you like to make?", "Building", "Cancel",list ("Bamboo Wall - 3", "Bamboo Doorway - 2", "Bamboo Window - 2", "Cancel"))
 		if (input == "Cancel")
@@ -1580,13 +1580,13 @@
 					qdel(src)
 					W.amount -= 2
 		else
-			to_chat(H, "<span class='notice'>That does not exist!</span>")
+			to_chat(H, "<span class='notice'>那不存在!</span>")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////SHIP////////////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/structure/ship_bow
-	name = "bowstir"
-	desc = "A large bow mast, for the front of a ship."
+	name = "船首斜桅"
+	desc = "一根大型船首桅杆, 用于船的前部."
 	icon = 'icons/obj/vehicles/bow.dmi'
 	icon_state = "bowstir"
 	layer = 5
@@ -1597,8 +1597,8 @@
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////TORCH STAND/////////////////////////////////////////////
 /obj/structure/torch_stand
-	name = "torch mount"
-	desc = "A mount to affix torches or lanterns to the wall"
+	name = "火炬架"
+	desc = "一个用于将火炬或灯笼固定在墙上的支架"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "torch_stand"
 	item_state = "torch_stand"
@@ -1696,7 +1696,7 @@
 //////////////////////////CAMONET/////////////////////////////////
 
 /obj/structure/camonet
-	name ="camonet"
+	name ="迷彩网"
 	icon = 'icons/obj/structures.dmi'
 	icon_state ="camonet"
 	layer = MOB_LAYER + 8
@@ -1712,7 +1712,7 @@
 ///////////////////////CARGO CONTAINERS///////////////////////////
 
 /obj/structure/cargo_container
-	name = "cargo container"
+	name = "货物集装箱"
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "container1"
 	density = TRUE
@@ -1731,7 +1731,7 @@
 /////////////////////CONSTRUCTION PROPS///////////////////////
 
 /obj/structure/machinery/water_pump
-	name = "water pump"
+	name = "水泵"
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "waterpump"
 	density = TRUE
@@ -1744,7 +1744,7 @@
 	crushable = FALSE
 
 /obj/structure/machinery/construction_crane
-	name = "crane"
+	name = "起重机"
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "crane"
 	density = TRUE
@@ -1765,12 +1765,12 @@
 		bound_height = 64
 
 /obj/structure/machinery/construction_crane/excavator
-	name = "excavator"
+	name = "挖掘机"
 	icon_state = "excavator"
 
 /obj/structure/machinery/forklift
-	name = "forklift"
-	desc = "\'A lift for forks\', this one seems to be out of battery, missing the fuel tank, spark plugs an-- Oh! And the engine is missing too."
+	name = "叉车"
+	desc = "\'一个用于叉子的升降装置\', 这个似乎没电了, 缺少油箱, 火花塞还-- 哦! 发动机也不见了."
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "forklift"
 	density = TRUE
@@ -1791,8 +1791,8 @@
 		bound_height = 64
 
 /obj/structure/truck
-	name = "transport truck"
-	desc = "Doesn't look like this is moving soon."
+	name = "运输卡车"
+	desc = "看起来这玩意一时半会儿动不了."
 	icon = 'icons/obj/vehicles/wip_vehicles.dmi'
 	icon_state = "truck"
 	density = TRUE
@@ -1805,7 +1805,7 @@
 	crushable = FALSE
 
 /obj/structure/radome
-	name = "radio dome"
+	name = "无线电圆顶"
 	icon = 'icons/obj/decals_widest.dmi'
 	icon_state = "radome"
 	density = TRUE
@@ -1818,7 +1818,7 @@
 	crushable = FALSE
 
 /obj/structure/medical_divider
-	name = "medical divider"
+	name = "医疗隔断"
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "medical_divider_half"
 	density = FALSE

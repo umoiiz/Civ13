@@ -19,7 +19,7 @@ Example for later use:
 
 /obj/random
 	name = "random object"
-	desc = "This item type is used to spawn random objects at round-start."
+	desc = "此物品类型用于在回合开始时生成随机物体."
 	icon = 'icons/misc/mark.dmi' // This is where all the /random icons are located
 	icon_state = "dice"
 	var/spawn_nothing_percentage = 0 // This variable determines the likelyhood that this random object will not spawn anything
@@ -52,7 +52,7 @@ Example for later use:
 
 /obj/random/single
 	name = "randomly spawned object"
-	desc = "This item type is used to randomly spawn a given object at round-start."
+	desc = "此物品类型用于在回合开始时随机生成指定物体."
 	icon_state = "x3"
 	var/spawn_object = null
 
@@ -251,8 +251,8 @@ Example for later use:
 
 ////////////////Medical////////////////
 /obj/item/weapon/storage/eft/medical
-	name = "medical bag"
-	desc = "Probably contains basic medical treatments."
+	name = "医疗包"
+	desc = "可能包含基本的医疗用品."
 	icon_state = "medical_bag"
 	item_state = "medical_bag"
 	anchored = TRUE
@@ -370,8 +370,8 @@ Example for later use:
 				/obj/structure/wild/smallbush/winter = 1)
 
 /obj/item/weapon/hiddenstash
-	name = "Hidden Stach"
-	desc = "Ooooh what could be inside??? If you see this report it to a developer"
+	name = "隐藏藏匿处"
+	desc = "哦哦哦里面会有什么呢??? 如果你看到这个, 请报告给开发者"
 	icon = 'icons/misc/mark.dmi'
 	icon_state = "dice"
 	w_class = ITEM_SIZE_SMALL

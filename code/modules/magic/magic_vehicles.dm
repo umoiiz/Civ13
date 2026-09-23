@@ -1,9 +1,9 @@
 /obj/structure/vehicle/magic
-	name = "magical vehicle"
+	name = "魔法载具"
 	icon = 'icons/obj/magic_weapons.dmi'
 
 /obj/item/vehicleparts/wheel/handle/mop_handle
-	name = "mop handle"
+	name = "拖把柄"
 	attack_self(mob/user)
 		if(istype(origin, /obj/structure/vehicle/magic/mop))
 			var/obj/structure/vehicle/magic/mop/M = origin
@@ -14,8 +14,8 @@
 			M.dismount_driver(user)
 
 /obj/structure/vehicle/magic/mop
-	name = "flying mop"
-	desc = "A sturdy cleaning mop etched with silver runes. It hums with a faint, magical energy and smells of lavender soap."
+	name = "飞行拖把"
+	desc = "一把刻有银色符文的坚固清洁拖把. 它发出微弱的魔法能量的嗡鸣声, 闻起来有薰衣草肥皂的味道."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "mop"
 	vehicle_m_delay = 1

@@ -12,8 +12,8 @@
 var/global/datum/currency_list/fiat = new()
 
 /obj/item/stack/money/fiat
-	name = "fiat money"
-	desc = "Fiat money."
+	name = "法定货币"
+	desc = "法定货币."
 	singular_name = "money"
 	amount = 1
 	max_amount = 1000000
@@ -80,8 +80,8 @@ var/global/datum/currency_list/fiat = new()
 		return FALSE
 
 /obj/structure/money_printer
-	name = "money printer"
-	desc = "This prints money. It currently contains 0 cloth."
+	name = "印钞机"
+	desc = "这能印钱.它当前含有0布料."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "printingpress0"
 	anchored = TRUE
@@ -109,10 +109,10 @@ var/global/datum/currency_list/fiat = new()
 			playsound(loc, 'sound/machines/vending_drop.ogg', 100, TRUE)
 			return
 		else if (cloth_remaining < 0)
-			to_chat(user, "You do not have enough cloth in the machine to produce that much currency! The maximum you can currently produce is [cloth*100]")
+			to_chat(user, "机器中没有足够的布料来生产那么多货币!你当前最多可以生产[cloth*100]")
 			return
 		else
-			to_chat(user, "That currency does not exist or the printer is not configured.")
+			to_chat(user, "该货币不存在或印钞机未配置.")
 			return
 
 /** Spawns physical currency (gold, silver, or dollars/rubles) equivalent to the provided value based on map and era. */
@@ -161,13 +161,13 @@ var/global/datum/currency_list/fiat = new()
 		if (real_money_inside > 0)
 			dispense_real_money(real_money_inside)
 			real_money_inside = 0
-			to_chat(user, "You withdraw the real money backing this printer.")
+			to_chat(user, "你取出了支撑这台印钞机的真钱.")
 		return
 	else if (choice == "Change Exchange Rate")
 		var/new_rate = input(user, "What should the exchange rate be? This determines how much real money value (e.g. silver coins) is dispensed per 1 banknote inserted into this printer.", "Exchange Rate", exchange_rate) as num
 		if (new_rate >= 0)
 			exchange_rate = new_rate
-			to_chat(user, "The exchange rate is now set to [exchange_rate].")
+			to_chat(user, "汇率现在设定为[exchange_rate].")
 		return
 
 /** Configures a new currency for an uninitialized printer or opens the management menu for configured ones. */
@@ -184,7 +184,7 @@ var/global/datum/currency_list/fiat = new()
 		for(var/codes in fiat.currency_list)
 			if(codes == currency_code)
 				if (fiat.currency_list[codes][5] == 1)
-					to_chat(user, "That currency already exists.")
+					to_chat(user, "该货币已存在.")
 					currency_exists = 1
 					break
 				else
@@ -196,7 +196,7 @@ var/global/datum/currency_list/fiat = new()
 			if (currency_revival == 1)
 				fiat.currency_list[fiat_id][5] = 1
 				name = "[fiat.currency_list[fiat_id][1]] printer"
-				to_chat(user, "You rebuild the printer for the [fiat.currency_list[fiat_id][1]].")
+				to_chat(user, "你为[fiat.currency_list[fiat_id][1]]重建了印钞机.")
 				return
 			else
 				var/list/currency_icons = list(
@@ -236,7 +236,7 @@ var/global/datum/currency_list/fiat = new()
 	if (I.amount && istype(I, /obj/item/stack/material/cloth))
 		cloth += I.amount
 		playsound(user, 'sound/machines/button.ogg', 100, TRUE)
-		to_chat(user, "You insert [I.amount] cloth into the machine. It now contains [cloth] cloth.")
+		to_chat(user, "你将[I.amount]布料插入机器.它现在含有[cloth]布料.")
 		qdel(I)
 		desc = "This prints money. It currently contains [cloth] cloth."
 		return
@@ -244,29 +244,29 @@ var/global/datum/currency_list/fiat = new()
 		var/obj/item/stack/money/fiat/F = I
 		if (F.fiat_id == fiat_id)
 			if (exchange_rate <= 0)
-				to_chat(user, "This printer's exchange rate is currently set to 0. It will not exchange fiat for real money.")
+				to_chat(user, "这台印钞机的汇率当前设定为0.它不会将法定货币兑换为真钱.")
 				return
 			var/fiat_value = F.amount * exchange_rate
 			if (real_money_inside >= fiat_value)
 				real_money_inside -= fiat_value
 				dispense_real_money(fiat_value)
-				to_chat(user, "You insert the fiat money and receive its backing in real money.")
+				to_chat(user, "你插入法定货币并收到其真钱支撑.")
 				qdel(F)
 				return
 			else
-				to_chat(user, "There are insufficient reserves to accept the exchange. The printer needs [fiat_value] real money value to back this, but only has [real_money_inside].")
+				to_chat(user, "储备不足,无法接受兑换.印钞机需要[fiat_value]真钱价值来支撑,但只有[real_money_inside].")
 				return
 		else
-			to_chat(user, "This printer does not accept this type of fiat.")
+			to_chat(user, "这台印钞机不接受这种类型的法定货币.")
 			return
 	else if (I.amount && istype(I, /obj/item/stack/money))
 		var/obj/item/stack/money/M = I
 		real_money_inside += M.amount * M.value
-		to_chat(user, "You insert real money to back the fiat currency. The printer now holds [real_money_inside] in real money value.")
+		to_chat(user, "你插入真钱来支撑法定货币.印钞机现在持有[real_money_inside]真钱价值.")
 		qdel(M)
 		return
 	else
-		to_chat(user, "Banknotes are made of cloth, not [I.name].")
+		to_chat(user, "纸币是由布料制成的,不是[I.name].")
 		return
 
 /obj/structure/money_printer/Destroy()

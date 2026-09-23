@@ -55,7 +55,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 /atom/movable/attackby(obj/item/W, mob/user, icon_x, icon_y)
 	if (!(W.flags & NOBLUDGEON) && !(istype(W, /obj/item/weapon/covers)))
-		user.visible_message("<span class='danger'>[src] has been hit by [user] with \the [W].</span>", "<span class = 'notice'>You hit the [src] with \the [W].</span>")
+		user.visible_message("<span class='danger'>[src]被[user]用\the [W]击中了.</span>", "<span class = 'notice'>你用\the [W]击中了[src].</span>")
 	return
 
 /mob/living/attackby(obj/item/I, mob/user, icon_x, icon_y)
@@ -92,14 +92,14 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if (M == user && user.a_intent != I_HARM)
 		return FALSE
 	if (user.pacifist)
-		to_chat(src, "<font color='yellow'><big><b>I don't want to fight!</b></big></font>")
+		to_chat(src, "<font color='yellow'><big><b>我不想打!</b></big></font>")
 		return FALSE
 	if (ishuman(user))
 		var/mob/living/human/H = user
 		if (H.stats["stamina"][1] >= (cooldownw*0.45)/H.getStatCoeff("strength"))
 			H.stats["stamina"][1] = max(0,H.stats["stamina"][1] - (cooldownw*0.45)/H.getStatCoeff("strength"))
 		else
-			to_chat(H, "<span class='warning'>You need to catch your breath!</span>")
+			to_chat(H, "<span class='warning'>你需要喘口气!</span>")
 			return
 	user.lastattacked = M
 	M.lastattacker = user

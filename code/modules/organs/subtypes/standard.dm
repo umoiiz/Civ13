@@ -3,7 +3,7 @@
 ****************************************************/
 
 /obj/item/organ/external/chest
-	name = "upper body"
+	name = "上半身"
 	limb_name = "chest"
 	icon_name = "torso"
 	w_class = ITEM_SIZE_HUGE
@@ -18,7 +18,7 @@
 	encased = "ribcage"
 
 /obj/item/organ/external/groin
-	name = "lower body"
+	name = "下半身"
 	limb_name = "groin"
 	icon_name = "groin"
 	w_class = ITEM_SIZE_LARGE
@@ -32,7 +32,7 @@
 
 /obj/item/organ/external/arm
 	limb_name = "l_arm"
-	name = "left arm"
+	name = "左臂"
 	icon_name = "l_arm"
 	w_class = ITEM_SIZE_NORMAL
 	body_part = ARM_LEFT
@@ -43,7 +43,7 @@
 
 /obj/item/organ/external/arm/right
 	limb_name = "r_arm"
-	name = "right arm"
+	name = "右臂"
 	icon_name = "r_arm"
 	body_part = ARM_RIGHT
 	joint = "right elbow"
@@ -51,7 +51,7 @@
 
 /obj/item/organ/external/leg
 	limb_name = "l_leg"
-	name = "left leg"
+	name = "左腿"
 	icon_name = "l_leg"
 	w_class = ITEM_SIZE_NORMAL
 	body_part = LEG_LEFT
@@ -62,7 +62,7 @@
 
 /obj/item/organ/external/leg/right
 	limb_name = "r_leg"
-	name = "right leg"
+	name = "右腿"
 	icon_name = "r_leg"
 	body_part = LEG_RIGHT
 	icon_position = RIGHT
@@ -71,7 +71,7 @@
 
 /obj/item/organ/external/foot
 	limb_name = "l_foot"
-	name = "left foot"
+	name = "左脚"
 	icon_name = "l_foot"
 	w_class = ITEM_SIZE_SMALL
 	body_part = FOOT_LEFT
@@ -86,7 +86,7 @@
 
 /obj/item/organ/external/foot/right
 	limb_name = "r_foot"
-	name = "right foot"
+	name = "右脚"
 	icon_name = "r_foot"
 	body_part = FOOT_RIGHT
 	icon_position = RIGHT
@@ -96,7 +96,7 @@
 
 /obj/item/organ/external/hand
 	limb_name = "l_hand"
-	name = "left hand"
+	name = "左手"
 	icon_name = "l_hand"
 	w_class = ITEM_SIZE_SMALL
 	body_part = HAND_LEFT
@@ -111,7 +111,7 @@
 
 /obj/item/organ/external/hand/right
 	limb_name = "r_hand"
-	name = "right hand"
+	name = "右手"
 	icon_name = "r_hand"
 	body_part = HAND_RIGHT
 	parent_organ = "r_arm"
@@ -121,7 +121,7 @@
 /obj/item/organ/external/head
 	limb_name = "head"
 	icon_name = "head"
-	name = "head"
+	name = "头部"
 	w_class = ITEM_SIZE_NORMAL
 	body_part = HEAD
 	vital = TRUE

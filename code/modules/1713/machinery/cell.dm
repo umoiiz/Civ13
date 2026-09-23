@@ -1,6 +1,6 @@
 /obj/item/weapon/cell
-	name = "power cell"
-	desc = "A rechargable electrochemical power cell."
+	name = "电池"
+	desc = "一块可充电的电化学电池."
 	icon = 'icons/obj/machines/power.dmi'
 	icon_state = "cell"
 	item_state = "cell"
@@ -82,12 +82,12 @@
 
 /obj/item/weapon/cell/examine(mob/user)
 	. = ..()
-	to_chat(user, "The label states it's capacity is [maxcharge] Wh")
-	to_chat(user, "The charge meter reads [round(src.percent(), 0.1)]%")
+	to_chat(user, "标签上标明其容量为 [maxcharge] 瓦时")
+	to_chat(user, "电量计显示 [round(src.percent(), 0.1)]%")
 
 /obj/item/weapon/cell/standard
-	name = "standard power cell"
-	desc = "A standard and relatively cheap power cell, commonly used."
+	name = "标准电池"
+	desc = "一块标准且相对便宜的电池,十分常用."
 	maxcharge = 300
 
 /obj/item/weapon/cell/standard/empty/New()
@@ -95,8 +95,8 @@
 	charge = 0
 
 /obj/item/weapon/cell/high
-	name = "high-capacity power cell"
-	desc = "A power cell with extended energy storage for longer-lasting use."
+	name = "高容量电池"
+	desc = "一块具有扩展储能、可长时间使用的电池."
 	icon_state = "hcell"
 	maxcharge = 600
 
@@ -105,8 +105,8 @@
 	charge = 0
 
 /obj/item/weapon/cell/super
-	name = "super-capacity power cell"
-	desc = "An energy cell with exceptional capacity for extended and reliable power."
+	name = "超大容量电池"
+	desc = "一块具有卓越容量、可提供持久可靠电力的电池."
 	icon_state = "scell"
 	maxcharge = 1200
 
@@ -115,8 +115,8 @@
 	charge = 0
 
 /obj/item/weapon/cell/hyper
-	name = "hyper-capacity power cell"
-	desc = "The ultimate power cell, offering unparalleled energy reserves for the most demanding tasks."
+	name = "超能容量电池"
+	desc = "终极电池,为最苛刻的任务提供无与伦比的能量储备."
 	icon_state = "scell"
 	maxcharge = 3000
 
@@ -129,7 +129,7 @@
 
 /obj/machinery/cell_charger
 	name = "heavy-duty cell charger"
-	desc = "A much more powerful version of the standard recharger that is specially designed for charging power cells."
+	desc = "一种比标准充电器强大得多的版本,专为电池充电而设计."
 	icon = 'icons/obj/machines/power.dmi'
 	icon_state = "ccharger0"
 	anchored = TRUE
@@ -164,14 +164,14 @@
 	if(!..(user, 5))
 		return
 
-	to_chat(user, "There's [charging ? "a" : "no"] cell in the charger.")
+	to_chat(user, "充电器中有 [charging ? "a" : "no"] 块电池.")
 	if(charging)
-		to_chat(user, "Current charge: [charging.charge]")
+		to_chat(user, "当前电量: [charging.charge]")
 
 /obj/machinery/cell_charger/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/weapon/cell) && anchored)
 		if(charging)
-			to_chat(user, "<span class='warning'>There is already a cell in the charger.</span>")
+			to_chat(user, "<span class='warning'>充电器中已经有一块电池了.</span>")
 			return
 		else
 			/*var/area/a = loc.loc // Gets our locations location, like a dream within a dream
@@ -184,16 +184,16 @@
 			user.drop_item()
 			W.loc = src
 			charging = W
-			user.visible_message("[user] inserts a cell into the charger.", "You insert a cell into the charger.")
+			user.visible_message("[user] 将一块电池插入充电器.", "你将一块电池插入充电器.")
 			chargelevel = -1
 		update_icon()
 	else if(istype(W, /obj/item/weapon/wrench))
 		if(charging)
-			to_chat(user, "<span class='warning'>Remove the cell first!</span>")
+			to_chat(user, "<span class='warning'>请先取出电池!</span>")
 			return
 
 		anchored = !anchored
-		to_chat(user, "You [anchored ? "attach" : "detach"] the cell charger [anchored ? "to" : "from"] the ground.")
+		to_chat(user, "你[anchored ? "attach" : "detach"]将电池充电器[anchored ? "to" : "from"]地面.")
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 
 /obj/machinery/cell_charger/attack_hand(mob/user)
@@ -203,7 +203,7 @@
 		charging.update_icon()
 
 		src.charging = null
-		user.visible_message("[user] removes the cell from the charger.", "You remove the cell from the charger.")
+		user.visible_message("[user] 从充电器中取出了电池.", "你从充电器中取出了电池.")
 		chargelevel = -1
 		update_icon()
 

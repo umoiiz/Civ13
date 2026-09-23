@@ -12,17 +12,17 @@
 	switch(slot_to_strip)
 		// Handle things that are part of this interface but not removing/replacing a given item.
 		if ("pockets")
-			visible_message("<span class='danger'>\The [user] is trying to empty \the [src]'s pockets!</span>")
+			visible_message("<span class='danger'>\The [user] 正试图掏空 \the [src] 的口袋!</span>")
 			if (do_mob(user,src,HUMAN_STRIP_DELAY,progress = FALSE))
 				empty_pockets(user)
 			return
 		if ("splints")
-			visible_message("<span class='danger'>\The [user] is trying to remove \the [src]'s splints!</span>")
+			visible_message("<span class='danger'>\The [user] 正试图移除 \the [src] 的夹板!</span>")
 			if (do_mob(user,src,HUMAN_STRIP_DELAY,progress = FALSE))
 				remove_splints(user)
 			return
 		if ("internals")
-			visible_message("<span class='danger'>\The [usr] is trying to set \the [src]'s internals!</span>")
+			visible_message("<span class='danger'>\The [usr] 正试图设置 \the [src] 的体内器官!</span>")
 			return
 		if ("tie")
 			var/obj/item/clothing/under/suit = w_uniform
@@ -31,7 +31,7 @@
 			var/obj/item/clothing/accessory/A = suit.accessories[1]
 			if (!istype(A))
 				return
-			visible_message("<span class='danger'>\The [usr] is trying to remove \the [src]'s [A.name]!</span>")
+			visible_message("<span class='danger'>\The [usr] 正试图移除 \the [src] 的 [A.name]!</span>")
 
 			if (!do_mob(user,src,HUMAN_STRIP_DELAY,progress=0))
 				return
@@ -40,7 +40,7 @@
 				return
 
 			if (istype(A, /obj/item/clothing/accessory/medal))
-				user.visible_message("<span class='danger'>\The [user] tears off \the [A] from [src]'s [suit.name]!</span>")
+				user.visible_message("<span class='danger'>\The [user] 从 [src] 的 [suit.name] 上扯下了 \the [A]!</span>")
 			attack_log += "\[[time_stamp()]\] <font color='orange'>Has had \the [A] removed by [user.name] ([user.ckey])</font>"
 			user.attack_log += "\[[time_stamp()]\] <font color='red'>Attempted to remove [name]'s ([ckey]) [A.name]</font>"
 			A.on_removed(user)
@@ -60,9 +60,9 @@
 		stripping = TRUE
 
 	if (stripping)
-		visible_message("<span class='danger'>\The [user] is trying to remove \the [src]'s [target_slot.name]!</span>")
+		visible_message("<span class='danger'>\The [user] 正试图移除 \the [src] 的 [target_slot.name]!</span>")
 	else
-		visible_message("<span class='danger'>\The [user] is trying to put \a [held] on \the [src]!</span>")
+		visible_message("<span class='danger'>\The [user] 正试图将 \a [held] 放到 \the [src] 上!</span>")
 
 	if (!do_mob(user,src,HUMAN_STRIP_DELAY,progress = FALSE))
 		return
@@ -104,6 +104,6 @@
 				W.add_fingerprint(user)
 				removed_splint = TRUE
 		if (removed_splint)
-			visible_message("<span class='danger'>\The [user] removes \the [src]'s splints!</span>")
+			visible_message("<span class='danger'>\The [user] 移除了 \the [src] 的夹板!</span>")
 		else
 			to_chat(user, SPAN_WARNING("\The [src] has no splints to remove."))

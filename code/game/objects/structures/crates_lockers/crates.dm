@@ -1,8 +1,8 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:32
 
 /obj/structure/closet/crate
-	name = "crate"
-	desc = "A rectangular crate."
+	name = "板条箱"
+	desc = "一个长方形的板条箱。"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "crate"
 	icon_opened = "crateopen"
@@ -98,8 +98,8 @@
 	return
 
 /obj/structure/closet/crate/footlocker
-	name = "footlocker"
-	desc = "A small metal footlocker."
+	name = "储物箱"
+	desc = "一个小型金属储物箱。"
 	icon_state = "footlocker"
 	icon_opened = "footlockeropen"
 	icon_closed = "footlocker"
@@ -108,16 +108,16 @@
 	health = 3000
 
 /obj/structure/closet/crate/bin
-	name = "large bin"
-	desc = "A large bin."
+	name = "大垃圾箱"
+	desc = "一个大垃圾箱。"
 	icon_state = "largebin"
 	icon = 'icons/obj/crate.dmi'
 	icon_opened = "largebinopen"
 	icon_closed = "largebin"
 
 /obj/structure/closet/crate/large
-	name = "large crate"
-	desc = "A hefty metal crate."
+	name = "大板条箱"
+	desc = "一个沉重的金属板条箱。"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "largemetal"
 	icon_opened = "largemetalopen"
@@ -135,8 +135,8 @@
 	return
 
 /obj/structure/closet/crate/lead
-	name = "lead safe"
-	desc = "A large lead safe, good to store radioactive things."
+	name = "铅制保险箱"
+	desc = "一个大型铅制保险箱,适合存放放射性物品。"
 	icon_state = "largermetal"
 	icon_opened = "largermetal_open"
 	icon_closed = "largermetal"
@@ -144,24 +144,24 @@
 	anchored = TRUE
 
 /obj/structure/closet/crate/freezer
-	name = "freezer"
-	desc = "A freezer."
+	name = "冰柜"
+	desc = "一个冰柜。"
 	icon_state = "freezer"
 	icon_opened = "freezeropen"
 	icon_closed = "freezer"
 
 	//ROBERT'S CARTS//
 /obj/structure/closet/crate/cart
-	name = "cart"
-	desc = " A large crate, good for transporting large amounts of objects"
+	name = "推车"
+	desc = " 一个大板条箱,适合运输大量物品"
 	icon = 'icons/obj/carts.dmi'
 	icon_state= "w_cart_o"
 	icon_opened ="w_cart_o"
 	icon_closed = "w_cart_c"
 	//COPPER AGE WOODEN CART//
 /obj/structure/closet/crate/cart/wooden
-	name ="wooden cart"
-	desc = " A wooden cart, it's small and flimsy"
+	name ="木制推车"
+	desc = " 一辆木制推车,它又小又脆弱"
 	icon_state= "w_cart_o"
 	icon_opened ="w_cart_o"
 	icon_closed = "w_cart_c"
@@ -169,8 +169,8 @@
 	//COPPER AGE WOODEN CART//
 	//DARK AGE STONE CART//
 /obj/structure/closet/crate/cart/stone
-	name ="stone cart"
-	desc = " A stone cart, it's small, some stone components make it sturdier than a wooden cart"
+	name ="石制推车"
+	desc = " 一辆石制推车,它很小,一些石制部件使它比木制推车更坚固"
 	icon_state= "s_cart_o"
 	icon_opened ="s_cart_o"
 	icon_closed = "s_cart_c"
@@ -178,8 +178,8 @@
 	//DARK AGE STONE CART//
 	//RENAISSANCE AGE COPPER CART//
 /obj/structure/closet/crate/cart/copper
-	name ="copper cart"
-	desc = " A copper cart, it's small, some copper components make it sturdier than a stone cart"
+	name ="铜制推车"
+	desc = " 一辆铜制推车,它很小,一些铜制部件使它比石制推车更坚固"
 	icon_state= "c_cart_o"
 	icon_opened ="c_cart_o"
 	icon_closed = "c_cart_c"
@@ -187,8 +187,8 @@
 	//RENAISSANCE AGE COPPER CART//
 	//NAPOLEONIC AGE BRONZE CART//
 /obj/structure/closet/crate/cart/bronze
-	name ="bronze cart"
-	desc = " A bronze cart, it's medium sized, some bronze components make it sturdier than a stone cart"
+	name ="青铜推车"
+	desc = " 一辆青铜推车,它是中等大小,一些青铜部件使它比石制推车更坚固"
 	icon_state= "b_cart_o"
 	icon_opened ="b_cart_o"
 	icon_closed = "b_cart_c"
@@ -196,8 +196,8 @@
 	//NAPOLEONIC AGE BRONZE CART//
 	//EARLY MODERN AGE STEEL CART//
 /obj/structure/closet/crate/cart/steel
-	name ="steel cart"
-	desc = " A steel cart, it's medium sized, it's steel frame make it sturdy and light"
+	name ="钢制推车"
+	desc = " 一辆钢制推车,它是中等大小,钢制框架使它坚固且轻便"
 	icon_state= "st_cart_o"
 	icon_opened ="st_cart_o"
 	icon_closed = "st_cart_c"
@@ -206,8 +206,8 @@
 	//ROBERT'S CARTS//
 
 /obj/structure/closet/crate/dumpster
-	name ="dumpster"
-	desc = " A dumpster for all your trash and bodies."
+	name ="垃圾箱"
+	desc = " 一个用于装你所有垃圾和尸体的垃圾箱。"
 	icon_state= "dumpster"
 	icon_opened ="dumpsteropen"
 	icon_closed = "dumpster"
@@ -251,18 +251,18 @@
 		return
 	add_fingerprint(user)
 	if (locked && !opened)
-		to_chat(user, "<span class='notice'>\The [src] is locked.</span>")
+		to_chat(user, "<span class='notice'>\The [src] 已上锁。</span>")
 		return
 	else
 		if (user.a_intent == I_GRAB && opened)
 			if (!contents.len)
-				to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+				to_chat(user, "<span class='notice'>\The [src] 是空的。</span>")
 				return
-			to_chat(user, "You start rummaging through \the [src]...")
+			to_chat(user, "你开始在 \the [src] 中翻找...")
 			if (do_after(user,40,src) && contents.len)
 				var/obj/item/picked = pick(contents)
 				picked.forceMove(user.loc)
-				to_chat(user, "You take out \the [picked].")
+				to_chat(user, "你取出了 \the [picked]。")
 				update_icon()
 				return
 			else

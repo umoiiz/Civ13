@@ -1,6 +1,6 @@
 /obj/structure/railing
-	name = "railing"
-	desc = "An ordinary wood railing. Prevents from human stupidity."
+	name = "栏杆"
+	desc = "普通的木制栏杆. 防止人类的愚蠢行为."
 	icon = 'icons/obj/railing.dmi'
 	density = TRUE
 	throwpass = TRUE
@@ -18,8 +18,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/railing/steel
-	name = "steel railing"
-	desc = "An ordinary steel railing. Prevents from human stupidity."
+	name = "钢制栏杆"
+	desc = "普通的钢制栏杆. 防止人类的愚蠢行为."
 	icon = 'icons/obj/railing_white.dmi'
 	color = "#697585"
 	flammable = FALSE
@@ -61,16 +61,16 @@
 	if (health < maxhealth)
 		switch(health / maxhealth)
 			if (0.0 to 0.5)
-				to_chat(user, "<span class='warning'>It looks severely damaged!</span>")
+				to_chat(user, "<span class='warning'>它看起来严重损坏了!</span>")
 			if (0.25 to 0.5)
-				to_chat(user, "<span class='warning'>It looks damaged!</span>")
+				to_chat(user, "<span class='warning'>它看起来损坏了!</span>")
 			if (0.5 to 1.0)
-				to_chat(user, "<span class='notice'>It has a few scrapes and dents.</span>")
+				to_chat(user, "<span class='notice'>它有一些刮痕和凹痕.</span>")
 
 /obj/structure/railing/proc/take_damage(amount)
 	health -= amount
 	if (health <= 0)
-		visible_message("<span class='warning'>\The [src] breaks down!</span>")
+		visible_message("<span class='warning'>\The [src]倒塌了!</span>")
 		playsound(loc, 'sound/effects/grillehit.ogg', 50, TRUE)
 		qdel(src)
 		if (map.ID != MAP_GULAG13 && map.ID != MAP_BAGNE13) //disabled due to abuse in gulag rounds
@@ -180,7 +180,7 @@
 	if (istype(W, /obj/item/weapon/hammer) && !anchored)
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
 		if (do_after(user, 20, src))
-			user.visible_message("<span class='notice'>\The [user] dismantles \the [src].</span>", "<span class='notice'>You dismantle \the [src].</span>")
+			user.visible_message("<span class='notice'>\The [user]拆除了\the [src].</span>", "<span class='notice'>你拆除了\the [src].</span>")
 			if (flammable == TRUE)
 				new /obj/item/stack/material/wood(get_turf(usr))
 				new /obj/item/stack/material/wood(get_turf(usr))
@@ -208,17 +208,17 @@
 			var/mob/living/M = G.affecting
 			var/obj/occupied = turf_is_crowded()
 			if (occupied)
-				to_chat(user, "<span class='danger'>There's \a [occupied] in the way.</span>")
+				to_chat(user, "<span class='danger'>有\a [occupied]挡住了去路.</span>")
 				return
 			if (G.state < 2)
 				if (user.a_intent == I_HARM)
 					if (prob(15))	M.Weaken(5)
 					M.apply_damage(8,def_zone = "head")
 					take_damage(8)
-					visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
+					visible_message("<span class='danger'>[G.assailant]将[G.affecting]的脸猛撞向\the [src]!</span>")
 					playsound(loc, 'sound/effects/grillehit.ogg', 50, TRUE)
 				else
-					to_chat(user, "<span class='danger'>You need a better grip to do that!</span>")
+					to_chat(user, "<span class='danger'>你需要更好的抓握力才能做到!</span>")
 					return
 			else
 				if (get_turf(G.affecting) == get_turf(src))
@@ -226,7 +226,7 @@
 				else
 					G.affecting.forceMove(get_turf(src))
 				G.affecting.Weaken(5)
-				visible_message("<span class='danger'>[G.assailant] throws [G.affecting] over \the [src]!</span>")
+				visible_message("<span class='danger'>[G.assailant]将[G.affecting]扔过\the [src]!</span>")
 			qdel(W)
 			return
 

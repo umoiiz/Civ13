@@ -131,7 +131,7 @@ var/no_loop_cal = FALSE
 
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The [current_winner] have lost control of the Church!</font>")
+			to_chat(world, "<font size = 3>[current_winner]失去了对教堂的控制!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

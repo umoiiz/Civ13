@@ -1,6 +1,6 @@
 /obj/structure/sign/map
-	name = "area map"
-	desc = "A detailed area map for planning operations."
+	name = "区域地图"
+	desc = "用于规划行动的详细区域地图."
 	icon_state = "areamap"
 	var/image/img
 	var/list/overlay_list = list()
@@ -99,7 +99,7 @@
 
 	if (!ishuman(usr))
 		return
-	to_chat(usr, "You clear the map.")
+	to_chat(usr, "你清除了地图.")
 	overlay_list = list()
 	img.overlays.Cut()
 
@@ -115,8 +115,8 @@
 //////////////////////////////////////////
 
 /obj/item/weapon/map
-	desc = "A portable map of the area."
-	name = "folding map"
+	desc = "便携式区域地图."
+	name = "折叠地图"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "portable_areamap"
 	item_state = "map"
@@ -187,8 +187,8 @@
 ///MAP BOARD///
 
 /obj/structure/sign/map_board
-	name = "map of the area"
-	desc = "A large board with the map of the area."
+	name = "区域地图"
+	desc = "一块带有区域地图的大木板."
 	icon_state = "map_board"
 	density = TRUE
 	var/image/img

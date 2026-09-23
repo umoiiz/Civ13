@@ -224,11 +224,11 @@
 	// (world-wide shouts for every node x faction would be pure noise).
 	if (N.mode == RESEARCH_MODE_PROTOTYPE && N.era_tier > ordinal_age)
 		ordinal_age = N.era_tier
-		to_chat(world, "<big><font color='#c98a1d'>The discovery of <b>[N.name]</b> by the [faction] sends the world into the <b>[ordinal_age_name(N.era_tier)]</b>!</font></big>")
+		to_chat(world, "<big><font color='#c98a1d'>[faction]发现了<b>[N.name]</b>,世界陷入了<b>[ordinal_age_name(N.era_tier)]</b>!</font></big>")
 	else
 		for (var/mob/living/human/M in human_mob_list)
 			if (M.client && M.civilization == faction)
-				to_chat(M, "<big>Your faction has researched <b>[N.name]</b>!</big>")
+				to_chat(M, "<big>你的阵营已研究完成<b>[N.name]</b>!</big>")
 	return TRUE
 
 // ------------------------------------------------------------

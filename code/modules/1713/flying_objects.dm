@@ -1,8 +1,8 @@
 // Missiles
 
 /obj/structure/nuclear_missile
-	name = "nuclear missile"
-	desc = "A short range tactical nuclear missile."
+	name = "核导弹"
+	desc = "一种短程战术核导弹."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "rocket"
 	density = TRUE
@@ -41,8 +41,8 @@
 // Planes
 
 /obj/structure/plane
-	name = "plane"
-	desc = "A plane."
+	name = "飞机"
+	desc = "一架飞机."
 	icon = 'icons/obj/vehicles/vehicles256x256.dmi'
 	icon_state = "ar10"
 	density = TRUE

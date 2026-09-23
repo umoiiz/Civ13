@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/fox
 	name = "fox"
-	desc = "A small fox."
+	desc = "一只小狐狸."
 	icon_state = "fox"
 	icon_living = "fox"
 	icon_dead = "fox_dead"
@@ -28,7 +28,7 @@
 
 /mob/living/simple_animal/hostile/fox/arctic
 	name = "arctic fox"
-	desc = "A small white fox."
+	desc = "一只白色小狐狸."
 	icon_state = "arcticfox"
 	icon_living = "arcticfox"
 	icon_dead = "arcticfox_dead"

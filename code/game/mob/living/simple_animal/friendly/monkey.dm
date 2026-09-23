@@ -1,6 +1,6 @@
 /mob/living/simple_animal/monkey
 	name = "monkey"
-	desc = "A monkey. The meat makes a delicious soup."
+	desc = "一只猴子.它的肉能做出美味的汤."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "monkey"
 	icon_living = "monkey"
@@ -25,4 +25,4 @@
 
 /mob/living/simple_animal/monkey/kostas
 	name = "Kostas the Monkey"
-	desc = "A species of greek monkey."
+	desc = "一种希腊猴."

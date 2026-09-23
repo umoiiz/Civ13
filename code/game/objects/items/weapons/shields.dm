@@ -33,7 +33,7 @@
 	return TRUE
 
 /obj/item/weapon/shield
-	name = "wood shield"
+	name = "木盾"
 	icon_state = "buckler"
 	item_state = "buckler"
 	var/base_block_chance = 25
@@ -50,14 +50,14 @@
 		flammable = TRUE
 
 /obj/item/weapon/shield/nguni_shield
-	name = "nguni shield"
+	name = "恩古尼盾"
 	icon_state = "nguni_shield"
 	item_state = "nguni_shield"
 	base_block_chance = 25
 	health = 25
 
 /obj/item/weapon/shield/steel
-	name = "steel shield"
+	name = "钢盾"
 	icon_state = "steel_shield"
 	item_state = "steel_shield"
 	material = "steel"
@@ -67,7 +67,7 @@
 	slowdown = 0.3
 
 /obj/item/weapon/shield/iron
-	name = "iron shield"
+	name = "铁盾"
 	icon_state = "iron_shield"
 	item_state = "iron_shield"
 	material = "iron"
@@ -77,7 +77,7 @@
 	slowdown = 0.25
 
 /obj/item/weapon/shield/bronze
-	name = "bronze shield"
+	name = "青铜盾"
 	icon_state = "bronze_shield"
 	item_state = "bronze_shield"
 	material = "bronze"
@@ -87,8 +87,8 @@
 	slowdown = 0.2
 
 /obj/item/weapon/shield/aspis
-	name = "aspis"
-	desc = "A round, slightly curved greek shield, with the colors and symbol of it's city-state."
+	name = "阿斯庇斯盾"
+	desc = "一面圆形、略带弧度的希腊盾牌,带有其城邦的颜色和标志."
 	icon_state = "athenian_shield"
 	item_state = "athenian_shield"
 	material = "bronze"
@@ -117,8 +117,8 @@
 	slowdown = 0.4
 
 /obj/item/weapon/shield/nomads/spartan
-	name = "spartan aspis"
-	desc = "A round, slightly curved greek shield, with the colors and symbol of it's city-state."
+	name = "斯巴达阿斯庇斯盾"
+	desc = "一面圆形、略带弧度的希腊盾牌,带有其城邦的颜色和标志."
 	icon_state = "spartan_shield"
 	item_state = "spartan_shield"
 	material = "bronze"
@@ -128,8 +128,8 @@
 	slowdown = 0.4
 
 /obj/item/weapon/shield/nomads/aspis/pegasus
-	name = "aspis with image of a pegasus"
-	desc = "A round, slightly curved greek shield, with the colors and symbol of it's city-state."
+	name = "带飞马图案的阿斯庇斯盾"
+	desc = "一面圆形、略带弧度的希腊盾牌,带有其城邦的颜色和标志."
 	icon_state = "pegasus_shield"
 	item_state = "pegasus_shield"
 	material = "bronze"
@@ -139,8 +139,8 @@
 	slowdown = 0.4
 
 /obj/item/weapon/shield/nomads/aspis/owl
-	name = "aspis with image of a owl"
-	desc = "A round, slightly curved greek shield, with the colors and symbol of it's city-state."
+	name = "带猫头鹰图案的阿斯庇斯盾"
+	desc = "一面圆形、略带弧度的希腊盾牌,带有其城邦的颜色和标志."
 	icon_state = "owl_shield"
 	item_state = "owl_shield"
 	material = "bronze"
@@ -152,8 +152,8 @@
 /* Nomads Aspis Shields -End*/
 
 /obj/item/weapon/shield/egyptian
-	name = "egyptian shield"
-	desc = "A semi oval, rectangular bronze shield of egyptian design and motifs"
+	name = "埃及盾"
+	desc = "一面半椭圆形、长方形的埃及风格与纹饰的青铜盾牌."
 	icon_state = "egyptian_shield"
 	item_state = "egyptian_shield"
 	material = "bronze"
@@ -163,8 +163,8 @@
 	slowdown = 0.4
 
 /obj/item/weapon/shield/scutum
-	name = "scutum shield"
-	desc = "A rounded rectangular shield, with celtic motifs."
+	name = "斯库图姆盾"
+	desc = "一面圆角矩形盾牌,带有凯尔特纹饰."
 	icon_state = "scutum"
 	item_state = "scutum"
 	material = "bronze"
@@ -174,8 +174,8 @@
 	slowdown = 0.3
 
 /obj/item/weapon/shield/roman
-	name = "roman shield"
-	desc = "A rectangular shield, with roman motifs."
+	name = "罗马盾"
+	desc = "一面长方形盾牌,带有罗马纹饰."
 	icon_state = "roman_shield"
 	item_state = "roman_shield"
 	material = "bronze"
@@ -185,14 +185,14 @@
 	slowdown = 0.3
 
 /obj/item/weapon/shield/roman/blue
-	name = "blue roman shield"
-	desc = "A blue rectangular shield, with roman motifs. Often used by imitation legions and client states."
+	name = "蓝色罗马盾"
+	desc = "一面蓝色长方形盾牌,带有罗马纹饰. 常被仿制军团和附庸国使用."
 	icon_state = "blue_roman_shield"
 	item_state = "blue_roman_shield"
 
 /obj/item/weapon/shield/roman/praetorian
-	name = "praetorian roman shield"
-	desc = "A purple rectangular shield, with roman motifs. Often used by the praetorian guard, it looks more robust than the standard roman shield."
+	name = "禁卫军罗马盾"
+	desc = "一面紫色长方形盾牌,带有罗马纹饰. 常被禁卫军使用,看起来比标准罗马盾更为坚固."
 	icon_state = "prae_roman_shield"
 	item_state = "prae_roman_shield"
 	health = 30
@@ -200,8 +200,8 @@
 	slowdown = 0.40
 
 /obj/item/weapon/shield/roman_buckler
-	name = "roman parma shield"
-	desc = "A circular buckler, with roman motifs."
+	name = "罗马帕尔马盾"
+	desc = "一面圆形小盾,带有罗马纹饰."
 	icon_state = "roman_buckler"
 	item_state = "roman_buckler"
 	base_block_chance = 25 //nerfed from 257
@@ -212,8 +212,8 @@
 	slot_flags = SLOT_BACK | SLOT_BELT
 
 /obj/item/weapon/shield/chimalli
-	name = "chimalli"
-	desc = "an oval Mesoamerican shield, furnished with feathers."
+	name = "奇马尔利盾"
+	desc = "一面椭圆形的中美洲盾牌,饰有羽毛."
 	icon_state = "chimalli"
 	item_state = "chimalli"
 	material = "wood"
@@ -230,7 +230,7 @@
 	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
 	if (check_shield_arc(user, bad_arc, damage_source, attacker))
 		if (prob(get_block_chance(user, damage, damage_source, attacker)))
-			user.visible_message("<font color='#E55300'><big>\The [user] blocks [attack_text] with \the [src]!</big></font>")
+			user.visible_message("<font color='#E55300'><big>\The [user]用\the [src]挡住了[attack_text]!</big></font>")
 			if (istype(damage_source, /obj/item/weapon/melee) || istype(damage_source, /obj/item/weapon/material/hatchet))
 				health -= 10
 			else
@@ -248,7 +248,7 @@
 
 /obj/item/weapon/shield/proc/shatter(var/consumed)
 	var/turf/T = get_turf(src)
-	T.visible_message("<span class='danger'>\The [src] is broken apart!</span>")
+	T.visible_message("<span class='danger'>\The [src]被击碎了!</span>")
 	if (istype(loc, /mob/living))
 		var/mob/living/M = loc
 		M.drop_from_inventory(src)
@@ -256,7 +256,7 @@
 	qdel(src)
 
 /obj/item/weapon/shield/iron/semioval
-	name = "semioval iron shield"
+	name = "半椭圆铁盾"
 	icon_state = "semioval_shield"
 	item_state = "semioval_shield"
 	material = "iron"
@@ -266,19 +266,19 @@
 	slowdown = 0.3
 
 /obj/item/weapon/shield/iron/semioval/templar
-	name = "semioval iron templar shield"
+	name = "半椭圆铁圣殿骑士盾"
 	icon_state = "semioval_shield_templar"
 	item_state = "semioval_shield_templar"
 
 /obj/item/weapon/shield/iron/semioval/templar2
-	name = "semioval iron templar shield"
+	name = "半椭圆铁圣殿骑士盾"
 	icon_state = "semioval_shield_templar2"
 	item_state = "semioval_shield_templar2"
 
 /* Nomads Semi Oval & Medieval Shields*/
 
 /obj/item/weapon/shield/iron/nomads/semioval
-	name = "semioval iron shield"
+	name = "半椭圆铁盾"
 	icon_state = "semioval_shield"
 	item_state = "semioval_shield"
 	material = "iron"
@@ -288,19 +288,19 @@
 	slowdown = 0.3
 
 /obj/item/weapon/shield/iron/nomads/semioval/templar
-	name = "semioval iron templar shield"
+	name = "半椭圆铁圣殿骑士盾"
 	icon_state = "semioval_shield_templar"
 	item_state = "semioval_shield_templar"
 
 /obj/item/weapon/shield/iron/nomads/semioval/templar2
-	name = "semioval iron templar shield"
+	name = "半椭圆铁圣殿骑士盾"
 	icon_state = "semioval_shield_templar2"
 	item_state = "semioval_shield_templar2"
 
 /* Nomads Semi Oval & Medieval Shields -End*/
 
 /obj/item/weapon/shield/red_buckler
-	name = "red buckler shield"
+	name = "红色小圆盾"
 	icon_state = "red_buckler"
 	item_state = "red_buckler"
 	base_block_chance = 25
@@ -323,12 +323,12 @@ obj/item/weapon/shield/blue_buckler
 
 obj/item/weapon/shield/attack_self(mob/user as mob)
 	if (cooldown < world.time - 10)
-		user.visible_message("<span class='warning'>[user] bashes the shield!</span>")
+		user.visible_message("<span class='warning'>[user]猛击盾牌!</span>")
 		playsound(user.loc, 'sound/effects/shieldbash2.ogg', 100, TRUE)
 		cooldown = world.time
 
 /obj/item/weapon/shield/arab_buckler
-	name = "arabic round shield"
+	name = "阿拉伯圆盾"
 	icon_state = "arabic_shield"
 	item_state = "arabic_shield"
 	base_block_chance = 30
@@ -341,7 +341,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 /* Tribes Shields */
 
 /obj/item/weapon/shield/iron/orc
-	name = "uruk-hai shield"
+	name = "乌鲁克盾"
 	icon_state = "orc_shield"
 	item_state = "orc_shield"
 	material = "iron"
@@ -351,8 +351,8 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 0.3
 
 /obj/item/weapon/shield/chitin
-	name = "chitin buckler"
-	desc = "A rounded shield made out of fused chitinous plates."
+	name = "甲壳小圆盾"
+	desc = "一面由融合的甲壳板制成的圆形盾牌."
 	icon_state = "chitin_buckler"
 	item_state = "chitin_buckler"
 	material = "chitin"
@@ -362,8 +362,8 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 0.2
 
 /obj/item/weapon/shield/chitin/large
-	name = "chitin shield"
-	desc = "A large shield made out of fused chitinous plates."
+	name = "甲壳盾"
+	desc = "一面由融合的甲壳板制成的大型盾牌."
 	icon_state = "chitin_shield"
 	item_state = "chitin_shield"
 	material = "chitin"
@@ -376,8 +376,8 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 
 
 /obj/item/weapon/shield/metal_riot
-	name = "riot shield"
-	desc = "A riot sheild designed to be excellent in blocking during prisoner uprisings"
+	name = "防暴盾"
+	desc = "一面专为在囚犯暴动中出色格挡而设计的防暴盾."
 	icon_state = "metal_riot"
 	item_state = "metal_riot"
 	material = "iron"
@@ -387,8 +387,8 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 0.35
 
 /obj/item/weapon/shield/balistic
-	name = "ballistic shield"
-	desc = "A shield designed to be excellent in blocking projectiles."
+	name = "防弹盾"
+	desc = "一面专为出色格挡抛射物而设计的盾牌."
 	icon_state = "metal_riot"
 	item_state = "metal_riot"
 	material = "steel"
@@ -398,7 +398,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 2.85
 //////////////////////////////////////SKYRIM////////////////////////////////////////
 /obj/item/weapon/shield/tes13
-	name = "iron shield"
+	name = "铁盾"
 	icon_state = "iron_shield_tes13"
 	item_state = "iron_shield_tes13"
 	material = "iron"
@@ -414,7 +414,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	var/bad_arc = reverse_direction(user.dir) //arc of directions from which we cannot block
 	if (check_shield_arc(user, bad_arc, damage_source, attacker))
 		if (prob(get_block_chance(user, damage, damage_source, attacker)))
-			user.visible_message("<font color='#E55300'><big>\The [user] blocks [attack_text] with \the [src]!</big></font>")
+			user.visible_message("<font color='#E55300'><big>\The [user]用\the [src]挡住了[attack_text]!</big></font>")
 			if (istype(damage_source, /obj/item/weapon/melee) || istype(damage_source, /obj/item/weapon/material/hatchet))
 				health -= 2
 			else
@@ -425,7 +425,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 			return TRUE
 	return FALSE
 /obj/item/weapon/shield/tes13/stormcloak
-	name = "stormcloak shield"
+	name = "风暴斗篷盾"
 	icon_state = "stormcloak"
 	item_state = "stormcloak"
 	material = "wood"
@@ -435,7 +435,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 0.05
 
 /obj/item/weapon/shield/tes13/whiterun
-	name = "whiterun guard shield"
+	name = "白漫城卫兵盾"
 	icon_state = "whiterun"
 	item_state = "whiterun"
 	material = "wood"
@@ -445,7 +445,7 @@ obj/item/weapon/shield/attack_self(mob/user as mob)
 	slowdown = 0.05
 
 /obj/item/weapon/shield/tes13/imperial
-	name = "imperial kite shield"
+	name = "帝国鸢盾"
 	icon_state = "imperial_kite"
 	item_state = "imperial_kite"
 	material = "wood"

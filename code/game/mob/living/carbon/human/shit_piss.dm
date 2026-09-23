@@ -14,7 +14,7 @@
 //#####DECALS#####
 /obj/effect/decal/cleanable/poo
 	name = "poo stain"
-	desc = "Well that stinks."
+	desc = "嗯, 真臭."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -45,7 +45,7 @@
 
 /obj/effect/decal/cleanable/poo/drip
 	name = "drips of poo"
-	desc = "It's brown."
+	desc = "它是棕色的."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -63,7 +63,7 @@
 
 /obj/effect/decal/cleanable/urine
 	name = "urine stain"
-	desc = "Someone couldn't hold it..."
+	desc = "有人憋不住了..."
 	density = FALSE
 	anchored = TRUE
 	layer = 2
@@ -136,8 +136,8 @@
 //#####ITEMS#####
 //SHIT
 /obj/item/weapon/reagent_containers/food/snacks/poo
-	name = "poo"
-	desc = "A chocolately surprise!"
+	name = "便便"
+	desc = "巧克力惊喜!"
 	icon = 'icons/effects/pooeffect.dmi'
 	icon_state = "poop2"
 	item_state = "poop"
@@ -151,8 +151,8 @@
 		biteamount = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/poo/animal
-	name = "manure"
-	desc = "Makes good fertilizer at least."
+	name = "粪肥"
+	desc = "至少是很好的肥料."
 	dry_size = 6
 	dried_type = /obj/item/stack/dung
 	fertilizer_value = 10
@@ -161,8 +161,8 @@
 		icon_state = pick("animal1", "animal2", "animal3")
 
 /obj/item/weapon/reagent_containers/food/snacks/poo/fertilizer
-	name = "compost"
-	desc = "Natural fertilizer for your plants."
+	name = "堆肥"
+	desc = "给你的植物用的天然肥料."
 	decay = 120*600
 	dry_size = 6
 	dried_type = /obj/item/stack/dung
@@ -174,8 +174,8 @@
 /obj/item/stack/dung
 	icon = 'icons/effects/pooeffect.dmi'
 	icon_state = "dry_dung"
-	name = "dry dung"
-	desc = "Fertilizer for your plants (or fuel)."
+	name = "干粪"
+	desc = "给你的植物用的肥料 (或燃料)."
 	value = 0
 	can_stack = TRUE
 	singular_name = "dry dung"
@@ -191,8 +191,8 @@
 
 //PISS
 /obj/item/weapon/reagent_containers/glass/bottle/urine
-	name = "urine bottle"
-	desc = "A small bottle. Contains urine."
+	name = "尿瓶"
+	desc = "一个小瓶子. 里面装有尿液."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle15"
 	New()
@@ -204,23 +204,23 @@
 	if(bowels >= 250)
 		switch(bowels)
 			if(250 to 400)
-				to_chat(src, "<span class='info'><b>You need to poo.</b></span>")
+				to_chat(src, "<span class='info'><b>你需要拉屎.</b></span>")
 			if(400 to 450)
-				to_chat(src, "<span class='notice'><b>You really need to poo!</b></span>")
+				to_chat(src, "<span class='notice'><b>你非常需要拉屎!</b></span>")
 			if(450 to 500)
-				to_chat(src, "<span class='warning'><b>You're about to shit yourself!</b></span>")
+				to_chat(src, "<span class='warning'><b>你快要拉在裤子里了!</b></span>")
 			if(500 to INFINITY)
-				to_chat(src, "<span class='danger'><b>OH MY GOD YOU HAVE TO SHIT!</b></span>")
+				to_chat(src, "<span class='danger'><b>我的天啊你必须拉屎!</b></span>")
 	if(bladder >= 100)//Your bladder is smaller than your colon
 		switch(bladder)
 			if(100 to 250)
-				to_chat(src, "<span class='notice'><b>You need to pee.</b></span>")
+				to_chat(src, "<span class='notice'><b>你需要撒尿.</b></span>")
 			if(250 to 400)
-				to_chat(src, "<span class='notice'><b>You really need to pee!</b></span>")
+				to_chat(src, "<span class='notice'><b>你非常需要撒尿!</b></span>")
 			if(400 to 500)
-				to_chat(src, "<span class='warning'><b>You're about to piss yourself!</b></span>")
+				to_chat(src, "<span class='warning'><b>你快要尿在裤子里了!</b></span>")
 			if(500 to INFINITY)
-				to_chat(src, "<span class='danger'><b>OH MY GOD YOU HAVE TO PEE!</b></span>")
+				to_chat(src, "<span class='danger'><b>我的天啊你必须撒尿!</b></span>")
 	return
 
 //poo and pee counters. This is called in human_life.
@@ -234,7 +234,7 @@
 		switch(bowels)
 			if(250 to 400)
 				if(prob(5))
-					to_chat(src, "<b>You need to use the bathroom.</b>")
+					to_chat(src, "<b>你需要上厕所.</b>")
 					bowels += 10
 			if(400 to 450)
 				if(prob(7))
@@ -259,7 +259,7 @@
 		switch(bladder)
 			if(100 to 250)
 				if(prob(5))
-					to_chat(src, "<b>You need to use the bathroom.</b>")
+					to_chat(src, "<b>你需要上厕所.</b>")
 					bladder += 10
 			if(250 to 400)
 				if(prob(7))
@@ -284,7 +284,7 @@
 /mob/living/human/proc/handle_shit()
 	var/message = null
 	if (src.bowels < 30 && stat != DEAD)
-		to_chat(src, "You don't have to shit.")
+		to_chat(src, "你不需要拉屎.")
 		return
 
 	//Poo in the loo.
@@ -330,7 +330,7 @@
 /mob/living/human/proc/handle_piss()
 	var/message = null
 	if (bladder < 30 && stat != DEAD)
-		to_chat(src, "You don't have to piss.")
+		to_chat(src, "你不需要撒尿.")
 		return
 
 	var/mob/living/M = locate() in src.loc

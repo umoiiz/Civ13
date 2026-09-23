@@ -110,7 +110,7 @@
 	if (user.tactic == "defend")
 		isdefend = 1.2
 	if(default_parry_check(user, attacker, damage_source) && prob(isdefend*(min(block_chance * modif*(0.66*H_user.getStatCoeff("strength")+0.34*H_user.getStatCoeff("dexterity")),87))) && (user.get_active_hand() == src))//You gotta be holding onto that sheesh bro.
-		user.visible_message("<font color='#E55300'><big>\The [user] parries [attack_text] with \the [src]!</big></font>")
+		user.visible_message("<font color='#E55300'><big>\The [user]用\the [src]格挡了[attack_text]的攻击!</big></font>")
 		var/mob/living/human/H = user
 		if (prob(50))
 			H.adaptStat("dexterity", 1)
@@ -123,7 +123,7 @@
 			health-= 0.5
 		check_health()
 		if(prob(15))
-			user.visible_message("<font color='#E55300'><big>\The [src] flies out of \the [user]'s hand!</big></font>")
+			user.visible_message("<font color='#E55300'><big>\The [src]从\the [user]的手中飞出!</big></font>")
 			user.drop_from_inventory(src)
 			throw_at(get_edge_target_turf(src, pick(alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 
@@ -134,24 +134,24 @@
 	..()
 	switch(crafting_quality)
 		if (-100 to 0.85)
-			to_chat(user, "<b>Quality:</b> Very Crude")
+			to_chat(user, "<b>品质:</b> 非常粗糙")
 		if (0.850001 to 0.95)
-			to_chat(user, "<b>Quality:</b> Below Average")
+			to_chat(user, "<b>品质:</b> 低于平均")
 		if (0.950001 to 1.15)
-			to_chat(user, "<b>Quality:</b> Decent")
+			to_chat(user, "<b>品质:</b> 尚可")
 		if (1.150001 to 100)
-			to_chat(user, "<b>Quality:</b> Excellent")
+			to_chat(user, "<b>品质:</b> 优秀")
 	if (health > 0 && maxhealth > 0)
 		var/health_percentage = (health/maxhealth)*100
 		switch (health_percentage)
 			if (-100 to 21)
-				to_chat(user, "<font color='#7f0000'>Is practically falling apart!</font>")
+				to_chat(user, "<font color='#7f0000'>几乎快要散架了!</font>")
 			if (22 to 49)
-				to_chat(user, "<font color='#a74510'>Seems to be in very bad condition.</font>")
+				to_chat(user, "<font color='#a74510'>似乎状况非常糟糕.</font>")
 			if (50 to 69)
-				to_chat(user, "<font color='#cccc00'>Seems to be in a rough condition.</font>")
+				to_chat(user, "<font color='#cccc00'>似乎状况粗糙.</font>")
 			if (70 to 84)
-				to_chat(user, "<font color='#4d5319'>Seems to be in a somewhat decent condition.</font>")
+				to_chat(user, "<font color='#4d5319'>似乎状况还算尚可.</font>")
 			if (85 to 200)
-				to_chat(user, "<font color='#245319'>Seems to be in very good condition.</font>")
+				to_chat(user, "<font color='#245319'>似乎状况非常好.</font>")
 

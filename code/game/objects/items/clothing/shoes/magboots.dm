@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/magboots
-	desc = "Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle. They're large enough to be worn over other footwear."
-	name = "magboots"
+	desc = "磁力靴,常用于舱外活动,以确保使用者安全地附着在载具上.它们足够大,可以套在其他鞋类外面."
+	name = "磁力靴"
 	icon_state = "magboots0"
 	species_restricted = null
 	force = 3
@@ -23,14 +23,14 @@
 		set_slowdown()
 		force = WEAPON_FORCE_WEAK
 		if (icon_base) icon_state = "[icon_base]0"
-		to_chat(user, "You disable the mag-pulse traction system.")
+		to_chat(user, "你禁用了磁脉冲牵引系统.")
 	else
 		item_flags |= NOSLIP
 		magpulse = TRUE
 		set_slowdown()
 		force = WEAPON_FORCE_PAINFUL
 		if (icon_base) icon_state = "[icon_base]1"
-		to_chat(user, "You enable the mag-pulse traction system.")
+		to_chat(user, "你启用了磁脉冲牵引系统.")
 	user.update_inv_shoes()	//so our mob-overlays update
 	user.update_action_buttons()
 
@@ -40,7 +40,7 @@
 	if (H.shoes)
 		shoes = H.shoes
 		if (shoes.overshoes)
-			to_chat(user, "You are unable to wear \the [src] as \the [H.shoes] are in the way.")
+			to_chat(user, "你无法穿上\the [src],因为\the [H.shoes]挡住了.")
 			shoes = null
 			return FALSE
 		H.drop_from_inventory(shoes)	//Remove the old shoes so you can put on the magboots.
@@ -53,7 +53,7 @@
 		return FALSE
 
 	if (shoes)
-		to_chat(user, "You slip \the [src] on over \the [shoes].")
+		to_chat(user, "你把\the [src]套在\the [shoes]外面.")
 	set_slowdown()
 	wearer = H
 	return TRUE
@@ -72,4 +72,4 @@
 	var/state = "disabled"
 	if (item_flags & NOSLIP)
 		state = "enabled"
-	to_chat(user, "Its mag-pulse traction system appears to be [state].")
+	to_chat(user, "它的磁脉冲牵引系统似乎是[state].")

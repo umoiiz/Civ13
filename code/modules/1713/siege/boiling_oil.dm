@@ -1,5 +1,5 @@
 /obj/structure/boiling_oil
-	name = "boiling oil pot"
+	name = "沸腾油锅"
 	icon = 'icons/obj/kitchen.dmi'
 	layer = MOB_LAYER + 1 //just above mobs
 	density = TRUE
@@ -12,7 +12,7 @@
 
 /obj/structure/boiling_oil/attack_hand(var/mob/user as mob)
 	if (timer == 2)
-		visible_message("[user] empties the [name] over the wall!")
+		visible_message("[user]将[name]倾倒过墙!")
 		splash()
 		return
 	..()
@@ -26,7 +26,7 @@ obj/structure/boiling_oil/proc/boil()
 		spawn(500)
 			timer = 2
 			icon_state = "oil_pot2"
-			visible_message("The oil pot is now boiling!")
+			visible_message("油锅现在沸腾了!")
 			return
 
 obj/structure/boiling_oil/proc/splash()
@@ -180,22 +180,22 @@ obj/structure/boiling_oil/attackby(var/obj/item/O, mob/user)
 	if (!istype(O, /obj/item/weapon/reagent_containers))
 		return ..()
 	if (timer <> 0)
-		to_chat(user, "<span class='warning'>The oil is already in the pot!</span>")
+		to_chat(user, "<span class='warning'>油已经在锅里了!</span>")
 		return ..()
 	var/obj/item/weapon/reagent_containers/W = O
 	var/total_oil = W.reagents.get_reagent_amount("olive_oil") + W.reagents.get_reagent_amount("fat_oil")
 	if (total_oil == 0)
-		to_chat(user, "<span class='warning'>This barrel has no any oil inside!</span>")
+		to_chat(user, "<span class='warning'>这个桶里没有任何油!</span>")
 		return TRUE
 	if (total_oil < 50)
-		to_chat(user, "<span class='warning'>There isn't enough oil in this barrel! Minimum is 50.</span>")
+		to_chat(user, "<span class='warning'>这个桶里的油不够! 最少需要50.</span>")
 		return TRUE
 	var/part = total_oil / 50
 	W.reagents.remove_reagent("olive_oil", W.reagents.get_reagent_amount("olive_oil") / part)
 	W.reagents.remove_reagent("fat_oil", W.reagents.get_reagent_amount("fat_oil") / part)
 	timer = 1
-	user.visible_message("<span class='warning'>[user] fills the pot with oil and starts heating it!</span>", 
-		"<span class='notify'>You fill the pot with oil and start heating it.</span>")
+	user.visible_message("<span class='warning'>[user]将油倒入锅中并开始加热!</span>", 
+		"<span class='notify'>你将油倒入锅中并开始加热.</span>")
 	icon_state = "oil_pot1"
 	boil()
 	return TRUE

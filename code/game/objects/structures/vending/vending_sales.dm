@@ -2,8 +2,8 @@
  *  A vending machine / market stall that actually charges per sale.
  */
 /obj/structure/vending/sales
-	name = "Vending Machine"
-	desc = "A generic vending machine."
+	name = "自动售货机"
+	desc = "一台通用自动售货机。"
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "snack"
 	layer = 2.9
@@ -27,42 +27,42 @@
 	if (istype(W, /obj/item/stack/money))
 		if (accepted_currency == "standard")
 			if (istype(W, /obj/item/stack/money/fiat))
-				to_chat(user, "This vending machine does not accept fiat money.")
+				to_chat(user, "此自动售货机不接受法定货币。")
 				return
 			var/obj/item/stack/money/M = W
 			moneyin += M.amount*M.value
 			if (map.ID == MAP_KANDAHAR)
-				to_chat(user, "You give \the [W] to the [src].")
+				to_chat(user, "你将\the [W]交给[src]。")
 			else
-				to_chat(user, "You put \the [W] in the [src].")
+				to_chat(user, "你将\the [W]放入[src]。")
 			qdel(W)
 			return
 		else
 			if (!istype(W, /obj/item/stack/money/fiat))
-				to_chat(user, "This vending machine only accepts fiat money.")
+				to_chat(user, "此自动售货机只接受法定货币。")
 				return
 			var/obj/item/stack/money/fiat/F = W
 			if (F.fiat_id != accepted_currency)
-				to_chat(user, "This vending machine does not accept this currency.")
+				to_chat(user, "此自动售货机不接受此货币。")
 				return
 			moneyin += F.amount
 			if (map.ID == MAP_KANDAHAR)
-				to_chat(user, "You give \the [W] to the [src].")
+				to_chat(user, "你将\the [W]交给[src]。")
 			else
-				to_chat(user, "You put \the [W] in the [src].")
+				to_chat(user, "你将\the [W]放入[src]。")
 			qdel(W)
 			return
 	else if (istype(W, /obj/item/weapon/wrench))
 		if (owner != "Global" && find_company_member(user,owner))
 			playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 			if (anchored)
-				user.visible_message("[user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
+				user.visible_message("[user]开始从地板上解除固定\the [src]。", "你开始从地板上解除固定\the [src]。")
 			else
-				user.visible_message("[user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
+				user.visible_message("[user]开始将\the [src]固定到地板上。", "你开始将\the [src]固定到地板上。")
 
 			if (do_after(user, 20, src))
 				if (!src) return
-				to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+				to_chat(user, "<span class='notice'>你[anchored? "un" : ""]固定了\the [src]!</span>")
 				anchored = !anchored
 			return
 
@@ -84,7 +84,7 @@
 					if (R.amount <= 0)
 						free=R
 				if (!free)
-					to_chat(user, "<span class='notice'>This [src] has too many different products already!</span>")
+					to_chat(user, "<span class='notice'>此[src]已经有太多不同的产品了!</span>")
 					return FALSE
 				else
 					product_records -= free
@@ -118,7 +118,7 @@
 	if (owner != "Global" && find_company_member(usr,owner))
 		show_management_ui(usr)
 	else
-		to_chat(usr, "You do not have permission to manage this vendor.")
+		to_chat(usr, "你没有权限管理此售货机。")
 
 /obj/structure/vending/sales/proc/show_management_ui(mob/user)
 	if (!user || !user.client)
@@ -301,7 +301,7 @@
 		if ((href_list["vend"]) && (vend_ready) && (!currently_vending))
 
 			if (find_company_member(usr,owner))
-				to_chat(usr, "<span class='warning'>You can't buy from your own company. Remove the product instead.</span>")
+				to_chat(usr, "<span class='warning'>你不能从自己的公司购买。请改为移除产品。</span>")
 				status_error = FALSE
 				currently_vending = null
 			else
@@ -445,7 +445,7 @@
 						vend(VP, usr, VP.amount)
 				if ("changecurrency")
 					if (moneyin > 0)
-						to_chat(usr, "<span class='warning'>You must empty the vendor of all funds before changing its accepted currency.</span>")
+						to_chat(usr, "<span class='warning'>在更改接受的货币之前,你必须清空售货机的所有资金。</span>")
 						return
 					var/new_currency = href_list["currency"]
 					if (new_currency)
@@ -453,7 +453,7 @@
 						var/curr_name = "Standard Coins"
 						if (new_currency != "standard" && fiat.currency_list[new_currency])
 							curr_name = fiat.currency_list[new_currency][1]
-						to_chat(usr, "<span class='notice'>This vendor now accepts [curr_name].</span>")
+						to_chat(usr, "<span class='notice'>此售货机现在接受[curr_name]。</span>")
 			GLOB.nanomanager.update_uis(src)
 			return
 
@@ -464,8 +464,8 @@
 
 //VENDING MACHINES
 /obj/structure/vending/sales/food
-	name = "food vending machine"
-	desc = "Basic food products."
+	name = "食品自动售货机"
+	desc = "基础食品。"
 	icon_state = "nutrimat"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/grown/apple = 15,
@@ -475,8 +475,8 @@
 	)
 
 /obj/structure/vending/sales/food/fruits
-	name = "fruit vending machine"
-	desc = "Basic food products."
+	name = "水果自动售货机"
+	desc = "基础食品。"
 	icon_state = "nutrimat"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/grown/apple = 15,
@@ -495,8 +495,8 @@
 		/obj/item/weapon/reagent_containers/food/snacks/grown/coconut = 8,
 	)
 /obj/structure/vending/sales/food/snacks
-	name = "baker's vending machine"
-	desc = "Basic food products."
+	name = "面包师自动售货机"
+	desc = "基础食品。"
 	icon_state = "snack"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/toastedsandwich = 15,
@@ -516,8 +516,8 @@
 	)
 
 /obj/structure/vending/sales/food/hot
-	name = "hot meal vending machine"
-	desc = "Basic food products."
+	name = "热食自动售货机"
+	desc = "基础食品。"
 	icon_state = "hotfood"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/meatballspagetti = 15,
@@ -533,8 +533,8 @@
 	)
 
 /obj/structure/vending/sales/drinks
-	name = "drinks vending machine"
-	desc = "Basic beverages."
+	name = "饮料自动售货机"
+	desc = "基础饮料。"
 	icon_state = "soda"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/drinks/can/cola = 15,
@@ -551,7 +551,7 @@
 		/obj/item/weapon/reagent_containers/food/drinks/bottle/plastic/water  = 5,
 	)
 /obj/structure/vending/sales/drinks/cola
-	name = "cola vending machine"
+	name = "可乐自动售货机"
 	icon_state = "cola"
 	products = list(/obj/item/weapon/reagent_containers/food/drinks/can/cola = 30)
 	prices = list(/obj/item/weapon/reagent_containers/food/drinks/can/cola = 5)
@@ -562,8 +562,8 @@
 	prices = list()
 
 /obj/structure/vending/sales/drinks/hot
-	name = "hot drinks vending machine"
-	desc = "Basic hot beverages."
+	name = "热饮自动售货机"
+	desc = "基础热饮。"
 	icon_state = "coffee"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/drinks/coffee = 20,
@@ -577,8 +577,8 @@
 	)
 
 /obj/structure/vending/sales/cigarettes
-	name = "cigarette vending machine"
-	desc = "Have a break, take a smoke."
+	name = "香烟自动售货机"
+	desc = "休息一下,抽根烟。"
 	icon_state = "cigs"
 	products = list(
 		/obj/item/weapon/storage/fancy/cigarettes/marlboro = 10,
@@ -600,8 +600,8 @@
 	)
 // MARKET STALLS//
 /obj/structure/vending/sales/market_stall/prepared
-	name = "market stall"
-	desc = "A market stall selling an assortment of goods."
+	name = "市场摊位"
+	desc = "一个出售各类商品的市场摊位。"
 	icon_state = "market_stall"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/grown/apple = 10,
@@ -622,8 +622,8 @@
 			update_icon()
 
 /obj/structure/vending/sales/market_stall/prepared/gulag
-	name = "apparel comissary"
-	desc = "A prison vending stall where prisoners can spend their hard-earned Rubles."
+	name = "服装供销社"
+	desc = "一个监狱售货摊,囚犯可以在这里花掉他们辛苦赚来的卢布。"
 	products = list(
 		/obj/item/clothing/gloves/watch/goldwatch = 5,
 		/obj/item/clothing/glasses/monocle = 20,
@@ -640,7 +640,7 @@
 	)
 
 /obj/structure/vending/sales/market_stall/prepared/gulag/food
-	name = "food comissary"
+	name = "食品供销社"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/snacks/sliceable/bread = 50,
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge = 50,
@@ -657,7 +657,7 @@
 	)
 
 /obj/structure/vending/sales/market_stall/prepared/gulag/consumables
-	name = "consumables comissary"
+	name = "消耗品供销社"
 	products = list(
 		/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 50,
 		/obj/item/weapon/storage/fancy/cigarettes/randompack/lighter = 50,
@@ -676,16 +676,16 @@
 ////MONEY COUNTER
 
 /obj/structure/vending/sales/moneycounter
-	name = "currency counter"
-	desc = "Useful for easily merging piles of money into one clean stack."
+	name = "货币柜台"
+	desc = "便于轻松地将成堆的钱合并成一叠整齐的钞票。"
 	icon_state = "CurrencyCounter"
 	products = list()
 	prices = list()
 
 ////MARKET STALL AND VENDORS CUSTOM OBJECTS////
 /obj/structure/vending/sales/market_stall
-	name = "market stall"
-	desc = "A market stall selling an assortment of goods."
+	name = "市场摊位"
+	desc = "一个出售各类商品的市场摊位。"
 	icon_state = "market_stall"
 	vendor_style = "classic"
 	var/image/overlay_primary = null
@@ -723,8 +723,8 @@
 			ct1+=4
 
 /obj/structure/vending/sales/vending
-	name = "vending machine"
-	desc = "A vending machine selling an assortment of goods."
+	name = "自动售货机"
+	desc = "一个出售各类商品的自动售货机。"
 	icon_state = "custom2"
 	var/image/overlay_primary = null
 	var/image/overlay_secondary = null
@@ -754,7 +754,7 @@
 	if (!user.unEquip(W))
 		return
 
-	to_chat(user, "<span class='notice'>You insert \the [W] in \the [src].</span>")
+	to_chat(user, "<span class='notice'>你将\the [W]放入\the [src]中。</span>")
 	if (istype(W, /obj/item/stack))
 		var/obj/item/stack/S = W
 		R.amount += S.amount

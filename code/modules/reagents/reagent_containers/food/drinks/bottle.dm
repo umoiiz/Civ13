@@ -84,10 +84,10 @@
 		var/throw_dist = get_dist(throw_source, loc)
 		if (shatter_check(throw_dist)) //not as reliable as shattering directly
 			if (reagents && reagents.total_volume > 0)  // Check if reagents exist and the bottle is not empty
-				hit_atom.visible_message("<span class='notice'>The contents of \the [src] splash all over \the [hit_atom]!</span>")
+				hit_atom.visible_message("<span class='notice'>\the 的内容[src]溅了\the [hit_atom]一身!</span>")
 				reagents.splash(hit_atom, reagents.total_volume)
 			else
-				hit_atom.visible_message("<span class='notice'>The empty bottle of \the [src] shatters all over \the [hit_atom]!</span>")  // Adds an else statement for shattering into shards
+				hit_atom.visible_message("<span class='notice'>\the 的空瓶子[src]在\the [hit_atom]身上碎得到处都是!</span>")  // Adds an else statement for shattering into shards
 			shatter(loc, hit_atom, alcohol_power)
 // call shatter when you want it to become a broken_bottle
 
@@ -218,7 +218,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/proc/insert_rag(obj/item/weapon/reagent_containers/glass/rag/R, mob/user)
 	if (!isGlass || rag) return
 	if (user.unEquip(R))
-		to_chat(user, "<span class='notice'>You stuff [R] into [src].</span>")
+		to_chat(user, "<span class='notice'>你把[R]塞进[src].</span>")
 		rag = R
 		rag.loc = src
 		flags &= ~OPENCONTAINER
@@ -230,7 +230,7 @@
 	rag = null
 	flags |= (initial(flags) & OPENCONTAINER)
 	update_icon()
-	to_chat(user, "<span class='notice'>You remove the rag from [src].</span>")
+	to_chat(user, "<span class='notice'>你从[src]上取下抹布.</span>")
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/open(mob/user)
 	if (rag) return
@@ -271,11 +271,11 @@
 	var/mob/living/human/H = target
 	if (istype(H) && H.headcheck(hit_zone))
 		var/obj/item/organ/affecting = H.get_organ(hit_zone) //headcheck should ensure that affecting is not null
-		user.visible_message("<span class='danger'>[user] shatters [src] into [H]'s [affecting.name]!</span>")
+		user.visible_message("<span class='danger'>[user]把[src]砸碎在[H]的[affecting.name]上!</span>")
 		if (weaken_duration)
 			target.apply_effect(min(weaken_duration, 5), WEAKEN, blocked) // Never weaken more than a flash!
 	else
-		user.visible_message("<span class='danger'>\The [user] shatters [src] into [target]!</span>")
+		user.visible_message("<span class='danger'>\The [user]把[src]砸碎在[target]上!</span>")
 
 	//The reagents in the bottle splash all over the target, thanks for the idea Nodrak
 	var/alcohol_power = calculate_alcohol_power()
@@ -284,9 +284,9 @@
 // Checks if there are reagents in the bottle to output the message of us splashing alcohol over the target.
 	if (reagents && reagents.total_volume > 0)
 		reagents.splash(target, reagents.total_volume)
-		user.visible_message("<span class='notice'>The contents of \the [src] splash all over [target]!</span>")
+		user.visible_message("<span class='notice'>\the 的内容[src]溅了[target]一身!</span>")
 	else
-		user.visible_message("<span class='notice'>The empty bottle of \the [src] shatters all over [target]!</span>")
+		user.visible_message("<span class='notice'>\the 的空瓶子[src]在[target]身上碎得到处都是!</span>")
 	spawn (1)
 		shatter(loc, target, alcohol_power)
 
@@ -299,8 +299,8 @@
 //Keeping this here for now, I'll ask if I should keep it here.
 /obj/item/weapon/broken_bottle
 
-	name = "broken bottle"
-	desc = "A bottle with a sharp broken bottom."
+	name = "破瓶子"
+	desc = "一个底部破损锋利的瓶子。"
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "broken_bottle"
 	force = 9
@@ -321,8 +321,8 @@
 
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/gin
-	name = "Griffeater Gin"
-	desc = "A bottle of high quality gin."
+	name = "狮鹫食者金酒"
+	desc = "一瓶高品质金酒。"
 	icon_state = "ginbottle"
 	center_of_mass = list("x"=16, "y"=4)
 	New()
@@ -330,8 +330,8 @@
 		reagents.add_reagent("gin", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/gin/empty
-	name = "Griffeater Gin"
-	desc = "A bottle of high quality gin."
+	name = "狮鹫食者金酒"
+	desc = "一瓶高品质金酒。"
 	icon_state = "ginbottle"
 	center_of_mass = list("x"=16, "y"=4)
 	New()
@@ -339,8 +339,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey
-	name = "Uncle Git's Special Reserve"
-	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
+	name = "吉特叔叔特别珍藏"
+	desc = "一款优质单一麦芽威士忌, 在核避难所的隧道中温和陈酿. 隧道威士忌万岁."
 	icon_state = "whiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	New()
@@ -348,8 +348,8 @@
 		reagents.add_reagent("whiskey", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey/empty
-	name = "Uncle Git's Special Reserve"
-	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
+	name = "吉特叔叔特别珍藏"
+	desc = "一款优质单一麦芽威士忌, 在核避难所的隧道中温和陈酿. 隧道威士忌万岁."
 	icon_state = "whiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	New()
@@ -358,8 +358,8 @@
 
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
-	name = "Tunguska Triple Distilled"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
+	name = "通古斯三重蒸馏"
+	desc = "啊, 伏特加. 全世界俄罗斯人首选的饮品兼燃料."
 	icon_state = "vodkabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -367,8 +367,8 @@
 		reagents.add_reagent("vodka", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bluegoose
-	name = "Blue Goose Vodka"
-	desc = "A expensive vodka which is only for flexing."
+	name = "蓝鹅伏特加"
+	desc = "一款昂贵的伏特加, 只适合拿来炫耀."
 	icon_state = "bluegoose"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -376,8 +376,8 @@
 		reagents.add_reagent("vodka", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka/empty
-	name = "Tunguska Triple Distilled"
-	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
+	name = "通古斯三重蒸馏"
+	desc = "啊, 伏特加. 全世界俄罗斯人首选的饮品兼燃料."
 	icon_state = "vodkabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -385,16 +385,16 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla
-	name = "Caccavo Guaranteed Quality Tequilla"
-	desc = "Made from premium petroleum distillates, pure thalidomide and other fine quality ingredients!"
+	name = "卡卡沃保证品质龙舌兰酒"
+	desc = "由优质石油馏出物, 纯沙利度胺和其他优质原料制成!"
 	icon_state = "tequillabottle"
 	center_of_mass = list("x"=16, "y"=3)
 	New()
 		..()
 		reagents.add_reagent("tequilla", 100)
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla/empty
-	name = "Caccavo Guaranteed Quality Tequilla"
-	desc = "Made from premium petroleum distillates, pure thalidomide and other fine quality ingredients!"
+	name = "卡卡沃保证品质龙舌兰酒"
+	desc = "由优质石油馏出物, 纯沙利度胺和其他优质原料制成!"
 	icon_state = "tequillabottle"
 	center_of_mass = list("x"=16, "y"=3)
 	New()
@@ -402,8 +402,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing
-	name = "bottle of nothing"
-	desc = "A bottle filled with nothing"
+	name = "空无一物的瓶子"
+	desc = "一个里面什么都没有的瓶子"
 	icon_state = "bottleofnothing"
 	center_of_mass = list("x"=17, "y"=5)
 	New()
@@ -411,8 +411,8 @@
 		reagents.add_reagent("nothing", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/patron
-	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in night clubs across the earth."
+	name = "拉普艺术家培恩龙舌兰"
+	desc = "银丝龙舌兰, 供应给全球各地的夜店."
 	icon_state = "patronbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -420,8 +420,8 @@
 		reagents.add_reagent("patron", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/patron/empty
-	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in night clubs across the earth."
+	name = "拉普艺术家培恩龙舌兰"
+	desc = "银丝龙舌兰, 供应给全球各地的夜店."
 	icon_state = "patronbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -429,8 +429,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/rum
-	name = "bottle of rum"
-	desc = "Pirate's favourite."
+	name = "一瓶朗姆酒"
+	desc = "海盗的最爱."
 	icon_state = "oldstyle_rum"
 	value = 25
 	center_of_mass = list("x"=16, "y"=8)
@@ -439,8 +439,8 @@
 		reagents.add_reagent("rum", 80)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/rum/empty
-	name = "empty bottle of rum"
-	desc = "Pirate's favourite. When full, of course."
+	name = "空朗姆酒瓶"
+	desc = "海盗的最爱. 当然, 是装满的时候."
 	icon_state = "oldstyle_rum_empty"
 	value = 1
 	center_of_mass = list("x"=16, "y"=8)
@@ -449,8 +449,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/quinine
-	name = "quinine"
-	desc = "Used to treat fever and malaria."
+	name = "奎宁"
+	desc = "用于治疗发烧和疟疾."
 	icon_state = "oldstyle_beer"
 	item_state = "beer"
 	value = 25
@@ -460,8 +460,8 @@
 		reagents.add_reagent("quinine", 80)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/large
-	name = "large bottle"
-	desc = "A large, 80 unit bottle."
+	name = "大瓶子"
+	desc = "一个容量80单位的大瓶子."
 	icon_state = "oldstyle_rum_empty"
 	value = 2
 	volume = 80
@@ -477,8 +477,8 @@
 		icon_state = "oldstyle_rum_empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth
-	name = "Goldeneye Vermouth"
-	desc = "Sweet, sweet dryness."
+	name = "金眼味美思"
+	desc = "甜蜜又干爽."
 	icon_state = "vermouthbottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -486,8 +486,8 @@
 		reagents.add_reagent("vermouth", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth/empty
-	name = "Goldeneye Vermouth"
-	desc = "Sweet, sweet dryness"
+	name = "金眼味美思"
+	desc = "甜蜜又干爽"
 	icon_state = "vermouthbottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -495,8 +495,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua
-	name = "Robert Robust's Coffee Liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK"
+	name = "罗伯特 罗布斯特的咖啡利口酒"
+	desc = "一款广为人知的墨西哥咖啡风味利口酒. 自1936年起生产, HONK"
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -504,8 +504,8 @@
 		reagents.add_reagent("kahlua", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua/empty
-	name = "Robert Robust's Coffee Liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK"
+	name = "罗伯特 罗布斯特的咖啡利口酒"
+	desc = "一款广为人知的墨西哥咖啡风味利口酒. 自1936年起生产, HONK"
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	New()
@@ -513,8 +513,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager
-	name = "College Girl Goldschlager"
-	desc = "Because they are the only ones who will drink 100 proof cinnamon schnapps."
+	name = "女大学生金箔酒"
+	desc = "因为只有她们才会喝100 proof的肉桂烈酒."
 	icon_state = "goldschlagerbottle"
 	center_of_mass = list("x"=15, "y"=3)
 	New()
@@ -522,8 +522,8 @@
 		reagents.add_reagent("goldschlager", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager/empty
-	name = "College Girl Goldschlager"
-	desc = "Because they are the only ones who will drink 100 proof cinnamon schnapps."
+	name = "女大学生金箔酒"
+	desc = "因为只有她们才会喝100 proof的肉桂烈酒."
 	icon_state = "goldschlagerbottle"
 	center_of_mass = list("x"=15, "y"=3)
 	New()
@@ -531,8 +531,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cognac
-	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	name = "巴顿城堡特级干邑"
+	desc = "一种甜美且酒精度很高的饮品, 经过多次蒸馏和多年陈酿制成. 这次你最好别喊'SHITCURITY'."
 	icon_state = "cognacbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -540,8 +540,8 @@
 		reagents.add_reagent("cognac", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/cognac/empty
-	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	name = "巴顿城堡特级干邑"
+	desc = "一种甜美且酒精度很高的饮品, 经过多次蒸馏和多年陈酿制成. 这次你最好别喊'SHITCURITY'."
 	icon_state = "cognacbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -549,8 +549,8 @@
 		reagents.del_reagent()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/wine
-	name = "Red Wine"
-	desc = "Typical red wine."
+	name = "红葡萄酒"
+	desc = "典型的红葡萄酒."
 	icon_state = "winebottle"
 	center_of_mass = list("x"=16, "y"=4)
 	value = 16
@@ -558,8 +558,8 @@
 		..()
 		reagents.add_reagent("wine", 100)
 /obj/item/weapon/reagent_containers/food/drinks/bottle/palmwine
-	name = "Palm Wine"
-	desc = "A crude drink, made from fermented palm sap."
+	name = "棕榈酒"
+	desc = "一种粗制饮品, 由发酵棕榈树液制成."
 	icon_state = "tribalpot"
 	center_of_mass = list("x"=16, "y"=4)
 	value = 18
@@ -568,8 +568,8 @@
 		reagents.add_reagent("palmwine", 40)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/wine/empty
-	name = "Doublebeard Bearded Special Wine"
-	desc = "A faint aura of unease and asspainery surrounds the bottle."
+	name = "双须大胡子特酿葡萄酒"
+	desc = "一股隐约的不安与蛋疼感环绕着这个瓶子."
 	icon_state = "winebottle"
 	center_of_mass = list("x"=16, "y"=4)
 	value = 1
@@ -578,8 +578,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe
-	name = "Jailbreaker Verte"
-	desc = "One sip of this and you just know you're gonna have a good time."
+	name = "越狱绿"
+	desc = "喝上一口你就知道你将会玩得很开心."
 	icon_state = "absinthebottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -587,8 +587,8 @@
 		reagents.add_reagent("absinthe", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe/empty
-	name = "Jailbreaker Verte"
-	desc = "One sip of this and you just know you're gonna have a good time."
+	name = "越狱绿"
+	desc = "喝上一口你就知道你将会玩得很开心."
 	icon_state = "absinthebottle"
 	center_of_mass = list("x"=16, "y"=6)
 	New()
@@ -596,8 +596,8 @@
 		reagents.del_reagents()
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/expensivewine
-	name = "Expensive Wine (La spetia)"
-	desc = "A faint aura of unease and asspainery surrounds the bottle.."
+	name = "昂贵葡萄酒 (La spetia)"
+	desc = "一股隐约的不安与蛋疼感环绕着这个瓶子.."
 	icon_state = "expensivewine"
 	center_of_mass = list("x"=16, "y"=4)
 	value = 16
@@ -606,8 +606,8 @@
 		reagents.add_reagent("wine", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/wine/expensivewine
-	name = "Expensive Wine (La spetia)"
-	desc = "A faint aura of unease and asspainery surrounds the bottle."
+	name = "昂贵葡萄酒 (La spetia)"
+	desc = "一股隐约的不安与蛋疼感环绕着这个瓶子."
 	icon_state = "expensivewine_empty"
 	center_of_mass = list("x"=16, "y"=4)
 	value = 1
@@ -620,8 +620,8 @@
 
 //Small bottles
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small
-	name = "small bottle"
-	desc = "A small, 35 unit bottle."
+	name = "小瓶子"
+	desc = "一个35单位的小瓶子."
 	volume = 35
 	shatter_duration = TRUE
 	flags = FALSE //starts closed
@@ -636,8 +636,8 @@
 		icon_state = "oldstyle_beer_empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer
-	name = "beer"
-	desc = "A bottle of beer."
+	name = "啤酒"
+	desc = "一瓶啤酒."
 	icon_state = "oldstyle_beer"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=12)
@@ -647,8 +647,8 @@
 		reagents.add_reagent("beer", 40)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale
-	name = "ale"
-	desc = "A bottle of dark ale."
+	name = "麦酒"
+	desc = "一瓶黑麦酒."
 	icon_state = "oldstyle_beer"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
@@ -660,8 +660,8 @@
 //////////Plastic bottles (Non-custom ones, see custom_containers for these ones)////////////////////////
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/plastic
-	name = "plastic bottle"
-	desc = "A small plastic bottle."
+	name = "塑料瓶"
+	desc = "一个小塑料瓶."
 	icon_state = "plastic_bottle"
 	item_state = "plastic_bottle"
 	isGlass = FALSE
@@ -683,27 +683,27 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/plastic/on_reagent_change()
 	update_icon()
 /obj/item/weapon/reagent_containers/food/drinks/bottle/plastic/large
-	name = "large plastic bottle"
-	desc = "A large plastic bottle."
+	name = "大塑料瓶"
+	desc = "一个大塑料瓶."
 	icon_state = "plastic_bottle_large"
 	item_state = "plastic_bottle_large"
 	volume = 70
 /obj/item/weapon/reagent_containers/food/drinks/bottle/plastic/water
-	name = "plastic water bottle"
-	desc = "A small plastic bottle containing water. Or not."
+	name = "塑料水瓶"
+	desc = "一个装有水的小塑料瓶. 或者没有."
 	New()
 		..()
 		reagents.add_reagent("water", 40)
 /obj/item/weapon/reagent_containers/food/drinks/bottle/plastic/large/water
-	name = "large plastic water bottle"
-	desc = "A large plastic bottle containing water. Or not."
+	name = "大塑料水瓶"
+	desc = "一个装有水的大塑料瓶. 或者没有."
 	New()
 		..()
 		reagents.add_reagent("water", 70)
 //////////////////////////SKYRIM/////////////////////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/mead
-	name = "mead"
-	desc = "A bottle of nordic mead."
+	name = "蜂蜜酒"
+	desc = "一瓶北欧蜂蜜酒."
 	icon_state = "mead"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
@@ -719,13 +719,13 @@
 		icon_state = "mead_open"
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/mead/open(mob/user)
 		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), TRUE)
-		to_chat(user, "<span class='notice'>You pop the cork off of the [src]!</span>")
+		to_chat(user, "<span class='notice'>你拔开了[src]的软木塞!</span>")
 		flags |= OPENCONTAINER
 		icon_state = "mead_open"
 		update_icon()
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/alto_wine
-	name = "alto wine"
-	desc = "A bottle of wine, the finest in tamriel."
+	name = "高葡萄酒"
+	desc = "一瓶葡萄酒, 泰姆瑞尔最好的."
 	icon_state = "wine"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
@@ -741,13 +741,13 @@
 		icon_state = "wine_open"
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/alto_wine/open(mob/user)
 		playsound(loc,'sound/effects/canopen.ogg', rand(10,50), TRUE)
-		to_chat(user, "<span class='notice'>You pop the cork off of the [src]!</span>")
+		to_chat(user, "<span class='notice'>你拔开了[src]的软木塞!</span>")
 		flags |= OPENCONTAINER
 		icon_state = "wine_open"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing
-	name = "health potion"
-	desc = "A bottle of a healing chemical."
+	name = "治疗药水"
+	desc = "一瓶治疗化学药剂."
 	icon_state = "health_minor"
 	item_state = "beer"
 	flags = OPENCONTAINER
@@ -761,16 +761,16 @@
 	else
 		icon_state = "[initial(icon_state)]"
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing/minor
-	name = "minor healing potion"
-	desc = "A bottle of a weak healing chemical."
+	name = "次级治疗药水"
+	desc = "一瓶弱效治疗化学药剂."
 	icon_state = "health_minor"
 	New()
 		..()
 		reagents.add_reagent("minor", 5)
 		icon_state = "health_minor"
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing/healing_potion
-	name = "healing potion"
-	desc = "A bottle of a moderate healing chemical."
+	name = "治疗药水"
+	desc = "一瓶中效治疗化学药剂."
 	icon_state = "health_potion"
 	value = 40
 	New()
@@ -779,8 +779,8 @@
 		icon_state = "health_potion"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing/plentiful
-	name = "potion of plentiful healing"
-	desc = "A bottle of a good healing chemical."
+	name = "充沛治疗药水"
+	desc = "一瓶良效治疗化学药剂."
 	icon_state = "health_plentiful"
 	value = 60
 	New()
@@ -789,8 +789,8 @@
 		icon_state = "health_plentiful"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing/vigorous
-	name = "potion of vigorous healing"
-	desc = "A bottle of a extreme healing chemical."
+	name = "强效治疗药水"
+	desc = "一瓶极效治疗化学药剂."
 	icon_state = "health_vigor"
 	value = 60
 	slot_flags = SLOT_BELT
@@ -800,8 +800,8 @@
 		icon_state = "health_vigor"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/healing/draught
-	name = "potion of vigorous healing"
-	desc = "A bottle of a extreme healing chemical."
+	name = "强效治疗药水"
+	desc = "一瓶极效治疗化学药剂."
 	icon_state = "health_vigor"
 	value = 200
 	slot_flags = SLOT_BELT
@@ -812,8 +812,8 @@
 
 /////////////////stamina/////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/stamina
-	name = "stamina potion"
-	desc = "A bottle of a stamina chemical."
+	name = "耐力药水"
+	desc = "一瓶耐力化学药剂."
 	icon_state = "stamina_minor"
 	item_state = "beer"
 	flags = OPENCONTAINER
@@ -828,8 +828,8 @@
 		icon_state = "[initial(icon_state)]"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/stamina/minor
-	name = "minor stamina potion"
-	desc = "A bottle of a stamina chemical."
+	name = "次级耐力药水"
+	desc = "一瓶耐力化学药剂."
 	icon_state = "stamina_minor"
 	New()
 		..()
@@ -837,8 +837,8 @@
 		icon_state = "stamina_minor"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/stamina/plentiful
-	name = "plentiful stamina potion"
-	desc = "A bottle of a stamina chemical."
+	name = "充沛耐力药水"
+	desc = "一瓶耐力化学药剂."
 	icon_state = "stamina_plentiful"
 	New()
 		..()
@@ -846,8 +846,8 @@
 		icon_state = "stamina_plentiful"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/stamina/vigorous
-	name = "vigorous stamina potion"
-	desc = "A bottle of a stamina chemical."
+	name = "强效耐力药水"
+	desc = "一瓶耐力化学药剂."
 	icon_state = "stamina_vigor"
 	slot_flags = SLOT_BELT
 	New()
@@ -859,8 +859,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/sake
 	volume = 50
-	name = "sake"
-	desc = "A bottle of sake."
+	name = "清酒"
+	desc = "一瓶清酒."
 	icon_state = "sake"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=10)
@@ -889,7 +889,7 @@
 		icon_state = "sake_empty"
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/cola
-	name = "Cola"
+	name = "可乐"
 	icon_state = "cola"
 	item_state = "beer"
 	center_of_mass = list("x"=16, "y"=12)
@@ -900,8 +900,8 @@
 
 ////////Cans///////////
 /obj/item/weapon/reagent_containers/food/drinks/can
-	name = "small can"
-	desc = "A small, 35 unit can."
+	name = "小罐"
+	desc = "一个35单位的小罐."
 	volume = 35
 	flags = FALSE //starts closed
 	icon_state = "monster"
@@ -920,16 +920,16 @@
 /obj/item/weapon/reagent_containers/food/drinks/can/monster
 	icon_state = "monster"
 	base_icon = "monster"
-	name = "energy drink"
-	desc = "A can of an energy drink."
+	name = "能量饮料"
+	desc = "一罐能量饮料."
 	New()
 		..()
 		reagents.add_reagent("sugar", 5)
 		reagents.add_reagent("coffee", 20)
 		reagents.add_reagent("cola", 10)
 /obj/item/weapon/reagent_containers/food/drinks/can/lite
-	name = "lite beer"
-	desc = "A can of lite beer."
+	name = "淡啤酒"
+	desc = "一罐淡啤酒."
 	icon_state = "bud"
 	base_icon = "bud"
 	New()
@@ -938,8 +938,8 @@
 		reagents.add_reagent("water", 10)
 
 /obj/item/weapon/reagent_containers/food/drinks/can/water
-	name = "can of water"
-	desc = "A can of regular water."
+	name = "水罐"
+	desc = "一罐普通水."
 	icon_state = "bud"
 	base_icon = "bud"
 	volume = 50
@@ -948,8 +948,8 @@
 		reagents.add_reagent("water", 50)
 
 /obj/item/weapon/reagent_containers/food/drinks/can/cola
-	name = "cola can"
-	desc = "A can of cola."
+	name = "可乐罐"
+	desc = "一罐可乐."
 	icon_state = "cola"
 	base_icon = "cola"
 	volume = 35
@@ -958,8 +958,8 @@
 		reagents.add_reagent("cola", 35)
 
 /obj/item/weapon/reagent_containers/food/drinks/can/tonic
-	name = "tonic water can"
-	desc = "A can of cola."
+	name = "汤力水罐"
+	desc = "一罐可乐."
 	icon_state = "cola"
 	base_icon = "cola"
 	volume = 35
@@ -968,8 +968,8 @@
 		reagents.add_reagent("tonic", 35)
 
 /obj/item/weapon/reagent_containers/food/drinks/can/ice_tea
-	name = "ice tea can"
-	desc = "A can of ice tea."
+	name = "冰茶罐"
+	desc = "一罐冰茶."
 	icon_state = "ice_tea_can"
 	base_icon = "ice_tea_can"
 	volume = 35
@@ -979,8 +979,8 @@
 		reagents.add_reagent("ice", 5)
 
 /obj/item/weapon/reagent_containers/food/drinks/can/lemonade
-	name = "lemonade can"
-	desc = "A can of lemonade."
+	name = "柠檬水罐"
+	desc = "一罐柠檬水."
 	icon_state = "7up"
 	base_icon = "7up"
 	volume = 35

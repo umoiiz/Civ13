@@ -3,7 +3,7 @@
 	set category = "Admin"
 	set name = "Admin PM"
 	if (!holder)
-		to_chat(src, "<font color='red'>Error: Admin-PM-Panel: Only administrators may use this command.</font>")
+		to_chat(src, "<font color='red'>错误: 管理员私信面板: 只有管理员可以使用此命令.</font>")
 		return
 	var/list/client/targets[0]
 	for (var/client/T)
@@ -27,12 +27,12 @@
 
 /client/proc/cmd_admin_pm(var/client/C, var/msg = null)
 	if (prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<font color='red'>Error: Private-Message: You are unable to use PM-s (muted).</font>")
+		to_chat(src, "<font color='red'>错误: 私信: 你无法使用私信 (已被禁言).</font>")
 		return
 
 	if (!istype(C,/client))
-		if (holder)	to_chat(src, "<font color='red'>Error: Private-Message: Client not found.</font>")
-		else		to_chat(src, "<font color='red'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</font>")
+		if (holder)	to_chat(src, "<font color='red'>错误: 私信: 未找到客户端.</font>")
+		else		to_chat(src, "<font color='red'>错误: 私信: 未找到客户端. 他们可能已断开连接, 请尝试使用管理员求助!</font>")
 		return
 
 	//get message text, limit it's length.and clean/escape html
@@ -41,8 +41,8 @@
 
 		if (!msg)	return
 		if (!C)
-			if (holder)	to_chat(src, "<font color='red'>Error: Admin-PM: Client not found.</font>")
-			else		to_chat(src, "<font color='red'>Error: Private-Message: Client not found. They may have lost connection, so try using an adminhelp!</font>")
+			if (holder)	to_chat(src, "<font color='red'>错误: 管理员私信: 未找到客户端.</font>")
+			else		to_chat(src, "<font color='red'>错误: 私信: 未找到客户端. 他们可能已断开连接, 请尝试使用管理员求助!</font>")
 			return
 
 	if (handle_spam_prevention(msg,MUTE_ADMINHELP))
@@ -62,7 +62,7 @@
 				recieve_pm_type = holder.rank
 
 	else if (!C.holder)
-		to_chat(src, "<font color='red'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</font>")
+		to_chat(src, "<font color='red'>错误: 管理员私信: 禁止非管理员之间进行私信交流.</font>")
 		return
 
 	var/recieve_message
@@ -123,7 +123,7 @@
 	if (!msg)	return
 
 	if (C.adminhelped)
-		to_chat(C, "<span class='pm'><span class='howto'><b>-- Click the Admins's name to reply --</b></span></span>\n")
+		to_chat(C, "<span class='pm'><span class='howto'><b>-- 点击管理员的名字以回复 --</b></span></span>\n")
 		C.adminhelped = FALSE
 	to_chat(C, "<span class='pm'><span class='in'>" + create_text_tag("pm_in", "", C) + " <b>\[Admin PM\]</b> <a href='?priv_msg_discord=\ref[sender_name]'>[sender_name] (discord)</span></a>: <span class='message'>[msg]</span></span></span>")
 
@@ -149,7 +149,7 @@
 ///when the receiver is an admin in the discord:
 /client/proc/cmd_admin_pm_todiscord(var/target = "admins",var/msg = null)
 	if (prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<font color='red'>Error: Private-Message: You are unable to use PM-s (muted).</font>")
+		to_chat(src, "<font color='red'>错误: 私信: 你无法使用私信 (已被禁言).</font>")
 		return
 
 

@@ -2,8 +2,8 @@
 	move_delay = 1
 	fire_delay = 3
 	icon = 'icons/obj/guns/pistols.dmi'
-	name = "revolver"
-	desc = "A simple revolver."
+	name = "左轮手枪"
+	desc = "一把简单的左轮手枪."
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = "a45"
@@ -54,7 +54,7 @@
 	set category = null
 
 	chamber_offset = FALSE
-	usr.visible_message("<span class='warning'>\The [usr] spins the cylinder of \the [src]!</span>", \
+	usr.visible_message("<span class='warning'>\The [usr] 转动了 \the [src] 的弹巢!</span>", \
 						"<span class='notice'>You spin the cylinder of \the [src].</span>", \
 						"<span class='notice'>You hear something metallic spin and click.</span>")
 	playsound(loc, 'sound/weapons/guns/interact/revolver_spin.ogg', 100, TRUE)
@@ -82,22 +82,22 @@
 	if (single_action)
 		if (!cocked)
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='warning'>[user] cocks \the [src]!</span>","<span class='warning'>You cock \the [src]!</span>")
+			user.visible_message("<span class='warning'>[user] 扳起 \the [src] 的击锤!</span>","<span class='warning'>你扳起 \the [src] 的击锤!</span>")
 			cocked = TRUE
 			update_icon()
 		else
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='notice'>[user] uncocks \the [src].</span>","<span class='notice'>You uncock \the [src].</span>")
+			user.visible_message("<span class='notice'>[user] 放下 \the [src] 的击锤.</span>","<span class='notice'>你放下 \the [src] 的击锤.</span>")
 			cocked = FALSE
 			update_icon()
 
 /obj/item/weapon/gun/projectile/revolver/special_check(mob/user)
 //	var/mob/living/human/H = user
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险开启时你不能发射 \the [src]!</span>")
 		return FALSE
 	if (!cocked && single_action)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the weapon is uncocked!</span>")
+		to_chat(user, "<span class='warning'>武器未扳起击锤时你不能发射 \the [src]!</span>")
 		return FALSE
 	return TRUE
 
@@ -123,26 +123,26 @@
 					count++
 				loaded.Cut()
 			if (count)
-				user.visible_message("[user] unloads \the [src].", "<span class='notice'>You unload [count] round\s from \the [src].</span>")
+				user.visible_message("[user] 卸下了 \the [src] 的弹药.", "<span class='notice'>你从 \the [src] 中卸下了 [count] 发弹药\s .</span>")
 				if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 		else if (load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from \the [src].", "<span class='notice'>You remove \a [C] from \the [src].</span>")
+			user.visible_message("[user] 从 \the [src] 中取出了 \a [C].", "<span class='notice'>你从 \the [src] 中取出了 \a [C].</span>")
 			if (istype(src, /obj/item/weapon/gun/projectile/boltaction))
 				var/obj/item/weapon/gun/projectile/boltaction/B = src
 				if (B.bolt_safety && !B.loaded.len)
 					B.check_bolt_lock++
 			if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 	else
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, "<span class='warning'>[src] 是空的.</span>")
 	update_icon()
 
 
 /obj/item/weapon/gun/projectile/revolver/nagant_revolver
-	name = "M1895 Nagant"
-	desc = "Russian officer's revolver."
+	name = "纳甘 M1895"
+	desc = "俄罗斯军官的左轮手枪."
 	icon_state = "nagant"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a762x38"
@@ -164,8 +164,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/revolver/m1892
-	name = "Modèle 1892 Revolver"
-	desc = "French officer's revolver."
+	name = "1892 型左轮手枪"
+	desc = "法国军官的左轮手枪."
 	icon_state = "m1892"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a8x27"
@@ -181,8 +181,8 @@
 	gun_safety = TRUE
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker
-	name = "Colt Peacemaker"
-	desc = "Officialy the M1873 Colt Single Action Army Revolver."
+	name = "柯尔特和平缔造者"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪."
 	icon_state = "coltsaa"
 	base_icon = "peacemaker"
 	w_class = ITEM_SIZE_SMALL
@@ -198,8 +198,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker/ivory
-	name = "Colt Peacemaker Ivory"
-	desc = "Officialy the M1873 Colt Single Action Army Revolver with an Ivory grip."
+	name = "柯尔特和事佬象牙版"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪, 配备象牙握把."
 	icon_state = "coltsaa_ivory"
 	base_icon = "peacemaker"
 	w_class = ITEM_SIZE_SMALL
@@ -215,8 +215,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker/storekeeper
-	name = "Colt Storekeeper"
-	desc = "Officialy a variant of M1873 Colt Single Action Army Revolver."
+	name = "柯尔特店主"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪的一种变体."
 	icon_state = "coltsaa_storekeeper"
 	base_icon = "peacemaker"
 	w_class = ITEM_SIZE_SMALL
@@ -232,8 +232,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker/ivory
-	name = "Colt Storekeeper Ivory"
-	desc = "Officialy a variant of M1873 Colt Single Action Army Revolver with an Ivory grip."
+	name = "柯尔特店主象牙版"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪的一种变体, 配备象牙握把."
 	icon_state = "coltsaa_bankerspecial"
 	base_icon = "peacemaker"
 	w_class = ITEM_SIZE_SMALL
@@ -249,8 +249,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/peacemaker
-	name = "Colt Peace Ivory"
-	desc = "Officialy a variant of M1873 Colt Single Action Army Revolver with an Ivory grip."
+	name = "柯尔特和事佬象牙版"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪的一种变体, 配备象牙握把."
 	icon_state = "coltsaa_artillery"
 	base_icon = "peacemaker"
 	w_class = ITEM_SIZE_SMALL
@@ -266,8 +266,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/colt1892
-	name = "Colt M1892"
-	desc = "Officialy the M1892 Colt Single Action Army Revolver."
+	name = "柯尔特 M1892"
+	desc = "官方名称 M1892 柯尔特单动陆军左轮手枪."
 	icon_state = "colt1892"
 	base_icon = "colt1892"
 	w_class = ITEM_SIZE_SMALL
@@ -283,8 +283,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/makeshift
-	name = "Makeshift Revolver"
-	desc = "A cheap makeshift revolver."
+	name = "简易左轮手枪"
+	desc = "一把廉价的简易左轮手枪."
 	icon_state = "makeshiftrevolver"
 	base_icon = "makeshiftrevolver"
 	w_class = ITEM_SIZE_SMALL
@@ -301,8 +301,8 @@
 	pocket = TRUE
 
 /obj/item/weapon/gun/projectile/revolver/coltpolicepositive
-	name = "Colt Police Positive"
-	desc = "Common revolver used by police."
+	name = "柯尔特警用正版"
+	desc = "警察常用的左轮手枪."
 	icon_state = "coltnewpolice"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a32"
@@ -328,8 +328,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/revolver/enfieldno2
-	name = "Enfield No. 2"
-	desc = "British revolver made with love."
+	name = "恩菲尔德 2 号"
+	desc = "充满爱意制造的英国左轮手枪."
 	icon_state = "enfield02"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a41"
@@ -343,8 +343,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/webley4
-	name = "Webley Mk IV"
-	desc = "British revolver chambered in (.455)."
+	name = "韦伯利 Mk IV"
+	desc = "英国左轮手枪, 口径为 (.455)."
 	icon_state = "webley4"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a455"
@@ -359,8 +359,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/frontier
-	name = "Colt Frontier"
-	desc = "Officialy the M1873 Colt Single Action Army Revolver. This one uses .44 Winchester ammuniton."
+	name = "柯尔特边境"
+	desc = "官方名称 M1873 柯尔特单动陆军左轮手枪. 这一把使用 .44 温彻斯特弹药."
 	icon_state = "peacemaker2"
 	base_icon = "peacemaker2"
 	w_class = ITEM_SIZE_SMALL
@@ -376,8 +376,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/graysonfito12
-	name = "Mckellen M12"
-	desc = "A expensive revolver made by Mckellen."
+	name = "麦凯伦 M12"
+	desc = "一把由麦凯伦制造的昂贵左轮手枪."
 	icon_state = "graysonfito"
 	base_icon = "graysonfito"
 	w_class = ITEM_SIZE_SMALL
@@ -392,8 +392,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/taurus
-	name = "Taurus Judge Revolver"
-	desc = "The Taurus Judge is a five shot revolver designed and produced by Taurus International, chambered for (.45 Colt)."
+	name = "金牛座法官左轮手枪"
+	desc = "金牛座法官是由金牛座国际设计和生产的五发左轮手枪, 口径为 (.45 柯尔特)."
 	icon_state = "judge"
 	base_icon = "judge"
 	w_class = ITEM_SIZE_SMALL
@@ -407,8 +407,8 @@
 	cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/magnum44
-	name = "Magnum 44"
-	desc = "A heavy revolver chambered in (magnum .44)."
+	name = "马格南 44"
+	desc = "一把重型左轮手枪, 口径为 (马格南 .44)."
 	icon_state = "magnum58"
 	base_icon = "magnum58"
 	w_class = ITEM_SIZE_SMALL
@@ -430,8 +430,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/revolver/smithwesson
-	name = "Smith & Wesson Model 30"
-	desc = "A smith 'n Wesson revolver, chambered in .32 S&W."
+	name = "史密斯威森 30 型"
+	desc = "一把史密斯威森左轮手枪, 口径为 .32 S&W."
 	icon_state = "smithwesson32"
 	base_icon = "smithwesson32"
 	w_class = ITEM_SIZE_TINY
@@ -449,8 +449,8 @@
 	pocket = TRUE
 
 /obj/item/weapon/gun/projectile/revolver/sw3
-	name = "Orbea Hermanos"
-	desc = "A smith 'n Wesson revolver, chambered in .32 S&W. This being the spanish copy cat."
+	name = "奥贝亚兄弟"
+	desc = "一把史密斯威森左轮手枪, 口径为 .32 S&W. 这一把是西班牙仿制品."
 	icon_state = "snw3"
 	base_icon = "snw3"
 	w_class = ITEM_SIZE_TINY
@@ -469,8 +469,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/revolver/snw10
-	name = "Smith & Wesson M.10"
-	desc = "A Smith 'n Wesson revolver model 10, chambered in .38 S&W."
+	name = "史密斯威森 M.10"
+	desc = "一把史密斯威森 10 型左轮手枪, 口径为 .38 S&W."
 	icon_state = "snw10"
 	base_icon = "snw10"
 	w_class = ITEM_SIZE_TINY
@@ -489,8 +489,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/revolver/t26_revolver
-	name = "Type 26 revolver"
-	desc = "Japanese officer's revolver."
+	name = "26 式左轮手枪"
+	desc = "日本军官的左轮手枪."
 	icon_state = "t26revolver"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "c9mm_jap_revolver"
@@ -506,8 +506,8 @@
 	load_delay = 5
 
 /obj/item/weapon/gun/projectile/revolver/panther
-	name = "Panther revolver"
-	desc = "A .44 caliber revolver."
+	name = "黑豹左轮手枪"
+	desc = "一把 .44 口径左轮手枪."
 	icon_state = "panther"
 	item_state = "panther"
 	w_class = ITEM_SIZE_SMALL
@@ -523,8 +523,8 @@
 	blackpowder = FALSE
 
 /obj/item/weapon/gun/projectile/revolver/derringer
-	name = "Derringer M95 pistol"
-	desc = "Officialy the Remington Model 95, this small pistol has two barrels."
+	name = "德林格 M95 手枪"
+	desc = "官方名称 雷明顿 95 型, 这把小型手枪有两根枪管."
 	icon_state = "derringer"
 	item_state = "pistol"
 	w_class = ITEM_SIZE_TINY
@@ -562,7 +562,7 @@
 	if (world.time >= recentpump + 10)
 		if (open)
 			open = FALSE
-			to_chat(user, "<span class='notice'>You close \the [src].</span>")
+			to_chat(user, "<span class='notice'>你合上\the [src].</span>")
 			icon_state = "derringer"
 			if (loaded.len)
 				var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
@@ -570,25 +570,25 @@
 				chambered = AC
 		else
 			open = TRUE
-			to_chat(user, "<span class='notice'>You break open \the [src].</span>")
+			to_chat(user, "<span class='notice'>你折开\the [src].</span>")
 			icon_state = "derringer_open"
 		recentpump = world.time
 
 /obj/item/weapon/gun/projectile/revolver/derringer/load_ammo(var/obj/item/A, mob/user)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need to open \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先打开\the [src]!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/revolver/derringer/unload_ammo(mob/user, var/allow_dump=1)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need to open \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先打开\the [src]!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/revolver/derringer/special_check(mob/user)
 	if (open)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while it is break open!</span>")
+		to_chat(user, "<span class='warning'>当\the [src]处于折开状态时你无法开火!</span>")
 		return FALSE
 	return ..()
 
@@ -608,8 +608,8 @@
 	move_delay = 1
 	fire_delay = 3
 	icon = 'icons/obj/guns/rifles.dmi'
-	name = "revolving rifle"
-	desc = "A simple revolving rifle."
+	name = "转轮步枪"
+	desc = "一把简单的转轮步枪."
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = "a45"
@@ -639,7 +639,7 @@
 	set category = null
 
 	chamber_offset = FALSE
-	usr.visible_message("<span class='warning'>\The [usr] spins the cylinder of \the [src]!</span>", \
+	usr.visible_message("<span class='warning'>\The [usr]转动了\the [src]的弹巢!</span>", \
 						"<span class='notice'>You spin the cylinder of \the [src].</span>", \
 						"<span class='notice'>You hear something metallic spin and click.</span>")
 	playsound(loc, 'sound/weapons/guns/interact/revolver_spin.ogg', 100, TRUE)
@@ -668,20 +668,20 @@
 	if (single_action)
 		if (!cocked)
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='warning'>[user] cocks \the [src]!</span>","<span class='warning'>You cock \the [src]!</span>")
+			user.visible_message("<span class='warning'>[user]扳起了\the [src]的击锤!</span>","<span class='warning'>你扳起了\the [src]的击锤!</span>")
 			cocked = TRUE
 		else
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='notice'>[user] uncocks \the [src].</span>","<span class='notice'>You uncock \the [src].</span>")
+			user.visible_message("<span class='notice'>[user]放下了\the [src]的击锤.</span>","<span class='notice'>你放下了\the [src]的击锤.</span>")
 			cocked = FALSE
 
 /obj/item/weapon/gun/projectile/revolving/special_check(mob/user)
 //	var/mob/living/human/H = user
 	if (!cocked && single_action)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the weapon is uncocked!</span>")
+		to_chat(user, "<span class='warning'>当武器击锤未扳起时你无法开火\the [src]!</span>")
 		return FALSE
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>当保险开启时你无法开火\the [src]!</span>")
 		return FALSE
 	return TRUE
 
@@ -707,13 +707,13 @@
 					count++
 				loaded.Cut()
 			if (count)
-				user.visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
+				user.visible_message("[user]卸下了[src]的弹药.", "<span class='notice'>你从[src]中卸下了[count]发\s 弹药.</span>")
 				if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 		else if (load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			user.visible_message("[user]从[src]中取出了\a [C].", "<span class='notice'>你从[src]中取出了\a [C].</span>")
 			if (istype(src, /obj/item/weapon/gun/projectile/boltaction))
 				var/obj/item/weapon/gun/projectile/boltaction/B = src
 				if (B.bolt_safety && !B.loaded.len)
@@ -723,8 +723,8 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/revolving/colt
-	name = "Colt Revolving Rifle"
-	desc = "Officialy the M1855 Colt Single Action Revolving Carbine."
+	name = "柯尔特转轮步枪"
+	desc = "官方名称 M1855 柯尔特单动转轮卡宾枪."
 	icon_state = "revolving"
 	item_state = "revolving"
 	w_class = ITEM_SIZE_SMALL
@@ -744,8 +744,8 @@
 /obj/item/weapon/gun/projectile/capnball
 	move_delay = 1
 	fire_delay = 3
-	name = "revolver"
-	desc = "A simple revolver."
+	name = "左轮手枪"
+	desc = "一把简单的左轮手枪."
 	icon_state = "revolver"
 	item_state = "revolver"
 	caliber = "musketball_pistol"
@@ -784,7 +784,7 @@
 	set category = null
 
 	chamber_offset = FALSE
-	usr.visible_message("<span class='warning'>\The [usr] spins the cylinder of \the [src]!</span>", \
+	usr.visible_message("<span class='warning'>\The [usr]转动了\the [src]的弹巢!</span>", \
 						"<span class='notice'>You spin the cylinder of \the [src].</span>", \
 						"<span class='notice'>You hear something metallic spin and click.</span>")
 	playsound(loc, 'sound/weapons/guns/interact/revolver_spin.ogg', 100, TRUE)
@@ -813,19 +813,19 @@
 	if (single_action)
 		if (!cocked)
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='warning'>[user] cocks \the [src]!</span>","<span class='warning'>You cock \the [src]!</span>")
+			user.visible_message("<span class='warning'>[user]扳起了\the [src]的击锤!</span>","<span class='warning'>你扳起了\the [src]的击锤!</span>")
 			cocked = TRUE
 			update_icon()
 		else
 			playsound(loc, cocked_sound, 50, TRUE)
-			user.visible_message("<span class='notice'>[user] uncocks \the [src].</span>","<span class='notice'>You uncock \the [src].</span>")
+			user.visible_message("<span class='notice'>[user]放下了\the [src]的击锤.</span>","<span class='notice'>你放下了\the [src]的击锤.</span>")
 			cocked = FALSE
 			update_icon()
 
 /obj/item/weapon/gun/projectile/capnball/special_check(mob/user)
 //	var/mob/living/human/H = user
 	if (!cocked && single_action)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the weapon is uncocked!</span>")
+		to_chat(user, "<span class='warning'>当武器击锤未扳起时你无法开火\the [src]!</span>")
 		return FALSE
 	return ..()
 
@@ -851,25 +851,25 @@
 					count++
 				loaded.Cut()
 			if (count)
-				visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
+				visible_message("[user]卸下了[src]的弹药.", "<span class='notice'>你从[src]中卸下了[count]发\s 弹药.</span>")
 				if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 		else if (load_method & SINGLE_CASING)
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			visible_message("[user]从[src]中取出了\a [C].", "<span class='notice'>你从[src]中取出了\a [C].</span>")
 			if (istype(src, /obj/item/weapon/gun/projectile/boltaction))
 				var/obj/item/weapon/gun/projectile/boltaction/B = src
 				if (B.bolt_safety && !B.loaded.len)
 					B.check_bolt_lock++
 			if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 	else
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, "<span class='warning'>[src]是空的.</span>")
 	update_icon()
 
 /obj/item/weapon/gun/projectile/capnball/dragoon
-	name = "Colt Dragoon M1848"
-	desc = "Officialy the M1848 Colt Percussion Cap Revolver."
+	name = "柯尔特龙骑兵 M1848"
+	desc = "官方名称 M1848 柯尔特火帽左轮手枪."
 	icon_state = "colt_dragoon1848"
 	base_icon = "dragoon"
 	w_class = ITEM_SIZE_SMALL
@@ -886,8 +886,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/capnball/babydragoon
-	name = "Colt Baby Dragoon M1848"
-	desc = "Officialy the Baby M1848 Colt Percussion Cap Revolver."
+	name = "柯尔特小龙骑兵 M1848"
+	desc = "官方名称是M1848柯尔特击发式左轮手枪."
 	icon_state = "dragoon"
 	base_icon = "colt_babydragoon1848"
 	w_class = ITEM_SIZE_SMALL
@@ -904,8 +904,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/pocketpistol
-	name = "Colt Pocket-Pistol M1849"
-	desc = "Officialy the M1849 Colt Percussion Cap Pocket-Pistol."
+	name = "柯尔特袖珍手枪M1849"
+	desc = "官方名称是M1849柯尔特击发式袖珍手枪."
 	icon_state = "dragoon"
 	base_icon = "colt_pocketmodel1849"
 	w_class = ITEM_SIZE_SMALL
@@ -922,8 +922,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/walker
-	name = "Colt Walker M1846"
-	desc = "Officialy the M1846 Colt Percussion Cap Walker."
+	name = "柯尔特沃克M1846"
+	desc = "官方名称是M1846柯尔特击发式沃克手枪."
 	icon_state = "peacemaker2"
 	base_icon = "colt_walker1846"
 	w_class = ITEM_SIZE_SMALL
@@ -940,8 +940,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/pocketm1849
-	name = "Colt Police Pocket-Pistol M1849"
-	desc = "Officialy the M1849 Colt Percussion Cap Pocket-Pistol used by police."
+	name = "柯尔特警用袖珍手枪M1849"
+	desc = "官方名称是M1849柯尔特击发式袖珍手枪, 被警方使用."
 	icon_state = "peacemaker2"
 	base_icon = "colt_pocketpolice1849"
 	w_class = ITEM_SIZE_SMALL
@@ -958,8 +958,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/navym1851
-	name = "Colt Navy Revolver M1851"
-	desc = "Officialy the M1851 Colt Navy Percussion Cap Revolver."
+	name = "柯尔特海军左轮手枪M1851"
+	desc = "官方名称是M1851柯尔特海军击发式左轮手枪."
 	icon_state = "peacemaker2"
 	base_icon = "colt_navy1851"
 	w_class = ITEM_SIZE_SMALL
@@ -976,8 +976,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/navym1861
-	name = "Colt Navy Revolver M1861"
-	desc = "Officialy the M1861 Colt Navy Percussion Cap Revolver."
+	name = "柯尔特海军左轮手枪M1861"
+	desc = "官方名称是M1861柯尔特海军击发式左轮手枪."
 	icon_state = "peacemaker2"
 	base_icon = "colt_navy1861"
 	w_class = ITEM_SIZE_SMALL
@@ -994,8 +994,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/capnball/
-	name = "Colt Army Revolver M1860"
-	desc = "Officialy the M1860 Colt Army Percussion Cap Revolver."
+	name = "柯尔特陆军左轮手枪M1860"
+	desc = "官方名称是M1860柯尔特陆军击发式左轮手枪."
 	icon_state = "peacemaker2"
 	base_icon = "colt_army1860"
 	w_class = ITEM_SIZE_SMALL

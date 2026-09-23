@@ -201,7 +201,7 @@
 						current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 			else
 				if (current_win_condition != no_winner && current_winner && current_loser)
-					to_chat(world, "<font size = 3>The Militia has recaptured the Parliament!</font>")
+					to_chat(world, "<font size = 3>民兵已重新夺回议会!</font>")
 					current_winner = null
 					current_loser = null
 				next_win = -1
@@ -261,9 +261,9 @@
 			sov_points++
 		if (a1_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>Central Processing</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font>已失去<b>中央处理区</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font> captured the <b>Central Processing</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font>已占领<b>中央处理区</b>!</big>")
 		c1 = 0
 		c2 = 0
 		prev_control = a2_control
@@ -286,12 +286,12 @@
 			sov_points++
 		if (a2_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>Parliamental Hall</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font>已失去<b>议会大厅</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font> captured the <b>Parliamental Hall</b>!</big>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Militia: [scores["Militia"]]</big>")
-	to_chat(world, "<big>Russian Army: [scores["Russian Army"]]</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font>已占领<b>议会大厅</b>!</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>民兵: [scores["Militia"]]</big>")
+	to_chat(world, "<big>俄军: [scores["Russian Army"]]</big>")
 //	to_chat(world, "<big>Militia: [ger_points]</big>")
 //	to_chat(world, "<big>Soviet Army: [sov_points]</big>")
 	spawn(300)

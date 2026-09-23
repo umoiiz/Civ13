@@ -13,8 +13,8 @@
 	gtype = "shotgun"
 
 /obj/item/weapon/gun/projectile/shotgun/pump
-	name = "Pump-Action Shotgun"
-	desc = "A placeholder shotgun chambered in 12 gauge rounds."
+	name = "泵动式霰弹枪"
+	desc = "一款占位用霰弹枪,发射12号口径弹药."
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	max_shells = 6
@@ -60,8 +60,8 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/shotgun/coachgun
-	name = "Coach Gun"
-	desc = "A double-barreled shotgun, commonly used by messengers and on stagecoaches."
+	name = "马车枪"
+	desc = "一款双管霰弹枪,常被信使和驿站马车使用."
 	icon_state = "doublebarreled"
 	item_state = "shotgun"
 	max_shells = 2
@@ -95,7 +95,7 @@
 	if (world.time >= recentpump + 10)
 		if (open)
 			open = FALSE
-			to_chat(user, "<span class='notice'>You close \the [src].</span>")
+			to_chat(user, "<span class='notice'>你合上了\the [src].</span>")
 			icon_state = "doublebarreled"
 			if (loaded.len)
 				var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
@@ -103,25 +103,25 @@
 				chambered = AC
 		else
 			open = TRUE
-			to_chat(user, "<span class='notice'>You break open \the [src].</span>")
+			to_chat(user, "<span class='notice'>你折开了\the [src].</span>")
 			icon_state = "doublebarreled_open"
 		recentpump = world.time
 
 /obj/item/weapon/gun/projectile/shotgun/coachgun/load_ammo(var/obj/item/A, mob/user)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need to open \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先折开\the [src]!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/shotgun/coachgun/unload_ammo(mob/user, var/allow_dump=1)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need to open \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先折开\the [src]!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/shotgun/coachgun/special_check(mob/user)
 	if (open)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while it is break open!</span>")
+		to_chat(user, "<span class='warning'>当\the [src]处于折开状态时你无法开火!</span>")
 		return FALSE
 	return ..()
 
@@ -139,8 +139,8 @@
 
 
 /obj/item/weapon/gun/projectile/shotgun/pump/remington870
-	name = "Remington 870 Express"
-	desc = "A pump-action shotgun with a 3in 12 gauge chamber."
+	name = "雷明顿870 Express"
+	desc = "一款泵动式霰弹枪,配备3英寸12号口径弹膛."
 	icon_state = "remington870"
 	item_state = "remington"
 	max_shells = 7
@@ -157,7 +157,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/pump/ks23
 	name = "KS-23"
-	desc = "A Soviet pump-action shotgun with a 23mm caliber."
+	desc = "一款苏联泵动式霰弹枪,口径为23mm."
 	icon_state = "ks23"
 	item_state = "ks23"
 	max_shells = 4
@@ -170,7 +170,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/mts225
 	name = "MTS-225"
-	desc = "A Russian 6-cylinder revolver shotgun, used by Russian hunters."
+	desc = "一款俄罗斯6管转轮霰弹枪,被俄罗斯猎人使用."
 	icon_state = "mts225"
 	item_state = "shotgun"
 	base_icon = "shotgun"
@@ -203,7 +203,7 @@
 	if (world.time >= recentpump + 10)
 		if (open)
 			open = FALSE
-			to_chat(user, "<span class='notice'>You put the cylinder back into \the [src].</span>")
+			to_chat(user, "<span class='notice'>你将转轮装回了\the [src].</span>")
 			icon_state = "mts225"
 			if (loaded.len)
 				var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
@@ -211,25 +211,25 @@
 				chambered = AC
 		else
 			open = TRUE
-			to_chat(user, "<span class='notice'>You release the cylinder of \the [src].</span>")
+			to_chat(user, "<span class='notice'>你释放了\the [src]的转轮.</span>")
 			icon_state = "mts225_open"
 		recentpump = world.time
 
 /obj/item/weapon/gun/projectile/shotgun/mts225/load_ammo(var/obj/item/A, mob/user)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need release the cylinder of \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先释放\the [src]的转轮!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/shotgun/coachgun/unload_ammo(mob/user, var/allow_dump=1)
 	if (!open)
-		to_chat(user, "<span class='notice'>You need to release the cylinder of \the [src] first!</span>")
+		to_chat(user, "<span class='notice'>你需要先释放\the [src]的转轮!</span>")
 		return
 	..()
 
 /obj/item/weapon/gun/projectile/shotgun/mts225/special_check(mob/user)
 	if (open)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the cylinder is not in the gun!</span>")
+		to_chat(user, "<span class='warning'>当转轮不在枪内时你无法开火\the [src]!</span>")
 		return FALSE
 	return ..()
 

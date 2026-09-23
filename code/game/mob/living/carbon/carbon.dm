@@ -39,7 +39,7 @@
 	if ((user in stomach_contents) && istype(user))
 		if (user.last_special <= world.time)
 			user.last_special = world.time + 50
-			visible_message("<span class='danger'>You hear something rumbling inside [src]'s stomach...</span>")
+			visible_message("<span class='danger'>你听到[src]的肚子里传来一阵咕噜声...</span>")
 			var/obj/item/I = user.get_active_hand()
 			if (I && I.force)
 				var/d = rand(round(I.force / 4), I.force)
@@ -52,7 +52,7 @@
 					H.updatehealth()
 				else
 					take_organ_damage(d)
-				user.visible_message("<span class='danger'>[user] attacks [src]'s stomach wall with the [I.name]!</span>")
+				user.visible_message("<span class='danger'>[user]用[I.name]攻击[src]的胃壁!</span>")
 
 				if (prob(getBruteLoss() - 50))
 					for (var/atom/movable/A in stomach_contents)
@@ -93,7 +93,7 @@
 	playsound(loc, "sparks", 50, TRUE, -1)
 	if (shock_damage > 15)
 		visible_message(
-			"<span class = 'red'>[src] was shocked by the [source]!</span>", \
+			"<span class = 'red'>[src]被[source]电击了!</span>", \
 			"<span class = 'red'><b>You feel a powerful shock course through your body!</b></span>", \
 			"<span class = 'red'>You hear a heavy electrical crack.</span>" \
 		)
@@ -101,7 +101,7 @@
 		Weaken(10)
 	else
 		visible_message(
-			"<span class = 'red'>[src] was mildly shocked by the [source].</span>", \
+			"<span class = 'red'>[src]被[source]轻微电击了。</span>", \
 			"<span class = 'red'>You feel a mild shock course through your body.</span>", \
 			"<span class = 'red'>You hear a light zapping.</span>" \
 		)
@@ -159,24 +159,24 @@
 		else if (on_fire)
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 			if (M.on_fire)
-				M.visible_message("<span class='warning'>[M] tries to pat out \the [src]'s flames, but to no avail!</span>",
-				"<span class='warning'>You try to pat out \the [src]'s flames, but to no avail! Put yourself out first!</span>")
+				M.visible_message("<span class='warning'>[M]试图拍灭\the [src]身上的火焰,但无济于事!</span>",
+				"<span class='warning'>你试图拍灭\the [src]身上的火焰,但无济于事!先把自己身上的火扑灭!</span>")
 			else
-				M.visible_message("<span class='warning'>[M] tries to pat out \the [src]'s flames!</span>",
-				"<span class='warning'>You try to pat out \the [src]'s flames! Hot!</span>")
+				M.visible_message("<span class='warning'>[M]试图拍灭\the [src]身上的火焰!</span>",
+				"<span class='warning'>你试图拍灭\the [src]身上的火焰!好烫!</span>")
 				if (do_mob(M, src, 15))
 					fire_stacks -= 0.5
 					if (prob(10) && (M.fire_stacks <= 0))
 						M.fire_stacks += 1
 					M.IgniteMob()
 					if (M.on_fire)
-						M.visible_message("<span class='danger'>The fire spreads from \the [src] to \the [M]!</span>",
-						"<span class='danger'>The fire spreads to you as well!</span>")
+						M.visible_message("<span class='danger'>火焰从\the [src]蔓延到了\the [M]!</span>",
+						"<span class='danger'>火焰也蔓延到了你身上!</span>")
 					else
 						fire_stacks -= 0.5 //Less effective than stop, drop, and roll - also accounting for the fact that it takes half as long.
 						if (fire_stacks <= 0)
-							M.visible_message("<span class='warning'>[M] successfully pats out \the [src]'s flames.</span>",
-							"<span class='warning'>You successfully pat out [src]'s flames.</span>")
+							M.visible_message("<span class='warning'>[M]成功拍灭了\the [src]身上的火焰。</span>",
+							"<span class='warning'>你成功拍灭了[src]身上的火焰。</span>")
 							ExtinguishMob()
 							fire_stacks = FALSE
 		else
@@ -193,20 +193,20 @@
 			var/mob/living/human/H = src
 			if (istype(H)) show_ssd = H.species.show_ssd
 			if (show_ssd && !client && !teleop)
-				M.visible_message("<span class='notice'>[M] shakes \the [src] trying to wake [t_him] up!</span>", \
+				M.visible_message("<span class='notice'>[M]摇晃着\the [src],试图唤醒[t_him]!</span>", \
 									"<span class='notice'>You shake \the [src], but they do not respond... Maybe they have shell shock?</span>")
 			else if (lying || sleeping)
 				sleeping = max(0,sleeping-5)
 				if (!sleeping)
 					resting = 0
-				M.visible_message("<span class='notice'>[M] shakes \the [src] trying to wake [t_him] up!</span>", \
+				M.visible_message("<span class='notice'>[M]摇晃着\the [src],试图唤醒[t_him]!</span>", \
 									"<span class='notice'>You shake \the [src] trying to wake [t_him] up!</span>")
 			else
 				var/mob/living/human/hugger = M
 				if (istype(hugger))
 					hugger.species.hug(hugger,src)
 				else
-					M.visible_message("<span class='notice'>[M] hugs \the [src] to make [t_him] feel better!</span>", \
+					M.visible_message("<span class='notice'>[M]拥抱了\the [src],想让[t_him]好受一些!</span>", \
 								"<span class='notice'>You hug \the [src] to make [t_him] feel better!</span>")
 				if (M.fire_stacks >= (fire_stacks + 3))
 					fire_stacks += 1
@@ -405,7 +405,7 @@
 	if (buckled)
 		return FALSE
 	stop_pulling()
-	to_chat(src, "<span class='warning'>You slipped on [slipped_on]!</span>")
+	to_chat(src, "<span class='warning'>你在[slipped_on]上滑倒了!</span>")
 	playsound(loc, 'sound/misc/slip.ogg', 50, TRUE, -3)
 	Stun(stun_duration)
 	Weaken(Floor(stun_duration/2))

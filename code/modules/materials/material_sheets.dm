@@ -79,7 +79,7 @@
 	..()
 
 /obj/item/stack/material/iron
-	name = "iron"
+	name = "铁"
 	icon_state = "sheet-iron"
 	default_type = "iron"
 	apply_colour = TRUE
@@ -107,14 +107,14 @@
 	amount = 25
 
 /obj/item/stack/material/barbwire
-	name = "Barbwire"
+	name = "铁丝网"
 	icon_state = "barbwire_stack"
 	default_type = "barbedwire"
 	value = 2
 	flags = CONDUCT
 
 /obj/item/stack/material/barbwire/ten
-	name = "Barbwire"
+	name = "铁丝网"
 	icon_state = "barbwire_stack"
 	default_type = "barbedwire"
 	value = 2
@@ -123,7 +123,7 @@
 /obj/item/stack/material/barbwire/twnt
 	amount = 20
 /obj/item/stack/material/bronze
-	name = "bronze"
+	name = "青铜"
 	icon_state = "sheet-bronze"
 	default_type = "bronze"
 	apply_colour = TRUE
@@ -148,7 +148,7 @@
 	icon_state = "sheet-bronze[icon_suffix]"
 
 /obj/item/stack/material/copper
-	name = "copper"
+	name = "铜"
 	icon_state = "sheet-copper"
 	default_type = "copper"
 	apply_colour = TRUE
@@ -173,7 +173,7 @@
 	icon_state = "sheet-copper[icon_suffix]"
 
 /obj/item/stack/material/tin
-	name = "tin"
+	name = "锡"
 	icon_state = "sheet-tin"
 	default_type = "tin"
 	apply_colour = TRUE
@@ -198,7 +198,7 @@
 	icon_state = "sheet-tin[icon_suffix]"
 
 /obj/item/stack/material/plastic
-	name = "plastic"
+	name = "塑料"
 	icon_state = "sheet-plastic"
 	default_type = "plastic"
 	apply_colour = TRUE
@@ -222,7 +222,7 @@
 	icon_state = "sheet-plastic[icon_suffix]"
 
 /obj/item/stack/material/lead
-	name = "lead"
+	name = "铅"
 	icon_state = "sheet-lead"
 	default_type = "lead"
 	apply_colour = TRUE
@@ -247,7 +247,7 @@
 	icon_state = "sheet-lead[icon_suffix]"
 
 /obj/item/stack/material/sandstone
-	name = "sandstone"
+	name = "砂岩"
 	icon_state = "sheet-sandstone"
 	default_type = "sandstone"
 	value = 2
@@ -268,13 +268,13 @@
 	icon_state = "sheet-sandstone[icon_suffix]"
 
 /obj/item/stack/material/stone
-	name = "stone block"
+	name = "石块"
 	icon_state = "sheet-stone"
 	default_type = "stone"
 	value = 2
 
 /obj/item/stack/material/stonebrick
-	name = "stone brick"
+	name = "石砖"
 	icon_state = "sheet-stonebrick"
 	default_type = "stonebrick"
 	value = 1
@@ -295,7 +295,7 @@
 	icon_state = "sheet-stonebrick[icon_suffix]"
 
 /obj/item/stack/material/clay
-	name = "clay lump"
+	name = "黏土块"
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "claylump"
 	default_type = "clay"
@@ -322,7 +322,7 @@
 	if (map.ID == MAP_GULAG13)
 		if (!istype(W)) return//I really don't understand why this check is needed
 		if (istype(W, /obj/item/weapon/key/soviet/guard))
-			to_chat(user, "<span class='notice'>You make the clay into a mold of the key.</span>")
+			to_chat(user, "<span class='notice'>你将黏土制成钥匙的模具.</span>")
 			new/obj/item/weapon/clay/mold/key(user.loc)
 			qdel(src)
 	if (istype(W, type))
@@ -337,14 +337,14 @@
 				interact(usr)
 
 /obj/item/stack/material/electronics
-	name = "electronic circuits"
+	name = "电子电路"
 	icon_state = "sheet-electronics"
 	default_type = "electronic"
 	value = 5
 	flags = CONDUCT
 
 /obj/item/stack/material/marble
-	name = "marble block"
+	name = "大理石块"
 	icon_state = "sheet-marble"
 	default_type = "marble"
 	value = 3
@@ -365,28 +365,28 @@
 	icon_state = "sheet-marble[icon_suffix]"
 
 /obj/item/stack/material/diamond
-	name = "diamond"
+	name = "钻石"
 	icon_state = "sheet-diamond"
 	default_type = "diamond"
 	value = 40
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/stack/material/obsidian
-	name = "obsidian"
+	name = "黑曜石"
 	icon_state = "sheet-obsidian"
 	default_type = "obsidian"
 	value = 7
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/stack/material/rope
-	name = "Rope"
+	name = "绳子"
 	icon_state = "rope"
 	default_type = "rope"
 	value = 2
 	flammable = TRUE
 
 /obj/item/stack/material/hemp
-	name = "Hemp"
+	name = "大麻"
 	icon_state = "hemp"
 	default_type = "hemp"
 	value = 2
@@ -394,14 +394,14 @@
 	is_contraband = TRUE
 
 /obj/item/stack/material/flax
-	name = "Flax"
+	name = "亚麻"
 	icon_state = "flax"
 	default_type = "flax"
 	value = 2
 	flammable = TRUE
 
 /obj/item/stack/material/leaf
-	name = "Leaf"
+	name = "叶子"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "leaves1"
 	default_type = "leaf"
@@ -444,7 +444,7 @@
 			return
 
 /obj/item/stack/material/leaf/palm
-	name = "Palm"
+	name = "棕榈"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "palm_leaves"
 	default_type = "palm"
@@ -453,7 +453,7 @@
 	decay = 80*600
 
 /obj/item/stack/material/leaf/fern
-	name = "Fern"
+	name = "蕨类"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "fernleaf1"
 	default_type = "fern"
@@ -465,7 +465,7 @@
 		icon_state = pick("fernleaves1","fernleaves2")
 
 /obj/item/stack/material/tobacco_green
-	name = "fresh tobacco leaves"
+	name = "新鲜烟叶"
 	icon_state = "tobacco_green"
 	default_type = "tobacco"
 	value = 2
@@ -489,7 +489,7 @@
 	icon_state = "tobacco_green[icon_suffix]"
 
 /obj/item/stack/material/tobacco
-	name = "dried tobacco leaves"
+	name = "干燥烟叶"
 	icon_state = "tobacco"
 	default_type = "tobacco"
 	value = 3
@@ -512,8 +512,8 @@
 	icon_state = "tobacco[icon_suffix]"
 
 /obj/item/stack/material/coca
-	name = "coca leaves"
-	desc = "Can be made into cocaine."
+	name = "古柯叶"
+	desc = "可用于制作可卡因."
 	icon_state = "coca"
 	default_type = "coca"
 	value = 2
@@ -521,8 +521,8 @@
 	flammable = TRUE
 
 /obj/item/stack/material/poppy
-	name = "poppy"
-	desc = "Dried opium poppies. Opium can be extracted."
+	name = "罂粟"
+	desc = "干燥的鸦片罂粟.可提取鸦片."
 	icon_state = "poppy"
 	default_type = "poppy"
 	value = 5
@@ -530,7 +530,7 @@
 	flammable = TRUE
 
 /obj/item/stack/material/straw
-	name = "straw"
+	name = "稻草"
 	icon_state = "sheet-straw"
 	default_type = "straw"
 	value = 3
@@ -554,12 +554,12 @@
 		rope.anchored = FALSE
 		if (H.put_in_any_hand_if_possible(rope, prioritize_active_hand = TRUE))
 			--amount
-			visible_message("<span class = 'warning'>[H] takes a coil of rope from the pile of rope.</span>")
+			visible_message("<span class = 'warning'>[H]从绳堆中取出一卷绳子.</span>")
 			if (amount < 1)
 				qdel(src)
 
 /obj/item/stack/material/gold
-	name = "gold"
+	name = "金"
 	icon_state = "sheet-gold"
 	default_type = "gold"
 	value = 40
@@ -583,7 +583,7 @@
 	icon_state = "sheet-gold[icon_suffix]"
 
 /obj/item/stack/material/silver
-	name = "silver"
+	name = "银"
 	icon_state = "sheet-silver"
 	default_type = "silver"
 	value = 20
@@ -607,7 +607,7 @@
 	icon_state = "sheet-silver[icon_suffix]"
 
 /obj/item/stack/material/steel
-	name = "steel"
+	name = "钢"
 	icon_state = "sheet-metal"
 	default_type = "steel"
 	value = 5
@@ -635,7 +635,7 @@
 	amount = 25
 
 /obj/item/stack/material/wood
-	name = "wooden plank"
+	name = "木板"
 	icon_state = "logs"
 	default_type = "wood"
 	dropsound = 'sound/effects/drop_wood.ogg'
@@ -691,7 +691,7 @@
 		// var/obj/item/weapon/material/hatchet/SH = T
 		// Check if there's enough material
 		if (src.amount < 2)
-			to_chat(user, "You don't have enough material to try.")
+			to_chat(user, "你没有足够的材料来尝试.")
 			return
 		// Check if splitting process is already in progress
 		if (splitting_in_progress)
@@ -701,7 +701,7 @@
 		splitting_in_progress = TRUE
 
 		// Start the splitting process
-		user.visible_message("[user.name] starts carving \the [src] into a plank using \the [T].", "You start carving \the [src] into a plank.")
+		user.visible_message("[user.name]开始用\the [T]将\the [src]雕刻成木板.", "你开始将\the [src]雕刻成木板.")
 		playsound(loc, 'sound/effects/woodfile.ogg', 100, TRUE)
 		
 		// Set a delay for the splitting process
@@ -709,7 +709,7 @@
 			splitting_in_progress = FALSE // In case we abort mid-way.
 			return
 		// Finish the splitting process
-		user.visible_message("[user.name] finishes carving \the [src] into a plank.", "You finish carving \the [src] into a plank.")
+		user.visible_message("[user.name]将\the [src]雕刻成了木板.", "你将\the [src]雕刻成了木板.")
 		src.use(2)
 		var/obj/item/stack/material/woodplank/dropwood = new /obj/item/stack/material/woodplank(get_turf(user)) 
 		dropwood.amount = 1 // You might expect to obtain anywhere from 2 to 4 planks from a single log. TODO: skill-based plank output
@@ -718,7 +718,7 @@
 	if (istype(T, /obj/item/weapon/saw))
 		// Check if there's enough material
 		if (src.amount < 1)
-			to_chat(user, "You don't have enough planks to saw.")
+			to_chat(user, "你没有足够的木板来锯.")
 			return
 		// Check if splititng process is already in progress
 		if (splitting_in_progress)
@@ -728,7 +728,7 @@
 		splitting_in_progress = TRUE
 
 		// Start the splitting process
-		user.visible_message("[user.name] starts sawing \the [src] into planks using \the [T].", "You start sawing \the [src] into planks.")
+		user.visible_message("[user.name]开始用\the [T]将\the [src]锯成木板.", "你开始将\the [src]锯成木板.")
 		playsound(loc, 'sound/effects/woodfile.ogg', 100, TRUE)
 		
 		// Set a delay for the splitting process
@@ -736,7 +736,7 @@
 			splitting_in_progress = FALSE // In case we abort mid-way.
 			return
 		// Finish the splitting process
-		user.visible_message("[user.name] finishes sawing \the [src] into planks.", "You finish carving \the [src] into planks.")
+		user.visible_message("[user.name]将\the [src]锯成了木板.", "你将\the [src]锯成了木板.")
 		src.use(1)
 		var/obj/item/stack/material/woodplank/dropwood = new /obj/item/stack/material/woodplank(get_turf(user)) 
 		dropwood.amount = 4
@@ -745,7 +745,7 @@
 	return ..()
 
 /obj/item/stack/material/woodplank
-	name = "soft"
+	name = "柔软"
 	icon_state = "sheet-wood"
 	default_type = "woodplank"
 	dropsound = 'sound/effects/drop_wood.ogg'
@@ -774,12 +774,12 @@
 	if (istype(T, /obj/item/flashlight/torch))
 		var/obj/item/flashlight/torch/F = T
 		if(user.a_intent == "harm" && F.on && !onfire)
-			visible_message("<span class = 'red'>[user.name] tries to set the [src] on fire.</span>")
+			visible_message("<span class = 'red'>[user.name]试图点燃[src].</span>")
 			if(prob(30))
 				ash_production = 1
 				src.onfire = 1
 				start_fire()
-				visible_message("<span class = 'red'>[user.name] sets the [src] on fire.</span>")
+				visible_message("<span class = 'red'>[user.name]点燃了[src].</span>")
 				return
 	return ..()
 
@@ -800,7 +800,7 @@
 	update_icon()
 
 /obj/item/stack/material/bamboo
-	name = "bamboo bundle"
+	name = "竹捆"
 	icon_state = "sheet-bamboo"
 	default_type = "bamboo"
 	dropsound = 'sound/effects/drop_wood.ogg'
@@ -808,14 +808,14 @@
 	flammable = TRUE
 
 /obj/item/stack/material/cotton
-	name = "cotton pile"
+	name = "棉花堆"
 	icon_state = "sheet-cotton"
 	default_type = "cotton"
 	value = 2
 	flammable = TRUE
 
 /obj/item/stack/material/cloth
-	name = "cloth"
+	name = "布料"
 	icon_state = "sheet-cloth"
 	default_type = "cloth"
 	value = 3
@@ -840,7 +840,7 @@
 	icon_state = "sheet-cloth[icon_suffix]"
 
 /obj/item/stack/material/rettedfabric
-	name = "retted fabric"
+	name = "沤制织物"
 	icon_state = "sheet-rettedfabric"
 	default_type = "rettedfabric"
 	value = 1
@@ -848,28 +848,28 @@
 	flammable = TRUE
 
 /obj/item/stack/material/rawkevlar
-	name = "raw kevlar"
+	name = "生凯夫拉"
 	icon_state = "sheet-rawkevlar"
 	default_type = "rawkevlar"
 	value = 1
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/preparedkevlar
-	name = "prepared kevlar"
+	name = "加工凯夫拉"
 	icon_state = "sheet-preparedkevlar"
 	default_type = "preparedkevlar"
 	value = 1
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/kevlar
-	name = "kevlar sheets"
+	name = "凯夫拉片"
 	icon_state = "sheet-kevlar"
 	default_type = "kevlar"
 	value = 15
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/rags
-	name = "rags"
+	name = "破布"
 	icon = 'icons/obj/trash.dmi'
 	icon_state = "rag"
 	default_type = "rags"
@@ -878,7 +878,7 @@
 	flammable = TRUE
 
 /obj/item/stack/material/wool
-	name = "wool pile"
+	name = "羊毛堆"
 	icon_state = "woolpile"
 	default_type = "wool"
 	value = 2
@@ -886,7 +886,7 @@
 	flammable = TRUE
 
 /obj/item/stack/material/woolcloth
-	name = "wool cloth"
+	name = "羊毛布"
 	icon_state = "wool_roll"
 	default_type = "woolcloth"
 	value = 3
@@ -894,8 +894,8 @@
 	flammable = TRUE
 
 /obj/item/stack/material/leather
-	name = "leather"
-	desc = "The by-product of mob grinding."
+	name = "皮革"
+	desc = "生物研磨的副产品."
 	icon_state = "sheet-leather"
 	default_type = "leather"
 	value = 2
@@ -929,8 +929,8 @@
 */
 
 /obj/item/stack/material/pelt
-	name = "animal pelt"
-	desc = "A pelt from a skinned animal."
+	name = "动物毛皮"
+	desc = "从动物身上剥下的毛皮."
 	icon_state = "sheet-bearpelt"
 	default_type = "pelt"
 	value = 3
@@ -938,8 +938,8 @@
 	flammable = TRUE
 
 /obj/item/stack/material/pelt/bearpelt/black
-	name = "black bear pelt"
-	desc = "A pelt from a skinned bear."
+	name = "黑熊皮"
+	desc = "从熊身上剥下的毛皮."
 	icon_state = "sheet-bearpelt"
 	default_type = "bearpelt"
 	value = 3
@@ -947,22 +947,22 @@
 	flammable = TRUE
 
 /obj/item/stack/material/pelt/bearpelt/brown
-	name = "brown bear pelt"
-	desc = "A pelt from a skinned bear."
+	name = "棕熊皮"
+	desc = "从熊身上剥下的毛皮."
 	icon_state = "sheet-brownbearpelt"
 	default_type = "brownbearpelt"
 	value = 3
 
 /obj/item/stack/material/pelt/bearpelt/white
-	name = "white bear pelt"
-	desc = "A pelt from a skinned bear."
+	name = "白熊皮"
+	desc = "从熊身上剥下的毛皮."
 	icon_state = "sheet-whitebearpelt"
 	default_type = "whitebearpelt"
 	value = 3
 
 /obj/item/stack/material/pelt/wolfpelt
-	name = "wolf pelt"
-	desc = "A pelt from a skinned wolf."
+	name = "狼皮"
+	desc = "从狼身上剥下的毛皮."
 	icon_state = "sheet-wolfpelt"
 	default_type = "wolfpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -970,8 +970,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/wolfpelt/white
-	name = "white wolf pelt"
-	desc = "A pelt from a skinned white wolf."
+	name = "白狼皮"
+	desc = "从白狼身上剥下的毛皮."
 	icon_state = "sheet-whitewolfpelt"
 	default_type = "whitewolfpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -979,16 +979,16 @@
 	value = 3
 
 /obj/item/stack/material/pelt/catpelt
-	name = "cat pelt"
-	desc = "A pelt from a skinned cat."
+	name = "猫皮"
+	desc = "从猫身上剥下的毛皮."
 	icon_state = "sheet-catpelt"
 	default_type = "catpelt"
 	w_class = ITEM_SIZE_SMALL
 	flammable = TRUE
 	value = 3
 /obj/item/stack/material/pelt/pantherpelt
-	name = "panther pelt"
-	desc = "A pelt from a skinned panther."
+	name = "黑豹皮"
+	desc = "从黑豹身上剥下的毛皮."
 	icon_state = "sheet-pantherpelt"
 	default_type = "pantherpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -996,8 +996,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/lionpelt
-	name = "lion pelt"
-	desc = "A pelt from a skinned lion."
+	name = "狮皮"
+	desc = "从狮子身上剥下的毛皮."
 	icon_state = "sheet-lionpelt"
 	default_type = "lionpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1005,8 +1005,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/gatorpelt
-	name = "gator pelt"
-	desc = "A pelt from a skinned alligator."
+	name = "鳄鱼皮"
+	desc = "从短吻鳄身上剥下的毛皮."
 	icon_state = "sheet-gatorpelt"
 	default_type = "gatorpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1014,8 +1014,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/lizardpelt
-	name = "lizard pelt"
-	desc = "A pelt from a skinned lizard."
+	name = "蜥蜴皮"
+	desc = "从蜥蜴身上剥下的毛皮."
 	icon_state = "sheet-lizardpelt"
 	default_type = "lizardpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1023,8 +1023,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/monkeypelt
-	name = "monkey pelt"
-	desc = "A pelt from a skinned monkey."
+	name = "猴皮"
+	desc = "从猴子身上剥下的毛皮."
 	icon_state = "sheet-monkeypelt"
 	default_type = "monkeypelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1032,16 +1032,16 @@
 	value = 3
 
 /obj/item/stack/material/pelt/foxpelt
-	name = "fox pelt"
-	desc = "A pelt from a skinned fox."
+	name = "狐狸皮"
+	desc = "从狐狸身上剥下的毛皮."
 	icon_state = "sheet-foxpelt"
 	default_type = "foxpelt"
 	w_class = ITEM_SIZE_SMALL
 	flammable = TRUE
 	value = 3
 /obj/item/stack/material/pelt/foxpelt/white
-	name = "white fox pelt"
-	desc = "A pelt from a skinned white fox."
+	name = "白狐皮"
+	desc = "从白狐身上剥下的毛皮."
 	icon_state = "sheet-whitefoxpelt"
 	default_type = "whitefoxpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1049,8 +1049,8 @@
 	value = 3
 
 /obj/item/stack/material/pelt/sheeppelt
-	name = "sheep pelt"
-	desc = "A wooly pelt from a skinned sheep."
+	name = "羊皮"
+	desc = "从绵羊身上剥下的毛茸茸的毛皮."
 	icon_state = "sheet-sheeppelt"
 	default_type = "sheeppelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1058,8 +1058,8 @@
 	value = 2
 
 /obj/item/stack/material/pelt/goatpelt
-	name = "goat pelt"
-	desc = "A pelt from a skinned goat."
+	name = "山羊皮"
+	desc = "一张剥下的山羊皮."
 	icon_state = "sheet-goatpelt"
 	default_type = "goatpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1067,8 +1067,8 @@
 	value = 2
 
 /obj/item/stack/material/pelt/cowpelt
-	name = "cattle pelt"
-	desc = "A pelt from skinned cattle."
+	name = "牛皮"
+	desc = "一张剥下的牛皮."
 	icon_state = "sheet-cowpelt"
 	default_type = "cowpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1076,8 +1076,8 @@
 	value = 5
 
 /obj/item/stack/material/pelt/bisonpelt
-	name = "bison pelt"
-	desc = "A pelt from a skinned bison."
+	name = "野牛皮"
+	desc = "一张剥下的野牛皮."
 	icon_state = "sheet-bisonpelt"
 	default_type = "bisonpelt"
 	w_class = ITEM_SIZE_SMALL
@@ -1085,8 +1085,8 @@
 	value = 15
 
 /obj/item/stack/material/pelt/orcpelt
-	name = "Orc Pelt"
-	desc = "The skin of an Orc"
+	name = "兽人皮"
+	desc = "兽人的皮肤"
 	icon_state = "sheet-orcpelt"
 	default_type = "orcpelt"
 	value = 0
@@ -1094,8 +1094,8 @@
 	flammable = TRUE
 
 /obj/item/stack/material/pelt/humanpelt
-	name = "human pelt"
-	desc = "A skin from a dead person."
+	name = "人皮"
+	desc = "一张死人的皮."
 	icon_state = "sheet-humanpelt"
 	default_type = "humanpelt"
 	value = 0
@@ -1108,8 +1108,8 @@
 		qdel(src)
 
 /obj/item/stack/material/pelt/antpelt
-	name = "ant pelt"
-	desc = "The skin from a dead ant."
+	name = "蚂蚁皮"
+	desc = "一只死蚂蚁的皮."
 	icon_state = "sheet-antpelt"
 	default_type = "ant"
 	flammable = TRUE
@@ -1117,8 +1117,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/chitin
-	name = "chitin"
-	desc = "The armor of Trilobites...and Ants"
+	name = "甲壳素"
+	desc = "三叶虫...和蚂蚁的甲壳"
 	icon_state = "chitin_material"
 	default_type = "chitin"
 	flammable = TRUE
@@ -1126,8 +1126,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/pelt/orcpelt
-	name = "orc skin"
-	desc = "A rough skin, it'l like a flexible rock..."
+	name = "兽人皮"
+	desc = "粗糙的皮肤,像一块有弹性的石头..."
 	icon_state = "sheet-orcpelt"
 	default_type = "orcpelt"
 	flammable = TRUE
@@ -1135,8 +1135,8 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/pelt/gorillapelt
-	name = "gorilla pelt"
-	desc = "The skin from a dead gorilla."
+	name = "大猩猩皮"
+	desc = "一张死大猩猩的皮."
 	icon_state = "sheet-gorillapelt"
 	default_type = "gorillapelt"
 	flammable = TRUE
@@ -1144,7 +1144,7 @@
 	w_class = ITEM_SIZE_SMALL
 
 /obj/item/stack/material/glass
-	name = "glass"
+	name = "玻璃"
 	icon_state = "sheet-glass"
 	default_type = "glass"
 	dropsound = 'sound/effects/drop_glass.ogg'
@@ -1168,7 +1168,7 @@
 	icon_state = "sheet-glass[icon_suffix]"
 
 /obj/item/stack/material/glass/reinforced
-	name = "reinforced glass"
+	name = "强化玻璃"
 	icon_state = "sheet-rglass"
 	default_type = "rglass"
 	value = 6
@@ -1192,7 +1192,7 @@
 	icon_state = "sheet-rglass[icon_suffix]"
 
 /obj/item/stack/material/bone
-	name = "bones"
+	name = "骨头"
 	icon_state = "sheet-bone"
 	default_type = "bone"
 	dropsound = 'sound/effects/drop_wood.ogg'
@@ -1212,7 +1212,7 @@
 	..()
 
 /obj/item/stack/material/fossil
-	name = "fossil"
+	name = "化石"
 	icon = 'icons/obj/materials.dmi'
 	icon_state = "fossil_1"
 	default_type = "stone"

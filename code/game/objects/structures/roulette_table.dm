@@ -1,32 +1,32 @@
 /////////////////Roulette//////////////////
 
 /obj/item/weapon/roulette/chip
-	name = "blue roulette chip"
+	name = "蓝色轮盘筹码"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "chip_blue"
 
 /obj/item/weapon/roulette/chip/red
-	name = "red roulette chip"
+	name = "红色轮盘筹码"
 	icon_state = "chip_red"
 	value = 5
 
 /obj/item/weapon/roulette/chip/green
-	name = "green roulette chip"
+	name = "绿色轮盘筹码"
 	icon_state = "chip_green"
 	value = 25
 
 /obj/item/weapon/roulette/chip/black
-	name = "black roulette chip"
+	name = "黑色轮盘筹码"
 	icon_state = "chip_black"
 	value = 100
 
 /obj/item/weapon/roulette/chip/examine(mob/user, distance)
 	. = ..()
-	to_chat(user, "Has a value of <b>[value]</b>.")
+	to_chat(user, "价值为<b>[value]</b>.")
 
 /obj/structure/roulette
-	name = "roulette table"
-	desc = "A large green table that has a spinner on it. If you pick a number and it lands on that, you will win chips. Or something."
+	name = "轮盘赌桌"
+	desc = "一张带有转盘的大型绿色桌子. 如果你选一个数字并且它停在那个数字上, 你就会赢得筹码. 或者别的什么."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "roulette"
 	density = 1
@@ -46,11 +46,11 @@
 /obj/structure/roulette/examine(mob/user, distance)
 	. = ..()
 	if(win_number && !can_bet)
-		to_chat(user, "The last number was <b>[win_number]</b>.")
+		to_chat(user, "上一个数字是<b>[win_number]</b>.")
 	if(spinning)
-		to_chat(user, "<b>The roulette is spinning!</b>")
+		to_chat(user, "<b>轮盘正在旋转!</b>")
 	for(var/list/L in current_bets)
-		to_chat(user, "<b>[L[1]]</b> has placed a <b>[L[3]]</b> bet on <b>[L[2]]</b>.")
+		to_chat(user, "<b>[L[1]]</b>在<b>[L[2]]</b>上下了<b>[L[3]]</b>的赌注.")
 /obj/structure/roulette/initialize()
 	reset_wheel()
 	..()
@@ -104,8 +104,8 @@
 		win_3rd = "3rd 12"
 	else
 		win_3rd = null
-	src.visible_message("\The [src]'s ball clatters to a halt on the <font color=[win_color]><span><b>[win_color] [win_number]</b></span></font>.","You hear a rattling that slowly comes to a stop.")
-	src.visible_message("<big><b>Please collect your winnings!</b></big>")
+	src.visible_message("\The [src]的球咔嗒一声停在了<font color=[win_color]><span><b>[win_color] [win_number]</b></span></font>上.","你听到一阵咔嗒声, 然后慢慢停了下来.")
+	src.visible_message("<big><b>请领取你的奖金!</b></big>")
 
 	process_wins()
 /obj/structure/roulette/update_icon()
@@ -118,7 +118,7 @@
 	var/list/newlist = list()
 	for(var/list/L in current_bets)
 		if(L[1] == H && L[2] == "won")
-			to_chat(H, "You remove your bet from the table.")
+			to_chat(H, "你从桌上取回了你的赌注.")
 			var/obj/item/weapon/roulette/chip/newchips = new/obj/item/weapon/roulette/chip(loc)
 			newchips.value = L[3]
 			H.put_in_any_hand_if_possible(newchips,FALSE,TRUE,TRUE,TRUE)
@@ -130,10 +130,10 @@
 
 /obj/structure/roulette/attackby(obj/item/I,mob/living/human/user)
 	if(spinning)
-		to_chat(user, "The [src] is still spinning!")
+		to_chat(user, "[src]还在旋转!")
 		return
 	if(!can_bet)
-		to_chat(user, "Remove the previous bets first!")
+		to_chat(user, "请先移除之前的赌注!")
 		return
 	if(istype(I, /obj/item/weapon/roulette/chip))
 		var/obj/item/weapon/roulette/chip/CHIP = I
@@ -167,7 +167,7 @@
 				betchoice = "3rd 12"
 		if (betchoice)
 			if (I)
-				visible_message("<big>[user] has placed a bet of <b>[CHIP.value]</b> on <b>[betchoice]</b>!</big>")
+				visible_message("<big>[user]在<b>[betchoice]</b>上下了<b>[CHIP.value]</b>的赌注!</big>")
 				current_bets += list(list(user,betchoice,CHIP.value))
 				qdel(I)
 
@@ -177,14 +177,14 @@
 	set src in oview(1)
 
 	if (spinning)
-		to_chat(user,"The [src] is already spinning!")
+		to_chat(user,"[src]已经在旋转了!")
 		return
 	else if (!can_bet)
-		to_chat(user, "You need to clear the table first!")
+		to_chat(user, "你需要先清空桌面!")
 		return
 	else
 		playsound(src, 'sound/effects/roulettespin.ogg', 50, 1)
-		src.visible_message("<big><b>Roulette spinning! No more bets!</b></big>")
+		src.visible_message("<big><b>轮盘旋转中! 停止下注!</b></big>")
 		spinning = 1
 		can_bet = FALSE
 		update_icon()

@@ -7,7 +7,7 @@
 		to_chat(user, SPAN_NOTICE("[H] is missing that bodypart."))
 		return
 
-	user.visible_message("<span class='notice'>[user] starts inspecting [affecting]'s [E.name] carefully.</span>")
+	user.visible_message("<span class='notice'>[user] 开始仔细检查 [affecting] 的 [E.name].</span>")
 	if (!do_mob(user,H, 10))
 		to_chat(user, SPAN_NOTICE("You must stand still to inspect [E] for wounds."))
 	else if (E.wounds.len)
@@ -50,7 +50,7 @@
 	if (!organ || organ.dislocated == -1)
 		return
 
-	attacker.visible_message("<span class='danger'>[attacker] [pick("bent", "twisted")] [target]'s [organ.name] into a jointlock!</span>")
+	attacker.visible_message("<span class='danger'>[attacker] 将 [pick("bent", "twisted")] 的 [target] 锁入 [organ.name] 的关节锁中!</span>")
 	var/armor = target.run_armor_check(target, "melee")
 	if (armor < 2)
 		to_chat(target, SPAN_DANGER("You feel extreme pain!"))
@@ -86,7 +86,7 @@
 		return
 	if (target.lying || target.prone)
 		return
-	attacker.visible_message("<span class='danger'>[attacker] thrusts \his head into [target]'s skull!</span>")
+	attacker.visible_message("<span class='danger'>[attacker] 将 \his 的头撞向 [target] 的头骨!</span>")
 
 	var/damage = 20
 	var/obj/item/clothing/hat = attacker.head
@@ -126,10 +126,10 @@
 	if (force_down)
 		to_chat(attacker, SPAN_WARNING("You are already pinning [target] to the ground."))
 
-	attacker.visible_message("<span class='danger'>[attacker] starts forcing [target] to the ground!</span>")
+	attacker.visible_message("<span class='danger'>[attacker] 开始将 [target] 按向地面!</span>")
 	if (do_after(attacker, 20, progress=0) && target)
 		last_action = world.time
-		attacker.visible_message("<span class='danger'>[attacker] forces [target] to the ground!</span>")
+		attacker.visible_message("<span class='danger'>[attacker] 将 [target] 按倒在地!</span>")
 		apply_pinning(target, attacker)
 
 /obj/item/weapon/grab/proc/apply_pinning(mob/target, mob/attacker)

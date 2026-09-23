@@ -1,6 +1,6 @@
 /obj/item/stack/rods
-	name = "metal rod"
-	desc = "Some metal rods. Can be used for building."
+	name = "金属杆"
+	desc = "一些金属杆. 可用于建造."
 	icon = 'icons/obj/materials.dmi'
 	singular_name = "metal rod"
 	icon_state = "rods"
@@ -31,15 +31,15 @@
 
 	else if (!in_use)
 		if (amount < 2)
-			to_chat(user, "<span class='warning'>You need at least two rods to do this.</span>")
+			to_chat(user, "<span class='warning'>你至少需要两根金属杆才能这样做.</span>")
 			return
-		to_chat(usr, "<span class='notice'>Assembling grille...</span>")
+		to_chat(usr, "<span class='notice'>正在组装格栅...</span>")
 		in_use = TRUE
 		if (!do_after(usr, 10))
 			in_use = FALSE
 			return
 		var/obj/structure/grille/F = new /obj/structure/grille/ ( usr.loc )
-		to_chat(usr, "<span class='notice'>You assemble a grille</span>")
+		to_chat(usr, "<span class='notice'>你组装了一个格栅</span>")
 		in_use = FALSE
 		F.add_fingerprint(usr)
 		use(2)

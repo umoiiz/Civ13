@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostage
 	name = "hostage"
-	desc = "A poor guy made hostage."
+	desc = "一个被当作人质的可怜家伙."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "hostage_m1"
 	icon_living = "hostage_m1"
@@ -35,7 +35,7 @@
 
 /mob/living/simple_animal/civilian
 	name = "civilian"
-	desc = "An innocent civilian, just minding his civilian business."
+	desc = "一个无辜的平民,只是在忙自己的平民事务."
 	icon = 'icons/mob/npcs.dmi'
 	icon_state = "civilian_1"
 	icon_living = "civilian_1"
@@ -79,15 +79,15 @@ var/global/civvies_killed = list()
 			switch(killer)
 				if ("Blugoslavia")
 					if(announce_death)
-						to_chat(world, "<font size=4>The <b>[name]</b> was killed by <font color='blue'><b>[killer]</b></font>!</font>")
+						to_chat(world, "<font size=4><b>[name]</b>被<font color='blue'><b>[killer]</b></font>杀死了!</font>")
 					CM.civilians_killed["Blugoslavia"]++
 				if ("Redmenia")
 					if(announce_death)
-						to_chat(world, "<font size=4>The <b>[name]</b> was killed by <font color='red'><b>[killer]</b></font>!</font>")
+						to_chat(world, "<font size=4><b>[name]</b>被<font color='red'><b>[killer]</b></font>杀死了!</font>")
 					CM.civilians_killed["Redmenia"]++
 				if ("Unknown")
 					if(announce_death)
-						to_chat(world, "<font size=4>The <b>[name]</b> was killed by <font color='red'><b>[killer]</b></font>!</font>")
+						to_chat(world, "<font size=4><b>[name]</b>被<font color='red'><b>[killer]</b></font>杀死了!</font>")
 					CM.civilians_killed["Unknown"]++
 			var/msg = "Civilian ([name]-[uniquenum]) killed by [killer] at ([src.x], [src.y], [src.z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)!"
 			game_log("CIVDEATH: [msg]")
@@ -104,10 +104,10 @@ var/global/civvies_killed = list()
 		if (killer)
 			switch(killer)
 				if("Robbers")
-					to_chat(world, "<font size=2>A <b>[name]</b> has been killed by the <font color='red'><b>[killer]</b></font>!</font>")
+					to_chat(world, "<font size=2>一个<b>[name]</b>被<font color='red'><b>[killer]</b></font>杀死了!</font>")
 					BR.civilians_killed["Robbers"]++
 				if("Police")
-					to_chat(world, "<font size=2>A <b>[name]</b> has been killed by the <font color='blue'><b>[killer]</b></font>! This is unacceptable!</font>")
+					to_chat(world, "<font size=2>一个<b>[name]</b>被<font color='blue'><b>[killer]</b></font>杀死了!这是不可接受的!</font>")
 					BR.civilians_killed["Police"]++
 			var/msg = "Civilian ([name]-[uniquenum]) killed by [killer] at ([src.x], [src.y], [src.z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)!"
 			game_log("CIVDEATH: [msg]")
@@ -123,15 +123,15 @@ var/global/civvies_killed = list()
 		if (killer)
 			switch(killer)
 				if("Soviets")
-					to_chat(world, "A <b>[name]</b> has been killed by the <font color='red'><b>[killer]</b></font>. The alliance is losing local support!")
+					to_chat(world, "一个<b>[name]</b>被<font color='red'><b>[killer]</b></font>杀死了.联盟正在失去当地支持!")
 					SA.sov_points -= 1
 					SA.muj_points += 1
 				if("DRA")
-					to_chat(world, "A <b>[name]</b> has been killed by the <font color='green'><b>[killer]</b></font>. The alliance is losing local support!")
+					to_chat(world, "一个<b>[name]</b>被<font color='green'><b>[killer]</b></font>杀死了.联盟正在失去当地支持!")
 					SA.sov_points -= 1
 					SA.muj_points += 1
 				if("Mujahideen")
-					to_chat(world, "A <b>[name]</b> has been killed by the <font color='black'><b>[killer]</b></font>. They are losing local support!")
+					to_chat(world, "一个<b>[name]</b>被<font color='black'><b>[killer]</b></font>杀死了.他们正在失去当地支持!")
 					SA.muj_points -= 1
 					SA.sov_points += 1
 			var/msg = "Civilian ([name]-[uniquenum]) killed by [killer] at ([src.x], [src.y], [src.z] - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)!"
@@ -216,7 +216,7 @@ var/global/civvies_killed = list()
 
 /mob/living/simple_animal/civilian/greenistani_ambassador
 	name = "Greenistani Ambassador"
-	desc = "The ambassator of Greenistan. Keep him safe!"
+	desc = "绿国的ambassator.保护好他!"
 	icon_state = "greenistani_2"
 	icon_living = "greenistani_2"
 	icon_dead = "greenistani_2_dead"
@@ -231,7 +231,7 @@ var/global/civvies_killed = list()
 
 /mob/living/simple_animal/civilian/afghan
 	name = "villager"
-	desc = "A peaceful local rural inhabitant."
+	desc = "一个平和的当地乡村居民."
 	icon_state = "afghciv1"
 	icon_living = "afghciv1"
 	icon_dead = "afghciv1_dead"
@@ -248,7 +248,7 @@ var/global/civvies_killed = list()
 
 /mob/living/simple_animal/civilian/afghan/city
 	name = "citizen"
-	desc = "A peaceful local citizen."
+	desc = "一个平和的当地公民."
 	icon_state = "afghciv5"
 	icon_living = "afghciv5"
 	icon_dead = "afghciv5_dead"
@@ -261,7 +261,7 @@ var/global/civvies_killed = list()
 
 /mob/living/simple_animal/civilian/afghan/woman
 	name = "woman"
-	desc = "A peaceful local citizen."
+	desc = "一个平和的当地公民."
 	icon_state = "afghciv6"
 	icon_living = "afghciv6"
 	icon_dead = "afghciv6_dead"

@@ -40,10 +40,10 @@
 
 	var/key_name = initial(key_type.name)
 	if(!contents.len)
-		to_chat(user, "There are no [key_name]s left in the box.")
+		to_chat(user, "盒子里没有剩余的[key_name]了.")
 	else
 		var/key_count = count_by_type(contents, key_type)
-		to_chat(user, "There [key_count == 1? "is" : "are"] [key_count] [key_name]\s in the box.")
+		to_chat(user, "盒子里有[key_count == 1? "is" : "are"] [key_count] [key_name]\s .")
 
 /*
  * Egg Box
@@ -52,7 +52,7 @@
 /obj/item/weapon/storage/fancy/egg_box
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "eggbox"
-	name = "egg box"
+	name = "鸡蛋盒"
 	storage_slots = 12
 
 	key_type = /obj/item/weapon/reagent_containers/food/snacks/egg
@@ -71,8 +71,8 @@
  */
 
 /obj/item/weapon/storage/fancy/donut_box
-	name = "donut box"
-	desc = "Mmm. Donuts."
+	name = "甜甜圈盒"
+	desc = "嗯. 甜甜圈."
 	icon = 'icons/obj/food/donuts.dmi'
 	icon_state = "donutbox"
 	storage_slots = 6
@@ -140,8 +140,8 @@
  */
 
 /obj/item/weapon/storage/fancy/candle_box
-	name = "candle pack"
-	desc = "A pack of red candles."
+	name = "一包蜡烛"
+	desc = "一包红色蜡烛."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candlebox"
 	opened = 1 //no closed state
@@ -158,8 +158,8 @@
 //CIG PACK//
 ////////////
 /obj/item/weapon/storage/fancy/cigarettes
-	name = "cigarette packet"
-	desc = "A cigarette packet."
+	name = "香烟盒"
+	desc = "一个香烟盒."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigpacket"
 	item_state = "cigpacket"
@@ -219,7 +219,7 @@
 			break
 
 		if (cig == null)
-			to_chat(user, "<span class='notice'>Looks like the packet is out of cigarettes.</span>")
+			to_chat(user, "<span class='notice'>看来烟盒里没有香烟了.</span>")
 			return
 
 		// Instead of running equip_to_slot_if_possible() we check here first,
@@ -233,41 +233,41 @@
 		user.equip_to_slot(cig, slot_wear_mask)
 
 		reagents.maximum_volume = 15 * contents.len
-		to_chat(user, "<span class='notice'>You take a cigarette out of the pack.</span>")
+		to_chat(user, "<span class='notice'>你从烟盒里取出一根香烟.</span>")
 		update_icon()
 	else
 		..()
 
 /obj/item/weapon/storage/fancy/cigarettes/marlboro
-	name = "Marlboro cigarette packet"
-	desc = "A Marlboro cigarette packet."
+	name = "万宝路香烟盒"
+	desc = "一个万宝路香烟盒."
 	icon_state = "marlboro"
 
 /obj/item/weapon/storage/fancy/cigarettes/luckystrike
-	name = "Lucky Strike cigarette packet"
-	desc = "A Lucky Strike cigarette packet."
+	name = "好彩香烟盒"
+	desc = "一个好彩香烟盒."
 	icon_state = "luckystrike"
 
 /obj/item/weapon/storage/fancy/cigarettes/newport
-	name = "Newport cigarette packet"
-	desc = "A Newport cigarette packet."
+	name = "新港香烟盒"
+	desc = "一个新港香烟盒."
 	icon_state = "newports"
 
 /obj/item/weapon/storage/fancy/cigarettes/prima
-	name = "Prima cigarette packet"
-	desc = "A Prima cigarette packet."
+	name = "普利马香烟盒"
+	desc = "一个普利马香烟盒."
 	icon_state = "prima"
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/unfiltered = 6)
 
 /obj/item/weapon/storage/fancy/cigarettes/papirosi
-	name = "papirosi packet"
-	desc = "An unfiltered cigarettes packet."
+	name = "帕皮罗西烟盒"
+	desc = "一个无滤嘴香烟盒."
 	icon_state = "pachka_papiros"
 	startswith = list(/obj/item/clothing/mask/smokable/cigarette/unfiltered = 6)
 
 /obj/item/weapon/storage/fancy/cigar
-	name = "cigar case"
-	desc = "A case for holding your cigars when you are not smoking them."
+	name = "雪茄盒"
+	desc = "一个用于在不抽时存放雪茄的盒子."
 	icon_state = "cigarcase"
 	item_state = "cigarcase"
 	icon = 'icons/obj/cigarettes.dmi'
@@ -287,8 +287,8 @@
 	create_reagents(10 * storage_slots)
 
 /obj/item/weapon/storage/fancy/medal
-	name = "medal case"
-	desc = "A case for holding medals to be awarded."
+	name = "勋章盒"
+	desc = "一个用于存放待颁发勋章的盒子."
 	icon_state = "medalcase"
 	item_state = "medalcase"
 	key_type = "medal"
@@ -304,7 +304,7 @@
 	return
 
 /obj/item/weapon/storage/fancy/medal/german_full
-	name = "German medal case"
+	name = "德国勋章盒"
 	startswith = list( /obj/item/clothing/accessory/medal/german/ww2/eastern_front,
 						/obj/item/clothing/accessory/medal/german/ww2/assault_badge,
 						/obj/item/clothing/accessory/medal/german/ww2/tank_destruction,
@@ -321,7 +321,7 @@
 						/obj/item/clothing/accessory/medal/german/ww2/wound_gold)
 
 /obj/item/weapon/storage/fancy/medal/german_iron
-	name = "German Iron Cross case"
+	name = "德国铁十字勋章盒"
 	startswith = list( /obj/item/clothing/accessory/medal/german/ww2/iron_cross_knight_gold_oak = 2,
 						/obj/item/clothing/accessory/medal/german/ww2/iron_cross_knight_oak = 2,
 						/obj/item/clothing/accessory/medal/german/ww2/iron_cross_knight = 2,
@@ -329,34 +329,34 @@
 						/obj/item/clothing/accessory/medal/german/ww2/iron_cross_2nd = 4)
 
 /obj/item/weapon/storage/fancy/medal/occupation/german_party
-	name = "German Party Pin case"
+	name = "德国党徽盒"
 	startswith = list( 	/obj/item/clothing/accessory/medal/german/ww2/nsdap_pin = 7,
 						/obj/item/clothing/accessory/medal/german/ww2/ss_pin = 7)
 
 /obj/item/weapon/storage/fancy/medal/occupation/minefarm
-	name = "A case with miner and farmer union pins."
+	name = "一个装有矿工和农民工会徽章的盒子."
 	startswith = list( 	/obj/item/clothing/accessory/medal/pin/worker/farmer = 7,
 						/obj/item/clothing/accessory/medal/pin/worker/miner = 7)
 
 /obj/item/weapon/storage/fancy/medal/occupation/factolabo
-	name = "A case with labourer and factory worker union pins."
+	name = "一个装有劳工和工厂工人工会徽章的盒子."
 	startswith = list( 	/obj/item/clothing/accessory/medal/pin/worker/factory = 7,
 						/obj/item/clothing/accessory/medal/pin/worker/labour = 7)
 
 /obj/item/weapon/storage/fancy/medal/occupation/hospimedi
-	name = "A case with labourer and factory worker union pins."
+	name = "一个装有劳工和工厂工人工会徽章的盒子."
 	startswith = list( 	/obj/item/clothing/accessory/medal/pin/worker/aristocrat = 7,
 						/obj/item/clothing/accessory/medal/pin/worker/medic = 7)
 
 /obj/item/weapon/storage/fancy/medal/german_action
-	name = "German Action Medals case"
+	name = "德国行动勋章盒"
 	startswith = list( 	/obj/item/clothing/accessory/medal/german/ww2/assault_badge = 5,
 						/obj/item/clothing/accessory/medal/german/ww2/wound = 4,
 						/obj/item/clothing/accessory/medal/german/ww2/wound_silver = 3,
 						/obj/item/clothing/accessory/medal/german/ww2/wound_gold = 2)
 
 /obj/item/weapon/storage/fancy/medal/japanese_pacific_full
-	name = "japanese medal case"
+	name = "日本勋章盒"
 	startswith = list( 	/obj/item/clothing/accessory/medal/japanese/ww2/east_asia = 10,
 						/obj/item/clothing/accessory/medal/japanese/ww2/rising_sun = 4)
 
@@ -368,8 +368,8 @@ obj/item/weapon/storage/fancy/medal/japanese_china_full
 
 
 /obj/item/weapon/storage/fancy/cigar/full
-	name = "cigar case"
-	desc = "A case for holding your cigars when you are not smoking them."
+	name = "雪茄盒"
+	desc = "一个用于在不抽时存放雪茄的盒子."
 
 /obj/item/weapon/storage/fancy/cigar/full/New()
 	..()
@@ -396,8 +396,8 @@ obj/item/weapon/storage/fancy/medal/japanese_china_full
  */
 
 /obj/item/weapon/storage/fancy/picklejar
-	name = "pickle jar"
-	desc = "A jar filled with pickles and vinegar"
+	name = "腌黄瓜罐"
+	desc = "一个装满腌黄瓜和醋的罐子"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "picklejar"
 	key_type = "pickles"

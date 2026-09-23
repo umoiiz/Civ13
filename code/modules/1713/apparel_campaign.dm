@@ -1,12 +1,12 @@
 /obj/item/clothing/accessory/armband/redfaction
-	name = "red armband"
-	desc = "A red armband"
+	name = "红色臂章"
+	desc = "一个红色臂章"
 	icon_state = "red"
 	slot = "armband"
 
 /obj/item/clothing/accessory/armband/bluefaction
-	name = "blue armband"
-	desc = "A red armband"
+	name = "蓝色臂章"
+	desc = "一个红色臂章"
 	icon_state = "french"
 	slot = "armband"
 
@@ -174,8 +174,8 @@
 ///////////// BLUE
 
 /obj/item/clothing/accessory/storage/webbing/green_webbing/blue
-	name = "Blugoslavian green chest webbing"
-	desc = "A green chest-level webbing, with three medium sized pouches."
+	name = "蓝斯拉夫绿色胸挂"
+	desc = "一个绿色胸挂,带有三个中等大小的袋子。"
 	slots = 3
 	icon_state = "russian_vest"
 	item_state = "russian_vest"
@@ -227,8 +227,8 @@
 ///////////// RED
 
 /obj/item/clothing/accessory/storage/webbing/green_webbing/red
-	name = "Redmenian green chest webbing"
-	desc = "A green chest-level webbing, with three medium sized pouches."
+	name = "红梅尼亚绿色胸挂"
+	desc = "一个绿色胸挂,带有三个中等大小的袋子。"
 	slots = 3
 	icon_state = "green_webbing"
 	item_state = "green_webbing"

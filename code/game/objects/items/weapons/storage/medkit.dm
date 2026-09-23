@@ -8,8 +8,8 @@
  * First Aid Kits
  */
 /obj/item/weapon/storage/firstaid
-	name = "first-aid kit"
-	desc = "It's an emergency medical kit for general wounds."
+	name = "急救包"
+	desc = "这是一个用于处理一般伤口的应急医疗包."
 	icon_state = "firstaid2"
 	item_state = "firstaid"
 	throw_speed = 2
@@ -22,8 +22,8 @@
 	slot_flags = SLOT_BELT
 
 /obj/item/weapon/storage/firstaid/adv
-	name = "field dressing kit"
-	desc = "Contains basic medical treatments."
+	name = "战地包扎包"
+	desc = "内含基本医疗处理用品."
 	icon_state = "medical_bag"
 	item_state = "medical_bag"
 	slot_flags = SLOT_BACK
@@ -39,8 +39,8 @@
 	return
 
 /obj/item/weapon/storage/firstaid/combat
-	name = "combat medicine kit"
-	desc = "Contains drugs and antiseptics used in combat situations."
+	name = "战斗医疗包"
+	desc = "内含战斗情况下使用的药物和消毒剂."
 	icon_state = "medical_satchel"
 	item_state = "medical_satchel"
 	slot_flags = SLOT_BACK | SLOT_BELT
@@ -59,8 +59,8 @@
 	return
 
 /obj/item/weapon/storage/firstaid/early
-	name = "medicine kit"
-	desc = "Contains some drugs and a antiseptic to help someone survive."
+	name = "医疗包"
+	desc = "内含一些药物和消毒剂以帮助某人存活."
 	icon_state = "bezerk2"
 	item_state = "bezerk2"
 	slot_flags = SLOT_BACK | SLOT_BELT | SLOT_POCKET
@@ -77,8 +77,8 @@
 	return
 
 /obj/item/weapon/storage/firstaid/advsmall
-	name = "first-aid kit"
-	desc = "Contains basic first-aid medicine."
+	name = "急救包"
+	desc = "内含基本急救药品."
 	icon_state = "advfirstaid2"
 	item_state = "advfirstaid2"
 
@@ -92,8 +92,8 @@
 	return
 
 /obj/item/weapon/storage/firstaid/combat/modern
-	name = "combat medicine kit"
-	desc = "Contains drugs and antiseptics used in combat situations."
+	name = "战斗医疗包"
+	desc = "装有战斗情况下使用的药物和消毒剂."
 	icon_state = "medical_satchel"
 	item_state = "firstaid_2"
 
@@ -110,8 +110,8 @@
 
 
 /obj/item/weapon/storage/firstaid/surgery
-	name = "surgery kit"
-	desc = "Contains tools for surgery."
+	name = "手术包"
+	desc = "装有手术工具."
 	icon_state = "surgerykit"
 	item_state = "surgerykit"
 
@@ -127,8 +127,8 @@
 	new /obj/item/stack/medical/advanced/bruise_pack(src)
 
 /obj/item/weapon/storage/firstaid/surgery_empty
-	name = "surgery kit"
-	desc = "Contains tools for surgery."
+	name = "手术包"
+	desc = "装有手术工具."
 	icon_state = "surgerykit"
 	item_state = "surgerykit"
 	storage_slots = 7
@@ -138,8 +138,8 @@
 	make_exact_fit()
 
 /obj/item/weapon/storage/firstaid/surgery_bronze //TO DO: have some other more ancient looking sprite
-	name = "surgery kit"
-	desc = "Contains tools for surgery."
+	name = "手术包"
+	desc = "装有手术工具."
 	icon_state = "surgerykit"
 	item_state = "surgerykit"
 
@@ -158,8 +158,8 @@
 /// Temp refactor of in-belt medkits
 
 /obj/item/weapon/storage/firstaid/ifak
-	name = "individual first-aid kit"
-	desc = "Contains basic first-aid."
+	name = "个人急救包"
+	desc = "装有基础急救用品."
 	icon_state = "ifirstaid"
 	item_state = "ifirstaid"
 	w_class = ITEM_SIZE_SMALL
@@ -178,8 +178,8 @@
 	return
 
 /obj/item/weapon/storage/box/firstaid //TO-DO: Redo this "box" subtype, it's kind of shitcode
-	name = "medical kit"
-	desc = "Contains medical supplies."
+	name = "医疗包"
+	desc = "装有医疗用品."
 	icon_state = "medkit"
 	item_state = "medkit"
 	can_hold = list(

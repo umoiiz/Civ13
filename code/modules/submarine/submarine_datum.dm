@@ -527,7 +527,7 @@ var/global/list/all_submarines = list()
 					if(internal_turfs.len)
 						playsound(pick(internal_turfs), 'sound/machines/submarine/missile_alarm.ogg', 90, 1)
 					for(var/mob/living/L in internal_turfs)
-						to_chat(L, "<span class='danger'><font size='2'><b>TORPEDO INBOUND!</b></font></span>")
+						to_chat(L, "<span class='danger'><font size='2'><b>鱼雷来袭!</b></font></span>")
 
 	// Remove contacts no longer detected
 	var/list/to_remove = list()
@@ -566,7 +566,7 @@ var/global/list/all_submarines = list()
 
 	// Explosion and radiation at each reactor turf
 	for(var/turf/T in reactor_turfs)
-		T.visible_message("<span class='danger'>The reactor core has collapsed! Intense radiation fills the room!</span>")
+		T.visible_message("<span class='danger'>反应堆核心已熔毁!强烈的辐射充满了房间!</span>")
 		playsound(T, 'sound/machines/submarine/nuke_exp.ogg', 100, 1)
 		playsound(T, 'sound/machines/submarine/scram_alarm.ogg', 80, 1)
 		ignite_turf(T, 30, 5) // Fire burns for 30 ticks, 5 damage per tick
@@ -592,7 +592,7 @@ var/global/list/all_submarines = list()
 			else
 				// Non-hull interior turf - create a leak effect
 				new /obj/effect/step_trigger/sub_leak(T)
-				T.visible_message("<span class='danger'>The hull buckles! A high-pressure leak springs open!</span>")
+				T.visible_message("<span class='danger'>船体弯曲变形!一处高压泄漏口裂开了!</span>")
 				playsound(T, 'sound/machines/submarine/gas.ogg', 80, 1)
 				// Flood adjacent deck turfs
 				for(var/turf/floor/sub_deck/D in range(1, T))
@@ -663,7 +663,7 @@ var/global/list/all_submarines = list()
 
 	// Structural shock: give everyone on board a notification
 	for(var/mob/living/L in range(10, pick(internal_turfs)))
-		to_chat(L, "<span class='danger'><b>A violent explosion shakes the entire submarine!</b></span>")
+		to_chat(L, "<span class='danger'><b>猛烈的爆炸震动了整艘潜艇!</b></span>")
 		playsound(pick(internal_turfs), 'sound/machines/submarine/crash.ogg', 100, 1)
 
 /datum/submarine/proc/launch_torpedo(var/tube_index)
@@ -703,7 +703,7 @@ var/global/list/all_submarines = list()
 	// Announce to all crew
 	for(var/turf/T in internal_turfs)
 		for(var/mob/living/L in T)
-			to_chat(L, "<span class='danger'><font size='3'><b>WE ARE UNDER ATTACK!</b></font></span>")
+			to_chat(L, "<span class='danger'><font size='3'><b>我们正遭受攻击!</b></font></span>")
 
 	switch(weapon_type)
 		if("torpedo")
@@ -724,10 +724,10 @@ var/global/list/all_submarines = list()
 				shake_crew(8, 5)
 				for(var/mob/living/L in range(15, center))
 					if(get_dist(L, center) <= 8)
-						to_chat(L, "<span class='danger'><b>Depth charges detonate nearby! The hull groans under the pressure!</b></span>")
+						to_chat(L, "<span class='danger'><b>深水炸弹在附近爆炸!船体在压力下呻吟!</b></span>")
 					else
 						playsound(L, 'sound/machines/submarine/depth_charge_distant.ogg', 60, 1)
-						to_chat(L, "<span class='warning'><b>A deep, resonant boom echoes through the hull.</b></span>")
+						to_chat(L, "<span class='warning'><b>一声低沉而回荡的轰鸣响彻船体.</b></span>")
 		if("missile")
 			// Missiles are like torpedoes but also cause structural shock
 			torpedo_hit(damage)
@@ -735,7 +735,7 @@ var/global/list/all_submarines = list()
 				playsound(pick(internal_turfs), 'sound/machines/submarine/missile_alarm.ogg', 80, 1)
 				playsound(pick(internal_turfs), 'sound/machines/submarine/crash.ogg', 100, 1)
 				for(var/mob/living/L in range(6, pick(internal_turfs)))
-					to_chat(L, "<span class='danger'><b>The missile impact sends shrapnel flying through the compartment!</b></span>")
+					to_chat(L, "<span class='danger'><b>导弹撞击使弹片飞溅穿过舱室!</b></span>")
 		if("gun")
 			// Naval guns do localized damage
 			torpedo_hit(round(damage / 3))
@@ -799,7 +799,7 @@ var/global/list/all_submarines = list()
 			center = H
 	shake_crew(8, 5)
 	for(var/mob/living/L in range(10, center))
-		to_chat(L, "<span class='danger'><b>Depth charges detonate nearby! The hull groans under the pressure!</b></span>")
+		to_chat(L, "<span class='danger'><b>深水炸弹在附近爆炸!船体在压力下呻吟!</b></span>")
 
 	if(global.subcom_map && global.subcom_map.missions && global.subcom_map.missions.radio_console)
 		global.subcom_map.missions.radio_console.add_log("ALERT: Multiple depth charge detonations detected in vicinity! Hull damage reported.")
@@ -828,7 +828,7 @@ var/global/list/all_submarines = list()
 		var/turf/T = pick(internal_turfs)
 		if(T)
 			ignite_turf(T, rand(20, 40), rand(3, 8))
-			T.visible_message("<span class='danger'>A fire erupts in the compartment!</span>")
+			T.visible_message("<span class='danger'>舱室内燃起大火!</span>")
 			playsound(T, 'sound/machines/submarine/fire.ogg', 60, 1)
 			// Activate fire spread system on sub_deck turfs
 			if(istype(T, /turf/floor/sub_deck))
@@ -848,7 +848,7 @@ var/global/list/all_submarines = list()
 		H.apply_breach_damage(500) // Enough to guarantee a breach
 		shake_crew(6, 4)
 		for(var/mob/living/L in range(8, H))
-			to_chat(L, "<span class='danger'><b>Hull breach! Water is flooding in!</b></span>")
+			to_chat(L, "<span class='danger'><b>船体破损!海水正在涌入!</b></span>")
 
 	if(global.subcom_map && global.subcom_map.missions && global.subcom_map.missions.radio_console)
 		global.subcom_map.missions.radio_console.add_log("EMERGENCY: Hull breach detected! Flooding in progress!")
@@ -874,7 +874,7 @@ var/global/list/all_submarines = list()
 	if(internal_turfs.len)
 		playsound(pick(internal_turfs), 'sound/machines/submarine/alarm_flooding.ogg', 70, 1)
 		for(var/mob/living/L in range(10, pick(internal_turfs)))
-			to_chat(L, "<span class='danger'><b>Flooding detected in [tcomptext]! Water levels rising rapidly!</b></span>")
+			to_chat(L, "<span class='danger'><b>检测到[tcomptext]进水!水位迅速上升!</b></span>")
 
 	if(global.subcom_map && global.subcom_map.missions && global.subcom_map.missions.radio_console)
 		global.subcom_map.missions.radio_console.add_log("ALERT: Flooding reported in [tcomptext]! Emergency bulkheads engaging!")
@@ -893,7 +893,7 @@ var/global/list/all_submarines = list()
 		playsound(pick(internal_turfs), 'sound/machines/submarine/missile_alarm.ogg', 80, 1)
 		playsound(pick(internal_turfs), 'sound/machines/submarine/crash.ogg', 100, 1)
 		for(var/mob/living/L in range(8, pick(internal_turfs)))
-			to_chat(L, "<span class='danger'><b>Missile impact! Explosive force tears through the hull!</b></span>")
+			to_chat(L, "<span class='danger'><b>导弹撞击!爆炸力撕裂了船体!</b></span>")
 
 	if(global.subcom_map && global.subcom_map.missions && global.subcom_map.missions.radio_console)
 		global.subcom_map.missions.radio_console.add_log("EMERGENCY: MISSILE STRIKE CONFIRMED! Severe structural damage! All hands brace for impact!")
@@ -987,6 +987,6 @@ var/global/list/all_submarines = list()
 
 /obj/effect/step_trigger/sub_leak
 	name = "hull breach"
-	desc = "A catastrophic breach in the hull."
+	desc = "船体发生灾难性破损."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "sparks"

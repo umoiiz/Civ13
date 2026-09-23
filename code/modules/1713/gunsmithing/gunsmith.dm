@@ -1,6 +1,6 @@
 /obj/structure/gunbench
-	name = "gunsmithing bench"
-	desc = "A large wooden workbench. The gunsmith's main work tool. It has 0 steel and 0 wood on it."
+	name = "枪匠工作台"
+	desc = "一张大型木制工作台. 枪匠的主要工作工具. 上面有 0 钢铁和 0 木材."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gunbench1"
 	density = TRUE
@@ -20,19 +20,19 @@
 
 /obj/structure/gunbench/attackby(obj/item/P as obj, mob/living/human/user as mob)
 	if (istype(P, /obj/item/stack/material/wood))
-		to_chat(user, "You begin cutting the wood...")
+		to_chat(user, "你开始切割木材...")
 		playsound(loc, 'sound/effects/woodfile.ogg', 100, TRUE)
 		if (do_after(user,15*P.amount,src))
-			to_chat(user, "<span class='notice'>You cut the wood.</span>")
+			to_chat(user, "<span class='notice'>你切好了木材.</span>")
 			wood_amt += P.amount
 			qdel(P)
 		return
 
 	else if (istype(P, /obj/item/stack/material/steel))
-		to_chat(user, "You begin smithing the steel...")
+		to_chat(user, "你开始锻造钢铁...")
 		playsound(loc, 'sound/effects/clang.ogg', 100, TRUE)
 		if (do_after(user,15*P.amount,src))
-			to_chat(user, "<span class='notice'>You smite the steel.</span>")
+			to_chat(user, "<span class='notice'>你锻造好了钢铁.</span>")
 			steel_amt += P.amount
 			qdel(P)
 		return
@@ -46,7 +46,7 @@
 		assemble_from_blueprint(user,P)
 		return
 	else if (user.getStatCoeff("crafting") < 1.5)
-		to_chat(user, "<span class='warning'>You are not skilled enough to do this.</span>")
+		to_chat(user, "<span class='warning'>你的技能不足以完成这个.</span>")
 		return
 /obj/item/weapon/gun/projectile
 	var/rechambered = FALSE
@@ -81,7 +81,7 @@
 		return
 	var/band = gunsmith_tech_band(H)
 	if (H.getStatCoeff("crafting") < 2.5 && map.civilizations)
-		to_chat(H, "You don't have the skills to design a new gun! Use an existing blueprint.")
+		to_chat(H, "你没有设计新枪的技能! 请使用现有的蓝图.")
 		return
 	var/found = FALSE
 	if (istype(H.l_hand, /obj/item/stack/money))
@@ -93,7 +93,7 @@
 		if (M.value*M.amount >= 5)
 			found = TRUE
 	if (!found)
-		to_chat(H, "You don't have enough money to make a new blueprint! You need 10 gold or equivalent in one of your hands.")
+		to_chat(H, "你没有足够的钱来制作新蓝图! 你需要 10 金币或等值物品放在你的一只手中.")
 		return
 
 	var/dat = {"<html><head>
@@ -356,7 +356,7 @@ function pickAppearance(a) {
 	user << browse(dat, "window=gunsmith_rechamber;size=400x400")
 
 /obj/structure/gunbench/proc/do_rechamber(var/obj/item/weapon/gun/projectile/P, var/choice, var/mob/living/human/H)
-	to_chat(H, "You start converting \the [P] into [choice]...")
+	to_chat(H, "你开始将 \the [P] 转换为 [choice]...")
 	playsound(loc, 'sound/effects/gunbench.ogg', 100, TRUE)
 	if (do_after(H, 100, src))
 		switch (choice)
@@ -405,7 +405,7 @@ function pickAppearance(a) {
 			if ("shotgun")
 				P.caliber = "12gauge"
 				P.ammo_type = /obj/item/ammo_casing/shotgun
-		to_chat(H, "You successfully convert \the [P].")
+		to_chat(H, "你成功转换了 \the [P].")
 		if (!findtext(P.name,"(rechambered)"))
 			P.name = "[P.name] (rechambered)"
 		if (!findtext(P.desc,". Rechambered into"))
@@ -425,7 +425,7 @@ function pickAppearance(a) {
 	// Rechambering flow
 	if (href_list["action"] == "do_rechamber")
 		if (!rechambering_gun)
-			to_chat(H, "No gun selected for rechambering.")
+			to_chat(H, "没有选择要改膛的枪.")
 			return
 		var/choice = href_list["cal"]
 		if (!choice || choice == "(none available)")
@@ -451,12 +451,12 @@ function pickAppearance(a) {
 		using_wood = 0
 		using_steel = 0
 		H << browse(null, "window=gunsmith")
-		to_chat(H, "Canceled gun crafting.")
+		to_chat(H, "已取消枪支制作.")
 		return
 
 	if (href_list["action"] == "start")
 		if (current_gun)
-			to_chat(H, "You already have a gun in progress!")
+			to_chat(H, "你已经在制作一把枪了!")
 			return
 		current_gun = new /obj/item/weapon/gun/projectile/custom(src)
 		show_gunsmith_ui(H)
@@ -487,7 +487,7 @@ function pickAppearance(a) {
 				else
 					return
 			if (using_wood > wood_amt || using_steel > steel_amt)
-				to_chat(H, "Not enough resources!")
+				to_chat(H, "资源不足!")
 				qdel(current_gun)
 				current_gun = null
 				using_wood = 0
@@ -520,7 +520,7 @@ function pickAppearance(a) {
 				else
 					return
 			if (using_wood > wood_amt || using_steel > steel_amt)
-				to_chat(H, "Not enough resources!")
+				to_chat(H, "资源不足!")
 				qdel(current_gun)
 				current_gun = null
 				using_wood = 0
@@ -549,7 +549,7 @@ function pickAppearance(a) {
 				else
 					return
 			if (using_wood > wood_amt || using_steel > steel_amt)
-				to_chat(H, "Not enough resources!")
+				to_chat(H, "资源不足!")
 				qdel(current_gun)
 				current_gun = null
 				using_wood = 0
@@ -574,7 +574,7 @@ function pickAppearance(a) {
 				else
 					return
 			if (using_wood > wood_amt || using_steel > steel_amt)
-				to_chat(H, "Not enough resources!")
+				to_chat(H, "资源不足!")
 				qdel(current_gun)
 				current_gun = null
 				using_wood = 0
@@ -723,7 +723,7 @@ function pickAppearance(a) {
 				if (M.amount <= 0)
 					qdel(M)
 		if (!foundm)
-			to_chat(H, "<span class='warning'>You do not have enough money to finish the blueprint!</span>")
+			to_chat(H, "<span class='warning'>你没有足够的钱来完成蓝图!</span>")
 			qdel(current_gun)
 			current_gun = null
 			using_wood = 0
@@ -792,7 +792,7 @@ function pickAppearance(a) {
 			NEWGUN.loc = get_turf(src)
 			current_gun = null
 			H << browse(null, "window=gunsmith")
-			to_chat(H, "You finish crafting the [NEWGUN.name]!")
+			to_chat(H, "你完成了 [NEWGUN.name] 的制作!")
 			return
 		return
 
@@ -804,27 +804,27 @@ function pickAppearance(a) {
 		return
 	if (wood_amt < bpsource.cost_wood)
 		if (user)
-			to_chat(user, "Not enough wood!")
+			to_chat(user, "木材不足!")
 		return
 	if (steel_amt < bpsource.cost_steel)
 		if (user)
-			to_chat(user, "Not enough steel!")
+			to_chat(user, "钢铁不足!")
 		return
 
 	using_wood = bpsource.cost_wood
 	using_steel = bpsource.cost_steel
-	to_chat(user, "You begin crafting the [bpsource.custom_name]...")
+	to_chat(user, "你开始制作 [bpsource.custom_name]...")
 	playsound(loc, 'sound/effects/gunbench.ogg', 100, TRUE)
 	if (do_after(user,200,src))
 		if (!bpsource)
 			return
 		if (wood_amt < bpsource.cost_wood)
 			if (user)
-				to_chat(user, "Not enough wood!")
+				to_chat(user, "木材不足!")
 			return
 		if (steel_amt < bpsource.cost_steel)
 			if (user)
-				to_chat(user, "Not enough steel!")
+				to_chat(user, "钢铁不足!")
 			return
 		wood_amt -= using_wood
 		steel_amt -= using_steel
@@ -845,12 +845,12 @@ function pickAppearance(a) {
 		NEWGUN.finish()
 
 		if (user)
-			to_chat(user, "You assemble a new [NEWGUN.name].")
+			to_chat(user, "你组装了一把新的[NEWGUN.name]。")
 		return
 
 /obj/item/weapon/gun/projectile/custom
-	name = "unfinished gun"
-	desc = "an unfinished gun"
+	name = "未完成的枪"
+	desc = "一把未完成的枪"
 	icon = 'icons/obj/gunsmithing.dmi'
 	icon_state = "none"
 
@@ -1297,16 +1297,16 @@ function pickAppearance(a) {
 
 /obj/item/weapon/gun/projectile/custom/special_check(mob/user)
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险还开着,你无法用\the [src]开火!</span>")
 		return FALSE
 	if (!user.has_empty_hand(both = FALSE) && (receiver_type != "Revolver" && receiver_type != "Semi-Auto (small)"))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能用\the [src]开火!</span>")
 		return FALSE
 	if (bolt_open && receiver_type == "Bolt-Action")
-		to_chat(user, "<span class='warning'>You can't fire [src] while the bolt is open!</span>")
+		to_chat(user, "<span class='warning'>枪机还开着,你无法用[src]开火!</span>")
 		return FALSE
 	if (jammed_until > world.time)
-		to_chat(user, "<span class = 'danger'>\The [src] has jammed! You can't fire it until it has unjammed.</span>")
+		to_chat(user, "<span class = 'danger'>\The [src]卡壳了!在排除故障之前你无法开火。</span>")
 		return FALSE
 	update_icon()
 	return TRUE
@@ -1403,14 +1403,14 @@ function pickAppearance(a) {
 				return
 		else return
 		if (check_bolt_lock)
-			to_chat(user, "<span class='notice'>The bolt won't move, the gun is empty!</span>")
+			to_chat(user, "<span class='notice'>枪机拉不动,枪是空的!</span>")
 			check_bolt--
 			return
 		bolt_open = !bolt_open
 		if (bolt_open)
 			if (chambered)
 				playsound(loc, 'sound/weapons/guns/interact/bolt_open.ogg', 50, TRUE)
-				to_chat(user, "<span class='notice'>You work the bolt open, ejecting [chambered]!</span>")
+				to_chat(user, "<span class='notice'>你拉开枪机,退出了[chambered]!</span>")
 				chambered.loc = get_turf(src)
 				chambered.randomrotation()
 				loaded -= chambered
@@ -1418,13 +1418,13 @@ function pickAppearance(a) {
 				if (bolt_safety)
 					if (!loaded.len)
 						check_bolt_lock++
-						to_chat(user, "<span class='notice'>The bolt is locked!</span>")
+						to_chat(user, "<span class='notice'>枪机锁住了!</span>")
 			else
 				playsound(loc, 'sound/weapons/guns/interact/bolt_open.ogg', 50, TRUE)
-				to_chat(user, "<span class='notice'>You work the bolt open.</span>")
+				to_chat(user, "<span class='notice'>你拉开了枪机。</span>")
 		else
 			playsound(loc, 'sound/weapons/guns/interact/bolt_close.ogg', 50, TRUE)
-			to_chat(user, "<span class='notice'>You work the bolt closed.</span>")
+			to_chat(user, "<span class='notice'>你推上了枪机。</span>")
 			bolt_open = FALSE
 		add_fingerprint(user)
 		update_icon()
@@ -1463,20 +1463,20 @@ function pickAppearance(a) {
 						count++
 					loaded.Cut()
 				if (count)
-					visible_message("[user] unloads [src].", "<span class='notice'>You unload [count] round\s from [src].</span>")
+					visible_message("[user]卸下了[src]。", "<span class='notice'>你从[src]中退出了[count]发\s 。</span>")
 					if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 			else if (load_method & SINGLE_CASING)
 				var/obj/item/ammo_casing/C = loaded[loaded.len]
 				loaded.len--
 				user.put_in_hands(C)
-				visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+				visible_message("[user]从[src]上取下了\a [C]。", "<span class='notice'>你从[src]上取下了\a [C]。</span>")
 				if (istype(src, /obj/item/weapon/gun/projectile/boltaction))
 					var/obj/item/weapon/gun/projectile/boltaction/B = src
 					if (B.bolt_safety && !B.loaded.len)
 						B.check_bolt_lock++
 				if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 		else
-			to_chat(user, "<span class='warning'>[src] is empty.</span>")
+			to_chat(user, "<span class='warning'>[src]是空的。</span>")
 	update_icon()
 	..()
 
@@ -1540,7 +1540,7 @@ function pickAppearance(a) {
 /obj/item/weapon/gun/projectile/custom/attackby(obj/W as obj, mob/user as mob)
 	if (receiver_type == "Revolver" || receiver_type == "Semi-Auto (small)")
 		if (istype(W, /obj/item/weapon/attachment/bayonet))
-			to_chat(user, "<span class = 'danger'>That won't fit on there.</span>")
+			to_chat(user, "<span class = 'danger'>那个装不上去。</span>")
 			return FALSE
 		else
 			return ..()
@@ -1558,19 +1558,19 @@ function pickAppearance(a) {
 	if (stock_type == "Folding Stock")
 		if (folded)
 			folded = FALSE
-			to_chat(usr, "You extend the stock on \the [src].")
+			to_chat(usr, "你展开了\the [src]的枪托。")
 			equiptimer +=5
 			set_stock()
 			update_icon()
 		else
 			folded = TRUE
 			base_icon = "akms_folded"
-			to_chat(usr, "You collapse the stock on \the [src].")
+			to_chat(usr, "你折叠了\the [src]的枪托。")
 			equiptimer -= 5
 			set_stock()
 			update_icon()
 	else
-		to_chat(usr, "\The [src] has no stock to toggle.")
+		to_chat(usr, "\The [src]没有可切换的枪托。")
 	update_icon()
 
 /obj/item/weapon/gun/projectile/custom/proc/set_stock()

@@ -8,7 +8,7 @@
 	var/tempo = 5
 
 /obj/structure/piano
-	name = "Piano"
+	name = "钢琴"
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "piano"
 	anchored = TRUE
@@ -405,12 +405,12 @@
 					tempo = 600 / divisor
 					lines.Cut(1,2)
 				if (lines.len > MAX_LINES)
-					to_chat(usr, "Too many lines!")
+					to_chat(usr, "行数太多了!")
 					lines.Cut(201)
 				var/linenum = TRUE
 				for (var/l in lines)
 					if (length(l) > MAX_CHARS_PER_LINE)
-						to_chat(usr, "Line [linenum] too long!")
+						to_chat(usr, "第[linenum]行太长了!")
 						lines.Remove(l)
 					else
 						linenum++
@@ -427,7 +427,7 @@
 	if (istype(O, /obj/item/weapon/wrench))
 		if (anchored)
 			playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
-			to_chat(user, "<span class='notice'>You begin to loosen \the [src]'s casters...</span>")
+			to_chat(user, "<span class='notice'>你开始松开\the [src]的脚轮...</span>")
 			if (do_after(user, 40, src))
 				user.visible_message( \
 					"[user] loosens \the [src]'s casters.", \
@@ -436,7 +436,7 @@
 				anchored = FALSE
 		else
 			playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
-			to_chat(user, "<span class='notice'>You begin to tighten \the [src] to the floor...</span>")
+			to_chat(user, "<span class='notice'>你开始将\the [src]固定到地板上...</span>")
 			if (do_after(user, 20, src))
 				user.visible_message( \
 					"[user] tightens \the [src]'s casters.", \

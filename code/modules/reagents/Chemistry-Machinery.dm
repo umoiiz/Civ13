@@ -7,7 +7,7 @@
 
 
 /obj/structure/chemical_dispenser
-	name = "chemical dispenser"
+	name = "化学分配器"
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/chemical.dmi'
@@ -63,7 +63,7 @@
 			dispensable_reagents += list(list(i,400))
 
 /obj/structure/chemical_dispenser/soda
-	name = "soda dispenser"
+	name = "汽水分配器"
 	icon_state = "soda_dispenser"
 	ui_title = "Soda Dispenser"
 	accept_glass = TRUE
@@ -75,7 +75,7 @@
 			dispensable_reagents += list(list(i,400))
 
 /obj/structure/chemical_dispenser/juice
-	name = "juice dispenser"
+	name = "果汁分配器"
 	icon_state = "soda_dispenser"
 	ui_title = "Juice Dispenser"
 	accept_glass = TRUE
@@ -87,7 +87,7 @@
 			dispensable_reagents += list(list(i,400))
 
 /obj/structure/chemical_dispenser/alcohol
-	name = "alcoholic beverages dispenser"
+	name = "酒精饮料分配器"
 	icon_state = "booze_dispenser"
 	ui_title = "Alcoholic Beverages Dispenser"
 	accept_glass = TRUE
@@ -99,7 +99,7 @@
 			dispensable_reagents += list(list(i,400))
 
 /obj/structure/chemical_dispenser/coffee
-	name = "coffee dispenser"
+	name = "咖啡分配器"
 	icon_state = "coffee_dispenser"
 	ui_title = "Coffee Dispenser"
 	accept_glass = TRUE
@@ -124,7 +124,7 @@
 	var/mob/living/human/H = user
 	if (src.is_medical)
 		if (istype(H) && H.getStatCoeff("medical") < GET_MIN_STAT_COEFF(STAT_MEDIUM_HIGH))
-			to_chat(H, "<span class = 'danger'>These chemicals are too complex for you to understand.</span>")
+			to_chat(H, "<span class = 'danger'>这些化学物质太复杂了,你无法理解.</span>")
 			return
 	// this is the data which will be sent to the ui
 	var/data[0]
@@ -197,7 +197,7 @@
 /obj/structure/chemical_dispenser/attackby(var/obj/item/weapon/reagent_containers/B as obj, var/mob/user as mob)
 	if (beaker)
 		if (B && B.reagents && B.reagents.reagent_list.len)
-			to_chat(user, "You transfer the reagents to the dispenser.")
+			to_chat(user, "你将试剂转移到分配器中.")
 			for(var/datum/reagent/R in B.reagents.reagent_list)
 				var/done = FALSE
 				for (var/list/r in dispensable_reagents)
@@ -211,15 +211,15 @@
 			sanitize_reagents()
 			return
 		else
-			to_chat(user, "A beaker is already placed in the dispenser.")
+			to_chat(user, "分配器中已经放置了一个烧杯.")
 			return
 	if (istype(B, /obj/item/weapon/reagent_containers/glass) || istype(B, /obj/item/weapon/reagent_containers/food))
 		if (!accept_glass && istype(B,/obj/item/weapon/reagent_containers/food))
-			to_chat(user, "<span class='notice'>You should only use beakers to manage chemicals.</span>")
+			to_chat(user, "<span class='notice'>你只能使用烧杯来管理化学物质.</span>")
 		beaker =  B
 		user.drop_item()
 		B.loc = src
-		to_chat(user, "You place [B] in the dispenser.")
+		to_chat(user, "你将[B]放入分配器中.")
 		GLOB.nanomanager.update_uis(src) // update all UIs attached to src
 		return
 	..()
@@ -240,8 +240,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/structure/lab_distillery
-	name = "laboratory distiller"
-	desc = "A professional laboratory distillery, used to separate chemicals in a solution."
+	name = "实验室蒸馏器"
+	desc = "一台专业的实验室蒸馏器,用于分离溶液中的化学物质."
 	density = FALSE
 	anchored = FALSE
 	icon = 'icons/obj/chemical.dmi'
@@ -271,16 +271,16 @@
 
 /obj/structure/lab_distillery/attack_hand(var/mob/living/human/H)
 	if (istype(H) && H.getStatCoeff("medical") < GET_MIN_STAT_COEFF(STAT_MEDIUM_HIGH))
-		to_chat(H, "<span class = 'danger'>These chemicals are too complex for you to understand.</span>")
+		to_chat(H, "<span class = 'danger'>这些化学物质太复杂了,你无法理解.</span>")
 		return
 	if (reagents.total_volume <= 0)
-		to_chat(H, "The distiller is empty.")
+		to_chat(H, "蒸馏器是空的.")
 		return
 	if (!collector && !active)
-		to_chat(H, "You cannot turn the distiller active without a collector.")
+		to_chat(H, "没有收集器就无法启动蒸馏器.")
 		return
 	if (collector && !active)
-		to_chat(H, "You turn the distiller active.")
+		to_chat(H, "你启动了蒸馏器.")
 		active = TRUE
 		update_icon()
 		process_machine()
@@ -288,20 +288,20 @@
 
 /obj/structure/lab_distillery/attackby(var/obj/item/weapon/reagent_containers/B as obj, var/mob/living/human/H as mob)
 	if (istype(H) && H.getStatCoeff("medical") < GET_MIN_STAT_COEFF(STAT_MEDIUM_HIGH))
-		to_chat(H, "<span class = 'danger'>These chemicals are too complex for you to understand.</span>")
+		to_chat(H, "<span class = 'danger'>这些化学物质太复杂了,你无法理解.</span>")
 		return
 	if (B.reagents)
 		if (B.reagents.total_volume > 0)
 			var/tamt = B.reagents.trans_to_holder(src.reagents, 10, TRUE, FALSE)
-			to_chat(H, "You pour [tamt] units from \the [B] into the distiller.")
+			to_chat(H, "你从\the [B]中倒出[tamt]单位到蒸馏器中.")
 			update_icon()
 			return
 	if (istype(B, /obj/item/weapon/reagent_containers/glass/beaker) && !collector)
 		if (B.reagents.total_volume > 0)
-			to_chat(H, "The collector must be empty!")
+			to_chat(H, "收集器必须是空的!")
 			return
 		else
-			to_chat(H, "You place [B] as the collector for the distiller.")
+			to_chat(H, "你将[B]放置为蒸馏器的收集器.")
 			collector =  B
 			H.drop_item()
 			B.loc = src
@@ -315,15 +315,15 @@
 	set src in range(1, usr)
 
 	if (!collector)
-		to_chat(usr, "There is no beaker to remove from \the [src].")
+		to_chat(usr, "\the [src]中没有可移除的烧杯.")
 		return
 
 	if (active)
-		to_chat(usr, "<span class = 'danger'>You cannot remove the beaker while the distiller is running!</span>")
+		to_chat(usr, "<span class = 'danger'>蒸馏器运行时你无法移除烧杯!</span>")
 		return
 
 	if (collector && !active)
-		visible_message("You remove \the [collector].","[usr] removes \the [collector] from \the [src].")
+		visible_message("你移除了\the [collector].","[usr]从\the [src]中移除了\the [collector].")
 		collector.loc = get_turf(src)
 		collector = null
 		return
@@ -349,14 +349,14 @@
 			reagents.remove_reagent(largest,voltotransf)
 			active = FALSE
 			update_icon()
-			visible_message("\The [src] finishes distilling.")
+			visible_message("\The [src]完成了蒸馏.")
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/structure/centrifuge
-	name = "laboratory centrifuge"
-	desc = "A professional laboratory centrifuge, used to separate chemicals in a solution."
+	name = "实验室离心机"
+	desc = "一台专业的实验室离心机,用于分离溶液中的化学物质."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "centrifuge"
 	density = TRUE
@@ -438,15 +438,15 @@
 		if (B.reagents)
 			if (B.reagents.total_volume > 0)
 				var/tamt = B.reagents.trans_to_holder(src.reagents, 10, TRUE, FALSE)
-				to_chat(user, "You pour [tamt] units from \the [B] into \the [src].")
+				to_chat(user, "你从\the [B]中倒出[tamt]单位到\the [src]中.")
 				update_icon()
 				return
 		if (istype(B, /obj/item/weapon/reagent_containers/glass/beaker/vial) && !collector)
 			if (B.reagents.total_volume > 0)
-				to_chat(user, "The collector must be empty!")
+				to_chat(user, "收集器必须是空的!")
 				return
 			else
-				to_chat(user, "You place [B] as the collector for \the [src].")
+				to_chat(user, "你将[B]放置为\the [src]的收集器.")
 				collector =  B
 				user.drop_item()
 				B.loc = src
@@ -463,15 +463,15 @@
 	set src in range(1, usr)
 
 	if (!collector)
-		to_chat(usr, "There is no vial to remove from \the [src].")
+		to_chat(usr, "\the [src]中没有可移除的小瓶.")
 		return
 
 	if (active)
-		to_chat(usr, "<span class = 'danger'>You cannot remove the vial while \the [src] is running!</span>")
+		to_chat(usr, "<span class = 'danger'>\the [src]运行时你无法移除小瓶!</span>")
 		return
 
 	if (collector && !active)
-		visible_message("You remove \the [collector].","[usr] removes \the [collector] from \the [src].")
+		visible_message("你移除了\the [collector].","[usr]从\the [src]中移除了\the [collector].")
 		collector.loc = get_turf(src)
 		collector = null
 		return
@@ -503,14 +503,14 @@
 			reagents.remove_reagent(largest,voltotransf)
 			active = FALSE
 			update_icon()
-			visible_message("\The [src] stops it's cycle.")
+			visible_message("\The [src]停止了其循环.")
 			playsound(loc, 'sound/machines/ping.ogg', 100, TRUE)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/structure/grinder
-	name = "grinder"
-	desc = "A professional grinder used to grind certain objects into a pulp."
+	name = "研磨机"
+	desc = "一台专业的研磨机,用于将某些物体研磨成浆状."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "grinder"
 	density = TRUE
@@ -580,7 +580,7 @@
 		return
 
 	else if (istype(W, /obj/item/stack) && !inserted)
-		to_chat(user, "You place \the [W] in \the [src] for grinding.")
+		to_chat(user, "你将\the [W]放入\the [src]中进行研磨.")
 		inserted =  W
 		user.drop_item()
 		W.loc = src
@@ -593,7 +593,7 @@
 	set src in range(1, usr)
 
 	if (!inserted)
-		to_chat(usr, "There is no object to remove from \the [src].")
+		to_chat(usr, "\the [src]中没有可移除的物体.")
 		return
 
 	if (active)
@@ -601,7 +601,7 @@
 		return
 
 	if (inserted && !active)
-		visible_message("You remove \the [inserted].","[usr] removes \the [inserted] from \the [src].")
+		visible_message("你移除了\the [inserted].","[usr]从\the [src]中移除了\the [inserted].")
 		inserted.loc = get_turf(src)
 		inserted = null
 		return
@@ -636,13 +636,13 @@
 				qdel (inserted)
 				inserted = null
 				update_icon()
-				visible_message("\The [src] stops grinding.")
+				visible_message("\The [src]停止了研磨.")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/structure/chem_master
-	name = "pill maker"
-	desc = "Makes pills out of reagents."
+	name = "药丸制造机"
+	desc = "用试剂制造药丸."
 	density = TRUE
 	anchored = FALSE
 	icon = 'icons/obj/chemical.dmi'
@@ -691,25 +691,25 @@
 	if (istype(B, /obj/item/weapon/reagent_containers/glass))
 
 		if (beaker)
-			to_chat(user, "A beaker is already loaded into the machine.")
+			to_chat(user, "机器中已经装入了一个烧杯.")
 			return
 		beaker = B
 		user.drop_item()
 		B.loc = src
-		to_chat(user, "You add the beaker to the machine!")
+		to_chat(user, "你将烧杯加入了机器!")
 		updateUsrDialog()
 		icon_state = "mixer1b"
 
 	else if (istype(B, /obj/item/weapon/storage/pill_bottle))
 
 		if (loaded_pill_bottle)
-			to_chat(user, "A pill bottle is already loaded into the machine.")
+			to_chat(user, "机器中已经装入了一个药瓶.")
 			return
 
 		loaded_pill_bottle = B
 		user.drop_item()
 		B.loc = src
-		to_chat(user, "You add the pill bottle into the dispenser slot!")
+		to_chat(user, "你将药瓶加入了分配器槽位!")
 		updateUsrDialog()
 	return
 
@@ -928,8 +928,8 @@
 //////////////ETHANOL REFINERY/////////////////
 
 /obj/structure/distillery
-	name = "alcohol distiller"
-	desc = "A alcohol distiller. Turns any alcoholic drink into pure ethanol."
+	name = "酒精蒸馏器"
+	desc = "一台酒精蒸馏器.将任何含酒精的饮料转化为纯乙醇."
 	density = FALSE
 	anchored = FALSE
 	icon = 'icons/obj/structures.dmi'
@@ -950,37 +950,37 @@
 
 /obj/structure/distillery/attack_hand(var/mob/living/human/H)
 	if (istype(H) && H.getStatCoeff("medical") < GET_MIN_STAT_COEFF(STAT_NORMAL))
-		to_chat(H, "<span class = 'danger'>These chemicals are too complex for you to understand.</span>")
+		to_chat(H, "<span class = 'danger'>这些化学物质太复杂了,你无法理解.</span>")
 		return
 	if (reagents.total_volume <= 0)
-		to_chat(H, "The distiller is empty.")
+		to_chat(H, "蒸馏器是空的.")
 		return
 	if (!collector && !active)
-		to_chat(H, "You cannot turn the distiller active without a collector.")
+		to_chat(H, "没有收集器就无法启动蒸馏器.")
 		return
 	if (collector && !active)
-		to_chat(H, "You turn the distiller active.")
+		to_chat(H, "你启动了蒸馏器.")
 		active = TRUE
 		update_icon()
 		process_machine()
 	..()
 /obj/structure/distillery/attackby(var/obj/item/weapon/reagent_containers/B as obj, var/mob/living/human/H as mob)
 	if (istype(H) && H.getStatCoeff("medical") < GET_MIN_STAT_COEFF(STAT_MEDIUM_HIGH))
-		to_chat(H, "<span class = 'danger'>These chemicals are too complex for you to understand.</span>")
+		to_chat(H, "<span class = 'danger'>这些化学物质太复杂了,你无法理解.</span>")
 		return
 	if (B.reagents)
 		if (B.reagents.total_volume > 0 && collector && collector.reagents.get_free_space() > 0)
 			var/amt_transf = collector.reagents.get_free_space()
 			var/tamt = B.reagents.trans_to_holder(src.reagents, min(10, amt_transf), TRUE, FALSE)
-			to_chat(H, "You pour [tamt] units from \the [B] into the distiller.")
+			to_chat(H, "你从\the [B]中倒出[tamt]单位到蒸馏器中.")
 			update_icon()
 			return
 	if (istype(B, /obj/item/weapon/reagent_containers/glass/) && !collector)
 		if (B.reagents.total_volume > 0)
-			to_chat(H, "The collector must be empty!")
+			to_chat(H, "收集器必须是空的!")
 			return
 		else
-			to_chat(H, "You place [B] as the collector for the distiller.")
+			to_chat(H, "你将[B]放置为蒸馏器的收集器.")
 			collector =  B
 			H.drop_item()
 			B.loc = src
@@ -994,15 +994,15 @@
 	set src in range(1, usr)
 
 	if (!collector)
-		to_chat(usr, "There is nothing to remove from \the [src].")
+		to_chat(usr, "\the [src]中没有可移除的东西.")
 		return
 
 	if (active)
-		to_chat(usr, "<span class = 'danger'>You cannot remove the [collector] while the distiller is running!</span>")
+		to_chat(usr, "<span class = 'danger'>蒸馏器运行时你无法移除[collector]!</span>")
 		return
 
 	if (collector && !active)
-		visible_message("You remove \the [collector].","[usr] removes \the [collector] from \the [src].")
+		visible_message("你移除了\the [collector].","[usr]从\the [src]中移除了\the [collector].")
 		collector.loc = get_turf(src)
 		collector = null
 		return
@@ -1028,4 +1028,4 @@
 
 			active = FALSE
 			update_icon()
-			visible_message("\The [src] finishes distilling.")
+			visible_message("\The [src]完成了蒸馏.")

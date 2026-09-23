@@ -23,9 +23,9 @@
 		if (R_ADMIN & C.holder.rights)
 			if (C.is_preference_enabled(/datum/client_preference/admin/show_chat_prayers))
 				to_chat(C, msg)
-				to_chat(C, "<i>Please do <big>not</big> respond to prayers with revives or anything that might affect the course of the round in favor of one faction.</i>")
+				to_chat(C, "<i>请 <big>不要</big> 用复活或任何可能影响回合进程、偏袒某一方的方式回应祈祷.</i>")
 
-	to_chat(usr, "Your prayers have been received by the gods.")
+	to_chat(usr, "你的祈祷已被神明接收.")
 
 
 	//log_admin("HELP: [key_name(src)]: [msg]")

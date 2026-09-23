@@ -20,7 +20,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/spanish
 	name = "Spanish Soldier"
-	desc = "Attacks any and all intruders or enemies."
+	desc = "攻击任何及所有入侵者或敌人."
 	icon_state = "spanish_soldier"
 	icon_dead = "piratemelee_dead"
 	speak = list("Fine day for sailing","Sure hope we dont run into any pirates")
@@ -42,7 +42,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/spanish/ranged
 	name = "Spanish Rifleman"
-	desc = "Attacks any and all intruders or enemies."
+	desc = "攻击任何及所有入侵者或敌人."
 	icon_state = "spanish_rifleman"
 	icon_dead = "pirateranged_dead"
 	speak = list()
@@ -75,7 +75,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/spanish/ranged/sgt
 	name = "Spanish Petty Officer"
-	desc = "Attacks any and all intruders or enemies. Armed with a pistol and a sword."
+	desc = "攻击任何及所有入侵者或敌人. 装备有手枪和剑."
 	icon_state = "spanish_sgt"
 	icon_dead = "pirateranged_dead"
 	response_help = "pushes"
@@ -112,7 +112,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/spanish/ranged/lt
 	name = "Spanish Boatswain"
-	desc = "Attacks any and all intruders or enemies. Armed with a pistol and a sword."
+	desc = "攻击任何及所有入侵者或敌人. 装备有手枪和剑."
 	icon_state = "spanish_lt"
 	icon_dead = "pirateranged_dead"
 	response_help = "pushes"
@@ -149,7 +149,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/spanish/ranged/cpt
 	name = "Spanish Capitan"
-	desc = "Attacks any and all intruders or enemies. Armed with a pistol and a sword."
+	desc = "攻击任何及所有入侵者或敌人. 装备有手枪和剑."
 	icon_state = "spanish_cpt"
 	icon_dead = "pirateranged_dead"
 	response_help = "pushes"
@@ -190,7 +190,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/merchant
 	name = "Merchant"
-	desc = "Defends himself if he has to."
+	desc = "必要时会自卫."
 	icon_state = "merchant"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -216,7 +216,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/barmaiden
 	name = "Bar Maid"
-	desc = "Defends herself if she has to."
+	desc = "必要时会自卫."
 	icon_state = "barmaiden"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -242,7 +242,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/civilian
 	name = "Civilian"
-	desc = "Defends himself if he has to."
+	desc = "必要时会自卫."
 	icon_state = "civ1"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -274,7 +274,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/civilian_f
 	name = "Civilian"
-	desc = "Defends herself if she has to."
+	desc = "必要时会自卫."
 	icon_state = "civ1"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"

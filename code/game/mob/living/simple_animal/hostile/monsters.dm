@@ -13,7 +13,7 @@
 
 /mob/living/simple_animal/hostile/wendigo
 	name = "wendigo"
-	desc = "A gaunt, towering figure of hunger and winter. Run while you still can."
+	desc = "一个消瘦高耸的身影, 代表着饥饿与寒冬. 趁还能跑就快跑吧."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "wendigo"
 	icon_living = "wendigo"
@@ -52,7 +52,7 @@
 	custom_emote(1, "lets out a bone-chilling wail as it materialises from the cold.")
 
 /mob/living/simple_animal/hostile/wendigo/death()
-	visible_message("\The [src] collapses with an ear-splitting shriek, its form dissolving into frost and shadow.")
+	visible_message("\The [src]发出一声刺耳的尖啸倒下, 其形体消散于冰霜与阴影之中.")
 	..()
 // --------------------------------
 // LIGHTSEEKER
@@ -63,7 +63,7 @@
 
 /mob/living/simple_animal/hostile/lightseeker
 	name = "lightseeker"
-	desc = "A wretched, eyeless thing that moves with nauseating speed. It hunts light, so stay in the dark!"
+	desc = "一种可悲的, 没有眼睛的东西, 以令人作呕的速度移动. 它猎捕光亮, 所以待在黑暗中!"
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "faithless"
 	icon_living = "faithless"
@@ -103,7 +103,7 @@
 	custom_emote(1, "slinks out of the darkness, twitching erratically.")
 
 /mob/living/simple_animal/hostile/lightseeker/death()
-	visible_message("\The [src] lets out one final, wet shriek before going still.")
+	visible_message("\The [src]发出最后一声湿漉漉的尖啸, 然后静止不动了.")
 	set_light(0)
 	..()
 
@@ -186,7 +186,7 @@
 
 /mob/living/simple_animal/hostile/alien
 	name = "xenomorph"
-	desc = "A sleek, chitinous nightmare. Acidic blood, razor claws, and absolutely no mercy."
+	desc = "一种光滑的, 甲壳质的梦魇. 酸性血液, 剃刀般的利爪, 而且绝对毫不留情."
 	icon = 'icons/mob/monsters/alien.dmi'
 	icon_state = "alienh"
 	icon_living = "alienh"
@@ -224,7 +224,7 @@
 	custom_emote(1, "emerges from the shadows, drooling acid onto the floor.")
 
 /mob/living/simple_animal/hostile/alien/death()
-	visible_message("\The [src] lets out a final screech as acid blood pools beneath it.")
+	visible_message("\The [src]发出最后一声尖叫, 酸性血液在其身下汇聚.")
 	..()
 
 /mob/living/simple_animal/hostile/alien/Life()
@@ -253,7 +253,7 @@
 // Drone subtype - lighter, faster scout variant
 /mob/living/simple_animal/hostile/alien/drone
 	name = "alien drone"
-	desc = "A smaller, faster variant of the xenomorph. Still absolutely lethal."
+	desc = "异形中体型更小, 速度更快的变体. 依然绝对致命."
 	move_to_delay = 2
 	maxHealth = 90
 	health = 90
@@ -281,7 +281,7 @@
 // --------------------------------
 /mob/living/simple_animal/hostile/fata_morgana
 	name = "fata morgana"
-	desc = "A shifting, translucent shape born of the ice."
+	desc = "一个由冰诞生的, 不断变幻的半透明形体."
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "fata_morgana"
 	icon_living = "fata_morgana"
@@ -323,7 +323,7 @@
 /mob/living/simple_animal/hostile/fata_morgana/attack_hand(mob/user as mob)
 	if (istype(user, /mob/living/human))
 		var/mob/living/human/H = user
-		visible_message("<span class='warning'>\The [src] vanishes in a freezing burst of wind!</span>")
+		visible_message("<span class='warning'>\The [src]在一阵冰冷的狂风爆发中消失了!</span>")
 		playsound(src, 'sound/effects/extinguish.ogg', 70, TRUE)
 		H.bodytemperature = 100
 		H.cold_protection_disabled_timer = 60 // 2 minutes (60 ticks of Life)
@@ -335,7 +335,7 @@
 // --------------------------------
 /mob/living/simple_animal/hostile/boreas
 	name = "boreas"
-	desc = "A massive elemental beast of dark blue glacial ice. Drawn to fires. Can only be harmed by fire."
+	desc = "一头由深蓝色冰川冰构成的巨大元素野兽. 会被火焰吸引. 只能被火焰伤害."
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "ice_demon"
 	icon_living = "ice_demon"
@@ -384,7 +384,7 @@
 				O.on = FALSE
 				O.set_light(0)
 				O.update_icon()
-				visible_message("<span class='danger'>\The [O]'s fire is being vacuumed by the freezing presence of [src]!</span>")
+				visible_message("<span class='danger'>\The [O]的火焰正被[src]的冰冻存在所吸走!</span>")
 
 	if (!target_mob)
 		if (!closest_oven && map && map.ID == MAP_ANTARCTICA)
@@ -410,7 +410,7 @@
 // --------------------------------
 /mob/living/simple_animal/hostile/echofiend
 	name = "echofiend"
-	desc = "A bat-like monstrosity with massive ears. It reacts to the slightest sound."
+	desc = "一种蝙蝠般的怪物, 长着巨大的耳朵. 它对最轻微的声音都有反应."
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "echofiend"
 	icon_living = "echofiend"
@@ -494,7 +494,7 @@
 // --------------------------------
 /mob/living/simple_animal/hostile/canopy_strangler
 	name = "canopy strangler"
-	desc = "A leafy, vertical vine hanging from the trees. Watch your head."
+	desc = "一条从树上垂下的多叶垂直藤蔓. 小心你的头."
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "vine_strangler_static"
 	icon_living = "vine_strangler_static"
@@ -522,8 +522,8 @@
 		H.choked_by = src
 		H.update_canmove()
 		icon_state = "vine_strangler"
-		visible_message("<span class='danger'>A loop of thick vine drops around [H]'s neck, lifting them slightly!</span>")
-		to_chat(H, "<span class='danger'>A strangling vine tightens around your neck! You can't move!</span>")
+		visible_message("<span class='danger'>一圈粗藤蔓套住了[H]的脖子, 将其微微吊起!</span>")
+		to_chat(H, "<span class='danger'>一条绞杀藤蔓勒紧了你的脖子! 你无法动弹!</span>")
 
 /mob/living/simple_animal/hostile/canopy_strangler/Life()
 	..()
@@ -571,9 +571,9 @@
 			return TRUE
 		else if (choking_mob)
 			M.setClickCooldown(20)
-			M.visible_message("<span class='warning'>[M] tries to pull [choking_mob] free from [src]!</span>", "<span class='warning'>You try to pull [choking_mob] free from [src]!</span>")
+			M.visible_message("<span class='warning'>[M]试图把[choking_mob]从[src]中拉出来!</span>", "<span class='warning'>你试图把[choking_mob]从[src]中拉出来!</span>")
 			if (prob(30))
-				visible_message("<span class='warning'>[M] successfully pulls [choking_mob] free from [src]!</span>")
+				visible_message("<span class='warning'>[M]成功地把[choking_mob]从[src]中拉了出来!</span>")
 				release_mob()
 			return TRUE
 	return ..()
@@ -583,7 +583,7 @@
 // --------------------------------
 /mob/living/simple_animal/hostile/phosphor_beetle
 	name = "phosphor beetle"
-	desc = "A glowing green beetle that moves with skittering speed."
+	desc = "一只发光的绿色甲虫, 以飞快的速度爬行."
 	icon = 'icons/mob/monsters/monsters.dmi'
 	icon_state = "glowing_beetle"
 	icon_living = "glowing_beetle"
@@ -615,7 +615,7 @@
 /mob/living/simple_animal/hostile/phosphor_beetle/proc/explode_dye(var/mob/living/human/H)
 	if (!istype(H) || H.stat == DEAD)
 		return
-	visible_message("<span class='warning'>\The [src] explodes in a splash of glowing green dye!</span>")
+	visible_message("<span class='warning'>\The [src]在一溅发光的绿色染料中爆炸了!</span>")
 	playsound(src, 'sound/effects/extinguish.ogg', 60, TRUE)
 	H.phosphor_dye_timer = 60
 	H.set_light(3, 1, "#00FF00")
@@ -627,5 +627,5 @@
 	spawn(70)
 		if (end_timer > world.time && src.stat != DEAD)
 			src.apply_damage(7, BURN, pick("chest","groin", "l_hand", "r_hand", "l_foot", "r_foot", "l_arm", "r_arm", "l_leg", "r_leg"))
-			to_chat(src, "<span class='danger'>The acid continues to burn you!</span>")
+			to_chat(src, "<span class='danger'>酸液继续灼烧着你!</span>")
 			src.acid_damage(end_timer)

@@ -2,8 +2,8 @@
 	chopping_speed = 4
 
 /obj/item/weapon/material/thrown/star
-	name = "shuriken"
-	desc = "A sharp, perfectly weighted piece of metal."
+	name = "手里剑"
+	desc = "一块锋利, 重量完美的金属片."
 	icon_state = "star"
 	throwforce = 28
 	force_divisor = 0.1 // 6 with hardness 60 (steel)
@@ -20,8 +20,8 @@
 	pixel_y = rand(-12, 12)
 
 /obj/item/weapon/material/thrown/kunai_normal
-	name = "Kunai"
-	desc = "Tool of some ninjas."
+	name = "苦无"
+	desc = "某些忍者的工具."
 	icon_state = "kunai_white"
 	throwforce = 30
 	force_divisor = 0.18 // 10? when wielded with hardness 60 (steel)
@@ -38,8 +38,8 @@
 	pixel_y = rand(-8, 8)
 
 /obj/item/weapon/material/thrown/throwing_knife
-	name = "Throwing knife"
-	desc = "A balanced knife for throwing."
+	name = "飞刀"
+	desc = "一把平衡的投掷用刀."
 	icon_state = "throwing_knife"
 	throwforce = 34
 	force_divisor = 0.30 // 15 when wielded with hardness 60 (steel)
@@ -56,8 +56,8 @@
 	pixel_y = rand(-8, 8)
 
 /obj/item/weapon/material/thrown/tomahawk
-	name = "Tomahawk"
-	desc = "An axe made to be thrown!"
+	name = "战斧"
+	desc = "一把用来投掷的斧头!"
 	icon_state = "tomahawk"
 	throwforce = 36
 	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
@@ -74,8 +74,8 @@
 	pixel_y = rand(-4, 4)
 
 /obj/item/weapon/material/thrown/throwing_axe
-	name = "Throwing axe"
-	desc = "A modern version of a tomahawk."
+	name = "投掷斧"
+	desc = "战斧的现代版本."
 	icon_state = "throwing_axe"
 	throwforce = 40
 	force_divisor = 0.30 // 15 when wielded with hardness 60 (steel)
@@ -87,8 +87,8 @@
 	w_class = ITEM_SIZE_TINY
 
 /obj/item/weapon/material/thrown/throwing_knife1
-	name = "steel throwing knife"
-	desc = "A steel throwing knife."
+	name = "钢制飞刀"
+	desc = "一把钢制飞刀."
 	icon_state = "throwingknife1"
 	throwforce = 40
 	force_divisor = 0.30 // 15 when wielded with hardness 60 (steel)

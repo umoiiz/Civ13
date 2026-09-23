@@ -1,13 +1,13 @@
 /obj/structure/closet/cabinet
-	name = "cabinet"
-	desc = "Old will forever be in fashion."
+	name = "柜子"
+	desc = "旧物永远时尚."
 	icon_state = "cabinet_closed"
 	icon_closed = "cabinet_closed"
 	icon_opened = "cabinet_open"
 
 /obj/structure/closet/cabinet/ceiling
-	name = "cabinet"
-	desc = "Old will forever be in fashion."
+	name = "柜子"
+	desc = "旧物永远时尚."
 	icon_state = "cabinet_closed_ceiling"
 	icon_closed = "cabinet_closed_ceiling"
 	icon_opened = "cabinet_open_ceiling"
@@ -15,8 +15,8 @@
 	store_mobs = FALSE
 
 /obj/structure/closet/cabinet/first_aid
-	name = "first-aid closet"
-	desc = "A wall-mounted storage unit for first-aid supplies."
+	name = "急救柜"
+	desc = "一个壁挂式储物柜,用于存放急救用品."
 	icon_state = "medical_wall"
 	icon_closed = "medical_wall"
 	icon_opened = "medical_wall_open"
@@ -30,8 +30,8 @@
 		new /obj/item/weapon/storage/firstaid/advsmall(src)
 
 /obj/structure/closet/cabinet/defibrillator
-	name = "defibrillator closet"
-	desc = "A wall-mounted storage unit for a defibrillator."
+	name = "除颤器柜"
+	desc = "一个壁挂式储物柜,用于存放除颤器."
 	icon_state = "defib_wall"
 	icon_closed = "defib_wall"
 	icon_opened = "defib_wall_open"
@@ -45,8 +45,8 @@
 		new /obj/item/weapon/defibrillator/loaded(src)
 
 /obj/structure/closet/cabinet/extinguisher_cabinet
-	name = "extinguisher cabinet"
-	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
+	name = "灭火器柜"
+	desc = "一个小型壁挂式柜子,用于存放灭火器."
 	icon_state = "extinguisher_closed"
 	icon_closed = "extinguisher_closed"
 	icon_opened = "extinguisher_empty"
@@ -68,7 +68,7 @@
 			user.remove_from_mob(O)
 			contents += O
 			has_extinguisher = O
-			to_chat(user, "<span class='notice'>You place [O] in [src].</span>")
+			to_chat(user, "<span class='notice'>你将[O]放入[src].</span>")
 			playsound(src.loc, 'sound/effects/extin.ogg', 50, 0)
 			density = FALSE
 		else
@@ -82,7 +82,7 @@
 		return
 	if(has_extinguisher)
 		user.put_in_hands(has_extinguisher)
-		to_chat(user, "<span class='notice'>You take [has_extinguisher] from [src].</span>")
+		to_chat(user, "<span class='notice'>你从[src]中取出[has_extinguisher].</span>")
 		playsound(src.loc, 'sound/effects/extout.ogg', 50, 0)
 		has_extinguisher = null
 		opened = 1
@@ -108,8 +108,8 @@
 ///////////////Hide-outs//////////////////
 
 /obj/structure/closet/hideout
-	name = "strange leaves"
-	desc = "Something looks fishy here..."
+	name = "奇怪的叶子"
+	desc = "这里有些可疑..."
 	icon = 'icons/obj/hideout.dmi'
 	icon_state = "pine_closed"
 	icon_closed = "pine_closed"
@@ -120,8 +120,8 @@
 	not_disassemblable = TRUE
 
 /obj/structure/closet/hideout/pine
-	name = "strange leaves"
-	desc = "Something looks fishy here..."
+	name = "奇怪的叶子"
+	desc = "这里有些可疑..."
 	icon = 'icons/obj/hideout.dmi'
 	icon_state = "pine_closed"
 	icon_closed = "pine_closed"
@@ -130,8 +130,8 @@
 	density = FALSE
 
 /obj/structure/closet/hideout/beach
-	name = "strange leaves"
-	desc = "Something looks fishy here..."
+	name = "奇怪的叶子"
+	desc = "这里有些可疑..."
 	icon = 'icons/obj/hideout.dmi'
 	icon_state = "beach_closed"
 	icon_closed = "beach_closed"
@@ -140,8 +140,8 @@
 	density = FALSE
 
 /obj/structure/closet/hideout/autumn
-	name = "strange leaves"
-	desc = "Something looks fishy here..."
+	name = "奇怪的叶子"
+	desc = "这里有些可疑..."
 	icon = 'icons/obj/hideout.dmi'
 	icon_state = "autumn_closed"
 	icon_closed = "autumn_closed"
@@ -157,8 +157,8 @@
 		icon_state = icon_opened
 
 /obj/structure/closet/chemical
-	name = "chemical closet"
-	desc = "Store dangerous chemicals in here."
+	name = "化学品柜"
+	desc = "在此存放危险化学品."
 	icon_state = "medical1"
 	icon_closed = "medical"
 	icon_opened = "medicalopen"

@@ -12,7 +12,7 @@
 // in __projectiles.dm
 
 /obj/item/organ/external
-	name = "external"
+	name = "外部"
 	min_broken_damage = 70
 	max_damage = 0
 	dir = SOUTH
@@ -117,7 +117,7 @@
 		if (istype(I))
 			if (!(user.l_hand && user.r_hand))
 				user.put_in_hands(I)
-		user.visible_message("<span class='danger'>\The [user] rips \the [I] out of \the [src]!</span>")
+		user.visible_message("<span class='danger'>\The [user]将\the [I]从\the [src]中扯了出来!</span>")
 		return //no eating the limb until everything's been removed
 	return ..()
 
@@ -127,19 +127,19 @@
 		for (var/obj/item/I in contents)
 			if (istype(I, /obj/item/organ))
 				continue
-			to_chat(usr, "<span class='danger'>There is \a [I] sticking out of it.</span>")
+			to_chat(usr, "<span class='danger'>上面插着\a [I].</span>")
 	return
 
 /obj/item/organ/external/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	switch(stage)
 		if (0)
 			if (istype(W,/obj/item/weapon/surgery/scalpel))
-				user.visible_message("<span class='danger'><b>[user]</b> cuts [src] open with [W]!</span>")
+				user.visible_message("<span class='danger'><b>[user]</b>用[W]切开了[src]!</span>")
 				stage++
 				return
 		if (1)
 			if (istype(W,/obj/item/weapon/surgery/retractor))
-				user.visible_message("<span class='danger'><b>[user]</b> cracks [src] open like an egg with [W]!</span>")
+				user.visible_message("<span class='danger'><b>[user]</b>用[W]像敲鸡蛋一样敲开了[src]!</span>")
 				stage++
 				return
 		if (2)
@@ -149,9 +149,9 @@
 					removing.loc = get_turf(user.loc)
 					if (!(user.l_hand && user.r_hand))
 						user.put_in_hands(removing)
-					user.visible_message("<span class='danger'><b>[user]</b> extracts [removing] from [src] with [W]!</span>")
+					user.visible_message("<span class='danger'><b>[user]</b>用[W]从[src]中取出了[removing]!</span>")
 				else
-					user.visible_message("<span class='danger'><b>[user]</b> fishes around fruitlessly in [src] with [W].</span>")
+					user.visible_message("<span class='danger'><b>[user]</b>用[W]在[src]里徒劳地摸索.</span>")
 				return
 	..()
 
@@ -620,7 +620,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if (germ_level >= INFECTION_LEVEL_THREE && antibiotics < 30)	//overdosing is necessary to stop severe infections
 		if (!(status & ORGAN_DEAD))
 			status |= ORGAN_DEAD
-			to_chat(owner, "<span class='notice'>You can't feel your [name] anymore...</span>")
+			to_chat(owner, "<span class='notice'>你再也感觉不到你的[name]了...</span>")
 			owner.update_body(1)
 
 		germ_level+=0.5
@@ -772,14 +772,14 @@ Note that amputating the affected organ does in fact remove the infection from t
 			if (!clean)
 				var/gore_sound = "ripping tendons and flesh"
 				owner.visible_message(
-					"<span class='danger'>\The [owner]'s [name] flies off in an arc!</span>",\
+					"<span class='danger'>\The [owner]的[name]呈弧线飞了出去!</span>",\
 					"<span class='moderate'><b>Your [name] goes flying off!</b></span>",\
 					"<span class='danger'>You hear a terrible sound of [gore_sound].</span>")
 			playsound(owner, 'sound/effects/gore/severed.ogg', 100, FALSE) // Play the sound whether or not it's being amputated cleanly. Because I ilke that sound.
 		if (DROPLIMB_BURN)
 			var/gore = " of burning flesh"
 			owner.visible_message(
-				"<span class='danger'>\The [owner]'s [name] flashes away into ashes!</span>",\
+				"<span class='danger'>\The [owner]的[name]一闪化为灰烬!</span>",\
 				"<span class='moderate'><b>Your [name] flashes away into ashes!</b></span>",\
 				"<span class='danger'>You hear a crackling sound[gore].</span>")
 		if (DROPLIMB_BLUNT)
@@ -787,7 +787,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				var/gore = " in a shower of gore"
 				var/gore_sound = "sickening splatter of gore"
 				owner.visible_message(
-					"<span class='danger'>\The [owner]'s [name] explodes[gore]!</span>",\
+					"<span class='danger'>\The [owner]的[name]爆炸了[gore]!</span>",\
 					"<span class='moderate'><b>Your [name] explodes[gore]!</b></span>",\
 					"<span class='danger'>You hear the [gore_sound].</span>")
 				playsound(owner, "chop", 100 , FALSE) //Splat.
@@ -1003,7 +1003,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if (supplied_message)
 			owner.visible_message("<span class='danger'>[supplied_message]</span>")
 		else
-			owner.visible_message("<span class='danger'>\The [W] sticks in the wound!</span>")
+			owner.visible_message("<span class='danger'>\The [W]卡在了伤口里!</span>")
 	implants += W
 	owner.embedded_flag = TRUE
 	owner.verbs += /mob/proc/yank_out_object
@@ -1116,7 +1116,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 ****************************************************/
 
 /obj/item/organ/external/chest
-	name = "upper body"
+	name = "上半身"
 	limb_name = "chest"
 	icon_name = "torso"
 	min_broken_damage = 55
@@ -1135,7 +1135,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	encased = "ribcage"
 
 /obj/item/organ/external/groin
-	name = "lower body"
+	name = "下半身"
 	limb_name = "groin"
 	icon_name = "groin"
 	min_broken_damage = 55
@@ -1154,7 +1154,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/arm
 	limb_name = "l_arm"
-	name = "left arm"
+	name = "左臂"
 	icon_name = "l_arm"
 	min_broken_damage = 40
 	max_damage = 60
@@ -1169,7 +1169,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/arm/right
 	limb_name = "r_arm"
-	name = "right arm"
+	name = "右臂"
 	icon_name = "r_arm"
 	body_part = ARM_RIGHT
 	joint = "right elbow"
@@ -1177,7 +1177,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/leg
 	limb_name = "l_leg"
-	name = "left leg"
+	name = "左腿"
 	icon_name = "l_leg"
 	min_broken_damage = 40
 	max_damage = 70
@@ -1192,7 +1192,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/leg/right
 	limb_name = "r_leg"
-	name = "right leg"
+	name = "右腿"
 	icon_name = "r_leg"
 	body_part = LEG_RIGHT
 	icon_position = RIGHT
@@ -1201,7 +1201,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/foot
 	limb_name = "l_foot"
-	name = "left foot"
+	name = "左脚"
 	icon_name = "l_foot"
 	min_broken_damage = 35
 	max_damage = 65
@@ -1220,7 +1220,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/foot/right
 	limb_name = "r_foot"
-	name = "right foot"
+	name = "右脚"
 	icon_name = "r_foot"
 	body_part = FOOT_RIGHT
 	icon_position = RIGHT
@@ -1230,7 +1230,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/hand
 	limb_name = "l_hand"
-	name = "left hand"
+	name = "左手"
 	icon_name = "l_hand"
 	min_broken_damage = 35
 	max_damage = 60
@@ -1249,7 +1249,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 /obj/item/organ/external/hand/right
 	limb_name = "r_hand"
-	name = "right hand"
+	name = "右手"
 	icon_name = "r_hand"
 	body_part = HAND_RIGHT
 	parent_organ = "r_arm"
@@ -1259,7 +1259,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/head
 	limb_name = "head"
 	icon_name = "head"
-	name = "head"
+	name = "头部"
 	min_broken_damage = 40
 	max_damage = 60
 	w_class = ITEM_SIZE_NORMAL
@@ -1345,12 +1345,12 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 
 /obj/item/stack/teeth
-	name = "teeth"
+	name = "牙齿"
 	singular_name = "tooth"
 	w_class = ITEM_SIZE_TINY
 	throwforce = 2
 	max_amount = 32
-	desc = "Welp. Someone had their teeth knocked out."
+	desc = "唉,有人被打掉了牙齿."
 	icon = 'icons/mob/surgery.dmi'
 	icon_state = "tooth"
 
@@ -1359,11 +1359,11 @@ Note that amputating the affected organ does in fact remove the infection from t
 	icon_state = "tooth"
 
 /obj/item/stack/teeth/human
-	name = "human teeth"
+	name = "人类牙齿"
 	singular_name = "human tooth"
 
 /obj/item/stack/teeth/generic //Used for species without unique teeth defined yet
-	name = "teeth"
+	name = "牙齿"
 
 
 /obj/item/organ/external/proc/sever_artery()

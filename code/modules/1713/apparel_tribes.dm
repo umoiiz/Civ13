@@ -17,23 +17,23 @@ All eras are accepted, preferably store them in relevant sections with appropria
 /* - 1. Stone Age Tribes & Content (Wolfmen, Gorillas, Ants, Lizards)*/
 
 /obj/item/clothing/mask/chitinmask
-	name = "chitin mask"
-	desc = "A mask made from insect chitin."
+	name = "甲壳面具"
+	desc = "一个由昆虫甲壳制成的面具."
 	icon_state = "chitin_mask"
 	item_state = "chitin_mask"
 	body_parts_covered = FACE|EYES
 	armor = list(melee = 19, arrow = 9, gun = 0, energy = 0, bomb = 12, bio = 0, rad = FALSE)
 
 /obj/item/clothing/head/helmet/chitin // name and description fixed & tidied up.
-	name = "chitin helmet"
-	desc = "A helmet made from insect chitin."
+	name = "甲壳头盔"
+	desc = "一个由昆虫甲壳制成的头盔."
 	icon_state = "chitin_helmet"
 	item_state = "chitin_helmet"
 	armor = list(melee = 30, arrow = 19, gun = 12, energy = 18, bomb = 18, bio = 19, rad = FALSE)
 
 /obj/item/clothing/suit/armor/chitin
-	name = "chitin chestplate"
-	desc = "A chitin chestplate, specially crafted from insects."
+	name = "甲壳胸甲"
+	desc = "一个甲壳胸甲,由昆虫特别制作而成."
 	icon_state = "chitin_armor"
 	item_state = "chitin_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -47,8 +47,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	/* - 3a. Sauron & Orc Cultural Clothes*/
 
 /obj/item/clothing/head/helmet/sauronhelm
-	name = "sauron's helmet"
-	desc = "The helmet to the armor of sauron"
+	name = "索伦的头盔"
+	desc = "索伦盔甲的头盔"
 	icon_state = "sauronhelmet"
 	item_state = "sauronhelmet"
 	body_parts_covered = HEAD|FACE|EYES
@@ -58,8 +58,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 90
 
 /obj/item/clothing/suit/armor/sauronarmor
-	name = "sauron's armor"
-	desc = "The armor of sauron"
+	name = "索伦的盔甲"
+	desc = "索伦的盔甲"
 	icon_state = "sauronarmor"
 	item_state = "sauronarmor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -69,8 +69,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 90
 
 /obj/item/clothing/suit/armor/darkplate
-	name = "plated armor"
-	desc = "A cheap dark iron armor."
+	name = "板甲"
+	desc = "一件廉价的暗铁盔甲."
 	icon_state = "ork_plate_elite"
 	item_state = "ork_plate_elite"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -80,8 +80,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 60
 
 /obj/item/clothing/suit/armor/darkplateelite
-	name = "plated armor"
-	desc = "A cheap dark iron armor."
+	name = "板甲"
+	desc = "一件廉价的暗铁盔甲."
 	icon_state = "ork_plate_commander"
 	item_state = "ork_plate_commander"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -91,8 +91,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 60
 
 /obj/item/clothing/head/helmet/orc_beserker
-	name = "orc beserker helm"
-	desc = "Orc make good helmet!"
+	name = "兽人狂战士头盔"
+	desc = "兽人做好头盔!"
 	icon_state = "beserkerhelmet"
 	item_state = "beserkerhelmet"
 	body_parts_covered = HEAD|FACE|EYES
@@ -100,8 +100,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 70, arrow = 80, gun = FALSE, energy = FALSE, bomb = 50, bio = 20, rad = 10)
 
 /obj/item/clothing/head/helmet/eliteorc
-	name = "iron helmet"
-	desc = "A helmet with front plate, made of dark iron."
+	name = "铁头盔"
+	desc = "一顶带有前板的头盔,由暗铁制成."
 	icon_state = "ork_elite_helmet_2"
 	item_state = "ork_elite_helmet_2"
 	body_parts_covered = HEAD|FACE|EYES
@@ -109,8 +109,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 80, arrow = 90, gun = FALSE, energy = FALSE, bomb = 50, bio = 20, rad = 10)
 
 /obj/item/clothing/head/helmet/eliteorc2
-	name = "iron helmet"
-	desc = "A helmet made of dark iron."
+	name = "铁头盔"
+	desc = "一顶由暗铁制成的头盔."
 	icon_state = "ork_elite_helmet"
 	item_state = "ork_elite_helmet"
 	body_parts_covered = HEAD
@@ -118,8 +118,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 70, arrow = 70, gun = FALSE, energy = FALSE, bomb = 50, bio = 20, rad = 10)
 
 /obj/item/clothing/head/helmet/orc_spearman
-	name = "orc spearman helm"
-	desc = "Orc make good helmet!"
+	name = "兽人矛兵头盔"
+	desc = "兽人做好头盔!"
 	icon_state = "spearmanhelmet"
 	item_state = "spearmanhelmet"
 	body_parts_covered = HEAD|FACE|EYES
@@ -127,8 +127,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 55, arrow = 45, gun = 10, energy = 15, bomb = 60, bio = 30, rad = FALSE)
 
 /obj/item/clothing/head/helmet/orc_captain
-	name = "orc captain helm"
-	desc = "Orc make good helmet!"
+	name = "兽人队长头盔"
+	desc = "兽人做好头盔!"
 	icon_state = "captainhelmet"
 	item_state = "captainhelmet"
 	body_parts_covered = HEAD|FACE|EYES
@@ -136,8 +136,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 55, arrow = 45, gun = 10, energy = 15, bomb = 60, bio = 30, rad = FALSE)
 
 /obj/item/clothing/head/helmet/orc_grunt
-	name = "orc grunt helm"
-	desc = "Orc make good helmet!"
+	name = "兽人步兵头盔"
+	desc = "兽人做好头盔!"
 	icon_state = "grunthelmet"
 	item_state = "grunthelmet"
 	body_parts_covered = HEAD|FACE
@@ -145,8 +145,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 50, arrow = 40, gun = 5, energy = 15, bomb = 50, bio = 20, rad = FALSE)
 
 /obj/item/clothing/suit/armor/ork_urukhai
-	name = "orc urukhai armor"
-	desc = "Orc make good armor!"
+	name = "兽人强兽人盔甲"
+	desc = "兽人做好盔甲!"
 	icon_state = "urukhai_armor"
 	item_state = "urukhai_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -156,8 +156,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 50
 
 /obj/item/clothing/suit/armor/ork_whitehand
-	name = "orc whitehand armor"
-	desc = "Orc make good armor!"
+	name = "兽人白手盔甲"
+	desc = "兽人做好盔甲!"
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "whitehand_armor"
 	item_state = "whitehand_armor"
@@ -168,8 +168,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 50
 
 /obj/item/clothing/suit/armor/ork_grunt
-	name = "orc grunt armor"
-	desc = "Orc make good armor!"
+	name = "兽人步兵盔甲"
+	desc = "兽人做好盔甲!"
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "grunt_armor"
 	item_state = "grunt_armor"
@@ -180,8 +180,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 50
 
 /obj/item/clothing/shoes/orc
-	name = "orcish sabatons"
-	desc = "A pair of orc plated armored boots."
+	name = "兽人铁靴"
+	desc = "一双兽人板甲靴."
 	icon_state = "ork_warrior"
 	item_state = "ork_warrior"
 	body_parts_covered = FEET
@@ -193,8 +193,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	health = 35
 
 /obj/item/clothing/gloves/gauntlets/orc
-	name = "orcish gauntlets"
-	desc = "A pair of orcish armored gauntlets."
+	name = "兽人护手"
+	desc = "一双兽人盔甲护手."
 	icon_state = "ork_gauntlet"
 	item_state = "ork_gauntlet"
 	body_parts_covered = HANDS
@@ -208,8 +208,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	/* - 3b. Other Orc Clothes & Accessories*/
 
 /obj/item/clothing/mask/bossjaw
-	name = "'rite nasty boss jawpiece"
-	desc = "A chunk of crude metal crafted into the shape of a orcish jaw, cements status amongst brutes making them appear larger."
+	name = "兽人凶恶老大颚饰"
+	desc = "一块粗制金属,被塑造成兽人下颚的形状,在蛮兵中巩固地位,使他们显得更大."
 	icon_state = "bossjaw"
 	item_state = "bossjaw"
 	body_parts_covered = FACE
@@ -219,31 +219,31 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	armor = list(melee = 15, arrow = 5, gun = FALSE, energy = 15, bomb = 30, bio = 20, rad = FALSE)
 
 /obj/item/clothing/shoes/fur/orc
-	name = "orc fur boots"
-	desc = "Dense fur boots made from orc skin."
+	name = "兽人毛皮靴"
+	desc = "由兽人皮制成的厚实毛皮靴."
 	icon_state = "fur6"
 	item_state = "fur6"
 	specific = TRUE //uses new() from within apparel_ancient.dm
 
 /obj/item/clothing/suit/storage/coat/fur/orc
-	name = "orc fur coat"
-	desc = "A thick dark green fur coat, made from disgusting orc pelts."
+	name = "兽人毛皮外套"
+	desc = "一件厚实的深绿色毛皮外套,由恶心的兽人毛皮制成."
 	icon_state = "fur_jacket6"
 	item_state = "fur_jacket6"
 	specific = TRUE
 	colorn = 6
 
 /obj/item/clothing/gloves/thick/leather/orc //inherits from gloves/miscellanous.dm
-	desc = "These fur gloves are cold and fire-resistant, made from orc skin."
-	name = "orc fur gloves"
+	desc = "这些毛皮手套寒冷且防火,由兽人皮制成."
+	name = "兽人毛皮手套"
 	icon_state = "orcfur"
 	item_state = "orcfur"
 
 	/* - 3c. Orc Weapons*/
 
 /obj/item/weapon/material/sword/urukhaiscimitar
-	name = "uruk-hai scimitar"
-	desc = "A broad sword with a curved tip."
+	name = "强兽人弯刀"
+	desc = "一把带有弯曲刀尖的阔剑."
 	icon_state = "urukhaiscimitar"
 	item_state = "urukhaiscimitar"
 	throw_speed = 2
@@ -270,8 +270,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	heat_protection = HEAD
 
 /obj/item/clothing/under/lizardpants
-	name = "shirtless lizard pants"
-	desc = "A tight fitting pair of lizard scale pants. When you're this on-point; wearing a shirt would just cramp your style."
+	name = "无上衣蜥蜴裤"
+	desc = "一条紧身的蜥蜴鳞片裤.当你如此出众时;穿衬衫只会束缚你的风格."
 	icon_state = "lizard_pants"
 	item_state = "lizard_pants"
 	body_parts_covered = LOWER_TORSO|LEGS
@@ -289,8 +289,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 	item_state = "lizard_cowboy"
 
 /obj/item/clothing/shoes/lizard_ankleboots 	//same as lizard cowboy
-	name = "lizard scale ankle boots"
-	desc = "Classy lizard scale ankle-length boots, a certain statement for fashion."
+	name = "蜥蜴鳞片短靴"
+	desc = "优雅的蜥蜴鳞片及踝靴,一种时尚宣言."
 	icon_state = "lizard_ankleboots"
 	item_state = "lizard_ankleboots"
 	force = WEAPON_FORCE_WEAK
@@ -328,8 +328,8 @@ All eras are accepted, preferably store them in relevant sections with appropria
 /*Lizard objects -END*/
 
 /obj/item/clothing/head/mystic
-	name = "mystic hood"
-	desc = "A ominous cream hood, it conceals the face almost fully."
+	name = "神秘兜帽"
+	desc = "一件不祥的奶油色兜帽,几乎完全遮住了面部."
 	icon_state = "mystic"
 	item_state = "mystic"
 
@@ -448,15 +448,15 @@ wip pending sprites
 /* Grimdark Future Fantasy Clothes */
 
 /obj/item/clothing/suit/storage/jacket/imperial/commissar
-	name = "commissar jacket"
-	desc = "A red jacket belonging to overzealous leaders of large squadrons of infantry. The authority this grants means rejecting orders will by no means be acceptable..."
+	name = "政委夹克"
+	desc = "一件红色夹克,属于狂热的大型步兵中队领袖.这赋予的权威意味着拒绝命令是绝对不可接受的..."
 	icon_state = "commissar"
 	icon_state = "commissar"
 	icon_state = "commissar"
 
 /obj/item/clothing/suit/armor/imperial/arbites
-	name = "arbites armor"
-	desc = "A thick, authoritive red armor with reinforced steel leggings and shoulder plates, covering most of the body. Futile attempts to assault arbite enforcers of the law find that rebellion is fruitless."
+	name = "仲裁庭护甲"
+	desc = "一件厚重、威严的红色护甲,配有加固的钢制护腿和肩甲,覆盖了身体的大部分.试图袭击仲裁庭执法者的徒劳尝试会发现反抗是毫无结果的."
 	icon_state = "arbit"
 	item_state = "arbit"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -466,43 +466,43 @@ wip pending sprites
 	health = 60
 
 /obj/item/clothing/suit/storage/jacket/inquisition
-	name = "inquisitorial jacket"
-	desc = "A black jacket with red arm stripes belonging to expert investigators of intrigue and heresy. By all means nessecary..."
+	name = "审判官夹克"
+	desc = "一件带有红色臂章的黑色夹克,属于专精于调查阴谋与异端的专家调查员.不惜一切代价..."
 	icon_state = "commissar"
 	icon_state = "commissar"
 	icon_state = "commissar"
 
 /obj/item/clothing/suit/storage/jacket/inquisition/alt
-	name = "inquisitorial light jacket"
-	desc = "A black light jacket belonging to expert investigators of intrigue and heresy. By all means nessecary..."
+	name = "审判官轻便夹克"
+	desc = "一件黑色轻便夹克,属于专精于调查阴谋与异端的专家调查员.不惜一切代价..."
 	icon_state = "inquistor_alt"
 	icon_state = "inquistor_alt"
 	icon_state = "inquistor_alt"
 
 /obj/item/clothing/suit/storage/jacket/inquisition/alt/hood
-	name = "inquisitorial jacket"
+	name = "审判官夹克"
 	icon_state = "inqcape_alt"
 	icon_state = "inqcape_alt"
 	icon_state = "inqcape_alt"
 	flags_inv = BLOCKHAIR|HIDEFACE
 
 /obj/item/clothing/suit/storage/jacket/elf/warlock
-	name = "elven warlock robe"
-	desc = "A long robe worn by mystic leaders of the elven race."
+	name = "精灵术士长袍"
+	desc = "一件由精灵种族的神秘领袖穿着的长袍."
 	icon_state = "elf_warlock"
 	icon_state = "elf_warlock"
 	icon_state = "elf_warlock"
 
 /obj/item/clothing/suit/storage/jacket/elf/harlequin
-	name = "elven harlequin jacket"
-	desc = "A flamboyant jacket worn by roaming troupes of deadly elven assassins with theatrical motifs."
+	name = "精灵丑角夹克"
+	desc = "一件华丽花哨的夹克,由带有戏剧主题的致命精灵刺客巡回剧团穿着."
 	icon_state = "elf_harlequin"
 	icon_state = "elf_harlequin"
 	icon_state = "elf_harlequin"
 
 /obj/item/clothing/mask/elf/solitaire
-	name = "solitaire masque"
-	desc = "A hauntingly chiselled and androgynous mask. Often worn by elite elven assassins who only work alone."
+	name = "独行者面具"
+	desc = "一副令人难忘的轮廓分明、雌雄莫辨的面具.常由只单独行动的精英精灵刺客佩戴."
 	icon_state = "solitaire"
 	item_state = "solitaire"
 	flags_inv = HIDEFACE

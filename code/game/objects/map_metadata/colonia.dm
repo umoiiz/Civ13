@@ -54,7 +54,7 @@
 /obj/map_metadata/colonia/seasons()
 	if (season == "FALL")
 		season = "WINTER"
-		to_chat(world, "<big>The <b>Winter</b> has started. In the hot climates, the wet season has started.</big>")
+		to_chat(world, "<big><b>冬季</b>已经开始. 在炎热气候中, 雨季已经开始.</big>")
 		change_weather_somehow()
 		spawn(1200)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -112,7 +112,7 @@
 
 	else if (season == "SPRING")
 		season = "SUMMER"
-		to_chat(world, "<big>The <b>Summer</b> has started. In the hot climates, the dry season has started.</big>")
+		to_chat(world, "<big><b>夏季</b>已经开始. 在炎热气候中, 旱季已经开始.</big>")
 		change_weather_somehow()
 		spawn(300)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
@@ -144,7 +144,7 @@
 			WT.ChangeTurf(/turf/floor/dirt)
 	else if (season == "WINTER")
 		season = "SPRING"
-		to_chat(world, "<big>The weather is getting warmer. It is now <b>Spring</b>. In the hot climates, the wet season continues.</big>")
+		to_chat(world, "<big>天气正在变暖. 现在是<b>春季</b>. 在炎热气候中, 雨季仍在持续.</big>")
 		spawn(900)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
 				TREES.change_season()
@@ -210,7 +210,7 @@
 					qdel(SW3)
 	else if (season == "SUMMER")
 		season = "FALL"
-		to_chat(world, "<big>The leaves start to fall and the weather gets colder. It is now <b>Fall</b>. In the hot climates, the dry season continues.</big>")
+		to_chat(world, "<big>树叶开始飘落, 天气变得更冷. 现在是<b>秋季</b>. 在炎热气候中, 旱季仍在持续.</big>")
 		spawn(900)
 			for (var/obj/structure/wild/tree/live_tree/TREES in world)
 				TREES.change_season()
@@ -284,11 +284,11 @@
 					var/turf/spawn_loc = pick(invasion_routes)
 					new /mob/living/simple_animal/hostile/human/barbarian(spawn_loc)
 			if (LOCAL_TRIBES_RELATIONS <= 25 && BARBARIAN_RELATIONS <= 25)
-				to_chat(world, "<br><font size =3><span class='danger'>The barbarians are launching an attack on the colony, and the local tribes have joined in!</font></span>")
+				to_chat(world, "<br><font size =3><span class='danger'>蛮族正在对殖民地发动攻击, 当地部落也加入了他们!</font></span>")
 			else
-				to_chat(world, "<br><font size =3><span class='danger'>The barbarians are launching an attack on the colony!</font></span>")
+				to_chat(world, "<br><font size =3><span class='danger'>蛮族正在对殖民地发动攻击!</font></span>")
 		if (ROMAN_RELATIONS <= 25 && playercount >= 10)
-			to_chat(world, "<br><font size =3><span class='danger'>The Roman Empire is invading the colony!</font></span>")
+			to_chat(world, "<br><font size =3><span class='danger'>罗马帝国正在入侵殖民地!</font></span>")
 			var/list/turf/invasion_routes = latejoin_turfs["InvasionRouteRoman"]
 			var/list/turf/city_centers = latejoin_turfs["CityCenter"]
 			var/turf/city_center = null
@@ -312,10 +312,10 @@
 			external_relations.npc_faction_relations[relation] = 100
 		else if (external_relations.npc_faction_relations[relation] < 0)
 			external_relations.npc_faction_relations[relation] = 0
-	to_chat(world, "<font size = 4><span class = 'notice'><b>Diplomatic Relations:</b></font></span>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Germanic Barbarians: <b>[BARBARIAN_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Roman Empire: <b>[ROMAN_RELATIONS]</b></span></font>")
-	to_chat(world, "<br><font size = 3><span class = 'notice'>Local Tribes: <b>[LOCAL_TRIBES_RELATIONS]</b></span></font>")
+	to_chat(world, "<font size = 4><span class = 'notice'><b>外交关系:</b></font></span>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>日耳曼蛮族: <b>[BARBARIAN_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>罗马帝国: <b>[ROMAN_RELATIONS]</b></span></font>")
+	to_chat(world, "<br><font size = 3><span class = 'notice'>当地部落: <b>[LOCAL_TRIBES_RELATIONS]</b></span></font>")
 	spawn(5 MINUTES)
 		check_relations_msg()
 	return
@@ -338,9 +338,9 @@
 	if(quarter >=5)
 		quarter = 1
 		year++
-		to_chat(world, "<font size = 3><span class = 'notice'><b>The year has advanced to [year].</b></font></span>")
+		to_chat(world, "<font size = 3><span class = 'notice'><b>年份已推进至 [year].</b></font></span>")
 	else
-		to_chat(world, "<font size = 3><span class = 'notice'><b>The quarter has advanced to Q[quarter].</b></font></span>")
+		to_chat(world, "<font size = 3><span class = 'notice'><b>季度已推进至第[quarter]季度.</b></font></span>")
 	return
 
 /obj/map_metadata/colonia/proc/time_update()
@@ -353,8 +353,8 @@
 	return
 
 /obj/structure/pepelsibirsk_radio/supply_radio/colonia //we've come full circle
-	name = "import book"
-	desc = "Use this to request supplies to be delivered to the colony."
+	name = "进口簿"
+	desc = "使用此物请求向殖民地运送补给."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook"
 	civ_catalogue = list(
@@ -402,18 +402,18 @@
 
 /obj/structure/pepelsibirsk_radio/supply_radio/colonia/attackby(var/obj/item/stack/W as obj, var/mob/living/human/user as mob)
 	if (!istype(W, /obj/item/stack/money/))
-		to_chat(user, "You need to use real money.")
+		to_chat(user, "你需要使用真钱.")
 		return
 	if (!W.amount || W.value <= 0)
-		to_chat(user, "This money has no value.")
+		to_chat(user, "这些钱毫无价值.")
 		return
 	money += W.value * W.amount
-	to_chat(user, "You add [W.value * W.amount] to the account.")
+	to_chat(user, "你向账户添加了[W.value * W.amount]。")
 	qdel(W)
 
 /obj/structure/pepelsibirsk_radio/supply_radio/colonia/no_scam
-	name = "secure import book"
-	desc = "A high-security import book, for everyday use. Use this to request supplies to be delivered to the colony."
+	name = "安全进口簿"
+	desc = "一本高安全级别的进口簿,供日常使用。用它来请求将补给品运送到殖民地。"
 	can_scam = FALSE
 
 
@@ -450,12 +450,12 @@
 	if (choice == "Roman Empire")
 		catalogue = civ_catalogue
 		if (ROMAN_RELATIONS <= 25 )
-			to_chat(user, "Your relations with this faction are too low!")
+			to_chat(user, "你与该派系的关系太低了!")
 			return
 	else if (choice == "Local Tribes")
 		catalogue = mil_catalogue
 		if (LOCAL_TRIBES_RELATIONS <= 25 )
-			to_chat(user, "Your relations with this faction are too low!")
+			to_chat(user, "你与该派系的关系太低了!")
 			return
 	purchase(user, choice, catalogue)
 	return
@@ -543,11 +543,11 @@
 					if (NM.amount <= 0)
 						qdel(NM)
 				money = 0
-				to_chat(user, "You don't have enough money for this item.")
+				to_chat(user, "你没有足够的钱购买此物品。")
 			break
 /obj/structure/pepelsibirsk_radio/export_radio/colonia
-	name = "export book"
-	desc = "Use this to export resources to the Romans."
+	name = "出口簿"
+	desc = "用它来向罗马人出口资源。"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook2"
 	density = TRUE
@@ -557,7 +557,7 @@
 
 /obj/structure/pepelsibirsk_radio/export_radio/colonia/attackby(var/obj/item/W as obj, var/mob/living/human/user as mob)
 	if (W.value == 0)
-		to_chat(user, "There is no demand for this item.")
+		to_chat(user, "此物品没有需求。")
 		return
 	else
 		if (ROMAN_RELATIONS >= 25)
@@ -575,7 +575,7 @@
 				marketval = 0
 				return
 		else
-			to_chat(user, "Your relations with the Romans are too low!")
+			to_chat(user, "你与罗马人的关系太低了!")
 			return
 
 /obj/structure/pepelsibirsk_radio/supply_radio/colonia/update_cost(final_list, final_cost, choice, user, scam)
@@ -590,9 +590,9 @@
 		LOCAL_TRIBES_RELATIONS -= final_cost*0.08
 		ROMAN_RELATIONS += final_cost*0.005 //The Romans like it when you scam their rivals
 	if (scam != "Yes, scam them!")
-		to_chat(user, "Your item will arrive in 60 seconds. Relations with [choice] have increased by [final_cost*0.02].")
+		to_chat(user, "你的物品将在60秒后到达。与[choice]的关系增加了[final_cost*0.02]。")
 	else if (scam == "Yes, scam them!")
-		to_chat(user, "Your item will arrive in 60 seconds. Relations with [choice] have decreased by [final_cost*0.08].")
+		to_chat(user, "你的物品将在60秒后到达。与[choice]的关系减少了[final_cost*0.08]。")
 	spawn(1 MINUTE)
 		if(!src)
 			return
@@ -605,12 +605,12 @@
 		spawnpoint = pick(turfs)
 		var/tpath = final_list[2]
 		new tpath(get_turf(spawnpoint))
-		to_chat(user, "Your [final_list[1]] has arrived.")
+		to_chat(user, "你的[final_list[1]]已到达。")
 	return
 
 /obj/structure/pepelsibirsk_radio/tribute_bag
-	name = "tribute bag"
-	desc = "Use this to bribe other factions into liking you."
+	name = "贡品袋"
+	desc = "用它来贿赂其他派系,让他们喜欢你。"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "moneybag"
 	density = TRUE
@@ -624,7 +624,7 @@
 	if (!istype(W, /obj/item/stack/money))
 		return ..()
 	if (W.value == 0)
-		to_chat(user, "There is no demand for this item.")
+		to_chat(user, "此物品没有需求。")
 		return
 	else
 		var/tributeChoice = WWinput(user, "Pay tribute to which faction?", "Paying tribute", "Cancel", list("Cancel", "Germanic Barbarians", "Roman Empire", "Local Tribes"))
@@ -635,12 +635,12 @@
 			return
 		else if (tributeChoice == "Germanic Barbarians")
 			BARBARIAN_RELATIONS += tribute_value*0.1
-			to_chat(user, "You have paid tribute to the Germanic Barbarians. Relations have increased by [tribute_value*0.1].")
+			to_chat(user, "你已向日耳曼蛮族进贡。关系增加了[tribute_value*0.1]。")
 		else if (tributeChoice == "Roman Empire")
 			ROMAN_RELATIONS += tribute_value*0.1
-			to_chat(user, "You have paid tribute to the Roman Empire. Relations have increased by [tribute_value*0.1].")
+			to_chat(user, "你已向罗马帝国进贡。关系增加了[tribute_value*0.1]。")
 		else if (tributeChoice == "Local Tribes")
 			LOCAL_TRIBES_RELATIONS += tribute_value*0.1
-			to_chat(user, "You have paid tribute to the Local Tribes. Relations have increased by [tribute_value*0.1].")
+			to_chat(user, "你已向当地部落进贡。关系增加了[tribute_value*0.1]。")
 		if (W)
 			qdel(W)

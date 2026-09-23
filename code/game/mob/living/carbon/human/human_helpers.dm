@@ -20,7 +20,7 @@
 		return TRUE
 	if (feedback)
 		if (status[1] == HUMAN_EATING_NO_MOUTH)
-			to_chat(src, "Where do you intend to put \the [food]? You don't have a mouth!")
+			to_chat(src, "你打算把\the [food]放在哪里?你没有嘴!")
 		else if (status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			to_chat(src, SPAN_WARNING("\The [status[2]] is in the way!"))
 	return FALSE
@@ -31,7 +31,7 @@
 		return TRUE
 	if (feedback)
 		if (status[1] == HUMAN_EATING_NO_MOUTH)
-			to_chat(feeder, "Where do you intend to put \the [food]? \The [src] doesn't have a mouth!")
+			to_chat(feeder, "你打算把\the [food]放在哪里?\The [src]没有嘴!")
 		else if (status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			feeder << SPAN_WARNING("\The [status[2]] is in the way!")
 	return FALSE
@@ -143,7 +143,7 @@
 		to_chat(usr, SPAN_RED("You aren't asleep that deeply, just wait."))
 		return
 	if (inducedSSD && WWinput(src, "Are you sure you want to wake up? This will take 30 seconds.", "Wake Up", "Yes", list("Yes","No")) == "Yes")
-		to_chat(usr, "You will wake up in 30 seconds.")
+		to_chat(usr, "你将在30秒后醒来.")
 		spawn(300)
 			usr.forceMove(locate(lastx,lasty,lastz))
 			usr.sleeping = 0 //Short nap
@@ -185,10 +185,10 @@
 			switch(radiation)
 				if(RAD_LEVEL_NORMAL to RAD_LEVEL_MODERATE) //0.15 Gy, equal to 1 year smoking 1 1/2 packs of cigarettes a day. Avg dose for Chernobyl recovery workers
 					if (prob(0.5))
-						to_chat(src, "You feel slightly nauseous.")
+						to_chat(src, "你感到有点恶心.")
 				if(RAD_LEVEL_MODERATE to RAD_LEVEL_HIGH)//Gives radiation poisoning (passing out, twitches, severe erytrema)
 					if (prob(1))
-						to_chat(src, "You feel nauseous.")
+						to_chat(src, "你感到恶心.")
 					if (prob(0.5))
 						emote("twitch")
 					if (prob(0.5))
@@ -197,7 +197,7 @@
 						sleeping  = 6
 				if(RAD_LEVEL_HIGH to RAD_LEVEL_VERY_HIGH) //Gives mild radiation poisoning symptoms (vomiting, erytrema)
 					if (prob(2))
-						to_chat(src, "You feel very nauseous.")
+						to_chat(src, "你感到非常恶心.")
 					if (prob(1.5))
 						emote("twitch")
 					if (prob(0.5))

@@ -9,60 +9,60 @@
 /* Industrial Headpieces*/
 
 /obj/item/clothing/head/bowler_hat
-	name = "bowler hat"
-	desc = "A round bowler hat."
+	name = "圆顶硬礼帽"
+	desc = "一顶圆形圆顶硬礼帽."
 	icon_state = "bowler_hat"
 	item_state = "bowler_hat"
 
 /obj/item/clothing/head/cowboyhat
-	name = "cowboy hat"
-	desc = "A curved leather hat."
+	name = "牛仔帽"
+	desc = "一顶弯曲的皮帽."
 	icon_state = "cowboy"
 	item_state = "cowboy"
 	heat_protection = HEAD
 
 /obj/item/clothing/head/cowboyhat2
-	name = "dark cowboy hat"
-	desc = "A grayish, curved leather hat."
+	name = "深色牛仔帽"
+	desc = "一顶灰色的弯曲皮帽."
 	icon_state = "cowboy2"
 	item_state = "cowboy2"
 	heat_protection = HEAD
 
 /obj/item/clothing/head/vaquerohat
-	name = "vaquero hat"
-	desc = "A wide brimmed hat with a feather in the top, favored by mexican cowboys. The wide brim helps keep the sun off the wearer's face."
+	name = "牧人帽"
+	desc = "一顶宽檐帽,顶部插着一根羽毛,深受墨西哥牛仔喜爱.宽帽檐有助于为佩戴者遮挡阳光."
 	icon_state = "vaquerohat"
 	item_state = "vaquerohat"
 	heat_protection = HEAD|EYES
 
 /obj/item/clothing/head/bandit
-	name = "bandit hat"
-	desc = "A dark and long brimmed cowboy hat with a grim presence. Despite the dark colors, it helps keep the sun off the wearer's face."
+	name = "强盗帽"
+	desc = "一顶深色长檐牛仔帽,带有阴森的气质.尽管颜色深暗,它仍有助于为佩戴者遮挡阳光."
 	icon_state = "bandit"
 	item_state = "bandit"
 	heat_protection = HEAD|EYES
 
 /obj/item/clothing/head/unionhat
-	name = "dark union hat"
-	desc = "A dark, slouched leather hat worn commonly by union soldiers."
+	name = "深色联邦军帽"
+	desc = "一顶深色、松垂的皮帽,常由联邦军士兵佩戴."
 	icon_state = "union_hat"
 	item_state = "union_hat"
 
 /obj/item/clothing/head/unionhatlight
-	name = "light union hat"
-	desc = "A light, slouched leather hat worn commonly by union soldiers."
+	name = "浅色联邦军帽"
+	desc = "一顶浅色、松垂的皮帽,常由联邦军士兵佩戴."
 	icon_state = "union_hat2"
 	item_state = "union_hat2"
 
 /obj/item/clothing/head/confederatehat
-	name = "grey confederate hat"
-	desc = "A grey, slouched leather hat worn commonly by confederate soldiers."
+	name = "灰色邦联军帽"
+	desc = "一顶灰色、松垂的皮帽,常由邦联军士兵佩戴."
 	icon_state = "confederate_hat"
 	item_state = "confederate_hat"
 
 /obj/item/clothing/head/unioncap
-	name = "union Cap"
-	desc = "A cap worn by union soldiers."
+	name = "联邦军便帽"
+	desc = "一顶联邦军士兵佩戴的便帽."
 	icon_state = "union_cap"
 	item_state = "union_cap"
 	var/adjusted = FALSE
@@ -76,30 +76,30 @@
 		if (adjusted)
 			item_state = "union_cap"
 			item_state_slots["slot_head"] = "union_cap"
-			to_chat(usr, "<span class = 'danger'>you adjust your cap's band.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了便帽的帽带.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "union_capad"
 			item_state_slots["slot_head"] = "union_capad"
-			to_chat(usr, "<span class = 'danger'>you adjust your cap's band.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了便帽的帽带.</span>")
 			adjusted = TRUE
 	update_clothing_icon()
 
 /obj/item/clothing/head/furhat/bison
-	name = "bisonhead fur hat"
-	desc = "A hat made of bison fur with little decorative horns and a fur lined interior."
+	name = "野牛头皮毛帽"
+	desc = "一顶由野牛皮毛制成的帽子,带有小小的装饰性犄角,内衬为毛皮."
 	icon_state = "bison_fur_hat"
 	item_state = "bison_fur_hat"
 
 /obj/item/clothing/suit/storage/jacket/vict_tailcoat
-	name = "victorian tailcoat"
-	desc = "Also known as a butler suit."
+	name = "维多利亚燕尾服"
+	desc = "也被称为管家服."
 	icon_state = "victorian_tailcoat"
 	item_state = "victorian_tailcoat"
 
 /obj/item/clothing/head/confederatecap
-	name = "confederate cap"
-	desc = "A cap worn by confederate soldiers."
+	name = "邦联军便帽"
+	desc = "一顶邦联军士兵佩戴的便帽."
 	icon_state = "confederate_cap"
 	item_state = "confederate_cap"
 	var/adjusted = FALSE
@@ -113,26 +113,26 @@
 		if (adjusted)
 			item_state = "confederate_cap"
 			item_state_slots["slot_head"] = "confederate_cap"
-			to_chat(usr, "<span class = 'danger'>you adjust your cap's band.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了便帽的帽带.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "confederate_capad"
 			item_state_slots["slot_head"] = "confederate_capad"
-			to_chat(usr, "<span class = 'danger'>you adjust your cap's band.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了便帽的帽带.</span>")
 			adjusted = TRUE
 	update_clothing_icon()
 
 
 /obj/item/clothing/head/sombrero
-	name = "sombrero"
-	desc = "Ay caramba! The wide brim helps keep the sun off the wearer's face"
+	name = "墨西哥宽檐帽"
+	desc = "哎呀妈呀!宽帽檐有助于为佩戴者遮挡阳光"
 	icon_state = "sombrero"
 	item_state = "sombrero"
 	heat_protection = HEAD|EYES
 
 /obj/item/clothing/head/ten_gallon
-	name = "white ten gallon hat"
-	desc = "Hat of choice of made-men and those aspiring to wealth & greatness. Its white wide brim helps keep the sun off wearer's face."
+	name = "白色十加仑帽"
+	desc = "黑帮分子和那些渴望财富与权势之人的首选帽子.其白色宽帽檐有助于为佩戴者遮挡阳光."
 	icon_state = "ten_gallon_hat_white"
 	item_state = "ten_gallon_hat_white"
 	heat_protection = HEAD|EYES
@@ -140,50 +140,50 @@
 /* Industrial Accessories & Items*/
 
 /obj/item/clothing/accessory/armband/blue_scarf
-	name = "blue scarf"
-	desc = "A light cotton scarf, in blue."
+	name = "蓝色围巾"
+	desc = "一条浅色棉质围巾,蓝色."
 	icon_state = "british_scarf"
 	item_state = "british_scarf"
 	slot = "decor"
 
 /obj/item/clothing/accessory/armband/grey_scarf
-	name = "grey scarf"
-	desc = "A light cotton scarf, in grey."
+	name = "灰色围巾"
+	desc = "一条浅色棉质围巾,灰色."
 	icon_state = "grey_scarf"
 	item_state = "grey_scarf"
 	slot = "decor"
 
 /obj/item/clothing/accessory/armband/red_scarf
-	name = "red scarf"
-	desc = "A light cotton scarf, in red."
+	name = "红色围巾"
+	desc = "一条浅色棉质围巾,红色."
 	icon_state = "red_scarf"
 	item_state = "red_scarf"
 	slot = "decor"
 
 /obj/item/clothing/accessory/armband/yellow_scarf
-	name = "yellow scarf"
-	desc = "A light cotton scarf, in yellow."
+	name = "黄色围巾"
+	desc = "一条浅色棉质围巾,黄色."
 	icon_state = "yellow_scarf"
 	item_state = "yellow_scarf"
 	slot = "decor"
 
 /obj/item/clothing/accessory/suspenders
-	name = "suspenders"
-	desc = "Leather suspenders."
+	name = "背带"
+	desc = "皮质背带."
 	icon_state = "suspenders1"
 	item_state = "suspenders1"
 	slot = "sash"
 
 /obj/item/clothing/accessory/suspenders/dark
-	name = "dark suspenders"
-	desc = "Dark leather suspenders."
+	name = "深色背带"
+	desc = "深色皮质背带."
 	icon_state = "suspenders2"
 	item_state = "suspenders2"
 	slot = "sash"
 
 /obj/item/weapon/watch/pocket
-	name = "pocket watch"
-	desc = "Used to check the time."
+	name = "怀表"
+	desc = "用于查看时间."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pocketwatch"
 	item_state = "pocketwatch"
@@ -198,164 +198,164 @@
 
 /obj/item/weapon/watch/pocket/examine(mob/user)
 	..()
-	to_chat(user, "<big>It is now [clock_time()].</big>")
+	to_chat(user, "<big>现在是[clock_time()].</big>")
 
 /obj/item/weapon/watch/pocket/attack_self(var/mob/living/L)
-	to_chat(L, "<big>It is now [clock_time()].</big>")
+	to_chat(L, "<big>现在是[clock_time()].</big>")
 	return
 
 /* Industrial Uniforms*/
 
 /obj/item/clothing/under/industrial1
-	name = "pioneer outfit"
-	desc = "A red shirt with leather trousers, commonly used among pioneers."
+	name = "拓荒者装束"
+	desc = "一件红色衬衫配皮质长裤,常为拓荒者所穿."
 	icon_state = "pioneer_outfit"
 	item_state = "pioneer_outfit"
 
 /obj/item/clothing/under/industrial2
-	name = "rancher outfit"
-	desc = "A blue shirt with light beige trousers."
+	name = "牧场主装束"
+	desc = "一件蓝色衬衫配浅米色长裤."
 	icon_state = "rancher_outfit"
 	item_state = "rancher_outfit"
 
 /obj/item/clothing/under/industrial3
-	name = "cowboy outfit"
-	desc = "A white shirt with leather trousers, worn among cowboys and ranchers."
+	name = "牛仔装束"
+	desc = "一件白色衬衫配皮质长裤,为牛仔和牧场主所穿."
 	icon_state = "cowboy_outfit"
 	item_state = "cowboy_outfit"
 
 /obj/item/clothing/under/industrial4
-	name = "checkered outfit"
-	desc = "A red-and-white checkered shirt and light beige trousers."
+	name = "格纹装束"
+	desc = "一件红白格纹衬衫配浅米色长裤."
 	icon_state = "checkered_outfit"
 	item_state = "checkered_outfit"
 
 /obj/item/clothing/under/industrial5
-	name = "worker outfit"
-	desc = "A navy blue shirt with denim trousers."
+	name = "工人装束"
+	desc = "一件藏青色衬衫配牛仔长裤."
 	icon_state = "worker_outfit"
 	item_state = "worker_outfit"
 
 /obj/item/clothing/under/texan
-	name = "texan shirt outfit"
-	desc = "A white undershirt with beige briefs. it has texan style bowtie."
+	name = "德克萨斯衬衫装束"
+	desc = "一件白色汗衫配米色短裤.它带有德克萨斯风格的领结."
 	icon_state = "texas"
 	item_state = "texas"
 
 /obj/item/clothing/under/lederhosen
-	name = "lederhosen"
-	desc = "The traditional south german attire."
+	name = "皮短裤"
+	desc = "传统的南德意志服饰."
 	icon_state = "lederhosen"
 	item_state = "lederhosen"
 
 /obj/item/clothing/under/gang_leader // Welcome to sauce or loss with the Van Derlinde Gang
-	name = "classy outlaw outfit"
-	desc = "A well made black and red outfit with white arms and gold buttons. Often worn by self styled leaders, always with a plan."
+	name = "时髦亡命徒装束"
+	desc = "一套做工精良的黑红装束,白色袖子配金色纽扣.常由自封的领袖所穿,总是带着一个计划."
 	icon_state = "gang_leader"
 	item_state = "gang_leader"
 
 /obj/item/clothing/under/outlaw //alright arthur, show us what you got
-	name = "outlaw outfit"
-	desc = "A blue shirt with blue denim trousers and white suspenders. Often worn by people at arms length with the wrong side of the law, clothes sense is no judicator of character however."
+	name = "亡命徒装束"
+	desc = "一件蓝色衬衫配蓝色牛仔长裤和白色背带.常由那些与法律若即若离之人所穿,不过衣着品味并不能评判一个人的品格."
 	icon_state = "arthur_morgan"
 	item_state = "arthur_morgan"
 
 /obj/item/clothing/under/bartender
-	name = "bartender outfit"
-	desc = "A stylish bartender outfit."
+	name = "酒保装束"
+	desc = "一套时髦的酒保装束."
 	icon_state = "bartender"
 	item_state = "bartender"
 
 /obj/item/clothing/under/victorian_vest
-	name = "black victorian shirt and vest"
-	desc = "A no nonsense black shirt & vest with gold buttons, made in victorian style."
+	name = "黑色维多利亚衬衫与马甲"
+	desc = "一件简洁利落的黑色衬衫与马甲,配金色纽扣,维多利亚风格."
 	icon_state = "victorianvest"
 	item_state = "victorianvest"
 
 /obj/item/clothing/under/victorian_vest/redvest
-	name = "black victorian shirt and red vest"
-	desc = "A no nonsense black shirt & red vest with gold buttons, made in victorian style."
+	name = "黑色维多利亚衬衫与红色马甲"
+	desc = "一件简洁利落的黑色衬衫与红色马甲,配金色纽扣,维多利亚风格."
 	icon_state = "victorianredvest"
 	item_state = "victorianredvest"
 
 /obj/item/clothing/under/victorian_vest/redshirt
-	name = "red victorian shirt and black vest"
-	desc = "A no nonsense red shirt & black vest with gold buttons, made in victorian style."
+	name = "红色维多利亚衬衫与黑色马甲"
+	desc = "一件简洁利落的红色衬衫与黑色马甲,配金色纽扣,维多利亚风格."
 	icon_state = "victorianblred"
 	item_state = "victorianblred"
 
 /obj/item/clothing/under/waistcoat
-	name = "white shirt and black waistcoat"
-	desc = "A no nonsense black waistcoat with white shirt."
+	name = "白衬衫与黑马甲"
+	desc = "一件简洁利落的黑马甲配白衬衫."
 	icon_state = "waistcoat"
 	item_state = "waistcoat"
 
 /obj/item/clothing/suit/storage/coat/victorian_peacoat
-	name = "black peacoat"
-	desc = "A no nonsense black peacoat"
+	name = "黑色海军呢大衣"
+	desc = "一件简洁利落的黑色海军呢大衣"
 	icon_state = "victorian_peacoat"
 	item_state = "victorian_peacoat"
 
 /* Womens Fashion*/
 
 /obj/item/clothing/under/saloondress
-	name = "saloon dress outfit"
-	desc = "A eye catching dress often worn by frontier damsels looking to drum up business."
+	name = "酒馆连衣裙套装"
+	desc = "一件引人注目的连衣裙,常被边境女郎穿着以招揽生意."
 	icon_state = "dress_saloon"
 	item_state = "dress_saloon"
 
 /obj/item/clothing/under/cheongsam
-	name = "cheongsam dress"
-	desc = "A tight fitting and attractive dress commmonly worn by women hailing from the orient."
+	name = "旗袍"
+	desc = "一件紧身迷人的连衣裙,通常由来自东方的女性穿着."
 	icon_state = "cheongsam"
 	item_state = "cheongsam"
 
 /obj/item/clothing/under/blackdress/short
-	name = "short black dress"
-	desc = "A plain black dress for women, this one is notably shorter and less modest."
+	name = "黑色短连衣裙"
+	desc = "一件朴素的黑色女式连衣裙,这件明显更短也更不端庄."
 	icon_state = "dress_black_short"
 	item_state = "dress_black_short"
 
 /obj/item/clothing/under/wedding
-	name = "white wedding dress"
-	desc = "A cermonial white wedding dress. Something old, something new, something borrowed, something blue."
+	name = "白色婚纱"
+	desc = "一件仪式用白色婚纱.有旧的,有新的,有借来的,有蓝色的."
 	icon_state = "bride_white"
 	item_state = "bride_white"
 
 /obj/item/clothing/under/victorian_dress
-	name = "victorian black dress"
-	desc = "A black dress for a lady, made in a victorian style."
+	name = "维多利亚黑色连衣裙"
+	desc = "一件女士黑色连衣裙,维多利亚风格."
 	icon_state = "victorianblackdress"
 	item_state = "victorianblackdress"
 
 /obj/item/clothing/under/victorian_dress/red
-	name = "victorian red dress"
-	desc = "A red dress for a lady, made in a victorian style."
+	name = "维多利亚红色连衣裙"
+	desc = "一件女士红色连衣裙,维多利亚风格."
 	icon_state = "victorianreddress"
 	item_state = "victorianreddress"
 
 /obj/item/clothing/under/victorian_prim
-	name = "neck length black dress"
-	desc = "A prim and proper black dress, covers from neck to ankle."
+	name = "及颈黑色连衣裙"
+	desc = "一件端庄得体的黑色连衣裙,从脖子遮到脚踝."
 	icon_state = "victorian_dress"
 	item_state = "victorian_dress"
 
 /obj/item/clothing/suit/storage/closechest_apron_f
-	name = "chest length apron"
-	desc = "A white apron that covers up to the chest, the ruffles are popular with the french."
+	name = "及胸围裙"
+	desc = "一件遮到胸口的白色围裙,其褶边在法国人中很受欢迎."
 	icon_state = "closechest_apron_f"
 	item_state = "closechest_apron_f"
 
 /obj/item/clothing/suit/storage/openchest_apron_f
-	name = "waist length apron"
-	desc = "A white apron that covers up to the waist, the ruffles are popular with the french."
+	name = "及腰围裙"
+	desc = "一件遮到腰部的白色围裙,其褶边在法国人中很受欢迎."
 	icon_state = "openchest_apron_f"
 	item_state = "openchest_apron_f"
 /* Womens Fashion - End*/
 
 /obj/item/clothing/under/union_uniform
-	name = "union uniform"
-	desc = "A blue uniform worn by union soldiers."
+	name = "联邦军制服"
+	desc = "一件联邦军士兵穿着的蓝色制服."
 	icon_state = "union_uniform"
 	item_state = "union_uniform"
 
@@ -376,8 +376,8 @@ obj/item/clothing/under/confederate_uniform/grey_blue
 	specific = TRUE
 
 /obj/item/clothing/under/confederate_uniform
-	name = "confederate uniform"
-	desc = "A grey uniform worn by confederate soldiers."
+	name = "邦联军制服"
+	desc = "一件邦联军士兵穿着的灰色制服."
 	icon_state = "confederate_uniform1"
 	item_state = "confederate_uniform1"
 	value = 70
@@ -394,46 +394,46 @@ obj/item/clothing/under/confederate_uniform/New()
 /* Industrial Suits */
 
 /obj/item/clothing/suit/storage/jacket/leatherovercoat1
-	name = "leather overcoat"
-	desc = "A long leather overcoat."
+	name = "皮大衣"
+	desc = "一件长款皮大衣."
 	icon_state = "leather_overcoat"
 	item_state = "leather_overcoat"
 
 /obj/item/clothing/suit/storage/jacket/leatherovercoat2
-	name = "black leather overcoat"
-	desc = "A long black leather overcoat."
+	name = "黑色皮大衣"
+	desc = "一件长款黑色皮大衣."
 	icon_state = "black_leather_overcoat"
 	item_state = "black_leather_overcoat"
 
 /obj/item/clothing/suit/storage/jacket/blackvest
-	name = "black vest"
-	desc = "A simple black vest."
+	name = "黑色马甲"
+	desc = "一件简单的黑色马甲."
 	icon_state = "blackvest"
 	item_state = "blackvest"
 
 /obj/item/clothing/suit/storage/jacket/olivevest
-	name = "olive vest"
-	desc = "A simple olive vest."
+	name = "橄榄色马甲"
+	desc = "一件简单的橄榄色马甲."
 	icon_state = "olivevest"
 	item_state = "olivevest"
 
 /obj/item/clothing/suit/storage/jacket/bluevest
-	name = "blue vest"
-	desc = "A simple blue vest."
+	name = "蓝色马甲"
+	desc = "一件简单的蓝色马甲."
 	icon_state = "bluevest"
 	item_state = "bluevest"
 
 /obj/item/clothing/suit/storage/jacket/texan
-	name = "cream short jacket"
-	desc = "A cream colored short jacket."
+	name = "米色短夹克"
+	desc = "一件米色短夹克."
 	icon_state = "texas"
 	item_state = "texas"
 
 /* Industrial Boots*/
 
 /obj/item/clothing/shoes/riding1
-	name = "black riding boots"
-	desc = "Black leather boots with spurs, perfect for riding."
+	name = "黑色马靴"
+	desc = "带马刺的黑色皮靴,非常适合骑马."
 	icon_state = "cowboyboots1"
 	item_state = "cowboyboots1"
 	force = WEAPON_FORCE_WEAK
@@ -443,8 +443,8 @@ obj/item/clothing/under/confederate_uniform/New()
 	flags = CONDUCT
 
 /obj/item/clothing/shoes/riding2
-	name = "leather riding boots"
-	desc = "Leather boots with spurs, perfect for riding."
+	name = "皮马靴"
+	desc = "带马刺的皮靴,非常适合骑马."
 	icon_state = "cowboyboots2"
 	item_state = "cowboyboots2"
 	force = WEAPON_FORCE_WEAK
@@ -454,14 +454,14 @@ obj/item/clothing/under/confederate_uniform/New()
 	flags = CONDUCT
 
 /obj/item/clothing/shoes/riding1/gator_cowboy
-	name = "alligator scale riding boots"
-	desc = "Alligator scale patterned boots with spurs, perfect for riding in style."
+	name = "鳄鱼鳞纹马靴"
+	desc = "带马刺的鳄鱼鳞纹皮靴,非常适合时尚地骑马."
 	icon_state = "gator_cowboy"
 	item_state = "gator_cowboy"
 
 /obj/item/clothing/shoes/gator_ankleboots
-	name = "alligator scale ankle boots"
-	desc = "Classy alligator scale ankle-length boots, a certain statement for fashion."
+	name = "鳄鱼鳞纹短靴"
+	desc = "优雅的鳄鱼鳞纹及踝皮靴,时尚的宣言."
 	icon_state = "gator_ankleboots"
 	item_state = "gator_ankleboots"
 	force = WEAPON_FORCE_WEAK
@@ -472,8 +472,8 @@ obj/item/clothing/under/confederate_uniform/New()
 /* Industrial Coats*/
 
 /obj/item/clothing/suit/storage/coat/kozhanka
-	name = "fur coat"
-	desc = "A thick fur coat, great for the winter."
+	name = "毛皮大衣"
+	desc = "一件厚实的毛皮大衣,非常适合冬天."
 	icon_state = "kozhanka"
 	item_state = "kozhanka"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -501,7 +501,7 @@ obj/item/clothing/under/confederate_uniform/New()
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT
 		item_state_slots["slot_wear_suit"] = "kozhanka[colorn]"
-		to_chat(usr, "<span class = 'danger'>You take off your coat's hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你摘下大衣的兜帽.</span>")
 		update_icon()
 		hood = FALSE
 		usr.update_inv_head(1)
@@ -513,7 +513,7 @@ obj/item/clothing/under/confederate_uniform/New()
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT|HEAD
 		item_state_slots["slot_wear_suit"] = "kozhankah[colorn]"
-		to_chat(usr, "<span class = 'danger'>You cover your head with your coat's hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你用大衣的兜帽罩住头部.</span>")
 		update_icon()
 		hood = TRUE
 		usr.update_inv_head(1)
@@ -521,8 +521,8 @@ obj/item/clothing/under/confederate_uniform/New()
 		return
 
 /obj/item/clothing/suit/storage/coat/kozhanka/white
-	name = "white fur coat"
-	desc = "A thick white fur coat, great for the winter."
+	name = "白色毛皮大衣"
+	desc = "一件厚实的白色毛皮大衣,非常适合冬天."
 	icon_state = "kozhanka_w"
 	item_state = "kozhanka_w"
 	specific = TRUE
@@ -531,14 +531,14 @@ obj/item/clothing/under/confederate_uniform/New()
 /* Miscallaneous*/
 
 /obj/item/clothing/under/dimmadome
-	name = "eccentric businessman outfit"
-	desc = "A cream jacket with white undershirt, the jacket and the shirt seem to be sown into one piece for convenience and it has texan style bowtie. This person probably has a lot of money.."
+	name = "古怪商人套装"
+	desc = "一件米色夹克配白色内衬衫,夹克和衬衫似乎为了方便缝成了一体,还配有德克萨斯风格的领结.这人大概很有钱.."
 	icon_state = "doug_dimmadome"
 	item_state = "doug_dimmadome"
 
 /obj/item/clothing/accessory/storage/webbing/civil_war
-	name = "cartridge rigging"
-	desc = "A rig of cases for ammo and a bayonet."
+	name = "弹药挂具"
+	desc = "一套用于装弹药和一把刺刀的挂具."
 	icon_state = "civil_war"
 	item_state = "civil_war"
 	slots = 13

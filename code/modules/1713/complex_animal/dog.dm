@@ -96,7 +96,7 @@
 				name = sanitize(_name, 50)
 				return
 		else
-			to_chat(usr, "You can't name this [src], as it does not belong to you or your faction.")
+			to_chat(usr, "你不能给这个[src]命名, 因为它不属于你或你的阵营.")
 			return
 	else
 		if (name == initial(name) && !istype(src, /mob/living/simple_animal/hostile) && !istype(src, /mob/living/simple_animal/mosquito))
@@ -284,11 +284,11 @@
 
 				// daga kotowaru
 				if (command_level_to_dog == COMMAND_LEVEL_4)
-					visible_message("<span class = 'warning'>\The [name] refuses to listen.</span>")
+					visible_message("<span class = 'warning'>\The [name]拒绝听从.</span>")
 					continue
 
 				if (command_levels[command_type_sublist] > command_level_to_dog)
-					visible_message("<span class = 'warning'>\The [name] refuses to listen, because it already has a contradicting order from its owner.</span>")
+					visible_message("<span class = 'warning'>\The [name]拒绝听从, 因为它已经收到了来自其主人的相矛盾的命令.</span>")
 					continue
 				else if (hascall(src, _call))
 					call(src, _call)(H)
@@ -315,25 +315,25 @@
 // "frontend" procs
 /mob/living/simple_animal/complex_animal/dog/proc/attack(var/mob/living/human/H)
 	if (!(attack_mode == "attack"))
-		visible_message("<span class = 'warning'>\The [src] looks around aggressively.</span>")
+		visible_message("<span class = 'warning'>\The [src]充满攻击性地环顾四周.</span>")
 	attack_mode = "attack"
 	onModeChange()
 
 /mob/living/simple_animal/complex_animal/dog/proc/kill(var/mob/living/human/H)
 	if (!(attack_mode == "kill"))
-		visible_message("<span class = 'warning'>\The [src] looks around murderously.</span>")
+		visible_message("<span class = 'warning'>\The [src]杀气腾腾地环顾四周.</span>")
 	attack_mode = "kill"
 	onModeChange()
 
 /mob/living/simple_animal/complex_animal/dog/proc/guard(var/mob/living/human/H)
 	if (!(attack_mode == "guard"))
-		visible_message("<span class = 'warning'>\The [src] starts guarding their domain.</span>")
+		visible_message("<span class = 'warning'>\The [src]开始守卫它们的领地.</span>")
 	attack_mode = "guard"
 	onModeChange()
 
 /mob/living/simple_animal/complex_animal/dog/proc/patrol(var/mob/living/human/H)
 	if (!patrolling)
-		visible_message("<span class = 'warning'>\The [src] starts patrolling.</span>")
+		visible_message("<span class = 'warning'>\The [src]开始巡逻.</span>")
 	patrolling = TRUE
 	allow_moving_outside_home = TRUE
 	wander_probability = 80
@@ -341,7 +341,7 @@
 
 /mob/living/simple_animal/complex_animal/dog/proc/stop_patrol(var/mob/living/human/H)
 	if (patrolling)
-		visible_message("<span class = 'warning'>\The [src] stops patrolling.</span>")
+		visible_message("<span class = 'warning'>\The [src]停止巡逻.</span>")
 	patrolling = FALSE
 	allow_moving_outside_home = FALSE
 	wander_probability = 20
@@ -349,7 +349,7 @@
 
 /mob/living/simple_animal/complex_animal/dog/proc/passive(var/mob/living/human/H)
 	if (attack_mode != -1)
-		visible_message("<span class = 'notice'>\The [src] looks calm.</span>")
+		visible_message("<span class = 'notice'>\The [src]看起来很平静.</span>")
 	attack_mode = -1
 	onModeChange()
 	enemies = list()
@@ -359,14 +359,14 @@
 /mob/living/simple_animal/complex_animal/dog/proc/stop(var/mob/living/human/H)
 	passive()
 	stop_patrol()
-	visible_message("<span class = 'notice'>\The [src] stops doing everything they were doing.</span>")
+	visible_message("<span class = 'notice'>\The [src]停止了它们之前所做的一切.</span>")
 	onModeChange()
 	enemies = list()
 	if (H && !following)
 		follow(H)
 
 /mob/living/simple_animal/complex_animal/dog/proc/follow(var/mob/living/human/H)
-	visible_message("<span class = 'notice'>\The [src] starts following [H].</span>")
+	visible_message("<span class = 'notice'>\The [src]开始跟随[H].</span>")
 	if (following)
 		stop_following(H, FALSE)
 	else
@@ -377,7 +377,7 @@
 /mob/living/simple_animal/complex_animal/dog/proc/stop_following(var/mob/living/human/H, var/message = TRUE)
 	if (following)
 		if (message)
-			visible_message("<span class = 'notice'>\The [src] stops following [following].</span>")
+			visible_message("<span class = 'notice'>\The [src]停止跟随[following].</span>")
 		walking_to = null
 		following = null
 
@@ -385,13 +385,13 @@
 	var/o_prioritizes = prioritizes
 	prioritizes = "following"
 	if (o_prioritizes != prioritizes)
-		visible_message("<span class = 'notice'>\The [src] will no longer attack enemies when it is following somebody.</span>")
+		visible_message("<span class = 'notice'>\The [src]在跟随某人时将不再攻击敌人.</span>")
 
 /mob/living/simple_animal/complex_animal/dog/proc/prioritize_attacking(var/mob/living/human/H)
 	var/o_prioritizes = prioritizes
 	prioritizes = "attacking"
 	if (o_prioritizes != prioritizes)
-		visible_message("<span class = 'notice'>\The [src] will no longer follow you when it is attacking somebody.</span>")
+		visible_message("<span class = 'notice'>\The [src] 在攻击别人时不会再跟着你。</span>")
 
 /mob/living/simple_animal/complex_animal/dog/proc/onModeChange()
 	for (var/mob/living/human/H in view(10, src))
@@ -426,7 +426,7 @@
 				var/maxdist = 13
 				if (!locate(H) in view(7, src) && dist <= maxdist)
 					if (prob(5) && world.time >= next_bork)
-						visible_message("<span class = 'danger'>\The [src] starts barking! It smells an enemy!</span>")
+						visible_message("<span class = 'danger'>\The [src] 开始吠叫! 它闻到了敌人!</span>")
 						if (prob(50))
 							playsound(src.loc, 'sound/animals/dog/dogbark1.ogg', 100, TRUE, 3)
 						else
@@ -473,14 +473,14 @@
 		return
 	if (I.is_contraband || (istype(I,/obj/item/weapon/reagent_containers) && (I.reagents.has_reagent("methamphetamine") || I.reagents.has_reagent("cocaine"))))
 		if (prob(20) && world.time >= next_bork)
-			visible_message("<span class='warning'>\The [src] starts barking! [message]!</span>")
+			visible_message("<span class='warning'>\The [src] 开始吠叫! [message]!</span>")
 			playsound(src.loc, 'sound/animals/dog/dogbark3.ogg', 95, TRUE, 3)
 			next_bork = world.time + 500
 			return
 
 /mob/living/simple_animal/complex_animal/dog/proc/CheckForExplosives()
 	if (prob(20) && world.time >= next_bork)
-		visible_message ("<span class = 'warning'>\The [src] starts barking! It detects an armed explosive in the near 3 tiles!</span>")
+		visible_message ("<span class = 'warning'>\The [src] 开始吠叫! 它在附近3格内探测到了已激活的爆炸物!</span>")
 		playsound(src.loc, 'sound/animals/dog/dogbark3.ogg', 95, TRUE, 3)
 		next_bork = world.time + 500
 		return
@@ -493,7 +493,7 @@
 		if (world.time >= next_shred)
 			if (H in range(1, src))
 				dir = get_dir(src, H)
-				visible_message("<span class='warning'>\The [src] shreds [H] with their teeth!</span>")
+				visible_message("<span class='warning'>\The [src] 用牙齿撕碎了 [H]!</span>")
 				var/limb = rand(1, 3)
 				switch(limb)
 					if(1)

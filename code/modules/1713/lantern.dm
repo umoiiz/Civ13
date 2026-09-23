@@ -1,7 +1,7 @@
 /obj/item/flashlight/lantern
-	name = "lantern"
+	name = "提灯"
 	icon_state = "lantern"
-	desc = "A simple lantern."
+	desc = "一盏简单的提灯."
 	brightness_on = 6			// luminosity when on
 	light_color = rgb(200, 255, 200) // green tint
 	on_state = "lantern-on"
@@ -11,9 +11,9 @@
 	unlimited = FALSE
 
 /obj/item/flashlight/lantern/copper
-	name = "copper lamp"
+	name = "铜灯"
 	icon_state = "copperlamp"
-	desc = "A simple copper lantern."
+	desc = "一盏简单的铜制提灯."
 	brightness_on = 6			// luminosity when on
 	light_color = rgb(200, 255, 200) // green tint
 	on_state = "copperlamp-on"
@@ -23,10 +23,10 @@
 	unlimited = FALSE
 
 /obj/item/flashlight/lantern/bronze
-	name = "bronze etsy lamp"
+	name = "青铜埃齐灯"
 	icon_state = "etsy"
 	item_state = "etsy"
-	desc = "A bronze lamp with several wicks."
+	desc = "一盏带有多根灯芯的青铜灯."
 	brightness_on = 8			// luminosity when on
 	light_color = rgb(200, 255, 200) // green tint
 	on_state = "etsy-on"
@@ -49,7 +49,7 @@
 
 /obj/item/flashlight/lantern/attack_self(mob/user)
 	if (!isturf(user.loc))
-		to_chat(user, "You cannot turn the light on while in this [user.loc].") //To prevent some lighting anomalities.)
+		to_chat(user, "在此[user.loc]中你无法开灯.") //To prevent some lighting anomalities.)
 		return FALSE
 	if (fuel > 0)
 		on = !on
@@ -58,7 +58,7 @@
 		user.update_action_buttons()
 		return TRUE
 	else if (fuel <= 0)
-		visible_message("<span class='warning'>\The [src] is out of fuel!</span>")
+		visible_message("<span class='warning'>\The [src]没有燃料了!</span>")
 
 /obj/item/flashlight/lantern/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/reagent_containers))
@@ -66,19 +66,19 @@
 			var/regamt = W.reagents.get_reagent_amount("petroleum")
 			W.reagents.remove_reagent("petroleum", regamt)
 			fuel += (regamt*120)
-			to_chat(user, "You refuel the lantern with petroleum.")
+			to_chat(user, "你用石油给提灯补充了燃料.")
 			return
 		else if (W.reagents.has_reagent("olive_oil", 1))
 			var/regamt = W.reagents.get_reagent_amount("olive_oil")
 			W.reagents.remove_reagent("olive_oil", regamt)
 			fuel += (regamt*120)
-			to_chat(user, "You refuel the lantern with olive oil.")
+			to_chat(user, "你用橄榄油给提灯补充了燃料.")
 			return
 		else if (W.reagents.has_reagent("fat_oil", 1))
 			var/regamt = W.reagents.get_reagent_amount("fat_oil")
 			W.reagents.remove_reagent("fat_oil", regamt)
 			fuel += (regamt*120)
-			to_chat(user, "You refuel the lantern with fat oil.")
+			to_chat(user, "你用油脂给提灯补充燃料.")
 			return
 /obj/item/flashlight/lantern/attack_hand(mob/user as mob)
 	if (loc != user && anchored)
@@ -111,7 +111,7 @@
 	fuel = 10
 
 /obj/item/flashlight/lamp/oldlamp
-	name = "stand lamp"
+	name = "台灯"
 	on_state = "oldlamp-on"
 	off_state = "oldlamp"
 	icon_state = "oldlamp"
@@ -120,7 +120,7 @@
 	fuel = INFINITY
 
 /obj/item/flashlight/lamp/littlelamp
-	name = "small lamp"
+	name = "小灯"
 	on_state = "littlelamp-on"
 	off_state = "littlelamp"
 	icon_state = "littlelamp"
@@ -128,7 +128,7 @@
 	fuel = INFINITY
 
 /obj/item/flashlight/lamp/littlelamp/desklamp
-	name = "desk lamp"
+	name = "书桌灯"
 	on_state = "lampdesk_on"
 	off_state = "lampdesk"
 	icon_state = "lampdesk"
@@ -144,9 +144,9 @@
 	fuel = 10
 
 /obj/item/flashlight/torch
-	name = "torch"
+	name = "火把"
 	icon_state = "torch"
-	desc = "A simple wood stick with animal fat on top."
+	desc = "一根顶端涂有动物油脂的简单木棍."
 	brightness_on = 4			// luminosity when on
 	light_color = rgb(254, 200, 200) // red tint
 	on_state = "torch-on"
@@ -173,8 +173,8 @@
 
 
 /obj/item/flashlight/tiki_torch
-	name = "tiki torch"
-	desc = "A tiki style torch."
+	name = "提基火把"
+	desc = "一支提基风格的火把."
 	brightness_on = 8			// luminosity when on
 	light_color = rgb(254, 200, 200) // red tint
 	on_state = "tikitorch-on"
@@ -206,14 +206,14 @@
 /obj/item/flashlight/proc/do_torch()
 	spawn(10)
 		if (fuel == 50 && on)
-			visible_message("<span class='warning'>\The [src] is about to run out!</span>")
+			visible_message("<span class='warning'>\The [src] 即将耗尽!</span>")
 			fuel -= 1
 			do_torch()
 		else if (fuel > 0 && on)
 			fuel -= 1
 			do_torch()
 		else if (fuel <= 0 && on)
-			visible_message("\The [src] goes off.")
+			visible_message("\The [src] 熄灭了.")
 			if (istype(src, /obj/item/flashlight/torch) || istype(src, /obj/item/flashlight/tiki_torch))
 				qdel(src)
 				return
@@ -236,8 +236,8 @@
 	unlimited = TRUE
 /obj/item/flashlight/flashlight
 	unlimited = TRUE
-	name = "flashlight"
-	desc = "an electrical flashlight."
+	name = "手电筒"
+	desc = "一支电子手电筒."
 	icon_state = "flashlight_off"
 	item_state = "modern_flashlight"
 	on_state = "flashlight_on"
@@ -247,8 +247,8 @@
 
 /obj/item/flashlight/modern
 	unlimited = TRUE
-	name = "flashlight"
-	desc = "an electrical flashlight."
+	name = "手电筒"
+	desc = "一支电子手电筒."
 	icon_state = "modernlight_off"
 	item_state = "modern_flashlight"
 	on_state = "modernlight_on"
@@ -267,8 +267,8 @@
 
 /obj/item/flashlight/militarylight
 	unlimited = TRUE
-	name = "military flashlight"
-	desc = "An electrical military flashlight. Comes with adjustable lenses."
+	name = "军用手电筒"
+	desc = "一支电子军用手电筒. 配有可调节镜片."
 	icon_state = "militarylight_off"
 	item_state = "militarylight"
 	on_state = "militarylight_on"
@@ -290,7 +290,7 @@
 			light_color = "#ad2005"
 			on_state = "militarylight_on_red"
 			lens = 1
-			to_chat(user, "<span class='notice'>You put on a <b><font color =#960000>red</font color></b> lens on your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你在手电筒上装上了<b><font color =#960000>红色</font color></b>镜片.</span>")
 			update_icon()
 			return
 		if (2)
@@ -300,7 +300,7 @@
 			on_state ="militarylight_on_green"
 			lens = 2
 			update_icon()
-			to_chat(user, "<span class='notice'>You put on a <b><font color=#006400>green</font color></b> lens on your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你在手电筒上装上了<b><font color=#006400>绿色</font color></b>镜片.</span>")
 			return
 		if (3)
 			light_range = 5
@@ -308,7 +308,7 @@
 			light_color = "#fcffd6"
 			on_state ="militarylight_on"
 			lens = 3
-			to_chat(user, "<span class='notice'>You <b>remove</b> the lens from your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你<b>取下</b>了手电筒上的镜片.</span>")
 			update_icon()
 			return
 
@@ -332,7 +332,7 @@
 			light_color = "#ad2005"
 			on_state = "militarylightalt_on_red"
 			lens = 1
-			to_chat(user, "<span class='notice'>You put on a <b><font color =#960000>red</font color></b> lens on your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你在手电筒上装上了<b><font color =#960000>红色</font color></b>镜片.</span>")
 			update_icon()
 			return
 		if (2)
@@ -342,7 +342,7 @@
 			on_state ="militarylightalt_on_green"
 			lens = 2
 			update_icon()
-			to_chat(user, "<span class='notice'>You put on a <b><font color=#006400>green</font color></b> lens on your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你在手电筒上装上了<b><font color=#006400>绿色</font color></b>镜片.</span>")
 			return
 		if (3)
 			light_range = 5
@@ -350,15 +350,15 @@
 			light_color = "#fcffd6"
 			on_state ="militarylightalt_on"
 			lens = 3
-			to_chat(user, "<span class='notice'>You <b>remove</b> the lens from your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你<b>取下</b>了手电筒上的镜片.</span>")
 			update_icon()
 			return
 
 
 /obj/item/flashlight/japflashlight
 	unlimited = TRUE
-	name = "japanese dynamo flashlight"
-	desc = "A japanese flashlight with a dynamo mechanism and adjustable light intensity."
+	name = "日本手摇手电筒"
+	desc = "一支带有手摇发电机构且亮度可调的日本手电筒."
 	icon_state = "flashlightjap_off"
 	item_state = "militarylight"
 	on_state = "flashlightjap_on"
@@ -378,17 +378,17 @@
 			light_range = 3
 			brightness_on = 3
 			intensity = 1
-			to_chat(user, "<span class='notice'>You <b>reduce</b> the intensity of your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你<b>调低</b>了手电筒的亮度.</span>")
 			return
 		if (2)
 			light_range = 2
 			brightness_on = 2
 			intensity = 2
-			to_chat(user, "<span class='notice'>You <b>reduce further</b> the intensity of your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你<b>进一步调低</b>了手电筒的亮度.</span>")
 			return
 		if (3)
 			light_range = 5
 			brightness_on = 5
 			intensity = 3
-			to_chat(user, "<span class='notice'>You switch back the intensity to <b>normal</b> on your flashlight.</span>")
+			to_chat(user, "<span class='notice'>你将手电筒的亮度调回<b>正常</b>.</span>")
 			return

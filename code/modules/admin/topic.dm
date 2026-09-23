@@ -7,7 +7,7 @@
 			if (usr.client.holder.rights != other.holder.rights)
 				if ( (usr.client.holder.rights & other.holder.rights) == other.holder.rights )
 					return TRUE	//we have all the rights they have and more
-		to_chat(usr, "<font color='red'>Error: Cannot proceed. They have more or equal rights to us.</font>")
+		to_chat(usr, "<font color='red'>错误: 无法继续. 他们拥有与我们相同或更高的权限.</font>")
 	return FALSE
 
 /datum/admins/Topic(href, href_list)
@@ -89,7 +89,7 @@
 				D = new /datum/admins(new_rank, FALSE, adm_ckey) // initial rights must be FALSE or their rights do not change!
 				D.associate(C)											//link up with the client and add verbs
 
-				to_chat(C, "<b>[key_name_admin(usr)] has set your admin rank to: [new_rank].</b>")
+				to_chat(C, "<b>[key_name_admin(usr)] 已将你的管理员等级设为: [new_rank].</b>")
 
 			message_admins("[key_name_admin(usr)] edited the admin rank of [adm_ckey] to [new_rank].", key_name_admin(usr))
 			log_admin("[key_name(usr)] edited the admin rank of [adm_ckey] to [new_rank].")
@@ -107,7 +107,7 @@
 			D.rights ^= permissionlist[new_permission]
 
 			var/client/C = directory[adm_ckey]
-			to_chat(C, "[key_name_admin(usr)] has toggled your permission: [new_permission].")
+			to_chat(C, "[key_name_admin(usr)] 已切换你的权限: [new_permission].")
 			message_admins("[key_name_admin(usr)] toggled the [new_permission] permission of [adm_ckey]", key_name_admin(usr))
 			log_admin("[key_name(usr)] toggled the [new_permission] permission of [adm_ckey]")
 			log_admin_permission_modification(adm_ckey, permissionlist[new_permission])
@@ -419,9 +419,9 @@
 				return
 			var/reason = sanitize(input("Please enter reason"))
 			if (!reason)
-				to_chat(M, "<span class = 'userdanger'>You have been kicked from the server.</span>")
+				to_chat(M, "<span class = 'userdanger'>你已被踢出服务器.</span>")
 			else
-				to_chat(M, "<span class = 'userdanger'>You have been kicked from the server. ([reason])</span>")
+				to_chat(M, "<span class = 'userdanger'>你已被踢出服务器. ([reason])</span>")
 			log_admin("[key_name(usr)] booted [key_name(M)].")
 			message_admins(SPAN_NOTICE("[key_name_admin(usr)] booted [key_name_admin(M)]."), key_name_admin(usr))
 			//M.client = null
@@ -546,10 +546,10 @@
 			if (MALE,FEMALE)	gender_description = "[M.gender]"
 			else			gender_description = "<font color='red'><b>[M.gender]</b></font>"
 
-		to_chat(owner, "<b>Info about [M.name]:</b> ")
-		to_chat(owner, "Mob type = [M.type]; Gender = [gender_description] Damage = [health_description]")
-		to_chat(owner, "Name = <b>[M.name]</b>; Real_name = [M.real_name]; Mind_name = [M.mind?"[M.mind.name]":""]; Key = <b>[M.key]</b>;")
-		to_chat(owner, "Location = [location_description];")
+		to_chat(owner, "<b>关于 [M.name] 的信息:</b> ")
+		to_chat(owner, "生物类型 = [M.type]; 性别 = [gender_description] 伤害 = [health_description]")
+		to_chat(owner, "名称 = <b>[M.name]</b>; 真实名称 = [M.real_name]; 意识名称 = [M.mind?"[M.mind.name]":""]; Key = <b>[M.key]</b>;")
+		to_chat(owner, "位置 = [location_description];")
 		to_chat(owner, "[special_role_description]")
 		to_chat(owner, "(<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>) (<A HREF='?src=\ref[src];adminplayeropts=\ref[M]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[M]'>VV</A>) (<A HREF='?src=\ref[src];subtlemessage=\ref[M]'>SM</A>) ([admin_jump_link(M, src)]) (<A HREF='?src=\ref[src];secretsadmin=check_antagonist'>CA</A>)")
 
@@ -639,15 +639,15 @@
 			else
 				var/list/L = thing
 				if (!L.len)
-					to_chat(usr, "[somevar] is an empty list")
+					to_chat(usr, "[somevar] 是一个空列表")
 				else if (list_is_assoc(L))
-					to_chat(usr, "[somevar] is an <b>ASSOCIATIVE</b> list")
+					to_chat(usr, "[somevar] 是一个<b>关联</b>列表")
 					for (var/i in TRUE to L.len)
-						to_chat(usr, "element [i]: [thing[i]] = [thing[thing[i]]]")
+						to_chat(usr, "元素 [i]: [thing[i]] = [thing[thing[i]]]")
 				else
-					to_chat(usr, "[thing] is a list")
+					to_chat(usr, "[thing] 是一个列表")
 					for (var/i in TRUE to L.len)
-						to_chat(usr, "element [i]: [thing[i]]")
+						to_chat(usr, "元素 [i]: [thing[i]]")
 
 	else if (href_list["modify_global"])
 		if (!check_rights(R_DEBUG))	return
@@ -655,7 +655,7 @@
 		if (global.vars:Find(somevar)) // prevents runtimes
 			var/thing = global.vars[somevar]
 			if (isdatum(thing) || isclient(thing) || islist(thing))
-				to_chat(usr, "[somevar] is a datum, client, or list. You can't edit it here. For datums & clients, use the 'View/Debug a global' to edit their variables.")
+				to_chat(usr, "[somevar] 是一个数据、客户端或列表. 你无法在此处编辑它. 对于数据和客户端, 请使用 '查看/调试全局变量' 来编辑它们的变量.")
 				return
 			else
 				var/changeto = input(usr, "Change this global variable to what type?") in list("Empty List", "Text", "Num", "Cancel")
@@ -673,10 +673,10 @@
 		if (world.vars.Find(somevar)) // prevents runtimes
 			var/thing = world.vars[somevar]
 			if (isdatum(thing) || isclient(thing) || islist(thing))
-				to_chat(usr, "[somevar] is a datum, client, or list. You can't edit it here. For datums & clients, use the 'View/Debug a global' to edit their variables.")
+				to_chat(usr, "[somevar] 是一个数据、客户端或列表. 你无法在此处编辑它. 对于数据和客户端, 请使用 '查看/调试全局变量' 来编辑它们的变量.")
 				return
 			else
-				to_chat(usr,  "[somevar] is [thing]")
+				to_chat(usr,  "[somevar] 是 [thing]")
 				// this is somehow broken
 				var/changeto = input(usr, "Change this world variable to what type?") in list("Empty List", "Text", "Num", "Cancel")
 				switch (lowertext(changeto))
@@ -750,10 +750,10 @@
 							target = locate(loc.x + X,loc.y + Y,loc.z + Z)
 			if ("inmarked")
 				if (!marked_datum())
-					to_chat(usr, "You don't have any object marked. Abandoning spawn.")
+					to_chat(usr, "你没有标记任何对象. 正在放弃生成.")
 					return
 				else if (!istype(marked_datum(),  /atom))
-					to_chat(usr, "The object you have marked cannot be used as a target. Target must be of type /atom. Abandoning spawn.")
+					to_chat(usr, "你标记的对象不能用作目标. 目标必须是 /atom 类型. 正在放弃生成.")
 					return
 				else
 					target = marked_datum()
@@ -846,7 +846,7 @@
 		var/obj/map_metadata/subcom13/SM = map
 		if(SM?.created_sub)
 			SM.created_sub.target_speed = text2num(href_list["subcom_speed"])
-			to_chat(usr, "<span class='notice'>Set target speed to [href_list["subcom_speed"]] kts.</span>")
+			to_chat(usr, "<span class='notice'>将目标速度设为 [href_list["subcom_speed"]] 节.</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -855,7 +855,7 @@
 		var/obj/map_metadata/subcom13/SM = map
 		if(SM?.created_sub)
 			SM.created_sub.target_depth = 0
-			to_chat(usr, "<span class='notice'>Surfacing submarine.</span>")
+			to_chat(usr, "<span class='notice'>潜艇上浮.</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -866,7 +866,7 @@
 			SM.created_sub.target_depth = 250
 			if(SM.created_sub.internal_turfs.len)
 				playsound(pick(SM.created_sub.internal_turfs), 'sound/machines/submarine/dive_alarm.ogg', 80, 1)
-			to_chat(usr, "<span class='notice'>Crash diving to 250m.</span>")
+			to_chat(usr, "<span class='notice'>紧急下潜至 250 米.</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -881,7 +881,7 @@
 				if(TT.my_sub == SM.created_sub)
 					TT.is_loaded = TRUE
 					TT.icon_state = "torpedo_tube1_closed"
-			to_chat(usr, "<span class='notice'>All torpedo tubes loaded.</span>")
+			to_chat(usr, "<span class='notice'>所有鱼雷发射管已装填.</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -890,7 +890,7 @@
 		var/obj/map_metadata/subcom13/SM = map
 		if(SM?.created_sub)
 			SM.created_sub.master_arm = !SM.created_sub.master_arm
-			to_chat(usr, "<span class='notice'>Master arm: [SM.created_sub.master_arm ? "ARMED" : "SAFE"].</span>")
+			to_chat(usr, "<span class='notice'>主武器保险: [SM.created_sub.master_arm ? "ARMED" : "SAFE"].</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -900,7 +900,7 @@
 		var/obj/map_metadata/subcom13/SM = map
 		if(SM?.created_sub)
 			SM.created_sub.simulate_attack(attack_type)
-			to_chat(usr, "<span class='notice'>Simulated attack: [attack_type].</span>")
+			to_chat(usr, "<span class='notice'>模拟攻击: [attack_type].</span>")
 			src.show_subcom13_panel()
 		return
 
@@ -937,9 +937,9 @@
 			if(NPC)
 				if(global.subcom_map)
 					global.subcom_map.active_vessels += NPC
-				to_chat(usr, "<span class='notice'>Spawned [NPC.name] at ([spawn_x], [spawn_y]).</span>")
+				to_chat(usr, "<span class='notice'>已在 ([spawn_x], [spawn_y]) 生成 [NPC.name].</span>")
 			else
-				to_chat(usr, "<span class='warning'>Failed to spawn NPC.</span>")
+				to_chat(usr, "<span class='warning'>生成 NPC 失败.</span>")
 		src.show_subcom13_panel()
 		return
 
@@ -958,9 +958,9 @@
 		if(NPC)
 			if(global.subcom_map)
 				global.subcom_map.active_vessels += NPC
-			to_chat(usr, "<span class='notice'>Spawned random hostile [NPC.name] at ([spawn_x], [spawn_y]).</span>")
+			to_chat(usr, "<span class='notice'>已在 ([spawn_x], [spawn_y]) 生成随机敌对单位 [NPC.name].</span>")
 		else
-			to_chat(usr, "<span class='warning'>Failed to spawn random NPC.</span>")
+			to_chat(usr, "<span class='warning'>生成随机 NPC 失败.</span>")
 		show_subcom13_panel()
 		return
 
@@ -970,7 +970,7 @@
 			for(var/datum/vessel_contact/npc/NPC in global.subcom_map.active_vessels)
 				qdel(NPC)
 			global.subcom_map.active_vessels.Cut()
-		to_chat(usr, "<span class='notice'>All NPC vessels removed.</span>")
+		to_chat(usr, "<span class='notice'>所有 NPC 舰船已移除.</span>")
 		src.show_subcom13_panel()
 		return
 

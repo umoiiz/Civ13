@@ -1,6 +1,6 @@
 /obj/structure/largecrate
-	name = "large crate"
-	desc = "A hefty wooden crate."
+	name = "大板条箱"
+	desc = "一个沉重的木制板条箱。"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "densecrate"
 	density = TRUE
@@ -8,7 +8,7 @@
 	not_movable = FALSE
 	not_disassemblable = FALSE
 /obj/structure/largecrate/attack_hand(mob/user as mob)
-	to_chat(user, "<span class='notice'>You need a crowbar to pry this open!</span>")
+	to_chat(user, "<span class='notice'>你需要一根撬棍才能撬开这个!</span>")
 	return
 
 /obj/structure/largecrate/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -17,7 +17,7 @@
 		var/turf/T = get_turf(src)
 		for (var/atom/movable/AM in contents)
 			if (AM.simulated) AM.forceMove(T)
-		user.visible_message("<span class='notice'>[user] pries \the [src] open.</span>", \
+		user.visible_message("<span class='notice'>[user] 撬开了 \the [src]。</span>", \
 							 "<span class='notice'>You pry open \the [src].</span>", \
 							 "<span class='notice'>You hear splitting wood.</span>")
 		qdel(src)
@@ -38,8 +38,8 @@
 
 /obj/structure/largecrate/animal/dog/german
 	held_type = /mob/living/simple_animal/complex_animal/dog/german_shepherd
-	name = "German Shepherd Crate"
+	name = "德国牧羊犬板条箱"
 
 /obj/structure/largecrate/animal/dog/pirates
 	held_type = /mob/living/simple_animal/complex_animal/dog/samoyed
-	name = "Samoyed Crate"
+	name = "萨摩耶板条箱"

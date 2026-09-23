@@ -1,12 +1,12 @@
 // Odis' Beamblade collection
 
 /obj/item/weapon/material/sword/magic/onoff
-	name = "White Beam Blade"
+	name = "白色光束刃"
 	icon_state = "beamblade_off"
 	item_state = "beamblade_off"
 	base_icon = "beamblade_off"
 	cooldownw = DEFAULT_QUICK_COOLDOWN
-	desc = "A blade made of pure light contained by a strange force."
+	desc = "由一种奇异力量约束的纯光构成的刀刃."
 	atk_mode = BASH
 	force_divisor = 0.10
 	thrown_force_divisor = 0.10
@@ -79,8 +79,8 @@
 	..()
 
 /obj/item/weapon/material/sword/magic/onoff/blue
-	name = "Blue Beam Blade"
-	desc = "A blade made of blue light contained by a strange force."
+	name = "蓝色光束刃"
+	desc = "由一种奇异力量约束的蓝光构成的刀刃."
 	light_color = "#0000FF"
 	on_state = "bluebeamblade"
 	on_state_item = "bluebeamblade"
@@ -90,8 +90,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/red
-	name = "Red Beam Blade"
-	desc = "A blade made of red light contained by a strange force."
+	name = "红色光束刃"
+	desc = "由一种奇异力量约束的红光构成的刀刃."
 	light_color = "#FF0000"
 	on_state = "redbeamblade"
 	on_state_item = "redbeamblade"
@@ -101,8 +101,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/green
-	name = "Green Beam Blade"
-	desc = "A blade made of green light contained by a strange force."
+	name = "绿色光束刃"
+	desc = "由一种奇异力量约束的绿光构成的刀刃."
 	light_color = "#00FF00"
 	on_state = "greenbeamblade"
 	on_state_item = "greenbeamblade"
@@ -112,8 +112,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/lightgreen
-	name = "Light Green Beam Blade"
-	desc = "A blade made of light green light contained by a strange force."
+	name = "浅绿色光束刃"
+	desc = "由一种奇异力量约束的浅绿光构成的刀刃."
 	light_color = "#90EE90"
 	on_state = "lightgreenbeamblade"
 	on_state_item = "lightgreenbeamblade"
@@ -123,8 +123,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/darkgreen
-	name = "Dark Green Beam Blade"
-	desc = "A blade made of dark green light contained by a strange force."
+	name = "深绿色光束刃"
+	desc = "由一种奇异力量约束的深绿光构成的刀刃."
 	light_color = "#013220"
 	on_state = "darkgreenbeamblade"
 	on_state_item = "darkgreenbeamblade"
@@ -134,8 +134,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/purple
-	name = "Purple Beam Blade"
-	desc = "A blade made of purple light contained by a strange force."
+	name = "紫色光束刃"
+	desc = "由一种奇异力量约束的紫光构成的刀刃."
 	light_color = "#800080"
 	on_state = "purplebeamblade"
 	on_state_item = "purplebeamblade"
@@ -145,8 +145,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/teal
-	name = "Teal Beam Blade"
-	desc = "A blade made of teal light contained by a strange force."
+	name = "青绿色光束刃"
+	desc = "由一种奇异力量约束的青绿光构成的刀刃."
 	light_color = "#008080"
 	on_state = "tealbeamblade"
 	on_state_item = "tealbeamblade"
@@ -156,8 +156,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/cyan
-	name = "Cyan Beam Blade"
-	desc = "A blade made of cyan light contained by a strange force."
+	name = "青色光束刃"
+	desc = "由一种奇异力量约束的青光构成的刀刃."
 	light_color = "#00FFFF"
 	on_state = "cyanbeamblade"
 	on_state_item = "cyanbeamblade"
@@ -167,8 +167,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/magenta
-	name = "Magenta Beam Blade"
-	desc = "A blade made of magenta light contained by a strange force."
+	name = "品红色光束刃"
+	desc = "由一种奇异力量约束的品红光构成的刀刃."
 	light_color = "#FF00FF"
 	on_state = "magentabeamblade"
 	on_state_item = "magentabeamblade"
@@ -178,8 +178,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/redpink
-	name = "Reddish Pink Beam Blade"
-	desc = "A blade made of reddish pink light contained by a strange force."
+	name = "淡粉光束刃"
+	desc = "由一种奇异力量束缚的淡粉色光束构成的刀刃."
 	light_color = "#ffc0cb"
 	on_state = "redpinkbeamblade"
 	on_state_item = "redpinkbeamblade"
@@ -189,8 +189,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/yellow
-	name = "Yellow Beam Blade"
-	desc = "A blade made of yellow light contained by a strange force."
+	name = "黄色光束刃"
+	desc = "由一种奇异力量束缚的黄色光束构成的刀刃."
 	light_color = "#FFFF00"
 	on_state = "yellowbeamblade"
 	on_state_item = "yellowbeamblade"
@@ -200,8 +200,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/gold
-	name = "Gold Beam Blade"
-	desc = "A blade made of gold light contained by a strange force."
+	name = "金色光束刃"
+	desc = "由一种奇异力量束缚的金色光束构成的刀刃."
 	light_color = "#FFD700"
 	on_state = "goldbeamblade"
 	on_state_item = "goldbeamblade"
@@ -211,8 +211,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/orange
-	name = "Orange Beam Blade"
-	desc = "A blade made of orange light contained by a strange force."
+	name = "橙色光束刃"
+	desc = "由一种奇异力量束缚的橙色光束构成的刀刃."
 	light_color = "#FFA500"
 	on_state = "orangebeamblade"
 	on_state_item = "orangebeamblade"
@@ -222,8 +222,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/darkorange
-	name = "Dark Orange Beam Blade"
-	desc = "A blade made of dark orange light contained by a strange force."
+	name = "深橙色光束刃"
+	desc = "由一种奇异力量束缚的深橙色光束构成的刀刃."
 	light_color = "#ff8c00"
 	on_state = "darkorangebeamblade"
 	on_state_item = "darkorangebeamblade"
@@ -233,8 +233,8 @@
 	new_sharpness = 100
 
 /obj/item/weapon/material/sword/magic/onoff/bronze
-	name = "Bronze Beam Blade"
-	desc = "A blade made of bronze light contained by a strange force."
+	name = "青铜光束刃"
+	desc = "由一种奇异力量束缚的青铜色光束构成的刀刃."
 	light_color = "#CD7F32"
 	on_state = "bronzebeamblade"
 	on_state_item = "bronzebeamblade"

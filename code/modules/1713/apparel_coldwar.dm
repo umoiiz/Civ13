@@ -22,8 +22,8 @@
 /* Coldwar Coats*/
 
 /obj/item/clothing/suit/storage/coat/modern_winter
-	name = "dark green winter coat"
-	desc = "An army-style coat, in olive drab."
+	name = "深绿色冬季大衣"
+	desc = "一件军装风格的大衣,橄榄褐色。"
 	icon_state = "modern_winter"
 	item_state = "modern_winter"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -32,8 +32,8 @@
 	value = 75
 
 /obj/item/clothing/suit/storage/coat/oldyjacket
-	name = "red jacket"
-	desc = "A red jacket from the 80s."
+	name = "红色夹克"
+	desc = "一件80年代的红色夹克。"
 	icon_state = "jacket80s"
 	item_state = "jacket80s"
 	body_parts_covered = UPPER_TORSO||ARMS
@@ -42,8 +42,8 @@
 	value = 100
 
 /obj/item/clothing/suit/storage/coat/chinese
-	name = "chinese coat"
-	desc = "A chinese winter coat."
+	name = "中式大衣"
+	desc = "一件中式冬季大衣。"
 	icon_state = "chi_korea_coat"
 	item_state = "chi_korea_coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -52,8 +52,8 @@
 	value = 75
 
 /obj/item/clothing/suit/storage/coat/chinese/officer
-	name = "chinese officer coat"
-	desc = "A chinese winter coat, designed for officers."
+	name = "中国军官大衣"
+	desc = "一件中式冬季大衣,为军官设计。"
 	icon_state = "chi_korea_offcoat"
 	item_state = "chi_korea_offcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -61,8 +61,8 @@
 	armor = list(melee = 12, arrow = 5, gun = FALSE, energy = 15, bomb = 5, bio = 30, rad = 30)
 
 /obj/item/clothing/suit/storage/coat/american
-	name = "american coat"
-	desc = "An american winter coat."
+	name = "美国大衣"
+	desc = "一件美式冬季外套."
 	icon_state = "us_coat_korea"
 	item_state = "us_coat_korea"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -70,8 +70,8 @@
 	armor = list(melee = 12, arrow = 5, gun = FALSE, energy = 15, bomb = 5, bio = 30, rad = 30)
 
 /obj/item/clothing/suit/storage/jacket/afghanka
-	name = "afghanka coat"
-	desc = "A soviet winter jacket issued and developped in the early 80's."
+	name = "阿富汗卡外套"
+	desc = "一件于80年代初配发并研制的苏联冬季夹克."
 	icon_state = "winter_afghanka"
 	item_state = "winter_afghanka"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -82,8 +82,8 @@
 /* Cold War Accessories*/
 
 /obj/item/clothing/mask/facecamo
-	name = "woodlands face camo"
-	desc = "Face painting in woodland camo pattern."
+	name = "丛林迷彩面绘"
+	desc = "丛林迷彩图案的面部涂装."
 	icon_state = "painting_woodland"
 	item_state = "painting_woodland"
 	blocks_scope = FALSE
@@ -91,32 +91,32 @@
 /* FBI & Law Enforcement Clothes*/
 
 /obj/item/clothing/suit/storage/fbi
-	name = "FBI jacket"
-	desc = "A secret FBI jacket perhaps."
+	name = "FBI夹克"
+	desc = "一件也许是FBI的机密夹克."
 	icon_state = "fbi2"
 	item_state = "fbi2"
 
 /obj/item/clothing/suit/storage/atf
-	name = "ATF jacket"
-	desc = "An ATF jacket, standard issue for ATF agents."
+	name = "ATF夹克"
+	desc = "一件ATF夹克,ATF探员的制式配发品."
 	icon_state = "atf"
 	item_state = "atf"
 
 /obj/item/clothing/suit/storage/dea
-	name = "DEA jacket"
-	desc = "A DEA jacket, standard issue for DEA agents."
+	name = "DEA夹克"
+	desc = "一件DEA夹克,DEA探员的制式配发品."
 	icon_state = "dea"
 	item_state = "dea"
 
 /obj/item/clothing/suit/storage/jacket/forensics
-	name = "forensics jacket"
-	desc = "A forensic department jacket."
+	name = "法医夹克"
+	desc = "一件法医部门的夹克."
 	icon_state = "forensics"
 	item_state = "forensics"
 
 /obj/item/clothing/suit/storage/jacket/police
-	name = "police jacket"
-	desc = "A police jacket."
+	name = "警察夹克"
+	desc = "一件警察夹克."
 	icon_state = "policejacket"
 	item_state = "policejacket"
 	var/closed = TRUE
@@ -137,20 +137,20 @@
 			item_state = "policejacket_open"
 			icon_state = "policejacket_open"
 			item_state_slots["w_uniform"] = "policejacket_open"
-			to_chat(usr, "You <b>open up</b> your jacket.")
+			to_chat(usr, "你<b>敞开</b>你的夹克.")
 			closed = FALSE
 			update_clothing_icon()
 		else if (!closed)
 			item_state = "policejacket"
 			icon_state = "policejacket"
 			item_state_slots["w_uniform"] = "policejacket"
-			to_chat(usr, "You <b>close up</b> your jacket.")
+			to_chat(usr, "你<b>拉上</b>你的夹克.")
 			closed = TRUE
 			update_clothing_icon()
 
 /obj/item/clothing/suit/storage/jacket/police/black
-	name = "police jacket"
-	desc = "A black police jacket."
+	name = "警察夹克"
+	desc = "一件黑色警察夹克."
 	icon_state = "policejacket_black"
 	item_state = "policejacket_black"
 	closed = TRUE
@@ -166,20 +166,20 @@
 			item_state = "policejacket_black_open"
 			icon_state = "policejacket_black_open"
 			item_state_slots["w_uniform"] = "policejacket_open"
-			to_chat(usr, "You <b>open up</b> your jacket.")
+			to_chat(usr, "你<b>敞开</b>你的夹克.")
 			closed = FALSE
 			update_clothing_icon()
 		else if (!closed)
 			item_state = "policejacket_black"
 			icon_state = "policejacket_black"
 			item_state_slots["w_uniform"] = "policejacket_black"
-			to_chat(usr, "You <b>close up</b> your jacket.")
+			to_chat(usr, "你<b>拉上</b>你的夹克.")
 			closed = TRUE
 			update_clothing_icon()
 
 /obj/item/clothing/suit/swat //these likely need upgrading to armor
-	name = "swat heavy vest"
-	desc = "A heavy NIJ level IV vest, used by swat officers."
+	name = "特警重型防弹衣"
+	desc = "一件NIJ IV级重型防弹衣,供特警警官使用."
 	icon_state = "swat"
 	item_state = "swat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -189,8 +189,8 @@
 	flags = CONDUCT
 
 /obj/item/clothing/suit/swat_new
-	name = "swat bulletproof vest"
-	desc = "A heavy NIJ level IV vest, used by swat officers."
+	name = "特警防弹衣"
+	desc = "一件NIJ IV级重型防弹衣,供特警警官使用."
 	icon_state = "policevest"
 	item_state = "policevest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -200,8 +200,8 @@
 	ripable = FALSE
 
 /obj/item/clothing/suit/police
-	name = "police bulletproof vest"
-	desc = "A police vest (Level III)."
+	name = "警察防弹衣"
+	desc = "一件警察防弹衣(III级)."
 	icon_state = "policevest"
 	item_state = "policevest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -210,90 +210,90 @@
 	ripable = FALSE
 
 /obj/item/clothing/under/traffic_police
-	name = "police outfit"
-	desc = "An outfit composed of a blue emergency services shirt and denim trousers. It has a police badge attached"
+	name = "警察制服"
+	desc = "一套由蓝色应急服务衬衫和牛仔长裤组成的制服.上面附有一枚警徽"
 	icon_state = "traffic_cop"
 	item_state = "traffic_cop"
 
 /obj/item/clothing/under/traffic_police/supervisor
-	name = "police supervisor outfit"
-	desc = "An outfit composed of a blue emergency services shirt and denim trousers. It has a police supervisor badge attached"
+	name = "警察主管制服"
+	desc = "一套由蓝色应急服务衬衫和牛仔长裤组成的制服.上面附有一枚警司徽章"
 	icon_state = "traffic_cop_sup"
 	item_state = "traffic_cop_sup"
 
 /obj/item/clothing/under/countysheriff
-	name = "sheriff's department sheriff outfit"
-	desc = "A law enforcement outfit worn by the town's sherrif."
+	name = "治安官部门治安官制服"
+	desc = "一套由镇上治安官穿着的执法制服."
 	icon_state = "sd_sheriff"
 	item_state = "sd_sheriff"
 
 /obj/item/clothing/under/countysheriff/deputy
-	name = "sheriff's department deputy outfit"
-	desc = "A law enforcement outfit worn by the town's deputies."
+	name = "治安官部门副手制服"
+	desc = "一套由镇上副治安官穿着的执法制服."
 	icon_state = "sd_deputy"
 	item_state = "sd_deputy"
 
 /obj/item/clothing/under/countysheriff/deputy/short
-	name = "sheriff's department deputy outfit"
-	desc = "A law enforcement outfit worn by the town's deputies. Short sleeved version."
+	name = "治安官部门副手制服"
+	desc = "一套由镇上副治安官穿着的执法制服.短袖版本."
 	icon_state = "sd_deputy_shortsleeves"
 	item_state = "sd_deputy_shortsleeves"
 
 /obj/item/clothing/head/countysheriff_hat
-	name = "sheriff's stratton hat"
-	desc = "A stratton hat worn by the LEOs of the town's Sheriff Department."
+	name = "治安官斯特拉顿帽"
+	desc = "一顶由镇上治安官部门执法人员佩戴的斯特拉顿帽."
 	icon_state = "sd_sheriffhat"
 	item_state = "sd_sheriffhat"
 
 /obj/item/clothing/head/countysheriff_cap
-	name = "sheriff's department cap"
-	desc = "A baseball cap worn by the LEOs of the town's Sheriff Department."
+	name = "治安官部门棒球帽"
+	desc = "一顶由镇上治安官部门执法人员佩戴的棒球帽."
 	icon_state = "sd_cap"
 	item_state = "sd_cap"
 
 /obj/item/clothing/head/countysheriff_cap/black
-	name = "sheriff's department cap"
-	desc = "A baseball cap worn by the LEOs of the town's Sheriff Department. Black version."
+	name = "治安官部门棒球帽"
+	desc = "一顶由镇上治安官部门执法人员佩戴的棒球帽.黑色版本."
 	icon_state = "sd_cap_black"
 	item_state = "sd_cap_black"
 
 /obj/item/clothing/head/traffic_police
-	name = "police cap"
-	desc = "A blue cap often worn by members of the police and security guards."
+	name = "警察帽"
+	desc = "一顶常由警察和保安人员佩戴的蓝色帽子."
 	icon_state = "traffic_cop"
 	item_state = "traffic_cop"
 
 /obj/item/clothing/head/beret_red
-	name = "red beret"
-	desc = "A red beret."
+	name = "红色贝雷帽"
+	desc = "一顶红色贝雷帽."
 	icon_state = "beret_red"
 	item_state = "beret_red"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_black
-	name = "black beret"
-	desc = "A black military beret."
+	name = "黑色贝雷帽"
+	desc = "一顶黑色军用贝雷帽."
 	icon_state = "beret_black"
 	item_state = "beret_black"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_black/insig
-	name = "black beret"
-	desc = "A black beret with golden insignia."
+	name = "黑色贝雷帽"
+	desc = "一顶带有金色徽章的黑色贝雷帽."
 	icon_state = "beret_black_insig"
 	item_state = "beret_black_insig"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_green
-	name = "green beret"
-	desc = "A green beret."
+	name = "绿色贝雷帽"
+	desc = "一顶绿色贝雷帽."
 	icon_state = "beret_green"
 	item_state = "beret_green"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_green/insig
-	name = "green beret"
-	desc = "A green beret with golden insignia."
+	name = "绿色贝雷帽"
+	desc = "一顶带有金色徽章的绿色贝雷帽."
 	icon_state = "beret_green_insig"
 	item_state = "beret_green_insig"
 	body_parts_covered = HEAD
@@ -301,72 +301,72 @@
 /* US Army Clothes*/
 
 /obj/item/clothing/under/us_uni
-	name = "OG-107 uniform"
-	desc = "The standard US Army uniform of the mid-20th century."
+	name = "OG-107制服"
+	desc = "20世纪中期美军的标准制服."
 	icon_state = "us_uni_og107"
 	item_state = "us_uni_og107"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/us_uni/us_camo
-	name = "woodland camo uniform"
-	desc = "The standard US Army camo uniform implemented in the early 1980s. Still used during the present day by many countries."
+	name = "丛林迷彩制服"
+	desc = "于80年代初采用的美军标准迷彩制服.至今仍被许多国家使用."
 	icon_state = "us_camo"
 	item_state = "us_camo"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/us_uni/us_greentrousers
-	name = "OG-107 trousers"
-	desc = "The standard US Army OG-107 uniform trousers."
+	name = "OG-107长裤"
+	desc = "美军标准OG-107制服长裤."
 	icon_state = "us_greentrousers_og107"
 	item_state = "us_greentrousers_og107"
 	body_parts_covered = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/us_uni/us_lightuni
-	name = "OG-107 uniform with rolled sleeves"
-	desc = "A rolled-sleeves version of the US Army OG-107 uniform."
+	name = "卷袖OG-107制服"
+	desc = "美军OG-107制服的卷袖版本."
 	icon_state = "us_uni_og107_rolled"
 	item_state = "us_uni_og107_rolled"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/us_uni/us_lightuni2
-	name = "OG-107 trousers and khaki undershirt"
-	desc = "A light version of the US Army OG-107 trousers and the service khaki undershirt."
+	name = "OG-107长裤和卡其色内衣"
+	desc = "美军OG-107长裤和军装卡其色内衣的轻便版本."
 	icon_state = "us_og107_lightuni"
 	item_state = "us_og107_lightuni"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/us_uni/us_lightuni3
-	name = "OG-107 trousers and white undershirt"
-	desc = "A light version of the US Army OG-107 trousers and the service white untucked undershirt."
+	name = "OG-107长裤和白色内衣"
+	desc = "美军OG-107长裤和军装白色不束入内衣的轻便版本."
 	icon_state = "us_og107_lightuni2"
 	item_state = "us_og107_lightuni2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/us_uni/us_tigerstripes
-	name = "tigerstripes camo uniform"
-	desc = "A camo uniform in the tigerstripes pattern."
+	name = "虎纹迷彩制服"
+	desc = "一件虎纹图案的迷彩制服."
 	icon_state = "us_camo_tigerstripes"
 	item_state = "us_camo_tigerstripes"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/us_jacket
-	name = "olive drab jacket"
-	desc = "The standard us army olive drab jacket of the mid-20th century."
+	name = "橄榄绿夹克"
+	desc = "20世纪中期美军标准的橄榄绿夹克."
 	icon_state = "us_jacket"
 	item_state = "us_jacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 //korean war//
 /obj/item/clothing/under/us_uni_korean
-	name = "american uniform"
-	desc = "The standard us army uniform of the korean war, this one outfitted for winter."
+	name = "美军制服"
+	desc = "朝鲜战争的美军标准制服,这一件为冬季配置."
 	icon_state = "usuni_korea"
 	item_state = "usuni_korea"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT
 
 /obj/item/clothing/under/chinese_winter
-	name = "chinese uniform"
-	desc = "The standard winter chinese uniform."
+	name = "中国制服"
+	desc = "标准的中国冬季制服."
 	icon_state = "korea_china"
 	item_state = "korea_china"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -376,8 +376,8 @@
 /* US Army Armor & Helmets*/
 
 /obj/item/clothing/head/helmet/modern/ushelmet
-	name = "M1 helmet"
-	desc = "A typical us army helmet."
+	name = "M1头盔"
+	desc = "典型的美国陆军头盔."
 	icon_state = "m1_standard"
 	item_state = "m1_standard"
 	body_parts_covered = HEAD
@@ -386,37 +386,37 @@
 	health = 24
 
 /obj/item/clothing/head/helmet/modern/ushelmet/un
-	name = "UN helmet"
-	desc = "A typical blue UN helmet."
+	name = "UN头盔"
+	desc = "典型的蓝色联合国头盔."
 	icon_state = "unitednations"
 	item_state = "unitednations"
 	flash_protection = FLASH_PROTECTION_MODERATE
 /obj/item/clothing/head/helmet/modern/ushelmet/un/medic
-	name = "UN medic helmet"
-	desc = "A typical blue UN helmet, with doctor markings."
+	name = "UN医疗兵头盔"
+	desc = "典型的蓝色联合国头盔, 带有医疗兵标记."
 	icon_state = "unitednations_medic"
 	item_state = "unitednations_medic"
 /obj/item/clothing/head/un_beret
-	name = "UN beret"
-	desc = "A blue UN beret."
+	name = "UN贝雷帽"
+	desc = "一顶蓝色联合国贝雷帽."
 	icon_state = "unitednations_beret"
 	item_state = "unitednations_beret"
 
 /obj/item/clothing/head/helmet/modern/ushelmet/sgt
-	name = "M1 helmet 2nd LT"
-	desc = "A typical us army helmet. With lieutenant markings."
+	name = "M1头盔 少尉"
+	desc = "典型的美国陆军头盔. 带有少尉标记."
 	icon_state = "m1_2nd_lt"
 	item_state = "m1_2nd_lt"
 
 /obj/item/clothing/head/helmet/modern/ushelmet/lt
-	name = "M1 helmet 1st LT"
-	desc = "A typical US Army helmet. With lieutenant markings."
+	name = "M1头盔 中尉"
+	desc = "典型的美国陆军头盔. 带有中尉标记."
 	icon_state = "m1_1st_lt"
 	item_state = "m1_1st_lt"
 
 /obj/item/clothing/head/helmet/modern/ushelmet/camo
-	name = "M1 camo helmet"
-	desc = "A typical US Army helmet. With a Mitchell camo cover."
+	name = "M1迷彩头盔"
+	desc = "典型的美国陆军头盔. 带有米切尔迷彩罩."
 	icon_state = "m1_camo_mitchell"
 	item_state = "ushelmet_camo"
 
@@ -441,14 +441,14 @@
 			optlist -= chosen
 
 /obj/item/clothing/head/helmet/modern/ushelmet/camo/lt
-	name = "M1 camo helmet"
-	desc = "A typical US Army helmet. With a Mitchell camo cover."
+	name = "M1迷彩头盔"
+	desc = "典型的美国陆军头盔. 带有米切尔迷彩罩."
 	icon_state = "m1_camo_mitchell_lt"
 	item_state = "ushelmet_camo_lt"
 
 /obj/item/clothing/head/helmet/modern/ushelmet/crewman
-	name = "CVC helmet"
-	desc = "A standard issue helmet for vehicle crewmen."
+	name = "CVC头盔"
+	desc = "车组人员标准配发的头盔."
 	icon_state = "cvc_helmet"
 	item_state = "cvc_helmet"
 	body_parts_covered = HEAD
@@ -457,8 +457,8 @@
 
 /* Korean war Helmets */
 /obj/item/clothing/head/helmet/korean/usm1
-	name = "M1 Helmet"
-	desc = "The typical rounded steel helmet of the US Army."
+	name = "M1头盔"
+	desc = "美国陆军典型的圆钢盔."
 	icon_state = "korea_m1_standard"
 	item_state = "korea_m1_standard"
 	body_parts_covered = HEAD
@@ -469,14 +469,14 @@
 	if (!istype(W)) return//I really don't understand why this check is needed
 	if (istype(W, /obj/item/stack/material/rope))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You put netting on the helmet.</span>")
+		to_chat(user, "<span class='notice'>你在头盔上装了网罩.</span>")
 		new/obj/item/clothing/head/helmet/korean/ustannet(user.loc)
 		qdel(src)
 		qdel(W)
 
 /obj/item/clothing/head/helmet/korean/ustannet
-	name = "M1 Helmet with netting"
-	desc = "The typical rounded steel helmet of the US Army, with tan netting."
+	name = "带网罩的M1头盔"
+	desc = "美国陆军典型的圆钢盔, 带有棕褐色网罩."
 	icon_state = "korea_m1_tan_netting"
 	item_state = "korea_m1_tan_netting"
 	body_parts_covered = HEAD
@@ -492,7 +492,7 @@
 		item_state = "korea_m1_tan_netting"
 		body_parts_covered = HEAD
 		item_state_slots["slot_wear_head"] = "m1_tan_netting"
-		to_chat(usr, "<span class = 'danger'>You switch out your tan netting for green netting.</span>")
+		to_chat(usr, "<span class = 'danger'>你把棕褐色网罩换成了绿色网罩.</span>")
 		update_icon()
 		color = FALSE
 		usr.update_inv_head(1)
@@ -501,14 +501,14 @@
 		item_state = "korea_m1_green_netting"
 		body_parts_covered = HEAD
 		item_state_slots["slot_wear_head"] = "m1_green_netting"
-		to_chat(usr, "<span class = 'danger'>You switch out your green netting for tan netting.</span>")
+		to_chat(usr, "<span class = 'danger'>你把绿色网罩换成了棕褐色网罩.</span>")
 		update_icon()
 		color = TRUE
 		usr.update_inv_head(1)
 
 /obj/item/clothing/head/helmet/korean/usgreennet
-	name = "M1 Helmet with green netting"
-	desc = "The typical rounded steel helmet of the US Army, with green netting."
+	name = "带绿色网罩的M1头盔"
+	desc = "美国陆军典型的圆钢盔, 带有绿色网罩."
 	icon_state = "korea_m1_green_netting"
 	item_state = "korea_m1_green_netting"
 	body_parts_covered = HEAD
@@ -516,8 +516,8 @@
 	armor = list(melee = 40, arrow = 30, gun = 10, energy = 15, bomb = 40, bio = 20, rad = FALSE)
 
 /obj/item/clothing/head/helmet/korean/us_medic
-	name = "M1 Medic Helmet"
-	desc = "The typical rounded steel helmet of the US Army, this one for medics"
+	name = "M1医疗兵头盔"
+	desc = "美国陆军典型的圆钢盔, 这顶是给医疗兵用的"
 	icon_state = "korea_m1_medic"
 	item_state = "korea_m1_medic"
 	body_parts_covered = HEAD
@@ -525,8 +525,8 @@
 	armor = list(melee = 40, arrow = 30, gun = 10, energy = 15, bomb = 40, bio = 20, rad = FALSE)
 
 /obj/item/clothing/head/helmet/korean/us_2lt
-	name = "M1 2nd LT Helmet"
-	desc = "The typical rounded steel helmet of the US Army, this one bearing the rank of 2nd Lieutenant."
+	name = "M1少尉头盔"
+	desc = "美国陆军典型的圆钢盔, 这顶带有少尉军衔."
 	icon_state = "korea_m1_2nd_lt"
 	item_state = "korea_m1_2nd_lt"
 	body_parts_covered = HEAD
@@ -534,8 +534,8 @@
 	armor = list(melee = 40, arrow = 30, gun = 10, energy = 15, bomb = 40, bio = 20, rad = FALSE)
 
 /obj/item/clothing/head/helmet/korean/us_1lt
-	name = "M1 1st LT Helmet"
-	desc = "The typical rounded steel helmet of the US Army, this one bearing the rank of 1st Lieutenant."
+	name = "M1中尉头盔"
+	desc = "美国陆军典型的圆钢盔, 这顶带有中尉军衔."
 	icon_state = "korea_m1_1st_lt"
 	item_state = "korea_m1_1st_lt"
 	body_parts_covered = HEAD
@@ -543,8 +543,8 @@
 	armor = list(melee = 40, arrow = 30, gun = 10, energy = 15, bomb = 40, bio = 20, rad = FALSE)
 
 /obj/item/clothing/head/helmet/korean/us_cap
-	name = "M1 Captain Helmet"
-	desc = "The typical rounded steel helmet of the US Army, this one bearing the rank of Captain."
+	name = "M1上尉头盔"
+	desc = "美国陆军典型的圆钢盔, 这顶带有上尉军衔."
 	icon_state = "korea_m1_cpt"
 	item_state = "korea_m1_cpt"
 	body_parts_covered = HEAD
@@ -554,8 +554,8 @@
 /* Ghillie Suits*/
 
 /obj/item/clothing/suit/storage/ghillie
-	name = "ghillie suit"
-	desc = "A camo ghillie suit."
+	name = "吉利服"
+	desc = "一件迷彩吉利服."
 	icon_state = "ghillie"
 	item_state = "ghillie"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HANDS|FEET
@@ -563,58 +563,58 @@
 	value = 100
 
 /obj/item/clothing/head/ghillie
-	name = "ghillie headcover"
-	desc = "A headcover for a ghillie suit."
+	name = "吉利服头罩"
+	desc = "吉利服的头罩."
 	icon_state = "ghillie"
 	item_state = "ghillie"
 	body_parts_covered = HEAD
 	restricts_view = 1
 
 /obj/item/clothing/suit/storage/ghillie/winter
-	name = "winter ghillie suit"
-	desc = "A camo winter ghillie suit."
+	name = "冬季吉利服"
+	desc = "一件迷彩冬季吉利服."
 	icon_state = "ghillie_winter"
 	item_state = "ghillie_winter"
 
 /obj/item/clothing/head/ghillie/winter
-	name = "winter ghillie headcover"
-	desc = "A headcover for a winter ghillie suit."
+	name = "冬季吉利服头罩"
+	desc = "冬季吉利服的头罩."
 	icon_state = "ghillie_winter"
 	item_state = "ghillie_winter"
 
 /* Cold War Hats*/
 
 /obj/item/clothing/head/jungle_hat
-	name = "black boonie"
-	desc = "A wide brim, soft jungle hat."
+	name = "黑色奔尼帽"
+	desc = "一顶宽檐软质丛林帽."
 	icon_state = "black_boonie"
 	item_state = "black_boonie"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/jungle_hat/khaki
-	name = "khaki boonie"
-	desc = "A wide brim, soft jungle hat."
+	name = "卡其色奔尼帽"
+	desc = "一顶宽檐软质丛林帽."
 	icon_state = "khaki_boonie"
 	item_state = "khaki_boonie"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/jungle_hat/og107
-	name = "olive green boonie"
-	desc = "A wide brim, soft jungle hat."
+	name = "橄榄绿奔尼帽"
+	desc = "一顶宽檐软质丛林帽."
 	icon_state = "og107_boonie"
 	item_state = "og107_boonie"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/rice_hat
-	name = "rice hat"
-	desc = "A wide brim, rice farmer hat."
+	name = "斗笠"
+	desc = "一顶宽檐农夫斗笠."
 	icon_state = "rice_hat"
 	item_state = "rice_hat"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/chinese_ushanka
-	name = "chinese ushanka"
-	desc = "A chinese ushanka, used by soldiers in the chinese army."
+	name = "中国护耳冬帽"
+	desc = "一顶中国护耳冬帽, 供中国军队士兵使用."
 	icon_state = "chinese_ushanka_up"
 	item_state = "chinese_ushanka_up"
 	cold_protection = HEAD
@@ -628,16 +628,16 @@
 	if (icon_state == "chinese_ushanka")
 		icon_state = "chinese_ushanka_up"
 		item_state = "chinese_ushanka_up"
-		to_chat(user, "You raise the ear flaps on the ushanka.")
+		to_chat(user, "你竖起了护耳冬帽的耳罩.")
 	else if (icon_state == "chinese_ushanka_up")
 		icon_state = "chinese_ushanka"
 		item_state = "chinese_ushanka"
 		flags_inv = BLOCKHEADHAIR
-		to_chat(user, "You lower the ear flaps on the ushanka.")
+		to_chat(user, "你放下了护耳冬帽的耳罩.")
 
 /obj/item/clothing/head/helmet/modern/chi_korea_helmet
-	name = "Chinese helmet"
-	desc = "A leftover japanese helmet repurposed for the People's Liberation Army."
+	name = "中国头盔"
+	desc = "一顶改装后供中国人民解放军使用的遗留日本头盔."
 	icon_state = "chi_korea_helm"
 	item_state = "chi_korea_helm"
 	body_parts_covered = HEAD
@@ -646,8 +646,8 @@
 	health = 24
 
 /obj/item/clothing/head/helmet/modern/chi_korea_helmet/modernized
-	name = "Chinese helmet"
-	desc = "A steel helmet used by the People's Liberation Army."
+	name = "中国头盔"
+	desc = "一顶中国人民解放军使用的钢盔."
 	icon_state = "chi_korea_helm"
 	item_state = "chi_korea_helm"
 	body_parts_covered = HEAD
@@ -656,26 +656,26 @@
 	health = 100
 
 /obj/item/clothing/head/helmet/modern/chi_korea_helmet/modernized/winter
-	name = "White Chinese helmet"
+	name = "白色中国头盔"
 	icon_state = "chi_whitehelm"
 	item_state = "chi_whitehelm"
 
 /obj/item/clothing/head/helmet/modern/chi_korea_helmet/modernized/med
-	name = "Medical Chinese helmet"
-	desc = "A steel helmet used by the medics in the People's Liberation Army."
+	name = "中国医疗兵头盔"
+	desc = "一顶中国人民解放军医疗兵使用的钢盔."
 	icon_state = "chi_med"
 	item_state = "chi_med"
 
 /obj/item/clothing/head/nva_hat
-	name = "NVA cap"
-	desc = "A field cap with the markings of an NVA officer."
+	name = "北越军帽"
+	desc = "一顶带有北越军官标记的野战帽."
 	icon_state = "nva_off_cap"
 	item_state = "nva_off_cap"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/sov_ushanka_new
-	name = "soviet ushanka"
-	desc = "A soviet ushanka, used by soldiers in the Red Army."
+	name = "苏联护耳冬帽"
+	desc = "一顶苏联护耳冬帽, 供红军士兵使用."
 	icon_state = "ushanka_new_up"
 	item_state = "ushanka_new_up"
 	flags_inv = BLOCKHEADHAIR
@@ -689,149 +689,149 @@
 	if (icon_state == "ushanka_new")
 		icon_state = "ushanka_new_up"
 		item_state = "ushanka_new_up"
-		to_chat(user, "You raise the ear flaps on the ushanka.")
+		to_chat(user, "你竖起了护耳冬帽的耳罩.")
 	else
 		icon_state = "ushanka_new"
 		item_state = "ushanka_new"
-		to_chat(user, "You lower the ear flaps on the ushanka.")
+		to_chat(user, "你放下了护耳冬帽的耳罩.")
 
 /obj/item/clothing/head/ww2/nkvd_cap/kgb
-	name = "KGB cap"
-	desc = "A cap worn by KGB."
+	name = "克格勃帽"
+	desc = "一顶克格勃戴的帽子."
 	icon_state = "nkvd_cap"
 	item_state = "nkvd_cap"
 
 /obj/item/clothing/head/coldwar/soviet_officer
-	name = "soviet officer cap"
-	desc = "A cap worn by Soviet officers."
+	name = "苏联军官帽"
+	desc = "一顶苏联军官戴的帽子."
 	icon_state = "sov_officercap2"
 	item_state = "sov_officercap2"
 
 /obj/item/clothing/head/coldwar/cafr_officer
-	name = "cafr officer cap"
-	desc = "A cap worn by CAFR officers."
+	name = "CAFR军官帽"
+	desc = "一顶CAFR军官戴的帽子."
 	icon_state = "cafr_officercap"
 	item_state = "cafr_officercap"
 
 /obj/item/clothing/head/fieldcap/afghanka
-	name = "Afghanka field cap"
-	desc = "A field cap issued to Soviet forces in the 1980s."
+	name = "阿富汗卡野战帽"
+	desc = "1980年代配发给苏联军队的野战帽."
 	icon_state = "fieldcap_afghanka"
 	item_state = "fieldcap_afghanka"
 	body_parts_covered = HEAD
 	cold_protection = HEAD
 
 /obj/item/clothing/head/beret_rus_vdv
-	name = "VDV beret"
-	desc = "A beret worn by the Soviet and Russian Airborne Forces."
+	name = "VDV贝雷帽"
+	desc = "苏联和俄罗斯空降兵佩戴的贝雷帽."
 	icon_state = "beret_rus_vdv"
 	item_state = "beret_rus_vdv"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_rus_vdv/modern
-	name = "VDV beret"
-	desc = "A beret worn by the Russian Airborne Forces."
+	name = "VDV贝雷帽"
+	desc = "俄罗斯空降兵佩戴的贝雷帽."
 	icon_state = "beret_rus_vdv_modern"
 	item_state = "beret_rus_vdv_modern"
 
 /obj/item/clothing/head/beret_rus_spez
-	name = "Spetznaz beret"
-	desc = "A beret worn by the Spetznaz."
+	name = "Spetznaz贝雷帽"
+	desc = "Spetznaz佩戴的贝雷帽."
 	icon_state = "beret_rus_spez"
 	item_state = "beret_rus_spez"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_blugoslavia
-	name = "Blugoslavian beret"
-	desc = "A beret worn by Blugoslavian Officers."
+	name = "Blugoslavian贝雷帽"
+	desc = "Blugoslavian军官佩戴的贝雷帽."
 	icon_state = "beret_rus_vdv"
 	item_state = "beret_rus_vdv"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/beret_redmenia
-	name = "Redmenian beret"
-	desc = "A beret worn by Redmenian Officers."
+	name = "Redmenian贝雷帽"
+	desc = "Redmenian军官佩戴的贝雷帽."
 	icon_state = "beret_rus_spez"
 	item_state = "beret_rus_spez"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/cap_blugoslavia
-	name = "Blugoslavian navy cap"
-	desc = "A cap worn by Blugoslavian Officers of the Blugoslavian Naval Force."
+	name = "Blugoslavian海军帽"
+	desc = "Blugoslavian海军部队军官佩戴的帽子."
 	icon_state = "blugoslavia_cap"
 	item_state = "blugoslavia_cap"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/cap_redmenia
-	name = "Redmenian navy cap"
-	desc = "A cap worn by Redmenian Officers of the Imperial Redmenian Navy."
+	name = "Redmenian海军帽"
+	desc = "Redmenian帝国海军军官佩戴的帽子."
 	icon_state = "redmenia_cap"
 	item_state = "redmenia_cap"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/ww2/us_sailor_hat/blugoslavia
-	name = "Blugoslavian sailor hat"
-	desc = "A hat worn by sailors of the Blugoslavian Naval Force."
+	name = "Blugoslavian水兵帽"
+	desc = "Blugoslavian海军部队水兵佩戴的帽子."
 	icon_state = "upapilotka"
 	item_state = "upapilotka"
 /obj/item/clothing/head/ww2/us_sailor_hat/redmenia
-	name = "Redmenian sailor hat"
-	desc = "A hat worn by sailors of the Imperial Redmenian Navy."
+	name = "Redmenian水兵帽"
+	desc = "Redmenian帝国海军水兵佩戴的帽子."
 
 /* Vietcong Clothes*/
 
 /obj/item/clothing/under/localnlf1
-	name = "local NLF uniform"
-	desc = "A black uniform of the NLF."
+	name = "当地NLF制服"
+	desc = "NLF的黑色制服."
 	icon_state = "localnlfuniform_v1"
 	item_state = "localnlfuniform_v1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/localnlf2
-	name = "local NLF uniform"
-	desc = "A black and blue uniform of the NLF."
+	name = "当地NLF制服"
+	desc = "NLF的黑蓝色制服."
 	icon_state = "localnlfuniform_v2"
 	item_state = "localnlfuniform_v2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/localnlf3
-	name = "local NLF uniform"
-	desc = "A black and khaki uniform of the NLF."
+	name = "当地NLF制服"
+	desc = "NLF的黑卡其色制服."
 	icon_state = "localnlfuniform_v3"
 	item_state = "localnlfuniform_v3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/localnlf4
-	name = "local NLF uniform"
-	desc = "A blue and khaki uniform of the NLF."
+	name = "当地NLF制服"
+	desc = "NLF的蓝卡其色制服."
 	icon_state = "localnlfuniform_v4"
 	item_state = "localnlfuniform_v4"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/localnlf5
-	name = "local NLF uniform"
-	desc = "A grey uniform of the NLF."
+	name = "当地NLF制服"
+	desc = "NLF的灰色制服."
 	icon_state = "localnlfuniform_v5"
 	item_state = "localnlfuniform_v5"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/accessory/armband/khan_ran/black
-	name = "khan ran scarf (black and white)"
-	desc = "A traditional mekong delta white-and-grey checkered scarf."
+	name = "khan ran围巾 (黑白)"
+	desc = "传统的湄公河三角洲白灰格纹围巾."
 	icon_state = "khan_ran_v1"
 	item_state = "khan_ran_v1"
 	slot = "decor"
 
 /obj/item/clothing/accessory/armband/khan_ran/blue
-	name = "khan ran scarf (blue and white)"
-	desc = "A traditional mekong delta white-and-blue checkered scarf."
+	name = "khan ran围巾 (蓝白)"
+	desc = "传统的湄公河三角洲白蓝格纹围巾."
 	icon_state = "khan_ran_v2"
 	item_state = "khan_ran_v2"
 	slot = "decor"
 
 /obj/item/clothing/accessory/storage/webbing/nlfsmallpouches
-	name = "NLF small pouches"
-	desc = "A green chest-level webbing with multiple small-sized pouches."
+	name = "NLF小袋"
+	desc = "绿色胸挂织带,带有多个小型袋."
 	slots = 8
 	icon_state = "nlfchestrig_v2"
 	item_state = "nlfchestrig_v2"
@@ -857,8 +857,8 @@
 	new /obj/item/stack/medical/bruise_pack/bint(hold)
 
 /obj/item/clothing/accessory/storage/webbing/nlfchestrig
-	name = "NLF chestrig"
-	desc = "A green chest-level webbing, with three medium-sized pouches along with two smaller ones."
+	name = "NLF胸挂"
+	desc = "绿色胸挂织带,带有三个中型袋和两个小型袋."
 	slots = 5
 	icon_state = "nlfchestrig_v1"
 	item_state = "nlfchestrig_v1"
@@ -887,27 +887,27 @@
 		new /obj/item/weapon/grenade/modern/f1(hold)
 
 /obj/item/clothing/under/nva
-	name = "NVA uniform"
-	desc = "A khaki uniform of the North Vietnamese Army."
+	name = "NVA制服"
+	desc = "北越军队的卡其色制服."
 	icon_state = "NVAuni"
 	item_state = "NVAuni"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 /obj/item/clothing/under/nva/green
-	desc = "A green uniform of the North Vietnamese Army."
+	desc = "北越军队的绿色制服."
 	icon_state = "NVAuni_green"
 	item_state = "NVAuni_green"
 /obj/item/clothing/under/nva/sl
-	name = "NVA sergeant uniform"
-	desc = "A khaki uniform of the North Vietnamese Army. This one is bearing the ranks of a sergeant."
+	name = "NVA中士制服"
+	desc = "北越军队的卡其色制服. 这件带有中士军衔."
 	icon_state = "NVAuni_sl"
 	item_state = "NVAuni_sl"
 /obj/item/clothing/under/nva/sl/green
-	desc = "A green uniform of the North Vietnamese Army. This one is bearing the ranks of a sergeant."
+	desc = "北越军队的绿色制服. 这件带有中士军衔."
 	icon_state = "NVAuni_green_sl"
 	item_state = "NVAuni_green_sl"
 /obj/item/clothing/under/nva/officer
-	name = "NVA officer uniform"
-	desc = "A khaki uniform of the North Vietnamese Army. This one is bearing the ranks of an officer"
+	name = "NVA军官制服"
+	desc = "北越军队的卡其色制服. 这件带有军官军衔"
 	icon_state = "NVAuni_off"
 	item_state = "NVAuni_off"
 /* Cold War Armor*/
@@ -931,8 +931,8 @@
 	return mob_overlay
 
 /obj/item/clothing/accessory/armor/coldwar/plates/tatba //cant find any info on it, looks like a pasgt copy
-	name = "TATBA-7 vest"
-	desc = "Chinese light plate carrier, comes with a single plate inserted."
+	name = "TATBA-7背心"
+	desc = "中国轻型防弹插板背心, 附带一块插入的插板."
 	icon_state = "tatba"
 	item_state = "tatba"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -945,13 +945,13 @@
 	value = 100
 
 /obj/item/clothing/accessory/armor/coldwar/plates/tatba/green
-	name = "TATBA-7 green vest"
+	name = "TATBA-7绿色背心"
 	icon_state = "tatbagreen"
 	item_state = "tatbagreen"
 
 /obj/item/clothing/head/helmet/modern/ssh_68 //1960 precursor to the 6B47 helmet on apparel_modern.dm
-	name = "SSh-68 helmet"
-	desc = "A mass produced metal helmet often used by USSR infantry forces in the mid 20th century."
+	name = "SSh-68头盔"
+	desc = "20世纪中期苏联步兵部队常用的量产金属头盔."
 	icon_state = "ssh_68_sovhelm"
 	item_state = "ssh_68_sovhelm"
 	body_parts_covered = HEAD
@@ -971,8 +971,8 @@
 	item_state = "ssh_68wintmed"
 
 /obj/item/clothing/suit/b3 //need checking these assets before path name change, but i've updated the name to a real B3 russian armor circa 1980's
-	name = "6B3 body armor"
-	desc = "A ballistic vest of Soviet origin, issued in the mid 1980s."
+	name = "6B3防弹衣"
+	desc = "苏联产防弹背心, 于1980年代中期配发."
 	icon_state = "6b3"
 	item_state = "6b3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -982,8 +982,8 @@
 	weight = 5
 
 /obj/item/clothing/accessory/armor/coldwar/plates/b3 //Accessory version
-	name = "6B3 body armor"
-	desc = "A ballistic vest of Soviet origin, issued in the mid 1980s."
+	name = "6B3防弹衣"
+	desc = "苏联产防弹背心, 于1980年代中期配发."
 	icon_state = "6b3"
 	item_state = "6b3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -995,18 +995,18 @@
 	weight = 5
 
 /obj/item/clothing/accessory/armor/coldwar/plates/b3/blue
-	name = "6B3 Blue body armor"
+	name = "6B3蓝色防弹衣"
 	icon_state = "6b3blu"
 	item_state = "6b3blu"
 
 /obj/item/clothing/accessory/armor/coldwar/plates/b3/camo //uses civ grass tiles, provides alot more camo
-	name = "6B3 green camo body armor"
+	name = "6B3绿色迷彩防弹衣"
 	icon_state = "6b3cam"
 	item_state = "6b3cam"
 
 /obj/item/clothing/accessory/armor/coldwar/plates/b2
-	name = "6B2 body armor"
-	desc = "A ballistic vest of Soviet origin, issued in the early 1980s."
+	name = "6B2防弹衣"
+	desc = "苏联产防弹背心, 于1980年代初期配发."
 	icon_state = "6b2"
 	item_state = "6b2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -1017,8 +1017,8 @@
 	weight = 5.1
 
 /obj/item/clothing/accessory/armor/coldwar/plates/b5
-	name = "6B5 body armor"
-	desc = "A ballistic vest of Soviet origin, issued in the late 1980s."
+	name = "6B5防弹衣"
+	desc = "苏联产防弹背心, 于1980年代后期配发."
 	icon_state = "6b5"
 	item_state = "6b5"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -1030,8 +1030,8 @@
 	weight = 5.9
 
 /obj/item/clothing/accessory/armor/coldwar/flakjacket // Google searches only reveal M-1965 Field Jacket's being normal american jackets, replace eventually please.
-	name = "M-1952 Flak Jacket"
-	desc = "Wearable armor meant to protect against shrapnel and light hits. Won't do much against large caliber weapons."
+	name = "M-1952防破片衣"
+	desc = "用于防护弹片和轻击的可穿戴护甲. 对大口径武器作用不大."
 	icon_state = "flakjacket"
 	item_state = "flakjacket"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1040,8 +1040,8 @@
 	slowdown = 0.2
 
 /obj/item/clothing/accessory/armor/coldwar/flakjacket/m1969 // see note above, this highly likely isn't real article.
-	name = "M-1969 Flak Jacket"
-	desc = "Wearable armor with neck protection meant to protect against shrapnel and light hits. Won't do much against large caliber weapons."
+	name = "M-1969防破片衣"
+	desc = "带有颈部防护, 用于防护弹片和轻击的可穿戴护甲. 对大口径武器作用不大."
 	icon_state = "flakjacket1969"
 	item_state = "flakjacket1969"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1050,8 +1050,8 @@
 	slowdown = 0.2
 
 /obj/item/clothing/accessory/armor/coldwar/flakjacket/b1 //used by spetznaz vdv and soviets in afgan
-	name = "6B1 vest"
-	desc = "Wearable Armor meant to protect against shrapnel and light caliber weaponry. Won't do much against large caliber weapons."
+	name = "6B1背心"
+	desc = "用于防护弹片和轻口径武器的可穿戴护甲. 对大口径武器作用不大."
 	icon_state = "6b1"
 	item_state = "6b1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1062,15 +1062,15 @@
 /* Cold War Belts*/
 
 /obj/item/weapon/storage/belt/ugl
-	name = "grenade satchel"
-	desc = "Generic grenade satchel. Has enough space to hold six underbarrel grenades."
+	name = "手榴弹挎包"
+	desc = "通用手榴弹挎包. 有足够空间容纳六枚下挂榴弹."
 	icon_state = "soviet_ugl"
 	item_state = "soviet_ugl"
 	storage_slots = 6
 	can_hold = list(/obj/item/weapon/grenade/frag/ugl,/obj/item/weapon/grenade/smokebomb/ugl,/obj/item/weapon/grenade/chemical/ugl,/obj/item/weapon/key)
 
 /obj/item/weapon/storage/belt/ugl/soviet
-	desc = "Generic grenade satchel used by the Warsaw pact. Has enough space to hold six underbarrel grenades."
+	desc = "华约使用的通用手榴弹挎包. 有足够空间容纳六枚下挂榴弹."
 	can_hold = list(/obj/item/weapon/grenade/frag/ugl/vog25, /obj/item/weapon/grenade/smokebomb/ugl/vog25,/obj/item/weapon/key)
 
 /obj/item/weapon/storage/belt/ugl/soviet/filled/New()
@@ -1353,8 +1353,8 @@
 /* Cold War Balaclavas */
 
 /obj/item/clothing/mask/balaclava
-	name = "black balaclava"
-	desc = "A black balaclava, covering the face."
+	name = "黑色巴拉克拉瓦头套"
+	desc = "黑色巴拉克拉瓦头套, 遮住面部."
 	icon_state = "balaclava"
 	item_state = "balaclava"
 	body_parts_covered = FACE|EYES|HEAD
@@ -1364,26 +1364,26 @@
 	cold_protection = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/balaclava/snow
-	name = "snow balaclava"
-	desc = "A white balaclava, covering the face."
+	name = "雪地巴拉克拉瓦头套"
+	desc = "白色巴拉克拉瓦头套, 遮住面部."
 	icon_state = "snowclava"
 	item_state = "snowclava"
 
 /obj/item/clothing/mask/balaclava/green
-	name = "snow balaclava"
-	desc = "A green balaclava, covering the face."
+	name = "雪地巴拉克拉瓦头套"
+	desc = "绿色巴拉克拉瓦头套, 遮住面部."
 	icon_state = "swatclava"
 	item_state = "swatclava"
 
 /obj/item/clothing/mask/balaclava/skull
-	name = "skull face balaclava"
-	desc = "A balaclava with a skull imprint, covering the face."
+	name = "骷髅面罩巴拉克拉瓦"
+	desc = "带有骷髅印花的巴拉克拉瓦,覆盖面部."
 	icon_state = "skullclava"
 	item_state = "skullclava"
 
 /obj/item/clothing/mask/headscarfgrey ////German Toque head scarf Issued to soldiers during WW2 to wear as a neck warmer
-	name = "grey headscarf"
-	desc = "A headscarf,it protects your face from the cold."
+	name = "灰色头巾"
+	desc = "一条头巾,保护你的脸免受寒冷."
 	icon_state = "headscarfgrey"
 	item_state = "headscarfgrey"
 	body_parts_covered = FACE|HEAD
@@ -1397,8 +1397,8 @@
 /* Headscarves */
 
 /obj/item/clothing/mask/headscarfgrey/asbestos
-	name = "Asbestos headscarf"
-	desc = "A Heavy Asbestos farbic headscarf, it protects your head from heat and cold."
+	name = "石棉头巾"
+	desc = "一条重型石棉织物头巾,保护你的头部免受高温和寒冷."
 	icon_state = "headscarfgreyA"
 	item_state = "headscarfgreyA"
 	body_parts_covered = FACE|HEAD
@@ -1410,25 +1410,25 @@
 	cold_protection = HEAD|FACE
 
 /obj/item/clothing/mask/headscarfgrey/olive
-	name = "olive headscarf"
+	name = "橄榄色头巾"
 	icon_state = "headscarfolive"
 	item_state = "headscarfolive"
 
 /obj/item/clothing/mask/headscarfgrey/white
-	name = "white headscarf"
+	name = "白色头巾"
 	icon_state = "headscarfwhite"
 	item_state = "headscarfwhite"
 
 /obj/item/clothing/head/commando_bandana
-	name = "olive drab bandana"
-	desc = "An olive drab coloured bandana."
+	name = "橄榄褐色方巾"
+	desc = "一条橄榄褐色的方巾."
 	icon_state = "commando_bandana"
 	item_state = "commando_bandana"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/mask/sovietbala
-	name = "green balaclava"
-	desc = "A green balaclava, covering the mouth."
+	name = "绿色巴拉克拉瓦"
+	desc = "一条绿色巴拉克拉瓦,覆盖嘴部."
 	icon_state = "sovietbala"
 	item_state = "sovietbala"
 	body_parts_covered = FACE|EYES|HEAD
@@ -1438,8 +1438,8 @@
 /* Cold War Webbing*/
 
 /obj/item/clothing/accessory/storage/webbing/green_webbing
-	name = "green chest webbing"
-	desc = "A green chest-level webbing, with three medium sized pouches."
+	name = "绿色胸挂"
+	desc = "一件绿色胸挂,带有三个中等大小的口袋."
 	slots = 3
 	icon_state = "green_webbing"
 	item_state = "green_webbing"
@@ -1466,8 +1466,8 @@
 			new/obj/item/ammo_magazine/m24(hold)
 
 /obj/item/clothing/accessory/storage/webbing/khaki_webbing
-	name = "khaki chest webbing"
-	desc = "A khaki chest-level webbing, with three medium sized pouches."
+	name = "卡其色胸挂"
+	desc = "一件卡其色胸挂,带有三个中等大小的口袋."
 	slots = 3
 	icon_state = "khaki_webbing"
 	item_state = "khaki_webbing"
@@ -1504,8 +1504,8 @@
 		new/obj/item/ammo_magazine/hk(hold)
 
 /obj/item/clothing/accessory/storage/webbing/pouches
-	name = "black pouches"
-	desc = "A set of pouches to store magazines in."
+	name = "黑色口袋"
+	desc = "一套用于存放弹匣的口袋."
 	slots = 3
 	icon_state = "black_pouches"
 	item_state = "black_pouches"
@@ -1514,8 +1514,8 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine)
 
 /obj/item/clothing/accessory/storage/webbing/largepouches
-	name = "large black pouches"
-	desc = "A large set of pouches to store magazines in."
+	name = "大型黑色口袋"
+	desc = "一套用于存放弹匣的大型口袋."
 	slots = 6
 	icon_state = "largepouches"
 	item_state = "largepouches"
@@ -1524,8 +1524,8 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine)
 
 /obj/item/clothing/accessory/storage/webbing/largepouchestan
-	name = "large tan pouches"
-	desc = "A large set of pouches to store magazines in."
+	name = "大型棕褐色口袋"
+	desc = "一套用于存放弹匣的大型口袋."
 	slots = 6
 	icon_state = "largepouches_tan"
 	item_state = "largepouches_tan"
@@ -1534,8 +1534,8 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine)
 
 /obj/item/clothing/accessory/storage/webbing/tanpouches
-	name = "tan pouches"
-	desc = "A set of pouches to store magazines in."
+	name = "棕褐色口袋"
+	desc = "一套用于存放弹匣的口袋."
 	slots = 3
 	icon_state = "tan_pouches"
 	item_state = "tan_pouches"
@@ -1544,36 +1544,36 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine)
 
 /obj/item/clothing/accessory/storage/webbing/ubac
-	name = "tan UBAC"
-	desc = "A flexible, close-fitting shirt with camouflage sleeves designed to be worn under combat equipment. This one is tan."
+	name = "棕褐色UBAC"
+	desc = "一件灵活贴身的衬衫,带有迷彩袖子,设计用于穿在战斗装备下.这件是棕褐色的."
 	icon_state = "ubac_tan"
 	item_state = "ubac_tan"
 	slot = "sash"
 
 /obj/item/clothing/accessory/storage/webbing/ubacgreen
-	name = "green UBAC"
-	desc = "A flexible, close-fitting shirt with camouflage sleeves designed to be worn under combat equipment. This one is green."
+	name = "绿色UBAC"
+	desc = "一件灵活贴身的衬衫,带有迷彩袖子,设计用于穿在战斗装备下.这件是绿色的."
 	icon_state = "ubac_green"
 	item_state = "ubac_green"
 	slot = "sash"
 
 /obj/item/clothing/accessory/storage/webbing/ubacblack
-	name = "black UBAC"
-	desc = "A flexible, close-fitting shirt with camouflage sleeves designed to be worn under combat equipment. This one is black."
+	name = "黑色UBAC"
+	desc = "一件灵活贴身的衬衫,带有迷彩袖子,设计用于穿在战斗装备下.这件是黑色的."
 	icon_state = "ubac_black"
 	item_state = "ubac_black"
 	slot = "sash"
 
 /obj/item/clothing/accessory/storage/webbing/sweater //does not the capacity to protect against cold currently
-	name = "grey sweater"
-	desc = "A sweater to help you be comfy."
+	name = "灰色毛衣"
+	desc = "一件让你感到舒适的毛衣."
 	icon_state = "sweater"
 	item_state = "sweater"
 	slot = "sash"
 
 /obj/item/clothing/accessory/storage/webbing/light
-	name = "light webbing"
-	desc = "A light webbing, with lower capacity but permitting fast movement."
+	name = "轻型胸挂"
+	desc = "一件轻型胸挂,容量较低但允许快速移动."
 	slots = 3
 	icon_state = "german_vest"
 	item_state = "german_vest"
@@ -1582,7 +1582,7 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine, /obj/item/weapon/grenade,/obj/item/weapon/attachment,/obj/item/weapon/handcuffs,/obj/item/stack/medical/bruise_pack)
 
 /obj/item/clothing/accessory/storage/webbing/light/chinese
-	name = "Chinese light webbing"
+	name = "中国轻型胸挂"
 	slots = 4
 	New()
 		..()
@@ -1606,8 +1606,8 @@
 			new/obj/item/ammo_magazine/sks(hold)
 
 /obj/item/clothing/accessory/storage/webbing/us_vest
-	name = "US Army webbing"
-	desc = "A large webbing with several small pockets."
+	name = "美军胸挂"
+	desc = "一件带有若干小口袋的大型胸挂."
 	icon_state = "us_vest"
 	item_state = "us_vest"
 	slots = 5
@@ -1658,8 +1658,8 @@
 			new /obj/item/ammo_magazine/springfield(hold)
 
 /obj/item/clothing/accessory/storage/webbing/us_bandolier
-	name = "US Army bandolier"
-	desc = "A large cotton bandolier with several small pouches."
+	name = "美军弹带"
+	desc = "一条带有若干小口袋的大型棉质弹带."
 	icon_state = "us_bandolier"
 	item_state = "us_badolier"
 	slots = 5
@@ -1668,8 +1668,8 @@
 		hold.can_hold = list(/obj/item/weapon/material/kitchen/utensil,/obj/item/weapon/key,/obj/item/ammo_casing, /obj/item/ammo_magazine, /obj/item/weapon/grenade,/obj/item/weapon/attachment,/obj/item/weapon/handcuffs,/obj/item/stack/medical/bruise_pack)
 
 /obj/item/clothing/accessory/storage/webbing/shotgun_bandolier
-	name = "shotgun bandolier"
-	desc = "A bandolier with several holes made to fit shotgun shells."
+	name = "霰弹枪弹带"
+	desc = "一条带有若干孔洞的弹带,用于装填霰弹枪弹药."
 	icon_state = "shotgun_bandolier"
 	item_state = "shotgun_bandolier"
 	slots = 12
@@ -1684,8 +1684,8 @@
 			new /obj/item/ammo_casing/shotgun/buckshot(hold)
 
 /obj/item/clothing/accessory/storage/webbing/m79_vest
-	name = "US Army M79 Vest"
-	desc = "A large webbing with several small pockets."
+	name = "美军M79背心"
+	desc = "一件带有若干小口袋的大型胸挂."
 	icon_state = "m79_vest"
 	item_state = "m79_vest"
 	slots = 8
@@ -1700,8 +1700,8 @@
 			new /obj/item/weapon/grenade/frag/ugl/shell40mm(hold)
 
 /obj/item/clothing/accessory/storage/webbing/shell40mm
-	name = "Grenadier Webbing"
-	desc = "A large webbing with several small pockets."
+	name = "掷弹兵胸挂"
+	desc = "一件带有若干小口袋的大型胸挂."
 	icon_state = "m79_vest"
 	item_state = "m79_vest"
 	slots = 8
@@ -1714,8 +1714,8 @@
 			new /obj/item/weapon/grenade/smokebomb/ugl/shell40mm(hold)
 
 /obj/item/clothing/accessory/storage/webbing/vog25
-	name = "Grenadier Webbing"
-	desc = "A large webbing with several small pockets."
+	name = "掷弹兵胸挂"
+	desc = "一件带有若干小口袋的大型胸挂."
 	icon_state = "m79_vest"
 	item_state = "m79_vest"
 	slots = 8
@@ -1728,8 +1728,8 @@
 			new /obj/item/weapon/grenade/smokebomb/ugl/vog25(hold)
 
 /obj/item/clothing/accessory/storage/webbing/survival
-	name = "survival webbing"
-	desc = "A green set of chest and knee-level pouches for storing a pistol, magazines and other gear needed to survive in the wilderness."
+	name = "生存胸挂"
+	desc = "一套绿色胸部和膝部口袋,用于存放手枪,弹匣以及在野外生存所需的其他装备."
 	slots = 11
 	w_class = ITEM_SIZE_LARGE // Heavier because it can hold a lot of stuff.
 	icon_state = "survival_webbing"
@@ -1751,7 +1751,7 @@
 							/obj/item/stack/medical/advanced/sulfa)
 
 /obj/item/clothing/accessory/storage/webbing/survival/white
-	desc = "A white set of chest and knee level pouches for storing a pistol, magazines and other things needed to survive in the wilderniss."
+	desc = "一套白色胸部和膝部口袋,用于存放手枪,弹匣以及在野外生存所需的其他物品."
 	icon_state = "survival_webbing_white"
 	item_state = "survival_webbing_white"
 
@@ -1777,16 +1777,16 @@
 /* NBC &  Hazmat Suits*/
 
 /obj/item/clothing/head/nbc
-	name = "yellow NBC hood"
-	desc = "A yellow coloured NBC hood, made protect against biological, chemical and nuclear threats."
+	name = "黄色NBC头罩"
+	desc = "一个黄色的NBC头罩,用于防护生物,化学和核威胁."
 	icon_state = "nbc"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 	armor = list(melee = FALSE, arrow = FALSE, gun = FALSE, energy = 25, bomb = 10, bio = 100, rad = 80)
 
 /obj/item/clothing/suit/nbc
-	name = "yellow NBC suit"
-	desc = "A yellow coloured NBC suit, made protect against biological, chemical and nuclear threats."
+	name = "黄色NBC防护服"
+	desc = "一件黄色的NBC防护服,用于防护生物,化学和核威胁."
 	icon_state = "nbc"
 	item_state = "nbc"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|FEET|HANDS
@@ -1794,29 +1794,29 @@
 	ripable = FALSE
 
 /obj/item/clothing/head/nbc/olive
-	name = "olive drab NBC hood"
-	desc = "An olive drab coloured NBC hood, made protect against biological, chemical and nuclear threats."
+	name = "橄榄褐色NBC头罩"
+	desc = "一个橄榄褐色的NBC头罩,用于防护生物,化学和核威胁."
 	icon_state = "nbc2"
 
 /obj/item/clothing/head/nbc/olive/fire
-	name = "firefighting hood"
-	desc = "A suit primarily intended to protect against fire."
+	name = "消防头罩"
+	desc = "一件主要用于防火的防护服."
 	armor = list(melee = 40, arrow = FALSE, gun = FALSE, energy = 80, bomb = 25, bio = 60, rad = 40)
 
 /obj/item/clothing/suit/nbc/olive
-	name = "olive drab NBC suit"
-	desc = "An olive drab coloured NBC suit, made protect against biological, chemical and nuclear threats."
+	name = "橄榄褐色NBC防护服"
+	desc = "一件橄榄褐色的NBC防护服,用于防护生物,化学和核威胁."
 	icon_state = "nbc2"
 	item_state = "nbc2"
 
 /obj/item/clothing/suit/nbc/olive/fire
-	name = "firefighting suit"
-	desc = "A suit primarily intended to protect against fire."
+	name = "消防防护服"
+	desc = "一件主要用于防火的防护服."
 	armor = list(melee = 40, arrow = FALSE, gun = FALSE, energy = 80, bomb = 25, bio = 60, rad = 40)
 
 /obj/item/clothing/suit/hazmat
-	name = "hazmat suit"
-	desc = "A bright hazard protection suit, made to protect against biological, chemical and nuclear threats."
+	name = "防化服"
+	desc = "一件明亮的危险防护服,用于防护生物,化学和核威胁."
 	icon_state = "hazmat_suit"
 	item_state = "hazmat_suit"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|FEET|HANDS|HEAD
@@ -1824,8 +1824,8 @@
 	ripable = FALSE
 
 /obj/item/clothing/suit/nbcponcho
-	name = "NBC poncho"
-	desc = "A NBC poncho,very light and easy to put on, made to protect against biological, chemical and nuclear threats."
+	name = "NBC斗篷"
+	desc = "一件NBC斗篷,非常轻便且易于穿戴,用于防护生物,化学和核威胁."
 	icon_state = "nbcponcho"
 	item_state = "nbcponcho"
 	w_class = ITEM_SIZE_TINY // its light
@@ -1836,20 +1836,20 @@
 	ripable = FALSE
 
 /obj/item/clothing/suit/nbcponcho/white
-	name = "White NBC poncho"
+	name = "白色NBC斗篷"
 	icon_state = "nbcponchowhite"
 	item_state = "nbcponchowhite"
 /* Astronaut Suit and Helmet*/
 
 /obj/item/clothing/head/astronaut
-	name = "astronaut helmet"
-	desc = "A grey helmet, made to protect against low pressure, temperature and radioactive threa"
+	name = "宇航员头盔"
+	desc = "一个灰色头盔,用于防护低压,温度和放射性威胁"
 	icon_state = "astronaut"
 	armor = list(melee = 20, arrow = 10, gun = 5, energy = 10, bomb = 35, bio = 150, rad = 195)
 
 /obj/item/clothing/suit/astronaut
-	name = "astronaut suit"
-	desc = "A grey space suit, made protect to against low pressure, temperature and radioactive threats."
+	name = "宇航服"
+	desc = "一件灰色太空服,用于防护低压,温度和放射性威胁."
 	icon_state = "astronaut"
 	item_state = "astronaut"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|FEET|HANDS
@@ -1863,20 +1863,20 @@
 /* Woodland Face Paint Recommended*/
 
 /obj/item/clothing/head/bandana/toughguy
-	name = "specialist bandana"
-	desc = "A red bandana, the preferred headwear of seasoned jungle fighters."
+	name = "专家方巾"
+	desc = "一条红色方巾,是经验丰富的丛林战士首选的头饰."
 	icon_state = "toughguy"
 	item_state = "toughguy"
 	body_parts_covered = HEAD
 
 /obj/item/clothing/under/toughguy
-	name = "specialist pants with woodland pattern paint"
-	desc = "A army issued pair of pants and woodland pattern body-paint; to blend seamlessly into the enviroment"
+	name = "带有丛林迷彩涂装的专家裤子"
+	desc = "一条军队配发的裤子和丛林迷彩身体涂装;用于无缝融入环境"
 	icon_state = "toughguy"
 	item_state = "toughguy"
 
 /obj/item/clothing/gloves/toughguy
-	name = "specialist leather gloves"
+	name = "专家皮手套"
 	icon_state = "toughguy"
 	item_state = "toughguy"
 	body_parts_covered = HANDS
@@ -1884,8 +1884,8 @@
 	slot_flags = SLOT_GLOVES
 
 /obj/item/clothing/shoes/toughguy
-	name = "specialist boots"
-	desc = "A well made and importantly quiet treading pair of army-issue leather boots.."
+	name = "专家靴"
+	desc = "一双做工精良且踏地无声的军配皮靴."
 	icon_state = "toughguy"
 	item_state = "toughguy"
 	force = WEAPON_FORCE_WEAK
@@ -1896,8 +1896,8 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
     //china cold war
 /obj/item/clothing/under/chinaguard
-	name = "Chinese Red Guard Uniform"
-	desc = "An uniform worn by the Red guard."
+	name = "中国红卫兵制服"
+	desc = "红卫兵穿着的制服."
 	icon_state = "redguard"
 	item_state = "redguard"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1913,8 +1913,8 @@ obj/item/clothing/head/chinaguardcap
 	/* Sovie apparel 70-80'ss*/
 
 /obj/item/clothing/under/afghanka
-	name = "afghanka uniform"
-	desc = "A standard soviet uniform developed and issued in the early 80's, still in use after the collapse of the Soviet Union."
+	name = "阿富汗卡制服"
+	desc = "一款在80年代初研发并配发的标准苏联制服,在苏联解体后仍在使用."
 	icon_state = "afghanka_open"
 	item_state = "afghanka_open"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1930,20 +1930,20 @@ obj/item/clothing/head/chinaguardcap
 			item_state = "afghanka_open"
 			icon_state = "afghanka_open"
 			item_state_slots["w_uniform"] = "afghanka_open"
-			to_chat(usr, "You <b>open up</b> the collar of your uniform.")
+			to_chat(usr, "你<b>敞开</b>了制服的衣领.")
 			adjusted = FALSE
 			update_clothing_icon()
 		else if (!adjusted)
 			item_state = "afghanka_closed"
 			icon_state = "afghanka_closed"
 			item_state_slots["w_uniform"] = "afghanka_closed"
-			to_chat(usr, "You <b>close up</b> the collar of your uniform.")
+			to_chat(usr, "你<b>合上</b>了制服的衣领.")
 			adjusted = TRUE
 			update_clothing_icon()
 
 /obj/item/clothing/under/sov_klmk
-	name = "KLMK camo uniform"
-	desc = "A suit in the KLMK camo pattern, issued by the Soviet Union in the 1970s."
+	name = "KLMK迷彩制服"
+	desc = "一套KLMK迷彩图案的制服,由苏联于1970年代配发."
 	icon_state = "sov_klmk"
 	item_state = "sov_klmk"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1957,15 +1957,15 @@ obj/item/clothing/head/chinaguardcap
 	item_state = "sov_klmk_yellow"
 
 /obj/item/clothing/under/sov_kzs
-	name = "KZS camo uniform"
-	desc = "A suit in the KZS camo pattern, issued by the Soviet Union in the late 1970s."
+	name = "KZS迷彩制服"
+	desc = "一套KZS迷彩图案的制服,由苏联于1970年代末配发."
 	icon_state = "sov_kzs"
 	item_state = "sov_kzs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/coldwar/soviet_officer
-	name = "soviet officer uniform"
-	desc = "An officer uniform, used by officers in the Soviet Army."
+	name = "苏联军官制服"
+	desc = "一套军官制服,供苏联陆军军官使用."
 	icon_state = "sovuni_officer2"
 	item_state = "sovuni_officer2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1973,38 +1973,38 @@ obj/item/clothing/head/chinaguardcap
 	/* Swinging 60's*/
 
 /obj/item/clothing/under/sundress
-	name = "yellow sundress"
-	desc = "A mid century style dress often worn outside in fair weather associated with a new generation of independent women"
+	name = "黄色太阳裙"
+	desc = "一款中世纪风格的连衣裙,常在晴朗天气穿在外面,与新一代独立女性相关联"
 	icon_state = "sundress_yellow"
 	item_state = "sundress_yellow"
 
 /obj/item/clothing/under/sundress/blue
-	name = "blue sundress"
-	desc = "A mid century style dress often worn outside in fair weather associated with a new generation of independent women"
+	name = "蓝色太阳裙"
+	desc = "一款中世纪风格的连衣裙,常在晴朗天气穿在外面,与新一代独立女性相关联"
 	icon_state = "sundress_blue"
 	item_state = "sundress_blue"
 
 /obj/item/clothing/under/sundress/orange
-	name = "orange sundress"
-	desc = "A mid century style dress often worn outside in fair weather associated with a new generation of independent women"
+	name = "橙色太阳裙"
+	desc = "一款中世纪风格的连衣裙,常在晴朗天气穿在外面,与新一代独立女性相关联"
 	icon_state = "sundress_orange"
 	item_state = "sundress_orange"
 
 /obj/item/clothing/under/sundress/purple
-	name = "purple sundress"
-	desc = "A mid century style dress often worn outside in fair weather associated with a new generation of independent women"
+	name = "紫色太阳裙"
+	desc = "一款中世纪风格的连衣裙,常在晴朗天气穿在外面,与新一代独立女性相关联"
 	icon_state = "sundress_purple"
 	item_state = "sundress_purple"
 
 /obj/item/clothing/under/sundress/red
-	name = "red sundress"
-	desc = "A mid century style dress often worn outside in fair weather associated with a new generation of independent women"
+	name = "红色太阳裙"
+	desc = "一款中世纪风格的连衣裙,常在晴朗天气穿在外面,与新一代独立女性相关联"
 	icon_state = "sundress_red"
 	item_state = "sundress_red"
 
 /obj/item/clothing/under/gatorpants
-	name = "shirtless gator pants"
-	desc = "A tight fitting pair of alligator scale pants. When you're this on-point; wearing a shirt would just cramp your style."
+	name = "无上装鳄鱼裤"
+	desc = "一条紧身的鳄鱼鳞纹裤子.当你这么有型的时候;穿上衣只会束缚你的风格."
 	icon_state = "gator_pants"
 	item_state = "gator_pants"
 	body_parts_covered = LOWER_TORSO|LEGS
@@ -2012,8 +2012,8 @@ obj/item/clothing/head/chinaguardcap
 	/* Other Miscallaneous */
 
 /obj/item/clothing/suit/bx //is this futuristic?
-	name = "carbon black suit"
-	desc = "A high tech suit made of comprssed carbon materials."
+	name = "碳黑西装"
+	desc = "一套由压缩碳材料制成的高科技西装."
 	icon_state = "bxsuit"
 	item_state = "bxsuit"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|FEET|HANDS
@@ -2032,8 +2032,8 @@ obj/item/clothing/head/chinaguardcap
 	flags = CONDUCT
 
 /obj/item/clothing/suit/heavyvest1 // Is designative of armor grade/type but not a armor itself. Please replace with identifiable/recognizable armor.
-	name = "heavy vest"
-	desc = "A heavy NIJ level IV vest."
+	name = "重型防弹背心"
+	desc = "一件重型NIJ IV级防弹背心."
 	icon_state = "heavypolice"
 	item_state = "heavypolice"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -2043,8 +2043,8 @@ obj/item/clothing/head/chinaguardcap
 	flags = CONDUCT
 
 /obj/item/clothing/suit/medvest // Is designative of armor grade/type but not a armor itself. Please replace with identifiable/recognizable armor.
-	name = "medium vest"
-	desc = "A heavy NIJ level III vest."
+	name = "中型防弹背心"
+	desc = "一件重型NIJ III级防弹背心."
 	icon_state = "mediumvest"
 	item_state = "mediumvest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -2054,8 +2054,8 @@ obj/item/clothing/head/chinaguardcap
 	flags = CONDUCT
 
 /obj/item/clothing/suit/a6b44 // Is designative of armor grade/type but not a armor itself. Please replace with identifiable/recognizable armor.
-	name = "6B44 vest"
-	desc = "6B44 is a modular bullet-resistant vest."
+	name = "6B44防弹背心"
+	desc = "6B44是一款模块化防弹背心."
 	icon_state = "a6b44"
 	item_state = "a6b44"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -2065,8 +2065,8 @@ obj/item/clothing/head/chinaguardcap
 	flags = CONDUCT
 
 /obj/item/clothing/suit/a6b28 // Is designative of armor grade/type but not a armor itself. Please replace with identifiable/recognizable armor.
-	name = "6B28 plate carrier"
-	desc = "6B28 is a level III plate carrier."
+	name = "6B28防弹插板背心"
+	desc = "6B28是一款III级防弹插板背心."
 	icon_state = "a6b28"
 	item_state = "a6b28"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -2076,8 +2076,8 @@ obj/item/clothing/head/chinaguardcap
 	flags = CONDUCT
 
 /obj/item/clothing/head/helmet/modern/vchelmet
-	name = "viet pith helmet"
-	desc = "A pith helmet used by the vietnamese."
+	name = "越南木髓头盔"
+	desc = "一顶越南人使用的木髓头盔."
 	icon_state = "viet_pith"
 	item_state = "viet_pith"
 	body_parts_covered = HEAD
@@ -2093,8 +2093,8 @@ obj/item/clothing/head/chinaguardcap
 	item_state = "viet_pith3"
 
 /obj/item/clothing/head/helmet/modern/hardhat
-	name = "white hard hat"
-	desc = "A white hard hat used by the workers."
+	name = "白色安全帽"
+	desc = "一顶工人使用的白色安全帽."
 	icon_state = "hardhat_white"
 	item_state = "hardhat_white"
 	body_parts_covered = HEAD
@@ -2103,28 +2103,28 @@ obj/item/clothing/head/chinaguardcap
 	health = 30
 
 /obj/item/clothing/head/helmet/modern/hardhat/yellow
-	name = "yellow hard hat"
-	desc = "A yellow hard hat used by the workers."
+	name = "黄色安全帽"
+	desc = "一顶工人使用的黄色安全帽."
 	icon_state = "hardhat_yellow"
 	item_state = "hardhat_yellow"
 
 /obj/item/clothing/head/helmet/modern/hardhat/orange
-	name = "orange hard hat"
-	desc = "An orange hard hat used by the workers."
+	name = "橙色安全帽"
+	desc = "一顶工人使用的橙色安全帽."
 	icon_state = "hardhat_orange"
 	item_state = "hardhat_orange"
 
 //yare yare daze.
 
 /obj/item/clothing/head/bizarre_hat
-	name = "bizarre dark blue hat"
-	desc = "A dark blue hat worn by troublemakers."
+	name = "奇异的深蓝色帽子"
+	desc = "一顶由麻烦制造者戴的深蓝色帽子."
 	icon_state = "bizarre_hat"
 	item_state = "bizarre_hat"
 
 /obj/item/clothing/suit/storage/coat/bizarre_coat
-	name = "bizarre dark blue coat"
-	desc = "A very stylish coat."
+	name = "奇异的深蓝色外套"
+	desc = "一件非常有型的外套."
 	icon_state = "bizarre_coat"
 	item_state = "bizarre_coat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -2133,115 +2133,115 @@ obj/item/clothing/head/chinaguardcap
 	value = 150
 
 /obj/item/clothing/under/ww2/soviet_nkvd/kgb
-	name = "KGB uniform"
-	desc = "A Russian KGB uniform, used by KGB."
+	name = "克格勃制服"
+	desc = "一套俄罗斯克格勃制服,供克格勃使用."
 	icon_state = "nkvd_uni"
 	item_state = "nkvd_uni"
 
 /obj/item/clothing/under/coldwar/dra/soldier
-	name = "DRA uniform"
-	desc = "A military uniform worn by DRA soldiers."
+	name = "DRA制服"
+	desc = "一套DRA士兵穿着的军装."
 	icon_state = "dra_uni"
 	item_state = "dra_uni"
 
 /obj/item/clothing/under/coldwar/dra/nco
-	name = "DRA NCO uniform"
-	desc = "A military uniform worn by DRA NCOs."
+	name = "DRA士官制服"
+	desc = "一套DRA士官穿着的军装."
 	icon_state = "dra_uni_nco"
 	item_state = "dra_uni_nco"
 
 /obj/item/clothing/under/coldwar/dra/officer
-	name = "DRA officer uniform"
-	desc = "A military uniform worn by DRA officers."
+	name = "DRA军官制服"
+	desc = "一套DRA军官穿着的军装."
 	icon_state = "dra_uni_officer"
 	item_state = "dra_uni_officer"
 
 /obj/item/clothing/suit/coldwar/dra/officer
-	name = "DRA officer jacket"
-	desc = "A military jacket worn by DRA officers."
+	name = "DRA军官夹克"
+	desc = "一件DRA军官穿着的军用夹克."
 	icon_state = "dra_officer"
 	item_state = "dra_officer"
 
 /obj/item/clothing/head/custom/fieldcap/dra
-	name = "DRA field cap"
-	desc = "A cap worn by DRA military personnel."
+	name = "DRA野战帽"
+	desc = "一顶DRA军事人员戴的帽子."
 	color = "#767160"
 	uncolored1 = FALSE
 
 //blugoslavian and redmenian stuff
 /obj/item/clothing/under/blugoslavian_sailor
-	name = "Blugoslavian navy uniform"
-	desc = "A blue uniform of the Blugoslavian Navy."
+	name = "布卢戈斯拉夫海军制服"
+	desc = "一套布卢戈斯拉夫海军的蓝色制服."
 	icon_state = "blugoslavian_sailor"
 	item_state = "blugoslavian_sailor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
 
 /obj/item/clothing/under/redmenian_sailor
-	name = "Redmenian navy uniform"
-	desc = "A red uniform of the Redmenian Navy."
+	name = "雷德梅尼亚海军制服"
+	desc = "一套雷德梅尼亚海军的红色制服."
 	icon_state = "redmenian_sailor"
 	item_state = "redmenian_sailor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 /obj/item/clothing/under/coldwar/bowling_red
-	name = "red bowling outfit"
-	desc = "A stylish red bowling shirt with black pants."
+	name = "红色保龄球套装"
+	desc = "一件有型的红色保龄球衫配黑色裤子."
 	icon_state = "bowling_red"
 	item_state = "bowling_red"
 
 /obj/item/clothing/under/coldwar/bowling_yellow
-	name = "yellow bowling outfit"
-	desc = "A stylish yellow bowling shirt with black pants."
+	name = "黄色保龄球套装"
+	desc = "一件有型的黄色保龄球衫配黑色裤子."
 	icon_state = "bowling_yellow"
 	item_state = "bowling_yellow"
 
 /obj/item/clothing/under/coldwar/bowling_green
-	name = "green bowling outfit"
-	desc = "A stylish green bowling shirt with black pants."
+	name = "绿色保龄球套装"
+	desc = "一件有型的绿色保龄球衫配黑色裤子."
 	icon_state = "bowling_green"
 	item_state = "bowling_green"
 
 /obj/item/clothing/under/coldwar/bowling_blue
-	name = "blue bowling outfit"
-	desc = "A stylish blue bowling shirt with black pants."
+	name = "蓝色保龄球套装"
+	desc = "一件有型的蓝色保龄球衫配黑色裤子."
 	icon_state = "bowling_blue"
 	item_state = "bowling_blue"
 
 /obj/item/clothing/under/coldwar/hippie
-	name = "hippie outfit"
-	desc = "A tie-dye t-shirt with bootleg grey jeans. Right on, man!"
+	name = "嬉皮士套装"
+	desc = "一件扎染T恤配盗版灰色牛仔裤.太酷了,老兄!"
 	icon_state = "hippy"
 	item_state = "hippy"
 
 ///////MEDICAL SCRUBS//////////////
 
 /obj/item/clothing/under/scrubs
-	name = "white medical scrubs"
-	desc = "Sanitary clothing worn by medical personnel."
+	name = "白色医疗服"
+	desc = "医务人员穿着的卫生服装."
 	icon_state = "scrubs_white"
 	item_state = "scrubs_white"
 
 /obj/item/clothing/under/scrubs/darkgreen
-	name = "dark green medical scrubs"
-	desc = "Sanitary clothing worn by medical personnel. This one is dark green."
+	name = "深绿色医疗服"
+	desc = "医务人员穿着的卫生服装. 这件是深绿色的."
 	icon_state = "scrubs_darkgreen"
 	item_state = "scrubs_darkgreen"
 
 /obj/item/clothing/under/scrubs/lightgreen
-	name = "light green medical scrubs"
-	desc = "Sanitary clothing worn by medical personnel. This one is light green."
+	name = "浅绿色医疗服"
+	desc = "医务人员穿着的卫生服装. 这件是浅绿色的."
 	icon_state = "scrubs_lightgreen"
 	item_state = "scrubs_lightgreen"
 
 /obj/item/clothing/under/scrubs/blue
-	name = "blue medical scrubs"
-	desc = "Sanitary clothing worn by medical personnel. This one is blue."
+	name = "蓝色医疗服"
+	desc = "医务人员穿着的卫生服装. 这件是蓝色的."
 	icon_state = "scrubs_blue"
 	item_state = "scrubs_blue"
 
 /obj/item/clothing/under/scrubs/navy
-	name = "navy medical scrubs"
-	desc = "Sanitary clothing worn by medical personnel. This one is navy."
+	name = "藏青色医疗服"
+	desc = "医务人员穿着的卫生服装. 这件是藏青色的."
 	icon_state = "scrubs_navy"
 	item_state = "scrubs_navy"
 
@@ -2249,44 +2249,44 @@ obj/item/clothing/head/chinaguardcap
 ////////SURGICAL CAPS/////////
 
 /obj/item/clothing/head/surgical_cap
-	name = "white surgical cap"
-	desc = "A white sterile surgical cap."
+	name = "白色手术帽"
+	desc = "一顶白色无菌手术帽."
 	icon_state = "surgcap_white"
 	item_state = "surgcap_white"
 
 /obj/item/clothing/head/surgical_cap/darkgreen
-	name = "dark green surgical cap"
-	desc = "A dark green sterile surgical cap."
+	name = "深绿色手术帽"
+	desc = "一顶深绿色无菌手术帽."
 	icon_state = "surgcap_darkgreen"
 	item_state = "surgcap_darkgreen"
 
 /obj/item/clothing/head/surgical_cap/lightgreen
-	name = "light green surgical cap"
-	desc = "A light green sterile surgical cap."
+	name = "浅绿色手术帽"
+	desc = "一顶浅绿色无菌手术帽."
 	icon_state = "surgcap_lightgreen"
 	item_state = "surgcap_lightgreen"
 
 /obj/item/clothing/head/surgical_cap/blue
-	name = "blue surgical cap"
-	desc = "A blue sterile surgical cap."
+	name = "蓝色手术帽"
+	desc = "一顶蓝色无菌手术帽."
 	icon_state = "surgcap_blue"
 	item_state = "surgcap_blue"
 
 /obj/item/clothing/head/surgical_cap/navy
-	name = "navy surgical cap"
-	desc = "A navy sterile surgical cap."
+	name = "藏青色手术帽"
+	desc = "一顶藏青色无菌手术帽."
 	icon_state = "surgcap_navy"
 	item_state = "surgcap_navy"
 
 /obj/item/clothing/under/un_irish
-	name = "irish olive uniform"
-	desc = "A uniform worn by the UN Irish troops."
+	name = "爱尔兰橄榄色制服"
+	desc = "联合国爱尔兰部队穿着的制服."
 	icon_state = "un_irish"
 	item_state = "un_irish"
 
 /obj/item/clothing/under/afr_merc
-	name = "african mercenary uniform"
-	desc = "A light uniform worn by mercenaries."
+	name = "非洲雇佣兵制服"
+	desc = "雇佣兵穿着的轻型制服."
 	icon_state = "afr_merc"
 	item_state = "afr_merc"
 

@@ -40,7 +40,7 @@
 	if (furnace)
 		if (furnace.fuel <= 0 || !furnace.on)
 			if (furnace_timer_check == 0)
-				to_chat(world, "<font size = 4><span class = 'danger'>The furnace has ran out of fuel!</span></font>")
+				to_chat(world, "<font size = 4><span class = 'danger'>熔炉的燃料已经耗尽!</span></font>")
 				current_win_condition = "<font style='color:yellow'>The furnace is off!</font>"
 			furnace_timer_check += 1
 		else
@@ -59,7 +59,7 @@
 /obj/map_metadata/antarctica/update_win_condition()
 	if (furnace_timer_check >= 6 && no_loop == FALSE)
 		current_win_condition = "<font style='color:red'>You let the furnace go cold and have lost!</font>"
-		to_chat(world, "<font size = 4><span class = 'danger'>You let the furnace go cold and have lost!</span></font>")
+		to_chat(world, "<font size = 4><span class = 'danger'>你让熔炉冷却了,你输了!</span></font>")
 		no_loop = TRUE
 		show_global_battle_report(null)
 		win_condition_spam_check = TRUE

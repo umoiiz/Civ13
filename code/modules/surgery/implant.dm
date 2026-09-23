@@ -34,7 +34,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/chest/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'red'>[user]'s hand slips, scraping around inside [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]在[target]的[affected.name]内部刮擦!</span>", \
 		"<span class = 'red'>Your hand slips, scraping around inside [target]'s [affected.name] with \the [tool]!</span>")
 		affected.createwound(CUT, 20)
 
@@ -56,14 +56,14 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts making some space inside [target]'s [get_cavity(affected)] cavity with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]在[target]的[get_cavity(affected)]腔内腾出一些空间.", \
 		"You start making some space inside [target]'s [get_cavity(affected)] cavity with \the [tool]." )
 		target.custom_pain("The pain in your chest is living hell!",1)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/chest/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] makes some space inside [target]'s [get_cavity(affected)] cavity with \the [tool].</span>", \
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]在[target]的[get_cavity(affected)]腔内腾出了一些空间.</span>", \
 		"<span class = 'notice'>You make some space inside [target]'s [get_cavity(affected)] cavity with \the [tool].</span>" )
 		affected.cavity = 1
 
@@ -86,14 +86,14 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts mending [target]'s [get_cavity(affected)] cavity wall with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]修复[target]的[get_cavity(affected)]腔壁.", \
 		"You start mending [target]'s [get_cavity(affected)] cavity wall with \the [tool]." )
 		target.custom_pain("The pain in your chest is living hell!",1)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/chest/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] mends [target]'s [get_cavity(affected)] cavity walls with \the [tool].</span>", \
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]修复了[target]的[get_cavity(affected)]腔壁.</span>", \
 		"<span class = 'notice'>You mend [target]'s [get_cavity(affected)] cavity walls with \the [tool].</span>" )
 		affected.cavity = FALSE
 
@@ -119,7 +119,7 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts putting \the [tool] inside [target]'s [get_cavity(affected)] cavity.", \
+		user.visible_message("[user]开始将\the [tool]放入[target]的[get_cavity(affected)]腔内.", \
 		"You start putting \the [tool] inside [target]'s [get_cavity(affected)] cavity." )
 		target.custom_pain("The pain in your chest is living hell!",1)
 		playsound(target.loc, 'sound/effects/squelch1.ogg', 50, TRUE)
@@ -128,10 +128,10 @@
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/chest/affected = target.get_organ(target_zone)
 
-		user.visible_message("<span class = 'notice'>[user] puts \the [tool] inside [target]'s [get_cavity(affected)] cavity.</span>", \
+		user.visible_message("<span class = 'notice'>[user]将\the [tool]放入了[target]的[get_cavity(affected)]腔内.</span>", \
 		"<span class = 'notice'>You put \the [tool] inside [target]'s [get_cavity(affected)] cavity.</span>" )
 		if (tool.w_class > get_max_wclass(affected)/2 && prob(50))
-			to_chat(user, "<span class = 'red'>You tear some blood vessels trying to fit such a big object in this cavity.</span>")
+			to_chat(user, "<span class = 'red'>你撕裂了一些血管,试图将这么大的物体塞入这个腔内.</span>")
 			var/datum/wound/internal_bleeding/I = new (10)
 			affected.wounds += I
 			affected.owner.custom_pain("You feel something rip in your [affected.name]!", TRUE)
@@ -160,7 +160,7 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts poking around inside [target]'s [affected.name] with \the [tool]...", \
+		user.visible_message("[user]开始用\the [tool]在[target]的[affected.name]内部探查...", \
 		"You start poking around inside [target]'s [affected.name] with \the [tool]..." )
 		target.custom_pain("The pain in your [affected.name] is living hell!",1)
 		..()
@@ -177,7 +177,7 @@
 			find_prob +=50
 			var/mob/living/human/H = user
 			if (prob(find_prob)*H.getStatCoeff("medical"))
-				user.visible_message("<span class = 'notice'>[user] takes something out of incision on [target]'s [affected.name] with \the [tool].</span>", \
+				user.visible_message("<span class = 'notice'>[user]用\the [tool]从[target]的[affected.name]上的切口中取出了某样东西.</span>", \
 				"<span class = 'notice'>You take [obj] out of incision on [target]'s [affected.name]s with \the [tool].</span>" )
 				affected.implants -= obj
 
@@ -186,10 +186,10 @@
 				obj.update_icon()
 				playsound(target.loc, 'sound/effects/squelch1.ogg', 50, TRUE)
 			else
-				user.visible_message("<span class = 'notice'>[user] removes \the [tool] from [target]'s [affected.name].</span>", \
+				user.visible_message("<span class = 'notice'>[user]从[target]的[affected.name]中取出了\the [tool].</span>", \
 				"<span class = 'notice'>There's something inside [target]'s [affected.name], but you just missed it this time.</span>" )
 		else
-			user.visible_message("<span class = 'notice'>[user] could not find anything inside [target]'s [affected.name], and pulls \the [tool] out.</span>", \
+			user.visible_message("<span class = 'notice'>[user]在[target]的[affected.name]内没有找到任何东西,并将\the [tool]抽出.</span>", \
 			"<span class = 'notice'>You could not find anything inside [target]'s [affected.name].</span>" )
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
@@ -199,5 +199,5 @@
 			var/fail_prob = 10
 			fail_prob += 100 - tool_quality(tool)
 			if (prob(fail_prob))
-				user.visible_message("<span class = 'red'>Something makes a noise inside [target]'s [affected.name]!</span>")
+				user.visible_message("<span class = 'red'>[target]的[affected.name]内部有东西发出了声响!</span>")
 

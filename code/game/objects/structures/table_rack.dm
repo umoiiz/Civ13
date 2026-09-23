@@ -1,6 +1,6 @@
 /obj/structure/table/rack
-	name = "rack"
-	desc = "Different from the Middle Ages version."
+	name = "架子"
+	desc = "和中世纪版本不同."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "rack"
 	flipped = FALSE
@@ -22,8 +22,8 @@
 	return
 
 /obj/structure/table/fancy
-	name = "table"
-	desc = "An old expensive table."
+	name = "桌子"
+	desc = "一张古老而昂贵的桌子."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "fancytable"
 	flipped = FALSE
@@ -31,8 +31,8 @@
 	fixedsprite = TRUE
 
 /obj/structure/table/nightstand
-	name = "night stand"
-	desc = "A night stand."
+	name = "床头柜"
+	desc = "一个床头柜."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "nightstand"
 	flipped = FALSE
@@ -40,7 +40,7 @@
 	fixedsprite = TRUE
 
 /obj/structure/table/nightstand/small
-	desc = "A small dark wood night stand."
+	desc = "一个深色小木床头柜."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "nightstand_small"
 
@@ -49,14 +49,14 @@
 	icon_state = "nightstand_alt"
 
 /obj/structure/table/rack/shelf
-	name = "shelf"
-	desc = "A store shelf."
+	name = "货架"
+	desc = "一个商店货架."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "shelf0"
 
 /obj/structure/table/rack/shelf/wooden
-	name = "shelf"
-	desc = "A wooden shelf."
+	name = "架子"
+	desc = "一个木制架子."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "shelfwood"
 
@@ -65,8 +65,8 @@
 	icon_state = "storeshelf"
 
 /obj/structure/table/rack/coatrack
-	name = "coat rack"
-	desc = "A convenient place to hang your hat."
+	name = "衣帽架"
+	desc = "一个方便挂帽子的地方."
 	icon = 'icons/obj/junk.dmi'
 	icon_state = "coatrack"
 	flammable = TRUE

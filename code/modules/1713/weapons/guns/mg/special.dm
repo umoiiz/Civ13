@@ -38,7 +38,7 @@
 
 /obj/item/weapon/gun/projectile/special/mk18
 	name = "MK-18"
-	desc = "An american automatic rifle."
+	desc = "美国自动步枪."
 	icon_state = "mk18"
 	item_state = "mk18"
 	base_icon = "mk18"
@@ -67,7 +67,7 @@
 
 /obj/item/weapon/gun/projectile/special/ak74mtactical
 	name = "Tactical AK-74M"
-	desc = "A russian tactical rifle used by the Spetsnaz."
+	desc = "俄罗斯特种部队使用的战术步枪."
 	icon_state = "ak74mtactical"
 	item_state = "ak74mtactical"
 	base_icon = "ak74mtactical"

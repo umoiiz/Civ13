@@ -273,7 +273,7 @@ GLOBAL_DATUM_INIT(has_discord_embeddable_links, /regex, regex("(https?://\[^\\s|
 					break
 			if (newname)
 				break	//That's a suitable name!
-			to_chat(src, "Sorry, that [role]-name wasn't appropriate, please try another. It's possibly too long/short, has bad characters or is already taken.")
+			to_chat(src, "抱歉,该[role]名称不合适,请尝试另一个.它可能太长/太短,包含不良字符或已被占用.")
 
 		if (!newname)	//we'll stick with the oldname then
 			return

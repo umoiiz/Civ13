@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/commanded/bear
 	name = "bear"
-	desc = "A large brown bear."
+	desc = "一只大型棕熊."
 
 	icon_state = "brownbear"
 	icon_living = "brownbear"

@@ -1,6 +1,6 @@
 /obj/structure/fish
-	name = "fish"
-	desc = "There seems to be a bunch of fish here."
+	name = "鱼"
+	desc = "这里似乎有一群鱼."
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "fish2"
 	var/counter = 2
@@ -9,16 +9,16 @@
 	not_movable = TRUE
 	not_disassemblable = TRUE
 /obj/structure/fish/salmon
-	name = "salmon"
-	desc = "Salmons. Don't let bears get near!"
+	name = "鲑鱼"
+	desc = "鲑鱼.别让熊靠近!"
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "salmon"
 	counter = 2
 	anchored = TRUE
 	species = "salmon"
 /obj/structure/fish/cod
-	name = "codfish"
-	desc = "Seems like theres some cod's around here..."
+	name = "鳕鱼"
+	desc = "这附近似乎有一些鳕鱼..."
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "cod"
 	counter = 1
@@ -26,11 +26,11 @@
 	species = "cod"
 /obj/structure/fish/attackby(var/obj/item/W as obj, var/mob/living/human/H as mob)
 	if (istype(W, /obj/item/weapon/fishing) && counter > 0)
-		H.visible_message("[H] starts fishing.")
+		H.visible_message("[H]开始钓鱼.")
 		if (istype(W, /obj/item/weapon/fishing/modern))
 			if (do_after(H, 120, src))
 				if (prob(40))
-					to_chat(H, "You got a fish!")
+					to_chat(H, "你钓到了一条鱼!")
 					counter = (counter-1)
 					if (species == "salmon")
 						new/obj/item/weapon/reagent_containers/food/snacks/rawfish/salmon(H.loc)
@@ -43,12 +43,12 @@
 					get_fish()
 					return
 				else
-					to_chat(H, "You can't seem to get anything to bite...")
+					to_chat(H, "你似乎什么都钓不上来...")
 					return
 		else
 			if (do_after(H, 150, src))
 				if (prob(30))
-					to_chat(H, "You got a fish!")
+					to_chat(H, "你钓到了一条鱼!")
 					counter = (counter-1)
 					if (species == "salmon")
 						new/obj/item/weapon/reagent_containers/food/snacks/rawfish/salmon(H.loc)
@@ -61,15 +61,15 @@
 					get_fish()
 					return
 				else
-					to_chat(H, "You can't seem to get anything to bite...")
+					to_chat(H, "你似乎什么都钓不上来...")
 					return
 	else if (istype(W, /obj/item/weapon/branch) && counter > 0)
 		var/obj/item/weapon/branch/B = W
 		if (B.sharpened)
-			H.visible_message("[H] starts fishing.")
+			H.visible_message("[H]开始钓鱼.")
 			if (do_after(H, 120, src))
 				if (prob(20))
-					to_chat(H, "You got a fish!")
+					to_chat(H, "你钓到了一条鱼!")
 					counter = (counter-1)
 					if (species == "salmon")
 						new/obj/item/weapon/reagent_containers/food/snacks/rawfish/salmon(H.loc)
@@ -82,7 +82,7 @@
 					get_fish()
 					return
 				else
-					to_chat(H, "You can't seem to get anything to bite...")
+					to_chat(H, "你似乎什么都钓不上来...")
 					return
 /obj/structure/fish/proc/get_fish()
 	if (counter < 2)
@@ -93,8 +93,8 @@
 				update_icon()
 
 /obj/structure/piranha
-	name = "piranha"
-	desc = "Dangerous carnivorous fish, they look hungry!"
+	name = "食人鱼"
+	desc = "危险的食肉鱼类,它们看起来很饿!"
 	icon = 'icons/mob/fish.dmi'
 	icon_state = "piranhas"
 	anchored = TRUE
@@ -119,7 +119,7 @@
 		if (H.riding && H.riding_mob)
 			return
 		invisibility = 0
-		visible_message("<span class='notice'>The piranhas swarm [M]!</span>")
+		visible_message("<span class='notice'>食人鱼群涌向[M]!</span>")
 		if (ishuman(H))
 			var/dam_zone = pick("l_foot", "r_foot", "l_leg", "r_leg")
 			var/obj/item/organ/external/affecting = H.get_organ(dam_zone)
@@ -129,7 +129,7 @@
 				H.apply_damage(25, BRUTE, affecting, H.run_armor_check(affecting, "melee"), sharp=1, edge=1)
 			else
 				affecting.droplimb(FALSE, DROPLIMB_EDGE)
-				visible_message("The piranhas bite off [H]'s [affecting]!")
+				visible_message("食人鱼咬掉了[H]的[affecting]!")
 				qdel(affecting)
 				for(var/mob/living/human/NB in view(6,src))
 					NB.mood -= 10
@@ -140,7 +140,7 @@
 		invisibility = 0
 		var/mob/living/simple_animal/SA = M
 		if (SA.mob_size <= 10 && !istype(SA, /mob/living/simple_animal/mosquito)) //MOB_SMALL, MOB_MINISCULE and MOB_TINY)
-			visible_message("<span class='notice'>The piranhas eat the [M] whole!</span>")
+			visible_message("<span class='notice'>食人鱼将[M]整个吃掉了!</span>")
 			qdel(M)
 			spawn(300)
 				invisibility = 101
@@ -153,7 +153,7 @@
 			return
 	else if (istype(M, /obj/item/weapon/reagent_containers/food/snacks/meat))
 		invisibility = 0
-		visible_message("<span class='notice'>The piranhas devour the [M]!</span>")
+		visible_message("<span class='notice'>食人鱼吞噬了[M]!</span>")
 		qdel(M)
 		spawn(300)
 			invisibility = 101
@@ -162,8 +162,8 @@
 		return
 
 /obj/structure/anthill
-	name = "anthill"
-	desc = "A hill of giant red ants. Keep your food away!"
+	name = "蚁丘"
+	desc = "一座巨型红蚂蚁的土丘.把你的食物放远点!"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "anthill"
 	anchored = TRUE
@@ -201,8 +201,8 @@
 		qdel(src) // Delete the ant-hill.
 
 /obj/structure/ants
-	name = "red ants"
-	desc = "A bunch of red ants."
+	name = "红蚂蚁"
+	desc = "一群红蚂蚁."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "ants"
 	anchored = FALSE
@@ -221,7 +221,7 @@
 		var/msg_sent = FALSE
 		for (var/obj/item/weapon/reagent_containers/food/FD in src.loc)
 			if (msg_sent == FALSE)
-				visible_message("The ants eat \the [FD]!")
+				visible_message("蚂蚁吃掉了\the [FD]!")
 				msg_sent = TRUE
 			done = TRUE
 			qdel(FD)

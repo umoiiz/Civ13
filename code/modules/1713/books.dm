@@ -1,6 +1,6 @@
 
 /obj/item/weapon/book/manual/chef_recipes
-	name = "Chef Recipes"
+	name = "厨师食谱"
 	icon_state = "cooked_book"
 	author = "Victoria Ponsonby"
 	title = "Chef Recipes"
@@ -59,7 +59,7 @@
 
 
 /obj/item/weapon/book/manual/barman_recipes
-	name = "Barman Recipes"
+	name = "酒保食谱"
 	icon_state = "barbook"
 	author = "Sir John Rose"
 	title = "Barman Recipes"
@@ -113,7 +113,7 @@
 			"}
 
 /obj/item/weapon/book/manual/aotd_law
-	name = "Springfield County Law Book"
+	name = "斯普林菲尔德县法律书"
 	icon_state = "bookSpaceLaw"
 	author = "Department of Justice"
 	title = "Springfield County Law Book"

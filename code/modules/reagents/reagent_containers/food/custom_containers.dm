@@ -31,8 +31,8 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/custom/fastfoodcup
 	volume = 40
-	name = "fast food cup"
-	desc = "A plastic fast food cup."
+	name = "快餐杯"
+	desc = "一个塑料快餐杯。"
 	icon_state = "fastfoodcup"
 	item_state = "beer"
 	value = 1
@@ -116,48 +116,48 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/cola
 	volume = 70
-	name = "plastic bottle"
-	desc = "A plastic bottle."
+	name = "塑料瓶"
+	desc = "一个塑料瓶。"
 	icon_state = "cola"
 	item_state = "beer"
 	value = 3
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/condiment
 	volume = 25
-	name = "condiment bottle"
-	desc = "A plastic condiment bottle."
+	name = "调味瓶"
+	desc = "一个塑料调味瓶。"
 	icon_state = "condiment"
 	item_state = "beer"
 	value = 0.5
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/tallcan
 	volume = 50
-	name = "tall can"
-	desc = "A metallic tall can."
+	name = "高罐"
+	desc = "一个金属高罐。"
 	icon_state = "tallcan"
 	item_state = "beer"
 	value = 1
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/sodacan
 	volume = 30
-	name = "soda can"
-	desc = "A metallic soda can."
+	name = "汽水罐"
+	desc = "一个金属汽水罐。"
 	icon_state = "sodacan"
 	item_state = "beer"
 	value = 0.75
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/gallonjug
 	volume = 160
-	name = "gallon jug"
-	desc = "A gallon-sized jug."
+	name = "加仑壶"
+	desc = "一个加仑大小的壶。"
 	icon_state = "gallonjug"
 	item_state = "beer"
 	value = 1.25
 
 /obj/item/weapon/reagent_containers/food/drinks/plastic/carton
 	volume = 50
-	name = "carton"
-	desc = "A cardboard milk-style carton."
+	name = "纸盒"
+	desc = "一个纸板牛奶式纸盒。"
 	icon_state = "carton"
 	item_state = "beer"
 	value = 1
@@ -221,23 +221,23 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/custom/beer
 	volume = 40
-	name = "beer bottle"
-	desc = "A glass beer bottle."
+	name = "啤酒瓶"
+	desc = "一个玻璃啤酒瓶。"
 	icon_state = "normalbeer"
 	item_state = "beer"
 	value = 1
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/custom/fancybeer
 	volume = 50
-	name = "fancy beer bottle"
-	desc = "A fancy glass beer bottle."
+	name = "精致啤酒瓶"
+	desc = "一个精致的玻璃啤酒瓶。"
 	icon_state = "fancybeer"
 	item_state = "beer"
 	value = 1.5
 
 /obj/item/weapon/storage/foodbox
-	name = "food box"
-	desc = "A box. Contains food."
+	name = "食品盒"
+	desc = "一个盒子。装有食物。"
 	icon_state = "foodbox"
 	item_state = "foodbox"
 	w_class = ITEM_SIZE_SMALL
@@ -286,8 +286,8 @@
 	overlays += color2
 
 /obj/item/weapon/storage/foodbox/chippack
-	name = "chip pack"
-	desc = "A small pack of food."
+	name = "薯片包"
+	desc = "一小包食物。"
 	icon_state = "chippack"
 	item_state = "chippack"
 	w_class = ITEM_SIZE_TINY

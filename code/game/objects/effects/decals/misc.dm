@@ -1,6 +1,6 @@
 /obj/effect/decal/point
 	name = "arrow"
-	desc = "It's an arrow hanging in mid-air. There may be a wizard about."
+	desc = "一支悬在半空中的箭. 附近可能有巫师."
 	icon = 'icons/mob/screen/effects.dmi'
 	icon_state = "arrow"
 	layer = 16.0
@@ -16,7 +16,7 @@
 
 /obj/effect/decal/rubbish
 	name = "rubbish"
-	desc = "A pile of rubbish."
+	desc = "一堆垃圾."
 	icon = 'icons/obj/trash.dmi'
 	icon_state = "trash_1"
 	var/random = TRUE
@@ -29,7 +29,7 @@
 
 /obj/effect/decal/piping
 	name = "pipes"
-	desc = "A bunch of pipes taking something somewhere."
+	desc = "一堆管道,把什么东西运往某处."
 	icon = 'icons/obj/machines/pipes.dmi'
 	icon_state = "intact"
 	layer = 2.99
@@ -57,6 +57,6 @@
 
 /obj/effect/decal/piping/meter
 	name = "pipe meter"
-	desc = "A pipe meter."
+	desc = "一个管道仪表."
 	icon_state = "meter"
 	layer = 3.01

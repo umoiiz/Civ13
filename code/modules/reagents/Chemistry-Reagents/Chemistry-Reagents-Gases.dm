@@ -20,7 +20,7 @@ var/mob/living/human/next_gas_flesh_message = -1
 		var/base = ((rand(2,3)) * severity)/CHEMNERF
 		if (base >= 2)
 			if (world.time >= next_gas_eye_message)
-				to_chat(m, "<span class = 'danger'>The gas burns your eyes!</span>")
+				to_chat(m, "<span class = 'danger'>气体灼烧着你的眼睛!</span>")
 			next_gas_eye_message = world.time + 10
 			if (m.stat != DEAD)
 				m.emote("scream")
@@ -33,7 +33,7 @@ var/mob/living/human/next_gas_flesh_message = -1
 		var/base = ((rand(2,3)) * severity)/CHEMNERF
 		if (base >= 2)
 			if (world.time >= next_gas_skin_message)
-				to_chat(m, "<span class = 'danger'>The gas burns your skin!</span>")
+				to_chat(m, "<span class = 'danger'>气体灼烧着你的皮肤!</span>")
 			next_gas_skin_message = world.time + 10
 			if (prob(50))
 				if (m.stat != DEAD)
@@ -83,7 +83,7 @@ var/mob/living/human/next_gas_flesh_message = -1
 		var/base = ((rand(2,3)) * severity)/CHEMNERF
 		if (base >= 2)
 			if (world.time >= next_gas_lung_message)
-				to_chat(m, "<span class = 'danger'>The gas burns your lungs!</span>")
+				to_chat(m, "<span class = 'danger'>气体灼烧着你的肺部!</span>")
 			next_gas_lung_message = world.time + 10
 			if (m.stat != DEAD)
 				m.emote("scream")
@@ -97,7 +97,7 @@ var/mob/living/human/next_gas_flesh_message = -1
 		var/base = ((rand(2,3)) * severity)/CHEMNERF
 		if (base >= 2)
 			if (world.time >= next_gas_lung_message)
-				to_chat(m, "<span class = 'danger'>You can't breathe!</span>")
+				to_chat(m, "<span class = 'danger'>你无法呼吸!</span>")
 			next_gas_lung_message = world.time + 10
 			if (m.stat != DEAD)
 				m.emote("gasp")
@@ -111,7 +111,7 @@ var/mob/living/human/next_gas_flesh_message = -1
 		base /= CHEMNERF
 		if (base >= 1)
 			if (world.time >= next_gas_flesh_message)
-				to_chat(m, "<span class = 'danger'>The gas burns the flesh on your open wounds!</span>")
+				to_chat(m, "<span class = 'danger'>气体灼烧着你敞开伤口上的血肉!</span>")
 			next_gas_flesh_message = world.time + 10
 			if (prob(50))
 				if (m.stat != DEAD)

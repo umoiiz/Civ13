@@ -1,6 +1,6 @@
 /obj/item/stack/farming/seeds
-	name = "seeds"
-	desc = "Some seeds."
+	name = "种子"
+	desc = "一些种子."
 	icon = 'icons/farming/seeds.dmi'
 	icon_state = "seeds"
 
@@ -19,140 +19,140 @@
 */
 
 /obj/item/stack/farming/seeds/mushroom
-	name = "mushroom spores"
+	name = "蘑菇孢子"
 	plant = "mushroom"
 	icon_state = "mushroomseeds"
 	seasons = list("WINTER", "SUMMER", "SPRING", "FALL", "Wet Season")
 	biomes = list("temperate", "sea", "tundra", "taiga", "jungle", "savanna")
 
 /obj/item/stack/farming/seeds/mushroompsy
-	name = "strange mushroom spores"
+	name = "奇怪的蘑菇孢子"
 	plant = "mushroompsy"
 	icon_state = "mushroomseeds"
 	seasons = list("WINTER", "SUMMER", "SPRING", "FALL", "Wet Season")
 	biomes = list("temperate", "sea", "tundra", "taiga", "jungle", "savanna")
 
 /obj/item/stack/farming/seeds/tobacco
-	name = "tobacco seeds"
+	name = "烟草种子"
 	plant = "tobacco"
 	color = "#d88046" //orange brown
 	biomes = list("desert", "jungle", "savanna", "semiarid")
 
 /obj/item/stack/farming/seeds/juniper
-	name = "juniper seeds"
+	name = "杜松种子"
 	plant = "juniper"
 	color = "#5F9EA0"
 	biomes = list("taiga", "tundra", "temperate")
 
 /obj/item/stack/farming/seeds/liquorice
-	name = "liquorice seeds"
+	name = "甘草种子"
 	plant = "liquorice"
 	icon_state = "seeds_dark"
 	biomes = list("desert", "semiarid", "temperate")
 
 /obj/item/stack/farming/seeds/celery
-	name = "celery seeds"
+	name = "芹菜种子"
 	plant = "celery"
 	color = "#c38452"
 	biomes = list("semiarid", "temperate")
 
 /obj/item/stack/farming/seeds/redpepper
-	name = "red pepper seeds"
+	name = "红辣椒种子"
 	plant = "redpepper"
 	icon_state = "seeds_dark"
 	color = "#ff5959" //redish black
 	biomes = list("desert", "temperate", "semiarid", "sea")
 
 /obj/item/stack/farming/seeds/parsnip
-	name = "parsnip seeds"
+	name = "欧防风种子"
 	plant = "parsnip"
 	color = "#f3bc5f" //paletan
 	biomes = list("temperate", "semiarid")
 
 /obj/item/stack/farming/seeds/parsley
-	name = "parsley seeds"
+	name = "欧芹种子"
 	plant = "parsley"
 	icon_state = "seeds_dark"
 	color = "#d3cdb4" //dark shaded yellow
 	biomes = list("temperate", "semiarid", "sea")
 
 /obj/item/stack/farming/seeds/sugarcane
-	name = "sugarcane seeds"
+	name = "甘蔗种子"
 	plant = "sugarcane"
 	color = "#f8ed8b" //sugary yellow? pale.
 	biomes = list("jungle", "savanna", "sea")
 
 /obj/item/stack/farming/seeds/hemp
-	name = "hemp seeds"
+	name = "大麻种子"
 	plant = "hemp"
 	color = "#7cfc00"  //lawn green, just like the t-shirts.
 	biomes = list("jungle", "savanna", "sea", "semiarid", "desert")
 	seasons = list("SUMMER", "SPRING", "FALL", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/flax
-	name = "flax seeds"
+	name = "亚麻种子"
 	plant = "flax"
 	color = "#5f9ea0"  //cadet navy blue like its flowers.
 	biomes = list("temperate", "taiga", "tundra")
 
 /obj/item/stack/farming/seeds/tea
-	name = "tea seeds"
+	name = "茶叶种子"
 	plant = "tea"
 	color = "#008080" //tea(l)
 	seasons = list("SUMMER", "SPRING", "FALL", "Wet Season", "Dry Season")
 	biomes = list("jungle", "savanna", "sea", "semiarid")
 
 /obj/item/stack/farming/seeds/peyote
-	name = "peyote seeds"
+	name = "佩约特种子"
 	plant = "peyote"
 	icon_state = "seeds_dark"
 	color = "#8475d8" //black-blue
 	biomes = list("desert")
 
 /obj/item/stack/farming/seeds/poppy
-	name = "poppy seeds"
-	desc = "Seeds of the opium poppy."
+	name = "罂粟种子"
+	desc = "鸦片罂粟的种子."
 	plant = "poppy"
 	color = "#5f5c54" //grey
 	biomes = list("jungle", "savanna", "desert")
 
 /obj/item/stack/farming/seeds/coffee
-	name = "coffee seeds"
+	name = "咖啡种子"
 	plant = "coffee"
 	icon_state = "seeds_dark"
 	color = "#e68c38" //coffee-brown
 	biomes = list("jungle", "savanna", "desert", "semiarid")
 
 /obj/item/stack/farming/seeds/tree
-	name = "tree seeds"
+	name = "树木种子"
 	plant = "tree"
 	icon_state = "seeds_dark"
 	color = "#eeaf78" //orange-brown
 	seasons = list("SUMMER", "SPRING", "FALL", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/bamboo
-	name = "bamboo seeds"
+	name = "竹子种子"
 	plant = "bamboo"
 	icon_state = "bambooseeds"
 	biomes = list("jungle", "sea")
 	seasons = list("WINTER", "SUMMER", "SPRING", "FALL", "Wet Season")
 
 /obj/item/stack/farming/seeds/cotton
-	name = "cotton seeds"
+	name = "棉花种子"
 	plant = "cotton"
 	color = "#e4e0dc" //creamy grey
 	biomes = list("temperate", "desert", "sea", "semiarid")
 	seasons = list("SUMMER", "SPRING", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/coca
-	name = "coca seeds"
+	name = "古柯种子"
 	plant = "coca"
 	color = "#90ee90" //light green
 	biomes = list("jungle", "savanna")
 
 /obj/item/stack/farming/seeds/herbs
 	//Technically it's not a seed
-	name = "herbs seeds"
+	name = "草药种子"
 	plant = "herbs"
 	color = "#2e8d2e"
 	biomes = list()
@@ -164,21 +164,21 @@
 */
 
 /obj/item/stack/farming/seeds/tomato
-	name = "tomato seeds"
+	name = "番茄种子"
 	plant = "tomato"
 	color = "#cd5c5c" //indian red
 	biomes = list("temperate", "sea", "semiarid", "desert", "jungle", "savanna")
 	seasons = list("SUMMER", "SPRING", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/cabbage
-	name = "cabbage seeds"
+	name = "卷心菜种子"
 	plant = "cabbage"
 	color = "#8fbc8f" //dark sea green
 	biomes = list("temperate", "tundra", "taiga", "sea", "semiarid")
 
 /obj/item/stack/farming/seeds/potato
-	name = "seed potato"
-	desc = "A potato selected for breeding because of its characteristics."
+	name = "种薯"
+	desc = "因其特性而被选育的马铃薯."
 	plant = "potato"
 	icon_state = "potato"
 	biomes = list("temperate", "taiga", "semiarid")
@@ -194,27 +194,27 @@
 */
 
 /obj/item/stack/farming/seeds/carrot
-	name = "carrot seeds"
+	name = "胡萝卜种子"
 	plant = "carrot"
 	icon_state = "seeds_dark"
 	color = "#f88761"
 
 /obj/item/stack/farming/seeds/corn
-	name = "corn seeds"
+	name = "玉米种子"
 	plant = "corn"
 	color = "#ffff00" //yellow
 	biomes = list("temperate", "jungle", "savanna", "desert", "sea", "semiarid", "taiga")
 	seasons = list( "SUMMER", "SPRING", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/beans
-	name = "bean seeds"
+	name = "豆类种子"
 	plant = "beans"
 	color = "#bc8f8f" //rosy brown
 	biomes = list("temperate", "savanna", "desert", "sea", "semiarid") 	//beans are notoriously frost vunerable
 	seasons = list( "SUMMER", "SPRING", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/zucchini
-	name = "zucchini seeds"
+	name = "西葫芦种子"
 	plant = "zucchini"
 	icon_state = "seeds_dark"
 	color = "#d6d0b5" //dark shaded yellow
@@ -226,14 +226,14 @@
 */
 
 /obj/item/stack/farming/seeds/wheat
-	name = "wheat seeds"
+	name = "小麦种子"
 	plant = "wheat"
 	color = "#b87333" //copper
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
 	biomes = list("temperate", "tundra", "taiga", "sea")
 
 /obj/item/stack/farming/seeds/barley
-	name = "barley seeds"
+	name = "大麦种子"
 	plant = "barley"
 	icon_state = "seeds_dark"
 	color = "#e0d6af"
@@ -241,15 +241,15 @@
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
 
 /obj/item/stack/farming/seeds/oat
-	name = "oat seeds"
+	name = "燕麦种子"
 	plant = "oat"
 	color = "#b1c11b"
 	biomes = list("temperate", "tundra", "taiga", "sea")
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
 
 /obj/item/stack/farming/seeds/rice
-	name = "rice seeds"
-	desc = "rice seeds selected for their characteristics."
+	name = "水稻种子"
+	desc = "因其特性而被选育的水稻种子."
 	plant = "rice"
 	icon_state = "riceseeds"
 	biomes = list("jungle", "savanna", "sea")
@@ -259,100 +259,100 @@
 */
 
 /obj/item/stack/farming/seeds/apple
-	name = "apple seeds"
+	name = "苹果种子"
 	plant = "apple"
 	color = "#adff2f" //green yellow
 	biomes = list("temperate", "tundra", "taiga", "sea", "semiarid")
 
 /obj/item/stack/farming/seeds/orange
-	name = "orange seeds"
+	name = "橙子种子"
 	plant = "orange"
 	color = "#ff8c00" //dark orange
 	biomes = list("temperate", "desert", "sea", "semiarid", "jungle")
 
 /obj/item/stack/farming/seeds/lime
-	name = "lime seeds"
+	name = "青柠种子"
 	plant = "lime"
 	color = "#00ff00" //lime(color)
 	biomes = list("temperate", "desert", "sea", "semiarid", "jungle")
 
 /obj/item/stack/farming/seeds/lemon
-	name = "lemon seeds"
+	name = "柠檬种子"
 	plant = "lemon"
 	color = "#ffff00" //yellow
 	biomes = list("temperate", "desert", "sea", "semiarid", "jungle")
 
 /obj/item/stack/farming/seeds/watermelon
-	name = "watermelon seeds"
+	name = "西瓜种子"
 	plant = "watermelon"
 	icon_state = "seeds_dark"
 	biomes = list("desert", "semiarid", "jungle")
 
 /obj/item/stack/farming/seeds/pumpkin
-	name = "pumpkin seeds"
+	name = "南瓜种子"
 	plant = "pumpkin"
 	color = "#fbe151" //cinnamon
 	biomes = list("temperate", "taiga", "tundra")
 
 /obj/item/stack/farming/seeds/agave
-	name = "agave seeds"
+	name = "龙舌兰种子"
 	plant = "agave"
 	icon_state = "seeds_dark"
 	color = "#4fda94" //green blue
 	biomes = list("desert", "semiarid")
 
 /obj/item/stack/farming/seeds/banana
-	name = "banana seeds"
+	name = "香蕉种子"
 	plant = "banana"
 	color = "#ffe135" //banana yellow
 	biomes = list("jungle", "savanna")
 
 /obj/item/stack/farming/seeds/cherry
-	name = "cherry seeds"
+	name = "樱桃种子"
 	plant = "cherry"
 	icon_state = "seeds_dark"
 	color = "#9191b6" //black
 	biomes = list("jungle", "temperate", "desert", "savanna")
 
 /obj/item/stack/farming/seeds/apricot
-	name = "apricot seeds"
+	name = "杏子种子"
 	plant = "apricot"
 	color = "#b59a00" //murky yellow
 	biomes = list("jungle", "temperate", "desert", "savanna")
 
 /obj/item/stack/farming/seeds/grapes
-	name = "grape seeds"
+	name = "葡萄种子"
 	plant = "grapes"
 	color = "#9370db" //medium purple
 	biomes = list("temperate", "desert", "sea", "semiarid")
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season", "Dry Season")
 
 /obj/item/stack/farming/seeds/olives
-	name = "olive seeds"
+	name = "橄榄种子"
 	plant = "olives"
 	color = "#6b8e23" //olive drab
 	biomes = list("temperate", "desert", "sea", "semiarid")
 
 /obj/item/stack/farming/seeds/coconut
-	name = "coconut seeds"
+	name = "椰子种子"
 	plant = "coconut"
 	icon_state = "coconut"
 	biomes = list("sea", "jungle")
 
 /obj/item/stack/farming/seeds/cocoa
-	name = "cocoa seeds"
+	name = "可可种子"
 	plant = "cocoa"
 	color = "#4a2601" //chocolate brown
 	biomes = list("temperate", "jungle")
 
 /obj/item/stack/farming/seeds/sapodilla
-	name = "sapodilla seeds"
+	name = "人心果种子"
 	plant = "sapodilla"
 	color = "#f3bc5f" //paletan
 	biomes = list("jungle", "sea")
 
 /obj/item/stack/farming/seeds/sapote
-	name = "sapote seeds"
+	name = "萨波特种子"
 	plant = "sapote"
 	color = "#8f5101" //orange brown
 	biomes = list("jungle", "temperate")
@@ -362,8 +362,8 @@
 */
 
 /obj/structure/farming/plant
-	name = "plant"
-	desc = "A generic plant."
+	name = "植物"
+	desc = "一株普通的植物."
 	icon = 'icons/farming/plants.dmi'
 	icon_state = "tomato-grow1"
 
@@ -408,8 +408,8 @@
 */
 
 /obj/structure/farming/plant/poppy
-	name = "poppy plant"
-	desc = "An opium poppy plant."
+	name = "罂粟植株"
+	desc = "一株鸦片罂粟."
 	icon_state = "poppy-grow1"
 	plant = "poppy"
 	stack = "material/poppy"
@@ -417,8 +417,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/tobacco
-	name = "tobacco plant"
-	desc = "A tobacco plant."
+	name = "烟草植株"
+	desc = "一株烟草."
 	icon_state = "tobacco-grow1"
 	plant = "tobacco"
 	stack = "material/tobacco_green"
@@ -426,8 +426,8 @@
 	max_water = 55
 
 /obj/structure/farming/plant/hemp
-	name = "hemp plant"
-	desc = "A hemp plant. Good to make ropes and uh, other things."
+	name = "大麻植株"
+	desc = "一株大麻. 适合制作绳索以及呃, 其他东西."
 	icon_state = "hemp-grow1"
 	plant = "hemp"
 	stack = "material/hemp"
@@ -436,8 +436,8 @@
 	max_water = 60
 
 /obj/structure/farming/plant/flax
-	name = "flax plant"
-	desc = "A flax plant. Closely related to hemp in fiberous rope-making but has none of the uh, other stuff."
+	name = "亚麻植株"
+	desc = "一株亚麻. 在纤维制绳方面与大麻亲缘相近, 但没有那些呃, 其他东西."
 	icon_state = "flax-grow1"
 	plant = "flax"
 	stack ="material/flax"
@@ -445,8 +445,8 @@
 	max_water = 60
 
 /obj/structure/farming/plant/sugarcane
-	name = "sugarcane"
-	desc = "A sugar cane. You can extract sugar from it."
+	name = "甘蔗"
+	desc = "一根甘蔗. 你可以从中提取糖."
 	icon_state = "sugarcane-grow1"
 	plant = "sugarcane"
 	condiment = "bsugar"
@@ -454,8 +454,8 @@
 	max_water = 60
 
 /obj/structure/farming/plant/tea
-	name = "tea"
-	desc = "A tea plant."
+	name = "茶树"
+	desc = "一株茶树."
 	icon_state = "tea-grow1"
 	plant = "tea"
 	condiment = "tealeaves"
@@ -463,32 +463,32 @@
 	max_water = 50
 
 /obj/structure/farming/plant/peyote
-	name = "peyote"
-	desc = "A peyote cactus plant."
+	name = "佩约特"
+	desc = "一株佩约特仙人掌."
 	icon_state = "peyote-grow1"
 	plant = "peyote"
 	biomes = list("desert")
 	max_water = 100
 
 /obj/structure/farming/plant/coffee
-	name = "coffee"
-	desc = "A coffee plant."
+	name = "咖啡树"
+	desc = "一株咖啡树."
 	icon_state = "coffee-grow1"
 	plant = "coffee"
 	biomes = list("jungle", "savanna", "desert", "semiarid")
 	max_water = 80
 
 /obj/structure/farming/plant/juniper
-	name = "juniper"
-	desc = "A juniper bush."
+	name = "杜松"
+	desc = "一株杜松灌木."
 	icon_state = "juniper-grow1"
 	plant = "juniper"
 	biomes = list("tundra", "taiga", "temperate")
 	max_water = 85
 
 /obj/structure/farming/plant/cotton
-	name = "cotton"
-	desc = "A cotton plant."
+	name = "棉花"
+	desc = "一株棉花."
 	icon_state = "cotton-grow1"
 	plant = "cotton"
 	stack = "material/cotton"
@@ -498,8 +498,8 @@
 	max_water = 50
 
 /obj/structure/farming/plant/tree
-	name = "tree"
-	desc = "A tree, grown for wood."
+	name = "树"
+	desc = "一棵树,种植以获取木材."
 	icon_state = "tree-grow1"
 	plant = "tree"
 	stack = "material/wood"
@@ -509,8 +509,8 @@
 	max_water = 80
 
 /obj/structure/farming/plant/bamboo
-	name = "bamboo"
-	desc = "A bamboo tree, grown for its shoots."
+	name = "竹子"
+	desc = "一棵竹子,种植以获取竹笋."
 	icon_state = "bambooo-grow1"
 	plant = "bamboo"
 	stack = "material/bamboo"
@@ -521,8 +521,8 @@
 	max_water = 80
 
 /obj/structure/farming/plant/coca
-	name = "coca"
-	desc = "A coca plant. Produces coca leaves that can be refined to cocaine."
+	name = "古柯"
+	desc = "一株古柯植物.产出的古柯叶可提炼为可卡因."
 	icon_state = "coca-grow1"
 	plant = "coca"
 	stack = "material/coca"
@@ -530,8 +530,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/mushroom
-	name = "mushroom"
-	desc = "A bunch of mushrooms. Can be grown inside and underground."
+	name = "蘑菇"
+	desc = "一丛蘑菇.可在室内和地下种植."
 	icon_state = "mushroom-grow1"
 	plant = "mushroom"
 	harvest_verb = "harvest"
@@ -541,8 +541,8 @@
 
 /obj/structure/farming/plant/mushroompsy
 	//yes it have equal icon... for fun and roleplay, enjoy
-	name = "Psilocybin mushrooms"
-	desc = "A bunch of mushrooms. Can be grown inside and underground."
+	name = "裸盖菇"
+	desc = "一丛蘑菇.可在室内和地下种植."
 	icon_state = "mushroompsy-grow1"
 	plant = "mushroompsy"
 	harvest_verb = "harvest"
@@ -552,8 +552,8 @@
 
 /obj/structure/farming/plant/herbs
 	//technically not have a seeds, for planting used /obj/item/stack/medical/advanced/herbs
-	name = "herbs"
-	desc = "A herb plant."
+	name = "草药"
+	desc = "一株草药植物."
 	icon = 'icons/farming/plants.dmi'
 	icon_state = "herbs_grow1"
 	plant = "herbs"
@@ -568,8 +568,8 @@
 */
 
 /obj/structure/farming/plant/wheat
-	name = "wheat plant"
-	desc = "A wheat plant."
+	name = "小麦植株"
+	desc = "一株小麦植物."
 	icon_state = "wheat-grow1"
 	plant = "wheat"
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
@@ -577,8 +577,8 @@
 	max_water = 50
 
 /obj/structure/farming/plant/oat
-	name = "oat plant"
-	desc = "An oat plant."
+	name = "燕麦植株"
+	desc = "一株燕麦植物."
 	icon_state = "oat-grow1"
 	plant = "oat"
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
@@ -586,8 +586,8 @@
 	max_water = 50
 
 /obj/structure/farming/plant/barley
-	name = "barley plant"
-	desc = "A barley plant."
+	name = "大麦植株"
+	desc = "一株大麦植物."
 	icon_state = "barley-grow1"
 	plant = "barley"
 	seasons = list( "SUMMER", "SPRING", "FALL", "Wet Season")
@@ -595,8 +595,8 @@
 	max_water = 50
 
 /obj/structure/farming/plant/rice
-	name = "rice"
-	desc = "A rice plant."
+	name = "水稻"
+	desc = "一株水稻植物."
 	icon_state = "rice-grow1"
 	plant = "rice"
 	harvest_verb = "harvest"
@@ -609,8 +609,8 @@
 */
 
 /obj/structure/farming/plant/potato
-	name = "potato plant"
-	desc = "A potato plant."
+	name = "马铃薯植株"
+	desc = "一株马铃薯植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "potato-grow1"
 	plant = "potato"
@@ -628,16 +628,16 @@
 	max_water = 75*/
 
 /obj/structure/farming/plant/carrot
-	name = "carrot plant"
-	desc = "A carrot plant."
+	name = "胡萝卜植株"
+	desc = "一株胡萝卜植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "carrot-grow1"
 	plant = "carrot"
 	max_water = 75
 
 /obj/structure/farming/plant/cabbage
-	name = "cabbage plant"
-	desc = "A cabbage plant."
+	name = "卷心菜植株"
+	desc = "一株卷心菜植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "cabbage-grow1"
 	plant = "cabbage"
@@ -645,8 +645,8 @@
 	max_water = 70
 
 /obj/structure/farming/plant/tomato
-	name = "tomato plant"
-	desc = "A tomato plant."
+	name = "番茄植株"
+	desc = "一株番茄植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "tomato-grow1"
 	plant = "tomato"
@@ -655,8 +655,8 @@
 	max_water = 55
 
 /obj/structure/farming/plant/corn
-	name = "corn plant"
-	desc = "A corn plant."
+	name = "玉米植株"
+	desc = "一株玉米植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "corn-grow1"
 	plant = "corn"
@@ -665,8 +665,8 @@
 	max_water = 70
 
 /obj/structure/farming/plant/beans
-	name = "bean plant"
-	desc = "A bean plant."
+	name = "豆类植株"
+	desc = "一株豆类植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "beans-grow1"
 	plant = "beans"
@@ -674,8 +674,8 @@
 	max_water = 50
 
 /obj/structure/farming/plant/parsnip
-	name = "parsnip plant"
-	desc = "A parsnip plant."
+	name = "欧防风植株"
+	desc = "一株欧防风植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "parsnip-grow1"
 	plant = "parsnip"
@@ -688,8 +688,8 @@
 */
 
 /obj/structure/farming/plant/apple
-	name = "apple tree"
-	desc = "An apple tree."
+	name = "苹果树"
+	desc = "一棵苹果树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "orange-grow1"
 	plant = "apple"
@@ -697,8 +697,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/orange
-	name = "orange tree"
-	desc = "An orange tree."
+	name = "橙树"
+	desc = "一棵橙树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "orange-grow1"
 	plant = "orange"
@@ -706,8 +706,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/lime
-	name = "lime tree"
-	desc = "A lime tree."
+	name = "青柠树"
+	desc = "一棵青柠树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "lime-grow1"
 	plant = "lime"
@@ -715,8 +715,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/lemon
-	name = "lemon tree"
-	desc = "An lemon tree."
+	name = "柠檬树"
+	desc = "一棵柠檬树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "lemon-grow1"
 	plant = "lemon"
@@ -724,8 +724,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/watermelon
-	name = "watermelon vine"
-	desc = "A watermelon vine."
+	name = "西瓜藤"
+	desc = "一株西瓜藤."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "watermelon-grow1"
 	plant = "watermelon"
@@ -734,8 +734,8 @@
 	max_water = 90
 
 /obj/structure/farming/plant/pumpkin
-	name = "pumpkin vine"
-	desc = "A pumpkin vine."
+	name = "南瓜藤"
+	desc = "一株南瓜藤."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "pumpkin-grow1"
 	plant = "pumpkin"
@@ -743,8 +743,8 @@
 	max_water = 90
 
 /obj/structure/farming/plant/grapes
-	name = "grapes"
-	desc = "A grape vine plant."
+	name = "葡萄"
+	desc = "一株葡萄藤植物."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "grapes-grow1"
 	plant = "grapes"
@@ -753,8 +753,8 @@
 	max_water = 65
 
 /obj/structure/farming/plant/banana
-	name = "banana"
-	desc = "A banana plant."
+	name = "香蕉"
+	desc = "一株香蕉植物."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "banana-grow1"
 	plant = "banana"
@@ -762,8 +762,8 @@
 	max_water = 45
 
 /obj/structure/farming/plant/olives
-	name = "olive"
-	desc = "An olive tree."
+	name = "橄榄"
+	desc = "一棵橄榄树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "olives-grow1"
 	plant = "olives"
@@ -771,8 +771,8 @@
 	max_water = 70
 
 /obj/structure/farming/plant/zucchini
-	name = "zucchini"
-	desc = "A zucchini vine."
+	name = "西葫芦"
+	desc = "一株西葫芦藤."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "zucchini-grow1"
 	plant = "zucchini"
@@ -780,8 +780,8 @@
 	max_water = 70
 
 /obj/structure/farming/plant/cherry
-	name = "cherry"
-	desc = "A cherry tree."
+	name = "樱桃"
+	desc = "一棵樱桃树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "cherry-grow1"
 	plant = "cherry"
@@ -789,8 +789,8 @@
 	max_water = 40
 
 /obj/structure/farming/plant/redpepper
-	name = "red pepper"
-	desc = "A red pepper bush."
+	name = "红辣椒"
+	desc = "一丛红辣椒灌木."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "redpepper-grow1"
 	plant = "redpepper"
@@ -798,8 +798,8 @@
 	max_water = 30
 
 /obj/structure/farming/plant/sapodilla
-	name = "sapodilla"
-	desc = "A sapodilla tree."
+	name = "人心果"
+	desc = "一棵人心果树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "sapodilla-grow1"
 	plant = "sapodilla"
@@ -807,8 +807,8 @@
 	max_water = 75
 
 /obj/structure/farming/plant/agave
-	name = "agave"
-	desc = "An agave bush."
+	name = "龙舌兰"
+	desc = "一丛龙舌兰灌木."
 	icon = 'icons/farming/plants.dmi'
 	icon_state = "agave-grow1"
 	plant = "agave"
@@ -816,8 +816,8 @@
 	max_water = 45
 
 /obj/structure/farming/plant/parsley
-	name = "parsley"
-	desc = "A parsley plant."
+	name = "欧芹"
+	desc = "一株欧芹植物."
 	icon = 'icons/farming/plants.dmi'
 	icon_state = "parsley-grow1"
 	plant = "parsley"
@@ -825,8 +825,8 @@
 	max_water = 80
 
 /obj/structure/farming/plant/celery
-	name = "celery"
-	desc = "A celery plant."
+	name = "芹菜"
+	desc = "一株芹菜植物."
 	icon = 'icons/farming/vegetables.dmi'
 	icon_state = "celery_grow1"
 	plant = "celery"
@@ -834,8 +834,8 @@
 	max_water = 45
 
 /obj/structure/farming/plant/liquorice
-	name = "liquorice"
-	desc = "A liquorice plant."
+	name = "甘草"
+	desc = "一株甘草植物."
 	icon = 'icons/farming/plants.dmi'
 	icon_state = "liquorice_grow1"
 	plant = "liquorice"
@@ -843,8 +843,8 @@
 	max_water = 38
 
 /obj/structure/farming/plant/apricot
-	name = "apricot"
-	desc = "An apricot tree."
+	name = "杏"
+	desc = "一棵杏树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "apricot-grow1"
 	plant = "apricot"
@@ -852,8 +852,8 @@
 	max_water = 40
 
 /obj/structure/farming/plant/coconut
-	name = "coconut"
-	desc = "A coconut tree."
+	name = "椰子"
+	desc = "一棵椰子树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "coconut-grow1"
 	plant = "coconut"
@@ -861,8 +861,8 @@
 	max_water = 100
 
 /obj/structure/farming/plant/cocoa
-	name = "cocoa"
-	desc = "A cocoa tree."
+	name = "可可"
+	desc = "一棵可可树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "coco-grow1"
 	plant = "cocoa"
@@ -870,8 +870,8 @@
 	max_water = 100
 
 /obj/structure/farming/plant/sapote
-	name = "sapote plant"
-	desc = "A sapote plant."
+	name = "萨波特植株"
+	desc = "一棵人心果树."
 	icon = 'icons/farming/fruits.dmi'
 	icon_state = "sapote-grow1"
 	plant = "sapote"
@@ -1079,10 +1079,10 @@
 					water_desc = "dry"
 				if (water/max_water < 0.33)
 					water_desc = "wilted"
-			to_chat(user, "\The [src] seems <b>[water_desc]</b>.")
+			to_chat(user, "\The [src] 看起来 <b>[water_desc]</b>.")
 		else if (H.getStatCoeff("farming") >= 2.2)
-			to_chat(user, "[src]'s water level is at <b>[water]/[max_water]</b>.")
-			to_chat(user, "[src]'s nutrition level is at <b>[plant_nutrition]/[max_plant_nutrition]</b>.")
+			to_chat(user, "[src] 的水位为 <b>[water]/[max_water]</b>.")
+			to_chat(user, "[src] 的营养水平为 <b>[plant_nutrition]/[max_plant_nutrition]</b>.")
 		if (H.getStatCoeff("farming")>= 1.3)
 			if (plant_nutrition > 80)
-				to_chat(user, "The plant looks good and healthy, it may give extra crops.")
+				to_chat(user, "这株植物看起来健康良好, 可能会产出额外的作物.")

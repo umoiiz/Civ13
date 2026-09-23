@@ -105,9 +105,9 @@
 			sov_points++
 		if (a1_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>Telephone Central</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font>失去了<b>电话中枢</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font> captured the <b>Telephone Central</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a1_control]</font>占领了<b>电话中枢</b>!</big>")
 		c1 = 0
 		c2 = 0
 		prev_control = a2_control
@@ -131,9 +131,9 @@
 			sov_points++
 		if (a2_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>Train Station</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font>失去了<b>火车站</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font> captured the <b>Train Station</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a2_control]</font>占领了<b>火车站</b>!</big>")
 		c1 = 0
 		c2 = 0
 		prev_control = a3_control
@@ -157,27 +157,27 @@
 			sov_points++
 		if (a3_control != prev_control)
 			if (prev_control != "none")
-				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font> lost the <b>City Hall</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[prev_control]</font>失去了<b>市政厅</b>!</big>")
 			else
-				to_chat(world, "<big><font color='[cust_color]'>[a3_control]</font> captured the <b>City Hall</b>!</big>")
+				to_chat(world, "<big><font color='[cust_color]'>[a3_control]</font>占领了<b>市政厅</b>!</big>")
 	if (a1_control == "Soviets")
 		cust_color = "red"
 	else
 		cust_color = "blue"
-	to_chat(world, "<big><font color='[cust_color]'><b>Telephone Central</b>: [a1_control]</font></big>")
+	to_chat(world, "<big><font color='[cust_color]'><b>电话中枢</b>: [a1_control]</font></big>")
 	if (a2_control == "Soviets")
 		cust_color = "red"
 	else
 		cust_color = "blue"
-	to_chat(world, "<big><font color='[cust_color]'><b>Train Station</b>: [a2_control]</font></big>")
+	to_chat(world, "<big><font color='[cust_color]'><b>火车站</b>: [a2_control]</font></big>")
 	if (a3_control == "Soviets")
 		cust_color = "red"
 	else
 		cust_color = "blue"
-	to_chat(world, "<big><font color='[cust_color]'><b>City Hall</b>: [a3_control]</font></big>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Germans: [ger_points]</big>")
-	to_chat(world, "<big>Soviets: [sov_points]</big>")
+	to_chat(world, "<big><font color='[cust_color]'><b>市政厅</b>: [a3_control]</font></big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>德军: [ger_points]</big>")
+	to_chat(world, "<big>苏军: [sov_points]</big>")
 	spawn(300)
 		points_check()
 
@@ -262,9 +262,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Telephone Central</b>: [a1_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>电话中枢</b>: [a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Telephone Central</b>: Nobody</big>")
+			to_chat(world, "<big><b>电话中枢</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -290,9 +290,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Train Station</b>: [a2_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>火车站</b>: [a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Train Station</b>: Nobody</big>")
+			to_chat(world, "<big><b>火车站</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -318,9 +318,9 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>City Hall</b>: [a3_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>市政厅</b>: [a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>City Hall</b>: Nobody</big>")
+			to_chat(world, "<big><b>市政厅</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -346,12 +346,12 @@
 				cust_color = "red"
 			else
 				cust_color = "blue"
-			to_chat(world, "<big><font color='[cust_color]'><b>Hospital</b>: [a4_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>医院</b>: [a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Hospital</b>: Nobody</big>")
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Germans: [ger_points]</big>")
-	to_chat(world, "<big>Soviets: [sov_points]</big>")
+			to_chat(world, "<big><b>医院</b>: 无人</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>德军: [ger_points]</big>")
+	to_chat(world, "<big>苏军: [sov_points]</big>")
 	spawn(300)
 		points_check()
 

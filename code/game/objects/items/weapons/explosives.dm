@@ -1,6 +1,6 @@
 /obj/item/weapon/plastique
-	name = "plastic explosives"
-	desc = "Used to put holes in specific areas without too much extra hole."
+	name = "塑胶炸药"
+	desc = "用来在特定区域炸出洞,而不会多炸出太多洞."
 	gender = PLURAL
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "plastic-explosive0"
@@ -13,13 +13,13 @@
 	var/image_overlay = null
 
 /obj/item/weapon/plastique/c4
-	name = "C4 explosive"
+	name = "C4炸药"
 
 
 /obj/item/weapon/plastique/attackby(var/obj/item/I, var/mob/user)
 	if (istype(I, /obj/item/weapon/wrench))
 		open_panel = !open_panel
-		to_chat(user, "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
+		to_chat(user, "<span class='notice'>你[open_panel ? "open" : "close"]了电线面板.</span>")
 		..()
 
 /obj/item/weapon/plastique/attack_self(mob/user as mob)
@@ -27,7 +27,7 @@
 	if (user.get_active_hand() == src)
 		newtime = Clamp(newtime, 3, 60000)
 		timer = newtime
-		to_chat(user, "Timer set for [timer] seconds.")
+		to_chat(user, "计时器设定为 [timer] 秒.")
 
 /obj/item/weapon/plastique/afterattack(atom/movable/target, mob/user, flag)
 	if (!flag)
@@ -36,7 +36,7 @@
 	if (istype(target, /obj/item/weapon/storage) || istype(target, /obj/item/clothing/accessory/storage) || istype(target, /obj/item/clothing/under))
 		return
 
-	to_chat(user, "Planting explosives...")
+	to_chat(user, "正在安放炸药...")
 	user.do_attack_animation(target)
 
 	if (do_after(user, 50, target) && in_range(user, target))
@@ -46,7 +46,7 @@
 
 		if (ismob(target))
 			add_logs(user, target, "planted [name] on")
-			user.visible_message("<span class='danger'>[user.name] finished planting an explosive on [target.name]!</span>")
+			user.visible_message("<span class='danger'>[user.name] 在 [target.name] 上安放好了炸药!</span>")
 			message_admins("[key_name(user, user.client)](<A HREF='?_src_=holder;adminmoreinfo=\ref[user]'>?</A>) planted [name] on [key_name(target)](<A HREF='?_src_=holder;adminmoreinfo=\ref[target]'>?</A>) with [timer] second fuse", key_name(user, user.client))
 			log_game("[key_name(user)] planted [name] on [key_name(target)] with [timer] second fuse")
 
@@ -55,7 +55,7 @@
 			log_game("[key_name(user)] planted [name] on [target.name] at ([target.x],[target.y],[target.z]) with [timer] second fuse")
 
 		target.overlays += image_overlay
-		to_chat(user, "Bomb has been planted. Timer counting down from [timer].")
+		to_chat(user, "炸弹已安放.计时器从 [timer] 开始倒计时.")
 		spawn(timer*10)
 			explode(get_turf(target))
 
@@ -100,7 +100,7 @@
 	..()
 
 /obj/item/weapon/plastique/russian
-	name = "explosive charge"
+	name = "炸药包"
 	icon_state = "russian_charge"
 
 /obj/item/weapon/plastique/russian/New()

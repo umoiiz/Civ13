@@ -29,13 +29,13 @@
 		//var/icon/I = icon('icons/obj/decals.dmi', icon_state)
 		//S.icon = I.Scale(24, 24)
 		S.sign_state = icon_state
-		to_chat(user, "You unfasten \the [S] with your [tool].")
+		to_chat(user, "你用你的[tool]解开了\the [S].")
 		qdel(src)
 	else ..()
 
 /obj/item/sign
-	name = "sign"
-	desc = "This sign has come loose, maybe you could fasten it somewhere."
+	name = "标牌"
+	desc = "这个标牌松了,也许你可以把它固定到某个地方."
 	icon = 'icons/obj/decals.dmi'
 	w_class = ITEM_SIZE_NORMAL		//big
 	var/sign_state = ""
@@ -58,33 +58,33 @@
 			S.name = name
 			S.desc = desc
 			S.icon_state = sign_state
-			to_chat(user, "You fasten \the [S] with your [tool].")
+			to_chat(user, "你用你的[tool]固定了\the [S].")
 			qdel(src)
 	else ..()
 
 /obj/structure/sign/securearea
-	name = "\improper SECURE AREA"
-	desc = "A warning sign which reads 'SECURE AREA'."
+	name = "\improper 安全区域"
+	desc = "一块写着\"安全区域\"的警告标牌."
 	icon_state = "securearea"
 
 /obj/structure/sign/redcross
-	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	name = "医疗舱"
+	desc = "银河系医疗机构的标志.你可能会在这里得到帮助."
 	icon_state = "redcross"
 
 /obj/structure/sign/mcd
-	name = "Mc Dondald's"
-	desc = "The fast-food giant that guarantees to supersize your misery with every order."
+	name = "麦当劳"
+	desc = "快餐巨头,保证让你的每一单都更加悲惨."
 	icon_state = "mcd3"
 
 /obj/structure/sign/mcd/menu
-	name = "Mc Dondald's menu"
-	desc = "Fueling the obesity epidemic, one Big Mac at a time."
+	name = "麦当劳菜单"
+	desc = "助长肥胖流行病,一次一个巨无霸."
 	icon_state = "mcd2"
 
 /obj/structure/sign/mcd/pole
-	name = "Mc Donald's"
-	desc = "A towering tribute to humanity's insatiable appetite for processed food and regret."
+	name = "麦当劳"
+	desc = "对人类加工食品和悔恨无尽食欲的巍峨致敬."
 	icon_state = "mcd-pole"
 
 /obj/structure/sign/mcd/pole/New()
@@ -99,104 +99,104 @@
 	overlays.Cut()
 
 /obj/structure/sign/tfc
-	name = "Texas Fried Chicken"
-	desc = "A sign Texas people usually like."
+	name = "德克萨斯炸鸡"
+	desc = "德克萨斯人通常喜欢的标牌."
 	icon_state = "tfc"
 
 /obj/structure/sign/weedshop
-	name = "Weed Shop"
-	desc = "A sign stoners usually like."
+	name = "大麻商店"
+	desc = "瘾君子通常喜欢的标牌."
 	icon_state = "weedshop"
 
 /obj/structure/sign/mckellens
-	name = "McKellen's"
-	desc = "A sign for the McKellen's Franchise establishment."
+	name = "麦凯伦"
+	desc = "麦凯伦连锁店的标牌."
 	icon_state = "mckellens"
 
 /obj/structure/sign/sheriff
-	name = "Sheriff's Office"
-	desc = "A sign for the local Sheriff's Office."
+	name = "治安官办公室"
+	desc = "当地治安官办公室的标牌."
 	icon_state = "sheriff"
 
 /obj/structure/sign/bank
-	name = "bank"
-	desc = "A sign for the local bank."
+	name = "银行"
+	desc = "当地银行的标牌."
 	icon_state = "bank"
 
 /obj/structure/sign/bar
-	name = "BAR"
-	desc = "A sign that says bar on it."
+	name = "酒吧"
+	desc = "一块上面写着酒吧的标牌."
 	icon_state = "barsign"
 
 /obj/structure/sign/cafe_ru
-	name = "CAFE"
-	desc = "A sign that says CAFE on it in cyrillic."
+	name = "咖啡馆"
+	desc = "一块上面用西里尔字母写着咖啡馆的标牌."
 	icon_state = "cafesign_ru"
 
 /obj/structure/sign/barbershop
-	name = "barbershop"
-	desc = "A swirly object indicating a barbershop."
+	name = "理发店"
+	desc = "一个表示理发店的旋转物体."
 	icon_state = "barber"
 
 /obj/structure/sign/baily
-	name = "Baily post"
-	desc = "Protection service."
+	name = "贝利哨所"
+	desc = "保护服务."
 	icon_state = "bailypost"
 
 /obj/structure/sign/baily2
-	name = "Baily post"
-	desc = "Protection service."
+	name = "贝利哨所"
+	desc = "保护服务."
 	icon_state = "bailypost2"
 
 /obj/structure/sign/greencross
-	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	name = "医疗舱"
+	desc = "银河系医疗机构的标志.你可能会在这里得到帮助."
 	icon_state = "greencross"
 
 /obj/structure/sign/goldenplaque
-	name = "The Most Robust Men Award for Robustness"
-	desc = "To be Robust is not an action or a way of life, but a mental state. Only those with the force of Will strong enough to act during a crisis, saving friend from foe, are truly Robust. Stay Robust my friends."
+	name = "最强壮男人强壮奖"
+	desc = "强壮不是一种行为或生活方式,而是一种精神状态.只有那些意志力足够强大,能在危机中行动,从敌人手中拯救朋友的人,才是真正的强壮.保持强壮,我的朋友们."
 	icon_state = "goldenplaque"
 
 /obj/structure/sign/ogoldenplaque
-	name = "Bank"
-	desc = "Deposit valuables within."
+	name = "银行"
+	desc = "存放贵重物品."
 	icon_state = "atmosplaque"
 
 /obj/structure/sign/kiddieplaque
-	name = "\improper AI developers plaque"
-	desc = "Next to the extremely long list of names and job titles, there is a drawing of a little child. The child appears to be retarded. Beneath the image, someone has scratched the word \"PACKETS\""
+	name = "\improper AI开发者牌匾"
+	desc = "在极长的名字和职位列表旁边,有一幅小孩的画.这个孩子看起来像是智障.在图像下方,有人刻上了\"PACKETS\"这个词"
 	icon_state = "kiddieplaque"
 
 /obj/structure/sign/armory
-	name = "Armory"
-	desc = "Armory this way."
+	name = "军械库"
+	desc = "军械库在这边."
 	icon_state = "armory1"
 
 /obj/structure/sign/abashiri
-	name = "Shisetsu"
-	desc = "Shisetsu (Farming Facility)."
+	name = "设施"
+	desc = "设施 (农业设施)."
 	icon_state = "farming"
 /obj/structure/sign/abashiri/wing1
-	name = "Ichi Tsubasa"
-	desc = "Ichi Tsubasa (Wing 1)."
+	name = "一翼"
+	desc = "一翼 (第一翼)."
 	icon_state = "wing1"
 /obj/structure/sign/abashiri/wing2
-	name = "Ni Tsubasa"
-	desc = "Ni Tsubasa (Wing 2)."
+	name = "二翼"
+	desc = "二翼 (第二翼)."
 	icon_state = "wing2"
 /obj/structure/sign/abashiri/wing3
-	name = "San Tsubasa"
-	desc = "San Tsubasa (Wing 3)."
+	name = "三翼"
+	desc = "三翼 (第三翼)."
 	icon_state = "wing3"
 /obj/structure/sign/abashiri/solitary
-	name = "Kodoku"
-	desc = "Kodoku (Solitary)."
+	name = "孤独"
+	desc = "孤独 (禁闭室)."
 	icon_state = "wing3"
 
 /obj/structure/sign/japsign
-	name = "street sign"
-	desc = "A japanese street sign."
+	name = "路牌"
+	desc = "一块日式路牌."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "japsign"
 /obj/structure/sign/japsign/New()
@@ -205,35 +205,35 @@
 	icon_state = picksign
 
 /obj/structure/sign/mugshot
-	name = "police lineup screen"
-	desc = "A measure scale fixated to a wall. Useful for mugshots."
+	name = "警方指认屏"
+	desc = "固定在墙上的一种测量标尺. 用于拍摄嫌疑犯照片."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "mugshot"
 
 /obj/structure/sign/exit
-	name = "Exit"
-	desc = "Points to the exit."
+	name = "出口"
+	desc = "指向出口."
 	icon_state = "exit"
 
 /obj/structure/sign/galacticbattles/unite
-	name = "UNITE Poster"
-	desc = "Seems to be a Galactic Republic Propaganda Poster for the fight against the Sepretists."
+	name = "UNITE海报"
+	desc = "似乎是银河共和国对抗分离主义者的宣传海报."
 	icon_state = "unite"
 
 /obj/structure/sign/galacticbattles/care
-	name = "CARE Poster"
-	desc = "Seems to be a Galactic Republic Propaganda Poster to make the public aware of infiltrators"
+	name = "CARE海报"
+	desc = "似乎是银河共和国用于让公众警惕渗透者的宣传海报."
 	icon_state = "care"
 
 /obj/structure/sign/galacticbattles/repair
-	name = "Corelian Repair Advertisement Poster"
-	desc = "Seems to be a Corelian advertisement for Robot repairs"
+	name = "科雷利亚维修广告海报"
+	desc = "似乎是科雷利亚的机器人维修广告."
 	icon_state = "repair"
 
 
 /obj/structure/sign/minefield
-	name = "Minefield"
-	desc = "Achtung! Minen."
+	name = "雷区"
+	desc = "注意! 地雷."
 	icon_state = "minefield"
 	flammable = FALSE
 
@@ -249,27 +249,27 @@
 		desc = "Exit to the south."
 
 /obj/structure/sign/custom
-	name = "sign"
-	desc = "Signs something."
+	name = "指示牌"
+	desc = "标示着某些东西."
 	icon_state = "woodsign2"
 
 /obj/structure/sign/custom/plaque
-	name = "sign"
-	desc = "Signs something."
+	name = "指示牌"
+	desc = "标示着某些东西."
 	icon_state = "Colonial_Sign"
 
 /obj/structure/sign/custom/golden
-	name = "sign"
-	desc = "Signs something."
+	name = "指示牌"
+	desc = "标示着某些东西."
 	icon_state = "customsign2"
 
 /obj/structure/sign/custom/metallic
-	name = "sign"
-	desc = "Signs something."
+	name = "指示牌"
+	desc = "标示着某些东西."
 	icon_state = "customsign"
 /obj/structure/sign/signpost
-	name = "signpost"
-	desc = "Signs something."
+	name = "路标"
+	desc = "标示着某些东西."
 	icon_state = "signpost_pole"
 
 /obj/structure/sign/signpost/New()
@@ -305,251 +305,251 @@
 
 //numbers
 /obj/structure/sign/n1
-	desc = "A silver sign which reads 'I'."
-	name = "ONE"
+	desc = "一块银色标牌, 上面写着 'I'."
+	name = "一"
 	icon_state = "n1"
 /obj/structure/sign/n2
-	desc = "A silver sign which reads 'II'."
-	name = "TWO"
+	desc = "一块银色标牌, 上面写着 'II'."
+	name = "二"
 	icon_state = "n2"
 /obj/structure/sign/n3
-	desc = "A silver sign which reads 'III'."
-	name = "THREE"
+	desc = "一块银色标牌, 上面写着 'III'."
+	name = "三"
 	icon_state = "n3"
 /obj/structure/sign/n4
-	desc = "A silver sign which reads 'IV'."
-	name = "FOUR"
+	desc = "一块银色标牌, 上面写着 'IV'."
+	name = "四"
 	icon_state = "n4"
 /obj/structure/sign/n5
-	desc = "A silver sign which reads 'V'."
-	name = "FIVE"
+	desc = "一块银色标牌, 上面写着 'V'."
+	name = "五"
 	icon_state = "n5"
 /obj/structure/sign/n6
-	desc = "A silver sign which reads 'VI'."
-	name = "SIX"
+	desc = "一块银色标牌, 上面写着 'VI'."
+	name = "六"
 	icon_state = "n6"
 
 /obj/structure/sign/torii
-	desc = "A tall red gate structure."
-	name = "torii gate"
+	desc = "一座高大的红色门形建筑."
+	name = "鸟居"
 	icon_state = "torii"
 	icon = 'icons/turf/64x64.dmi'
 
 /obj/structure/sign/painting1
-	desc = "A large foamy wave crashes into the rocky shore. A bit of sunlight passes through the clouds, glistening on the sea surface and wet boulders."
-	name = "painting"
+	desc = "一道巨大的泡沫浪花拍打在岩石海岸上. 些许阳光穿过云层, 在海面和湿润的巨石上闪闪发光."
+	name = "画作"
 	icon_state = "painting1"
 
 /obj/structure/sign/painting2
-	desc = "A serene city street with a few people on a summer day. Two- and three-storey houses stand to the left and right, separated by a cobblestone road. A massive building with spires could be seen in the distance."
-	name = "painting"
+	desc = "夏日里一条宁静的城市街道, 路上有几个人. 左右两侧矗立着两三层高的房屋, 中间隔着一条鹅卵石路. 远处可以看到一座带有尖塔的巨大建筑."
+	name = "画作"
 	icon_state = "painting2"
 
 /obj/structure/sign/painting3
-	desc = "A blazing sunset seen from a steep cliff above the sea."
-	name = "painting"
+	desc = "从海面上方陡峭的悬崖望去, 是一片炽烈的日落."
+	name = "画作"
 	icon_state = "painting3"
 
 /obj/structure/sign/painting4
-	desc = "A wooded mountain valley with a small pond at the clearing, where a group of horsemen could be seen. The mountains themselves loom farther ahead, obscured by a thin haze."
-	name = "painting"
+	desc = "一处林木茂密的山谷, 空地上有一个小池塘, 可以看到一群骑手. 群山本身在更远处隐约耸立, 被一层薄雾遮蔽."
+	name = "画作"
 	icon_state = "painting4"
 
 /obj/structure/sign/painting5
-	desc = "A still life painting, depicting a table with a piece of white cloth, several fruits and a human skull."
-	name = "painting"
+	desc = "一幅静物画, 描绘了一张桌子, 上面铺着一块白布, 摆着几个水果和一个人类头骨."
+	name = "画作"
 	icon_state = "painting5"
 
 /obj/structure/sign/painting6
-	desc = "A long-tailed bird with black, olive green and white plumage, resembling a magpie, perches on a tree branch, surrounded by white cherry blossoms."
-	name = "painting"
+	desc = "一只长尾鸟栖息在树枝上, 羽毛呈黑色, 橄榄绿色和白色, 形似喜鹊, 周围环绕着白色樱花."
+	name = "画作"
 	icon_state = "painting6"
 
 /obj/structure/sign/painting7
-	desc = "A lone figure with a carrying pole on their shoulders stands under a tall pine on the sloping shore, gazing at the snow-peaked mountain across the strait. The sky is colored dark orange by the setting sun."
-	name = "painting"
+	desc = "一个孤独的身影肩挑扁担, 站在倾斜的岸边一棵高大的松树下, 凝望着海峡对岸的雪峰. 天空被落日染成深橙色."
+	name = "画作"
 	icon_state = "painting7"
 
 /obj/structure/sign/painting8
-	desc = "A hilly landscape, where a large temple with red timber beams and sweeping roofs stands on the bank of a river."
-	name = "painting"
+	desc = "一片丘陵景观, 河岸上矗立着一座带有红色木梁和飞檐的大型寺庙."
+	name = "画作"
 	icon_state = "painting8"
 
 /obj/structure/sign/painting9
-	desc = "A small encampment in the desert, with a few tents, several horses and loaded camels. A faraway river crosses the expanse of barren dunes."
-	name = "painting"
+	desc = "沙漠中的一处小营地, 有几顶帐篷, 几匹马和载着货物的骆驼. 一条遥远的河流横穿这片贫瘠的沙丘."
+	name = "画作"
 	icon_state = "painting9"
 
 /obj/structure/sign/painting10
-	desc = "A barque at sea, lit by the full moon."
-	name = "painting"
+	desc = "一艘海上三桅帆船, 被满月照亮."
+	name = "画作"
 	icon_state = "painting10"
 
 /obj/structure/sign/medal
-	name = "presence recognition"
+	name = "出席认证"
 	icon_state = "medal"
-	desc = "A recognition plaque staight from the ministy of admission! This one seems to be for the persons presence, what an award!"
+	desc = "一块直接来自准入部的认证牌! 这一块似乎是用于证明本人出席的, 多么了不起的奖励!"
 
 /obj/structure/sign/painting11
-	desc = "A famous painting with a starry sky."
-	name = "painting"
+	desc = "一幅著名的星空画作."
+	name = "画作"
 	icon_state = "painting11"
 
 /obj/structure/sign/painting12
-	desc = "An arrid desert, with some tents in the middle."
-	name = "painting"
+	desc = "一片干旱的沙漠, 中间有一些帐篷."
+	name = "画作"
 	icon_state = "painting12"
 
 /obj/structure/sign/painting13
-	desc = "A still life."
-	name = "painting"
+	desc = "一幅静物画."
+	name = "画作"
 	icon_state = "painting13"
 
 ////Restroom signs////
 
 /obj/structure/sign/restroom
-	desc = "A sign indicating the presence of a restroom."
-	name = "restroom"
+	desc = "一个指示洗手间位置的标志."
+	name = "洗手间"
 	icon_state = "restroom"
 
 /obj/structure/sign/restroom/male
-	desc = "A sign indicating the presence of a male restroom."
-	name = "restroom"
+	desc = "一个指示男洗手间位置的标志."
+	name = "洗手间"
 	icon_state = "restroom_male"
 
 /obj/structure/sign/restroom/female
-	desc = "A sign indicating the presence of a female restroom."
-	name = "restroom"
+	desc = "一个指示女洗手间位置的标志."
+	name = "洗手间"
 	icon_state = "restroom_female"
 
 /obj/structure/sign/justice
-	desc = "A justice sign."
-	name = "justice"
+	desc = "一个司法标志."
+	name = "司法"
 	icon_state = "justice"
 
 /obj/structure/sign/court
-	name = "court"
-	desc = "The court house."
+	name = "法院"
+	desc = "法院大楼."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "court"
 	bound_width = 64
 
 /obj/structure/sign/townhall
-	name = "town hall"
-	desc = "The town hall."
+	name = "市政厅"
+	desc = "市政厅."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "townhall"
 	bound_width = 64
 
 /obj/structure/sign/nosmoking
-	desc = "Smoking is prohibited in this area."
-	name = "no smoking"
+	desc = "此区域禁止吸烟."
+	name = "禁止吸烟"
 	icon_state = "nosmoking"
 
 /obj/structure/sign/nosmoking2
-	desc = "Smoking is prohibited in this area."
-	name = "no smoking"
+	desc = "此区域禁止吸烟."
+	name = "禁止吸烟"
 	icon_state = "nosmoking2"
 
 /obj/structure/sign/anatomy
-	desc = "A poster detailing the complexity of the human body."
-	name = "anatomy poster"
+	desc = "一张详述人体复杂结构的海报."
+	name = "解剖海报"
 	icon_state = "anatomy"
 
 /obj/structure/sign/xray
-	desc = "A medical lightbox used to examine X-ray images."
-	name = "lightbox"
+	desc = "一个用于查看X光片的医疗灯箱."
+	name = "灯箱"
 	icon_state = "xray_on"
 
 /obj/structure/sign/periodic
-	desc = "A tabular display of the chemical elements."
-	name = "periodic table"
+	desc = "一张化学元素周期表."
+	name = "元素周期表"
 	icon_state = "periodic"
 
 /obj/structure/sign/casino
-	name = "casino"
-	desc = "A blinking casino sign."
+	name = "赌场"
+	desc = "一个闪烁的赌场标志."
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "casino"
 
 /obj/structure/sign/open
-	name = "open"
-	desc = "A blinking open sign."
+	name = "营业中"
+	desc = "一个闪烁的营业中标志."
 	icon_state = "open"
 
 /obj/structure/sign/guns
-	name = "gun store"
-	desc = "A blinking gun store sign."
+	name = "枪店"
+	desc = "一个闪烁的枪店标志."
 	icon_state = "gunshop"
 
 /obj/structure/sign/gas
-	name = "gas"
-	desc = "A flashing gas station sign."
+	name = "加油站"
+	desc = "一个闪烁的加油站标志."
 	icon_state = "gas"
 
 /obj/structure/sign/sale
-	name = "SALE sign"
-	desc = "A sign indicating a sale."
+	name = "促销标志"
+	desc = "一个指示促销的标志."
 	icon_state = "sale"
 
 /obj/structure/sign/rent
-	name = "FOR RENT sign"
-	desc = "A sign indicating something for rent."
+	name = "出租标志"
+	desc = "一个指示某物出租的标志."
 	icon_state = "rent"
 
 /obj/structure/sign/donut_shop
-	name = "Randy's Donuts"
-	desc = "A donut and pastries franchise."
+	name = "兰迪甜甜圈"
+	desc = "一家甜甜圈和糕点连锁店."
 	icon_state = "donut_shop"
 
 /obj/structure/sign/deer_trophy
-	name = "hunting deer trophy"
-	desc = "Looks like we finally found Bambi..."
+	name = "猎鹿战利品"
+	desc = "看来我们终于找到小鹿斑比了..."
 	icon_state = "deer_trophy"
 
 /obj/structure/sign/orthodox1
-	name = "icon of Mary"
-	desc = "An icon depicting Mary, mother of Jesus. Often used in Eastern Orthodox cultures."
+	name = "玛丽亚圣像"
+	desc = "一幅描绘耶稣之母玛丽亚的圣像.常用于东正教文化中."
 	icon_state = "orthodox1"
 
 /obj/structure/sign/orthodox2
-	name = "icon of Trinity"
-	desc = "An icon depicting the saint Trinity. Often used in Eastern Orthodox cultures."
+	name = "圣三一圣像"
+	desc = "一幅描绘圣三一的圣像.常用于东正教文化中."
 	icon_state = "orthodox2"
 
 /obj/structure/sign/orthodox3
-	name = "icon of Archangel Michael"
-	desc = "An icon depicting Archangel Michael. Often used in Eastern Orthodox cultures."
+	name = "大天使米迦勒圣像"
+	desc = "一幅描绘大天使米迦勒的圣像.常用于东正教文化中."
 	icon_state = "orthodox3"
 
 /obj/structure/sign/khalif_ali
-	name = "portrait of Khalif Ali"
-	desc = "A portrait of Khalif Ali."
+	name = "哈里发阿里画像"
+	desc = "一幅哈里发阿里的画像."
 	icon_state = "khalif_ali1"
 
 /obj/structure/sign/khalif_ali/alt
 	icon_state = "khalif_ali2"
 
 /obj/structure/sign/soviet_poster
-	name = "military poster"
-	desc = "A Soviet military poster depicting a saluting soldier in front of the Soviet flag."
+	name = "军事海报"
+	desc = "一张苏联军事海报,描绘了一名在苏联国旗前敬礼的士兵."
 	icon_state = "soviet_poster"
 
 /obj/structure/sign/sovafghan_poster
-	name = "Soviet-Afghan friendship poster"
-	desc = "A poster depicting a Soviet and DRA soldier smiling at each other while holding a rifle together."
+	name = "苏阿友谊海报"
+	desc = "一张描绘一名苏联士兵和一名阿富汗民主共和国士兵手持步枪相视而笑的海报."
 	icon_state = "sovafghan_poster_1"
 
 /obj/structure/sign/sovafghan_poster/alt
-	name = "Soviet-Afghan friendship poster"
-	desc = "A poster depicting armed men holding the Soviet and DRA flags."
+	name = "苏阿友谊海报"
+	desc = "一张描绘武装人员手持苏联和阿富汗民主共和国国旗的海报."
 	icon_state = "sovafghan_poster_2"
 
 //BILLBOARDS
 
 /obj/structure/billboard
-	name = "billboard ad"
-	desc = "Goodness, what are they selling us this time?"
+	name = "广告牌"
+	desc = "天哪,他们这次又要卖给我们什么?"
 	icon = 'icons/obj/billboards.dmi'
 	icon_state = "billboard"
 	light_range = 4
@@ -578,15 +578,15 @@
 ///CHRISTMAS
 
 /obj/structure/sign/christmas/lights
-	name = "christmas lights"
-	desc = "Flashy."
+	name = "圣诞灯饰"
+	desc = "花哨."
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "xmaslights"
 	layer = 6.2
 
 /obj/structure/sign/christmas/wreath
-	name = "wreath"
-	desc = "Prickly and overrated."
+	name = "花环"
+	desc = "扎人又过誉了."
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "doorwreath"
 	layer = 6.3

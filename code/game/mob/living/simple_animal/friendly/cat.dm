@@ -1,7 +1,7 @@
 //Cat
 /mob/living/simple_animal/pet/cat
 	name = "cat"
-	desc = "A domesticated, feline pet. Has a tendency to adopt humans."
+	desc = "一种驯化的猫科宠物。有收养人类的倾向。"
 	icon_state = "cat2"
 	item_state = "cat2"
 	icon_living = "cat2"
@@ -156,14 +156,14 @@
 		say("Meow!")
 		return
 
-	to_chat(usr, "<span class='notice'>[src] ignores you.</span>")
+	to_chat(usr, "<span class='notice'>[src]无视了你。</span>")
 	return
 
 
 //RUNTIME IS ALIVE! SQUEEEEEEEE~
 /mob/living/simple_animal/pet/cat/fluff/Runtime
 	name = "Runtime"
-	desc = "Her fur has the look and feel of velvet, and her tail quivers occasionally."
+	desc = "她的毛发有着天鹅绒般的质感和触感,她的尾巴偶尔会颤动。"
 	gender = FEMALE
 	icon_state = "cat"
 	item_state = "cat"
@@ -172,7 +172,7 @@
 
 /mob/living/simple_animal/pet/cat/kitten
 	name = "kitten"
-	desc = "D'aaawwww"
+	desc = "哎呀呀呀"
 	icon_state = "kitten"
 	item_state = "kitten"
 	icon_living = "kitten"
@@ -185,7 +185,7 @@
 
 /mob/living/simple_animal/pet/cat/salem
 	name = "Salem"
-	desc = "The ship's black tomcat. Keeps the hull clear of mice and brings good luck to the crew. His death would be disastrous..."
+	desc = "船上的黑色公猫。让船体免受老鼠侵扰,并为船员带来好运。它的死将是灾难性的..."
 	gender = MALE
 	icon_state = "cat4"
 	item_state = "cat4"

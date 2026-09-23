@@ -3,7 +3,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost
 	name = "ghost"
-	desc = "It's a g-g-g-g-ghooooost!" //jinkies!
+	desc = "这是个鬼-鬼-鬼-鬼-鬼魂!" //jinkies!
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "ghost2"
 	canmove = FALSE
@@ -162,14 +162,14 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	// remove ambient sounds
 	stop_ambience(src)
 	if (map && map.battleroyale)
-		to_chat(world, "<big><font color='red'><b>[client.ckey]</b> has died at ([x],[y])! <b>[alive_n_of_side(PIRATES)]</b> remaining.</font></big>")
+		to_chat(world, "<big><font color='red'><b>[client.ckey]</b> 已在 ([x],[y]) 死亡! 剩余 <b>[alive_n_of_side(PIRATES)]</b>.</font></big>")
 	if (key)
 		var/mob/observer/ghost/ghost = new(src)	//Transfer safety to observer spawning proc.
 		ghost.can_reenter_corpse = can_reenter_corpse
 		ghost.timeofdeath = stat == DEAD ? timeofdeath : world.time
 		ghost.key = key
 		if (!(ghost.started_as_observer))
-			to_chat(ghost, "<span class = 'good'><font size = 4>Or click <a href='?src=\ref[ghost];respawn=1'>THIS</a> button to respawn!</font></span>")
+			to_chat(ghost, "<span class = 'good'><font size = 4>或点击<a href='?src=\ref[ghost];respawn=1'>此</a>按钮重生!</font></span>")
 		if (ishuman(src))
 			if (human_clients_mob_list.Find(src))
 				human_clients_mob_list -= src
@@ -183,10 +183,10 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	set name = "Re-enter Corpse"
 	if (!client)	return
 	if (!(mind && mind.current && can_reenter_corpse))
-		to_chat(src, "<span class='warning'>You have no body.</span>")
+		to_chat(src, "<span class='warning'>你没有身体.</span>")
 		return
 	if (mind.current.key && copytext(mind.current.key,1,2)!="@")	//makes sure we don't accidentally kick any clients
-		to_chat(usr, "<span class='warning'>Another consciousness is in your body... it is resisting you.</span>")
+		to_chat(usr, "<span class='warning'>另一个意识在你的身体里... 它正在抵抗你.</span>")
 		return
 
 	stop_following()
@@ -226,11 +226,11 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	if (!icon)
 		icon = original_icon
 		overlays = original_overlays
-		to_chat(src, "<span class = 'good'>You are now visible again.</span>")
+		to_chat(src, "<span class = 'good'>你现在再次可见了.</span>")
 	else
 		icon = null
 		overlays.Cut()
-		to_chat(src, "<span class = 'good'>You are now invisible.</span>")
+		to_chat(src, "<span class = 'good'>你现在不可见了.</span>")
 
 // This is the ghost's follow verb with an argument
 /mob/observer/ghost/proc/ManualFollow(var/atom/movable/target)
@@ -243,12 +243,12 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	GLOB.dir_set_event.register(following, src, /atom/proc/recursive_dir_set)
 	GLOB.destroyed_event.register(following, src, /mob/observer/ghost/proc/stop_following)
 
-	to_chat(src, "<span class='notice'>Now following \the [following].</span>")
+	to_chat(src, "<span class='notice'>现在跟随 \the [following].</span>")
 	move_to_turf(following, following.loc, following.loc)
 
 /mob/observer/ghost/proc/stop_following()
 	if(following)
-		to_chat(src, "<span class='notice'>No longer following \the [following]</span>")
+		to_chat(src, "<span class='notice'>不再跟随 \the [following]</span>")
 		GLOB.moved_event.unregister(following, src)
 		GLOB.dir_set_event.unregister(following, src)
 		GLOB.destroyed_event.unregister(following, src)
@@ -274,18 +274,18 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost/memory()
 	set hidden = TRUE
-	to_chat(src, "<span class = 'red'>You are dead! You have no mind to store memory!</span>")
+	to_chat(src, "<span class = 'red'>你死了! 你没有心智来储存记忆!</span>")
 
 /mob/observer/ghost/add_memory()
 	set hidden = TRUE
-	to_chat(src, "<span class = 'red'>You are dead! You have no mind to store memory!</span>")
+	to_chat(src, "<span class = 'red'>你死了! 你没有心智来储存记忆!</span>")
 
 /mob/observer/ghost/Post_Incorpmove()
 	stop_following()
 
 /mob/observer/ghost/proc/try_possession(var/mob/living/M)
 	if (!config.ghosts_can_possess_animals)
-		to_chat(usr, "<span class='warning'>Ghosts are not permitted to possess animals.</span>")
+		to_chat(usr, "<span class='warning'>幽灵不允许附身动物.</span>")
 		return FALSE
 	if (!M.can_be_possessed_by(src))
 		return FALSE
@@ -311,7 +311,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	set category = "Ghost"
 	ghostvision = !(ghostvision)
 	updateghostsight()
-	to_chat(usr, "You [(ghostvision?"now":"no longer")] have ghost vision.")
+	to_chat(usr, "你 [(ghostvision?"now":"no longer")] 拥有幽灵视觉.")
 
 /mob/observer/ghost/verb/toggle_darkness()
 	set name = "Toggle Darkness"
@@ -345,13 +345,13 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 		return FALSE
 	if (mind && mind.current && mind.current.stat != DEAD && can_reenter_corpse)
 		if (feedback)
-			to_chat(src, "<span class='warning'>Your non-dead body prevent you from respawning.</span>")
+			to_chat(src, "<span class='warning'>你未死亡的身体阻止你重生.</span>")
 		return FALSE
 
 	var/timedifference = world.time - timeofdeath
 	if (respawn_time && timeofdeath && timedifference < respawn_time MINUTES)
 		var/timedifference_text = time2text(respawn_time MINUTES - timedifference,"mm:ss")
-		to_chat(src, "<span class='warning'>You must have been dead for [respawn_time] minute\s to respawn. You have [timedifference_text] left.</span>")
+		to_chat(src, "<span class='warning'>你必须死亡 [respawn_time] 分钟\s 才能重生. 你还剩 [timedifference_text].</span>")
 		return FALSE
 
 	return TRUE
@@ -379,6 +379,6 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	last_revive_notification = world.time
 	if(message)
 		to_chat(src, "<span class='ghostalert'><font size=4>[message]</font></span>")
-	to_chat(src, "<span class='ghostalert'><a href=?src=\ref[src];reenter=1>(Click to re-enter)</a></span>")
+	to_chat(src, "<span class='ghostalert'><a href=?src=\ref[src];reenter=1>(点击重新进入)</a></span>")
 	if(sound)
 		SEND_SOUND(src, sound(sound))

@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/bow/crossbow
-	name = "crossbow"
-	desc = "A heavy and powerful bow."
+	name = "弩"
+	desc = "一把沉重而强力的弓."
 	icon_state = "crossbow0"
 	item_state = "crossbow0"
 	w_class = ITEM_SIZE_LARGE

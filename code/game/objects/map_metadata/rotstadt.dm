@@ -144,7 +144,7 @@ var/no_loop_rot = FALSE
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The <b>Redmenians</b> have recaptured their stronghold!</font>")
+			to_chat(world, "<font size = 3><b>红人军</b>已重新夺回他们的据点!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

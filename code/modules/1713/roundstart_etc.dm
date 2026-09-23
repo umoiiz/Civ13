@@ -27,7 +27,7 @@ var/GRACE_PERIOD_LENGTH = 7
 				spawn (0)
 					while (!processes.time_of_day_change || !processes.time_of_day_change.setup_lighting)
 						sleep(1)
-					to_chat(world, "<br><font size=3><span class = 'notice'>It's <b>[lowertext(processes.time_of_day_change.changeto)]</b>, and the season is <b>[get_season()]</b>.</span></font>")
+					to_chat(world, "<br><font size=3><span class = 'notice'>现在是<b>[lowertext(processes.time_of_day_change.changeto)]</b>,季节是<b>[get_season()]</b>.</span></font>")
 
 	// open squad preparation doors
 	for (var/obj/structure/simple_door/key_door/keydoor in door_list)

@@ -4,9 +4,9 @@
 	if (severity>10)
 		severity=10
 	if(!severity || duration < 1) return FALSE
-	to_chat(world, "<big><b>An earthquake has started!</b></big>")
+	to_chat(world, "<big><b>地震开始了!</b></big>")
 	spawn(duration)
-		to_chat(world, "<big><i>The earthquake subsides.</i></big>")
+		to_chat(world, "<big><i>地震平息了.</i></big>")
 	spawn(1)
 		for (var/mob/m in player_list)
 			if (m.client)
@@ -77,7 +77,7 @@
 	..()
 	if (istype(O, /mob/living))
 		var/mob/living/L = O
-		visible_message("<span class='danger'>\The [O] is burned by the lava!</span>")
+		visible_message("<span class='danger'>\The [O]被岩浆烧伤了!</span>")
 		if (ishuman(L))
 			var/mob/living/human/H = L
 			var/dam_zone = pick("l_foot", "r_foot", "l_leg", "r_leg")
@@ -129,14 +129,14 @@
 	else if (istype(O, /obj/item) || istype(O, /obj/structure) || istype(O, /obj/roof) || istype(O, /obj/covers))
 		switch(stage)
 			if (0)
-				visible_message("<span class='danger'>\The [O] is melted by the lava!</span>")
+				visible_message("<span class='danger'>\The [O]被岩浆熔化了!</span>")
 				new/obj/effect/decal/cleanable/ash(src)
 				qdel(O)
 				if (prob(3))
 					new/obj/effect/effect/smoke(loc)
 				return
 			if (1)
-				visible_message("<span class='danger'>\The [O] is melted by the lava!</span>")
+				visible_message("<span class='danger'>\The [O]被岩浆熔化了!</span>")
 				new/obj/effect/decal/cleanable/ash(src)
 				qdel(O)
 				if (prob(3))
@@ -145,7 +145,7 @@
 			if (2)
 				var/obj/OO = O
 				if (OO.flammable)
-					visible_message("<span class = 'warning'>\The [OO] is burned away.</span>")
+					visible_message("<span class = 'warning'>\The [OO]被烧毁了.</span>")
 					if (prob(33))
 						new/obj/effect/effect/smoke(loc)
 					qdel(O)
@@ -164,5 +164,5 @@
 	if (!isemptylist(lavalist))
 		var/turf/wall/rockwall/lavaspawner/T = pick(lavalist)
 		T.start_lava_flow()
-		to_chat(world, "<font color='red'><big><b>The volcano erupts, with lava flowing down the mountain!</b></big></font>")
+		to_chat(world, "<font color='red'><big><b>火山喷发了,岩浆顺着山体流下!</b></big></font>")
 		return TRUE

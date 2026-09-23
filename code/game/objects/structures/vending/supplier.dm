@@ -1,8 +1,8 @@
 // a "reverse" market stall/vending machine, where you put buy orders and people can sell to you.
 
 /obj/structure/supplier
-	name = "supply stall"
-	desc = "A market stall where you can fulfill this company supply orders."
+	name = "补给摊位"
+	desc = "一个市场摊位,你可以在这里完成本公司的补给订单。"
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "supply_stall"
 	layer = 2.9
@@ -54,13 +54,13 @@
 		if (owner != "Global" && find_company_member(user,owner))
 			playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 			if (anchored)
-				user.visible_message("[user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
+				user.visible_message("[user]开始从地板上解除固定\the [src]。", "你开始从地板上解除固定\the [src]。")
 			else
-				user.visible_message("[user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
+				user.visible_message("[user]开始将\the [src]固定到地板上。", "你开始将\the [src]固定到地板上。")
 
 			if (do_after(user, 20, src))
 				if (!src) return
-				to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+				to_chat(user, "<span class='notice'>你[anchored? "un" : ""]固定了\the [src]!</span>")
 				anchored = !anchored
 			return
 	else if (find_company_member(user,owner))
@@ -97,33 +97,33 @@
 						ordertype = /obj/item/stack/money
 						ordername = "standard coins"
 						orderfiat_id = null
-					to_chat(user, "<span class='notice'>Buy order created: buying [orderamount] [ordername] at [orderprice] [price_unit_label] each.</span>")
+					to_chat(user, "<span class='notice'>购买订单已创建:以每单位[orderprice] [price_unit_label]的价格购买[orderamount] [ordername]。</span>")
 					return
 
 			if (accepted_currency == "standard" && istype(W, /obj/item/stack/money/fiat))
 				var/obj/item/stack/money/fiat/FI = W
 				user.drop_from_inventory(FI)
 				FI.forceMove(src)
-				to_chat(user, "<span class='notice'>You store the [FI] in the stall's inventory.</span>")
+				to_chat(user, "<span class='notice'>你将[FI]存入摊位的库存中。</span>")
 				return
 			else if (accepted_currency != "standard" && istype(W, /obj/item/stack/money/fiat))
 				var/obj/item/stack/money/fiat/FI = W
 				if (FI.fiat_id != accepted_currency)
 					user.drop_from_inventory(FI)
 					FI.forceMove(src)
-					to_chat(user, "<span class='notice'>You store the [FI] in the stall's inventory.</span>")
+					to_chat(user, "<span class='notice'>你将[FI]存入摊位的库存中。</span>")
 					return
 			else if (accepted_currency != "standard" && !istype(W, /obj/item/stack/money/fiat))
-				to_chat(user, "<span class='warning'>This stall only accepts [fiat.currency_list[accepted_currency][1]] as operating funds. Use standard coins to stock inventory.</span>")
+				to_chat(user, "<span class='warning'>此摊位只接受[fiat.currency_list[accepted_currency][1]]作为运营资金。使用标准硬币来补充库存。</span>")
 				return
 
 			var/obj/item/stack/money/M = W
 			if (accepted_currency == "standard")
 				moneyin += M.value * M.amount
-				to_chat(user, "You add the money to the stall. It now has [moneyin] in standard coin value to fulfill orders.")
+				to_chat(user, "你将钱添加到摊位。它现在有[moneyin]的标准硬币价值来履行订单。")
 			else
 				moneyin += M.amount
-				to_chat(user, "You add the money to the stall. It now has [moneyin] [fiat.currency_list[accepted_currency][1]] to fulfill orders.")
+				to_chat(user, "你将钱添加到摊位。它现在有[moneyin] [fiat.currency_list[accepted_currency][1]]来履行订单。")
 			qdel(W)
 			return
 		else if (!ordertype)
@@ -153,20 +153,20 @@
 			if (istype(W, /obj/item/stack/money/fiat))
 				var/obj/item/stack/money/fiat/WF = W
 				if (WF.fiat_id != orderfiat_id)
-					to_chat(user, "<span class='warning'>The [src] is buying [ordername], not [WF.name].</span>")
+					to_chat(user, "<span class='warning'>[src]正在购买[ordername],而不是[WF.name]。</span>")
 					return
 			if (istype(W, /obj/item/stack))
 				if (orderamount < 1)
-					to_chat(user, "<span class='warning'>The [src] is not currently buying.</span>")
+					to_chat(user, "<span class='warning'>[src]目前没有在购买。</span>")
 					return
 				var/obj/item/stack/WS = W
 				var/max_affordable = orderprice > 0 ? floor(moneyin / orderprice) : orderamount
 				var/limit_qty = min(orderamount, max_affordable)
 				if (limit_qty < 1)
 					if (moneyin < orderprice)
-						to_chat(user, "<span class='warning'>The [src] has no money left to buy from you!</span>")
+						to_chat(user, "<span class='warning'>[src]没有钱再向你购买了!</span>")
 					else
-						to_chat(user, "<span class='warning'>The [src] is not currently buying.</span>")
+						to_chat(user, "<span class='warning'>[src]目前没有在购买。</span>")
 					return
 
 				var/buy_qty = min(WS.amount, limit_qty)
@@ -200,11 +200,11 @@
 
 				moneyin -= payment
 				orderamount -= buy_qty
-				to_chat(user, "<span class='notice'>You sell [buy_qty] [ordername].</span>")
+				to_chat(user, "<span class='notice'>你出售了[buy_qty] [ordername]。</span>")
 				return
 			else
 				if (orderamount < 1)
-					to_chat(user, "<span class='warning'>The [src] is not currently buying.</span>")
+					to_chat(user, "<span class='warning'>[src]目前没有在购买。</span>")
 					return
 				if (moneyin >= orderprice)
 					user.drop_from_inventory(W)
@@ -223,10 +223,10 @@
 						new/obj/item/stack/money/fiat(loc, orderprice, accepted_currency)
 					moneyin -= orderprice
 					orderamount -= 1
-					to_chat(user, "<span class='notice'>You sell the [W].</span>")
+					to_chat(user, "<span class='notice'>你出售了[W]。</span>")
 					return
 				else
-					to_chat(user, "<span class='warning'>The [src] has no money left to buy from you!</span>")
+					to_chat(user, "<span class='warning'>[src]没有钱再向你购买了!</span>")
 					return
 	return
 
@@ -236,7 +236,7 @@
 		show_ui(H)
 	else
 		var/currency_name = accepted_currency == "standard" ? "sc" : fiat.currency_list[accepted_currency][1]
-		to_chat(H, "<big>This company is currently buying [orderamount] of [ordername] for [orderprice] [currency_name] per unit.</big>")
+		to_chat(H, "<big>此公司目前正在以每单位[orderprice] [currency_name]的价格购买[orderamount] [ordername]。</big>")
 
 /obj/structure/supplier/proc/show_ui(mob/living/human/H)
 	if (!H || !H.client)
@@ -351,7 +351,7 @@
 		if (!new_cur)
 			return
 		if (moneyin > 0)
-			to_chat(H, "<span class='warning'>You must remove all money from the stall before changing the accepted currency!</span>")
+			to_chat(H, "<span class='warning'>在更改接受的货币之前,你必须从摊位中取出所有钱!</span>")
 			return
 		accepted_currency = new_cur
 		return
@@ -362,13 +362,13 @@
 		orderprice = 0
 		orderamount = 0
 		orderfiat_id = null
-		to_chat(H, "<span class='notice'>Buy order removed.</span>")
+		to_chat(H, "<span class='notice'>购买订单已移除。</span>")
 		return
 
 	if (href_list["removeproducts"])
 		for (var/obj/item/I in src)
 			I.forceMove(loc)
-		to_chat(H, "<span class='notice'>You empty the stall.</span>")
+		to_chat(H, "<span class='notice'>你清空了摊位。</span>")
 		return
 
 	if (href_list["removemoney"])
@@ -387,5 +387,5 @@
 		else
 			new/obj/item/stack/money/fiat(loc, moneyin, accepted_currency)
 		moneyin = 0
-		to_chat(H, "<span class='notice'>Money removed from stall.</span>")
+		to_chat(H, "<span class='notice'>钱已从摊位中取出。</span>")
 		return

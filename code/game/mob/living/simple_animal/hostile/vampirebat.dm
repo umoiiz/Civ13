@@ -1,7 +1,7 @@
 //not really a subtype of hostile animals, but it is harmful so it goes here.
 /mob/living/simple_animal/vampirebatblack
 	name = "vampire bat"
-	desc = "It want's your blood!"
+	desc = "它想要你的血!"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "vampire_bat_black"
 	icon_living = "vampire_bat_black"
@@ -61,7 +61,7 @@
 			walk_rand(src,4)
 		if (prob(5))
 			for (var/mob/living/human/TG in range(1,src))
-				visible_message("<span class = 'danger'>\The [src] bites [TG]!")
+				visible_message("<span class = 'danger'>\The [src]咬了[TG]!")
 				TG.adjustBruteLoss(1,2)
 				if (TG.disease == 0)
 					try_infect(TG, 25, "malaria")

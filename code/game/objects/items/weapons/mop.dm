@@ -1,6 +1,6 @@
 /obj/item/weapon/mop
-	desc = "The world of janitalia wouldn't be complete without a mop."
-	name = "mop"
+	desc = "没有拖把,清洁工的世界就不完整."
+	name = "拖把"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "mop"
 	force = WEAPON_FORCE_NORMAL
@@ -20,18 +20,18 @@
 	if (!proximity) return
 	if (istype(A, /turf) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay) || istype(A, /obj/covers))
 		if (reagents.total_volume < 1)
-			to_chat(user, "<span class='notice'>Your mop is dry!</span>")
+			to_chat(user, "<span class='notice'>你的拖把是干的!</span>")
 			return
 		var/turf/T = get_turf(A)
 		if (!T)
 			return
 
-		user.visible_message("<span class='warning'>[user] begins to clean \the [T].</span>")
+		user.visible_message("<span class='warning'>[user]开始清洁\the [T].</span>")
 
 		if (do_after(user, 40, T))
 			if (T)
 				T.clean(src, user)
-			to_chat(user, "<span class='notice'>You have finished mopping!</span>")
+			to_chat(user, "<span class='notice'>你完成了拖地!</span>")
 
 
 /obj/effect/attackby(obj/item/I, mob/user)

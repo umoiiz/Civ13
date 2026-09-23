@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/barbarian
 	name = "Barbarian"
-	desc = "A fierce barbarian!"
+	desc = "一个凶猛的野蛮人!"
 	icon_state = "barbarian"
 	icon_dead = "barbarian_dead"
 	response_help = "pushes"
@@ -33,7 +33,7 @@
 
 /mob/living/simple_animal/hostile/human/barbarian/friendly
 	name = "Foederati"
-	desc = "A hired barbarian from a tribe allied with Rome."
+	desc = "一个来自与罗马结盟部落的雇佣野蛮人."
 	maxHealth = 200
 	health = 200
 	faction = CIVILIAN

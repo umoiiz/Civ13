@@ -1,8 +1,8 @@
 var/list/obj/effect/area_teleporter/AREA_TELEPORTERS = list()
 
 /obj/structure/teleporter_controller1
-	name = "SHIP - Send to Island"
-	desc = "Sends the ship back and forth to deliver supplies."
+	name = "飞船 - 送往岛屿"
+	desc = "让飞船往返运送补给."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "n1"
 	anchored = TRUE
@@ -17,7 +17,7 @@ var/list/obj/effect/area_teleporter/AREA_TELEPORTERS = list()
 /obj/structure/teleporter_controller1/attackby(obj/item/C, mob/user)
 	if (do_once == FALSE)
 		for (var/obj/effect/area_teleporter/AT)
-			to_chat(world, "<big>A ship will arrive at the island in 1 minute!</big>")
+			to_chat(world, "<big>一艘飞船将在1分钟后抵达岛屿!</big>")
 			do_once = TRUE
 			spawn(600) // 1 minute
 				AT.Simple_Down()
@@ -27,8 +27,8 @@ var/list/obj/effect/area_teleporter/AREA_TELEPORTERS = list()
 
 
 /obj/structure/teleporter_controller2
-	name = "SHIP - Depart from Island"
-	desc = "Sends the ship back and forth to deliver supplies."
+	name = "飞船 - 从岛屿出发"
+	desc = "让飞船往返运送补给."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "n2"
 	anchored = TRUE
@@ -42,7 +42,7 @@ var/list/obj/effect/area_teleporter/AREA_TELEPORTERS = list()
 /obj/structure/teleporter_controller2/attackby(obj/item/C, mob/user)
 	if (do_once == FALSE)
 		for (var/obj/effect/area_teleporter/AT)
-			to_chat(world, "<big>A ship will arrive at the island in 1 minute!</big>")
+			to_chat(world, "<big>一艘飞船将在1分钟后抵达岛屿!</big>")
 			do_once = TRUE
 			spawn(600) // 1 minute
 				AT.Simple_Up()

@@ -1,6 +1,6 @@
 /obj/structure/bed/chair	//YES, chairs are a type of bed, which are a type of stool. This works, believe me.	-Pete
-	name = "chair"
-	desc = "You sit in this. Either by will or force."
+	name = "椅子"
+	desc = "你坐在这上面. 无论是自愿还是被迫."
 	icon_state = "chair"
 	base_icon = "chair"
 	buckle_dir = FALSE
@@ -103,7 +103,7 @@
 
 // Leaving this in for the sake of compilation.
 /obj/structure/bed/chair/comfy
-	desc = "It's a chair. It looks comfy."
+	desc = "这是一把椅子. 看起来很舒服."
 	icon_state = "chair_padding"
 
 /obj/structure/bed/chair/comfy/brown/New(var/newloc,var/newmaterial)
@@ -134,8 +134,8 @@
 	..(newloc,"steel","lime")
 
 /obj/structure/bed/chair/comfy/fancy_sofa
-	name = "fancy sofa"
-	desc = "A nice leather sofa."
+	name = "豪华沙发"
+	desc = "一张漂亮的皮沙发."
 	base_icon = "fancysofa_middle"
 	icon_state = "fancysofa_middle"
 	applies_material_colour = FALSE
@@ -148,8 +148,8 @@
 	base_icon = "fancysofa_r"
 
 /obj/structure/bed/chair/comfy/diner_booth
-	name = "diner booth seating"
-	desc = "A comfy red dining booth seating."
+	name = "餐厅卡座"
+	desc = "一个舒适的红色餐厅卡座."
 	base_icon = "diner_booth_right"
 	icon_state = "diner_booth_right"
 	applies_material_colour = FALSE
@@ -213,7 +213,7 @@
 			victim.apply_effect(6, WEAKEN, blocked)
 			victim.apply_effect(6, STUTTER, blocked)
 			victim.apply_damage(10, BRUTE, def_zone, blocked)
-		occupant.visible_message("<span class='danger'>[occupant] crashed into \the [A]!</span>")
+		occupant.visible_message("<span class='danger'>[occupant]撞上了\the [A]!</span>")
 
 /obj/structure/bed/chair/office/light
 	icon_state = "officechair_white"
@@ -233,51 +233,51 @@
 
 // Chair types
 /obj/structure/bed/chair/wood
-	name = "wooden chair"
-	desc = "Old is never too old to not be in fashion."
+	name = "木椅"
+	desc = "古老永远不会过时."
 	icon_state = "wooden_chair"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/wood/another
-	name = "wooden chair"
-	desc = "Classic is never too old to not be in fashion."
+	name = "木椅"
+	desc = "经典永远不会过时."
 	icon_state = "wooden_chair_alt"
 
 /obj/structure/bed/chair/wood/bleacher
-	name = "wood bleacher"
-	desc = "A long bench like seat for a church."
+	name = "木制长椅"
+	desc = "教堂里的长凳式座位."
 	icon_state = "bleacher"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/wood/bleacher/r
-	name = "wood bleacher"
-	desc = "A long bench like seat for a church."
+	name = "木制长椅"
+	desc = "教堂里的长凳式座位."
 	icon_state = "bleacher_r"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/wood/bleacher/l
-	name = "wood bleacher"
-	desc = "A long bench like seat for a church."
+	name = "木制长椅"
+	desc = "教堂里的长凳式座位."
 	icon_state = "bleacher_l"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/stone
-	name = "stone chair"
-	desc = "Old is never too old to not be in fashion."
+	name = "石椅"
+	desc = "古老永远不会过时."
 	icon_state = "chair"
 	material = "stone"
 	applies_material_colour = TRUE
 
 /obj/structure/bed/chair/steel
-	name = "steel chair"
-	desc = "A cold, boring chair."
+	name = "钢椅"
+	desc = "一把冰冷、无聊的椅子."
 	icon_state = "steelchair"
 	base_icon = "steelchair"
 	material = "steel"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/steel/alt
-	desc = "A cheap, foldable metal chair."
+	desc = "一把廉价的折叠金属椅."
 	icon_state = "metalchair"
 	base_icon = "metalchair"
 
@@ -295,32 +295,32 @@
 	base_icon = "metalchair_red"
 
 /obj/structure/bed/chair/throne
-	name = "throne"
-	desc = "A lavish seat of royal authority."
+	name = "王座"
+	desc = "彰显王室权威的华丽座椅."
 	icon_state = "throne"
 	base_icon = "throne"
 	material = "gold"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/throne
-	name = "throne"
-	desc = "A lavish seat of royal authority."
+	name = "王座"
+	desc = "彰显王室权威的华丽座椅."
 	icon_state = "throne"
 	base_icon = "throne"
 	material = "gold"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/luxury
-	name = "luxurious chair"
-	desc = "Great comfort, elegance, and extravagance, all in one chair."
+	name = "豪华座椅"
+	desc = "极致的舒适、优雅与奢华,尽在一椅之中."
 	icon_state = "regalchair"
 	base_icon = "regalchair"
 	material = "gold"
 	applies_material_colour = FALSE
 
 /obj/structure/bed/chair/executive
-	name = "executive chair"
-	desc = "High-back, adjustable, ergonomic chair for office use."
+	name = "行政椅"
+	desc = "高背、可调节、符合人体工学的办公椅."
 	icon_state = "bosschair"
 	base_icon = "bosschair"
 	material = "steel"
@@ -341,20 +341,20 @@
 	overlays += I
 
 /obj/structure/bed/chair/wood/wings
-	name = "wing back wood chair"
+	name = "翼背木椅"
 	icon_state = "wooden_chair_wings"
 
 /obj/structure/bed/chair/wood/red
-	name = "padded chair"
-	desc = "Built with padding for extra comfort."
+	name = "软垫椅"
+	desc = "内置软垫以增加舒适度."
 	icon_state = "wooden_chair_red"
 
 /obj/structure/bed/chair/wood/alt
 	icon_state = "wooden_chair_alt"
 
 /obj/structure/bed/chair/barber
-	name = "barber chair"
-	desc = "A barbershop chair."
+	name = "理发椅"
+	desc = "一把理发店的椅子."
 	icon_state = "barberchair"
 	base_icon = "barberchair"
 	material = "steel"

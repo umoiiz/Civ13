@@ -1,6 +1,6 @@
 /obj/item/weapon/flame/candle
-	name = "red candle"
-	desc = "A small pillar candle."
+	name = "红蜡烛"
+	desc = "一根小型柱状蜡烛。"
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
 	item_state = "candle1"
@@ -78,8 +78,8 @@
 		set_light(0)
 
 /obj/item/weapon/flame/candle/lard
-	name = "lard candle"
-	desc = "A poorly shaped small pillar candle. A bit stinky and oily."
+	name = "猪油蜡烛"
+	desc = "一根形状粗糙的小型柱状蜡烛。有点臭,还有点油腻。"
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1_lard"
 	item_state = "candle1_lard"

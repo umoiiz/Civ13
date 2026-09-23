@@ -1,6 +1,6 @@
 /mob/living/simple_animal/blackbat
 	name = "black bat"
-	desc = "Cute!"
+	desc = "真可爱!"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "bat_black"
 	icon_living = "bat_black"

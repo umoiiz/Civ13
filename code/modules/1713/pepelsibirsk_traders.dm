@@ -3,7 +3,7 @@
 
 /mob/living/simple_animal/pepelsibirsk_trader
 	name = "trader"
-	desc = "A traveling merchant from beyond the taiga."
+	desc = "一位来自泰加林之外的旅行商人."
 	icon = 'icons/mob/npcs.dmi'
 	faction = "Pepelsibirsk"
 	maxHealth = 200
@@ -54,7 +54,7 @@
 				new product_key(get_turf(src))
 	if (faction_relations)
 		external_relations.npc_faction_relations[faction_relations] -= rand(10, 25)
-		to_chat(world, "<font size = 3><span class = 'notice'><b>A [name] has died unexpectedly. Relations with [faction_name] have dropped!</b></font></span>")
+		to_chat(world, "<font size = 3><span class = 'notice'><b>一位[name]意外死亡.与[faction_name]的关系下降了!</b></font></span>")
 	..()
 
 /mob/living/simple_animal/pepelsibirsk_trader/attack_hand(mob/user)
@@ -168,7 +168,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/pepelsibirsk_trader/pacific_trader
 	name = "U.S.P Trader"
-	desc = "The United States of the Pacific has come to trade. He flashes a grin that says he's definitely selling things he probably shouldn't."
+	desc = "太平洋合众国前来贸易.他露出一口白牙,那笑容分明在说他卖的东西多半不该卖."
 	icon_state = "usptrader"
 	icon_living = "usptrader"
 	icon_dead = "usptrader_dead"
@@ -271,7 +271,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/pepelsibirsk_trader/chinese_trader
 	name = "PRC Trader"
-	desc = "A representative of the People's Republic of China, here to conduct socialist trade."
+	desc = "中华人民共和国代表,前来进行社会主义贸易."
 	icon_state = "chinese_trader"
 	icon_living = "chinese_trader"
 	icon_dead = "chinese_trader_dead"
@@ -322,7 +322,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/pepelsibirsk_trader/soviet_trader
 	name = "Soviet Trader"
-	desc = "A representative of the Union of Soviet Socialist Republics, here to serve the Motherland."
+	desc = "苏维埃社会主义共和国联盟代表,前来为祖国效力."
 	icon_state = "soviet_trader"
 	icon_living = "soviet_trader"
 	icon_dead = "soviet_trader_dead"

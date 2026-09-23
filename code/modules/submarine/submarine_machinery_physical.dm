@@ -4,7 +4,7 @@
 var/global/list/sub_physical_machines = list()
 
 /obj/structure/machinery/sub_physical
-	name = "submarine machinery"
+	name = "潜艇机械"
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "transponder"
 	density = TRUE
@@ -54,7 +54,7 @@ var/global/list/sub_physical_machines = list()
 	// Screwdriver: Open/Close Panels
 	if(istype(W, /obj/item/weapon/screwdriver))
 		panel_open = !panel_open
-		user.visible_message("<span class='notice'>[user] [panel_open ? "opens" : "closes"] the maintenance panel on [src].</span>")
+		user.visible_message("<span class='notice'>[user][panel_open ? "opens" : "closes"][src]上的维护面板.</span>")
 		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
 		return
 
@@ -68,18 +68,18 @@ var/global/list/sub_physical_machines = list()
 	// Welder: Repair structural damage
 	if(istype(W, /obj/item/weapon/weldingtool))
 		if(health < max_health)
-			user.visible_message("<span class='notice'>[user] begins repairing [src] with [W].</span>")
+			user.visible_message("<span class='notice'>[user]开始用[W]修理[src].</span>")
 			if(do_after(user, 40, src))
 				health = min(max_health, health + 20)
-				to_chat(user, "<span class='notice'>You repair some of the structural damage on [src].</span>")
+				to_chat(user, "<span class='notice'>你修复了[src]上的一些结构损伤.</span>")
 		else
-			to_chat(user, "<span class='notice'>[src] is already in good condition.</span>")
+			to_chat(user, "<span class='notice'>[src]已经处于良好状态.</span>")
 		return
 
 	// Multitool: Diagnostic check
 	if(istype(W, /obj/item/weapon/wirecutters) || istype(W, /obj/item/weapon/screwdriver))
-		to_chat(user, "<span class='notice'><b>Diagnostic Output for [src]:</b></span>")
-		to_chat(user, "<span class='notice'>Integrity: [health]/[max_health] ([get_efficiency()*100]%)</span>")
+		to_chat(user, "<span class='notice'><b>[src]的诊断输出:</b></span>")
+		to_chat(user, "<span class='notice'>完整度:[health]/[max_health] ([get_efficiency()*100]%)</span>")
 		return
 
 	..()
@@ -87,7 +87,7 @@ var/global/list/sub_physical_machines = list()
 /* --- STRUCTURAL BASE --- */
 // Used for non-processing structures like beds and lockers
 /obj/structure/sub_physical
-	name = "submarine structure"
+	name = "潜艇结构"
 	icon = 'icons/obj/machines/submarine.dmi'
 	density = TRUE
 	anchored = TRUE
@@ -103,20 +103,20 @@ var/global/list/sub_physical_machines = list()
 /obj/structure/sub_physical/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/weapon/weldingtool))
 		if(health < max_health)
-			user.visible_message("<span class='notice'>[user] repairs [src].</span>")
+			user.visible_message("<span class='notice'>[user]修理了[src].</span>")
 			if(do_after(user, 30, src))
 				health = min(max_health, health + 25)
 		return
 	if(istype(W, /obj/item/weapon/screwdriver) || istype(W, /obj/item/weapon/wirecutters))
-		to_chat(user, "<span class='notice'>Integrity: [health]%</span>")
+		to_chat(user, "<span class='notice'>完整度:[health]%</span>")
 		return
 	..()
 
 // --- 1. REACTOR CORE ---
 
 /obj/structure/machinery/sub_physical/reactor_core
-	name = "nuclear reactor core"
-	desc = "The humming heart of the submarine. Stay back if the warning lights are flashing."
+	name = "核反应堆核心"
+	desc = "潜艇嗡嗡作响的心脏.如果警示灯闪烁,请远离."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "reactor_0"
 	health = 340
@@ -135,7 +135,7 @@ var/global/list/sub_physical_machines = list()
 	if(istype(my_turf) && my_turf.water_depth > 30)
 		radiation_pulse()
 		if(prob(10))
-			visible_message("<span class='danger'>[src] hisses as water contacts the superheated core!</span>")
+			visible_message("<span class='danger'>[src]在海水接触过热的堆芯时发出嘶嘶声!</span>")
 		// Direct damage from thermal shock
 		health = max(0, health - my_turf.water_depth * 0.02)
 	
@@ -149,15 +149,15 @@ var/global/list/sub_physical_machines = list()
 	if(world.time > last_rad_message_time + 100)
 		last_rad_message_time = world.time
 		for(var/mob/living/L in range(3, src))
-			to_chat(L, "<span class='danger'>The air feels heavy and metallic...</span>")
+			to_chat(L, "<span class='danger'>空气感觉沉重而带有金属味...</span>")
 
 	if(prob(5))
-		visible_message("<span class='warning'>[src] emits a burst of ionizing radiation!</span>")
+		visible_message("<span class='warning'>[src]释放出一阵电离辐射!</span>")
 
 // --- 2. COOLANT PUMP ---
 
 /obj/structure/machinery/sub_physical/coolant_pump
-	name = "coolant circulation pump"
+	name = "冷却剂循环泵"
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "smes2"
 	var/pump_id = 1
@@ -177,14 +177,14 @@ var/global/list/sub_physical_machines = list()
 			my_sub.r_secondary_pump_speed[pump_id] = round(10 * eff)
 
 	if(health <= 0)
-		visible_message("<span class='danger'>[src] seizes up with a violent metallic screech!</span>")
+		visible_message("<span class='danger'>[src]伴随着刺耳的金属尖啸声卡死了!</span>")
 		if(is_primary) my_sub.r_primary_pump_speed[pump_id] = 0
 		else my_sub.r_secondary_pump_speed[pump_id] = 0
 
 // --- 3. STEAM TURBINE ---
 
 /obj/structure/machinery/sub_physical/steam_turbine
-	name = "main propulsion steam turbine"
+	name = "主推进蒸汽轮机"
 	icon = 'icons/obj/engines64.dmi'
 	icon_state = "turbine_double"
 	health = 200
@@ -201,7 +201,7 @@ var/global/list/sub_physical_machines = list()
 	if(my_sub.target_speed > max_possible_speed)
 		my_sub.target_speed = max_possible_speed
 		if(prob(10))
-			to_chat(viewers(src), "<span class='warning'>The turbine groans under the strain of the damaged blades!</span>")
+			to_chat(viewers(src), "<span class='warning'>轮机在受损叶片的应力下呻吟!</span>")
 
 	// Ambient sound logic
 	if(my_sub.speed > 20 && prob(5))
@@ -210,7 +210,7 @@ var/global/list/sub_physical_machines = list()
 // --- 4. DIESEL ENGINE ---
 
 /obj/structure/machinery/sub_physical/diesel_engine
-	name = "backup diesel generator"
+	name = "备用柴油发电机"
 	icon = 'icons/obj/engines64.dmi'
 	icon_state = "engine"
 	health = 150
@@ -225,7 +225,7 @@ var/global/list/sub_physical_machines = list()
 	if(istype(my_turf) && my_turf.water_depth > 30)
 		if(my_sub.diesel_throttle > 0)
 			my_sub.diesel_throttle = 0
-			visible_message("<span class='danger'>[src] sputters and dies as water floods the engine!</span>")
+			visible_message("<span class='danger'>[src]在海水淹没发动机时噼啪作响后熄火!</span>")
 			playsound(src.loc, 'sound/machines/submarine/dgenstop.ogg', 70, 1)
 		health -= my_turf.water_depth * 0.05
 		return
@@ -241,7 +241,7 @@ var/global/list/sub_physical_machines = list()
 	// High throttle risk
 	if(my_sub.diesel_throttle >= 95 && health < 100)
 		if(prob(2))
-			visible_message("<span class='danger'>[src] spits sparks as it overheats!</span>")
+			visible_message("<span class='danger'>[src]在过热时喷出火花!</span>")
 			playsound(src.loc, 'sound/machines/submarine/dgenstop.ogg', 50, 1)
 
 // --- 4b. DIESEL PROPULSION MOTOR ---
@@ -249,8 +249,8 @@ var/global/list/sub_physical_machines = list()
 // Only functional when surfaced and diesel throttle is engaged.
 
 /obj/structure/machinery/sub_physical/diesel_propulsion
-	name = "diesel-electric propulsion motor"
-	desc = "A heavy electric traction motor coupled to the propeller shaft. Powered by the diesel generators."
+	name = "柴电推进电动机"
+	desc = "一台连接到螺旋桨轴的重型电力牵引电动机.由柴油发电机供电."
 	icon = 'icons/obj/engines64.dmi'
 	icon_state = "engine"
 	health = 200
@@ -266,7 +266,7 @@ var/global/list/sub_physical_machines = list()
 	if(istype(my_turf) && my_turf.water_depth > 30)
 		if(my_sub.diesel_throttle > 0)
 			my_sub.diesel_throttle = 0
-			visible_message("<span class='danger'>[src] seizes with a shower of sparks as water floods the motor!</span>")
+			visible_message("<span class='danger'>[src]在海水淹没电动机时伴随着一阵火花卡死了!</span>")
 			playsound(src.loc, 'sound/machines/submarine/dgenstop.ogg', 70, 1)
 		health -= my_turf.water_depth * 0.03
 		return
@@ -279,7 +279,7 @@ var/global/list/sub_physical_machines = list()
 		if(my_sub.target_speed > max_possible_speed)
 			my_sub.target_speed = max_possible_speed
 			if(prob(5))
-				visible_message("<span class='warning'>The propulsion motor whines under the load!</span>")
+				visible_message("<span class='warning'>推进电动机在负载下发出呜呜声!</span>")
 
 		// Motor heating from high throttle
 		if(my_sub.diesel_throttle > 70)
@@ -291,12 +291,12 @@ var/global/list/sub_physical_machines = list()
 		if(motor_temp > 80)
 			health -= 0.1
 			if(prob(3))
-				visible_message("<span class='warning'>[src] smells of burning insulation!</span>")
+				visible_message("<span class='warning'>[src]散发出绝缘层烧焦的气味!</span>")
 
 		// Motor damage limits output
 		if(health <= 0)
 			my_sub.diesel_throttle = 0
-			visible_message("<span class='danger'>[src] seizes with a shower of sparks! Propulsion lost!</span>")
+			visible_message("<span class='danger'>[src]伴随着一阵火花卡死了!推进力丧失!</span>")
 	else
 		// Cooldown when idle
 		motor_temp = max(SUB_AMBIENT_TEMP, motor_temp - 0.5)
@@ -306,8 +306,8 @@ var/global/list/sub_physical_machines = list()
 // Drains water from the turf it sits on and adjacent connected turfs.
 
 /obj/structure/machinery/sub_physical/bilge_pump
-	name = "bilge pump"
-	desc = "A high-capacity centrifugal pump for evacuating seawater from flooded compartments."
+	name = "舱底泵"
+	desc = "一台用于从进水舱室排出海水的大容量离心泵."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "bilge_pump"
 	health = 80
@@ -323,11 +323,11 @@ var/global/list/sub_physical_machines = list()
 	active = !active
 	if(active)
 		icon_state = "[initial(icon_state)]_on"
-		to_chat(user, "<span class='notice'>You switch on [src]. It hums to life.</span>")
+		to_chat(user, "<span class='notice'>你打开了[src].它嗡嗡作响地启动了.</span>")
 		playsound(src.loc, 'sound/machines/machine_switch.ogg', 50, 1)
 	else
 		icon_state = initial(icon_state)
-		to_chat(user, "<span class='notice'>You switch off [src].</span>")
+		to_chat(user, "<span class='notice'>你关闭了[src].</span>")
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 
 /obj/structure/machinery/sub_physical/bilge_pump/process()
@@ -338,7 +338,7 @@ var/global/list/sub_physical_machines = list()
 	if(my_sub.battery_current < power_draw)
 		active = FALSE
 		icon_state = initial(icon_state)
-		visible_message("<span class='warning'>[src] sputters and shuts down - insufficient power.</span>")
+		visible_message("<span class='warning'>[src]噼啪作响后停机 - 电力不足.</span>")
 		playsound(src.loc, 'sound/machines/submarine/alarm_flooding.ogg', 40, 1)
 		return
 
@@ -364,14 +364,14 @@ var/global/list/sub_physical_machines = list()
 
 	// Visual feedback: pump is working hard if there's lots of water
 	if(my_turf.water_depth > 50 && prob(10))
-		visible_message("<span class='notice'>[src] gurgles as it strains against the rising water.</span>")
+		visible_message("<span class='notice'>[src]在上涨的水位中吃力地发出咕噜声.</span>")
 
 // --- 5b. EMERGENCY BILGE PUMP ---
 // A smaller, emergency-only pump. Slower but doesn't need as much power.
 
 /obj/structure/machinery/sub_physical/bilge_pump/emergency
-	name = "emergency bilge pump"
-	desc = "A manually-activated backup pump. Slow but better than drowning."
+	name = "应急舱底泵"
+	desc = "一台手动启动的备用泵.速度慢,但总比淹死好."
 	icon_state = "bilge_pump_small"
 	drain_rate = 5
 	power_draw = 8
@@ -386,8 +386,8 @@ var/global/list/sub_physical_machines = list()
 // across all turfs in the same vent_id network.
 
 /obj/structure/machinery/sub_physical/vent_duct
-	name = "ventilation duct"
-	desc = "A heavy-duty air duct connecting compartments to the central ventilation system."
+	name = "通风管道"
+	desc = "一条连接各舱室与中央通风系统的重型通风管道."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "vent"
 	health = 60
@@ -399,39 +399,39 @@ var/global/list/sub_physical_machines = list()
 
 // Predefined vent ducts - one per compartment, each with its own air network
 /obj/structure/machinery/sub_physical/vent_duct/fwd_torpedo
-	name = "vent duct - forward torpedo"
+	name = "通风管道 - 前部鱼雷舱"
 	vent_id = "fwd_torpedo"
 
 /obj/structure/machinery/sub_physical/vent_duct/storage
-	name = "vent duct - storage"
+	name = "通风管道 - 储藏室"
 	vent_id = "storage"
 
 /obj/structure/machinery/sub_physical/vent_duct/operations
-	name = "vent duct - operations"
+	name = "通风管道 - 作战室"
 	vent_id = "operations"
 
 /obj/structure/machinery/sub_physical/vent_duct/medical_bay
-	name = "vent duct - medical bay"
+	name = "通风管道 - 医疗舱"
 	vent_id = "medical_bay"
 
 /obj/structure/machinery/sub_physical/vent_duct/galley
-	name = "vent duct - galley"
+	name = "通风管道 - 厨房"
 	vent_id = "galley"
 
 /obj/structure/machinery/sub_physical/vent_duct/central_corridor
-	name = "vent duct - central corridor"
+	name = "通风管道 - 中央走廊"
 	vent_id = "central_corridor"
 
 /obj/structure/machinery/sub_physical/vent_duct/rear_corridor
-	name = "vent duct - rear corridor"
+	name = "通风管道 - 后部走廊"
 	vent_id = "rear_corridor"
 
 /obj/structure/machinery/sub_physical/vent_duct/reactor_room
-	name = "vent duct - reactor room"
+	name = "通风管道 - 反应堆室"
 	vent_id = "reactor_room"
 
 /obj/structure/machinery/sub_physical/vent_duct/engine_room
-	name = "vent duct - engine room"
+	name = "通风管道 - 引擎室"
 	vent_id = "engine_room"
 
 /obj/structure/machinery/sub_physical/vent_duct/New()
@@ -453,20 +453,20 @@ var/global/list/sub_physical_machines = list()
 	if(!can_use_sub(user)) return
 	active = !active
 	if(active)
-		to_chat(user, "<span class='notice'>You open the ventilation duct. Air begins to flow.</span>")
+		to_chat(user, "<span class='notice'>你打开了通风管道.空气开始流通.</span>")
 		playsound(src.loc, 'sound/machines/submarine/gas.ogg', 40, 1)
 	else
-		to_chat(user, "<span class='notice'>You close the ventilation duct. Air flow stops.</span>")
+		to_chat(user, "<span class='notice'>你关闭了通风管道.气流停止.</span>")
 
 /obj/structure/machinery/sub_physical/vent_duct/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/weapon/weldingtool))
 		if(health < max_health)
-			user.visible_message("<span class='notice'>[user] repairs [src].</span>")
+			user.visible_message("<span class='notice'>[user]修理了[src].</span>")
 			if(do_after(user, 25, src))
 				health = min(max_health, health + 20)
 		return
 	if(istype(W, /obj/item/weapon/screwdriver) || istype(W, /obj/item/weapon/wirecutters))
-		to_chat(user, "<span class='notice'>Network: [vent_id] | Status: [active ? "OPEN" : "CLOSED"]</span>")
+		to_chat(user, "<span class='notice'>网络:[vent_id] | 状态:[active ? "OPEN" : "CLOSED"]</span>")
 		return
 	..()
 
@@ -475,8 +475,8 @@ var/global/list/sub_physical_machines = list()
 // Higher power draw than passive vents.
 
 /obj/structure/machinery/sub_physical/scrubber
-	name = "CO2 scrubber"
-	desc = "An activated-carbon filtration unit that removes carbon dioxide from the air."
+	name = "二氧化碳洗涤器"
+	desc = "一台活性炭过滤装置,用于去除空气中的二氧化碳."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "airfilter2"
 	health = 70
@@ -493,13 +493,13 @@ var/global/list/sub_physical_machines = list()
 	if(!my_sub) return
 	active = !active
 	if(active)
-		to_chat(user, "<span class='notice'>You activate [src]. It begins filtering the air.</span>")
+		to_chat(user, "<span class='notice'>你启动了[src].它开始过滤空气.</span>")
 		playsound(src.loc, 'sound/machines/submarine/gas.ogg', 40, 1)
 		var/sound/S = sound('sound/machines/submarine/scrubber_hum.ogg', repeat = TRUE, wait = 0, volume = 15, channel = 772)
 		scrub_channel = 772
 		src << S
 	else
-		to_chat(user, "<span class='notice'>You deactivate [src].</span>")
+		to_chat(user, "<span class='notice'>你关闭了[src].</span>")
 		if(scrub_channel)
 			src << sound(null, channel = scrub_channel)
 			scrub_channel = 0
@@ -511,7 +511,7 @@ var/global/list/sub_physical_machines = list()
 	// Power check
 	if(my_sub.battery_current < power_draw)
 		active = FALSE
-		visible_message("<span class='warning'>[src] shuts down - insufficient power.</span>")
+		visible_message("<span class='warning'>[src]停机 - 电力不足.</span>")
 		if(scrub_channel)
 			src << sound(null, channel = scrub_channel)
 			scrub_channel = 0
@@ -536,8 +536,8 @@ var/global/list/sub_physical_machines = list()
 // Emergency tool: sprays a fast-curing polymer to seal small hull breaches.
 
 /obj/structure/machinery/sub_physical/breach_sealant
-	name = "hull breach sealant sprayer"
-	desc = "An automated sprayer that coats damaged hull sections with fast-curing polymer sealant."
+	name = "船体破损密封剂喷洒器"
+	desc = "一种自动喷雾器,用于在受损的船体部位覆盖快速固化的聚合物密封剂."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "sealant"
 	health = 50
@@ -548,35 +548,35 @@ var/global/list/sub_physical_machines = list()
 
 // Predefined sealant sprayers - one per compartment
 /obj/structure/machinery/sub_physical/breach_sealant/fwd_torpedo
-	name = "sealant sprayer - forward torpedo"
+	name = "密封剂喷雾器 - 前部鱼雷舱"
 /obj/structure/machinery/sub_physical/breach_sealant/storage
-	name = "sealant sprayer - storage"
+	name = "密封剂喷雾器 - 储藏室"
 /obj/structure/machinery/sub_physical/breach_sealant/operations
-	name = "sealant sprayer - operations"
+	name = "密封剂喷雾器 - 作战室"
 /obj/structure/machinery/sub_physical/breach_sealant/medical_bay
-	name = "sealant sprayer - medical bay"
+	name = "密封剂喷雾器 - 医疗舱"
 /obj/structure/machinery/sub_physical/breach_sealant/galley
-	name = "sealant sprayer - galley"
+	name = "密封剂喷雾器 - 厨房"
 /obj/structure/machinery/sub_physical/breach_sealant/central_corridor
-	name = "sealant sprayer - central corridor"
+	name = "密封剂喷雾器 - 中央走廊"
 /obj/structure/machinery/sub_physical/breach_sealant/rear_corridor
-	name = "sealant sprayer - rear corridor"
+	name = "密封剂喷雾器 - 后部走廊"
 /obj/structure/machinery/sub_physical/breach_sealant/reactor_room
-	name = "sealant sprayer - reactor room"
+	name = "密封剂喷雾器 - 反应堆室"
 /obj/structure/machinery/sub_physical/breach_sealant/engine_room
-	name = "sealant sprayer - engine room"
+	name = "密封剂喷雾器 - 引擎室"
 
 /obj/structure/machinery/sub_physical/breach_sealant/attack_hand(mob/user)
 	if(!can_use_sub(user)) return
 	if(!my_sub) return
 	if(sealant_remaining <= 0)
-		to_chat(user, "<span class='warning'>The sealant supply is depleted!</span>")
+		to_chat(user, "<span class='warning'>密封剂储备已耗尽!</span>")
 		return
 	active = !active
 	if(active)
-		to_chat(user, "<span class='notice'>You activate [src]. It begins scanning for breaches.</span>")
+		to_chat(user, "<span class='notice'>你启动了[src]. 它开始扫描破损处.</span>")
 	else
-		to_chat(user, "<span class='notice'>You deactivate [src].</span>")
+		to_chat(user, "<span class='notice'>你关闭了[src].</span>")
 
 /obj/structure/machinery/sub_physical/breach_sealant/process()
 	if(!active || health <= 0) return
@@ -598,7 +598,7 @@ var/global/list/sub_physical_machines = list()
 		if(hull && istype(hull) && hull.breached)
 			hull.repair_breach()
 			sealant_remaining--
-			visible_message("<span class='notice'>[src] sprays sealant onto the hull breach. It hisses as it cures.</span>")
+			visible_message("<span class='notice'>[src]将密封剂喷涂到船体破损处. 密封剂在固化时发出嘶嘶声.</span>")
 			playsound(src.loc, 'sound/machines/submarine/gas.ogg', 60, 1)
 			break  // One repair per tick
 
@@ -606,8 +606,8 @@ var/global/list/sub_physical_machines = list()
 // Controls water intake for dive planes. Fills/empties ballast tanks.
 
 /obj/structure/machinery/sub_physical/ballast_valve
-	name = "ballast control valve"
-	desc = "A heavy-duty valve controlling seawater flow into the ballast tanks."
+	name = "压载控制阀"
+	desc = "一个重型阀门,用于控制海水流入压载水舱."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "ballast"
 	health = 100
@@ -620,10 +620,10 @@ var/global/list/sub_physical_machines = list()
 	if(!my_sub) return
 	valve_open = !valve_open
 	if(valve_open)
-		to_chat(user, "<span class='notice'>You open the ballast valve. Water begins flooding the tanks.</span>")
+		to_chat(user, "<span class='notice'>你打开了压载阀. 水开始涌入水舱.</span>")
 		playsound(src.loc, 'sound/machines/submarine/valve_turn.ogg', 50, 1)
 	else
-		to_chat(user, "<span class='notice'>You close the ballast valve.</span>")
+		to_chat(user, "<span class='notice'>你关闭了压载阀.</span>")
 		playsound(src.loc, 'sound/machines/submarine/valve_turn.ogg', 50, 1)
 
 /obj/structure/machinery/sub_physical/ballast_valve/process()
@@ -637,13 +637,13 @@ var/global/list/sub_physical_machines = list()
 // --- 6. TORPEDO TUBE ---
 
 /obj/structure/props/torpedo_tube
-	name = "torpedo launch tube"
-	desc = "A ship's torpedo tube."
+	name = "鱼雷发射管"
+	desc = "舰船的鱼雷发射管."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "torpedo_tube2"
 
 /obj/structure/machinery/sub_physical/torpedo_tube
-	name = "torpedo launch tube"
+	name = "鱼雷发射管"
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "torpedo_tube1"
 	var/tube_id = 1 // 1-4
@@ -653,32 +653,32 @@ var/global/list/sub_physical_machines = list()
 	if(!can_use_sub(user)) return
 	if(!my_sub) return
 
-	to_chat(user, "<span class='notice'>Tube [tube_id] status: [my_sub.tubes_loaded[tube_id] ? "LOADED" : "EMPTY"]</span>")
+	to_chat(user, "<span class='notice'>发射管[tube_id]状态: [my_sub.tubes_loaded[tube_id] ? "LOADED" : "EMPTY"]</span>")
 
 /obj/structure/machinery/sub_physical/torpedo_tube/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weapon/torpedo))
 		if(my_sub.tubes_loaded[tube_id])
-			to_chat(user, "<span class='warning'>Tube [tube_id] is already loaded.</span>")
+			to_chat(user, "<span class='warning'>发射管[tube_id]已经装填完毕.</span>")
 			return
 		
-		user.visible_message("<span class='notice'>[user] begins sliding [I] into launch tube [tube_id].</span>")
+		user.visible_message("<span class='notice'>[user]开始将[I]滑入发射管[tube_id].</span>")
 		if(do_after(user, 60, src))
 			user.drop_item()
 			qdel(I)
 			my_sub.tubes_loaded[tube_id] = TRUE
 			icon_state = "torpedo_tube1_closed"
-			to_chat(user, "<span class='notice'>Tube [tube_id] is now ready for launch.</span>")
+			to_chat(user, "<span class='notice'>发射管[tube_id]现在可以发射了.</span>")
 		return
 
 	// Service/Unload
 	if(istype(I, /obj/item/weapon/crowbar) || istype(I, /obj/item/weapon/wrench))
 		if(my_sub.tubes_loaded[tube_id])
-			user.visible_message("<span class='notice'>[user] begins manually extracting the torpedo from tube [tube_id].</span>")
+			user.visible_message("<span class='notice'>[user]开始手动从发射管[tube_id]中取出鱼雷.</span>")
 			if(do_after(user, 80, src))
 				my_sub.tubes_loaded[tube_id] = FALSE
 				icon_state = "torpedo_tube1"
 				new /obj/item/weapon/torpedo(src.loc)
-				to_chat(user, "<span class='notice'>You successfully unload the tube.</span>")
+				to_chat(user, "<span class='notice'>你成功卸载了发射管.</span>")
 		return
 
 	..()
@@ -686,8 +686,8 @@ var/global/list/sub_physical_machines = list()
 // --- 7. BUNK BED ---
 
 /obj/structure/bed/bunk
-	name = "crew bunk"
-	desc = "A cramped but essential rest area for the submarine crew."
+	name = "船员铺位"
+	desc = "一个狭窄但必不可少的潜艇船员休息区."
 	icon = 'icons/obj/bed_chair.dmi'
 	icon_state = "bunk_bed"
 	material = "steel"
@@ -696,8 +696,8 @@ var/global/list/sub_physical_machines = list()
 // --- 8. GALLEY ---
 
 /obj/structure/machinery/sub_physical/galley
-	name = "galley food processor"
-	desc = "Dispenses dense nutritional pastes and synthesized beverages."
+	name = "厨房食物处理器"
+	desc = "分配浓缩营养糊和合成饮料."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "hotfood"
 	var/food_stored = 50
@@ -705,14 +705,14 @@ var/global/list/sub_physical_machines = list()
 /obj/structure/machinery/sub_physical/galley/attack_hand(mob/user)
 	if(!can_use_sub(user)) return
 	if(health < 30)
-		to_chat(user, "<span class='warning'>The processor is too damaged to function.</span>")
+		to_chat(user, "<span class='warning'>处理器损坏严重,无法运行.</span>")
 		return
 	if(food_stored <= 0)
-		to_chat(user, "<span class='notice'>The galley is out of supplies.</span>")
+		to_chat(user, "<span class='notice'>厨房补给已耗尽.</span>")
 		return
 
 	food_stored--
-	to_chat(user, "<span class='notice'>The machine clunks and produces a nutritional ration.</span>")
+	to_chat(user, "<span class='notice'>机器发出哐当声,产出了一份营养口粮.</span>")
 	new /obj/item/weapon/reagent_containers/food/snacks/MRE/generic(src.loc)
 
 // --- 9. EQUIPMENT STORAGE (converted to vendor in vending.dm) ---
@@ -720,8 +720,8 @@ var/global/list/sub_physical_machines = list()
 // --- 10. TORPEDO FUEL STORAGE (HTP) ---
 
 /obj/structure/machinery/sub_physical/fuel_storage
-	name = "HTP Fuel Tank"
-	desc = "Contains high-test peroxide. Extremely unstable."
+	name = "高浓度过氧化氢燃料罐"
+	desc = "含有高浓度过氧化氢. 极不稳定."
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "htp"
 	health = 80
@@ -738,7 +738,7 @@ var/global/list/sub_physical_machines = list()
 	// Volatility Logic
 	if(health < 30 || temperature > 45)
 		if(prob(20))
-			T.visible_message("<span class='warning'>Toxic HTP fumes hiss from [src]!</span>")
+			T.visible_message("<span class='warning'>有毒的过氧化氢烟雾从[src]中嘶嘶喷出!</span>")
 			// Simulate toxic leak
 			for(var/mob/living/L in range(2, src))
 				L.apply_damage(2, TOX)
@@ -747,7 +747,7 @@ var/global/list/sub_physical_machines = list()
 		explode()
 
 /obj/structure/machinery/sub_physical/fuel_storage/proc/explode()
-	visible_message("<span class='danger'><b>[src] CATASTROPHICALLY RUPTURES!</b></span>")
+	visible_message("<span class='danger'><b>[src]灾难性地破裂了!</b></span>")
 	playsound(src.loc, 'sound/machines/submarine/fire.ogg', 100, 1)
 	playsound(src.loc, 'sound/machines/submarine/nuke_exp.ogg', 100, 1)
 	explosion(src.loc, 1, 2, 4)
@@ -756,8 +756,8 @@ var/global/list/sub_physical_machines = list()
 // --- 11. STERN PLANE ---
 
 /obj/structure/sub_physical/stern_plane
-	name = "stern diving plane"
-	desc = "An external hydrofoil used for steering. Requires surfacing for maintenance."
+	name = "尾部水平舵"
+	desc = "用于转向的外部水翼. 需要浮出水面进行维护."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "placeholder_plane"
 	var/plane_side = "port"
@@ -769,7 +769,7 @@ var/global/list/sub_physical_machines = list()
 
 /obj/structure/sub_physical/stern_plane/attackby(obj/item/W, mob/user)
 	if(my_sub && my_sub.depth > 0)
-		to_chat(user, "<span class='warning'>You cannot reach the external planes while submerged!</span>")
+		to_chat(user, "<span class='warning'>在水下时你无法触及外部水平舵!</span>")
 		return
 	..()
 	update_sub_efficiency()
@@ -784,8 +784,8 @@ var/global/list/sub_physical_machines = list()
 
 // Dummy item for torpedo implementation
 /obj/item/weapon/torpedo
-	name = "Mk.48 torpedo"
-	desc = "A massive heavyweight acoustic-homing torpedo."
+	name = "Mk.48鱼雷"
+	desc = "一种大型重型声学制导鱼雷."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "torpedo_item"
 	w_class = 5.0 // Heavy

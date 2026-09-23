@@ -1,7 +1,7 @@
 //not really a subtype of hostile animals, but it is harmful so it goes here.
 /mob/living/simple_animal/fly
 	name = "flies"
-	desc = "Annoying and dirty."
+	desc = "烦人又肮脏。"
 	icon = 'icons/mob/critter.dmi'
 	icon_state = "flies"
 	icon_living = "flies"
@@ -43,7 +43,7 @@
 
 /mob/living/simple_animal/fly/attack_hand(mob/living/human/M as mob)
 	M.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	visible_message("[M] swats away the [src]!","You swat away the [src]!")
+	visible_message("[M]拍走了[src]!","你拍走了[src]!")
 	if (prob(40))
 		walk_away_od(src, M, 3, 3)
 		return
@@ -56,7 +56,7 @@
 
 /mob/living/simple_animal/fly/attackby(var/obj/item/O, var/mob/user)
 	if (istype(O, /obj/item/weapon/swatter))
-		visible_message("[user] swats \the [src] with \the [O]!")
+		visible_message("[user]用\the [O]拍打\the [src]!")
 		if (origin)
 			var/obj/structure/sink/S = origin
 			S.mosquito_count--

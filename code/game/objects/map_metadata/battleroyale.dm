@@ -198,7 +198,7 @@
 			if ("none")
 				ar_to_close_string = "None"
 		ar_to_close_timeleft = 30
-		to_chat(world, "<big><b>The [ar_to_close_string] Area will close in 60 seconds!</b></big>")
+		to_chat(world, "<big><b>[ar_to_close_string]区域将在60秒后关闭!</b></big>")
 		spawn(275)
 			warn_closing_areas(ar_to_close,30)
 			spawn(100)
@@ -207,7 +207,7 @@
 					warn_closing_areas(ar_to_close,10)
 		spawn(300)
 			ar_to_close_timeleft = 15
-			to_chat(world, "<big><b>The [ar_to_close_string] Area will close in 30 seconds!</b></big>")
+			to_chat(world, "<big><b>[ar_to_close_string]区域将在30秒后关闭!</b></big>")
 			spawn(300)
 				close_area(ar_to_close)
 				closing_areas()
@@ -277,7 +277,7 @@
 						H.crush()
 					else if (istype(A, /area/caribbean/no_mans_land/invisible_wall) && A.name == "North-Western Area")
 						H.crush()
-			to_chat(world, "<big>The <b>North-Western</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>西北</b>区域已关闭!</big>")
 			closed_areas += list("one")
 			return
 		if ("two")
@@ -294,7 +294,7 @@
 						H.crush()
 					else if (istype(A, /area/caribbean/no_mans_land/invisible_wall) && A.name == "North-Eastern Area")
 						H.crush()
-			to_chat(world, "<big>The <b>North-Eastern</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>东北</b>区域已关闭!</big>")
 			closed_areas += list("two")
 			return
 		if ("three")
@@ -311,7 +311,7 @@
 						H.crush()
 					else if (istype(A, /area/caribbean/no_mans_land/invisible_wall) && A.name == "Western Area")
 						H.crush()
-			to_chat(world, "<big>The <b>Western</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>西部</b>区域已关闭!</big>")
 			closed_areas += list("three")
 			return
 		if ("four")
@@ -328,7 +328,7 @@
 						H.crush()
 					else if (istype(A, /area/caribbean/no_mans_land/invisible_wall) && A.name == "Eastern Area")
 						H.crush()
-			to_chat(world, "<big>The <b>Eastern</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>东部</b>区域已关闭!</big>")
 			closed_areas += list("four")
 			return
 		if ("five")
@@ -345,7 +345,7 @@
 						H.crush()
 					else if (istype(A,/area/caribbean/no_mans_land/invisible_wall) && A.name == "South-Western Area")
 						H.crush()
-			to_chat(world, "<big>The <b>South-Western</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>西南</b>区域已关闭!</big>")
 			closed_areas += list("five")
 			return
 		if ("six")
@@ -362,7 +362,7 @@
 						H.crush()
 					else if (istype(A, /area/caribbean/no_mans_land/invisible_wall) && A.name == "South-Eastern Area")
 						H.crush()
-			to_chat(world, "<big>The <b>South-Eastern</b> Area has been closed!</big>")
+			to_chat(world, "<big><b>东南</b>区域已关闭!</big>")
 			closed_areas += list("six")
 			return
 //////////////////SCREEN HELPERS////////////////////////////
@@ -529,7 +529,7 @@
 				place2text = "3rd"
 			else
 				place2text = "[awards[i][3]]th"
-			to_chat(world, "[awards[i][2]] ([awards[i][1]]) placed <b>[place2text]</b>!")
+			to_chat(world, "[awards[i][2]] ([awards[i][1]]) 放置了<b>[place2text]</b>!")
 	return TRUE
 
 /obj/map_metadata/battleroyale/give_award(var/_ckey, var/charname, var/place)

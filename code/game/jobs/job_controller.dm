@@ -89,22 +89,22 @@ var/global/datum/controller/occupations/job_master
 		switch(autobalance_nr)
 			if (0 to 8)
 				map.availablefactions = list("Civilization A Citizen")
-				to_chat(world, "Only one civilization is enabled: <b>[civname_a]</b>.")
+				to_chat(world, "仅启用了一个文明: <b>[civname_a]</b>.")
 			if (9 to 16)
 				map.availablefactions = list("Civilization A Citizen","Civilization B Citizen")
-				to_chat(world, "Two civilizations are enabled: <b>[civname_a], [civname_b]</b>.")
+				to_chat(world, "启用了两个文明: <b>[civname_a], [civname_b]</b>.")
 			if (17 to 24)
 				map.availablefactions = list("Civilization A Citizen","Civilization B Citizen","Civilization C Citizen")
-				to_chat(world, "Three civilizations are enabled: <b>[civname_a], [civname_b], [civname_c]</b>.")
+				to_chat(world, "启用了三个文明: <b>[civname_a], [civname_b], [civname_c]</b>.")
 			if (25 to 30)
 				map.availablefactions = list("Civilization A Citizen","Civilization B Citizen","Civilization C Citizen","Civilization D Citizen")
-				to_chat(world, "Four civilizations are enabled: <b>[civname_a], [civname_b], [civname_c], [civname_d]</b>.")
+				to_chat(world, "启用了四个文明: <b>[civname_a], [civname_b], [civname_c], [civname_d]</b>.")
 			if (31 to 36)
 				map.availablefactions = list("Civilization A Citizen","Civilization B Citizen","Civilization C Citizen","Civilization D Citizen","Civilization E Citizen")
-				to_chat(world, "Five civilizations are enabled: <b>[civname_a], [civname_b], [civname_c], [civname_d], [civname_e]</b>.")
+				to_chat(world, "启用了五个文明: <b>[civname_a], [civname_b], [civname_c], [civname_d], [civname_e]</b>.")
 			if (37 to INFINITY)
 				map.availablefactions = randomfaction
-				to_chat(world, "All the 6 civilizations are enabled: <b>[civname_a], [civname_b], [civname_c], [civname_d], [civname_e], [civname_f]</b>.")
+				to_chat(world, "全部6个文明均已启用: <b>[civname_a], [civname_b], [civname_c], [civname_d], [civname_e], [civname_f]</b>.")
 
 	map.availablefactions_run = FALSE
 	return
@@ -251,7 +251,7 @@ var/global/datum/controller/occupations/job_master
 							spawnloc = get_turf(HSL)
 							break
 				H.forceMove(spawnloc)
-				to_chat(HSL, "<big><font color='green'>[H] has arrived at your squad.</font></big>")
+				to_chat(HSL, "<big><font color='green'>[H] 已抵达你的小队.</font></big>")
 				
 				// make sure we have the right ambience for our new location
 				spawn (1)

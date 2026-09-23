@@ -2,7 +2,7 @@ var/list/global/wall_cache = list()
 
 /turf/wall
 	name = "wall"
-	desc = "A huge chunk of metal used to seperate rooms."
+	desc = "一大块用于分隔房间的金属."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "generic"
 	opacity = TRUE
@@ -115,7 +115,7 @@ var/list/global/wall_cache = list()
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
 	layer = TURF_LAYER + 0.02 // above lifts
-	desc = "A massive slab of rock in the shape of a wall."
+	desc = "一块巨大的板状岩石,呈墙壁形状."
 
 /turf/wall/rockwall/lavaspawner
 
@@ -124,7 +124,7 @@ var/list/global/wall_cache = list()
 	if(istype(W, /obj/item/weapon/chisel))
 		var design = "smooth"
 		if (!istype(H.l_hand, /obj/item/weapon/hammer) && !istype(H.r_hand, /obj/item/weapon/hammer))
-			to_chat(user, "<span class = 'warning'>You need to have a hammer in one of your hands to use a chisel.</span>")
+			to_chat(user, "<span class = 'warning'>你需要一只手拿着锤子才能使用凿子.</span>")
 			return
 		else
 			var/display = list("Smooth", "Cave", "Underground Cave", "Brick", "Cobbled", "Tiled", "Cancel")
@@ -132,24 +132,24 @@ var/list/global/wall_cache = list()
 			if (input == "Cancel")
 				return
 			else if  (input == "Smooth")
-				to_chat(user, "<span class='notice'>You will now carve the smooth design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻光滑图案!</span>")
 				design = "smooth"
 			else if  (input == "Cave")
-				to_chat(user, "<span class='notice'>You will now carve the cave design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻洞穴图案!</span>")
 				design = "cave"
 			else if  (input == "Underground Cave")
-				to_chat(user, "<span class='notice'>You will now carve the cave design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻洞穴图案!</span>")
 				design = "undercave"
 			else if  (input == "Brick")
-				to_chat(user, "<span class='notice'>You will now carve the brick design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻砖块图案!</span>")
 				design = "brick"
 			else if  (input == "Cobbled")
-				to_chat(user, "<span class='notice'>You will now carve the cobbled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻鹅卵石图案!</span>")
 				design = "cobbled"
 			else if  (input == "Tiled")
-				to_chat(user, "<span class='notice'>You will now carve the tiled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻瓷砖图案!</span>")
 				design = "tiled"
-			visible_message("<span class='danger'>[user] starts to chisel a design!</span>", "<span class='danger'>You start chiseling a design.</span>")
+			visible_message("<span class='danger'>[user]开始雕刻图案!</span>", "<span class='danger'>你开始雕刻图案.</span>")
 			playsound(src,'sound/effects/pickaxe.ogg',60,1)
 			if (do_after(user, 60, src))
 			//Designs possible are "smooth", "cave", "brick", "cobbled", "tiled"
@@ -232,16 +232,16 @@ var/list/global/wall_cache = list()
 	. = ..(user)
 
 	if (!damage && material)
-		to_chat(user, "<span class='notice'>It looks fully intact.</span>")
+		to_chat(user, "<span class='notice'>它看起来完好无损.</span>")
 	else
 		if (material)
 			var/dam = damage / material.integrity
 			if (dam <= 0.3)
-				to_chat(user, "<span class='warning'>It looks slightly damaged.</span>")
+				to_chat(user, "<span class='warning'>它看起来有轻微损坏.</span>")
 			else if (dam <= 0.6)
-				to_chat(user, "<span class='warning'>It looks moderately damaged.</span>")
+				to_chat(user, "<span class='warning'>它看起来有中度损坏.</span>")
 			else
-				to_chat(user, "<span class='danger'>It looks heavily damaged.</span>")
+				to_chat(user, "<span class='danger'>它看起来有严重损坏.</span>")
 //Damage
 
 /turf/wall/proc/take_damage(dam)

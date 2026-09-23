@@ -3,10 +3,10 @@
 	var/alt_name = ""
 	if (werewolf || gorillaman)
 		if (map && map.ID != MAP_TRIBES && map.ID != MAP_THREE_TRIBES && map.ID != MAP_FOUR_KINGDOMS && map.ID != MAP_NOMADS_NEW_WORLD && !map.is_fantrace)
-			to_chat(usr, "<span class = 'red'>You can't whisper.</span>")
+			to_chat(usr, "<span class = 'red'>你无法低语。</span>")
 			return
 	if (say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class = 'red'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class = 'red'>语音目前已被管理员禁用。</span>")
 		return
 
 	message = sanitize(message)
@@ -16,7 +16,7 @@
 
 	if (client)
 		if (client.prefs.muted & MUTE_IC)
-			to_chat(src, "<span class = 'red'>You cannot whisper (muted).</span>")
+			to_chat(src, "<span class = 'red'>你无法低语(已被禁言)。</span>")
 			return
 
 		if (client.handle_spam_prevention(message,MUTE_IC))
@@ -46,7 +46,7 @@
 /mob/living/human/proc/whisper_say(var/message, var/datum/language/speaking = null, var/alt_name="", var/verb="whispers")
 
 	if (istype(wear_mask, /obj/item/clothing/mask/muzzle) || istype(wear_mask, /obj/item/weapon/grenade))
-		to_chat(src, "<span class='danger'>You're muzzled and cannot speak!</span>")
+		to_chat(src, "<span class='danger'>你被堵住了嘴,无法说话!</span>")
 		return
 
 	var/message_range = TRUE

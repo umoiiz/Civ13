@@ -1,7 +1,7 @@
 
 /obj/structure/vehicleparts
-	name = "vehicle part"
-	desc = "A basic vehicle part."
+	name = "载具部件"
+	desc = "一个基础载具部件。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "part"
 	anchored = FALSE
@@ -13,8 +13,8 @@
 	var/datum/wheel_config/wconfig = null
 /////////////////////////////////AXIS/////////////////////////////////////
 /obj/structure/vehicleparts/axis
-	name = "vehicle axis"
-	desc = "supports wheels."
+	name = "载具车轴"
+	desc = "用于支撑车轮。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	var/vehicle_type = "car"
@@ -43,7 +43,7 @@
 	var/list/matrix_current_locs = list()
 
 /obj/structure/vehicleparts/axis/bike
-	name = "motorcycle axis"
+	name = "摩托车车轴"
 	currentspeed = 0
 	speeds = 3
 	maxpower = 10
@@ -53,7 +53,7 @@
 	vehicle_type = "bike"
 
 /obj/structure/vehicleparts/axis/carriage
-	name = "carriage axis"
+	name = "马车车轴"
 	currentspeed = 0
 	speeds = 3
 	maxpower = 10
@@ -63,7 +63,7 @@
 	vehicle_type = "carriage"
 
 /obj/structure/vehicleparts/axis/boat
-	name = "boat rudder control"
+	name = "船用舵控"
 	currentspeed = 0
 	speeds = 3
 	maxpower = 40
@@ -72,7 +72,7 @@
 	vehicle_type = "boat"
 
 /obj/structure/vehicleparts/axis/boat/fast
-	name = "boat rudder control"
+	name = "船用舵控"
 	currentspeed = 0
 	speeds = 4
 	maxpower = 40
@@ -81,8 +81,8 @@
 	vehicle_type = "boat"
 
 /obj/structure/vehicleparts/axis/heavy
-	name = "heavy vehicle axis"
-	desc = "A heavy and slow vehicle axis."
+	name = "重型载具车轴"
+	desc = "一个沉重且缓慢的载具车轴。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 3
@@ -212,7 +212,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/m113
-	name = "M113 APC"
+	name = "M113 装甲运兵车"
 	speeds = 4
 	speedlist = alist(1=14,2=10,3=8)
 	reg_number = ""
@@ -281,7 +281,7 @@
 /obj/structure/vehicleparts/axis/heavy/btr80/atgm
 
 /obj/structure/vehicleparts/axis/heavy/bradley
-	name = "M2 Bradley"
+	name = "M2 布雷德利"
 	speeds = 5
 	speedlist = alist(1=10,2=6,3=5,4=4,5=3)
 	reg_number = ""
@@ -439,7 +439,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/panzeriv
-	name = "Panzer IV"
+	name = "四号坦克"
 	speeds = 3
 	speedlist = alist(1=12,2=8,3=6)
 	reg_number = ""
@@ -451,7 +451,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/panzervi
-	name = "Panzer VI Tiger"
+	name = "六号坦克 虎式"
 	speeds = 4
 	speedlist = alist(1=14,2=11,3=9,4=7)
 	reg_number = ""
@@ -510,21 +510,21 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/leopard
-	name = "Leopard 2A6"
+	name = "豹2A6"
 	speeds = 4
 	speedlist = alist(1=9,2=6,3=4,4=3)
 	reg_number = ""
 	color = "#5C5C4C"
 
 /obj/structure/vehicleparts/axis/heavy/challenger2
-	name = "FV4034 Challenger 2"
+	name = "FV4034 挑战者2"
 	speeds = 4
 	speedlist = alist(1=9,2=6,3=4,4=3)
 	reg_number = ""
 	color = "#CCC0A6"
 
 /obj/structure/vehicleparts/axis/heavy/m1a1_abrams
-	name = "M1A1 Abrams"
+	name = "M1A1 艾布拉姆斯"
 	speeds = 4
 	speedlist = alist(1=9,2=6,3=4,4=3)
 	reg_number = ""
@@ -536,7 +536,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/i_go
-	name = "Type 89 I-Go"
+	name = "八九式中战车"
 	speeds = 4
 	speedlist = alist(1=10,2=7,3=5,4=4)
 	color = "#6a5a3d"
@@ -548,7 +548,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/chi_ha
-	name = "Type 97 Chi-Ha"
+	name = "九七式中战车"
 	speeds = 4
 	speedlist = alist(1=10,2=7,3=5,4=4)
 	color = "#6a5a3d"
@@ -560,7 +560,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/hago
-	name = "Type 95 Ha-Go"
+	name = "九五式轻战车"
 	speeds = 4
 	speedlist = alist(1=8,2=5,3=3,4=2)
 	color = "#6a5a3d"
@@ -572,7 +572,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/m4
-	name = "M-4 Sherman"
+	name = "M-4 谢尔曼"
 	speeds = 4
 	speedlist = alist(1=12,2=8,3=6,4=5)
 	color = "#494224"
@@ -584,7 +584,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/m48a1
-	name = "M-48A1 Patton"
+	name = "M-48A1 巴顿"
 	speeds = 4
 	speedlist = alist(1=12,2=8,3=6,4=5)
 	color = "#494224"
@@ -596,7 +596,7 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/heavy/m60a3
-	name = "M60A3 Patton"
+	name = "M60A3 巴顿"
 	speeds = 4
 	speedlist = alist(1=12,2=8,3=6,4=5)
 	color = "#4B4D40"
@@ -622,8 +622,8 @@
 	color = "#555346"
 
 /obj/structure/vehicleparts/axis/car
-	name = "car axis"
-	desc = "A powered axis from a car."
+	name = "汽车车轴"
+	desc = "来自汽车的动力车轴。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -672,8 +672,8 @@
 		return
 ///////////////////////////////////DRIVING WHEEL/////////////////////
 /obj/item/vehicleparts/wheel
-	name = "vehicle wheel"
-	desc = "Used to steer a vehicle."
+	name = "载具车轮"
+	desc = "用于操控载具。"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "wheel"
 	anchored = FALSE
@@ -686,8 +686,8 @@
 	var/obj/structure/vehicle/origin = null
 
 /obj/item/vehicleparts/wheel/rope
-	name = "Reins"
-	desc = "Used to control animal propulsion vehicles."
+	name = "缰绳"
+	desc = "用于控制动物牵引载具。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "leash"
 
@@ -695,7 +695,7 @@
 	if(istype(H.driver_vehicle, /obj/structure/vehicle/carriage))
 		var/obj/structure/vehicle/carriage/M = H.driver_vehicle
 		if(M.buckled_animal_propulsion <= 0)
-			to_chat(H, "You need animals to move the [H.driver_vehicle.name].")
+			to_chat(H, "你需要动物来移动[H.driver_vehicle.name]。")
 			return
 		else if(M.buckled_animal_propulsion == 1)
 			H.driver_vehicle.axis.speedlist = alist(1=25,2=20)
@@ -718,7 +718,7 @@
 			if (H.driver_vehicle.axis.currentspeed == 1)
 				H.driver_vehicle.moving = TRUE
 				H.driver_vehicle.startmovementloop()
-				to_chat(H, "You hit the animal to move.")
+				to_chat(H, "你击打动物使其移动.")
 		return
 	else if (H.driver_vehicle.axis.currentspeed<H.driver_vehicle.axis.speedlist.len)
 		H.driver_vehicle.axis.currentspeed++
@@ -729,7 +729,7 @@
 			return
 		else
 			H.driver_vehicle.vehicle_m_delay = spd
-			to_chat(H, "You hit the animal harder.")
+			to_chat(H, "你更用力地击打动物.")
 			return
 	else
 		return
@@ -742,26 +742,26 @@
 		var/spd = user.driver_vehicle.axis.get_speed()
 		if (spd <= 0 || user.driver_vehicle.axis.currentspeed == 0)
 			user.driver_vehicle.moving = FALSE
-			to_chat(user, "You stop \the [user.driver_vehicle].")
+			to_chat(user, "你停下\the [user.driver_vehicle].")
 			return
 		else
 			user.driver_vehicle.vehicle_m_delay = spd
-			to_chat(user, "You pull the rope to reduce the speed.")
+			to_chat(user, "你拉动绳索以降低速度.")
 			return
 
 /obj/item/vehicleparts/wheel/handle
-	name = "motorcycle handles"
-	desc = "Used to steer a motorcycle."
+	name = "摩托车把手"
+	desc = "用于操控摩托车."
 	icon_state = "bike_handles"
 
 /obj/item/vehicleparts/wheel/rudder
-	name = "boat rudder"
-	desc = "Used to steer a boat."
+	name = "船用舵"
+	desc = "用于操控船只."
 	icon_state = "rudder"
 
 /obj/item/vehicleparts/wheel/rudder_sails
-	name = "boat rudder and sail control"
-	desc = "Used to steer a boat and control the sails."
+	name = "船用舵和帆控制"
+	desc = "用于操控船只并控制船帆."
 	icon_state = "rudder"
 	var/spamtimer = 0
 
@@ -775,14 +775,14 @@
 	if (H.driver_vehicle.sails)
 		if (!H.driver_vehicle.sails_on)
 			if (world.time > spamtimer)
-				to_chat(H, "You hoist the sails.")
+				to_chat(H, "你升起船帆.")
 				H.driver_vehicle.sails_on = TRUE
 				H.driver_vehicle.check_sails()
 				spamtimer = world.time + 20
 				H.driver_vehicle.update_overlay()
 				return
 		else
-			to_chat(H, "You retract the sails.")
+			to_chat(H, "你收起船帆.")
 			H.driver_vehicle.sails_on = FALSE
 			H.driver_vehicle.update_overlay()
 			return
@@ -803,7 +803,7 @@
 				H.driver_vehicle.running_sound()
 		return
 	else if (H.driver_vehicle.fueltank.reagents.total_volume <= 0)
-		to_chat(H, "There is not enough fuel!")
+		to_chat(H, "燃料不足!")
 		return
 
 	if (H.driver_vehicle.axis.currentspeed <= 0)
@@ -817,7 +817,7 @@
 			if (H.driver_vehicle.axis.currentspeed == 1)
 				H.driver_vehicle.moving = TRUE
 				H.driver_vehicle.startmovementloop()
-				to_chat(H, "You put the vehicle into first gear.")
+				to_chat(H, "你将载具挂入一档.")
 		return
 	else if (H.driver_vehicle.axis.currentspeed < H.driver_vehicle.axis.speedlist.len)
 		H.driver_vehicle.axis.currentspeed++
@@ -829,7 +829,7 @@
 		else
 			H.driver_vehicle.vehicle_m_delay = spd
 			if (H.driver_vehicle.axis.currentspeed < H.driver_vehicle.axis.speedlist.len+1)
-				to_chat(H, "You increase the speed.")
+				to_chat(H, "你提高速度.")
 			return
 	else
 		return
@@ -849,16 +849,16 @@
 		var/spd = user.driver_vehicle.axis.get_speed()
 		if (spd <= 0 || user.driver_vehicle.axis.currentspeed == 0)
 			user.driver_vehicle.moving = FALSE
-			to_chat(user, "You stop \the [user.driver_vehicle].")
+			to_chat(user, "你停下\the [user.driver_vehicle].")
 			return
 		else
 			user.driver_vehicle.vehicle_m_delay = spd
-			to_chat(user, "You reduce the speed.")
+			to_chat(user, "你降低速度.")
 			return
 ///////////////////FRAME///////////////////////////////
 /obj/item/vehicleparts/frame
-	name = "vehicle frame"
-	desc = "A vehicle frame."
+	name = "载具框架"
+	desc = "一个载具框架."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "motorcycle_frame0"
 	var/customcolor = "#FFFFFF"
@@ -879,8 +879,8 @@
 	var/image/colorv = null
 
 /obj/item/vehicleparts/frame/bike
-	name = "motorcycle frame"
-	desc = "A motorcycle frame. Will fit engines up to 125cc and fueltanks up to 75u."
+	name = "摩托车框架"
+	desc = "一个摩托车框架. 可适配最高125cc的引擎和最高75u的油箱."
 	icon_state = "motorcycle_frame1"
 	base_icon = "motorcycle_frame"
 	customcolor = "#FFFFFF"
@@ -893,8 +893,8 @@
 	targettype = /obj/structure/vehicle/motorcycle
 
 /obj/item/vehicleparts/frame/boat
-	name = "outrigger boat frame"
-	desc = "A simple outrigger boat frame, with no engine or propulsion mode. Supports engines up to 400cc and fueltanks up to 150u"
+	name = "舷外支架船框架"
+	desc = "一个简易的舷外支架船框架, 没有引擎或推进模式. 支持最高400cc的引擎和最高150u的油箱"
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "outrigger_frame1"
 	base_icon = "outrigger_frame"
@@ -907,8 +907,8 @@
 	targettype = /obj/structure/vehicle/boat
 
 /obj/item/vehicleparts/frame/boat/rhib
-	name = "rhib boat frame"
-	desc = "A rhib boat frame, with no engine or propulsion mode. Supports engines up to 600cc and fueltanks up to 200u"
+	name = "硬壳充气艇框架"
+	desc = "一个硬壳充气艇框架, 没有引擎或推进模式. 支持最高600cc的引擎和最高200u的油箱"
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "rib_frame1"
 	base_icon = "rib_frame"
@@ -1031,8 +1031,8 @@
 ///////////////////////EXTRA STUFF//////////////////////
 
 /obj/item/sail
-	name = "small cloth sail"
-	desc = "A small cloth sail. Will fit a minor boat."
+	name = "小布帆"
+	desc = "一面小布帆. 可适配小型船只."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "sailing0"
 	anchored = FALSE
@@ -1040,12 +1040,12 @@
 	w_class = ITEM_SIZE_LARGE
 
 /obj/item/sail/wool
-	name = "small wool sail"
-	desc = "A small cloth sail. Will fit a minor boat."
+	name = "小羊毛帆"
+	desc = "一面小布帆. 可适配小型船只."
 
 /obj/item/tank_system
-	name = "Tank System"
-	desc = "Base parent object, DO NOT USE."
+	name = "坦克系统"
+	desc = "基础父对象, 请勿使用."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "none"
 	anchored = TRUE
@@ -1063,8 +1063,8 @@
 	..()
 
 /obj/item/tank_system/ecms
-	name = "ECMS"
-	desc = "An Electromagnetic Counter-Mine System."
+	name = "电磁反雷系统"
+	desc = "一个电磁反水雷系统."
 
 /obj/item/tank_system/ecms/process()
 	for (var/obj/item/mine/M in range(5, src))
@@ -1074,8 +1074,8 @@
 				to_chat(O, SPAN_DANGER("\The [src] explodes the [M]!"))
 
 /obj/item/tank_system/aps
-	name = "Active Protection System"
-	desc = "A hard-kill active protection system for defense against Rocket-Propelled Grenades and Anti-Tank Guided Missiles."
+	name = "主动防护系统"
+	desc = "一个用于防御火箭推进榴弹和反坦克制导导弹的硬杀伤主动防护系统."
 
 /obj/item/tank_system/aps/process()
 	for (var/obj/item/projectile/shell/missile/M in range(6, src))
@@ -1085,4 +1085,4 @@
 				to_chat(O, SPAN_DANGER("<big>\The [src] explodes the rocket!</big>"))
 
 /obj/item/tank_system/aps/ironfist
-	name = "Iron Fist APS"
+	name = "铁拳主动防护系统"

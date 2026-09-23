@@ -112,7 +112,7 @@ var/no_loop_clash = FALSE
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The Raven clan has recaptured the King's cabin!</font>")
+			to_chat(world, "<font size = 3>渡鸦氏族已重新夺回国王的小屋!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -138,7 +138,7 @@ var/no_loop_clash = FALSE
 			return
 		if (!head_nationality || head_nationality == "none")
 			return
-		to_chat(user, "You offer the head as a tribute to Odin.")
+		to_chat(user, "你将头颅作为祭品献给奥丁.")
 
 		if	(prob(20))
 			var/randmed = rand(1,3)

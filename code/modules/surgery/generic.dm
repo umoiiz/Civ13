@@ -40,14 +40,14 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts the incision on [target]'s [affected.name] with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]在[target]的[affected.name]上做切口.", \
 		"You start the incision on [target]'s [affected.name] with \the [tool].")
 		target.custom_pain("You feel a horrible pain as if from a sharp knife in your [affected.name]!",120)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] has made an incision on [target]'s [affected.name] with \the [tool].</span>", \
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]在[target]的[affected.name]上做了一个切口.</span>", \
 		"<span class = 'notice'>You have made an incision on [target]'s [affected.name] with \the [tool].</span>",)
 		affected.open = 1
 
@@ -59,7 +59,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'red'>[user]'s hand slips, slicing open [target]'s [affected.name] in the wrong place with \the [tool]!</span>", \
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]在错误的位置切开了[target]的[affected.name]!</span>", \
 		"<span class = 'red'>Your hand slips, slicing open [target]'s [affected.name] in the wrong place with \the [tool]!</span>")
 		affected.createwound(CUT, 10)
 
@@ -81,21 +81,21 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts clamping bleeders in [target]'s [affected.name] with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]夹闭[target]的[affected.name]中的出血点.", \
 		"You start clamping bleeders in [target]'s [affected.name] with \the [tool].")
 		target.custom_pain("The pain in your [affected.name] is maddening!",200)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] clamps bleeders in [target]'s [affected.name] with \the [tool].</span>",	\
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]夹闭了[target]的[affected.name]中的出血点.</span>",	\
 		"<span class = 'notice'>You clamp bleeders in [target]'s [affected.name] with \the [tool].</span>")
 		affected.clamping()
 		spread_germs_to_organ(affected, user)
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'red'>[user]'s hand slips, tearing blood vessals and causing massive bleeding in [target]'s [affected.name] with \the [tool]!</span>",	\
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]撕裂了[target]的[affected.name]中的血管并造成大量出血!</span>",	\
 		"<span class = 'red'>Your hand slips, tearing blood vessels and causing massive bleeding in [target]'s [affected.name] with \the [tool]!</span>",)
 		affected.createwound(CUT, 10)
 
@@ -174,14 +174,14 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] is beginning to cauterize the incision on [target]'s [affected.name] with \the [tool]." , \
+		user.visible_message("[user] 正开始用\the [tool]烧灼[target]的[affected.name]上的切口." , \
 		"You are beginning to cauterize the incision on [target]'s [affected.name] with \the [tool].")
 		target.custom_pain("Your [affected.name] is being burned!",70)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] cauterizes the incision on [target]'s [affected.name] with \the [tool].</span>", \
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]烧灼了[target]的[affected.name]上的切口.</span>", \
 		"<span class = 'notice'>You cauterize the incision on [target]'s [affected.name] with \the [tool].</span>")
 		affected.open = FALSE
 		affected.germ_level = FALSE
@@ -189,7 +189,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'red'>[user]'s hand slips, leaving a small burn on [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]在[target]的[affected.name]上留下了一处小烧伤!</span>", \
 		"<span class = 'red'>Your hand slips, leaving a small burn on [target]'s [affected.name] with \the [tool]!</span>")
 		target.apply_damage(3, BURN, affected)
 
@@ -221,21 +221,21 @@
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] is beginning to amputate [target]'s [affected.name] with \the [tool]." , \
+		user.visible_message("[user] 正开始用\the [tool]截断[target]的[affected.name]." , \
 		"You are beginning to cut through [target]'s [affected.amputation_point] with \the [tool].")
 		target.custom_pain("Your [affected.amputation_point] is being ripped apart!",250)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'notice'>[user] amputates [target]'s [affected.name] at the [affected.amputation_point] with \the [tool].</span>", \
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]在[affected.amputation_point]处截断了[target]的[affected.name].</span>", \
 		"<span class = 'notice'>You amputate [target]'s [affected.name] with \the [tool].</span>")
 		affected.droplimb(1,DROPLIMB_EDGE)
 		affected.nationality = target.nationality // For Warlords and Tadojsville head-collecting mechanic
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class = 'red'>[user]'s hand slips, sawing through the bone in [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]锯穿了[target]的[affected.name]中的骨头!</span>", \
 		"<span class = 'red'>Your hand slips, sawing through the bone in [target]'s [affected.name] with \the [tool]!</span>")
 		affected.createwound(CUT, 30)
 		affected.fracture()

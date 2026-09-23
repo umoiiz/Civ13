@@ -16,41 +16,41 @@
 	not_disassemblable = TRUE
 
 /obj/structure/sign/flag/green
-	name = "\improper green banner"
-	desc = "A green linen banner."
+	name = "\improper 绿色旗帜"
+	desc = "一面绿色亚麻旗帜."
 	icon_state = "green_banner"
 /obj/structure/sign/flag/red
-	name = "\improper red banner"
-	desc = "A red linen banner."
+	name = "\improper 红色旗帜"
+	desc = "一面红色亚麻旗帜."
 	icon_state = "red_banner"
 /obj/structure/sign/flag/red2
-	name = "\improper red banner"
-	desc = "A red linen banner, with golden trims."
+	name = "\improper 红色旗帜"
+	desc = "一面红色亚麻旗帜,带有金色镶边."
 	icon_state = "red_banner2"
 
 /obj/structure/sign/flag/blue
-	name = "\improper blue banner"
-	desc = "A blue linen banner."
+	name = "\improper 蓝色旗帜"
+	desc = "一面蓝色亚麻旗帜."
 	icon_state = "blue_banner"
 
 /obj/structure/sign/flag/reich
-	name = "Reich Flag"
-	desc = "A Reich flag for glory."
+	name = "帝国旗帜"
+	desc = "一面象征荣耀的帝国旗帜."
 	icon_state = "reich"
 
 /obj/structure/sign/flag/gb/imperial
-	name = "Extra-Galactic Empire Flag"
-	desc = "An Imperial Flag for the Extra-Galactic Empire."
+	name = "河外帝国旗帜"
+	desc = "一面河外帝国的帝国旗帜."
 	icon_state = "flag_galacticempire"
 
 /obj/structure/sign/flag/russia/wagner
-	name = "Wagner group insignia"
-	desc = "The infamous PMC group insignia."
+	name = "瓦格纳集团徽章"
+	desc = "臭名昭著的PMC集团徽章."
 	icon_state = "flag_wag"
 
 /obj/structure/sign/flag/usa/delta_force
-	name = "Delta Force insignia"
-	desc = "Insignia of the 1st Special Forces Operational Detachment-Delta."
+	name = "三角洲部队徽章"
+	desc = "第一特种部队作战分遣队-三角洲的徽章."
 	icon_state = "delta_force"
 
 /obj/structure/sign/flag/usa/delta_force/two
@@ -60,93 +60,93 @@
 	icon_state = "delta_force3"
 
 /obj/structure/sign/flag/gb/rebel
-	name = "Alliance to Restore the Democracy Flag"
-	desc = "A Rebellious flag for the Alliance."
+	name = "恢复民主联盟旗帜"
+	desc = "一面联盟的叛乱旗帜."
 	icon_state = "flag_rebelalliance"
 
 /obj/structure/sign/flag/gb/pysker
-	name = "Pysker Order Flag"
-	desc = "A blue and white flag for the ancient order of pyskers."
+	name = "灵能者教团旗帜"
+	desc = "一面古老灵能者教团的蓝白旗帜."
 	icon_state = "flag_pysker"
 
 /obj/structure/sign/flag/gb/cis
-	name = "Confederacy of Issolationist Star-Systems Flag"
-	desc = "A bright blue and white with a circular emblem."
+	name = "孤立主义星系邦联旗帜"
+	desc = "一面亮蓝色与白色、带有圆形徽章的旗帜."
 	icon_state = "flag_cis"
 
 /obj/structure/sign/flag/blue2
-	name = "\improper blue banner"
-	desc = "A blue linen banner, with golden trims."
+	name = "\improper 蓝色旗帜"
+	desc = "一面蓝色亚麻旗帜,带有金色镶边."
 	icon_state = "blue_banner2"
 
 /obj/structure/sign/flag/templar1
-	name = "\improper templar banner"
-	desc = "A white banner with the red cross of the templars in the middle."
+	name = "\improper 圣殿骑士旗帜"
+	desc = "一面白色旗帜,中间有圣殿骑士的红色十字."
 	icon_state = "templar_banner1"
 
 /obj/structure/sign/flag/templar2
-	name = "\improper templar banner"
-	desc = "A white banner with the red cross of the templars in the middle."
+	name = "\improper 圣殿骑士旗帜"
+	desc = "一面白色旗帜,中间有圣殿骑士的红色十字."
 	icon_state = "templar_banner2"
 
 /obj/structure/sign/flag/jihad1
-	name = "\improper black islamic flag"
-	desc = "A black flag with Allah written in Arabic."
+	name = "\improper 黑色伊斯兰旗帜"
+	desc = "一面黑色旗帜,上面用阿拉伯文写着真主."
 	icon_state = "jihad1"
 
 /obj/structure/sign/flag/jihad2
-	name = "\improper green islamic flag"
-	desc = "A green flag with Allah written in Arabic."
+	name = "\improper 绿色伊斯兰旗帜"
+	desc = "一面绿色旗帜,上面用阿拉伯文写着真主."
 	icon_state = "jihad2"
 
 /obj/structure/sign/flag/jihad3
-	name = "\improper red islamic banner"
-	desc = "A red banner with three moons."
+	name = "\improper 红色伊斯兰旗帜"
+	desc = "一面红色旗帜,上面有三个月亮."
 	icon_state = "jihad3"
 
 /obj/structure/sign/flag/jihad4
-	name = "\improper green islamic banner"
-	desc = "A green banner with the shadada."
+	name = "\improper 绿色伊斯兰旗帜"
+	desc = "一面绿色旗帜,上面有清真言."
 	icon_state = "jihad4"
 
 /obj/structure/sign/flag/taliban
-	name = "\improper taliban flag"
-	desc = "A white flag of the Taliban."
+	name = "\improper 塔利班旗帜"
+	desc = "一面塔利班的白色旗帜."
 	icon_state = "flag_taliban"
 
 /obj/structure/sign/flag/isis
-	name = "\improper ISIS flag"
-	desc = "A black flag of the ISIS."
+	name = "\improper ISIS旗帜"
+	desc = "一面ISIS的黑色旗帜."
 	icon_state = "flag_isis"
 
 /obj/structure/sign/flag/chechen
-	name = "\improper chechen flag"
-	desc = "The Chechen Separatist flag."
+	name = "\improper 车臣旗帜"
+	desc = "车臣分离主义者的旗帜."
 	icon_state = "flag_chechen"
 
 /obj/structure/sign/flag/ireland
-	name = "\improper irish flag"
-	desc = "The Irish Republic flag."
+	name = "\improper 爱尔兰旗帜"
+	desc = "爱尔兰共和国旗帜."
 	icon_state = "flag_ireland"
 
 /obj/structure/sign/flag/gadsen
-	name = "\improper Gadsen flag"
-	desc = "The classic Gadsen flag."
+	name = "\improper 加兹登旗帜"
+	desc = "经典的加兹登旗帜."
 	icon_state = "flag_gadsen"
 /obj/structure/sign/clock
-	name = "\improper clock"
-	desc = "A clock."
+	name = "\improper 时钟"
+	desc = "一个时钟."
 	icon_state = "clock"
 /obj/structure/sign/clock/examine(mob/user)
 	..()
-	to_chat(user, "<big>It is now [clock_time()].</big>")
+	to_chat(user, "<big>现在是[clock_time()].</big>")
 /obj/structure/sign/wide
 	icon = 'icons/obj/decals_wide.dmi'
 	bound_x = 32
 
 /obj/structure/sign/wide/carpet
-	name = "\improper carpet"
-	desc = "A shaped piece of thick material used for covering floors."
+	name = "\improper 地毯"
+	desc = "一块用于覆盖地板的成型厚材料."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "carpet"
 	layer = OBJ_LAYER - 0.1
@@ -159,26 +159,26 @@
 	icon_state = "carpet4"
 
 /obj/structure/sign/wide/stalingrad
-	name = "Stalingrad sign"
-	desc = "A worn-out sign displaying Stalingrad in cyrilic."
+	name = "斯大林格勒标牌"
+	desc = "一块破旧的标牌,用西里尔字母写着斯大林格勒."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "stalingrad"
 
 /obj/structure/sign/wide/kandahar
-	name = "Kandahar sign"
-	desc = "A worn-out sign displaying Kandahar."
+	name = "坎大哈标志"
+	desc = "一块破旧的标志牌,上面写着坎大哈."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "kandahar"
 
 /obj/structure/sign/wide/vadso
-	name = "Vadso sign"
-	desc = "A sign displaying Vadso."
+	name = "瓦德瑟标志"
+	desc = "一块写着瓦德瑟的标志牌."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "grestin"
 
 /obj/structure/sign/wide/grestin
-	name = "East Grestin sign"
-	desc = "A somewhat worn-out sign displaying East Grestin Border Checkpoint."
+	name = "东格雷斯廷标志"
+	desc = "一块略显破旧的标志牌,上面写着东格雷斯廷边境检查站."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "grestin"
 
@@ -201,19 +201,19 @@
 		else
 	return
 /obj/structure/sign/radiation
-	name = "radiation in the area!"
+	name = "该区域有辐射!"
 	icon_state = "radiation"
 
 /obj/structure/sign/radiation2
-	name = "DANGER: Radiation!"
+	name = "危险:辐射!"
 	icon_state = "radiation2"
 
 /obj/structure/sign/electricity
-	name = "DANGER: Electricity!"
+	name = "危险:电力!"
 	icon_state = "shock"
 
 /obj/structure/sign/traffic
-	name = "STOP sign"
+	name = "停止标志"
 	desc = ""
 	icon_state = "stop"
 	crushable = FALSE // To preserve map decorations
@@ -221,63 +221,63 @@
 /obj/structure/sign/traffic/stop
 
 /obj/structure/sign/traffic/crossing
-	name = "pedestrian crossing sign"
+	name = "人行横道标志"
 	icon_state = "zebracrossing"
 
 /obj/structure/sign/traffic/noentry
-	name = "no entry sign"
+	name = "禁止通行标志"
 	icon_state = "donotenter"
 
 /obj/structure/sign/traffic/yeld
-	name = "yeld sign"
+	name = "让行标志"
 	icon_state = "yeld"
 
 /obj/structure/sign/traffic/gas
-	name = "gas station sign"
+	name = "加油站标志"
 	icon_state = "gasolinesign"
 
 /obj/structure/sign/traffic/cafe
-	name = "cafe sign"
+	name = "咖啡馆标志"
 	icon_state = "cafesign"
 
 /obj/structure/sign/traffic/parking
-	name = "parking sign"
+	name = "停车标志"
 	icon_state = "parking"
 
 /obj/structure/sign/traffic/waysign
-	name = "intersection sign"
+	name = "十字路口标志"
 	icon_state = "waysign"
 
 /obj/structure/sign/traffic/zebracrossing
-	name = "pedestrian crossing"
+	name = "人行横道"
 	icon_state = "zebra"
 	layer = 2
 
 /obj/structure/sign/traffic/central
-	name = "white line"
+	name = "白线"
 	icon_state = "centralline"
 	layer = 2
 
 /obj/structure/sign/traffic/semicircle
-	name = "white line"
+	name = "白线"
 	icon = 'icons/obj/decals_wider.dmi'
 	icon_state = "circle"
 	layer = 2
 
 /obj/structure/sign/traffic/semicircle/largest
-	name = "white line"
+	name = "白线"
 	icon = 'icons/obj/decals_widest.dmi'
 	pixel_y = -6
 	icon_state = "circle"
 	layer = 2
 
 /obj/structure/sign/traffic/side
-	name = "yellow line"
+	name = "黄线"
 	icon_state = "sideline"
 	layer = 2
 
 /obj/item/weapon/trafficcone
-	name = "traffic cone"
+	name = "交通锥"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "cone1"
 	anchored = FALSE
@@ -289,591 +289,591 @@
 	icon_state = pick("cone1","cone2")
 
 /obj/structure/sign/flag/medical
-	name = "Medical flag"
-	desc = "A flag with the universally recognized symbol for medicine and humanitarian aid."
+	name = "医疗旗帜"
+	desc = "一面带有国际公认医疗与人道援助标志的旗帜."
 	icon_state = "medical_flag"
 
 /obj/structure/sign/flag/medical/crescent
-	name = "Red crescent flag"
-	desc = "A flag with the crescent emblem for medicine and humanitarian aid."
+	name = "红新月旗帜"
+	desc = "一面带有医疗与人道援助新月标志的旗帜."
 	icon_state = "medical_flag_crescent"
 
 /obj/structure/sign/flag/medical/crystal
-	name = "Medical crystal flag"
-	desc = "A flag with the crystal symbol for medicine and humaniarian aid."
+	name = "医疗水晶旗帜"
+	desc = "一面带有医疗与人道援助水晶标志的旗帜."
 	icon_state = "medical_flag_crystal"
 
 /obj/structure/sign/flag/japanese
-	name = "Imperial Japanese flag"
-	desc = "A flag with the imperial Japanese rising sun."
+	name = "大日本帝国旗帜"
+	desc = "一面带有日本帝国旭日图案的旗帜."
 	icon_state = "flag_japan_empire"
 
 /obj/structure/sign/flag/japanese/modern
-	name = "Japanese flag"
-	desc = "A flag with the Japanese rising sun."
+	name = "日本旗帜"
+	desc = "一面带有日本旭日图案的旗帜."
 	icon_state = "flag_japan"
 
 /obj/structure/sign/flag/chinese
-	name = "Republic of China flag"
-	desc = "A flag with the republic of China design."
+	name = "中华民国旗帜"
+	desc = "一面带有中华民国图案的旗帜."
 	icon_state = "flag_china"
 /obj/structure/sign/flag/chinese/prc
-	name = "People's Republic of China flag"
-	desc = "A flag with the PRC design."
+	name = "中华人民共和国旗帜"
+	desc = "一面带有中华人民共和国图案的旗帜."
 	icon_state = "flag_chinacommie"
 
 /obj/structure/sign/flag/mongolia
-	name = "Mongolian State flag"
-	desc = "A flag of the state of Mongolia."
+	name = "蒙古国旗帜"
+	desc = "一面蒙古国的旗帜."
 	icon_state = "flag_mongolia"
 
 /obj/structure/sign/flag/mongolia/communist
-	name = "Mongolian People's Republic flag"
-	desc = "A flag of the Mongolian People's Republic."
+	name = "蒙古人民共和国旗帜"
+	desc = "一面蒙古人民共和国的旗帜."
 	icon_state = "flag_mongolia_communist"
 
 /obj/structure/sign/flag/french
-	name = "French flag"
-	desc = "A flag with the tricolour french flag."
+	name = "法国旗帜"
+	desc = "一面三色法国旗帜."
 	icon_state = "flag_france"
 
 /obj/structure/sign/flag/denmark
-	name = "Danish flag"
-	desc = "A flag with the red and white dannebrog."
+	name = "丹麦旗帜"
+	desc = "一面红白相间的丹尼布洛旗帜."
 	icon_state = "flag_denmark"
 
 /obj/structure/sign/flag/german
-	name = "German Empire flag"
-	desc = "A horizontal tricolour flag of the German Empire."
+	name = "德意志帝国旗帜"
+	desc = "一面德意志帝国的横向三色旗."
 	icon_state = "flag_germany"
 
 /obj/structure/sign/flag/german/modern
-	name = "German flag"
-	desc = "A horizontal tricolour flag of the German Republic."
+	name = "德国旗帜"
+	desc = "一面德意志共和国的横向三色旗."
 	icon_state = "flag_germany_republic"
 
 /obj/structure/sign/flag/german/east
-	name = "East German flag"
-	desc = "A horizontal tricolour flag of the German Democratic Republic."
+	name = "东德旗帜"
+	desc = "一面德意志民主共和国的横向三色旗."
 	icon_state = "flag_germany_east"
 
 /obj/structure/sign/flag/uk
-	name = "United Kingdom flag"
-	desc = "A flag of the United Kingdom."
+	name = "英国旗帜"
+	desc = "一面英国的旗帜."
 	icon_state = "flag_uk"
 
 /obj/structure/sign/flag/russia
-	name = "Russian flag"
-	desc = "A flag of Russsia."
+	name = "俄罗斯旗帜"
+	desc = "一面俄罗斯的旗帜."
 	icon_state = "flag_russia"
 
 /obj/structure/sign/flag/russia/empire
-	name = "Russian Empire flag"
-	desc = "A flag of the Russsian Empire."
+	name = "俄罗斯帝国旗帜"
+	desc = "一面俄罗斯帝国的旗帜."
 	icon_state = "flag_russia_empire"
 
 /obj/structure/sign/flag/russia/kornilov
-	name = "Kornilov Shock Regiment flag"
-	desc = "A flag of the infamous regiment of the Volunteer Army."
+	name = "科尔尼洛夫突击团旗帜"
+	desc = "一面志愿军臭名昭著团的旗帜."
 	icon_state = "flag_russia_kornilov"
 
 /obj/structure/sign/flag/russia/navy
-	name = "Russian Navy flag"
-	desc = "A flag of Russsian Navy."
+	name = "俄罗斯海军旗帜"
+	desc = "一面俄罗斯海军的旗帜."
 	icon_state = "flag_russia_andreev"
 
 /obj/structure/sign/flag/russia/rsfsr
-	name = "RSFSR flag"
-	desc = "A flag of the Russian Soviet Federative Socialist Republic."
+	name = "俄罗斯苏维埃联邦社会主义共和国旗帜"
+	desc = "一面俄罗斯苏维埃联邦社会主义共和国的旗帜."
 	icon_state = "flag_rsfsr"
 
 /obj/structure/sign/flag/ukraine
-	name = "Ukrainian flag"
-	desc = "A flag of Ukraine."
+	name = "乌克兰旗帜"
+	desc = "一面乌克兰的旗帜."
 	icon_state = "flag_ukraine"
 
 /obj/structure/sign/flag/ukraine/upa
-	name = "flag of the UPA"
-	desc = "The flag of the Ukrainian Insurgent Army called UPA."
+	name = "乌克兰起义军旗帜"
+	desc = "一面被称为UPA的乌克兰起义军的旗帜."
 	icon_state ="flag_ukraine_upa"
 
 /obj/structure/sign/flag/ukraine/makhno
-	name = "Makhnovsti flag"
-	desc = "A flag of the Revolutionary Insurgent Army of Ukraine. Also known as the Black Army or Makhnovsti."
+	name = "马赫诺运动旗帜"
+	desc = "一面乌克兰革命起义军的旗帜.也被称为黑军或马赫诺运动."
 	icon_state = "flag_makhno"
 
 /obj/structure/sign/flag/doncossack
-	name = "Don Cossack Host flag"
-	desc = "A flag of the Don cossacks."
+	name = "顿河哥萨克军旗帜"
+	desc = "一面顿河哥萨克的旗帜."
 	icon_state = "flag_doncossack"
 
 /obj/structure/sign/flag/terekcossack
-	name = "Terek Cossack Host flag"
-	desc = "A flag of the Terek cossacks."
+	name = "捷列克哥萨克军旗帜"
+	desc = "一面捷列克哥萨克的旗帜."
 	icon_state = "flag_terekcossack"
 
 /obj/structure/sign/flag/poland
-	name = "Polish flag"
-	desc = "A flag of Poland."
+	name = "波兰旗帜"
+	desc = "一面波兰的旗帜."
 	icon_state = "flag_poland"
 
 /obj/structure/sign/flag/ukraine/azov
-	name = "flag of the Azov regiment"
-	desc = "The flag of the infamous Azov regiment of the Ukrainian National Guard."
+	name = "亚速团旗帜"
+	desc = "乌克兰国民警卫队臭名昭著的亚速团旗帜."
 	icon_state ="flag_ukraine_azov"
 
 /obj/structure/sign/flag/ukraine/rightsector
-	name = "flag of the Right Sector"
-	desc = "The flag of the Ukrainian far-right paramilitary movement."
+	name = "右区旗帜"
+	desc = "乌克兰极右翼准军事运动的旗帜."
 	icon_state ="flag_ukraine_rightsector"
 
 /obj/structure/sign/flag/ukraine/dnr
-	name = "flag of the Donetsk People's Republic"
-	desc = "The flag of the self-proclaimed state of the Donetsk People's Republic"
+	name = "顿涅茨克人民共和国旗帜"
+	desc = "自行宣布成立的顿涅茨克人民共和国旗帜"
 	icon_state = "flag_ukraine_dnr"
 
 /obj/structure/sign/flag/ukraine/lnr
-	name = "flag of the Luhansk People's Republic"
-	desc = "The flag of the self-proclaimed state of the Luhansk People's Republic"
+	name = "卢甘斯克人民共和国旗帜"
+	desc = "自行宣布成立的卢甘斯克人民共和国旗帜"
 	icon_state = "flag_ukraine_lnr"
 
 /obj/structure/sign/flag/ukraine/afu
-	name = "AFU flag"
-	desc = "The flag of the Armed Forces of Ukraine."
+	name = "乌克兰武装部队旗帜"
+	desc = "乌克兰武装部队的旗帜."
 	icon_state ="flag_ukraine_vsu"
 
 /obj/structure/sign/flag/vietnam
-	name = "North Vietnam flag"
-	desc = "The North Vietnamese flag."
+	name = "北越旗帜"
+	desc = "北越旗帜."
 	icon_state = "flag_vietnam"
 
 /obj/structure/sign/flag/vietcong
-	name = "Viet Cong flag"
-	desc = "The blue and red flag of the Viet Cong forces."
+	name = "越共旗帜"
+	desc = "越共部队的蓝红旗帜."
 	icon_state = "flag_vietcong"
 
 /obj/structure/sign/flag/usa
-	name = "USA flag"
-	desc = "The star-spangled banner."
+	name = "美国旗帜"
+	desc = "星条旗."
 	icon_state = "flag_usa"
 
 /obj/structure/sign/flag/usa_union
-	name = "Union flag"
-	desc = "The red, white and blue flag flying above ranks of blue-clad troops."
+	name = "联邦旗帜"
+	desc = "飘扬在蓝衣军队上方的红白蓝旗帜."
 	icon_state = "flag_union"
 
 /obj/structure/sign/flag/usa_confed
-	name = "Confederate flag"
-	desc = "The flag of the Confederate States."
+	name = "邦联旗帜"
+	desc = "邦联国的旗帜."
 	icon_state = "flag_confederate"
 
 /obj/structure/sign/flag/texas
-	name = "Texan flag"
-	desc = "The flag of the state of Texas."
+	name = "德克萨斯旗帜"
+	desc = "德克萨斯州的旗帜."
 	icon_state = "flag_texas"
 
 /obj/structure/sign/flag/sov
-	name = "Soviet Union flag"
-	desc = "The red flag of the Soviet Union."
+	name = "苏联旗帜"
+	desc = "苏联的红旗."
 	icon_state = "flag_sov"
 
 /obj/structure/sign/flag/sov/navy
-	name = "Soviet Navy flag"
-	desc = "The flag of the naval service branch of the Soviet Armed Forces."
+	name = "苏联海军旗帜"
+	desc = "苏联武装力量海军军种的旗帜."
 	icon_state = "flag_sovfleet"
 
 /obj/structure/sign/flag/sov/vdv
-	name = "Soviet VDV flag"
-	desc = "The flag of the Soviet Airborne Forces."
+	name = "苏联空降军旗帜"
+	desc = "苏联空降军的旗帜."
 	icon_state = "flag_vdv"
 
 /obj/structure/sign/flag/sov/air
-	name = "Soviet Air Forces flag"
-	desc = "The flag of the Soviet Air Forces."
+	name = "苏联空军旗帜"
+	desc = "苏联空军的旗帜."
 	icon_state = "flag_sovair"
 
 /obj/structure/sign/flag/sov/border
-	name = "Soviet Border Troops flag"
-	desc = "The flag of the Soviet Border Troops."
+	name = "苏联边防军旗帜"
+	desc = "苏联边防军的旗帜."
 	icon_state = "flag_sovborder"
 
 /obj/structure/sign/flag/nazi
-	name = "Third Reich flag"
-	desc = "The red, white and black flag of the Third Reich."
+	name = "第三帝国旗帜"
+	desc = "第三帝国的红白黑旗帜."
 	icon_state = "flag_nazi"
 
 /obj/structure/sign/flag/israel
-	name = "Israel flag"
-	desc = "The white and blue flag of Israel, with the 6 pointed star in the middle."
+	name = "以色列旗帜"
+	desc = "以色列的白蓝旗帜, 中间有六角星."
 	icon_state = "flag_israel"
 
 /obj/structure/sign/flag/un
-	name = "UN flag"
-	desc = "The flag of the United Nations."
+	name = "联合国旗帜"
+	desc = "联合国的旗帜."
 	icon_state = "flag_un"
 
 /obj/structure/sign/flag/dutch
-	name = "Dutch flag"
-	desc = "The flag of Netherlands."
+	name = "荷兰旗帜"
+	desc = "荷兰的旗帜."
 	icon_state = "flag_netherlands"
 
 /obj/structure/sign/flag/dutch_old
-	name = "Prince's flag"
-	desc = "The Dutch flag."
+	name = "亲王旗"
+	desc = "荷兰旗帜."
 	icon_state = "flag_netherlands_old"
 
 /obj/structure/sign/flag/chetnik
-	name = "Chetnik flag"
-	desc = "A Chetnik flag."
+	name = "切特尼克旗帜"
+	desc = "切特尼克旗帜."
 	icon_state = "flag_chetnik"
 
 /obj/structure/sign/flag/yugoslavia
-	name = "Yugoslavian flag"
-	desc = "The flag of Yugoslavia."
+	name = "南斯拉夫旗帜"
+	desc = "南斯拉夫的旗帜."
 	icon_state = "flag_yugo"
 
 /obj/structure/sign/flag/yugoslavia/partisan
-	name = "Yugoslavian flag"
-	desc = "The flag of Yugoslavian partisans."
+	name = "南斯拉夫旗帜"
+	desc = "南斯拉夫游击队的旗帜."
 	icon_state = "flag_yugopart"
 
 /obj/structure/sign/flag/gns
-	name = "GNS flag"
-	desc = "The flag of the Goverment of National Salvation."
+	name = "救国政府旗帜"
+	desc = "救国政府的旗帜."
 	icon_state = "flag_gns"
 
 /obj/structure/sign/flag/ssg
-	name = "SSG flag"
-	desc = "The flag of the Serbian State Guard."
+	name = "塞尔维亚国家卫队旗帜"
+	desc = "塞尔维亚国家卫队的旗帜."
 	icon_state = "flag_ssg"
 
 /obj/structure/sign/flag/australia
-	name = "Australian flag"
-	desc = "The flag of Australia."
+	name = "澳大利亚旗帜"
+	desc = "澳大利亚的旗帜."
 	icon_state = "flag_australia"
 
 /obj/structure/sign/flag/canada
-	name = "Canadian flag"
-	desc = "The flag of Canada."
+	name = "加拿大旗帜"
+	desc = "加拿大的旗帜."
 	icon_state = "flag_canada"
 
 /obj/structure/sign/flag/hezbollah
-	name = "Hezbollah flag"
-	desc = "The yellow and green flag of the Shia Hezbollah organization."
+	name = "真主党旗帜"
+	desc = "什叶派真主党组织的黄绿旗帜."
 	icon_state = "flag_hezbollah"
 
 /obj/structure/sign/flag/philippine
-	name = "Filipino flag"
-	desc = "The flag of the Philippines."
+	name = "菲律宾旗帜"
+	desc = "菲律宾的旗帜."
 	icon_state = "flag_fp"
 
 /obj/structure/sign/flag/philippine_war
-	name = "Filipino flag"
-	desc = "The flag of the Philippines. Flipped for wartime."
+	name = "菲律宾旗帜"
+	desc = "菲律宾的旗帜. 战时翻转."
 	icon_state = "flag_fp_war"
 
 /obj/structure/sign/flag/pirate
-	name = "Pirate flag"
-	desc = "The black pirate flag, with a skull in the middle."
+	name = "海盗旗"
+	desc = "黑色海盗旗, 中间有骷髅."
 	icon_state = "pirate"
 
 /obj/structure/sign/flag/firstcav
-	name = "1st Cavalry Division flag"
-	desc = "Flag of the United States Army 1st Cavalry Division."
+	name = "第1骑兵师旗帜"
+	desc = "美国陆军第1骑兵师的旗帜."
 	icon_state = "flag_1stcav"
 
 /obj/structure/sign/flag/cuba
-	name = "Cuban flag"
-	desc = "The Cuban flag."
+	name = "古巴旗帜"
+	desc = "古巴的旗帜."
 	icon_state = "flag_cuba"
 
 /obj/structure/sign/flag/colombia
-	name = "Colombian flag"
-	desc = "The flag of Colombia."
+	name = "哥伦比亚旗帜"
+	desc = "哥伦比亚的旗帜."
 	icon_state = "flag_colombia"
 
 /obj/structure/sign/flag/colombia/farc
-	name = "FARC flag"
-	desc = "The flag of the Revolutionary Armed Forces of Columbia."
+	name = "哥伦比亚革命武装力量旗帜"
+	desc = "哥伦比亚革命武装力量的旗帜."
 	icon_state = "flag_colombia_farc"
 
 /obj/structure/sign/flag/mexico
-	name = "Mexican flag"
-	desc = "The flag of Mexico."
+	name = "墨西哥旗帜"
+	desc = "墨西哥的旗帜."
 	icon_state = "flag_mexico"
 
 /obj/structure/sign/flag/brazil
-	name = "Brazilian flag"
-	desc = "The flag of Brazil."
+	name = "巴西旗帜"
+	desc = "巴西国旗."
 	icon_state = "flag_brazil"
 
 /obj/structure/sign/flag/brazil/empire
-	name = "Empire of Brazil flag"
-	desc = "The flag of the Empire of Brazil."
+	name = "巴西帝国国旗"
+	desc = "巴西帝国国旗."
 	icon_state = "flag_brazil_empire"
 
 /obj/structure/sign/flag/paraguay
-	name = "Paraguayan flag"
-	desc = "The flag of Paraguay."
+	name = "巴拉圭国旗"
+	desc = "巴拉圭国旗."
 	icon_state = "flag_paraguay"
 
 /obj/structure/sign/flag/argentina
-	name = "Argentinian flag"
-	desc = "The flag of Argentina."
+	name = "阿根廷国旗"
+	desc = "阿根廷国旗."
 	icon_state = "flag_argentina"
 
 /obj/structure/sign/flag/venezuela
-	name = "Venezuelan flag"
-	desc = "The flag of Venezuela."
+	name = "委内瑞拉国旗"
+	desc = "委内瑞拉国旗."
 	icon_state = "flag_venezuela"
 
 /obj/structure/sign/flag/peru
-	name = "Peruvian flag"
-	desc = "The flag of Peru."
+	name = "秘鲁国旗"
+	desc = "秘鲁国旗."
 	icon_state = "flag_peru"
 
 /obj/structure/sign/flag/bolivia
-	name = "Bolivian flag"
-	desc = "The flag of Bolivia."
+	name = "玻利维亚国旗"
+	desc = "玻利维亚国旗."
 	icon_state = "flag_bolivia"
 
 /obj/structure/sign/flag/chile
-	name = "Chilean flag"
-	desc = "The flag of Chile."
+	name = "智利国旗"
+	desc = "智利国旗."
 	icon_state = "flag_chile"
 
 /obj/structure/sign/flag/afghan/dra
-	name = "DRA flag"
-	desc = "The Democratic Republic of Afghanistan flag."
+	name = "阿富汗民主共和国国旗"
+	desc = "阿富汗民主共和国国旗."
 	icon_state = "flag_dra"
 
 /obj/structure/sign/flag/iran
-	name = "Iranian flag"
-	desc = "The Iranian flag."
+	name = "伊朗国旗"
+	desc = "伊朗国旗."
 	icon_state = "flag_iran"
 
 /obj/structure/sign/flag/iraq
-	name = "Iraqui flag"
-	desc = "The flag of Iraq."
+	name = "伊拉克国旗"
+	desc = "伊拉克国旗."
 	icon_state = "flag_iraq"
 
 /obj/structure/sign/flag/syria
-	name = "Syrian Arab Republic flag"
-	desc = "The flag of the Syrian Arab Republic."
+	name = "阿拉伯叙利亚共和国国旗"
+	desc = "阿拉伯叙利亚共和国国旗."
 	icon_state = "flag_syria"
 
 /obj/structure/sign/flag/syria/fsa
-	name = "Free Syrian Army flag"
-	desc = "The flag of the Free Syrian Army."
+	name = "自由叙利亚军国旗"
+	desc = "自由叙利亚军国旗."
 	icon_state = "flag_syria_fsa"
 
 /obj/structure/sign/flag/syria/ssg
-	name = "Syrian Salvation Goverment flag"
-	desc = "The flag of the Syrian Salvation Goverment."
+	name = "叙利亚救国政府国旗"
+	desc = "叙利亚救国政府国旗."
 	icon_state = "flag_syria_sal"
 
 /obj/structure/sign/flag/fsa
-	name = "FSA flag"
-	desc = "The flag of the Free Syrian Army."
+	name = "自由叙利亚军国旗"
+	desc = "自由叙利亚军国旗."
 	icon_state = "flag_syria_fsa"
 
 /obj/structure/sign/flag/turkey
-	name = "Turkish flag"
-	desc = "The flag of Turkey."
+	name = "土耳其国旗"
+	desc = "土耳其国旗."
 	icon_state = "flag_turkey"
 
 /obj/structure/sign/flag/kurdistan
-	name = "Kurdish flag"
-	desc = "The flag of Kurdistan."
+	name = "库尔德斯坦国旗"
+	desc = "库尔德斯坦国旗."
 	icon_state = "flag_kurdistan"
 
 /obj/structure/sign/flag/georgia
-	name = "Georgian flag"
-	desc = "The flag of Georgia."
+	name = "格鲁吉亚国旗"
+	desc = "格鲁吉亚国旗."
 	icon_state = "flag_georgia"
 
 /obj/structure/sign/flag/georgia/old
-	name = "Georgian flag"
-	desc = "The flag of Georgia. Used from 1990 to 2004."
+	name = "格鲁吉亚国旗"
+	desc = "格鲁吉亚国旗. 1990年至2004年使用."
 	icon_state = "flag_georgia_old"
 
 /obj/structure/sign/flag/india
-	name = "Indian flag"
-	desc = "The flag of India."
+	name = "印度国旗"
+	desc = "印度国旗."
 	icon_state = "flag_india"
 
 /obj/structure/sign/flag/pakistan
-	name = "Pakistani flag"
-	desc = "The flag of Pakistan."
+	name = "巴基斯坦国旗"
+	desc = "巴基斯坦国旗."
 	icon_state = "flag_pakistan"
 
 /obj/structure/sign/flag/italy
-	name = "Italian flag"
-	desc = "The Italian flag."
+	name = "意大利国旗"
+	desc = "意大利国旗."
 	icon_state = "flag_italy"
 
 /obj/structure/sign/flag/finland
-	name = "Finnish flag"
-	desc = "The flag of Finland."
+	name = "芬兰国旗"
+	desc = "芬兰国旗."
 	icon_state = "flag_finland"
 
 /obj/structure/sign/flag/nigeria
-	name = "Nigerian flag"
-	desc = "The flag of Nigeria."
+	name = "尼日利亚国旗"
+	desc = "尼日利亚国旗."
 	icon_state = "flag_nigeria"
 
 /obj/structure/sign/flag/ethiopia
-	name = "Ethiopian flag"
-	desc = "The flag of Ethiopia."
+	name = "埃塞俄比亚国旗"
+	desc = "埃塞俄比亚国旗."
 	icon_state = "flag_ethiopia"
 
 /obj/structure/sign/flag/armenia
-	name = "Armenian flag"
-	desc = "The flag of Armenia."
+	name = "亚美尼亚国旗"
+	desc = "亚美尼亚国旗."
 	icon_state = "flag_armenia"
 
 /obj/structure/sign/flag/azerbaijan
-	name = "Azerbaijani flag"
-	desc = "The flag of the Republic of Azerbaijan."
+	name = "阿塞拜疆国旗"
+	desc = "阿塞拜疆共和国国旗."
 	icon_state = "flag_azerbaijan"
 
 /obj/structure/sign/flag/bosnia
-	name = "Bosnian flag"
-	desc = "The flag of Bosnia."
+	name = "波斯尼亚国旗"
+	desc = "波斯尼亚国旗."
 	icon_state = "flag_bosnia"
 
 /obj/structure/sign/flag/kosovo
-	name = "Kosovo flag"
-	desc = "The flag of Kosovo."
+	name = "科索沃国旗"
+	desc = "科索沃国旗."
 	icon_state = "flag_kosovo"
 
 /obj/structure/sign/flag/albania
-	name = "Albanian flag"
-	desc = "The flag of Albania."
+	name = "阿尔巴尼亚国旗"
+	desc = "阿尔巴尼亚国旗."
 	icon_state = "flag_albania"
 
 /obj/structure/sign/flag/spain
-	name = "Spanish flag"
-	desc = "The flag of Spain."
+	name = "西班牙国旗"
+	desc = "西班牙国旗."
 	icon_state = "flag_spain"
 
 /obj/structure/sign/flag/spain/nationalist
-	name = "Spanish Nationalist flag"
-	desc = "The flag of Nationalist Spain."
+	name = "西班牙民族主义国旗"
+	desc = "西班牙民族主义国旗."
 	icon_state = "flag_spainn"
 
 /obj/structure/sign/flag/serbia
-	name = "Serbian flag"
-	desc = "The flag of Serbia."
+	name = "塞尔维亚国旗"
+	desc = "塞尔维亚国旗."
 	icon_state = "flag_serbia"
 
 /obj/structure/sign/flag/romania
-	name = "Romanian flag"
-	desc = "The flag of Romania."
+	name = "罗马尼亚国旗"
+	desc = "罗马尼亚国旗."
 	icon_state = "flag_romania"
 
 /obj/structure/sign/flag/romania/socialist
-	name = "RSR flag"
-	desc = "The flag of the Socialist Republic of Romania."
+	name = "罗马尼亚社会主义共和国国旗"
+	desc = "罗马尼亚社会主义共和国国旗."
 	icon_state = "flag_romania_soc"
 
 /obj/structure/sign/flag/moldova
-	name = "Moldovan flag"
-	desc = "The flag of the Republic of Moldova."
+	name = "摩尔多瓦国旗"
+	desc = "摩尔多瓦共和国国旗."
 	icon_state = "flag_moldova"
 
 /obj/structure/sign/flag/moldova/transnistria
-	name = "Transnistrian flag"
-	desc = "The flag of the Pridnestrovian Moldavian Republic."
+	name = "德涅斯特河沿岸国旗"
+	desc = "德涅斯特河沿岸摩尔达维亚共和国国旗."
 	icon_state = "flag_transnistria"
 
 /obj/structure/sign/flag/czech
-	name = "Czechoslovakian flag"
-	desc = "The flag of Czechoslovakia."
+	name = "捷克斯洛伐克国旗"
+	desc = "捷克斯洛伐克国旗."
 	icon_state = "flag_czech"
 
 /obj/structure/sign/flag/hungary
-	name = "Hungarian flag"
-	desc = "The flag of Hungary."
+	name = "匈牙利国旗"
+	desc = "匈牙利国旗."
 	icon_state = "flag_hungary"
 
 /obj/structure/sign/flag/hungary/sov
-	name = "Hungarian People's Republic flag"
-	desc = "The flag of the Hungarian People's Republic."
+	name = "匈牙利人民共和国国旗"
+	desc = "匈牙利人民共和国国旗."
 	icon_state = "flag_hungary_sov"
 
 /obj/structure/sign/flag/hungary/old
-	desc = "The flag of Hungary with the small coat of arms."
+	desc = "带有小国徽的匈牙利国旗."
 	icon_state = "flag_hungary_kingdom"
 
 /obj/structure/sign/flag/finland
-	name = "Finnish flag"
-	desc = "The flag of Finland."
+	name = "芬兰国旗"
+	desc = "芬兰国旗."
 	icon_state = "flag_finland"
 
 /obj/structure/sign/flag/wales
-	name = "Wales flag"
-	desc = "The flag of Wales."
+	name = "威尔士国旗"
+	desc = "威尔士国旗."
 	icon_state = "flag_wales"
 
 /obj/structure/sign/flag/warpact
-	name = "WARPACT flag"
-	desc = "The flag of the Wasrsaw Pact."
+	name = "华约国旗"
+	desc = "华沙条约组织国旗."
 	icon_state = "flag_warpact"
 
 /obj/structure/sign/flag/warpact/alt
 	icon_state = "flag_warpact2"
 
 /obj/structure/sign/flag/nato
-	name = "NATO flag"
-	desc = "The flag of North Atlantic Treaty Organization."
+	name = "北约国旗"
+	desc = "北大西洋公约组织国旗."
 	icon_state = "flag_nato"
 
 /obj/structure/sign/flag/redmenia
-	name = "Redmenian flag"
-	desc = "The flag of the Empire of Redmenia."
+	name = "雷德梅尼亚国旗"
+	desc = "雷德梅尼亚帝国国旗."
 	icon_state = "flag_redmenia"
 
 /obj/structure/sign/flag/blugoslavia
-	name = "Blugoslavian flag"
-	desc = "The flag of the Republic of Blugoslavia."
+	name = "布鲁戈斯拉维亚国旗"
+	desc = "布鲁戈斯拉维亚共和国国旗."
 	icon_state = "flag_blugoslavia"
 
 /obj/structure/sign/flag/blugoslavia/old
-	name = "old Blugoslavian flag"
-	desc = "The flag of the old Republic of Blugoslavia."
+	name = "旧布鲁戈斯拉维亚国旗"
+	desc = "旧布鲁戈斯拉维亚共和国国旗."
 	icon_state = "flag_blugoslavia-old"
 
 /obj/structure/sign/flag/arstotzka
-	name = "Arstotzkan flag"
-	desc = "Glory to Arstotzka!"
+	name = "阿尔斯托兹卡国旗"
+	desc = "阿尔斯托兹卡万岁!"
 	icon_state = "flag_arstotzka"
 
 /obj/structure/sign/flag/custom
-	name = "flag"
-	desc = "A flag."
+	name = "旗帜"
+	desc = "一面旗帜."
 	icon_state = "f_white"
 
 /obj/structure/sign/logo/red
-	name = "Rednikov Industries Logo"
-	desc = "A sign with the logo of Rednikov Industries"
+	name = "雷德尼科夫工业标志"
+	desc = "带有雷德尼科夫工业标志的标牌"
 	icon_state = "red_logo"
 /obj/structure/sign/logo/yellow
-	name = "Goldstein Solutions"
-	desc = "A sign with the logo of Goldstein Solutions"
+	name = "戈德斯坦解决方案"
+	desc = "带有戈德斯坦解决方案标志的标牌"
 	icon_state = "yellow_logo"
 /obj/structure/sign/logo/blue
-	name = "Giovanni Blu Stocks"
-	desc = "A sign with the logo of Giovanni Blu Stocks"
+	name = "乔瓦尼·布鲁股票"
+	desc = "带有乔瓦尼·布鲁股票标志的标牌"
 	icon_state = "blue_logo"
 /obj/structure/sign/logo/green
-	name = "Kogama Kraftsmen"
-	desc = "A sign with the logo of Kogama Kraftsmen Traders"
+	name = "科加马工匠"
+	desc = "带有科加马工匠贸易商标志的标牌"
 	icon_state = "green_logo"
 
 /obj/item/flagmaker
-	name = "custom flag maker"
-	desc = "A white cotton sheet and some colored ink."
+	name = "自定义旗帜制作器"
+	desc = "一块白棉布和一些彩色墨水."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "flagmaker"
 	var/new_icon_state = "White"

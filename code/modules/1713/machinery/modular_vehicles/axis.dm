@@ -329,7 +329,7 @@ var/global/list/tank_names_nato = list("Alpha", "Bravo", "Charlie", "Delta", "Ec
 /obj/structure/vehicleparts/axis/MouseDrop(var/obj/structure/vehicleparts/frame/VP)
 	if (istype(VP, /obj/structure/vehicleparts/frame) && !VP.axis)
 		playsound(loc, 'sound/effects/lever.ogg',100, TRUE)
-		to_chat(usr, "You connect \the [src] to \the [VP].")
+		to_chat(usr, "你将\the [src]连接到\the [VP].")
 		VP.axis = src
 		VP.anchored = TRUE
 		components += VP

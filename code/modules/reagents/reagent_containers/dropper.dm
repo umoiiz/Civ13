@@ -2,8 +2,8 @@
 /// Droppers.
 ////////////////////////////////////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/dropper
-	name = "Dropper"
-	desc = "A dropper. Transfers 5 units at a time."
+	name = "滴管"
+	desc = "一支滴管.每次转移5单位."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dropper0"
 	amount_per_transfer_from_this = 5
@@ -30,7 +30,7 @@
 			if (ismob(target))
 
 				var/time = 20 //2/3rds the time of a syringe
-				user.visible_message(SPAN_WARNING("[user] is trying to squirt something into [target]'s eyes!"), SPAN_WARNING("You start trying to squirt something into [target]'s eyes"), "You hear the squeezing and squirting of liquid.")
+				user.visible_message(SPAN_WARNING("[user] is trying to squirt something into [target]'s eyes!"), SPAN_WARNING("You start trying to squirt something into [target]'s eyes"), "你听到液体被挤压和喷出的声音.")
 
 				if (!do_mob(user, target, time))
 					return
@@ -48,7 +48,7 @@
 
 					if (safe_thing)
 						trans = reagents.trans_to_obj(safe_thing, amount_per_transfer_from_this)
-						user.visible_message(SPAN_WARNING("[user] tries to squirt something into [target]'s eyes, but fails!"), SPAN_WARNING("You fail the squirt and waste [trans] units of the solution."), "You hear the squeezing and squirting of liquid.")
+						user.visible_message(SPAN_WARNING("[user] tries to squirt something into [target]'s eyes, but fails!"), SPAN_WARNING("You fail the squirt and waste [trans] units of the solution."), "你听到液体被挤压和喷出的声音.")
 						return
 
 				var/mob/living/M = target
@@ -58,7 +58,7 @@
 				msg_admin_attack("[user.name] ([user.ckey]) squirted [M.name] ([M.key]) with [name]. Reagents: [contained] (INTENT: [uppertext(user.a_intent)]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)", user.ckey, M.key)
 
 				trans = reagents.trans_to_mob(target, reagents.total_volume, CHEM_INGEST)
-				user.visible_message(SPAN_WARNING("[user] squirts something into [target]'s eyes!"), SPAN_WARNING("You squirt and transfer [trans] units of the solution."), "You hear the squeezing and squirting of liquid.")
+				user.visible_message(SPAN_WARNING("[user] squirts something into [target]'s eyes!"), SPAN_WARNING("You squirt and transfer [trans] units of the solution."), "你听到液体被挤压和喷出的声音.")
 
 
 				return
@@ -93,8 +93,8 @@
 			icon_state = "dropper0"
 
 /obj/item/weapon/reagent_containers/dropper/industrial
-	name = "Industrial Dropper"
-	desc = "A larger dropper. Transfers 10 units."
+	name = "工业滴管"
+	desc = "一支更大的滴管.转移10单位."
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(1,2,3,4,5,6,7,8,9,10)
 	volume = 10

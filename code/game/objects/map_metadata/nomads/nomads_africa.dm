@@ -19,7 +19,7 @@
 /obj/map_metadata/nomads/africa/proc/do_eruption()
 	if (eruptions_enabled)
 		if (clients.len>5)
-			to_chat(world, "<big><b>The mountain rumbles, while clouds of smoke emerge from the top... An eruption might be coming...</b></big>")
+			to_chat(world, "<big><b>山体轰鸣, 浓烟从山顶涌出... 一场喷发可能即将来临...</b></big>")
 			spawn(rand(4800,6000))
 				if (clients.len>5)
 					volcano_eruption()
@@ -32,5 +32,5 @@
 /obj/map_metadata/nomads/africa/volcano_eruption()
 	for(var/turf/wall/rockwall/lavaspawner/L in world)
 		L.start_lava_flow()
-	to_chat(world, "<font color='red'><big><b>The volcano erupts, with lava flowing down the mountain!</b></big></font>")
+	to_chat(world, "<font color='red'><big><b>火山喷发了, 熔岩顺着山体流下!</b></big></font>")
 	return TRUE

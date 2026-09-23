@@ -10,8 +10,8 @@
  * Pens
  */
 /obj/item/weapon/pen
-	desc = "It's a normal black ink pen."
-	name = "pen"
+	desc = "这是一支普通的黑色墨水笔。"
+	name = "笔"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen" // feather
 	item_state = "pen"
@@ -34,27 +34,27 @@
 		icon_state = "pennew" // from feather to modern black-point plastic pen.
 
 /obj/item/weapon/pen/pencil
-	name = "pencil"
-	desc = "A normal graphite pencil."
+	name = "铅笔"
+	desc = "一支普通的石墨铅笔。"
 	icon_state = "pencil"
 
 /obj/item/weapon/pen/fancy
-	name = "expensive pen"
-	desc = "A pen used by the boss."
+	name = "昂贵的笔"
+	desc = "老板使用的笔。"
 	icon_state = "fancypen"
 
 /obj/item/weapon/pen/blue
-	desc = "It's a normal blue ink pen."
+	desc = "这是一支普通的蓝色墨水笔。"
 	icon_state = "pen"
 	colour = COLOR_BLUE
 
 /obj/item/weapon/pen/red
-	desc = "It's a normal red ink pen."
+	desc = "这是一支普通的红色墨水笔。"
 	icon_state = "pen"
 	colour = COLOR_RED
 
 /obj/item/weapon/pen/multi
-	desc = "It's a pen with multiple colors of ink!"
+	desc = "这是一支有多种颜色墨水的笔!"
 	var/selectedColor = 1 // starts off with the color "black", index 1
 	var/colors = list("black","blue","red")
 
@@ -75,7 +75,7 @@
 	to_chat(user, SPAN_NOTICE("\The [src] will now write in [colour] ink."))
 
 /obj/item/weapon/pen/invisible
-	desc = "It's an invisble pen marker."
+	desc = "这是一支隐形笔标记笔。"
 	icon_state = "pen"
 	colour = COLOR_WHITE
 
@@ -121,7 +121,7 @@
  * Sleepy Pens
  */
 /obj/item/weapon/pen/reagent/sleepy
-	desc = "It's a black ink pen with a sharp point."
+	desc = "这是一支笔尖锋利的黑色墨水笔。"
 
 /obj/item/weapon/pen/reagent/sleepy/New()
 	..()
@@ -199,8 +199,8 @@
  */
 
 /obj/item/weapon/pen/crayon
-	name = "crayon"
-	desc = "A colourful crayon. Please refrain from eating it or putting it in your nose."
+	name = "蜡笔"
+	desc = "一支色彩鲜艳的蜡笔。请不要吃它或把它塞进鼻子里。"
 	icon = 'icons/obj/crayons.dmi'
 	icon_state = "crayonred"
 	w_class = ITEM_SIZE_TINY
@@ -211,5 +211,5 @@
 	var/colourName = "red" //for updateIcon purposes
 
 	New()
-		name = "[colourName] crayon"
+		name = "[colourName]蜡笔"
 		..()

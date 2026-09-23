@@ -14,8 +14,8 @@
 // ============================================================
 
 /obj/structure/research_bench/adminbench
-	name = "admin research bench"
-	desc = "DEBUG ITEM. Instantly completes whatever it's assigned to research. Not obtainable through normal play."
+	name = "管理员研究台"
+	desc = "调试物品。会立即完成分配给它的任何研究。无法通过正常游戏获得。"
 	color = "#ff3333" // visually obvious it isn't a normal bench
 	tier = MAX_BENCH_TIER // skip the tier-upgrade grind too -- it can research anything immediately
 

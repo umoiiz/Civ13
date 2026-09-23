@@ -751,7 +751,7 @@
 					if (H.a_intent == I_HARM)
 						for (var/mob/living/L in mob.loc)
 							if (L.lying && L != H && !istype(L, /mob/living/simple_animal/mosquito)) // you could step on yourself, this fixes it - Kachnov
-								H.visible_message("<span class = 'danger'>[H] steps on [L]!</span>")
+								H.visible_message("<span class = 'danger'>[H] 踩在 [L] 身上!</span>")
 								playsound(mob.loc, 'sound/effects/gore/fallsmash.ogg', 35, TRUE)
 								L.adjustBruteLoss(rand(0.2,1))
 								if (ishuman(L))
@@ -765,7 +765,7 @@
 					else
 						for (var/mob/living/L in mob.loc)
 							if (L.lying && L != H)
-								H.visible_message("<span class = 'warning'>[H] steps over \the [L].</span>", "<span class = 'warning'>You step over \the [L].</span>", "You hear a step.")
+								H.visible_message("<span class = 'warning'>[H] 跨过 \the [L].</span>", "<span class = 'warning'>你跨过 \the [L].</span>", "你听到一声脚步.")
 
 			#undef STOMP_TIME
 
@@ -958,7 +958,7 @@
 				H.football.update_movement()
 			for(var/obj/item/vehicleparts/wheel/modular/MW in H)
 				if (MW && MW.control && MW.control.axis && MW.control.axis.reverse && MW.control.axis.currentspeed == 0 && !MW.control.axis.moving)
-					to_chat(H, "You switch into forward.")
+					to_chat(H, "你切换到前进档.")
 					playsound(H.loc, 'sound/effects/lever.ogg',65, TRUE)
 					MW.control.axis.reverse = FALSE
 			for(var/obj/item/turret_controls/C in H)
@@ -1002,7 +1002,7 @@
 				H.football.update_movement()
 			for(var/obj/item/vehicleparts/wheel/modular/MW in H)
 				if (MW && MW.control && MW.control.axis && !MW.control.axis.reverse && MW.control.axis.currentspeed == 0 && !MW.control.axis.moving)
-					to_chat(H, "You switch into reverse.")
+					to_chat(H, "你切换到倒车档.")
 					playsound(H.loc, 'sound/effects/lever.ogg',65, TRUE)
 					MW.control.axis.reverse = TRUE
 			for(var/obj/item/turret_controls/C in H)

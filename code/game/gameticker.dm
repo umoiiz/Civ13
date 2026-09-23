@@ -58,7 +58,7 @@ var/global/datum/lobby_music_player/lobby_music_player = null
 			maytip = TRUE
 
 			to_chat(world, SPAN_NOTICE("<b>Welcome to the pre-game lobby!</b>"))
-			to_chat(world, "The game will start in [pregame_timeleft] seconds.")
+			to_chat(world, "游戏将在[pregame_timeleft]秒后开始.")
 
 			while (current_state == GAME_STATE_PREGAME)
 				for (var/i=0, i<10, i++)
@@ -103,7 +103,7 @@ var/global/datum/lobby_music_player/lobby_music_player = null
 	job_master.ResetOccupations()
 
 	if (!map || !map.can_start() && !admin_started)
-		to_chat(world, "<b>Unable to start the game.</b> Not enough players, [map.required_players] active players needed. Reverting to the pre-game lobby.")
+		to_chat(world, "<b>无法开始游戏.</b>玩家不足,需要[map.required_players]名活跃玩家.正在返回游戏前大厅.")
 		current_state = GAME_STATE_PREGAME
 		job_master.ResetOccupations()
 		return FALSE

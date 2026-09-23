@@ -5,8 +5,8 @@
 ///////////
 
 /obj/structure/easel
-	name = "easel"
-	desc = "Only for the finest of art!"
+	name = "画架"
+	desc = "只为最精美的艺术而设!"
 	icon = 'icons/obj/artstuff.dmi'
 	icon_state = "easel"
 	density = TRUE
@@ -21,7 +21,7 @@
 		painting = C
 		C.forceMove(get_turf(src))
 		C.layer = layer+0.1
-		user.visible_message("<span class='notice'>[user] puts \the [C] on \the [src].</span>","<span class='notice'>You place \the [C] on \the [src].</span>")
+		user.visible_message("<span class='notice'>[user]把\the [C]放在\the [src]上.</span>","<span class='notice'>你把\the [C]放在\the [src]上.</span>")
 	else
 		return ..()
 
@@ -36,8 +36,8 @@
 		painting = null
 
 /obj/item/canvas
-	name = "canvas"
-	desc = "Draw out your soul on this canvas!"
+	name = "画布"
+	desc = "在这块画布上画出你的灵魂!"
 	icon = 'icons/obj/artstuff.dmi'
 	icon_state = "11x11"
 	flammable = TRUE
@@ -206,13 +206,13 @@
 	framed_offset_y = 6
 
 /obj/item/wallframe/painting
-	name = "painting frame"
-	desc = "The perfect showcase for your favorite deathtrap memories."
+	name = "画框"
+	desc = "展示你最爱的死亡陷阱回忆的完美展柜."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "frame-empty"
 /obj/structure/sign/painting
-	name = "Painting"
-	desc = "Art or \"Art\"? You decide."
+	name = "画作"
+	desc = "艺术还是\"艺术\"? 由你决定."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "frame-empty"
 	var/obj/item/canvas/C
@@ -235,7 +235,7 @@
 	if(C)
 		C.forceMove(user.loc)
 		C = null
-		to_chat(user, "<span class='notice'>You remove the painting from the frame.</span>")
+		to_chat(user, "<span class='notice'>你把画作从画框中取出.</span>")
 		update_icon()
 		return TRUE
 
@@ -244,7 +244,7 @@
 	C = new_canvas
 	if(!C.finalized)
 		C.finalize(user)
-	to_chat(user,"<span class='notice'>You frame [C].</span>")
+	to_chat(user,"<span class='notice'>你把[C]装裱起来.</span>")
 	update_icon()
 
 /obj/structure/sign/painting/proc/try_rename(mob/user)

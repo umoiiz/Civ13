@@ -28,7 +28,7 @@ GLOBAL_DATUM_INIT(error_cache, /datum/error_viewer/error_cache, new)
 	if(href_list["viewruntime"])
 		var/datum/error_viewer/error_viewer = locate(href_list["viewruntime"])
 		if(!istype(error_viewer))
-			to_chat(usr, "<span class='warning'>That runtime viewer no longer exists.</span>")
+			to_chat(usr, "<span class='warning'>那个运行时查看器已不复存在.</span>")
 			return
 
 		if(href_list["viewruntime_backto"])

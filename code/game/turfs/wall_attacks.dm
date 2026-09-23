@@ -56,9 +56,9 @@
 		F.try_build(src)
 		return*/
 	if (istype(W, /obj/item/weapon/poster/religious))
-		to_chat(user, "You start placing the [W] on the [src]...")
+		to_chat(user, "你开始把[W]放在[src]上...")
 		if (do_after(user, 70, src))
-			visible_message("[user] places the [W] on the [src].")
+			visible_message("[user]把[W]放在了[src]上.")
 			var/obj/structure/poster/religious/RP = new/obj/structure/poster/religious(get_turf(src))
 			var/obj/item/weapon/poster/religious/P = W
 			RP.religion = P.religion
@@ -69,9 +69,9 @@
 			qdel(W)
 			return
 	if (istype(W, /obj/item/weapon/poster/faction))
-		to_chat(user, "You start placing the [W] on the [src]...")
+		to_chat(user, "你开始把[W]放在[src]上...")
 		if (do_after(user, 70, src))
-			visible_message("[user] places the [W] on the [src].")
+			visible_message("[user]把[W]放在了[src]上.")
 			var/obj/structure/poster/faction/RP = new/obj/structure/poster/faction(get_turf(src))
 			var/obj/item/weapon/poster/faction/P = W
 			RP.faction = P.faction
@@ -89,10 +89,10 @@
 		if (dam_prob < 100 && W.force > (dam_threshhold/10))
 			playsound(src, hitsound, 80, TRUE)
 			if (!prob(dam_prob))
-				visible_message("<span class='danger'>\The [user] attacks \the [src] with \the [W] and it [material.destruction_desc]!</span>")
+				visible_message("<span class='danger'>\The [user]用\the [W]攻击了\the [src],并且它[material.destruction_desc]!</span>")
 				dismantle_wall(1)
 			else
-				visible_message("<span class='danger'>\The [user] attacks \the [src] with \the [W]!</span>")
+				visible_message("<span class='danger'>\The [user]用\the [W]攻击了\the [src]!</span>")
 		else
-			visible_message("<span class='danger'>\The [user] attacks \the [src] with \the [W], but it bounces off!</span>")
+			visible_message("<span class='danger'>\The [user]用\the [W]攻击了\the [src],但被弹开了!</span>")
 		return

@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/pmc
 	name = "PMC"
-	desc = "A heavily armoured PMC unit."
+	desc = "一个重装甲的私人军事承包商单位."
 	icon_state = "pmc"
 	icon_dead = "bandit_dead"
 	response_help = "pushes"

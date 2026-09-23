@@ -35,7 +35,7 @@
 
 /obj/effect/decal/cleanable/graffiti
 	name = "graffiti"
-	desc = "A graffiti made with paint."
+	desc = "一个用油漆制作的涂鸦."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "graffiti1"
 
@@ -45,12 +45,12 @@
 
 /obj/effect/decal/cleanable/graffiti_grove
 	name = "Grove Street graffiti"
-	desc = "A graffiti made with a spraycan."
+	desc = "一个用喷漆罐制作的涂鸦."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "graffiti_grove"
 
 /obj/effect/decal/cleanable/graffiti_ballas
 	name = "Rollin Heights Ballas graffiti"
-	desc = "A graffiti made with a spraycan."
+	desc = "喷漆罐画的涂鸦."
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "graffiti_ballas"

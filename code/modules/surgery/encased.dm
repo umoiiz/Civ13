@@ -39,7 +39,7 @@
 			return
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-		user.visible_message("[user] begins to cut through [target]'s [affected.encased] with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]切开[target]的[affected.encased].", \
 		"You begin to cut through [target]'s [affected.encased] with \the [tool].")
 		target.custom_pain("Something hurts horribly in your [affected.name]!",120)
 		..()
@@ -50,7 +50,7 @@
 			return
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-		user.visible_message("<span class = 'notice'>[user] has cut [target]'s [affected.encased] open with \the [tool].</span>",		\
+		user.visible_message("<span class = 'notice'>[user]用\the [tool]切开了[target]的[affected.encased].</span>",		\
 		"<span class = 'notice'>You have cut [target]'s [affected.encased] open with \the [tool].</span>")
 		affected.open = 2.5
 
@@ -60,7 +60,7 @@
 			return
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-		user.visible_message("<span class = 'red'>[user]'s hand slips, cracking [target]'s [affected.encased] with \the [tool]!</span>" , \
+		user.visible_message("<span class = 'red'>[user]的手滑了,用\the [tool]使[target]的[affected.encased]开裂!</span>" , \
 		"<span class = 'red'>Your hand slips, cracking [target]'s [affected.encased] with \the [tool]!</span>" )
 
 		affected.createwound(CUT, 20)
@@ -186,5 +186,5 @@
 		if (affected.internal_organs && affected.internal_organs.len)
 			if (prob(40))
 				var/obj/item/organ/O = pick(affected.internal_organs) //TODO weight by organ size
-				user.visible_message("<span class='danger'>A wayward piece of [target]'s [affected.encased] pierces \his [O.name]!</span>")
+				user.visible_message("<span class='danger'>一块偏离的[target]的[affected.encased]刺穿了\his [O.name]!</span>")
 				O.bruise()

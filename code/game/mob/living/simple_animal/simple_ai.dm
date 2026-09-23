@@ -124,13 +124,13 @@
 						GT.ChangeTurf(/turf/floor/dirt/jungledirt)
 					else
 						GT.ChangeTurf(/turf/floor/dirt)
-				visible_message("\The [src] eats some grass.")
+				visible_message("\The [src]吃了一些草。")
 				finish_eating(550)
 				return
 		for (var/obj/item/weapon/reagent_containers/food/snacks/grown/wheat/WT in range(2, src))
 			if (prob(30))
 				walk(src, 0)
-				visible_message("\The [src] eats some of the wheat.")
+				visible_message("\The [src]吃了一些小麦。")
 				finish_eating(550)
 				qdel(WT)
 				return
@@ -139,7 +139,7 @@
 		for (var/obj/item/stack/farming/seeds/SD in range(2, src))
 			if (prob(35))
 				walk(src, 0)
-				visible_message("<span class='notice'>\The [src] eats \the [SD]!</span>")
+				visible_message("<span class='notice'>\The [src]吃\the [SD]!</span>")
 				finish_eating(500)
 				if (SD.amount >= 2)
 					SD.amount -= 1
@@ -149,7 +149,7 @@
 		for (var/obj/structure/farming/plant/PL in range(2, src))
 			if (prob(15))
 				walk(src, 0)
-				visible_message("<span class='notice'>\The [src] eats \the [PL]!</span>")
+				visible_message("<span class='notice'>\The [src]吃\the [PL]!</span>")
 				finish_eating(400)
 				qdel(PL)
 				return
@@ -158,7 +158,7 @@
 		for (var/mob/living/ML in range(2, src))
 			if (ML.stat == DEAD && prob(33))
 				walk(src, 0)
-				visible_message("\The [src] bites some meat of \the [ML].")
+				visible_message("\The [src]咬了一些\the [ML]的肉。")
 				finish_eating(400)
 				if (istype(ML, /mob/living/simple_animal))
 					var/mob/living/simple_animal/MLL = ML
@@ -170,7 +170,7 @@
 		for (var/obj/item/weapon/reagent_containers/food/snacks/meat/M in range(2, src))
 			if (prob(33))
 				walk(src, 0)
-				visible_message("\The [src] bites some of \the [M].")
+				visible_message("\The [src]咬了一些\the [M]。")
 				finish_eating(400)
 				qdel(M)
 				return
@@ -187,7 +187,7 @@
 					var/namt = amt-2
 					if (namt <= 0)
 						namt = 1
-					visible_message("<span class='notice'>\The [src] rips \the [ML] apart!</span>")
+					visible_message("<span class='notice'>\The [src]撕开\the [ML]!</span>")
 					simplehunger = min(simplehunger + 400, 1000)
 					if (!istype(ML, /mob/living/simple_animal/crab))
 						if (istype(ML, /mob/living/simple_animal/hostile/human/zombie))
@@ -222,7 +222,7 @@
 		for (var/obj/item/weapon/reagent_containers/food/snacks/FD in range(2, src))
 			if (prob(33) && !istype(FD, /obj/item/weapon/reagent_containers/food/snacks/poo))
 				walk(src, 0)
-				visible_message("\The [src] bites some of \the [FD].")
+				visible_message("\The [src]咬了一些\the [FD]。")
 				finish_eating(400)
 				if (prob(60))
 					qdel(FD)

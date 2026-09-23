@@ -1,6 +1,6 @@
 /obj/item/weapon/grenade
-	name = "grenade"
-	desc = "A hand held grenade, with a 5 second fuse."
+	name = "手榴弹"
+	desc = "一种手持手榴弹,引信为5秒."
 	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "grenade_old"
@@ -19,7 +19,7 @@
 /obj/item/weapon/grenade/examine(mob/user)
 	if (..(user, FALSE))
 		if (det_time > 1)
-			to_chat(user, "The timer is set to [det_time/10] seconds.")
+			to_chat(user, "计时器设定为[det_time/10]秒.")
 			return
 
 
@@ -141,8 +141,8 @@
 	return FALSE
 
 /obj/item/weapon/grenade/old_grenade
-	name = "grenade"
-	desc = "A hand held grenade, with a 5 second fuse."
+	name = "手榴弹"
+	desc = "一种手持手榴弹,引信为5秒."
 	heavy_armor_penetration = 5
 	var/explosion_size = 2
 
@@ -159,8 +159,8 @@
 		qdel(src)
 
 /obj/item/weapon/grenade/bomb
-	name = "gunpowder barrel bomb"
-	desc = "A gunpowder barrel, with a loose gunpowder fuse. Should take about 10 seconds to detonate, but it's not very fiable."
+	name = "火药桶炸弹"
+	desc = "一个火药桶,带有松散的火药引信.大约需要10秒引爆,但不太可靠."
 	icon_state = "bomb"
 	var/explosion_size = 3
 	nothrow = TRUE
@@ -185,8 +185,8 @@
 
 
 /obj/item/weapon/grenade/dynamite
-	name = "empty dynamite stick"
-	desc = "Light it and run."
+	name = "空炸药棒"
+	desc = "点燃它然后跑."
 	icon_state = "dynamite0"
 	det_time = 40
 	explosion_sound = 'sound/weapons/Explosives/Dynamite.ogg'
@@ -236,7 +236,7 @@
 		else
 			R.amount -= 1
 		state = 2
-		to_chat(user, "You attach the wick to \the [src].")
+		to_chat(user, "你将引线连接到\the [src].")
 		name = "dynamite stick"
 		icon_state = "dynamite2"
 		return
@@ -244,7 +244,7 @@
 		var/obj/item/weapon/reagent_containers/RG = W
 		if (RG.reagents.has_reagent("nitroglycerin",2))
 			RG.reagents.remove_reagent("nitroglycerin",2)
-			to_chat(user, "You fill \the [src] with the explosive charge.")
+			to_chat(user, "你将爆炸装药填入\the [src].")
 			state = 1
 			name = "filled dynamite stick"
 			icon_state = "dynamite1"
@@ -260,7 +260,7 @@
 
 /obj/item/weapon/grenade/dynamite/ready
 	state = 2
-	name = "dynamite stick"
+	name = "炸药棒"
 	icon_state = "dynamite2"
 	update_icon()
 
@@ -284,8 +284,8 @@
 		return
 
 /obj/item/weapon/grenade/modern
-	name = "grenade"
-	desc = "A hand held grenade, with a 5 second fuse."
+	name = "手榴弹"
+	desc = "一种手持手榴弹,引信为5秒."
 	var/explosion_size = 2
 	var/fragment_type = /obj/item/projectile/bullet/pellet/fragment
 	var/num_fragments = 30  //total number of fragments produced by the grenade
@@ -325,37 +325,37 @@
 		qdel(src)
 
 /obj/item/weapon/grenade/modern/mills
-	name = "mills bomb no. 5"
-	desc = "A British early 20th century grenade."
+	name = "米尔斯炸弹5号"
+	desc = "一种英国20世纪早期的手榴弹."
 	icon_state = "mills"
 	det_time = 70
 	throw_range = 9
 	explosion_sound = 'sound/weapons/Explosives/FragGrenade.ogg'
 
 /obj/item/weapon/grenade/ww2/mills2
-	name = "mills bomb no. 36M"
-	desc = "A British early 20th century grenade, with a reduced timer to 4 seconds."
+	name = "米尔斯炸弹36M型"
+	desc = "一种英国20世纪早期的手榴弹,引信时间缩短至4秒."
 	icon_state = "mills"
 	det_time = 40
 	throw_range = 9
 
 /obj/item/weapon/grenade/modern/f1
-	name = "F1 grenade"
-	desc = "A French early 20th century grenade, also used by Russia."
+	name = "F1手榴弹"
+	desc = "一种法国20世纪早期的手榴弹,俄罗斯也曾使用."
 	icon_state = "f1"
 	det_time = 40
 	throw_range = 11
 
 /obj/item/weapon/grenade/modern/stg1915
-	name = "M1915 Stielhandgranate"
-	desc = "A German early 20th century design."
+	name = "M1915柄式手榴弹"
+	desc = "一种德国20世纪早期的设计."
 	icon_state = "stgnade"
 	det_time = 45
 	throw_range = 10
 
 /obj/item/weapon/grenade/ww2/stg1924 //offensive grenade with minimal fragmentation
-	name = "M1924 Stielhandgranate"
-	desc = "A German design, to replace the M1915, offensive grenade that produces minimal fragmentation."
+	name = "M1924柄式手榴弹"
+	desc = "一种德国设计,用于取代M1915,进攻型手榴弹,产生极少的破片."
 	icon_state = "stgnade"
 	det_time = 45
 	throw_range = 11
@@ -365,66 +365,66 @@
 	damage_step = 1
 
 /obj/item/weapon/grenade/modern/thermaldetonator
-	name = "Thermal Detonator"
-	desc = "A grenade-like weapon popular among military personnel, criminals, bountyhunters, and mercenaries."
+	name = "热雷管"
+	desc = "一种类似手榴弹的武器,在军人、罪犯、赏金猎人和雇佣兵中很受欢迎."
 	icon_state = "detonator"
 	det_time = 35
 	throw_range = 12
 
 /obj/item/weapon/grenade/modern/t68
-	name = "Type68 grenade"
-	desc = "An advanced grenade modeled after the Type 67 hand grenade used by the Chinese."
+	name = "68式手榴弹"
+	desc = "一种仿制中国67式手榴弹的进阶手榴弹."
 	icon_state = "t68"
 	det_time = 35
 	throw_range = 12
 
 /obj/item/weapon/grenade/ww2/rgd33
-	name = "RGD-33 grenade"
-	desc = "A Soviet fragmentation grenade."
+	name = "RGD-33手榴弹"
+	desc = "一种苏联破片手榴弹."
 	icon_state = "rgd33"
 	det_time = 50
 	throw_range = 11
 
 /obj/item/weapon/grenade/ww2/rg42
-	name = "RG-42 grenade"
-	desc = "A Soviet fragmentation grenade."
+	name = "RG-42手榴弹"
+	desc = "一种苏联破片手榴弹."
 	icon_state = "rg42"
 	det_time = 50
 	throw_range = 12
 
 /obj/item/weapon/grenade/ww2/mk2
-	name = "Mk2 grenade"
-	desc = "An American grenade introduced in 1918."
+	name = "Mk2手榴弹"
+	desc = "一种1918年列装的美国手榴弹."
 	icon_state = "mk2"
 	det_time = 50
 	throw_range = 10
 
 /obj/item/weapon/grenade/ww2/type97
-	name = "Type-97 grenade"
-	desc = "A japanese grenade introduced in the second sino-japanese war. Blows up at 5 seconds."
+	name = "97式手榴弹"
+	desc = "一种在第二次中日战争期间列装的日本手榴弹.5秒后爆炸."
 	icon_state = "type97"
 	det_time = 50
 	throw_range = 12
 
 /obj/item/weapon/grenade/ww2/type91
-	name = "Type-91 grenade"
-	desc = "A japanese grenade introduced in the second sino-japanese war. Blows up at 8 seconds."
+	name = "91式手榴弹"
+	desc = "一种在第二次中日战争期间列装的日本手榴弹.8秒后爆炸."
 	icon_state = "type91"
 	det_time = 80
 	throw_range = 12
 	explosion_sound = 'sound/weapons/Explosives/FragGrenade.ogg'
 
 /obj/item/weapon/grenade/coldwar/m26
-	name = "M26 grenade"
-	desc = "An American grenade introduced in the 1950's."
+	name = "M26手榴弹"
+	desc = "一种1950年代列装的美国手榴弹."
 	icon_state = "m26"
 	det_time = 50
 	throw_range = 12
 	explosion_sound = 'sound/weapons/Explosives/FragGrenade.ogg'
 
 /obj/item/weapon/grenade/coldwar/stinger
-	name = "Stinger grenade"
-	desc = "A less then lethal  grenade that Explodes into a burst of rubber balls."
+	name = "刺痛手榴弹"
+	desc = "一种非致命手榴弹,爆炸后释放出一片橡胶球."
 	icon_state = "sting"
 	det_time = 50
 	throw_range = 12
@@ -434,29 +434,29 @@
 	secondary_action = FALSE
 
 /obj/item/weapon/grenade/coldwar/m67
-	name = "M67 grenade"
-	desc = "An American grenade introduced as a replacement for the M26."
+	name = "M67手榴弹"
+	desc = "一种作为M26替代品列装的美国手榴弹."
 	icon_state = "m67"
 	det_time = 50
 	throw_range = 12
 
 /obj/item/weapon/grenade/coldwar/hg85
-	name = "HG 85 grenade"
-	desc = "The HG 85 is a round fragmentation hand grenade designed for the Swiss Armed Forces."
+	name = "HG 85手榴弹"
+	desc = "HG 85是一款为瑞士武装部队设计的圆形破片手榴弹."
 	icon_state = "hg85"
 	det_time = 50
 	throw_range = 12
 
 /obj/item/weapon/grenade/coldwar/hg85/l109
-	name = "L109 grenade"
-	desc = "The L109 is the British designation for the HG 85. It differs from the HG 85 in that it has a special safety clip, which is similar to the safety clip on the American M67 grenade."
+	name = "L109手榴弹"
+	desc = "L109是HG 85的英国型号.它与HG 85的不同之处在于它有一个特殊的安全夹,类似于美国M67手榴弹上的安全夹."
 	icon_state = "l109"
 	det_time = 50
 	throw_range = 12
 
 /obj/item/weapon/grenade/coldwar/rgd5
-	name = "RGD-5 grenade"
-	desc = "A Soviet fragmentation grenade designed in the 1950's."
+	name = "RGD-5手榴弹"
+	desc = "一种设计于1950年代的苏联破片手榴弹."
 	icon_state = "rgd5"
 	det_time = 50
 	throw_range = 12
@@ -522,8 +522,8 @@
 		qdel(src)
 
 /obj/item/weapon/grenade/coldwar/nonfrag/m26
-	name = "M26 explosive grenade"
-	desc = "An American grenade introduced in the 1950's. This one has no shrapnel."
+	name = "M26爆破手榴弹"
+	desc = "一种1950年代列装的美国手榴弹.这种没有破片."
 	icon_state = "m26_explosive"
 	det_time = 50
 	throw_range = 10
@@ -568,10 +568,10 @@
 	if (secondary_action)
 		var/inp = WWinput(user, "Are you sure that you want to place a booby trap here?", "Booby Trapping", "No", list("Yes","No"))
 		if (inp == "Yes")
-			to_chat(user, "Placing the booby trap...")
+			to_chat(user, "正在放置诡雷...")
 			if (do_after(user, 100, src))
 				if (src)
-					to_chat(user, "You successfully place the booby trap here using \the [src].")
+					to_chat(user, "你成功使用\the [src]在此处放置了诡雷.")
 					var/obj/item/mine/boobytrap/BT = new /obj/item/mine/boobytrap(get_turf(user))
 					BT.origin = src.type
 					firer = user
@@ -582,8 +582,8 @@
 			return
 
 /obj/item/weapon/grenade/modern/impact
-	name = "impact grenade"
-	desc = "An impact grenade that explodes when hitting the ground after being thrown."
+	name = "碰炸手榴弹"
+	desc = "一种投掷后撞击地面时爆炸的碰炸手榴弹."
 	icon_state = "rgo"
 	throw_range = 12
 	spread_range = 6
@@ -618,7 +618,7 @@
 
 /obj/item/weapon/grenade/modern/impact/oto35
 	name = "OTO Mod. 35"
-	desc = "An Italian impact fuse hand grenade that entered into service in 1935."
+	desc = "一种于1935年服役的意大利碰炸引信手榴弹."
 	icon_state = "oto35"
 	throw_range = 12
 
@@ -632,13 +632,13 @@
 
 /obj/item/weapon/grenade/modern/impact/rgo
 	name = "RGO"
-	desc = "A Soviet Russian defensive anti-personnel fragmentation hand grenade with an impact action."
+	desc = "一种具有碰炸作用的苏联俄罗斯防御性杀伤破片手榴弹."
 	icon_state = "rgo"
 	throw_range = 12
 
 /obj/item/weapon/grenade/suicide_vest
-	name = "suicide vest"
-	desc = "An IED suicide vest. Deadly!"
+	name = "自杀背心"
+	desc = "一种简易爆炸装置自杀背心.致命!"
 	icon_state = "suicide_vest"
 	nothrow = TRUE
 	throw_speed = 1
@@ -679,7 +679,7 @@
 
 /obj/item/weapon/grenade/suicide_vest/examine(mob/user)
 	..()
-	to_chat(user, "\The [src] is <b>[armed]</b>.")
+	to_chat(user, "\The [src]是<b>[armed]</b>.")
 	return
 
 /obj/item/weapon/grenade/suicide_vest/attack_self(mob/user as mob)
@@ -702,7 +702,7 @@
 	set src in range(1, usr)
 
 	if (armed == "armed")
-		to_chat(usr, "You disarm \the [src].")
+		to_chat(usr, "你拆除了\the [src].")
 		armed = "disarmed"
 		return
 	else
@@ -730,8 +730,8 @@
 		return
 
 /obj/item/weapon/grenade/suicide_vest/kamikaze
-	name = "kamikaze vest"
-	desc = "An Antitank Mine Suicide Vest, deadly!"
+	name = "神风背心"
+	desc = "一种反坦克地雷自杀背心,致命!"
 	icon_state = "kamikaze_vest"
 	nothrow = TRUE
 	throw_speed = 1
@@ -744,7 +744,7 @@
 
 /obj/item/weapon/grenade/suicide_vest/kamikaze/examine(mob/user)
 	..()
-	to_chat(user, "\The [src] is <b>[armed]</b>.")
+	to_chat(user, "\The [src]是<b>[armed]</b>.")
 	return
 
 /obj/item/weapon/grenade/suicide_vest/kamikaze/attack_self(mob/user as mob)
@@ -769,7 +769,7 @@
 	set src in range(1, usr)
 
 	if (armed1 == "armed")
-		to_chat(usr, "You disarm \the [src].")
+		to_chat(usr, "你拆除了\the [src].")
 		armed1 = "disarmed"
 		firer = null
 		return
@@ -866,30 +866,30 @@
 		qdel(src)
 
 /obj/item/weapon/grenade/coldwar/nonfrag/custom
-	name = "explosive grenade"
-	desc = "An explosive grenade with no shrapnel."	//This is a plain lie
+	name = "爆破手榴弹"
+	desc = "一种没有破片的爆破手榴弹."	//This is a plain lie
 	icon_state = "m26"
 	det_time = 50
 	throw_range = 9
 
 /obj/item/weapon/grenade/antitank/custom
-	name = "anti-tank grenade"
-	desc = "An anti-tank grenade with no shrapnel."
+	name = "反坦克手榴弹"
+	desc = "一种没有破片的反坦克手榴弹."
 	icon_state = "rpg40"
 	det_time = 50
 	throw_range = 3
 	heavy_armor_penetration = 18
 
 /obj/item/weapon/grenade/modern/custom
-	name = "shrapnel grenade"
-	desc = "A grenade filled with metallic shrapnel."
+	name = "破片手榴弹"
+	desc = "一种装填金属破片的手榴弹."
 	icon_state = "mk2"
 	det_time = 50
 	throw_range = 10
 
 /obj/item/weapon/grenade/antitank
-	name = "anti-tank grenade"
-	desc = "A powerful grenade, useful against armored vehicles."
+	name = "反坦克手榴弹"
+	desc = "一种威力强大的手榴弹,对装甲车辆有效."
 	icon_state = "rpg40"
 	explosion_sound = 'sound/weapons/Explosives/HEGrenade.ogg'
 	det_time = 50
@@ -898,7 +898,7 @@
 
 /obj/item/weapon/grenade/antitank/rpg40
 	name = "RPG-40"
-	desc = "A powerful Soviet AT grenade, useful against armored vehicles."
+	desc = "一种威力强大的苏联反坦克手榴弹,对装甲车辆有效."
 	icon_state = "rpg40"
 	det_time = 50
 	throw_range = 5
@@ -906,7 +906,7 @@
 
 /obj/item/weapon/grenade/antitank/rpg43
 	name = "RPG-43"
-	desc = "A powerful Soviet AT grenade, useful against armored vehicles."
+	desc = "一种威力强大的苏联反坦克手榴弹,对装甲车辆有效."
 	icon_state = "rpg43"
 	det_time = 50
 	throw_range = 6
@@ -914,29 +914,29 @@
 
 
 /obj/item/weapon/grenade/antitank/stg24_bundle
-	name = "M1924 Stielhandgranate bundle"
-	desc = "A bundle of M1924 grenades tied together, useful against armored vehicles."
+	name = "M1924柄式手榴弹集束"
+	desc = "一捆绑在一起的M1924手榴弹,对装甲车辆有效."
 	icon_state = "stgbundle"
 	det_time = 50
 	throw_range = 6
 	heavy_armor_penetration = 18
 
 /obj/item/weapon/grenade/antitank/n73
-	name = "N73 AT grenade"
-	desc = "A British anti-tank hand percussion grenade used during WW2. Also known as \"Thermos\". "
+	name = "N73反坦克手榴弹"
+	desc = "一种二战期间使用的英国反坦克手投碰炸手榴弹.也被称为\"保温瓶\"."
 	icon_state = "n73"
 	heavy_armor_penetration = 27 //it was able to penetrate 2 inches (51 mm) for balance im making it 27
 	throw_range = 5
 
 /obj/item/weapon/grenade/antitank/n74
-	name = "N74 AT grenade"
-	desc = "A British anti-tank hand grenade used during WW2. Also known as the \"Sticky Bomb\"."
+	name = "N74反坦克手榴弹"
+	desc = "一种二战期间使用的英国反坦克手榴弹.也被称为\"粘性炸弹\"."
 	icon_state = "n74"
 	heavy_armor_penetration = 18
 
 /obj/item/weapon/grenade/antitank/n75
-	name = "n75 AT grenade"
-	desc = "A British anti-tank hand grenade used during WW2. Also known as the \"Hawkins grenade\". Can also be used as an AT-mine."
+	name = "n75反坦克手榴弹"
+	desc = "一种二战期间使用的英国反坦克手榴弹.也被称为\"霍金斯手榴弹\".也可用作反坦克地雷."
 	icon_state = "n75"
 	heavy_armor_penetration = 22
 	throw_range = 7
@@ -946,10 +946,10 @@
 	if (secondary_action)
 		var/inp = WWinput(user, "Are you sure you want to place an anti-tank mine here?", "Mining", "No", list("Yes","No"))
 		if (inp == "Yes")
-			to_chat(user, "Placing the mine...")
+			to_chat(user, "正在放置地雷...")
 			if (do_after(user, 60, src))
 				if (src)
-					to_chat(user, "You successfully place the mine here using \the [src].")
+					to_chat(user, "你成功使用\the [src]在此处放置了地雷.")
 					var/obj/item/mine/at/armed/BT = new /obj/item/mine/at/armed(get_turf(user))
 					BT.origin = src.type
 					firer = user
@@ -958,9 +958,9 @@
 			return
 
 /obj/item/weapon/grenade/antitank/type99
-	name = "Type 99 AT mine"
+	name = "99式反坦克地雷"
 	icon_state = "type99"
-	desc = "A japanese anti-tank mine that can also be used as a grenade."
+	desc = "一种日本反坦克地雷,也可用作手榴弹."
 	det_time = 50
 	throw_range = 8
 	secondary_action = TRUE
@@ -969,10 +969,10 @@
 	if (secondary_action)
 		var/inp = WWinput(user, "Are you sure you want to place an anti-tank mine here?", "Mining", "No", list("Yes","No"))
 		if (inp == "Yes")
-			to_chat(user, "Placing the mine...")
+			to_chat(user, "正在放置地雷...")
 			if (do_after(user, 60, src))
 				if (src)
-					to_chat(user, "You successfully place the mine here using \the [src].")
+					to_chat(user, "你成功使用\the [src]在此处放置了地雷.")
 					var/obj/item/mine/at/armed/BT = new /obj/item/mine/at/armed(get_turf(user))
 					BT.origin = src.type
 					firer = user
@@ -1051,8 +1051,8 @@
 	qdel(src)
 
 /obj/structure/payload
-	name = "Payload"
-	desc = "If you see this report it to a developer"
+	name = "载荷"
+	desc = "如果你看到这个,请报告给开发者"
 	icon = 'icons/obj/grenade.dmi'
 	anchored = TRUE
 	density = TRUE
@@ -1117,14 +1117,14 @@
 	return
 
 /obj/structure/payload/bomb
-	name = "100 kg bomb"
-	desc = "Uhm..."
+	name = "100公斤炸弹"
+	desc = "呃..."
 	icon_state = "aircraft_bomb"
 	reliability = 99
 	heavy = TRUE
 
 /obj/structure/payload/bomb/kg50
-	name = "50 kg bomb"
+	name = "50公斤炸弹"
 
 	scale = 0.7
 	devastation_range = 2
@@ -1136,7 +1136,7 @@
 	fragment_damage = 20
 
 /obj/structure/payload/bomb/kg250
-	name = "250 kg bomb"
+	name = "250公斤炸弹"
 
 	devastation_range = 3
 	heavy_impact_range = 5
@@ -1147,7 +1147,7 @@
 	fragment_damage = 30
 
 /obj/structure/payload/missile
-	name = "missile"
+	name = "导弹"
 	icon_state = "aircraft_missile"
 	explosion_timer = 0
 	heavy = FALSE

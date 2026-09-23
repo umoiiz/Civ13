@@ -48,8 +48,8 @@
 	icon = 'icons/obj/crate.dmi'*/
 
 /obj/structure/closet/crate/urn
-	name = "urn"
-	desc = "Maybe there's a treasure inside? probably just some poor sap's ashes"
+	name = "骨灰瓮"
+	desc = "也许里面藏着什么宝贝? 大概只是某个可怜虫的骨灰罢了"
 	icon_state = "urn"
 	icon_opened = "urn_open"
 	icon_closed = "urn"
@@ -174,8 +174,8 @@ obj/structure/closet/crate/loottreasurechest/New()
 		S.amount = rand(1+rarity,(rarity+1)*2)
 
 /obj/structure/closet/crate/chest/treasury
-	name = "colony treasury"
-	desc = "Where the colony treasury is stored."
+	name = "殖民地金库"
+	desc = "存放殖民地金库的地方."
 	icon_state = "treasure_chest"
 	icon_opened = "treasure_chest_opened"
 	icon_closed = "treasure_chest"
@@ -183,15 +183,15 @@ obj/structure/closet/crate/loottreasurechest/New()
 	var/faction = "civilian"
 
 /obj/structure/closet/crate/empty
-	name = "wood crate"
-	desc = "A wooden crate."
+	name = "木箱"
+	desc = "一个木箱."
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 
 /obj/structure/closet/crate/empty/large
-	name = "large crate"
-	desc = "A hefty wooden crate."
+	name = "大木箱"
+	desc = "一个沉重的大木箱."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "densecrate"
 	icon_opened = "densecrate_open"
@@ -199,16 +199,16 @@ obj/structure/closet/crate/loottreasurechest/New()
 	storagecap = 20
 
 /obj/structure/closet/crate/barrel
-	name = "wood barrel"
-	desc = "A wood barrel."
+	name = "木桶"
+	desc = "一个木桶."
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "barrel_wood1"
 	icon_opened = "barrel_wood_open1"
 	icon_closed = "barrel_wood1"
 
 /obj/structure/closet/crate/cash_register
-	name = "cash register"
-	desc = "Used to hold money at a shop."
+	name = "收银机"
+	desc = "商店里用来存放钱的东西."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "cash_register"
 	icon_opened = "cash_register_opened"
@@ -222,7 +222,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	health = 5000
 
 /obj/structure/closet/crate/bayonets
-	name = "bayonets crate"
+	name = "刺刀箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -230,7 +230,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 132//100 base value from 100 planks of wood
 
 /obj/structure/closet/crate/sandbags
-	name = "sandbag crate"
+	name = "沙袋箱"
 	icon_state = "sandbag_crate_full"
 	icon_opened = "sandbag_crate_empty"
 	icon_closed = "sandbag_crate_full"
@@ -278,7 +278,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 		icon_state = "sandbag_crate_50"
 
 /obj/structure/closet/crate/wood
-	name = "wood planks crate"
+	name = "木板箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -292,7 +292,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 		S.amount = 20
 
 /obj/structure/closet/crate/steel
-	name = "steel sheets crate"
+	name = "钢板箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -306,7 +306,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 		S.amount = 20
 
 /obj/structure/closet/crate/iron
-	name = "iron ingots crate"
+	name = "铁锭箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -320,7 +320,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 		S.amount = 20
 
 /obj/structure/closet/crate/stone
-	name = "stone blocks crate"
+	name = "石块箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -335,7 +335,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 
 
 /obj/structure/closet/crate/glass
-	name = "glass sheets crate"
+	name = "玻璃板箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -349,13 +349,13 @@ obj/structure/closet/crate/loottreasurechest/New()
 		S.amount = 20
 
 /obj/structure/closet/crate/rations/
-	name = "rations"
+	name = "口粮"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 
 /obj/structure/closet/crate/rations/vegetables
-	name = "Rations: vegetables"
+	name = "口粮: 蔬菜"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/grown/potato = 4,
 				/obj/item/weapon/reagent_containers/food/snacks/grown/beans = 4,
 				/obj/item/weapon/reagent_containers/food/snacks/grown/cabbage = 4,
@@ -363,7 +363,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 60 //48 base, 16 grown stuff x 3
 
 /obj/structure/closet/crate/rations/fruits
-	name = "Rations: fruits"
+	name = "口粮: 水果"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/grown/lemon = 3,
 				/obj/item/weapon/reagent_containers/food/snacks/grown/lime = 3,
 				/obj/item/weapon/reagent_containers/food/snacks/grown/apple = 3,
@@ -373,39 +373,39 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 66 //54, 18 x 3
 
 /obj/structure/closet/crate/rations/biscuits
-	name = "Rations: biscuits"
+	name = "口粮: 饼干"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/hardtack = 20,)
 	cratevalue = 50 //Nutrient amt = 2, 2 x 2 for value so 20 x 2 = 40 base
 
 /obj/structure/closet/crate/rations/beer
-	name = "Rations: beer"
+	name = "口粮: 啤酒"
 	paths = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer = 10,)
 	cratevalue = 60 //50 base
 
 /obj/structure/closet/crate/rations/sake
-	name = "Rations: sake"
+	name = "口粮: 清酒"
 	paths = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/sake = 10,)
 	cratevalue = 60 //50 base
 
 /obj/structure/closet/crate/rations/ale
-	name = "Rations: ale"
+	name = "口粮: 麦酒"
 	paths = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale = 10,)
 	cratevalue = 70 //60 base
 
 /obj/structure/closet/crate/rations/meat
-	name = "Rations: meat"
+	name = "口粮: 肉类"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/meat = 7,)
 	cratevalue = 70 //just putting this here
 
 /obj/structure/closet/crate/rations/seeds/trees
-	name = "Seeds: Trees"
+	name = "种子: 树木"
 	paths = list(/obj/item/stack/farming/seeds/apple = 4,
 				/obj/item/stack/farming/seeds/tree = 4,
 				/obj/item/stack/farming/seeds/orange = 4,)
 	cratevalue = 30 //seeds don't have a value, effort into farming harvesting and exporting is already lots of work
 
 /obj/structure/closet/crate/rations/seeds/cereals
-	name = "Seeds: Cereals (+yeast)"
+	name = "种子: 谷物 (+酵母)"
 	paths = list(/obj/item/stack/farming/seeds/wheat = 6,
 				/obj/item/stack/farming/seeds/corn = 6,
 				/obj/item/weapon/reagent_containers/food/condiment/enzyme = 1,
@@ -413,14 +413,14 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 50
 
 /obj/structure/closet/crate/rations/seeds/vegetables
-	name = "Seeds: Vegetables"
+	name = "种子: 蔬菜"
 	paths = list(/obj/item/stack/farming/seeds/tomato = 4,
 				/obj/item/stack/farming/seeds/potato = 4,
 				/obj/item/stack/farming/seeds/cabbage = 4,)
 	cratevalue = 30
 
 /obj/structure/closet/crate/rations/seeds/cashcrops
-	name = "Seeds: Cash Crops"
+	name = "种子: 经济作物"
 	paths = list(/obj/item/stack/farming/seeds/tobacco = 3,
 				/obj/item/stack/farming/seeds/sugarcane = 3,
 				/obj/item/stack/farming/seeds/hemp = 3,
@@ -429,7 +429,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 60
 
 /obj/structure/closet/crate/rations/seeds/medicinal
-	name = "Seeds: Medicinal"
+	name = "种子: 药用植物"
 	paths = list(/obj/item/stack/farming/seeds/poppy = 3,
 				/obj/item/stack/farming/seeds/tea = 3,
 				/obj/item/stack/farming/seeds/coffee = 3,
@@ -437,7 +437,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 50
 
 /obj/structure/closet/crate/brick
-	name = "bricks crate"
+	name = "砖块箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -446,7 +446,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 ///WEAPONS///
 
 /obj/structure/closet/crate/grenades
-	name = "Grenade crate"
+	name = "手榴弹箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -454,42 +454,42 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 110 //assuming value = 10 as no value yet
 
 /obj/structure/closet/crate/musketball
-	name = "Musket ammunition crate"
+	name = "火枪弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/musketball = 25)
 	cratevalue = 100 //base 75, 25 x 3
 /obj/structure/closet/crate/muskets
-	name = "Musket crate"
+	name = "火枪箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/gun/projectile/flintlock/musket = 5)
 	cratevalue = 550 //100*5
 /obj/structure/closet/crate/musketoons
-	name = "Musketoon crate"
+	name = "短铳箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/gun/projectile/flintlock/musketoon = 5)
 	cratevalue = 440 //80*5
 /obj/structure/closet/crate/pistols
-	name = "Pistol crate"
+	name = "手枪箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/gun/projectile/flintlock/pistol = 5)
 	cratevalue = 385 //70*5
 /obj/structure/closet/crate/blunderbusses
-	name = "blunderbuss crate"
+	name = "喇叭铳箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/gun/projectile/flintlock/blunderbuss = 5)
 	cratevalue = 495 //90*5
 /obj/structure/closet/crate/musketball_pistol
-	name = "Pistol ammunition crate"
+	name = "手枪弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -497,7 +497,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 60 //base value 50
 
 /obj/structure/closet/crate/blunderbuss_ammo
-	name = "Blunderbuss ammunition crate"
+	name = "喇叭铳弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -505,7 +505,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 60 //base value 45
 
 /obj/structure/closet/crate/cannonball
-	name = "Cannonball crate"
+	name = "炮弹箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -513,7 +513,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 175 //assuming 10 value
 
 /obj/structure/closet/crate/cannonball/chainshot
-	name = "Cannonball crate (chainshot)"
+	name = "炮弹箱 (链弹)"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -521,7 +521,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 175 //assuming 10 value
 
 /obj/structure/closet/crate/cannonball/grapeshot
-	name = "Cannonball crate (grapeshot)"
+	name = "炮弹箱 (霰弹)"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -529,7 +529,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 175 //assuming 10 value
 
 /obj/structure/closet/crate/webbings
-	name = "bandolier crate"
+	name = "弹药带箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -537,42 +537,42 @@ obj/structure/closet/crate/loottreasurechest/New()
 	cratevalue = 110 //assuming 10 value
 /////////////ABASHIRI////////////////////
 /obj/structure/closet/crate/abashiri/ammo
-	name = "Arisaka Ammunition"
+	name = "有坂弹药"
 	paths = list(/obj/item/ammo_magazine/arisaka = 15,)
 	cratevalue = 60 //50 base
 /obj/structure/closet/crate/abashiri/ammo/type26
-	name = "Type 26 Ammunition"
+	name = "二六式弹药"
 	paths = list(/obj/item/ammo_magazine/c9mm_jap_revolver = 10,)
 	cratevalue = 60 //50 base
 /obj/structure/closet/crate/abashiri/guns
-	name = "Arisaka Rifles"
+	name = "有坂步枪"
 	paths = list(/obj/item/weapon/gun/projectile/boltaction/arisaka30 = 5,)
 	cratevalue = 60 //50 base
 /obj/structure/closet/crate/abashiri/guns/type26
-	name = "Type 26 Revolvers"
+	name = "二六式左轮手枪"
 	paths = list(/obj/item/weapon/gun/projectile/revolver/t26_revolver = 5,)
 	cratevalue = 60 //50 base
 /obj/structure/closet/crate/abashiri/batons
-	name = "Batons"
+	name = "警棍"
 	paths = list(/obj/item/weapon/gun/projectile/revolver/t26_revolver = 10,)
 	cratevalue = 60 //50 base
 ////WW1////////
 /obj/structure/closet/crate/ww1/grenades_french
-	name = "F1 grenade crate"
+	name = "F1手榴弹箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/grenade/modern/f1 = 10)
 
 /obj/structure/closet/crate/ww1/grenades_german
-	name = "stg 1915 grenade crate"
+	name = "stg 1915手榴弹箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/weapon/grenade/modern/stg1915 = 10)
 
 /obj/structure/closet/crate/ww1/grenades_british
-	name = "Mills grenade crate"
+	name = "米尔斯手榴弹箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -580,34 +580,34 @@ obj/structure/closet/crate/loottreasurechest/New()
 
 
 /obj/structure/closet/crate/ww1/ammo_hotchkiss
-	name = "Hotchkiss belts crate"
+	name = "哈奇开斯弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/hotchkiss = 10)
 
 /obj/structure/closet/crate/ww1/ammo_type3
-	name = "Type 3 belts crate"
+	name = "三年式弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/type3 = 10)
 
 /obj/structure/closet/crate/ww1/ammo_vickers
-	name = "Vickers belts crate"
+	name = "维克斯弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/vickers = 10)
 
 /obj/structure/closet/crate/ww1/ammo_mg08
-	name = "MG08 belts crate"
+	name = "MG08弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/mg08 = 10)
 /obj/structure/closet/crate/ww1/ammo_maxim
-	name = "Maxim belts crate"
+	name = "马克沁弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -617,84 +617,84 @@ obj/structure/closet/crate/loottreasurechest/New()
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
-	name = "military crate"
+	name = "军用物资箱"
 
 /obj/structure/closet/crate/ww2/mk2
-	name = "Mk2 grenade crate"
+	name = "Mk2手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/ww2/mk2 = 10)
 
 /obj/structure/closet/crate/ww2/rgd33
-	name = "RGD33 grenade crate"
+	name = "RGD33手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/ww2/rgd33 = 10)
 
 /obj/structure/closet/crate/ww2/stg1924
-	name = "stg 1924 grenade crate"
+	name = "stg 1924手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/ww2/stg1924 = 10)
 
 /obj/structure/closet/crate/ww2/ammo_mg34
-	name = "MG34 belts crate"
+	name = "MG34弹链箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/mg34belt = 10)
 /obj/structure/closet/crate/ww2/panzerfaust
-	name = "Panzerfaust crate"
+	name = "铁拳火箭筒箱"
 	paths = list(/obj/item/weapon/gun/launcher/rocket/single_shot/panzerfaust = 6)
 
 /obj/structure/closet/crate/ww2/atmines
-	name = "anti-tank mines crate"
+	name = "反坦克地雷箱"
 	paths = list(/obj/item/mine/at = 5)
 
 /obj/structure/closet/crate/ww2/rpg40
-	name = "RPG-40 AT grenade crate"
+	name = "RPG-40反坦克手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/antitank/rpg40 = 6)
 
 /obj/structure/closet/crate/ww2/g43
-	name = "G43 ammunition crate"
+	name = "G43弹药箱"
 	paths = list(/obj/item/ammo_magazine/g43 = 10)
 
 /obj/structure/closet/crate/ww2/mp40
-	name = "MP40 ammunition crate"
+	name = "MP40弹药箱"
 	paths = list(/obj/item/ammo_magazine/mp40 = 8)
 
 /obj/structure/closet/crate/ww2/mosin_ammo
-	name = "Mosin ammunition crate"
+	name = "莫辛弹药箱"
 	paths = list(/obj/item/ammo_magazine/mosin = 25)
 
 /obj/structure/closet/crate/ww2/mosin
-	name = "Mosin 1891/30 crate"
+	name = "莫辛1891/30步枪箱"
 	paths = list(/obj/item/weapon/gun/projectile/boltaction/mosin/m30 = 20)
 
 /obj/structure/closet/crate/ww2/mosin_old
-	name = "Mosin 1891 crate"
+	name = "莫辛1891步枪箱"
 	paths = list(/obj/item/weapon/gun/projectile/boltaction/mosin = 20)
 
 /obj/structure/closet/crate/ww2/stg
-	name = "StG44 ammunition crate"
+	name = "StG44弹药箱"
 	paths = list(/obj/item/ammo_magazine/stg = 8)
 
 /obj/structure/closet/crate/ww2/svt
-	name = "SVT-40 ammunition crate"
+	name = "SVT-40弹药箱"
 	paths = list(/obj/item/ammo_magazine/svt = 10)
 
 /obj/structure/closet/crate/ww2/ppsh
-	name = "PPSH ammunition crate"
+	name = "波波沙弹药箱"
 	paths = list(/obj/item/ammo_magazine/c762x25_ppsh = 8)
 
 /obj/structure/closet/crate/ww2/pps
-	name = "PPS ammunition crate"
+	name = "波波斯弹药箱"
 	paths = list(/obj/item/ammo_magazine/c762x25_pps = 8)
 
 /obj/structure/closet/crate/coldwar/m26
-	name = "M26 grenade crate"
+	name = "M26手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/coldwar/m26 = 10)
 
 /obj/structure/closet/crate/coldwar/m18
-	name = "M18 smoke grenade crate"
+	name = "M18烟雾弹箱"
 	paths = list(/obj/item/weapon/grenade/smokebomb/m18smoke = 10)
 
 /obj/structure/closet/crate/ww2/vietnam/us_ammo
-	name = "US Army ammo"
+	name = "美军弹药"
 	paths = list(/obj/item/ammo_magazine/m16 = 16,
 				/obj/item/ammo_magazine/b762 = 4,
 				/obj/item/ammo_magazine/greasegun = 4,
@@ -702,7 +702,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/vietnam/us_medical
-	name = "US Army medical supplies"
+	name = "美军医疗物资"
 	paths = list(/obj/item/weapon/storage/firstaid/combat/modern = 1,
 				/obj/item/weapon/storage/firstaid/adv = 1,
 				/obj/structure/iv_drip = 1,
@@ -710,7 +710,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/vietnam/us_explosives
-	name = "US Army explosives"
+	name = "美军炸药"
 	paths = list(/obj/item/weapon/grenade/coldwar/m67 = 4,
 				/obj/item/weapon/grenade/incendiary/anm14 = 2,
 				/obj/item/weapon/plastique/c4 = 2,
@@ -719,7 +719,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/vietnam/us_engineering
-	name = "US Army engineering supplies"
+	name = "美军工程物资"
 	paths = list(/obj/item/weapon/barrier/sandbag = 30,
 				/obj/item/stack/material/barbwire/ten = 2,
 				/obj/item/weapon/material/shovel/trench = 2,
@@ -729,24 +729,24 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/vietnam/us_ap_mines
-	name = "US Army AP mines"
+	name = "美军反步兵地雷"
 	paths = list(/obj/item/mine/ap = 15,
 				/obj/item/weapon/wirecutters/boltcutters = 2,
 				/obj/item/weapon/material/shovel/trench = 2,
 				)
 
 /obj/structure/closet/crate/ww2/vietnam/sks
-	name = "SKS crate"
+	name = "SKS步枪箱"
 	paths = list(/obj/item/ammo_magazine/sks = 30,
 				/obj/item/weapon/gun/projectile/semiautomatic/sks = 6,
 				)
 /obj/structure/closet/crate/ww2/vietnam/akm
-	name = "AKM crate"
+	name = "AKM步枪箱"
 	paths = list(/obj/item/ammo_magazine/ak47 = 30,
 				/obj/item/weapon/gun/projectile/submachinegun/ak47 = 6,
 				)
 /obj/structure/closet/crate/ww2/vietnam/viet_grenades
-	name = "grenade crate"
+	name = "手榴弹箱"
 	paths = list(/obj/item/weapon/grenade/modern/f1 = 8,
 				/obj/item/weapon/grenade/smokebomb/rdg1 = 4,
 				/obj/item/weapon/grenade/smokebomb/rdg2 = 4,
@@ -758,7 +758,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 	storagecap = 15
 
 /obj/structure/closet/crate/ww2/un/ammo
-	name = "UN Peacekeeping ammunition"
+	name = "联合国维和弹药"
 	paths = list(/obj/item/ammo_magazine/fal = 16,
 				/obj/item/ammo_magazine/m1911 = 8,
 				/obj/item/ammo_magazine/greasegun = 4,
@@ -766,7 +766,7 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/un/ap
-	name = "UN Peacekeeping area denial"
+	name = "联合国维和区域封锁装备"
 	paths = list(/obj/item/mine/ap = 10,
 				/obj/item/stack/material/barbwire/ten = 3,
 				/obj/item/weapon/material/shovel/trench = 2,
@@ -774,25 +774,25 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/un/explosives
-	name = "UN Peacekeeping handgrenades"
+	name = "联合国维和手榴弹"
 	paths = list(/obj/item/weapon/grenade/coldwar/m67 = 8,
 				/obj/item/weapon/grenade/incendiary/anm14 = 4,
 				/obj/item/weapon/grenade/smokebomb/m18smoke = 4,
 				)
 
 /obj/structure/closet/crate/ww2/un/m16ammo
-	name = "Bulk 5.56x45mm magazines"
+	name = "散装5.56x45毫米弹匣"
 	paths = list(/obj/item/ammo_magazine/m16 = 10)
 /obj/structure/closet/crate/ww2/un/m16ammoboxes
-	name = "Bulk 5.56x45mm ammunition"
+	name = "散装5.56x45毫米弹药"
 	paths = list(/obj/item/ammo_magazine/m16/box = 10)
 
 /obj/structure/closet/crate/ww2/un/falammoboxes
-	name = "Bulk 7.62x51mm ammunition"
+	name = "散装7.62x51毫米弹药"
 	paths = list(/obj/item/ammo_magazine/box_762x51 = 10)
 
 /obj/structure/closet/crate/ww2/un/ammoboxes
-	name = "Bulk specialty ammunition"
+	name = "散装特种弹药"
 	paths = list(/obj/item/ammo_magazine/a45acpbox = 4,
 				/obj/item/ammo_magazine/madsen/box = 3,
 				/obj/item/ammo_magazine/box_762x51 = 3,
@@ -801,28 +801,28 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/un/vickersboxes
-	name = "Bulk .303 British ammunition"
+	name = "散装.303英式弹药"
 	paths = list(/obj/item/ammo_magazine/vickers/box = 6)
 
 /obj/structure/closet/crate/ww2/un/meals
-	name = "UN Peacekeeping mealkits"
+	name = "联合国维和口粮"
 	paths = list(/obj/item/weapon/storage/ww2/unmeal = 10)
 
 /obj/structure/closet/crate/ww2/airdrops/medical
-	name = "Medical supplies"
+	name = "医疗物资"
 	paths = list(/obj/item/weapon/storage/firstaid/combat/modern = 2,
 				/obj/item/weapon/storage/firstaid/adv = 2,
 				)
 
 /obj/structure/closet/crate/ww2/airdrops/ap
-	name = "Area denial"
+	name = "区域封锁装备"
 	paths = list(/obj/item/mine/ap = 10,
 				/obj/item/stack/material/barbwire/ten = 3,
 				/obj/item/weapon/wirecutters/boltcutters = 1,
 				)
 
 /obj/structure/closet/crate/ww2/airdrops/engineering
-	name = "Engineering supplies"
+	name = "工程物资"
 	storagecap = 23
 	paths = list(/obj/item/weapon/barrier/sandbag = 20,
 				/obj/item/weapon/material/shovel/trench/foldable = 2,
@@ -830,18 +830,18 @@ obj/structure/closet/crate/loottreasurechest/New()
 				)
 
 /obj/structure/closet/crate/ww2/russian/ammo
-	name = "Bulk 5.45x39mm magazines"
+	name = "散装5.45x39毫米弹匣"
 	paths = list(/obj/item/ammo_magazine/ak74/ak74m = 10)
 /obj/structure/closet/crate/ww2/russian/ammo
-	name = "Bulk 5.45x39mm ammunition"
+	name = "散装5.45x39毫米弹药"
 	paths = list(/obj/item/ammo_magazine/ak74/box = 10)
 
 /obj/structure/closet/crate/ww2/mortar_shells
-	name = "mortar shells"
+	name = "迫击炮弹"
 	paths = list(/obj/item/cannon_ball/mortar_shell = 20)
 
 /obj/structure/closet/crate/ww2/artillery_shells
-	name = "HE artillery shells"
+	name = "高爆炮弹"
 	paths = list(/obj/item/cannon_ball/shell = 10)
 
 obj/structure/closet/crate/ww2/artillery_shells/HE57
@@ -908,10 +908,10 @@ obj/structure/closet/crate/ww2/artillery_shells/APCR85
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
-	name = "military crate"
+	name = "军用物资箱"
 
 /obj/structure/closet/crate/airdrops/supplies
-	name = "supplies crate"
+	name = "补给箱"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/MRE/generic = 3,
 				/obj/item/stack/medical/advanced/bruise_pack = 1,
 				/obj/item/stack/medical/advanced/ointment = 1,
@@ -920,7 +920,7 @@ obj/structure/closet/crate/ww2/artillery_shells/APCR85
 				/obj/item/weapon/pill_pack/potassium_iodide = 1)
 
 /obj/structure/closet/crate/airdrops/food
-	name = "food crate"
+	name = "食物箱"
 	paths = list(/obj/item/weapon/reagent_containers/food/snacks/MRE/generic = 10,
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/canteen/ww2 = 1)
 
@@ -933,7 +933,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/weapon/attachment/bayonet = 1)
 
 /obj/structure/closet/crate/airdrops/military
-	name = "military crate"
+	name = "军用物资箱"
 	paths = list(/obj/item/weapon/gun/projectile/pistol/m9beretta = 1,
 				/obj/item/ammo_magazine/m9beretta = 2,
 				/obj/item/clothing/mask/gas/military = 1,
@@ -944,20 +944,20 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/canteen/ww2/us = 1)
 
 /obj/structure/closet/crate/airdrops/medicine
-	name = "medicine crate"
+	name = "药品箱"
 	paths = list(/obj/item/weapon/storage/firstaid/combat/modern = 1,
 				/obj/item/weapon/storage/firstaid/adv = 1,
 				/obj/item/weapon/storage/pill_bottle/potassium_iodide = 1,)
 
 /obj/structure/closet/crate/airdrops/cold
-	name = "cold weather equipment crate"
+	name = "防寒装备箱"
 	paths = list(/obj/item/clothing/gloves/thick/leather/grey = 1,
 				/obj/item/clothing/suit/storage/coat/winter_coat = 1,
 				/obj/item/clothing/shoes/winterboots = 1,
 				/obj/item/clothing/head/ww2/sov_ushanka/nomads = 1)
 
 /obj/structure/closet/crate/airdrops/rads
-	name = "radiation equipment crate"
+	name = "防辐射装备箱"
 	paths = list(/obj/item/clothing/suit/nbc = 1,
 				/obj/item/clothing/head/nbc = 1,
 				/obj/item/clothing/mask/gas/modern = 1,
@@ -966,20 +966,20 @@ obj/structure/closet/crate/airdrops/weapons
 /////soviet resupplies
 
 /obj/structure/closet/crate/airdrops/soviet/ammo
-	name = "ammunition crate"
+	name = "弹药箱"
 	paths = list(/obj/item/ammo_magazine/ak74 = 8,
 				/obj/item/ammo_magazine/vintorez = 2,
 				/obj/item/ammo_magazine/svd = 2,
 				/obj/item/ammo_magazine/pkm/c100 = 2)
 
 /obj/structure/closet/crate/airdrops/soviet/pkm
-	name = "pkm crate"
+	name = "PKM机枪箱"
 	paths = list(/obj/item/weapon/gun/projectile/automatic/pkm = 1,
 				/obj/item/ammo_magazine/pkm/c100 = 5,
 				/obj/item/weapon/gun_cleaning_kit = 1)
 
 /obj/structure/closet/crate/airdrops/soviet/defense
-	name = "defensive supplies crate"
+	name = "防御物资箱"
 	paths = list(/obj/item/mine/ap = 5,
 				/obj/item/weapon/wirecutters/boltcutters = 2,
 				/obj/item/weapon/storage/box/sandbags = 2,
@@ -987,7 +987,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/weapon/material/shovel/steel = 1)
 
 /obj/structure/closet/crate/airdrops/soviet/medical
-	name = "medical supplies crate"
+	name = "医疗物资箱"
 	paths = list(/obj/item/stack/medical/bruise_pack/gauze = 5,
 				/obj/item/weapon/pill_pack/tramadol = 1,
 				/obj/item/weapon/pill_pack/adrenaline = 1,
@@ -995,76 +995,76 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/stack/medical/advanced/sulfa = 1)
 
 /obj/structure/closet/crate/airdrops/soviet/explo
-	name = "Defensive Explosive crate"
+	name = "防御炸药箱"
 	paths = list(/obj/item/weapon/grenade/coldwar/rgd5 = 5,
 				/obj/item/weapon/grenade/incendiary = 5,
 				/obj/item/weapon/gun/launcher/rocket/single_shot/rpg22 = 1)
 
 /obj/structure/closet/crate/arrows
-	name = "arrow crate"
+	name = "箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow = 20)
 
 /obj/structure/closet/crate/arrows/bronze
-	name = "bronze arrow crate"
+	name = "青铜箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/bronze = 20)
 
 /obj/structure/closet/crate/arrows/copper
-	name = "copper arrow crate"
+	name = "铜箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/copper = 20)
 
 /obj/structure/closet/crate/arrows/iron
-	name = "iron arrow crate"
+	name = "铁箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/iron = 20)
 
 /obj/structure/closet/crate/arrows/modern
-	name = "modern arrow crate"
+	name = "现代箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/modern = 20)
 
 /obj/structure/closet/crate/arrows/steel
-	name = "steel arrow crate"
+	name = "钢箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/steel = 20)
 
 /obj/structure/closet/crate/arrows/stone
-	name = "stone arrow crate"
+	name = "石箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow/stone = 20)
 
 /obj/structure/closet/crate/bolts
-	name = "bolt crate"
+	name = "弩矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/arrow = 20)
 
 /obj/structure/closet/crate/bolts/iron
-	name = "iron arrow crate"
+	name = "铁箭矢箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_casing/bolt/iron = 20)
 
 /obj/structure/closet/crate/pepelsibirsk/surplus_ww2
-	name = "red army surplus uniforms crate"
+	name = "红军剩余军服箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -1074,7 +1074,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/clothing/head/helmet/ww2/soviet = 5)
 
 /obj/structure/closet/crate/pepelsibirsk/sov_uniforms
-	name = "afghanka uniforms crate"
+	name = "阿富汗卡军服箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1084,7 +1084,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/clothing/head/helmet/modern/ssh_68 = 5)
 
 /obj/structure/closet/crate/pepelsibirsk/sks
-	name = "sks crate"
+	name = "SKS 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1092,7 +1092,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/sks = 20)
 
 /obj/structure/closet/crate/pepelsibirsk/akm
-	name = "akm crate"
+	name = "AKM 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1100,7 +1100,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/ak47 = 10)
 
 /obj/structure/closet/crate/pepelsibirsk/ak74
-	name = "ak-74 crate"
+	name = "AK-74 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1108,7 +1108,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/ak74 = 10)
 
 /obj/structure/closet/crate/pepelsibirsk/svd
-	name = "svd crate"
+	name = "SVD 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1116,7 +1116,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/svd = 8)
 
 /obj/structure/closet/crate/pepelsibirsk/mosin
-	name = "mosin-nagant crate"
+	name = "莫辛-纳甘 弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -1125,7 +1125,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/mosinbox = 10)
 
 /obj/structure/closet/crate/pepelsibirsk/ppsh
-	name = "ppsh crate"
+	name = "波波沙 弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
@@ -1133,7 +1133,7 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/c762x25_ppsh = 8)
 
 /obj/structure/closet/crate/pepelsibirsk/makarov
-	name = "makarov crate"
+	name = "马卡洛夫 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
@@ -1141,77 +1141,77 @@ obj/structure/closet/crate/airdrops/weapons
 				/obj/item/ammo_magazine/makarov = 15)
 
 /obj/structure/closet/crate/pepelsibirsk/ninex18mm
-	name = "9x18mm crate"
+	name = "9x18mm 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/ammo_magazine/makarov/box = 4)
 
 /obj/structure/closet/crate/pepelsibirsk/seven62x39mm
-	name = "7.62x39mm crate"
+	name = "7.62x39mm 弹药箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/ammo_magazine/ak47 = 10)
 
 /obj/structure/closet/crate/pepelsibirsk/seven62x54mmr
-	name = "7.62x54mmR crate"
+	name = "7.62x54mmR 弹药箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 	paths = list(/obj/item/ammo_magazine/mosinbox = 4)
 
 /obj/structure/closet/crate/pepelsibirsk/rgd5
-	name = "frag grenade crate"
+	name = "破片手榴弹箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/weapon/grenade/coldwar/rgd5 = 12)
 
 /obj/structure/closet/crate/pepelsibirsk/sixb1
-	name = "6B1 vest crate"
+	name = "6B1 防弹背心箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/clothing/accessory/armor/coldwar/flakjacket/b1 = 5)
 
 /obj/structure/closet/crate/pepelsibirsk/sixb2
-	name = "6B2 vest crate"
+	name = "6B2 防弹背心箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/clothing/accessory/armor/coldwar/plates/b2 = 5)
 
 /obj/structure/closet/crate/scopes
-	name = "sniper scope crate"
+	name = "狙击镜箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/weapon/attachment/scope/adjustable/sniper_scope = 5)
 
 /obj/structure/closet/crate/scopes/pu
-	name = "mosin/svt scope crate"
+	name = "莫辛/SVT 瞄准镜箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/weapon/attachment/scope/adjustable/sniper_scope/pu = 5)
 
 /obj/structure/closet/crate/scopes/pso1
-	name = "pso-1 scope crate"
+	name = "PSO-1 瞄准镜箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/weapon/attachment/scope/adjustable/sniper_scope/pso1 = 5)
 
 /obj/structure/closet/crate/suicidevests
-	name = "suicide vest crate"
+	name = "自杀式背心箱"
 	icon_state = "mil_crate_closed"
 	icon_opened = "mil_crate_opened"
 	icon_closed = "mil_crate_closed"
 	paths = list(/obj/item/weapon/grenade/suicide_vest = 4)
 
 /obj/structure/closet/crate/rublecrate
-	name = "ruble crate"
+	name = "卢布箱"
 	icon_state = "crate"
 	icon_opened = "crateopen"
 	icon_closed = "crate"

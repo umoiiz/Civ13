@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/toolbox
-	name = "toolbox"
-	desc = "Danger. Very robust."
+	name = "工具箱"
+	desc = "危险. 非常坚固."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "toolbox_red"
 	item_state = "toolbox_red"
@@ -21,7 +21,7 @@
 	icon_state = "toolbox_yellow"
 	item_state = "toolbox_yellow"
 /obj/item/weapon/storage/toolbox/emergency
-	name = "emergency toolbox"
+	name = "应急工具箱"
 	icon_state = "toolbox_red"
 	item_state = "toolbox_red"
 
@@ -35,7 +35,7 @@
 		new /obj/item/weapon/material/shovel/trench(src)
 
 /obj/item/weapon/storage/toolbox/mechanical
-	name = "mechanical toolbox"
+	name = "机械工具箱"
 	icon_state = "toolbox_blue"
 	item_state = "toolbox_blue"
 
@@ -48,7 +48,7 @@
 		new /obj/item/weapon/hammer(src)
 
 /obj/item/weapon/storage/toolbox/electrical
-	name = "electrical toolbox"
+	name = "电气工具箱"
 	icon_state = "toolbox_yellow"
 	item_state = "toolbox_yellow"
 

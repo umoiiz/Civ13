@@ -109,7 +109,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/smuggler
 	name = "Omar the Smuggler"
-	desc = "You've got money? I've got goods."
+	desc = "你有钱? 我有货."
 	icon_state = "afghdrug"
 	var/smuggler_cooldown = 0
 
@@ -129,10 +129,10 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		to_chat(H, SPAN_WARNING("\icon[getFlatIcon(src)] No shipments available, come back later."))
 		return
 	if (H.civilization == "Sheriff Office" || H.civilization == "Government")
-		to_chat(H, "\icon[getFlatIcon(src)] Good day, everything is okay and running smoothly.")
+		to_chat(H, "\icon[getFlatIcon(src)] 你好, 一切正常, 运转顺利.")
 		return
 	if (H.civilization == "Paramedics")
-		to_chat(H, "\icon[getFlatIcon(src)] Keep up the good work, no one here is injured, see you.")
+		to_chat(H, "\icon[getFlatIcon(src)] 继续保持, 这里没人受伤, 回头见.")
 		return
 
 	var/content = {"<div class="message">"A shipment will arrive at the Docks. Better be ready."</div>
@@ -166,12 +166,12 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		M.amount -= 500 / 5
 		if (M.amount <= 0)
 			qdel(M)
-		to_chat(H, "\icon[getFlatIcon(src)] A shipment will arrive soon at the Docks. Better be ready.")
+		to_chat(H, "\icon[getFlatIcon(src)] 一批货很快就会到达码头. 最好做好准备.")
 		if (prob(50))
 			for (var/mob/living/human/player in player_list)
 				if (player.civilization == "Goldstein Solutions" || player.civilization == "Kogama Kraftsmen" || player.civilization == "Rednikov Industries" || player.civilization == "Giovanni Blu Stocks")
 					if (player.civilization != H.civilization)
-						to_chat(player, "<b>Word of mouth goes that a shipment will arrive soon at the docks. Might be worth intercepting it.</b>")
+						to_chat(player, "<b>有传言说一批货很快就会到达码头. 也许值得拦截它.</b>")
 			if (prob(50))
 				spawn(rand(300, 1800))
 					global_broadcast(FREQP, "<big>A confidential informant gave away that a suspicious shipment will arrive soon at the docks!</big>")
@@ -217,7 +217,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/biker
 	name = "Bruce the Biker"
-	desc = "You've got drugs? I've got money."
+	desc = "你有毒品? 我有钱."
 	icon_state = "bruce"
 	var/biker_cooldown = 0
 	var/buying_price1 = 50
@@ -250,16 +250,16 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/biker/show_shop(mob/living/human/H)
 	if (reputation[H.civilization] < 0)
-		to_chat(H, "\icon[getFlatIcon(src)] I'm not dealing with you punks anymore, get the fuck out of here.")
+		to_chat(H, "\icon[getFlatIcon(src)] 我不再和你们这些小混混打交道了, 滚出去.")
 		return
 	if (H.civilization == "Sheriff Office" || H.civilization == "Paramedics" || H.civilization == "Government")
 		if (H.civilization == "Sheriff Office")
-			to_chat(H, "\icon[getFlatIcon(src)] Get off my property, pig.")
+			to_chat(H, "\icon[getFlatIcon(src)] 滚出我的地盘, 条子.")
 		else
-			to_chat(H, "\icon[getFlatIcon(src)] Sorry, who the fuck are you? Get outta here!")
+			to_chat(H, "\icon[getFlatIcon(src)] 抱歉, 你他妈是谁? 滚出去!")
 		return
 	if (world.time <= biker_cooldown)
-		to_chat(H, "\icon[getFlatIcon(src)] My boys are busy for now. Come back later.")
+		to_chat(H, "\icon[getFlatIcon(src)] 我的手下现在很忙. 晚点再来.")
 		return
 
 	// Build sell drug section - check hands for pills
@@ -289,13 +289,13 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 <a class="btn btn-sm" href="byond://?src=\ref[src];sell=coke">Sell</a>
 </div>"}
 		else if (P.reagents.has_reagent("cocaine") && P.reagents.has_reagent("methamphetamine"))
-			to_chat(H, "\icon[getFlatIcon(src)] Are you trying to get my clients killed? Tell your cook to separate his shit.")
+			to_chat(H, "\icon[getFlatIcon(src)] 你是想害死我的客户吗? 告诉你的制毒师把他的货分清楚.")
 			return
 		else if (P.reagents.has_reagent("crack"))
-			to_chat(H, "\icon[getFlatIcon(src)] Fuck off, my boys don't mess with that shit.")
+			to_chat(H, "\icon[getFlatIcon(src)] 滚开, 我的手下不碰那玩意儿.")
 			return
 		else
-			to_chat(H, "\icon[getFlatIcon(src)] What the hell is this weak shit? Fuck off!")
+			to_chat(H, "\icon[getFlatIcon(src)] 这他妈是什么垃圾货? 滚开!")
 			return
 	else if (CB)
 		sell_html = {"<div style="background:#272727;border:1px solid #cc0000;padding:12px;margin-bottom:8px;border-radius:4px;">
@@ -346,7 +346,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 	if (href_list["sell"])
 		if (world.time <= biker_cooldown)
-			to_chat(H, "\icon[getFlatIcon(src)] My boys are busy for now. Come back later.")
+			to_chat(H, "\icon[getFlatIcon(src)] 我的手下现在很忙. 晚点再来.")
 			return
 		switch (href_list["sell"])
 			if ("meth")
@@ -362,7 +362,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 					if (D.amount == 0)
 						qdel(D)
 					H.put_in_hands(D)
-					to_chat(H, "\icon[getFlatIcon(src)] Here, there's more where it came from.")
+					to_chat(H, "\icon[getFlatIcon(src)] 给, 货还多着呢.")
 					reputation[H.civilization] += 2
 					if (prob(50))
 						if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
@@ -382,7 +382,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 					if (D.amount == 0)
 						qdel(D)
 					H.put_in_hands(D)
-					to_chat(H, "\icon[getFlatIcon(src)] Here, there's more where it came from.")
+					to_chat(H, "\icon[getFlatIcon(src)] 给, 货还多着呢.")
 					reputation[H.civilization] += 1
 					if (prob(50))
 						if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
@@ -402,7 +402,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 					if (D.amount == 0)
 						qdel(D)
 					H.put_in_hands(D)
-					to_chat(H, "\icon[getFlatIcon(src)] Holy shit, now that's some product. I'll need some time to distribute it.")
+					to_chat(H, "\icon[getFlatIcon(src)] 我靠, 这才叫货. 我需要点时间来分销它.")
 					biker_cooldown = world.time + 6000
 					if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
 						var/obj/map_metadata/art_of_the_deal/AD = map
@@ -428,7 +428,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		else if (istype(H.get_inactive_hand(), /obj/item/stack/money))
 			M = H.get_inactive_hand()
 		if (!M || M.value * M.amount < picked_price * 4)
-			to_chat(H, "\icon[getFlatIcon(src)] Not enough money. You need [picked_price] dollars.")
+			to_chat(H, "\icon[getFlatIcon(src)] 钱不够. 你需要 [picked_price] 美元.")
 			return
 		M.amount -= picked_price / 5
 		if (M.amount <= 0)
@@ -447,7 +447,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 			var/obj/map_metadata/art_of_the_deal/AD = map
 			AD.heat[H.civilization] += 2
 			if (AD.heat[H.civilization] >= 40)
-				to_chat(H, "\icon[getFlatIcon(src)] You better run fast before the feds get you.")
+				to_chat(H, "\icon[getFlatIcon(src)] 你最好在联邦探员抓到你之前跑快点.")
 				spawn(rand(300, 600))
 					global_broadcast(FREQP, "<big>The ATF reports that [H.real_name] may have acquired an illegal firearm. Detain and search the suspect as soon as possible.</big>")
 		show_shop(H)
@@ -458,7 +458,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/cartel
 	name = "Diego 'El Diablo' Morales"
-	desc = "Plata or plomo? I've got the product."
+	desc = "要钱还是要命? 我有货."
 	icon_state = "cartel"
 	var/heat_message_cooldown = list(
 		"Rednikov Industries" = 0,
@@ -487,10 +487,10 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/cartel/show_shop(mob/living/human/H)
 	if (reputation[H.civilization] < 0)
-		to_chat(H, "\icon[getFlatIcon(src)] Don't waste my time, find another hole to climb into, sapo.")
+		to_chat(H, "\icon[getFlatIcon(src)] 别浪费我的时间, 另找个洞钻进去吧, 告密者.")
 		return
 	if (H.civilization == "Sheriff Office" || H.civilization == "Paramedics" || H.civilization == "Government")
-		to_chat(H, "\icon[getFlatIcon(src)] I have nothing to tell you.")
+		to_chat(H, "\icon[getFlatIcon(src)] 我没什么可告诉你的.")
 		return
 	if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
 		var/obj/map_metadata/art_of_the_deal/AD = map
@@ -554,7 +554,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 	if (href_list["buy_coke"])
 		if (reputation[H.civilization] < 0)
-			to_chat(H, "\icon[getFlatIcon(src)] Don't waste my time, sapo.")
+			to_chat(H, "\icon[getFlatIcon(src)] 别浪费我的时间, 告密者.")
 			return
 		var/obj/item/stack/money/M = null
 		if (istype(H.get_active_hand(), /obj/item/stack/money))
@@ -562,7 +562,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		else if (istype(H.get_inactive_hand(), /obj/item/stack/money))
 			M = H.get_inactive_hand()
 		if (!M)
-			to_chat(H, "\icon[getFlatIcon(src)] You need money in your hand, maricon.")
+			to_chat(H, "\icon[getFlatIcon(src)] 你手里得有钱, 死基佬.")
 			return
 
 		switch (href_list["buy_coke"])
@@ -571,7 +571,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 				if (reputation[H.civilization] >= 10)
 					gram_price = max(50, 70 - Floor(reputation[H.civilization] / 2))
 				if (M.value * M.amount < gram_price * 4)
-					to_chat(H, "\icon[getFlatIcon(src)] Not enough money, maricon.")
+					to_chat(H, "\icon[getFlatIcon(src)] 钱不够, 死基佬.")
 					return
 				M.amount -= gram_price / 5
 				if (M.amount <= 0)
@@ -589,7 +589,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 				if (reputation[H.civilization] >= 20)
 					tenner_price = max(500, tenner_price - (2 * reputation[H.civilization]))
 				if (M.value * M.amount < tenner_price * 4)
-					to_chat(H, "\icon[getFlatIcon(src)] Not enough money, maricon.")
+					to_chat(H, "\icon[getFlatIcon(src)] 钱不够, 死基佬.")
 					return
 				M.amount -= tenner_price / 5
 				if (M.amount <= 0)
@@ -602,7 +602,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 					AD.heat[H.civilization] += 5
 			if ("block")
 				if (M.value * M.amount < 1200 * 4)
-					to_chat(H, "\icon[getFlatIcon(src)] Not enough money, maricon.")
+					to_chat(H, "\icon[getFlatIcon(src)] 钱不够, 死基佬.")
 					return
 				M.amount -= 1200 / 5
 				if (M.amount <= 0)
@@ -615,8 +615,8 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		show_shop(H)
 
 /obj/item/weapon/storage/briefcase/cocaine_10
-	name = "briefcase of product"
-	desc = "A briefcase. It seems to have a small powdery residue."
+	name = "一箱货"
+	desc = "一个公文包. 里面似乎有一些粉末残留."
 	icon_state = "briefcase"
 
 /obj/item/weapon/storage/briefcase/cocaine_10/New()
@@ -630,7 +630,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/walter
 	name = "Mr. White"
-	desc = "A respectable chemistry teacher."
+	desc = "一位受人尊敬的化学老师."
 	icon_state = "waltuh"
 	var/walter_cooldown = 0
 	var/list/reputation = list(
@@ -667,13 +667,13 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/walter/show_shop(mob/living/human/H)
 	if (reputation[H.civilization] < 0)
-		to_chat(H, "\icon[getFlatIcon(src)] Don't waste my time.")
+		to_chat(H, "\icon[getFlatIcon(src)] 别浪费我的时间.")
 		return
 	if (H.civilization == "Sheriff Office" || H.civilization == "Government")
-		to_chat(H, "\icon[getFlatIcon(src)] I have nothing to tell you.")
+		to_chat(H, "\icon[getFlatIcon(src)] 我没什么可告诉你的.")
 		return
 	if (world.time <= walter_cooldown)
-		to_chat(H, "\icon[getFlatIcon(src)] I need more time to cook. Come back later.")
+		to_chat(H, "\icon[getFlatIcon(src)] 我需要更多时间来制毒. 晚点再来.")
 		return
 
 	var/products_html = ""
@@ -717,7 +717,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		if (!picked_path)
 			return
 		if (world.time <= walter_cooldown)
-			to_chat(H, "\icon[getFlatIcon(src)] I need more time to cook. Come back later.")
+			to_chat(H, "\icon[getFlatIcon(src)] 我需要更多时间来制毒. 晚点再来.")
 			return
 		var/obj/item/stack/money/M = null
 		if (istype(H.get_active_hand(), /obj/item/stack/money))
@@ -725,7 +725,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		else if (istype(H.get_inactive_hand(), /obj/item/stack/money))
 			M = H.get_inactive_hand()
 		if (!M || M.value * M.amount < picked_price * 4)
-			to_chat(H, "\icon[getFlatIcon(src)] You need [picked_price] dollars in one of your hands.")
+			to_chat(H, "\icon[getFlatIcon(src)] 你需要把 [picked_price] 美元拿在一只手里.")
 			return
 		M.amount -= picked_price / 5
 		if (M.amount <= 0)
@@ -738,7 +738,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 				var/obj/map_metadata/art_of_the_deal/AD = map
 				AD.heat[H.civilization] += 25
 				if (AD.heat[H.civilization] >= 40)
-					to_chat(H, "\icon[getFlatIcon(src)] You better run fast before the feds get you.")
+					to_chat(H, "\icon[getFlatIcon(src)] 你最好在联邦探员抓到你之前跑快点.")
 				spawn(300)
 					global_broadcast(FREQP, "<big>The ATF reports that [H.real_name] may have acquired an explosive device.</big>")
 		else
@@ -752,7 +752,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/fed
 	name = "Agent Harrison Yates"
-	desc = "A federal agent with questionable morality."
+	desc = "一位道德存疑的联邦探员."
 	icon_state = "narc"
 	light_range = 2
 	var/list/reputation = list(
@@ -833,7 +833,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 	if (href_list["bribe"])
 		if (reputation[H.civilization] < 0)
-			to_chat(H, "\icon[getFlatIcon(src)] Don't waste my time. I can't do anything for you anymore.")
+			to_chat(H, "\icon[getFlatIcon(src)] 别浪费我的时间. 我再也帮不了你了.")
 			return
 		var/obj/item/stack/money/M = null
 		if (istype(H.get_active_hand(), /obj/item/stack/money))
@@ -841,26 +841,26 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 		else if (istype(H.get_inactive_hand(), /obj/item/stack/money))
 			M = H.get_inactive_hand()
 		if (!M || M.value * M.amount < 500 * 4)
-			to_chat(H, "\icon[getFlatIcon(src)] You need at least 500 dollars in one of your hands.")
+			to_chat(H, "\icon[getFlatIcon(src)] 你至少需要把 500 美元拿在一只手里.")
 			return
 		M.amount -= 500 / 5
 		if (M.amount <= 0)
 			qdel(M)
 		reputation[H.civilization] += 1
-		to_chat(H, "\icon[getFlatIcon(src)] Pleasure doing business with you.")
+		to_chat(H, "\icon[getFlatIcon(src)] 很高兴与你做生意.")
 		show_shop(H)
 
 	if (href_list["reduce"])
 		if (reputation[H.civilization] == 0)
-			to_chat(H, "\icon[getFlatIcon(src)] I will need a little sign of appreciation for this, if you know what I mean.")
+			to_chat(H, "\icon[getFlatIcon(src)] 我需要一点小小的表示来感谢我, 如果你懂我的意思.")
 			return
 		if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
 			var/obj/map_metadata/art_of_the_deal/AD = map
 			if (AD.heat[H.civilization] == 0)
-				to_chat(H, "\icon[getFlatIcon(src)] You gentlemen are off the radar, for now.")
+				to_chat(H, "\icon[getFlatIcon(src)] 先生们, 你们暂时不在雷达上了.")
 				return
 			if (world.time <= heat_cooldown)
-				to_chat(H, "\icon[getFlatIcon(src)] Not so fast, pal. I can't just tamper with evidence that fast.")
+				to_chat(H, "\icon[getFlatIcon(src)] 别急, 伙计. 我没法那么快就篡改证据.")
 				return
 			var/amount = text2num(href_list["reduce"])
 			var/heat_price = ceil(200 / reputation[H.civilization])
@@ -871,7 +871,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 			else if (istype(H.get_inactive_hand(), /obj/item/stack/money))
 				M = H.get_inactive_hand()
 			if (!M || M.value * M.amount < total_price * 4)
-				to_chat(H, "\icon[getFlatIcon(src)] You need at least [total_price] dollars in one of your hands.")
+				to_chat(H, "\icon[getFlatIcon(src)] 你至少需要把 [total_price] 美元拿在一只手里.")
 				return
 			M.amount -= total_price / 5
 			if (M.amount <= 0)
@@ -883,12 +883,12 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 				heat_cooldown = world.time + 600
 			if (amount >= 10)
 				heat_cooldown = world.time + 1200
-			to_chat(H, "\icon[getFlatIcon(src)] Done. Those files had a... accident.")
+			to_chat(H, "\icon[getFlatIcon(src)] 搞定. 那些文件出了点... 意外.")
 			show_shop(H)
 
 	if (href_list["intel"])
 		if (world.time <= intel_cooldown)
-			to_chat(H, "\icon[getFlatIcon(src)] I need more time to investigate. Come back later.")
+			to_chat(H, "\icon[getFlatIcon(src)] 我需要更多时间来调查. 晚点再来.")
 			return
 		switch (href_list["intel"])
 			if ("narc")
@@ -900,12 +900,12 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 							count_c++
 						if (P.reagents.has_reagent("methamphetamine") && P.reagents.get_reagent_amount("methamphetamine") >= 10)
 							count_m++
-				to_chat(H, "\icon[getFlatIcon(src)] There's currently [count_c] grams of cocaine and [count_m] grams of methamphetamine in circulation right now.")
+				to_chat(H, "\icon[getFlatIcon(src)] 目前流通中的可卡因有 [count_c] 克, 甲基苯丙胺有 [count_m] 克.")
 				var/count_b = 0
 				for (var/obj/item/weapon/reagent_containers/cocaineblock/block in world)
 					if (block)
 						count_b++
-				to_chat(H, "\icon[getFlatIcon(src)] There's currently [count_b] blocks of cocaine in circulation.")
+				to_chat(H, "\icon[getFlatIcon(src)] 目前流通中的可卡因有 [count_b] 块.")
 			if ("firearms")
 				var/count_f = 0
 				var/count_bomb = 0
@@ -915,13 +915,13 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 				for (var/obj/item/weapon/plastique/c4/bomb in world)
 					if (bomb)
 						count_bomb++
-				to_chat(H, "\icon[getFlatIcon(src)] There's [count_f] illegal firearms and [count_bomb] explosives in circulation right now.")
+				to_chat(H, "\icon[getFlatIcon(src)] 目前流通中的非法枪械有 [count_f] 件, 爆炸物有 [count_bomb] 件.")
 			if ("disks")
 				var/count_d = 0
 				for (var/obj/item/weapon/disk/D in world)
 					if (D.faction)
 						count_d++
-				to_chat(H, "\icon[getFlatIcon(src)] There's [count_d] illegal disks in circulation right now.")
+				to_chat(H, "\icon[getFlatIcon(src)] 目前有 [count_d] 张非法磁盘在流通。")
 		intel_cooldown = world.time + 4800
 		show_shop(H)
 
@@ -931,7 +931,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/bouncer
 	name = "Marcellus"
-	desc = "Your \"friendly\" neighborhood bouncer. Your wife loves him."
+	desc = "你\"友好的\"社区保安。你妻子很喜欢他。"
 	icon_state = "bouncer"
 
 /mob/living/simple_animal/npc_vendor/bouncer/New()
@@ -959,7 +959,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 
 /mob/living/simple_animal/npc_vendor/big_lenny
 	name = "Big Lenny"
-	desc = "A barber that likes to relax."
+	desc = "一个喜欢放松的理发师。"
 	icon_state = "big_lenny"
 
 /mob/living/simple_animal/npc_vendor/big_lenny/New()
@@ -986,7 +986,7 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 // ============================================================
 
 /obj/structure/npc_vendor
-	name = "NPC (Do not use!)"
+	name = "NPC(请勿使用!)"
 	icon = 'icons/mob/npcs.dmi'
 	flammable = FALSE
 	not_movable = TRUE
@@ -1007,43 +1007,43 @@ h2 { color: #cc0000; border-bottom: 2px solid #cc0000; padding-bottom: 8px; marg
 			qdel(src)
 
 /obj/structure/npc_vendor/smuggler
-	name = "Omar the Smuggler"
-	desc = "You've got money? I've got goods."
+	name = "走私犯奥马尔"
+	desc = "你有钱?我有货。"
 	icon_state = "afghdrug"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/smuggler
 
 /obj/structure/npc_vendor/biker
-	name = "Bruce the Biker"
-	desc = "You've got drugs? I've got money."
+	name = "摩托手布鲁斯"
+	desc = "你有毒品?我有钱。"
 	icon_state = "bruce"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/biker
 
 /obj/structure/npc_vendor/cartel
-	name = "Diego 'El Diablo' Morales"
-	desc = "Plata or plomo? I've got the product."
+	name = "迭戈'恶魔'莫拉莱斯"
+	desc = "要钱还是要子弹?我有货。"
 	icon_state = "cartel"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/cartel
 
 /obj/structure/npc_vendor/walter
-	name = "Mr. White"
-	desc = "A respectable chemistry teacher."
+	name = "怀特先生"
+	desc = "一位受人尊敬的化学老师。"
 	icon_state = "waltuh"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/walter
 
 /obj/structure/npc_vendor/fed
-	name = "Agent Harrison Yates"
-	desc = "A federal agent with questionable morality."
+	name = "哈里森·耶茨探员"
+	desc = "一位道德存疑的联邦探员。"
 	icon_state = "narc"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/fed
 
 /obj/structure/npc_vendor/bouncer
-	name = "Marcellus"
-	desc = "Your \"friendly\" neighborhood bouncer. Your wife loves him."
+	name = "马塞勒斯"
+	desc = "你\"友好的\"社区保安。你妻子很喜欢他。"
 	icon_state = "bouncer"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/bouncer
 
 /obj/structure/npc_vendor/big_lenny
-	name = "Big Lenny"
-	desc = "A barber that likes to relax."
+	name = "大莱尼"
+	desc = "一个喜欢放松的理发师。"
 	icon_state = "big_lenny"
 	mob_type_to_spawn = /mob/living/simple_animal/npc_vendor/big_lenny

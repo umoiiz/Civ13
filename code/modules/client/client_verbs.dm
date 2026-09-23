@@ -5,20 +5,20 @@
 		GLOB.nanomanager.close_uis(mob)
 	cache.Cut()
 	sending.Cut()
-	to_chat(src, "<span class = 'good'>Cache successfully cleared!</span>")
+	to_chat(src, "<span class = 'good'>缓存已成功清除!</span>")
 
 /client/verb/reload_chat()
 	set category = "OOC"
 	set name = "Reload Chat"
 	if (chat)
 		chat.load()
-		to_chat(src, "<span class = 'good'>Chat reloaded!</span>")
+		to_chat(src, "<span class = 'good'>聊天已重新加载!</span>")
 
 /client/verb/clear_chat_verb()
 	set category = "OOC"
 	set name = "Clear Chat"
 	src << output(null, "browser_chat:clearChat")
-	to_chat(src, "<span class = 'good'>Chat cleared!</span>")
+	to_chat(src, "<span class = 'good'>聊天已清除!</span>")
 
 /client/verb/open_embed_wiki()
 	set category = "OOC"
@@ -233,20 +233,20 @@
 	set category = "OOC"
 
 	if (say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='warning'>Speech is currently admindisabled.</span>")
+		to_chat(usr, "<span class='warning'>发言当前已被管理员禁用.</span>")
 		return
 
 	if (!mob)	return
 	if (IsGuestKey(key))
-		to_chat(src, "Guests may not use OOC.")
+		to_chat(src, "访客不能使用 OOC.")
 		return
 
 	if (!is_preference_enabled(/datum/client_preference/show_ooc))
-		to_chat(src, "<span class='warning'>You have OOC muted.</span>")
+		to_chat(src, "<span class='warning'>你已被 OOC 禁言.</span>")
 		return
 
 	if (quickBan_isbanned("OOC"))
-		to_chat(src, "<span class = 'danger'>You're banned from OOC.</span>")
+		to_chat(src, "<span class = 'danger'>你已被禁止使用 OOC.</span>")
 		return
 
 	var/msg_prefix = ""
@@ -258,18 +258,18 @@
 
 	if (!holder)
 		if (!config.ooc_allowed)
-			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
+			to_chat(src, "<span class='danger'>OOC 已全局禁言.</span>")
 			return
 		if (!config.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+			to_chat(usr, "<span class='danger'>死亡生物的 OOC 已被关闭.</span>")
 			return
 		if (prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
+			to_chat(src, "<span class='danger'>你不能使用 OOC (已禁言).</span>")
 			return
 		if (handle_spam_prevention(msg,MUTE_OOC))
 			return
 		if (findtext(msg, "byond://"))
-			to_chat(src, "<b>Advertising other servers is not allowed.</b>")
+			to_chat(src, "<b>不允许宣传其他服务器。</b>")
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]", key_name_admin(src))
 			return
@@ -353,14 +353,14 @@
 	set category = "OOC"
 
 	if (say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admindisabled.</span>")
+		to_chat(usr, "<span class='danger'>语音目前已被管理员禁用。</span>")
 		return
 
 	if (!mob)
 		return
 
 	if (IsGuestKey(key))
-		to_chat(src, "Guests may not use OOC.")
+		to_chat(src, "访客不得使用OOC。")
 		return
 
 	msg = sanitize(msg)
@@ -368,27 +368,27 @@
 		return
 
 	if (!is_preference_enabled(/datum/client_preference/show_looc))
-		to_chat(src, "<span class='danger'>You have LOOC muted.</span>")
+		to_chat(src, "<span class='danger'>你已被禁言LOOC。</span>")
 		return
 
 	if (quickBan_isbanned("OOC"))
-		to_chat(src, "<span class = 'danger'>You're banned from OOC.</span>")
+		to_chat(src, "<span class = 'danger'>你已被禁止使用OOC。</span>")
 		return
 
 	if (!holder)
 		if (!config.looc_allowed)
-			to_chat(src, "<span class='danger'>LOOC is globally muted.</span>")
+			to_chat(src, "<span class='danger'>LOOC已被全局禁言。</span>")
 			return
 		if (!config.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+			to_chat(usr, "<span class='danger'>死亡生物的OOC已被关闭。</span>")
 			return
 		if (prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
+			to_chat(src, "<span class='danger'>你无法使用OOC(已禁言)。</span>")
 			return
 		if (handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if (findtext(msg, "byond://"))
-			to_chat(src, "<b>Advertising other servers is not allowed.</b>")
+			to_chat(src, "<b>不允许宣传其他服务器。</b>")
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]", key_name_admin(src))
 			return

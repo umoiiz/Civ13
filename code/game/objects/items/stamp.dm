@@ -1,6 +1,6 @@
 /obj/item/weapon/stamp
-	name = "wax seal stamp"
-	desc = "A stamp for marking important documents."
+	name = "火漆印章"
+	desc = "用于标记重要文件的印章。"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "stamp-rn"
 	item_state = "stamp"
@@ -12,102 +12,102 @@
 	var/mob/living/human/owner = null
 
 /obj/item/weapon/stamp/rn
-	name = "British Governor's seal"
+	name = "英国总督印章"
 	icon_state = "stamp-rn"
 
 /obj/item/weapon/stamp/fr
-	name = "French Governor's seal"
+	name = "法国总督印章"
 	icon_state = "stamp-fr"
 
 /obj/item/weapon/stamp/pt
-	name = "Portuguese Governor's seal"
+	name = "葡萄牙总督印章"
 	icon_state = "stamp-pt"
 
 /obj/item/weapon/stamp/es
-	name = "Spanish Governor's seal"
+	name = "西班牙总督印章"
 	icon_state = "stamp-es"
 
 /obj/item/weapon/stamp/nl
-	name = "Dutch Governor's seal"
+	name = "荷兰总督印章"
 	icon_state = "stamp-nl"
 
 /obj/item/weapon/stamp/baily
-	name = "Baily approval"
+	name = "贝利批准章"
 	icon_state = "stamp-fr"
 
 /obj/item/weapon/stamp/mail
-	name = "envelope seal"
+	name = "信封印章"
 	icon_state = "stamp-blank"
-	desc = "A stamp for sealing important envelopes."
+	desc = "用于密封重要信封的印章。"
 
 
 //INKSTAMPS FOLLOW -siro
 //NEW STAMPS - goldenfreddycl
 /obj/item/weapon/stamp/fna
-	name = "fna ink stamp"
+	name = "fna墨水印章"
 	icon_state = "stamp-fna"
 
 /obj/item/weapon/stamp/mail/fna
-	name = "fna seal stamp"
+	name = "fna印章"
 	icon_state = "seal-fna"
 
 /obj/item/weapon/stamp/cccp
-	name = "red cccp stamp"
+	name = "红色cccp印章"
 	icon_state = "stamp-cccp"
 
 /obj/item/weapon/stamp/mail/cccp
-	name = "red cccp seal stamp"
+	name = "红色cccp封蜡印章"
 	icon_state = "seal-cccp"
 
 /obj/item/weapon/stamp/nkvdseal
-	name = "nkvd seal stamp"
+	name = "nkvd封蜡印章"
 	icon_state = "stamp-nkvd"
 
 /obj/item/weapon/stamp/denied
-	name = "DENIED ink stamp"
+	name = "拒绝墨水印章"
 	icon_state = "stamp-deny"
 
 /obj/item/weapon/stamp/approved
-	name = "APPROVED ink stamp"
+	name = "批准墨水印章"
 	icon_state = "stamp-approved"
 
 /obj/item/weapon/stamp/stamplatin
-	name = "latin ink stamp"
+	name = "拉丁文墨水印章"
 	icon_state = "stamp-latin"
 
 /obj/item/weapon/stamp/stampgerman
-	name = "german ink stamp"
+	name = "德文墨水印章"
 	icon_state = "stamp-german"
 
 /obj/item/weapon/stamp/stampgaul
-	name = "gaelic ink stamp"
+	name = "盖尔文墨水印章"
 	icon_state = "stamp-gaul"
 
 /obj/item/weapon/stamp/mail/latin
-	name = "latin seal stamp"
+	name = "拉丁文封蜡印章"
 	icon_state = "seal-latin"
 
 /obj/item/weapon/stamp/mail/german
-	name = "german seal stamp"
+	name = "德文封蜡印章"
 	icon_state = "seal-german"
 
 /obj/item/weapon/stamp/mail/gaul
-	name = "gaelic seal stamp"
+	name = "盖尔文封蜡印章"
 	icon_state = "seal-gaul"
 
 /obj/item/weapon/stamp/mail/berlin
-	name = "berlin seal stamp"
+	name = "柏林封蜡印章"
 	icon_state = "steal-berlin"
 
 /obj/item/weapon/stamp/mail/berlin/censored
 	icon_state = "seal-berlin-cens"
 
 /obj/item/weapon/stamp/mail/admin
-	name = "civ13 admin seal"
+	name = "civ13管理员印章"
 	icon_state = "seal-admin"
 
 /obj/item/weapon/stamp/mail/court
-	name = "court seal stamp"
+	name = "法庭印章"
 	icon_state = "seal-court"
 
 // "Syndicate stamp to forge documents." Was the orrigional comments for the orrigional item. Its a fancy adujustable stamp now, nothing sinister yet. - siro

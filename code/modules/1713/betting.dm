@@ -1,6 +1,6 @@
 /obj/structure/betting_box
-	name = "betting box"
-	desc = "A box storing bets on something."
+	name = "投注箱"
+	desc = "一个存放某物投注的箱子."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bet_box"
 	flammable = FALSE
@@ -14,20 +14,20 @@
 	var/moneyname = "rubles"
 	var/match_running = FALSE
 /obj/structure/betting_box/red
-	name = "red betting box"
+	name = "红方投注箱"
 	icon_state = "bet_box_red"
-	desc = "A box storing bets on the red."
+	desc = "一个存放红方投注的箱子."
 	bettingon = "red"
 
 /obj/structure/betting_box/blue
-	name = "blue betting box"
+	name = "蓝方投注箱"
 	icon_state = "bet_box_blue"
-	desc = "A box storing bets on the blue."
+	desc = "一个存放蓝方投注的箱子."
 	bettingon = "blue"
 
 /obj/structure/betting_box/examine(mob/user)
 	..()
-	to_chat(user, "<b>There is a total of [process_totals()] [moneyname] inside.</b>")
+	to_chat(user, "<b>里面总共有[process_totals()][moneyname].</b>")
 
 /obj/structure/betting_box/proc/clear_bets()
 	odd = 2.0
@@ -72,7 +72,7 @@
 			RB.amount = i[2]
 			H.put_in_active_hand(RB)
 			i[2]=0
-			to_chat(H, "You withdraw [RB] rubles.")
+			to_chat(H, "你取出了[RB]卢布.")
 			return
 /obj/structure/betting_box/attackby(var/obj/item/I,var/mob/living/human/H)
 	if (!istype(I, /obj/item/stack/money))
@@ -98,7 +98,7 @@
 ////////////////////////////////////////////////////////////////
 /obj/effect/bet_processor
 	name = "bet processor"
-	desc = "processes boxing matches in this area."
+	desc = "处理此区域的拳击比赛."
 	icon = 'icons/mob/screen/effects.dmi'
 	icon_state = "x"
 	invisibility = 101
@@ -140,7 +140,7 @@
 		return
 
 /obj/effect/bet_processor/proc/start_match()
-	blue_player.visible_message("<big>A combat is starting between [red_player.real_name] (red) and [blue_player.real_name] (blue)!</big>")
+	blue_player.visible_message("<big>一场战斗即将在[red_player.real_name](红方)和[blue_player.real_name](蓝方)之间开始!</big>")
 	for (var/obj/structure/betting_box/BB in range(5,src))
 		BB.match_running = TRUE
 	if (istype(map, /obj/map_metadata/gulag13))
@@ -154,7 +154,7 @@
 		for(var/mob/living/human/H in curr_area)
 			if (H.stat != CONSCIOUS || H.surrendered)
 				if (H == red_player)
-					H.visible_message("<big>The <font color='blue'>Blue Player</font> ([blue_player.real_name]) wins!</big>")
+					H.visible_message("<big><font color='blue'>蓝方玩家</font>([blue_player.real_name])获胜!</big>")
 					match_running = FALSE
 					for (var/obj/structure/betting_box/BB in range(5,src))
 						BB.match_running = FALSE
@@ -164,7 +164,7 @@
 						G.gracedown1 = TRUE
 					return
 				else if (H == blue_player)
-					H.visible_message("<big>The <font color='red'>Red Player</font> ([red_player.real_name]) wins!</big>")
+					H.visible_message("<big><font color='red'>红方玩家</font>([red_player.real_name])获胜!</big>")
 					match_running = FALSE
 					for (var/obj/structure/betting_box/BB in range(5,src))
 						BB.match_running = FALSE

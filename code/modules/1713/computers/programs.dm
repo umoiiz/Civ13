@@ -61,11 +61,11 @@
 	user.face_atom(origin)
 
 	if (get_dist(origin, user) > 1)
-		to_chat(user, "<span class = 'danger'>Get next to \the [origin] to use it.</span>")
+		to_chat(user, "<span class = 'danger'>靠近 \the [origin] 以使用它.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个.</span>")
 		return FALSE
 
 ///////////////////ORION TRAIL GAME//////////////////////////////////
@@ -307,7 +307,7 @@
 			killed_crew++
 
 			if(settlers.len == 0 || alive == 0)
-				to_chat(usr, "The last crewmember [sheriff], shot themselves, GAME OVER!")
+				to_chat(usr, "最后一名船员 [sheriff], 开枪自杀了, 游戏结束!")
 				gameStatus = ORION_STATUS_GAMEOVER
 				event = null
 
@@ -778,7 +778,7 @@
 					var/datum/email/em = email_list[i]
 					if (!em.read)
 						playsound(origin.loc,'sound/machines/computer/mail.ogg',60)
-						origin.visible_message("<big><font color='yellow'>\icon[getFlatIcon(origin)]You've got mail!</font></big>")
+						origin.visible_message("<big><font color='yellow'>\icon[getFlatIcon(origin)]你有新邮件!</font></big>")
 						return
 	return
 /datum/program/monkeysoftmail/reset_tmp_vars()
@@ -1546,7 +1546,7 @@
 								qdel(SW)
 								for(var/mob/living/human/HP in player_list)
 									if (HP.civilization == "Sheriff Office")
-										to_chat(HP, "<big><font color='yellow'>A suspect with a pending warrant has been dropped off at the station by a citizens arrest.</font></big>")
+										to_chat(HP, "<big><font color='yellow'>一名有未执行逮捕令的嫌疑人已被公民逮捕并送至警局.</font></big>")
 					if (!done && found)
 						mainbody += "<font color='yellow'>There are no outstanding warrants for any of the suspects.</font>"
 					else if (!done && !found)
@@ -2244,7 +2244,7 @@
 					do_html(user)
 					return
 			else
-				to_chat(user, "<h1>Your faction does not have any points pool, report this to a developer! (Bierkraan#9876)</h1>")
+				to_chat(user, "<h1>你的阵营没有任何点数池, 请将此报告给开发者! (Bierkraan#9876)</h1>")
 
 		switch (href_list["vehiclegiver"])
 			if ("2A6 Leopard Tank (1000)")

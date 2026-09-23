@@ -41,27 +41,27 @@
 	var/turf/locationt = pick(supplydrop_turfs)
 	switch(droptype)
 		if("supplies")
-			to_chat(world, "<font size=3 color='red'><center>SOVIET LOGISTICAL CENTER BROADCAST<br>Ammo has been dropped in the area!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center>苏联后勤中心广播<br>弹药已空投至该区域!</center></font>")
 			new/obj/structure/closet/crate/airdrops/soviet/ammo(locationt)
 			new/obj/item/flashlight/flare/white/on(locationt)
 
 		if("pkm")
-			to_chat(world, "<font size=3 color='red'><center>SOVIET LOGISTICAL CENTER BROADCAST<br>A PKM crate has been dropped in the area!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center>苏联后勤中心广播<br>一箱PKM已空投至该区域!</center></font>")
 			new/obj/structure/closet/crate/airdrops/soviet/pkm(locationt)
 			new/obj/item/flashlight/flare/white/on(locationt)
 
 		if("defense")
-			to_chat(world, "<font size=3 color='red'><center>SOVIET LOGISTICAL CENTER BROADCAST<br>Defensive Supplies have been dropped in the area!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center>苏联后勤中心广播<br>防御物资已空投至该区域!</center></font>")
 			new/obj/structure/closet/crate/airdrops/soviet/defense(locationt)
 			new/obj/item/flashlight/flare/white/on(locationt)
 
 		if("med")
-			to_chat(world, "<font size=3 color='red'><center>SOVIET LOGISTICAL CENTER BROADCAST<br>Medical Equipment has been dropped in the area!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center>苏联后勤中心广播<br>医疗设备已空投至该区域!</center></font>")
 			new/obj/structure/closet/crate/airdrops/soviet/medical(locationt)
 			new/obj/item/flashlight/flare/white/on(locationt)
 
 		if("explo")
-			to_chat(world, "<font size=3 color='red'><center>SOVIET LOGISTICAL CENTER BROADCAST<br>Defensive Explosives have been dropped in the area!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center>苏联后勤中心广播<br>防御炸药已空投至该区域!</center></font>")
 			new/obj/structure/closet/crate/airdrops/soviet/explo(locationt)
 			new/obj/item/flashlight/flare/white/on(locationt)
 
@@ -173,7 +173,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3><font color = 'red'>The Soviets</font> have recaptured Hill 3234!</font>")
+			to_chat(world, "<font size = 3><font color = 'red'>苏军</font>已重新夺回3234高地!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

@@ -94,7 +94,7 @@ var/list/global/floor_cache = list()
 	if (istype (C, /obj/item/weapon/barrier) && !istype(C, /obj/item/weapon/barrier/sandbag))
 		var/choice = WWinput(user, "Do you want to start filling up the trench with \the [C]?","Trench","Yes",list("Yes","No"))
 		if (choice == "Yes")
-			to_chat(user, "You shove some dirt into the trench.")
+			to_chat(user, "你将一些泥土推入壕沟.")
 			if (istype(src, /turf/floor/trench))
 				trench_filling++
 				qdel(C)
@@ -106,7 +106,7 @@ var/list/global/floor_cache = list()
 	if (istype (C, /obj/item/weapon/barrier) && !istype(C, /obj/item/weapon/barrier/sandbag))
 		var/choice = WWinput(user, "Do you want to start filling up the trench with \the [C]?","Trench","Yes",list("Yes","No"))
 		if (choice == "Yes")
-			to_chat(user, "You shove some dirt into the trench.")
+			to_chat(user, "你将一些泥土推入壕沟.")
 			if (istype(src, /turf/floor/trench))
 				trench_filling++
 				qdel(C)
@@ -123,7 +123,7 @@ var/list/global/floor_cache = list()
 					RG.reagents.add_reagent("sodiumchloride", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)*0.04)
 					sumex += min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)*0.04
 				RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)-sumex)
-				user.visible_message("<span class='notice'>[user] fills \the [RG] with water.</span>","<span class='notice'>You fill \the [RG] with water.</span>")
+				user.visible_message("<span class='notice'>[user]用水灌满了\the [RG].</span>","<span class='notice'>你用水灌满了\the [RG].</span>")
 				playsound(user, 'sound/effects/watersplash.ogg', 100, TRUE)
 				user.setClickCooldown(5)
 				return TRUE //prevent afterattack 
@@ -161,14 +161,14 @@ var/list/global/floor_cache = list()
 
 /decl/flooring/trench
 	name = "trench"
-	desc = "A knee-high trench."
+	desc = "一条齐膝深的壕沟."
 	icon = 'icons/turf/trench.dmi'
 	icon_base = "trench"
 	flags = TURF_HAS_EDGES | SMOOTH_ONLY_WITH_ITSELF
 
 /decl/flooring/trench/flooded
 	name = "flooded trench"
-	desc = "A knee-high trench, flooded with water."
+	desc = "一条齐膝深的壕沟,灌满了水."
 	icon = 'icons/turf/trench.dmi'
 	icon_base = "trench_flooded"
 	flags = TURF_HAS_EDGES | SMOOTH_ONLY_WITH_ITSELF
@@ -198,21 +198,21 @@ var/list/global/floor_cache = list()
 				return 1
 			if(L.grabbed_by && L.grabbed_by.len)
 				var/mob/living/L2 = L.grabbed_by[1].assailant
-				visible_message("<span class = 'notice'>[L2] starts pulling [L] out of trench.</span>")
+				visible_message("<span class = 'notice'>[L2]开始将[L]从壕沟中拉出.</span>")
 				if(!do_after(L2, 20, oldloc))
 					return FALSE
 				if(..())
-					visible_message("<span class = 'notice'>[L2] pulls [L] out of trench.</span>")
+					visible_message("<span class = 'notice'>[L2]将[L]从壕沟中拉出.</span>")
 					L.forceMove(src)
 					return TRUE
 				return FALSE
 			if(world.time > message_cooldown + 30)
-				visible_message("<span class = 'notice'>[L] starts to enter a trench.</span>")
+				visible_message("<span class = 'notice'>[L]开始进入壕沟.</span>")
 				message_cooldown = world.time
 			if (!do_after(L, 5, src, needhand = FALSE))
 				return FALSE
 			if(..())
-				visible_message("<span class = 'notice'>[L] enters a trench.</span>")
+				visible_message("<span class = 'notice'>[L]进入了壕沟.</span>")
 				L.forceMove(src)
 				if (L.pulling && !isliving(L.pulling))
 					L.pulling.forceMove(src)
@@ -220,23 +220,23 @@ var/list/global/floor_cache = list()
 		if(istype(oldloc, /turf/floor/trench) && locate(/obj/covers/repairedfloor, usr.loc))
 			if(!locate(/obj/covers/repairedfloor) in contents)
 				if(world.time > message_cooldown + 30)
-					visible_message("<span class = 'notice'>[L] starts to climb down from a bridge.</span>")
+					visible_message("<span class = 'notice'>[L]开始从桥上爬下.</span>")
 					message_cooldown = world.time
 				if (!do_after(L, 5, src, needhand = FALSE))
 					return FALSE
 				if(..())
-					visible_message("<span class = 'notice'>[L] climbs down from a bridge.</span>")
+					visible_message("<span class = 'notice'>[L]从桥上爬下.</span>")
 					L.forceMove(src)
 					return TRUE
 		if(istype(oldloc, /turf/floor/trench) && locate(/obj/structure/vehicleparts/frame, usr.loc))
 			if(!locate(/obj/structure/vehicleparts/frame) in contents)
 				if(world.time > message_cooldown + 30)
-					visible_message("<span class = 'notice'>[L] starts to climb down.</span>")
+					visible_message("<span class = 'notice'>[L]开始向下爬.</span>")
 					message_cooldown = world.time
 				if (!do_after(L, 5, src, needhand = FALSE))
 					return FALSE
 				if(..())
-					visible_message("<span class = 'notice'>[L] climbs down.</span>")
+					visible_message("<span class = 'notice'>[L]向下爬.</span>")
 					L.forceMove(src)
 					return TRUE
 
@@ -267,11 +267,11 @@ var/list/global/floor_cache = list()
 				return TRUE
 			if(L.grabbed_by && L.grabbed_by.len)
 				var/mob/living/L2 = L.grabbed_by[1].assailant
-				visible_message("<span class = 'notice'>[L2] starts pulling [L] out of trench.</span>")
+				visible_message("<span class = 'notice'>[L2]开始将[L]从壕沟中拉出.</span>")
 				if(!do_after(L2, 35, src))
 					return FALSE
 				if(..())
-					visible_message("<span class = 'notice'>[L2] pulls [L] out of trench.</span>")
+					visible_message("<span class = 'notice'>[L2]将[L]从壕沟中拉出.</span>")
 					L.forceMove(newloc)
 					return TRUE
 				return FALSE
@@ -282,12 +282,12 @@ var/list/global/floor_cache = list()
 				if (A.density)
 					return FALSE
 			if(world.time > message_cooldown + 30)
-				visible_message("<span class = 'notice'>[L] starts to exit a trench.</span>")
+				visible_message("<span class = 'notice'>[L]开始离开战壕。</span>")
 				message_cooldown = world.time
 			if (!do_after(L, 20, src, needhand = FALSE))
 				return FALSE
 			if(..())
-				visible_message("<span class = 'notice'>[L] exits a trench.</span>")
+				visible_message("<span class = 'notice'>[L]离开了战壕。</span>")
 				var/turf/T = newloc
 				if(T.Enter(O, src))
 					L.forceMove(newloc)
@@ -296,12 +296,12 @@ var/list/global/floor_cache = list()
 				return TRUE
 		if(istype(newloc, /turf/floor/trench) && locate(/obj/covers/repairedfloor, newloc) && !locate(/obj/covers/repairedfloor, usr.loc))
 			if(world.time > message_cooldown + 30)
-				visible_message("<span class = 'notice'>[L] starts to climb on a bridge.</span>")
+				visible_message("<span class = 'notice'>[L]开始攀上桥梁。</span>")
 				message_cooldown = world.time
 			if (!do_after(L, 20, src, needhand = FALSE))
 				return FALSE
 			if(..())
-				visible_message("<span class = 'notice'>[L] climbs on a bridge.</span>")
+				visible_message("<span class = 'notice'>[L]攀上了桥梁。</span>")
 				var/turf/T = newloc
 				if(T.Enter(O, src))
 					L.forceMove(newloc)
@@ -311,14 +311,14 @@ var/list/global/floor_cache = list()
 				if(F.CanPass(L) == 0)
 					return FALSE
 			if(world.time > message_cooldown + 30)
-				visible_message("<span class = 'notice'>[L] starts to climb on a frame.</span>")
+				visible_message("<span class = 'notice'>[L]开始攀上框架。</span>")
 				message_cooldown = world.time
 			if (!do_after(L, 20, src, needhand = FALSE))
 				return FALSE
 			if(..())
 				var/turf/T = newloc
 				if(T.Enter(O, src))
-					visible_message("<span class = 'notice'>[L] climbs on a frame.</span>")
+					visible_message("<span class = 'notice'>[L]攀上了框架。</span>")
 					L.forceMove(newloc)
 				return TRUE
 	return ..()
@@ -330,18 +330,18 @@ var/list/global/floor_cache = list()
 			to_chat(user, SPAN_WARNING("Your people haven't researched Gunsmithing yet."))
 			return
 		var/obj/item/weapon/material/shovel/trench/S = C
-		visible_message("<span class = 'notice'>[user] starts to dig a trench.</span>")
+		visible_message("<span class = 'notice'>[user]开始挖战壕。</span>")
 		if (!do_after(user, (10 - S.dig_speed)*10, src))
 			return
 		trench_stage++
 		switch(trench_stage)
 			if(1)
 				//icon_state = ""
-				visible_message("<span class = 'notice'>[user] digs.</span>")
+				visible_message("<span class = 'notice'>[user]挖掘。</span>")
 				to_chat(user, ("<span class = 'notice'>You need to dig this tile one more time to make a trench.</span>"))
 				return
 			if(2)
-				visible_message("<span class = 'notice'>[user] makes a trench.</span>")
+				visible_message("<span class = 'notice'>[user]挖出了一条战壕。</span>")
 				var/turf/floor/trench/T = new /turf/floor/trench
 				T.previous_turf = src
 				ChangeTurf(T)
@@ -357,7 +357,7 @@ var/list/global/floor_cache = list()
 			to_chat(user, SPAN_WARNING("Your people haven't researched Gunsmithing yet."))
 			return
 		var/obj/item/weapon/material/shovel/trench/S = C
-		visible_message("<span class = 'notice'>[user] starts to dig a trench.</span>")
+		visible_message("<span class = 'notice'>[user]开始挖战壕。</span>")
 		if (!do_after(user, (10 - S.dig_speed)*10, src))
 			return
 		if (istype(src, /turf/floor/beach/sand))
@@ -365,11 +365,11 @@ var/list/global/floor_cache = list()
 			switch(trench_stage)
 				if(1)
 					//icon_state = ""
-					visible_message("<span class = 'notice'>[user] digs.</span>")
+					visible_message("<span class = 'notice'>[user]挖掘。</span>")
 					to_chat(user, ("<span class = 'notice'>You need to dig this tile one more time to make a trench.</span>"))
 					return
 				if(2)
-					visible_message("<span class = 'notice'>[user] makes a trench.</span>")
+					visible_message("<span class = 'notice'>[user]挖出了一条战壕。</span>")
 					var/previous_turf_type = src.type
 					ChangeTurf(/turf/floor/trench)
 					previous_turf = previous_turf_type
@@ -383,7 +383,7 @@ var/list/global/floor_cache = list()
 			to_chat(user, SPAN_WARNING("Your people haven't researched Gunsmithing yet."))
 			return
 		var/obj/item/weapon/material/shovel/trench/S = C
-		visible_message("<span class = 'notice'>[user] starts to dig a trench.</span>")
+		visible_message("<span class = 'notice'>[user]开始挖战壕。</span>")
 		if (!do_after(user, (10 - S.dig_speed)*5, src))
 			return
 		if (istype(src,/turf/floor/dirt))
@@ -391,11 +391,11 @@ var/list/global/floor_cache = list()
 			switch(trench_stage)
 				if(1)
 					//icon_state = ""
-					visible_message("<span class = 'notice'>[user] digs.</span>")
+					visible_message("<span class = 'notice'>[user]挖掘。</span>")
 					to_chat(user, ("<span class = 'notice'>You need to dig this tile one more time to make a trench.</span>"))
 					return
 				if(2)
-					visible_message("<span class = 'notice'>[user] makes a trench.</span>")
+					visible_message("<span class = 'notice'>[user]挖出了一条战壕。</span>")
 					var/previous_turf_type = src.type
 					ChangeTurf(/turf/floor/trench)
 					previous_turf = previous_turf_type
@@ -407,10 +407,10 @@ var/list/global/floor_cache = list()
 	var/mob/living/human/H = user
 	if (istype(C, /obj/item/weapon/material/shovel))
 		var/obj/item/weapon/material/shovel/trench/S = C
-		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "You hear something being uprooted.")
+		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "你听到什么东西被连根拔起。")
 		if (!do_after(user, (100/(H.getStatCoeff("strength"))/(12/S.dig_speed)))) //Think a DEFINE for the number being divided over S.dig_speed could be helpful, keeping it this for now
 			return
-		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "You hear something being removed.")
+		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "你听到什么东西被移除了。")
 		H.adaptStat("strength", 1)
 		var/area/A = get_area(src)
 		if (A.climate == "jungle" || A.climate == "savanna")
@@ -420,10 +420,10 @@ var/list/global/floor_cache = list()
 		return
 	else if (istype(C, /obj/item/weapon/material/shovel))
 		var/obj/item/weapon/material/shovel/S = C
-		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "You hear something being uprooted.")
+		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "你听到什么东西被连根拔起。")
 		if (!do_after(user, (100/(H.getStatCoeff("strength"))/S.usespeed)))
 			return
-		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "You hear something being removed.")
+		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "你听到什么东西被移除了。")
 		H.adaptStat("strength", 1)
 		var/area/A = get_area(src)
 		if (A.climate == "jungle" || A.climate == "savanna")
@@ -437,10 +437,10 @@ var/list/global/floor_cache = list()
 	var/mob/living/human/H = user
 	if (istype(C, /obj/item/weapon/material/shovel))
 		var/obj/item/weapon/material/shovel/trench/S = C
-		user.visible_message(SPAN_NOTICE("[user] starts to remove the snow layer."), SPAN_NOTICE("[user] starts to remove the snow layer."), "You hear something digging into the ground.")
+		user.visible_message(SPAN_NOTICE("[user] starts to remove the snow layer."), SPAN_NOTICE("[user] starts to remove the snow layer."), "你听到什么东西在挖入地面。")
 		if (!do_after(user, (100/(H.getStatCoeff("strength"))/(12/S.dig_speed))))
 			return
-		user.visible_message(SPAN_NOTICE("[user] removes the snow layer."), SPAN_NOTICE("[user] removes the snow layer."), "You hear something being removed.")
+		user.visible_message(SPAN_NOTICE("[user] removes the snow layer."), SPAN_NOTICE("[user] removes the snow layer."), "你听到什么东西被移除了。")
 		H.adaptStat("strength", 1)
 		ChangeTurf(/turf/floor/dirt)
 		return
@@ -453,7 +453,7 @@ var/list/global/floor_cache = list()
 		if (salty)
 			to_chat(H, SPAN_WARNING("It's probably not a good idea to drink saltwater."))
 			return
-		H.visible_message("[H] starts drinking some water from \the [src]...", "You start drinking some water from \the [src]...")
+		H.visible_message("[H]开始从\the [src]喝一些水...", "你开始从\the [src]喝一些水...")
 		if (do_after(H,50,src))
 			var/watertype = "water"
 			if (radiation>0)
@@ -475,7 +475,7 @@ var/list/global/floor_cache = list()
 				H.water += rand(40,50)
 			H.water += 75
 			H.bladder += 75
-			H.visible_message("[H] drinks some water from \the [src].", "You drink some water from \the [src].", "You hear something being drank.")
+			H.visible_message("[H]从\the [src]喝了一些水。", "你从\the [src]喝了一些水。", "你听到什么东西被喝掉了。")
 			playsound(H.loc, "drink", rand(10, 50), TRUE)
 			return
 		else
@@ -519,7 +519,7 @@ var/list/global/floor_cache = list()
 							RG.reagents.add_reagent("sodiumchloride", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)*0.04)
 							sumex += min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)*0.04
 						RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this)-sumex)
-						user.visible_message("<span class='notice'>[user] fills \the [RG] with water.</span>", "<span class='notice'>You fill \the [RG] with water.</span>")
+						user.visible_message("<span class='notice'>[user]将\the [RG]装满水。</span>", "<span class='notice'>你将\the [RG]装满水。</span>")
 						playsound(user, 'sound/effects/watersplash.ogg', 100, TRUE)
 						user.setClickCooldown(5)
 						return TRUE
@@ -535,9 +535,9 @@ var/list/global/floor_cache = list()
 			return
 		if (H.a_intent == I_GRAB)
 			if (salty)
-				to_chat(H, "<span class='warning'>It's probably not a good idea to drink saltwater.</span>")
+				to_chat(H, "<span class='warning'>喝盐水可能不是个好主意。</span>")
 				return
-			to_chat(H, "You start drinking some water from \the [src]...")
+			to_chat(H, "你开始从\the [src]喝一些水...")
 			if (do_after(H,50,src))
 				var/watertype = "water"
 				if (radiation>0)
@@ -559,7 +559,7 @@ var/list/global/floor_cache = list()
 					H.water += rand(40,50)
 				H.water += 75
 				H.bladder += 75
-				to_chat(H, "You drink some water.")
+				to_chat(H, "你喝了一些水。")
 				playsound(H.loc, "drink", rand(10, 50), TRUE)
 				return
 			else

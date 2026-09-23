@@ -1,5 +1,5 @@
 /obj/item/stack/medical
-	name = "medical pack"
+	name = "医疗包"
 	singular_name = "medical pack"
 	icon = 'icons/obj/items.dmi'
 	amount = 30
@@ -39,9 +39,9 @@
 		C.updatehealth()
 
 /obj/item/stack/medical/bruise_pack
-	name = "roll of gauze"
+	name = "纱布卷"
 	singular_name = "gauze length"
-	desc = "Some sterile gauze to wrap around bloody stumps."
+	desc = "一些用于包扎血淋淋残肢的无菌纱布."
 	icon_state = "brutepack"
 	flammable = TRUE
 
@@ -105,9 +105,9 @@
 					to_chat(user,  SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))*/
 
 /obj/item/stack/medical/advanced/bruise_pack
-	name = "trauma kit"
+	name = "创伤包"
 	singular_name = "trauma kit"
-	desc = "An advanced trauma kit for severe injuries."
+	desc = "用于严重伤势的高级创伤包."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "trauma_kit"
 	item_state = "trauma_kit"
@@ -180,9 +180,9 @@
 					H_user.bad_external_organs -= affecting
 
 /obj/item/stack/medical/advanced/herbs
-	name = "healing herbs"
+	name = "治疗草药"
 	singular_name = "healing herb"
-	desc = "A bunch of healing herbs collected from bushes. Helps clean the wounds."
+	desc = "从灌木丛中采集的一把治疗草药.有助于清洁伤口."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "healing_herbs"
 	item_state = null
@@ -249,9 +249,9 @@
 	return
 
 /obj/item/stack/medical/advanced/sulfa
-	name = "sulfanilamide powder packs"
+	name = "磺胺粉包"
 	singular_name = "powder pack"
-	desc = "A pack of powdered sulfanilamide, a sulfamide anti-septic."
+	desc = "一包粉末状磺胺,一种磺胺类抗菌剂."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "sulfa"
 	item_state = "trauma_kit"
@@ -300,9 +300,9 @@
 			use(used)
 
 /obj/item/stack/medical/advanced/ointment
-	name = "burn kit"
+	name = "烧伤包"
 	singular_name = "burn kit"
-	desc = "An advanced treatment kit for severe burns."
+	desc = "用于严重烧伤的高级治疗包."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "burn_kit"
 	item_state = "burn_kit"
@@ -341,7 +341,7 @@
 				to_chat(user, SPAN_NOTICE("The [affecting.name] is cut open, you'll need more than a bandage!"))
 
 /obj/item/stack/medical/splint
-	name = "medical splints"
+	name = "医疗夹板"
 	singular_name = "medical splint"
 	icon_state = "splint"
 	amount = 5
@@ -389,7 +389,7 @@
 /obj/item/stack/medical/splint/small
 	amount = 1
 /obj/item/stack/medical/bruise_pack/bint
-	name = "cloth bandages"
+	name = "布绷带"
 	singular_name = "cloth bandage"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "bint"
@@ -403,16 +403,16 @@
 	amount = 40
 
 /obj/item/stack/medical/bruise_pack/bint/leather
-	name = "leather bandages"
+	name = "皮革绷带"
 	singular_name = "leather bandage"
-	desc = "A crude bandage, made of thin animal leather."
+	desc = "一种粗糙的绷带,由薄动物皮革制成."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "leatherbandage"
 	heal_brute = 6 // for healing dogs and other animals
 	amount = 6
 
 /obj/item/stack/medical/bruise_pack/gauze
-	name = "roll of gauze"
+	name = "纱布卷"
 	singular_name = "gauze length"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "gauze"
@@ -420,23 +420,23 @@
 	amount = 10
 
 /obj/item/bag_valve_mask
-	name = "bag valve mask"
-	desc = "A hand-held device commonly used to provide positive pressure ventilation to patients who are not breathing or not breathing adequately."
+	name = "球囊面罩"
+	desc = "一种手持设备,通常用于为没有呼吸或呼吸不足的患者提供正压通气."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "valvemask"
 /obj/item/bag_valve_mask/attack(var/mob/living/human/M as mob, var/mob/user as mob)
 	if (M.wear_mask)
 		to_chat(user, SPAN_WARNING("Uncover their mouth first!"))
 		return
-	user.visible_message("[user] starts to attach \the [src] to [M].", "You start to attach \the [src] to [M].")
+	user.visible_message("[user]开始将\the [src]连接到[M].", "你开始将\the [src]连接到[M].")
 	if (do_after(user, 80, src)) // TO-DO: Make it dependent on medical skill
 		M.adjustOxyLoss(-7)
 		user.visible_message(SPAN_NOTICE("[user] manually ventilates [M]."), SPAN_NOTICE("You manually ventilate [M]."))
 		return
 
 /obj/item/revival_kit
-	name = "revival kit"
-	desc = "A full sized hospital and multiple years of rehabilitation in only couple of seconds, a true gift from the gods! Better not be greedy..."
+	name = "复活包"
+	desc = "一座全尺寸医院加上多年的康复治疗,只需短短几秒钟,真是来自众神的真正恩赐!最好别太贪心..."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "revival"
 /obj/item/revival_kit/attack(var/mob/living/human/M as mob, var/mob/user as mob)
@@ -447,7 +447,7 @@
 	M.revive()
 	if (!M.ckey && M.lastKnownCkey)
 		M.ckey = M.lastKnownCkey
-	user.visible_message("<font size=4>[user] delivers a message from the GODS by reviving from [M] the dead!</font>", "<font size=4>You did something only a GOD could achieve by reviving [M]!</font>")
+	user.visible_message("<font size=4>[user]通过将[M]的死者复活,传递了来自众神的讯息!</font>", "<font size=4>你完成了只有神才能做到的事,复活了[M]!</font>")
 	playsound(get_turf(M), 'sound/hallelujah!.ogg', 120, FALSE)
 	if (M.ckey == user.ckey)
 		to_chat(user, SPAN_DANGER("You were greedy and now you don't feel so good..."))

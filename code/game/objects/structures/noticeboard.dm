@@ -1,6 +1,6 @@
 /obj/structure/noticeboard
-	name = "notice board"
-	desc = "A board for pinning important notices upon."
+	name = "公告板"
+	desc = "一块用于钉重要通知的板子."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "nboard00"
 	density = FALSE
@@ -28,9 +28,9 @@
 			O.loc = src
 			notices++
 			icon_state = "nboard0[notices]"	//update sprite
-			to_chat(user, "<span class='notice'>You pin the paper to the noticeboard.</span>")
+			to_chat(user, "<span class='notice'>你把纸钉在了公告板上.</span>")
 		else
-			to_chat(user, "<span class='notice'>You reach to pin your paper to the board but hesitate. You are certain your paper will not be seen among the many others already attached.</span>")
+			to_chat(user, "<span class='notice'>你伸手想把纸钉在板上,却犹豫了. 你确信你的纸不会在已经钉在上面的众多纸张中被看到.</span>")
 	else
 		..()
 /obj/structure/noticeboard/attack_hand(var/mob/user)
@@ -76,7 +76,7 @@
 					add_fingerprint(usr)
 					P.attackby(usr.l_hand, usr)
 				else
-					to_chat(usr, "<span class='notice'>You'll need something to write with!</span>")
+					to_chat(usr, "<span class='notice'>你需要有能写字的东西!</span>")
 	if (href_list["read"])
 		var/obj/item/weapon/paper/P = locate(href_list["read"])
 		if ((P && P.loc == src))
@@ -86,8 +86,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////MAIL//SYSTEM/////////////////////////////////
 /obj/structure/mailbox
-	name = "mail bag"
-	desc = "A bag of mail, to be distributed to other colonial administrations."
+	name = "邮袋"
+	desc = "一袋邮件,将分发到其他殖民地行政机构."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "mailbag"
 	density = FALSE
@@ -100,8 +100,8 @@
 	invisibility = 101
 
 /obj/structure/mailbox/received
-	name = "received mail bag"
-	desc = "A bag of mail, with received objects from other colonies."
+	name = "收件邮袋"
+	desc = "一袋邮件,装有来自其他殖民地的收件."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "mailbag"
 	density = FALSE
@@ -109,33 +109,33 @@
 	receive_only = TRUE
 
 /obj/structure/mailbox/spanish
-	name = "Spanish mail bag"
-	desc = "A bag of mail, to be delivered to the Spanish colonial administration."
+	name = "西班牙邮袋"
+	desc = "一袋邮件,将投递到西班牙殖民地行政机构."
 	faction = "spanish"
 
 /obj/structure/mailbox/dutch
-	name = "Dutch mail bag"
-	desc = "A bag of mail, to be delivered to the Dutch colonial administration."
+	name = "荷兰邮袋"
+	desc = "一袋邮件,将投递到荷兰殖民地行政机构."
 	faction = "dutch"
 
 /obj/structure/mailbox/portuguese
-	name = "Portuguese mail bag"
-	desc = "A bag of mail, to be delivered to the Dutch colonial administration."
+	name = "葡萄牙邮袋"
+	desc = "一袋邮件,将投递到荷兰殖民地行政机构."
 	faction = "portuguese"
 
 /obj/structure/mailbox/french
-	name = "French mail bag"
-	desc = "A bag of mail, to be delivered to the French colonial administration."
+	name = "法国邮袋"
+	desc = "一袋邮件,将投递到法国殖民地行政机构."
 	faction = "french"
 
 /obj/structure/mailbox/british
-	name = "British mail bag"
-	desc = "A bag of mail, to be delivered to the British colonial administration."
+	name = "英国邮袋"
+	desc = "一袋邮件,将投递到英国殖民地行政机构."
 	faction = "british"
 
 /obj/structure/mailbox/attackby(var/obj/item/weapon/paper/W as obj, var/mob/living/human/H as mob)
 	if (receive_only == TRUE)
-		to_chat(H, "This is only for received letters! It wont be delivered if you put it here!")
+		to_chat(H, "这里只用于收到的信件! 如果你把它放在这里,它不会被投递!")
 		return
 	else
 		if (istype(W, /obj/item/weapon/paper))
@@ -156,8 +156,8 @@
 					if(W.ico)
 						NP.ico = W.ico
 					qdel(W)
-					to_chat(H, "Your message has been sent and will be delivered soon.")
+					to_chat(H, "你的信息已发送,很快就会投递.")
 			return
 		else
-			to_chat(H, "You cannot send this by mail. Only paper is accepted.")
+			to_chat(H, "你不能通过邮件发送这个. 只接受纸张.")
 			return

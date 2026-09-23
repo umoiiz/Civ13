@@ -210,14 +210,14 @@
 			check_engines_faction1()
 			faction1_initial_engine_amount = faction1_engine_amount
 			ship_faction1 = capitalize(replacetext(mapname, "_", " "))
-			to_chat(world, "<font size=4 color='red'>The Redmenian ship in this battle is the <b>[ship_faction1]</b>.</font>")
+			to_chat(world, "<font size=4 color='red'>本场战斗中的雷德梅尼亚舰船是<b>[ship_faction1]</b>.</font>")
 		if ("middle")
 			island = mapname
 		if ("north")
 			check_engines_faction2()
 			faction2_initial_engine_amount = faction2_engine_amount
 			ship_faction2 = capitalize(replacetext(mapname, "_", " "))
-			to_chat(world, "<font size=4 color='blue'>The Blugoslavian ship in this battle is the <b>[ship_faction2]</b>.</font>")
+			to_chat(world, "<font size=4 color='blue'>本场战斗中的布鲁戈斯拉维亚舰船是<b>[ship_faction2]</b>.</font>")
 
 /obj/map_metadata/battle_ships/proc/clear_faction1()
 	ship_faction1 = null

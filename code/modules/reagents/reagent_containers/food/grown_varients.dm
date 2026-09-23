@@ -1,9 +1,9 @@
 //Rad stuff and special grown goes here.
 //food.dmi
 /obj/item/weapon/reagent_containers/food/snacks/grown/greenpotato
-	name = "green potato"
+	name = "绿土豆"
 	icon_state = "green_potato"
-	desc = "Left in the sun too long, looks weird."
+	desc = "在阳光下放太久了,看起来怪怪的."
 	color = "#8b7355"
 	nutriment_desc = list("potato" = TRUE)
 	decay = 70*800

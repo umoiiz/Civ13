@@ -12,8 +12,8 @@
 #define FUEL_CONSUMPTION_MODIFIER 2
 
 /obj/structure/engine/internal
-	name = "internal combustion engine"
-	desc = "A basic engine."
+	name = "内燃机"
+	desc = "一个基础引擎."
 	enginetype = "internal"
 	var/list/fuels = list() //accepted fuels (can be more than one)
 	var/fuelefficiency = 0 //fuel consumption on max power. Lower is better. The default value is per 1000 cc (liter)
@@ -25,22 +25,22 @@
 		var/obj/item/projectile/shell/S = proj
 		if (S.atype == "HE")
 			if (prob(90))
-				visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+				visible_message("<span class = 'warning'>\The [src]爆炸了!</span>")
 				explosion(loc, 1, 2, 2, 0)
 				qdel(src)
 			else
-				visible_message("<span class = 'warning'>\The [src] breaks down!</span>")
+				visible_message("<span class = 'warning'>\The [src]损坏了!</span>")
 				broken = TRUE
 				on = FALSE
 				new/obj/effect/decal/cleanable/blood/oil(loc)
 				update_icon()
 		else
 			if (prob(20))
-				visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+				visible_message("<span class = 'warning'>\The [src]爆炸了!</span>")
 				explosion(loc, 1, 1, 2, 0)
 				qdel(src)
 			else if (prob(75))
-				visible_message("<span class = 'warning'>\The [src] breaks down!</span>")
+				visible_message("<span class = 'warning'>\The [src]损坏了!</span>")
 				broken = TRUE
 				on = FALSE
 				new/obj/effect/decal/cleanable/blood/oil(loc)
@@ -57,7 +57,7 @@
 		user.drop_from_inventory(W)
 		fueltank = W
 		W.anchored = TRUE
-		to_chat(user, "You connect \the [W] to the [src].")
+		to_chat(user, "你将\the [W]连接到[src].")
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return
 	else
@@ -80,7 +80,7 @@
 				on = FALSE
 				power_off_connections()
 				fueltank.anchored = FALSE
-				to_chat(usr, "You disconnect the fuel tank from the [src].")
+				to_chat(usr, "你断开了[src]上的燃料箱.")
 				fueltank = null
 				update_icon()
 				return
@@ -91,7 +91,7 @@
 		on = FALSE
 		power_off_connections()
 		fueltank.anchored = FALSE
-		to_chat(usr, "You disconnect the fuel tank from the [src].")
+		to_chat(usr, "你断开了[src]上的燃料箱.")
 		fueltank = null
 		update_icon()
 		return
@@ -100,14 +100,14 @@
 	if (on)
 		return
 	if (broken)
-		to_chat(user, "\The [src] is broken, you can't turn it on!")
+		to_chat(user, "\The [src]已损坏, 你无法启动它!")
 		return
 	if (fueltank != null)
 		var/done = FALSE
 		for (var/F in fuels)
 			if (fueltank && fueltank.reagents && fueltank.reagents.has_reagent(F, fuelefficiency*5) && done == FALSE)
 				if (user)
-					visible_message("[user] turns the [src] on.","You turn the [src] on.")
+					visible_message("[user]打开了[src].","你打开了[src].")
 					on = TRUE
 				playsound(loc, starting_snd, 35, FALSE, 3)
 				spawn(starting_snd_len)
@@ -138,7 +138,7 @@
 			update_icon()
 			return
 		if (!done)
-			visible_message("The engine stalls.")
+			visible_message("引擎熄火了.")
 			playsound(loc, ending_snd, 100, FALSE, 3)
 			on = FALSE
 			power_off_connections()
@@ -155,8 +155,8 @@
 
 ///////////////////////ENGINES//////////////////////////////////////////////
 /obj/structure/engine/internal/hotbulb
-	name = "hot bulb engine"
-	desc = "A big, somewhat inefficient engine, that can run on pretty much any liquid fuel."
+	name = "热球引擎"
+	desc = "一个大型且效率略低的引擎, 几乎可以依靠任何液体燃料运行."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "hotbulb_static"
 	engineclass = "hotbulb"
@@ -167,8 +167,8 @@
 	fuels = list("petroleum", "gasoline", "diesel", "pethanol", "biodiesel", "olive_oil", "fat_oil") //basically everything
 
 /obj/structure/engine/internal/gasoline
-	name = "four-stroke gasoline engine"
-	desc = "A relatively cheap four-stroke gasoline engine."
+	name = "四冲程汽油引擎"
+	desc = "一个相对便宜的四冲程汽油引擎."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline_static"
 	engineclass = "gasoline"
@@ -183,8 +183,8 @@
 	ending_snd = 'sound/machines/gasoline_ending.ogg'
 
 /obj/structure/engine/internal/gasoline/efficient
-	name = "efficient four-stroke gasoline engine"
-	desc = "A relatively expensive but efficient four-stroke gasoline engine."
+	name = "高效四冲程汽油引擎"
+	desc = "一个相对昂贵但高效的四冲程汽油引擎."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline_static"
 	engineclass = "gasoline"
@@ -199,8 +199,8 @@
 	ending_snd = 'sound/machines/gasoline_ending.ogg'
 
 /obj/structure/engine/internal/gasoline/twostroke
-	name = "two-stroke gasoline engine"
-	desc = "A cheap and simple two-stroke gasoline engine."
+	name = "二冲程汽油引擎"
+	desc = "一个便宜且简单的二冲程汽油引擎."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline_static"
 	engineclass = "gasoline"
@@ -211,8 +211,8 @@
 	fuels = list("gasoline")
 
 /obj/structure/engine/internal/gasoline/sixstroke
-	name = "six-stroke gasoline engine"
-	desc = "A very efficient, altough costly, gasoline engine. Good fuel efficiency."
+	name = "六冲程汽油引擎"
+	desc = "一个非常高效但昂贵的汽油引擎. 燃料效率良好."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline6_static"
 	engineclass = "gasoline6"
@@ -223,8 +223,8 @@
 	fuels = list("gasoline")
 
 /obj/structure/engine/internal/gasoline/ethanol
-	name = "four-stroke gasoline-ethanol engine"
-	desc = "A relatively cheap four-stroke gasoline engine, converted to use ethanol too. Can run on both fuels, but its around 15% less efficient."
+	name = "四冲程汽油-乙醇引擎"
+	desc = "一个相对便宜的四冲程汽油引擎, 经过改装后也能使用乙醇. 可以使用两种燃料, 但效率大约低15%."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "gasoline_static"
 	engineclass = "gasoline"
@@ -235,8 +235,8 @@
 	fuels = list("gasoline","pethanol")
 
 /obj/structure/engine/internal/gasoline/wankel
-	name = "Wankel rotary gasoline engine"
-	desc = "A somewhat complex rotary engine. Very high Power-To-Weight ratio, but bad fuel economy."
+	name = "汪克尔转子汽油引擎"
+	desc = "一个略显复杂的转子引擎. 功率重量比非常高, 但燃料经济性差."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "wankel_static"
 	engineclass = "wankel"
@@ -251,8 +251,8 @@
 	ending_snd = 'sound/machines/gasoline_ending.ogg'
 
 /obj/structure/engine/internal/turbine
-	name = "turbine engine"
-	desc = "A turbine engine using an air compressor. High Power-To-Weight ratio and can run on a lot of fuels, but has bad fuel economy."
+	name = "涡轮引擎"
+	desc = "一个使用空气压缩机的涡轮引擎. 功率重量比高, 可以使用多种燃料, 但燃料经济性差."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "turbine_static"
 	engineclass = "turbine"
@@ -270,8 +270,8 @@
 	running_snd_len = 37
 
 /obj/structure/engine/internal/diesel
-	name = "diesel engine"
-	desc = "A heavy diesel engine, using compression instead of spark plugs. High torque and fuel efficiency."
+	name = "柴油引擎"
+	desc = "一个重型柴油引擎, 使用压缩而非火花塞点火. 扭矩和燃料效率高."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "diesel_static"
 	engineclass = "diesel"
@@ -282,8 +282,8 @@
 	fuels = list("diesel")
 
 /obj/structure/engine/internal/diesel/biodiesel
-	name = "diesel engine"
-	desc = "A heavy diesel engine, using compression instead of spark plugs. High torque and fuel efficiency. Converted to accept Biodiesel too, but has 10% lower efficiency."
+	name = "柴油引擎"
+	desc = "一个重型柴油引擎, 使用压缩而非火花塞点火. 扭矩和燃料效率高. 经过改装后也能使用生物柴油, 但效率低10%."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "diesel_static"
 	engineclass = "diesel"
@@ -294,8 +294,8 @@
 	fuels = list("diesel","biodiesel")
 
 /obj/structure/engine/internal/hesselman
-	name = "Hesselman engine"
-	desc = "A hybrid gasoline and diesel engine. Better Power-To-Weight ratio than diesel but less efficient. Can run on Gasoline, Diesel, and Biodiesel."
+	name = "赫塞尔曼引擎"
+	desc = "一个汽油和柴油的混合引擎. 功率重量比优于柴油但效率较低. 可以使用汽油, 柴油和生物柴油."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "diesel_static"
 	engineclass = "diesel"

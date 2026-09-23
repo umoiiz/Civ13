@@ -53,7 +53,7 @@
 			return
 		for (var/obj/item/organ/I in affected.internal_organs)
 			if (I && I.damage > 0)
-				user.visible_message("[user] starts treating damage to [target]'s [I.name] with [tool_name].", \
+				user.visible_message("[user]开始用[tool_name]治疗[target]的[I.name]的损伤.", \
 				"You start treating damage to [target]'s [I.name] with [tool_name]." )
 
 		target.custom_pain("The pain in your [affected.name] is living hell!",200)
@@ -73,7 +73,7 @@
 			return
 		for (var/obj/item/organ/I in affected.internal_organs)
 			if (I && I.damage > 0)
-				user.visible_message("<span class='notice'>[user] treats damage to [target]'s [I.name] with [tool_name].</span>", \
+				user.visible_message("<span class='notice'>[user]用[tool_name]治疗了[target]的[I.name]的损伤.</span>", \
 				"<span class='notice'>You treat damage to [target]'s [I.name] with [tool_name].</span>" )
 				I.damage = FALSE
 				target.shock_stage *= 0.5
@@ -84,7 +84,7 @@
 			return
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-		user.visible_message("<span class='warning'>[user]'s hand slips, getting mess and tearing the inside of [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class='warning'>[user]的手滑了,弄得一团糟,并用\the [tool]撕裂了[target]的[affected.name]内部!</span>", \
 		"<span class='warning'>Your hand slips, getting mess and tearing the inside of [target]'s [affected.name] with \the [tool]!</span>")
 		var/dam_amt = 2
 
@@ -143,13 +143,13 @@
 
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
-		user.visible_message("[user] starts to separate [target]'s [target.op_stage.current_organ] with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]分离[target]的[target.op_stage.current_organ].", \
 		"You start to separate [target]'s [target.op_stage.current_organ] with \the [tool]." )
 		target.custom_pain("The pain in your [affected.name] is living hell!",200)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
-		user.visible_message("<span class='notice'>[user] has separated [target]'s [target.op_stage.current_organ] with \the [tool].</span>" , \
+		user.visible_message("<span class='notice'>[user]用\the [tool]分离了[target]的[target.op_stage.current_organ].</span>" , \
 		"<span class='notice'>You have separated [target]'s [target.op_stage.current_organ] with \the [tool].</span>")
 
 		var/obj/item/organ/I = target.internal_organs_by_name[target.op_stage.current_organ]
@@ -158,7 +158,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class='warning'>[user]'s hand slips, slicing an artery inside [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class='warning'>[user]的手滑了,用\the [tool]切开了[target]的[affected.name]内部的一条动脉!</span>", \
 		"<span class='warning'>Your hand slips, slicing an artery inside [target]'s [affected.name] with \the [tool]!</span>")
 		affected.createwound(CUT, rand(30,50), TRUE)
 
@@ -196,13 +196,13 @@
 		return ..()
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
-		user.visible_message("[user] starts removing [target]'s [target.op_stage.current_organ] with \the [tool].", \
+		user.visible_message("[user]开始用\the [tool]移除[target]的[target.op_stage.current_organ].", \
 		"You start removing [target]'s [target.op_stage.current_organ] with \the [tool].")
 		target.custom_pain("Someone's ripping out your [target.op_stage.current_organ]!",200)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
-		user.visible_message("<span class='notice'>[user] has removed [target]'s [target.op_stage.current_organ] with \the [tool].</span>", \
+		user.visible_message("<span class='notice'>[user]用\the [tool]移除了[target]的[target.op_stage.current_organ].</span>", \
 		"<span class='notice'>You have removed [target]'s [target.op_stage.current_organ] with \the [tool].</span>")
 
 		// Extract the organ!
@@ -215,7 +215,7 @@
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class='warning'>[user]'s hand slips, damaging [target]'s [affected.name] with \the [tool]!</span>", \
+		user.visible_message("<span class='warning'>[user]的手滑了,用\the [tool]损坏了[target]的[affected.name]!</span>", \
 		"<span class='warning'>Your hand slips, damaging [target]'s [affected.name] with \the [tool]!</span>")
 		affected.createwound(BRUISE, 20)
 
@@ -237,7 +237,7 @@
 			return FALSE
 
 		if (!target.species)
-			to_chat(user, "<span class='danger'>You have no idea what species this person is. Report this on the bug tracker.</span>")
+			to_chat(user, "<span class='danger'>你不知道这个人是什么物种.请在bug追踪器上报告此问题.</span>")
 			return SURGERY_FAILURE
 
 		var/o_is = (O.gender == PLURAL) ? "are" : "is"
@@ -249,36 +249,36 @@
 		else if (target.species.has_organ[O.organ_tag])
 
 			if (O.damage > (O.max_damage * 0.75))
-				to_chat(user, "<span class='warning'>\The [O.organ_tag] [o_is] in no state to be transplanted.</span>")
+				to_chat(user, "<span class='warning'>\The [O.organ_tag] [o_is]处于无法移植的状态.</span>")
 				return SURGERY_FAILURE
 
 			if (!target.internal_organs_by_name[O.organ_tag])
 				organ_missing = TRUE
 			else
-				to_chat(user, "<span class='warning'>\The [target] already has [o_a][O.organ_tag].</span>")
+				to_chat(user, "<span class='warning'>\The [target]已经有[o_a][O.organ_tag]了.</span>")
 				return SURGERY_FAILURE
 
 			if (O && affected.limb_name == O.parent_organ)
 				organ_compatible = TRUE
 			else
-				to_chat(user, "<span class='warning'>\The [O.organ_tag] [o_do] normally go in \the [affected.name].</span>")
+				to_chat(user, "<span class='warning'>\The [O.organ_tag] [o_do]通常位于\the [affected.name].</span>")
 				return SURGERY_FAILURE
 		else
-			to_chat(user, "<span class='warning'>You're pretty sure [target.species.name_plural] don't normally have [o_a][O.organ_tag].</span>")
+			to_chat(user, "<span class='warning'>你很确定[target.species.name_plural]通常没有[o_a][O.organ_tag].</span>")
 			return SURGERY_FAILURE
 
 		return ..() && organ_missing && organ_compatible
 
 	begin_step(mob/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("[user] starts transplanting \the [tool] into [target]'s [affected.name].", \
+		user.visible_message("[user]开始将\the [tool]移植到[target]的[affected.name]中.", \
 		"You start transplanting \the [tool] into [target]'s [affected.name].")
 		target.custom_pain("Someone's rooting around in your [affected.name]!",80)
 		..()
 
 	end_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
 		var/obj/item/organ/external/affected = target.get_organ(target_zone)
-		user.visible_message("<span class='notice'>[user] has transplanted \the [tool] into [target]'s [affected.name].</span>", \
+		user.visible_message("<span class='notice'>[user]已将\the [tool]移植到[target]的[affected.name]中.</span>", \
 		"<span class='notice'>You have transplanted \the [tool] into [target]'s [affected.name].</span>")
 		var/obj/item/organ/O = tool
 		if (istype(O))
@@ -287,7 +287,7 @@
 			playsound(target.loc, 'sound/effects/squelch1.ogg', 50, TRUE)
 
 	fail_step(mob/living/user, mob/living/human/target, target_zone, obj/item/tool)
-		user.visible_message("<span class='warning'>[user]'s hand slips, damaging \the [tool]!</span>", \
+		user.visible_message("<span class='warning'>[user]的手滑了,损坏了\the [tool]!</span>", \
 		"<span class='warning'>Your hand slips, damaging \the [tool]!</span>")
 		var/obj/item/organ/I = tool
 		if (istype(I))

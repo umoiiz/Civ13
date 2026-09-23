@@ -152,9 +152,9 @@
 			f_name += "oil-stained [name][infix]."
 
 	if (!isobserver(user))
-		user.visible_message("<font size=1>[user.name] looks at \the [src].</font>", "<font size =1>You look at \the [src].</font>")
+		user.visible_message("<font size=1>[user.name]看着\the [src].</font>", "<font size =1>你看着\the [src].</font>")
 
-	to_chat(user, "\icon[getFlatIcon(src)] That's [f_name] [suffix]")
+	to_chat(user, "\icon[getFlatIcon(src)] 那是[f_name][suffix]")
 
 	if(desc) // If the description is not null.
 		to_chat(user, desc)
@@ -186,7 +186,7 @@
 				if(W.ash_production) //Needed to not break the ash production from wood
 					return
 			if (prob(27))
-				visible_message("<span class = 'warning'>\The [NS] is burned away.</span>")
+				visible_message("<span class = 'warning'>\The [NS]被烧掉了.</span>")
 				if (prob(3))
 					new/obj/effect/effect/smoke(loc)
 				qdel(src)
@@ -480,7 +480,7 @@
 	if(!Adjacent(user) || user.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_KNOCKOUT) || istype(user.loc, /obj/structure/closet) || !ishuman(src))
 		return
 	if(user.pacifist)
-		to_chat(src, "<font color='yellow'><big><b>I don't want to bite!</b></big></font>")
+		to_chat(src, "<font color='yellow'><big><b>我不想咬!</b></big></font>")
 		return
 	var/mob/living/human/target = src
 	if(user.middle_click_intent == "bite")//We're in bite mode, so bite the opponent
@@ -493,7 +493,7 @@
 				to_chat(user, SPAN_NOTICE("[src] is missing that body part."))
 				return FALSE
 			else
-				visible_message("<span class='danger'>[user] bites the [src]'s [affecting.name]!</span>","<span class='danger'>You bite the [src]'s [affecting.name]!</span>")
+				visible_message("<span class='danger'>[user]咬了[src]的[affecting.name]!</span>","<span class='danger'>你咬了[src]的[affecting.name]!</span>")
 				if (ishuman(src) && ishuman(user))
 					if (user.werewolf && user.body_build.name != "Default")
 						affecting.createwound(BRUISE, rand(15,21)*user.getStatCoeff("strength"))
@@ -509,12 +509,12 @@
 						if (target.l_hand)
 							// Disarm left hand
 							//Urist McAssistant dropped the macguffin with a scream just sounds odd. Plus it doesn't work with NO_PAIN
-							target.visible_message("<span class='danger'>[target] drops \the [target.l_hand]!</span>")
+							target.visible_message("<span class='danger'>[target]丢下了\the [target.l_hand]!</span>")
 							target.drop_l_hand()
 					if (limbcheck == "r_hand")
 						if (target.r_hand)
 							// Disarm right hand
-							target.visible_message("<span class='danger'>[target] drops \the [target.r_hand]!</span>")
+							target.visible_message("<span class='danger'>[target]丢下了\the [target.r_hand]!</span>")
 							target.drop_r_hand()
 		else
 			to_chat(user, SPAN_NOTICE("You cannot bite that part of the body, it's too far away!"))
@@ -600,7 +600,7 @@
 				return
 	//Nice, we can jump, let's do that then.
 	playsound(user, user.gender == MALE ? 'sound/effects/jump_male.ogg' : 'sound/effects/jump_female.ogg', 25)
-	user.visible_message("[user] jumps.")
+	user.visible_message("[user]跳了起来.")
 	user.stats["stamina"][1] = max(user.stats["stamina"][1] - rand(20,40), 0)
 	user.throw_at(target, 5, 0.5, user)
 	user.setClickCooldown(22)

@@ -18,8 +18,8 @@
 
 //Parent gun type. Guns are weapons that can be aimed at mobs and act over a distance
 /obj/item/weapon/gun
-	name = "gun"
-	desc = "Its a gun. It's pretty terrible, though."
+	name = "枪"
+	desc = "这是一把枪。不过相当糟糕。"
 	icon = 'icons/obj/guns/gun.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_guns.dmi',
@@ -124,12 +124,12 @@
 /obj/item/weapon/gun/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if (default_parry_check(user, attacker, damage_source) && w_class >= 4) // Only big guns can stop attacks.
 		if (bayonet && prob(40)) // If they have a bayonet they get a higher chance to stop the attack.
-			user.visible_message("<span class='danger'>\The [user] blocks [attack_text] with \the [src]!</span>")
+			user.visible_message("<span class='danger'>\The [user]用\the [src]挡住了[attack_text]!</span>")
 			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, TRUE)
 			return TRUE
 		else
 			if (prob(10))// Much smaller chance to block it due to no bayonet.
-				user.visible_message("<span class='danger'>\The [user] blocks [attack_text] with \the [src]!</span>")
+				user.visible_message("<span class='danger'>\The [user]用\the [src]挡住了[attack_text]!</span>")
 				playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, TRUE)
 				return TRUE
 	return FALSE
@@ -208,10 +208,10 @@
 							//chest armor? no? get fucked
 							if (user.targeted_organ == "chest")
 								if (H.wear_suit && istype(H.wear_suit, /obj/item/clothing/suit/armor))
-									visible_message("<span class = 'danger'>[user]'s bayonet bounces off [H]'s [H.wear_suit]!</span>")
+									visible_message("<span class = 'danger'>[user]的刺刀从[H]的[H.wear_suit]上弹开了!</span>")
 									return
 								else
-									visible_message("<span class = 'danger'>[user] impales [H] with their gun's bayonet!</span>")
+									visible_message("<span class = 'danger'>[user]用枪上的刺刀刺穿了[H]!</span>")
 									playsound(get_turf(src), a.attack_sound, rand(90,100))
 									H.apply_damage(a.mounted_dmg, BRUTE, def_zone)
 									if (L.stat == CONSCIOUS && prob(50))
@@ -219,13 +219,13 @@
 							//Helmet? no? kinda hard to hit
 							else if (user.targeted_organ == "head")
 								if (H.head && istype(H.head, /obj/item/clothing/head/helmet))
-									visible_message("<span class = 'danger'>[user]'s bayonet bounces off [H]'s [H.head]!</span>")
+									visible_message("<span class = 'danger'>[user]的刺刀从[H]的[H.head]上弹开了!</span>")
 									return
 								else
 									if(prob(90))
-										visible_message("<span class = 'danger'>[user]'s bayonet narrowly misses [H]!</span>")
+										visible_message("<span class = 'danger'>[user]的刺刀差一点刺中[H]!</span>")
 									else
-										visible_message("<span class = 'danger'>[user] impales [H] with their gun's bayonet!</span>")
+										visible_message("<span class = 'danger'>[user]用枪上的刺刀刺穿了[H]!</span>")
 										playsound(get_turf(src), a.attack_sound, rand(90,100))
 										H.apply_damage(a.mounted_dmg, BRUTE, def_zone)
 										if (L.stat == CONSCIOUS && prob(50))
@@ -234,13 +234,13 @@
 							if (user.targeted_organ == "mouth")
 								if (H.wear_mask)
 									if (istype(H.wear_mask, /obj/item/clothing/mask/samurai) || istype(H.wear_mask, /obj/item/clothing/mask/stone) || istype(H.wear_mask, /obj/item/clothing/mask/wooden))
-										visible_message("<span class = 'danger'>[user]'s bayonet bounces off [H]'s [H.wear_suit]!</span>")
+										visible_message("<span class = 'danger'>[user]的刺刀从[H]的[H.wear_suit]上弹开了!</span>")
 										return
 								else
 									if (prob(95))
-										visible_message("<span class = 'danger'>[user]'s bayonet narrowly misses [H]!</span>")
+										visible_message("<span class = 'danger'>[user]的刺刀差一点刺中[H]!</span>")
 									else
-										visible_message("<span class = 'danger'>[user] impales [H] with their gun's bayonet!</span>")
+										visible_message("<span class = 'danger'>[user]用枪上的刺刀刺穿了[H]!</span>")
 										playsound(get_turf(src), a.attack_sound, rand(90,100))
 										H.apply_damage(a.mounted_dmg, BRUTE, def_zone)
 										if (L.stat == CONSCIOUS && prob(50))
@@ -249,15 +249,15 @@
 							else
 								if (user.targeted_organ != "chest" && user.targeted_organ != "groin" && user.targeted_organ != "head")
 									if(prob(75))
-										visible_message("<span class = 'danger'>[user]'s bayonet narrowly misses [H]!</span>")
+										visible_message("<span class = 'danger'>[user]的刺刀差一点刺中[H]!</span>")
 									else
-										visible_message("<span class = 'danger'>[user] impales [H] with their gun's bayonet!</span>")
+										visible_message("<span class = 'danger'>[user]用枪上的刺刀刺穿了[H]!</span>")
 										playsound(get_turf(src), a.attack_sound, rand(90,100))
 										H.apply_damage(a.mounted_dmg, BRUTE, def_zone)
 										if (L.stat == CONSCIOUS && prob(50))
 											H.emote("painscream")
 				else //if its a mob like a bear or turkey
-					visible_message("<span class = 'danger'>[user] impales [L] with their gun's bayonet!</span>")
+					visible_message("<span class = 'danger'>[user]用枪上的刺刀刺穿了[L]!</span>")
 					playsound(get_turf(src), a.attack_sound, rand(90,100))
 					L.apply_damage(a.mounted_dmg, BRUTE, def_zone)
 		else
@@ -385,9 +385,9 @@
 //called if there was no projectile to shoot
 /obj/item/weapon/gun/proc/handle_click_empty(mob/user)
 	if (user)
-		user.visible_message("*click click*", "<span class='danger'>*click*</span>")
+		user.visible_message("*咔哒咔哒*", "<span class='danger'>*咔哒*</span>")
 	else
-		visible_message("*click click*")
+		visible_message("*咔哒咔哒*")
 
 	playsound(loc, 'sound/weapons/empty.ogg', 100, TRUE)
 
@@ -531,14 +531,14 @@
 
 	// realistic WW2 suicide, no hesitation - Kachnov
 	mouthshoot = TRUE
-	M.visible_message("<span class = 'red'>[user] sticks [M.gender == FEMALE ? "her" : "his"] [src] in [M.gender == FEMALE ? "her" : "his"] mouth.</span>")
+	M.visible_message("<span class = 'red'>[user]把[M.gender == FEMALE ? "her" : "his"][src]塞进[M.gender == FEMALE ? "her" : "his"]的嘴里。</span>")
 	if (!do_after(user, 3))
-		visible_message("<span class = 'notice'>[user] failed to commit suicide.</span>")
+		visible_message("<span class = 'notice'>[user]自杀失败了。</span>")
 		mouthshoot = FALSE
 		return
 	var/obj/item/projectile/in_chamber = consume_next_projectile()
 	if (in_chamber && istype(in_chamber))
-		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
+		user.visible_message("<span class = 'warning'>[user]扣下了扳机。</span>")
 		if (silencer)
 			playsound(user, silencer_fire_sound, 50-(silencer.reduction/2), TRUE,50-(silencer.reduction/2))
 		else
@@ -550,7 +550,7 @@
 		if (in_chamber.damage_type != HALLOSS)
 
 			if (M.wear_mask && istype(M.wear_mask, /obj/item/weapon/grenade))
-				visible_message("<span class = 'danger'>The grenade in [M]'s mouth goes off!</span>")
+				visible_message("<span class = 'danger'>[M]嘴里的手雷爆炸了!</span>")
 				var/obj/item/weapon/grenade/G = M.wear_mask
 				G.active = TRUE
 				G.prime()
@@ -559,7 +559,7 @@
 			user.death()
 			M.attack_log += "\[[time_stamp()]\] [M]/[M.ckey]</b> shot themselves in the mouth (committed suicide)"
 		else
-			to_chat(user, "<span class = 'notice'>Ow...</span>")
+			to_chat(user, "<span class = 'notice'>哎哟...</span>")
 			user.apply_effect(110,AGONY,0)
 
 		if (istype(src, /obj/item/weapon/gun/projectile))
@@ -606,7 +606,7 @@
 				if ("chest")
 					damage_multiplier = 3.0
 
-			user.visible_message("<span class = 'red'>[user] shoots \himself in \the [organ_name]!</span>")
+			user.visible_message("<span class = 'red'>[user]射中了\him self的\the [organ_name]!</span>")
 			if (silencer)
 				playsound(user, silencer_fire_sound, 100-silencer.reduction, TRUE,100-silencer.reduction)
 			else
@@ -618,7 +618,7 @@
 			if (in_chamber.damage_type != HALLOSS)
 				user.apply_damage(in_chamber.damage*damage_multiplier, in_chamber.damage_type, tgt, used_weapon = "Point blank shot in the [user.targeted_organ] with \a [in_chamber]", sharp=1)
 			else
-				to_chat(user, "<span class = 'notice'>Ow...</span>")
+				to_chat(user, "<span class = 'notice'>哎哟...</span>")
 				user.apply_effect(110,AGONY,0)
 
 
@@ -640,19 +640,19 @@
 		var/health_percentage = (health/maxhealth)*100
 		switch (health_percentage)
 			if (-100 to 21)
-				to_chat(user, "<font color='#7f0000'>Is pratically falling apart!</font>")
+				to_chat(user, "<font color='#7f0000'>几乎要散架了!</font>")
 			if (22 to 49)
-				to_chat(user, "<font color='#a74510'>Seems to be in very bad condition.</font>")
+				to_chat(user, "<font color='#a74510'>似乎状况非常糟糕。</font>")
 			if (50 to 69)
-				to_chat(user, "<font color='#cccc00'>Seems to be in a rough condition.</font>")
+				to_chat(user, "<font color='#cccc00'>似乎状况很差。</font>")
 			if (70 to 84)
-				to_chat(user, "<font color='#4d5319'>Seems to be in a somewhat decent condition.</font>")
+				to_chat(user, "<font color='#4d5319'>似乎状况还算可以。</font>")
 			if (85 to 200)
-				to_chat(user, "<font color='#326327'>Seems to be in very good condition.</font>")
+				to_chat(user, "<font color='#326327'>似乎状况非常好。</font>")
 
 	if (firemodes.len > 1)
 		var/datum/firemode/current_mode = firemodes[sel_mode]
-		user.visible_message("The fire selector is set to [current_mode.name].")
+		user.visible_message("快慢机设置为[current_mode.name]。")
 	if (safetyon)
 		to_chat(user, SPAN_NOTICE("<b>The safety is on.</b>"))
 
@@ -697,17 +697,17 @@
 	if (!G || !istype(G))
 		G = get_inactive_hand()
 		if (!G || !istype(G))
-			to_chat(src, "<span class = 'red'>You can't unload magazine from anything in your hands.</span>")
+			to_chat(src, "<span class = 'red'>你无法从手中的任何东西卸下弹匣。</span>")
 			return
 
 	if (G.load_method == MAGAZINE && G.ammo_magazine == null)
-		to_chat(src, "<span class = 'red'>The [G.name] is already unloaded.</span>")
+		to_chat(src, "<span class = 'red'>[G.name]已经卸下弹药了。</span>")
 		return
 	if (G && G.ammo_magazine)
 		G.ammo_magazine.loc = get_turf(loc)
 	visible_message(
-		"[G.ammo_magazine] falls out and clatters on the floor!",
-		"<span class='notice'>[G.ammo_magazine] falls out and clatters on the floor!</span>"
+		"[G.ammo_magazine]掉了出来,哐当一声落在地上!",
+		"<span class='notice'>[G.ammo_magazine]掉了出来,哐当一声落在地上!</span>"
 		)
 	G.ammo_magazine.update_icon()
 	G.ammo_magazine = null
@@ -726,7 +726,7 @@
 /obj/item/weapon/gun/proc/health_check(mob/living/human/H)
 	if(health <= 0 || maxhealth <= 0)
 		playsound(src, "shatter", 70, TRUE)
-		visible_message("<span class='danger'>\The [src.name] shatters!</span>")
+		visible_message("<span class='danger'>\The [src.name]碎裂了!</span>")
 		var/hurthand = "r_hand"
 		if (src.loc == H.l_hand)
 			hurthand = "l_hand"

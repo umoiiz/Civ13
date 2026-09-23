@@ -3,7 +3,7 @@
 /// This replaces 50+ type definitions with a single parameterizable type.
 
 /obj/structure/vehicleparts/movement
-	name = "wheel"
+	name = "车轮"
 	layer = 2.99
 	crushable = FALSE
 	var/broken = FALSE
@@ -124,9 +124,9 @@
 			var/repair_type = src.type_name
 			if (wconfig)
 				repair_type = wconfig.type_name
-			visible_message("[H] starts repairing \the [repair_type]...")
+			visible_message("[H]开始修复\the [repair_type]...")
 			if (do_after(H, 200, src))
-				visible_message("[H] successfully repairs \the [repair_type].")
+				visible_message("[H]成功修复了\the [repair_type]。")
 				broken = FALSE
 				update_icon()
 				return

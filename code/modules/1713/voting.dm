@@ -1,6 +1,6 @@
 /obj/structure/voting
-	name = "ballot box"
-	desc = "A box storing votes for an election."
+	name = "投票箱"
+	desc = "一个用于存储选举投票的箱子."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bet_box"
 	flammable = FALSE
@@ -30,13 +30,13 @@
 
 // ballot a
 /obj/structure/voting/civa
-	name = "ballot box"
+	name = "投票箱"
 	icon_state = "bet_box_red"
 	New()
 		..()
 		spawn(10)
 			nation = civname_a
-			name = "[nation] ballot box"
+			name = "[nation]投票箱"
 
 	attack_hand(var/mob/living/human/user as mob)
 		if (user.original_job_title == "Civilization A Citizen")
@@ -47,13 +47,13 @@
 
 // ballot b
 /obj/structure/voting/civb
-	name = "ballot box"
+	name = "投票箱"
 	icon_state = "bet_box_green"
 	New()
 		..()
 		spawn(10)
 			nation = civname_b
-			name = "[nation] ballot box"
+			name = "[nation]投票箱"
 
 	attack_hand(var/mob/living/human/user as mob)
 		if (user.original_job_title == "Civilization B Citizen")
@@ -64,13 +64,13 @@
 
 // ballot c
 /obj/structure/voting/civc
-	name = "ballot box"
+	name = "投票箱"
 	icon_state = "bet_box_blue"
 	New()
 		..()
 		spawn(10)
 			nation = civname_c
-			name = "[nation] ballot box"
+			name = "[nation]投票箱"
 
 	attack_hand(var/mob/living/human/user as mob)
 		if (user.original_job_title == "Civilization C Citizen")
@@ -82,7 +82,7 @@
 // General civilian ballot - ((blue))
 
 /obj/structure/voting/civilain
-	name = "ballot box"
+	name = "投票箱"
 	icon_state = "bet_box_blue"
 
 	attack_hand(var/mob/living/human/user as mob)
@@ -95,7 +95,7 @@
 // General pirate ballot - ((red))
 
 /obj/structure/voting/pirates
-	name = "ballot box"
+	name = "投票箱"
 	icon_state = "bet_box_red"
 
 	attack_hand(var/mob/living/human/user as mob)
@@ -130,10 +130,10 @@
 /obj/structure/voting/examine(mob/user)
 	..()
 	if (in_election)
-		to_chat(user, "Currently voting for: <b>[election_desc]</b>")
-		to_chat(user, "<b>A total of [total_votes] votes have been cast.</b>")
+		to_chat(user, "当前投票给: <b>[election_desc]</b>")
+		to_chat(user, "<b>共已投出[total_votes]票.</b>")
 	else
-		to_chat(user, "<b>No current vote.</b>")
+		to_chat(user, "<b>当前没有投票.</b>")
 
 /obj/structure/voting/attack_hand(var/mob/living/human/user as mob)
 	if (in_election)
@@ -195,7 +195,7 @@
 		total_votes = 0
 		for(var/j in vote_options)
 			votes += list("[j]" = 0)
-		to_chat(world, "<big><font color='yellow'>A vote has started! Results in 2 minutes.</big></font>")
+		to_chat(world, "<big><font color='yellow'>投票已开始! 2分钟后出结果.</big></font>")
 		to_chat(world, "<big><font color='yellow'><b><i>[election_desc]</i></b></big></font>")
 		for(var/i in vote_options)
 			to_chat(world, "<font color='yellow'><b><i>&nbsp;&nbsp;&nbsp;&nbsp;[i]</i></b></font>")
@@ -207,7 +207,7 @@
 	spawn(time)
 		in_election = FALSE
 		if (total_votes == 0)
-			to_chat(world, "<big><font color='yellow'><b>The election ended with no votes!</b></big></font>")
+			to_chat(world, "<big><font color='yellow'><b>选举结束, 无人投票!</b></big></font>")
 		var/winner = "none"
 		var/sum = 0
 		for(var/j in votes)
@@ -217,16 +217,16 @@
 			else if (votes[j] == sum && sum != 0)
 				winner = "tie"
 		if (winner != "tie")
-			to_chat(world, "<big><font color='yellow'><b><i>[winner]</i></b> is the most voted choice!</big></font>")
+			to_chat(world, "<big><font color='yellow'><b><i>[winner]</i></b> 是得票最多的选项!</big></font>")
 		else
-			to_chat(world, "<big><font color='yellow'>The vote ended in a <b><i>tie</i></b>!</big></font>")
+			to_chat(world, "<big><font color='yellow'>投票以<b><i>平局</i></b>结束!</big></font>")
 		if(total_votes > 0)
-			to_chat(world, "<font color='yellow'><b>Results:</b></font>")
+			to_chat(world, "<font color='yellow'><b>结果:</b></font>")
 			for(var/i in votes)
-				to_chat(world, "<font color='yellow'><b><i>[i]</i> - [(votes[i]/total_votes)*100]% ([votes[i]] votes)</b></font>")
+				to_chat(world, "<font color='yellow'><b><i>[i]</i> - [(votes[i]/total_votes)*100]% ([votes[i]] 票)</b></font>")
 			total_votes = 0
 			if(special_election && winner == "Yes")
-				to_chat(world, "<big><font color='yellow'>[person] has been elected as the new [person_role].</font></big>")
+				to_chat(world, "<big><font color='yellow'>[person] 已被选为新的 [person_role].</font></big>")
 				if(person)
 					person.original_job_title = "Pirate [person_role]"
 					person.name = replacetext(person.name,"[person.title] ","")

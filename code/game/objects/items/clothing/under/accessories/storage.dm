@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/storage
-	name = "load bearing equipment"
-	desc = "Used to hold things when you don't have enough hands."
+	name = "负重装备"
+	desc = "用于在你手不够用时携带东西."
 	icon_state = "webbing"
 	slot = "utility"
 	var/slots = 3
@@ -35,7 +35,7 @@
 	..()
 
 /obj/item/clothing/accessory/storage/attack_self(mob/user as mob)
-	to_chat(user, "<span class='notice'>You empty [src].</span>")
+	to_chat(user, "<span class='notice'>你清空了[src].</span>")
 	var/turf/T = get_turf(src)
 	hold.hide_from(usr)
 	for (var/obj/item/I in hold.contents)

@@ -1,78 +1,78 @@
 /* File reserved for custom types other than the default metal door that starts locked on /obj/structure/simple_door/key_door/custom */
 
 /obj/structure/simple_door/key_door/custom/doubledoor
-	name = "large double"
+	name = "大型双开门"
 	material = "wood"
-	desc = "A large set of improper doors, it has a lock. if you can see this, report this to a developer."
+	desc = "一扇大型的劣质双开门, 带锁. 如果你能看到这个, 请向开发者报告."
 	unique_door_name = "doubledoor"
 	icon = 'icons/obj/doors/material_doors_fwoosh.dmi'
 	health = 200
 
 /obj/structure/simple_door/key_door/custom/doubledoor/bone //for tribes
-	name = "large bone double"
+	name = "大型骨制双开门"
 	material = "bone"
-	desc = "A large set of bone doors, it has a lock."
+	desc = "一扇大型的骨制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/marble //psuedo-material
-	name = "large marble double"
+	name = "大型大理石双开门"
 	material = "marble"
-	desc = "A large set of marble doors, it has a lock."
+	desc = "一扇大型的大理石双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/stone
-	name = "large stone double"
+	name = "大型石制双开门"
 	material = "stone"
-	desc = "A large set of stone doors, it has a lock."
+	desc = "一扇大型的石制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/sandstone
-	name = "large sandstone double"
+	name = "大型砂岩双开门"
 	material = "sandstone"
-	desc = "A large set of sandstone doors, it has a lock."
+	desc = "一扇大型的砂岩双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/tin
-	name = "large tin double"
+	name = "大型锡制双开门"
 	material = "tin"
 	health = 150
-	desc = "A large set of tin doors, it has a lock. With enough effort they could be soon broken through."
+	desc = "一扇大型的锡制双开门, 带锁. 只要用力足够, 它们很快就能被打破."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/lead
-	name = "large lead double"
+	name = "大型铅制双开门"
 	material = "lead"
-	desc = "A large set of lead doors, it has a lock."
+	desc = "一扇大型的铅制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/copper
-	name = "large copper double"
+	name = "大型铜制双开门"
 	material = "copper"
-	desc = "A large set of copper doors, it has a lock."
+	desc = "一扇大型的铜制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/bronze
-	name = "large bronze double"
+	name = "大型青铜双开门"
 	material = "bronze"
 	health = 250
-	desc = "A large set of well built and sturdy bronze doors, it has a lock."
+	desc = "一扇大型的做工精良且坚固的青铜双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/iron
-	name = "large iron double"
+	name = "大型铁制双开门"
 	material = "iron"
 	health = 300
-	desc = "A large set of strong iron doors, it has a lock."
+	desc = "一扇大型的坚固铁制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/doubledoor/steel
-	name = "large reinforced steel double"
+	name = "大型强化钢双开门"
 	material = "steel"
 	health = 400
-	desc = "A large set of reinforced steel doors, it has a lock."
+	desc = "一扇大型的强化钢双开门, 带锁."
 	breachable = FALSE
 
 /obj/structure/simple_door/key_door/custom/doubledoor/silver
-	name = "large silver double"
+	name = "大型银制双开门"
 	material = "silver"
-	desc = "A large set of shimmering silver doors, it has a lock."
+	desc = "一扇大型的闪闪发光的银制双开门, 带锁."
 	breachable = FALSE
 
 /obj/structure/simple_door/key_door/custom/doubledoor/gold
-	name = "large gold double"
+	name = "大型金制双开门"
 	material = "gold"
-	desc = "A large set of glimmering gold doors, it has a lock."
+	desc = "一扇大型的微微发光的金制双开门, 带锁."
 
 /obj/structure/simple_door/key_door/custom/singledoor/New(var/newloc,var/material_name)
 	..(newloc, "wood")

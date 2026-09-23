@@ -55,8 +55,8 @@
 
 
 /obj/structure/magic/wand_assembly_bench
-	name = "wand assembly bench"
-	desc = "A sturdy workbench used to assemble magical wand parts into a functioning wand."
+	name = "魔杖组装台"
+	desc = "一张坚固的工作台,用于将魔法魔杖部件组装成一根可用的魔杖."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gunbench1"
 	density = TRUE
@@ -73,12 +73,12 @@
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if (!istype(W, /obj/item/wand_part))
-			to_chat(user, "<span class='notice'>This bench only assembles wand parts.</span>")
+			to_chat(user, "<span class='notice'>这张工作台只能组装魔杖部件.</span>")
 			return
 
 		user.drop_item()
 		W.loc = src
-		to_chat(user, "<span class='notice'>You place [W] on the wand assembly bench.</span>")
+		to_chat(user, "<span class='notice'>你将[W]放在魔杖组装台上.</span>")
 		do_html(user)
 		return
 
@@ -91,12 +91,12 @@
 			var/obj/item/wand_part/wood_part = get_bench_wood_part()
 			if (wood_part)
 				if (!user.get_active_hand() && user.put_in_active_hand(wood_part))
-					to_chat(user, "<span class='notice'>You take [wood_part] from the bench.</span>")
+					to_chat(user, "<span class='notice'>你从工作台上取下[wood_part].</span>")
 				else
 					wood_part.loc = get_turf(user)
-					to_chat(user, "<span class='notice'>You remove [wood_part] from the bench.</span>")
+					to_chat(user, "<span class='notice'>你从工作台上移除了[wood_part].</span>")
 			else
-				to_chat(user, "<span class='notice'>There is no wood part on the bench.</span>")
+				to_chat(user, "<span class='notice'>工作台上没有木质部件.</span>")
 			do_html(user)
 			return
 
@@ -104,12 +104,12 @@
 			var/obj/item/wand_part/core_part = get_bench_core_part()
 			if (core_part)
 				if (!user.get_active_hand() && user.put_in_active_hand(core_part))
-					to_chat(user, "<span class='notice'>You take [core_part] from the bench.</span>")
+					to_chat(user, "<span class='notice'>你从工作台上取下[core_part].</span>")
 				else
 					core_part.loc = get_turf(user)
-					to_chat(user, "<span class='notice'>You remove [core_part] from the bench.</span>")
+					to_chat(user, "<span class='notice'>你从工作台上移除了[core_part].</span>")
 			else
-				to_chat(user, "<span class='notice'>There is no core part on the bench.</span>")
+				to_chat(user, "<span class='notice'>工作台上没有核心部件.</span>")
 			do_html(user)
 			return
 
@@ -172,7 +172,7 @@
 				new_wand.apply_length_stats()
 				new_wand.update_name_and_desc()
 
-				to_chat(user, "<span class='notice'>The wand assembly bench finishes assembling a [new_wand.name].</span>")
+				to_chat(user, "<span class='notice'>魔杖组装台完成了一根[new_wand.name]的组装.</span>")
 				playsound(get_turf(src), 'sound/effects/woodfile.ogg', 75, TRUE)
 				qdel(wood_part)
 				qdel(core_part)
@@ -181,9 +181,9 @@
 					if (WB.check_level(user.client.ckey) == "0")
 						WB.change_level(user.client.ckey, "1")
 						WB.save_wand(user.client.ckey,"[new_wand.wand_wood],[new_wand.wand_core],[new_wand.wand_length]")
-						to_chat(world, "<font size=3 class='wizard'><b>[user.real_name]</b> ([user.key]) has progressed to qualification level 1 (<b>U.N.G.A.</b>) by assembling a wand!</font>")
+						to_chat(world, "<font size=3 class='wizard'><b>[user.real_name]</b> ([user.key]) 通过组装一根魔杖,已提升至资格等级1 (<b>U.N.G.A.</b>)!</font>")
 			else
-				to_chat(user, "<span class='notice'>The bench needs one wand chassis and one wand core to assemble a wand.</span>")
+				to_chat(user, "<span class='notice'>工作台需要一根魔杖底盘和一颗魔杖核心才能组装出一根魔杖.</span>")
 			do_html(user)
 			return
 
@@ -324,7 +324,7 @@
 			else if (istype(O, /obj/item/wand_part/pine_wood) || istype(O, /obj/item/wand_part/mdf_board) || istype(O, /obj/item/wand_part/balsa_wood) || istype(O, /obj/item/wand_part/snooker_cue) || istype(O, /obj/item/wand_part/fibreglass) || istype(O, /obj/item/wand_part/driftwood) || istype(O, /obj/item/wand_part/stale_chip) || istype(O, /obj/item/wand_part/shrub_root) || istype(O, /obj/item/wand_part/cap_truncheon))
 				wood_items += O.name
 		if (wood_items.len || core_items.len)
-			to_chat(user, "<span class='notice'>On the bench: [english_list(wood_items + core_items)]</span>")
+			to_chat(user, "<span class='notice'>工作台上: [english_list(wood_items + core_items)]</span>")
 
 
 // ============================================================
@@ -393,8 +393,8 @@
 // ============================================================
 
 /obj/item/weapon/material/magic/wand/crafted
-	name = "crafted wand"
-	desc = "A wand assembled from whatever was lying around. It hums with uncertain potential."
+	name = "手工魔杖"
+	desc = "用随手可得的材料组装而成的魔杖.它嗡鸣着不确定的潜力."
 	icon = 'icons/obj/magic_weapons.dmi'
 
 /obj/item/weapon/material/magic/wand/crafted/New()
@@ -928,7 +928,7 @@
 							M.show_chat_overlay(H, "<i>[S.name]!</i>", "#dea30d")
 					if (S.sound_effect)
 						playsound(user.loc, S.sound_effect, 75, FALSE)
-					H.visible_message("<span style=color:'#dea30d'><b>[user]</b> uses <i>[S.name]!</i></span>")
+					H.visible_message("<span style=color:'#dea30d'><b>[user]</b>使用了<i>[S.name]!</i></span>")
 					playsound(user.loc, pick('sound/weapons/magic/spell1.ogg','sound/weapons/magic/spell2.ogg','sound/weapons/magic/spell3.ogg','sound/weapons/magic/spell4.ogg'), 50, TRUE)
 				
 				// Bobby wizard witness alert

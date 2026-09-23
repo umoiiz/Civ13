@@ -3,7 +3,7 @@
 	set category = "Server"
 
 	if (!check_rights(R_SERVER))
-		to_chat(src, "<span class = 'danger'>You don't have the permissions.</span>")
+		to_chat(src, "<span class = 'danger'>你没有权限.</span>")
 		return
 
 	if (map)
@@ -16,4 +16,4 @@
 				message_admins("[key_name(src)] undid the administrative lock on the round ending.", key_name(usr))
 				log_admin("[key_name(src)] undid the administrative lock on the round ending.")
 	else
-		to_chat(src, "<span class = 'danger'>Something went wrong.</span>")
+		to_chat(src, "<span class = 'danger'>出了点问题.</span>")

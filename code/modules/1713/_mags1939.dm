@@ -1,5 +1,5 @@
 /obj/item/ammo_magazine/arisaka99
-	name = "clip (7.7x58mm)"
+	name = "弹夹 (7.7x58mm)"
 	icon_state = "kclip"
 	attached_icon_state = "none"
 	caliber = "a77x58"
@@ -11,7 +11,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/arisakabox99
-	name = "magazine box (7.7x58mm)"
+	name = "弹匣盒 (7.7x58mm)"
 	icon_state = "arisaka_ammo"
 	mag_type = MAGAZINE
 	caliber = "a77x58"
@@ -23,7 +23,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/arisaka99_training
-	name = "clip (7.7x58mm)"
+	name = "弹夹 (7.7x58mm)"
 	icon_state = "kclip"
 	attached_icon_state = "none"
 	caliber = "a77x58_wood"
@@ -35,7 +35,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/type100
-	name = "Type 100 Magazine"
+	name = "百式弹匣"
 	icon_state = "type100"
 	attached_icon_state = "type100_mag"
 	mag_type = MAGAZINE
@@ -46,7 +46,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/type99
-	name = "Type-99 Magazine"
+	name = "九九式弹匣"
 	icon_state = "type99"
 	attached_icon_state = "type99_mag"
 	mag_type = MAGAZINE
@@ -57,7 +57,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/type99/type97
-	name = "Type-97 Magazine"
+	name = "九七式弹匣"
 	icon_state = "type97"
 	attached_icon_state = "type99_mag"
 	mag_type = MAGAZINE
@@ -68,7 +68,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/type96
-	name = "Type-96 Magazine"
+	name = "九六式弹匣"
 	icon_state = "type99"
 	attached_icon_state = "type99_mag"
 	mag_type = MAGAZINE
@@ -79,7 +79,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/type92
-	name = "Type 92 ammo belt"
+	name = "九二式弹药带"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a77x58"
@@ -95,7 +95,7 @@
 	var/overlay_state = null
 
 /obj/item/ammo_magazine/breda30
-	name = "Breda 30 clip (6.5x52mm)"
+	name = "布雷达30弹夹 (6.5x52mm)"
 	icon_state = "breda30"
 	attached_icon_state = "none"
 	mag_type = SPEEDLOADER
@@ -106,7 +106,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/a20mm_aphe
-	name = "APHE clip (20mm)"
+	name = "穿甲高爆弹夹 (20mm)"
 	icon_state = "breda30"
 	attached_icon_state = "none"
 	mag_type = SPEEDLOADER
@@ -117,7 +117,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/sten2
-	name = "Sten Magazine (9x19mm)"
+	name = "司登弹匣 (9x19mm)"
 	icon_state = "sten2"
 	attached_icon_state = "sten_mag"
 	mag_type = MAGAZINE
@@ -128,7 +128,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mp40
-	name = "MP40 magazine (9x19mm)"
+	name = "MP40弹匣 (9x19mm)"
 	icon_state = "mp40"
 	attached_icon_state = "mp40_mag"
 	mag_type = MAGAZINE
@@ -139,7 +139,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mp40/erma
-	name = "erma-emp magazine (9x19mm)"
+	name = "ERMA-EMP弹匣 (9x19mm)"
 	icon_state = "mp40"
 	attached_icon_state = "erma_mag"
 	mag_type = MAGAZINE
@@ -150,7 +150,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mp40/box
-	name = "magazine box (9x19mm)"
+	name = "弹匣盒 (9x19mm)"
 	icon_state = "9mm"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -161,12 +161,12 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/mp40/mp5
-	name = "MP5 magazine (9x19mm)"
+	name = "MP5弹匣 (9x19mm)"
 	icon_state = "mp5"
 	attached_icon_state = "mp5_mag"
 
 /obj/item/ammo_magazine/mp40/modello38
-	name = "MAB 38 magazine (9x19mm)"
+	name = "MAB 38弹匣 (9x19mm)"
 	icon_state = "mp40"
 	attached_icon_state = "mp40_mag"
 	mag_type = MAGAZINE
@@ -177,7 +177,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/fg42
-	name = "FG 42 magazine (7.92x57mm)"
+	name = "FG 42弹匣 (7.92x57mm)"
 	icon_state = "fg42"
 	attached_icon_state = "fg42_mag"
 	mag_type = MAGAZINE
@@ -188,13 +188,13 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/fg42/small
-	name = "FG 42 small magazine (7.92x57mm)"
+	name = "FG 42短弹匣 (7.92x57mm)"
 	icon_state = "fg42_small"
 	max_ammo = 10
 	weight = 0.2
 
 /obj/item/ammo_magazine/mg34
-	name = "MG34 magazine (7.92x57mm)"
+	name = "MG34弹匣 (7.92x57mm)"
 	icon_state = "mg34"
 	attached_icon_state = "mg34_mag"
 	mag_type = MAGAZINE
@@ -205,7 +205,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mg13
-	name = "MG13 magazine (7.92x57mm)"
+	name = "MG13弹匣 (7.92x57mm)"
 	icon_state = "mg13mag"
 	attached_icon_state = "mg13_mag"
 	mag_type = MAGAZINE
@@ -216,7 +216,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/greasegun
-	name = "M3A1 magazine (.45 ACP)"
+	name = "M3A1弹匣 (.45 ACP)"
 	icon_state = "greasegun"
 	attached_icon_state = "greasegun_mag"
 	mag_type = MAGAZINE
@@ -227,7 +227,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/greasegun/box
-	name = "magazine box (.45 ACP)"
+	name = "弹匣盒 (.45 ACP)"
 	icon_state = "oldbox"
 	mag_type = MAGAZINE
 	caliber = "a45acp"
@@ -238,7 +238,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/c762x25_pps
-	name = "PPS-43 magazine (7.62x25mm)"
+	name = "PPS-43弹匣 (7.62x25mm)"
 	icon_state = "pps"
 	attached_icon_state = "pps_mag"
 	mag_type = MAGAZINE
@@ -249,7 +249,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/c762x25_ppsh
-	name = "PPSh-41 drum magazine (7.62x25mm)"
+	name = "PPSh-41弹鼓 (7.62x25mm)"
 	icon_state = "ppsh"
 	attached_icon_state = "ppsh_mag"
 	mag_type = MAGAZINE
@@ -260,7 +260,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/dp
-	name = "DP pan (7.62x54mmR)"
+	name = "DP弹盘 (7.62x54mmR)"
 	icon_state = "dp_disk"
 	attached_icon_state = "dp_mag"
 	mag_type = MAGAZINE
@@ -271,13 +271,13 @@
 	multiple_sprites = FALSE
 
 /obj/item/ammo_magazine/dp/dt
-	name = "DT magazine (7.62x54mmR)"
+	name = "DT弹匣 (7.62x54mmR)"
 	icon_state = "dt_drum"
 	attached_icon_state = "dt_mag"
 	max_ammo = 60
 
 /obj/item/ammo_magazine/stg
-	name = "StG 44 magazine (7.92x33mm)"
+	name = "StG 44弹匣 (7.92x33mm)"
 	icon_state = "stg"
 	attached_icon_state = "stg_mag"
 	mag_type = MAGAZINE
@@ -288,7 +288,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/g43
-	name = "G43 magazine (7.92x57mm)"
+	name = "G43弹匣 (7.92x57mm)"
 	icon_state = "g43"
 	attached_icon_state = "g43_mag"
 	caliber = "a792x57"
@@ -300,7 +300,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/svd
-	name = "SVD magazine (7.62x54mmR)"
+	name = "SVD弹匣 (7.62x54mmR)"
 	icon_state = "g43"
 	attached_icon_state = "svd_mag"
 	caliber = "a762x54"
@@ -312,7 +312,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/avtomat
-	name = "avtomat magazine (6.5x50mm)"
+	name = "自动步枪弹匣 (6.5x50mm)"
 	icon_state = "g43"
 	attached_icon_state = "avtomat_mag"
 	caliber = "a65x50"
@@ -324,7 +324,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/svt
-	name = "SVT-40 magazine (7.62x54mm)"
+	name = "SVT-40弹匣 (7.62x54mm)"
 	icon_state = "svt"
 	attached_icon_state = "svt_mag"
 	caliber = "a762x54"
@@ -336,7 +336,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m1911
-	name = "M1911 magazine (.45)"
+	name = "M1911弹匣 (.45)"
 	icon_state = "m1911"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a45acp
@@ -348,7 +348,7 @@
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/a45acpbox
-	name = "magazine box (.45)"
+	name = "弹匣盒 (.45)"
 	icon_state = "oldbox"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a45acp
@@ -359,7 +359,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/tt30
-	name = "TT-33 magazine (7.62x25mm)"
+	name = "TT-33弹匣 (7.62x25mm)"
 	icon_state = "m1911"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a762x25
@@ -371,7 +371,7 @@
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/tt30ll/rubber
-	name = "TT-33 magazine (wooden)"
+	name = "TT-33弹匣 (木质)"
 	icon_state = "m1911"
 	mag_type = MAGAZINE
 	ammo_type =  /obj/item/ammo_casing/a762x25/rubber
@@ -383,7 +383,7 @@
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/makarov
-	name = "PM Makarov magazine (9x18mm)"
+	name = "PM马卡洛夫弹匣 (9x18mm)"
 	icon_state = "m1911" //Temporary until someones sprites a magazine for it, don't change it to an ammo box though!
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a9x18
@@ -395,7 +395,7 @@
 	stored_ammo.Cut()
 
 /obj/item/ammo_magazine/makarov/box
-	name = "magazine box (9x18mm)"
+	name = "弹匣盒 (9x18mm)"
 	icon_state = "9mm"
 	mag_type = MAGAZINE
 	caliber = "a9x18"
@@ -406,7 +406,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/garand
-	name = "clip (30-06) 8 rounds"
+	name = "弹夹 (30-06) 8发"
 	icon_state = "g-clip"
 	attached_icon_state = "none"
 	caliber = "a3006"
@@ -417,7 +417,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/m1carbine
-	name = "M1 Carbine Small magazine (7.62x33mm)"
+	name = "M1卡宾枪短弹匣 (7.62x33mm)"
 	icon_state = "mcar"
 	attached_icon_state = "mcar_mag"
 	mag_type = MAGAZINE
@@ -428,7 +428,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m1carbine/big
-	name = "M1 Carbine magazine (7.62x33mm)"
+	name = "M1卡宾枪弹匣 (7.62x33mm)"
 	max_ammo = 30
 	icon_state = "mcarbig"
 	attached_icon_state = "mcar_mag30"
@@ -436,7 +436,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m1carbine/box
-	name = "30.Carbine ammo pouch (7.62x33mm)"
+	name = ".30卡宾枪弹药袋 (7.62x33mm)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a762x33
 	caliber = "a762x33"
@@ -446,7 +446,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/m3006box
-	name = "magazine box (30-06)"
+	name = "弹匣盒 (30-06)"
 	icon_state = "ammo"
 	mag_type = MAGAZINE
 	caliber = "a3006"
@@ -457,7 +457,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/springfield
-	name = "clip (30-06)"
+	name = "弹夹 (30-06)"
 	icon_state = "clip"
 	attached_icon_state = "none"
 	caliber = "a3006"
@@ -468,7 +468,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/browning
-	name = "browning ammo belt"
+	name = "勃朗宁弹药带"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -487,7 +487,7 @@
 	var/overlay_state = null
 
 /obj/item/ammo_magazine/bar
-	name = "BAR magazine (30-06)"
+	name = "BAR弹匣 (30-06)"
 	icon_state = "bar"
 	attached_icon_state = "bar_mag"
 	caliber = "a3006_weak"
@@ -498,7 +498,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/thompson
-	name = "Thompson magazine (.45)"
+	name = "汤普森弹匣 (.45)"
 	icon_state = "thompson"
 	attached_icon_state = "thompson_mag"
 	caliber = "a45acp"
@@ -508,7 +508,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/deagle
-	name = "Desert eagle magazine (50cal)"
+	name = "沙漠之鹰弹匣 (50口径)"
 	icon_state = "deagle"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a50cal
@@ -517,7 +517,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/deaglemagnum
-	name = "Desert eagle magazine (44.magnum)"
+	name = "沙漠之鹰弹匣 (44马格南)"
 	icon_state = "deagle"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a44magnum
@@ -526,7 +526,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/browninghp
-	name = "Browning hi-power magazine (9mm Parabellum)"
+	name = "勃朗宁大威力弹匣 (9mm帕拉贝鲁姆)"
 	icon_state = "browning_hp"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a9x19

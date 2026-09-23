@@ -5,8 +5,8 @@
 #define GROWN_DRY_MODIFIER 21 //temporary it placed here. TO DO - move after categorising snacks to snacks.dm
 
 /obj/item/weapon/reagent_containers/food/snacks/meat
-	name = "meat"
-	desc = "A slab of meat."
+	name = "肉"
+	desc = "一块肉."
 	icon_state = "meat"
 	health = 180
 	filling_color = "#FF1C1C"
@@ -25,7 +25,7 @@
 	if (!roasted && !rotten && (istype(W,/obj/item/weapon/attachment/bayonet)  || istype(W, /obj/item/weapon/material/hatchet) || istype(W,/obj/item/weapon/material/kitchen/utensil/knife)))
 		new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
 		new /obj/item/weapon/reagent_containers/food/snacks/rawcutlet(src)
-		to_chat(user, "You cut the meat into thin strips.")
+		to_chat(user, "你将肉切成细条.")
 		qdel(src)
 	else
 		..()
@@ -34,21 +34,21 @@
 // TODO: rewrite kitchen code to check a var on the meat item so we can remove
 // all these sybtypes.
 /obj/item/weapon/reagent_containers/food/snacks/meat/human
-	name = "human meat"
-	desc = "Tastes like kind of like ham..."
+	name = "人肉"
+	desc = "尝起来有点像火腿..."
 	disgusting = TRUE
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
-	name = "monkey meat"
-	desc = "Tastes like human."
+	name = "猴肉"
+	desc = "尝起来像人肉."
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/turtle
-	name = "turtle meat"
-	desc = "Tastes like... something."
+	name = "海龟肉"
+	desc = "尝起来像...某种东西."
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/poisonfrog
-	name = "poisonous frog meat"
-	desc = "Probably not a good idea to put it in the stew."
+	name = "毒蛙肉"
+	desc = "把它放进炖菜里可能不是个好主意."
 	disgusting = TRUE
 	var/uses = 4
 	New()
@@ -65,7 +65,7 @@
 		CURRENT = user.l_hand
 	if (CURRENT)
 		if (istype(CURRENT, /obj/item/ammo_casing/arrow))
-			to_chat(user, "You dip the arrow into the poisonous frog's skin.")
+			to_chat(user, "你将箭浸入毒蛙的皮肤.")
 			CURRENT.name = "poisoned arrow"
 			CURRENT.icon_state = "arrowp"
 			CURRENT.projectile_type = /obj/item/projectile/arrow/arrow/vial
@@ -74,7 +74,7 @@
 			CURRENT.contents = list(CURRENT.BB)
 			uses = (uses - 1)
 		else if (istype(CURRENT, /obj/item/ammo_casing/bolt))
-			to_chat(user, "You dip the bolt into the poisonous frog's skin.")
+			to_chat(user, "你将弩箭浸入毒蛙的皮肤.")
 			CURRENT.name = "poisoned bolt"
 			CURRENT.icon_state = "boltp"
 			CURRENT.projectile_type = /obj/item/projectile/arrow/bolt/vial
@@ -86,8 +86,8 @@
 	else
 		return
 /obj/item/weapon/reagent_containers/food/snacks/rawfish
-	name = "raw fish"
-	desc = "A fresh fish. Should probably cook it first."
+	name = "生鱼"
+	desc = "一条新鲜的鱼.应该先煮熟."
 	icon_state = "rawfish"
 	health = 180
 	filling_color = "#606060"
@@ -105,13 +105,13 @@
 	satisfaction = -4
 
 /obj/item/weapon/reagent_containers/food/snacks/rawfish/salmon
-	name = "raw salmon"
-	desc = "A fresh salmon. Should probably cook it first."
+	name = "生鲑鱼"
+	desc = "一条新鲜的鲑鱼.应该先煮熟."
 	icon_state = "salmon"
 
 /obj/item/weapon/reagent_containers/food/snacks/rawfish/cod
-	name = "raw cod"
-	desc = "A fresh cod salmon. Should probably cook it first."
+	name = "生鳕鱼"
+	desc = "一条新鲜的鳕鱼。大概应该先煮熟。"
 	icon_state = "cod"
 	rotten_icon_state = "rotten_cod"
 	rots = TRUE
@@ -120,8 +120,8 @@
 		reagents.add_reagent("protein", 2)
 	satisfaction = -6
 /obj/item/weapon/reagent_containers/food/snacks/rawfish/cod/salted
-	name = "salted cod"
-	desc = "A piece of salted cod."
+	name = "腌鳕鱼"
+	desc = "一块腌鳕鱼。"
 	icon_state = "salted_cod"
 	rotten_icon_state = "salted_cod"
 	rots = FALSE
@@ -135,7 +135,7 @@
 	if (!roasted && !istype(src,/obj/item/weapon/reagent_containers/food/snacks/rawfish/cod) && !rotten && (istype(W,/obj/item/weapon/attachment/bayonet) || istype(W,/obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/material/hatchet)))
 		for (var/i=1, i<=3, i++)
 			new /obj/item/weapon/reagent_containers/food/snacks/fishfillet(src)
-		to_chat(user, "You cut the fish into thin fillets.")
+		to_chat(user, "你把鱼切成薄鱼片。")
 		qdel(src)
 	else
 		..()
@@ -144,14 +144,14 @@
 	if (!roasted && !rotten && (istype(W,/obj/item/weapon/attachment/bayonet) || istype(W,/obj/item/weapon/material/kitchen/utensil/knife) || istype(W, /obj/item/weapon/material/hatchet)))
 		for (var/i=1, i<=3, i++)
 			new /obj/item/weapon/reagent_containers/food/snacks/salmonfillet(src)
-		to_chat(user, "You cut the salmon into thin fillets.")
+		to_chat(user, "你把鲑鱼切成薄鱼片。")
 		qdel(src)
 	else
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/rawcrab
-	name = "crab meat"
-	desc = "Fresh crab meat. Looks tasty."
+	name = "蟹肉"
+	desc = "新鲜的蟹肉。看起来很好吃。"
 	icon_state = "raw_crabmeat"
 	health = 180
 	filling_color = "#7F0000"
@@ -168,8 +168,8 @@
 		bitesize = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/rawlobster
-	name = "lobster"
-	desc = "A fresh lobster. Yum!"
+	name = "龙虾"
+	desc = "一只新鲜的龙虾。真美味!"
 	icon_state = "lobster_raw"
 	health = 180
 	filling_color = "#7F0000"
@@ -186,8 +186,8 @@
 		bitesize = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/rawlobster/boiled
-	name = "boiled lobster"
-	desc = "A boiled lobster. Looks very tasty."
+	name = "煮龙虾"
+	desc = "一只煮熟的龙虾。看起来非常美味。"
 	icon_state = "lobster_boiled"
 	health = 180
 	filling_color = "#7F0000"
@@ -202,8 +202,8 @@
 		reagents.remove_reagent("food_poisoning")
 
 /obj/item/weapon/reagent_containers/food/snacks/cockroach
-	name = "cockroach"
-	desc = "A dead cockroach. No, please don't make me eat it..."
+	name = "蟑螂"
+	desc = "一只死蟑螂。不,请别让我吃它..."
 	icon_state = "cockroach"
 	rotten_icon_state = "rotten_cockroach"
 	filling_color = "#773B00"
@@ -219,8 +219,8 @@
 		bitesize = 3
 
 /obj/item/weapon/reagent_containers/food/snacks/octopus
-	name = "octopus"
-	desc = "A fresh octopus. Yum!"
+	name = "章鱼"
+	desc = "一只新鲜的章鱼。真美味!"
 	icon_state = "purple_octopus"
 	filling_color = "#7F0000"
 	center_of_mass = list("x"=16, "y"=14)
@@ -240,8 +240,8 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/octopus/dried
 	icon = 'icons/obj/food/dryed.dmi'
-	name = "dried octopus rings"
-	desc = "Good snack, where to get a beer?"
+	name = "干章鱼圈"
+	desc = "好零食,去哪儿弄杯啤酒?"
 	filling_color = "#9b5a1d"
 	center_of_mass = list("x"=16, "y"=16)
 	rots = FALSE
@@ -256,8 +256,8 @@
 		decay *= SEAFOOD_DRY_MODIFIER
 
 /obj/item/weapon/reagent_containers/food/snacks/cracked_shellfish
-	name = "cracked shellfish"
-	desc = "Fresh shellfish, cracked open with a knife."
+	name = "敲开的贝类"
+	desc = "新鲜的贝类,用刀敲开了。"
 	icon_state = "cracked_shellfish"
 	health = 30
 	filling_color = "#7F0000"
@@ -274,8 +274,8 @@
 		bitesize = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/animalfat
-	name = "animal"
-	desc = "Its a fresh and raw animal fat."
+	name = "动物"
+	desc = "这是一块新鲜的生动物脂肪。"
 	icon_state = "animalfat"
 	health = 100
 	filling_color = "#FFF783"
@@ -292,14 +292,14 @@
 	satisfaction = -7 //Its disgusting raw,
 
 /obj/item/shellfish
-	name = "shellfish"
-	desc = "A fresh, closed shellfish. You need a knife to open it."
+	name = "贝类"
+	desc = "一只新鲜的、闭合的贝类。你需要一把刀才能打开它。"
 	icon_state = "shellfish"
 	icon = 'icons/obj/food/food.dmi'
 
 	attackby(obj/item/I, mob/user)
 		if (istype(I, /obj/item/weapon/attachment/bayonet) || istype(I, /obj/item/weapon/material/kitchen/utensil/knife) || istype(I, /obj/item/weapon/material/hatchet))
-			to_chat(user, "You crack open \the [src].")
+			to_chat(user, "你敲开了\the [src]。")
 			new /obj/item/weapon/reagent_containers/food/snacks/cracked_shellfish(user.loc)
 			qdel(src)
 			return

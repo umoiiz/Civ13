@@ -34,8 +34,8 @@ By design, d1 is the smallest direction and d2 is the highest
 */
 
 /obj/structure/cable
-	name = "power cable"
-	desc = "A flexible, superconducting insulated cable for power transfer."
+	name = "电力电缆"
+	desc = "一根用于电力传输的柔性超导绝缘电缆."
 	icon = 'icons/obj/machines/cables.dmi'
 	icon_state = "0-1"
 	layer = 1.95
@@ -131,7 +131,7 @@ By design, d1 is the smallest direction and d2 is the highest
 //
 /obj/structure/cable/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weapon/wirecutters))
-		user.visible_message("[user] cuts the cable.", "<span class='notice'>You cut the cable.</span>")
+		user.visible_message("[user] 切断了电缆.", "<span class='notice'>你切断了电缆.</span>")
 		playsound(loc, usesound, 100, FALSE)
 		Destroy()
 		return

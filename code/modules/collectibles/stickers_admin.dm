@@ -65,11 +65,11 @@
 			target = M
 			break
 	if (!target)
-		to_chat(usr, "<span class='warning'>Could not find mob for [selected]. They may not be in the game.</span>")
+		to_chat(usr, "<span class='warning'>找不到[selected]的生物.他们可能不在游戏中.</span>")
 		return
 	for (var/i = 1 to count)
 		new /obj/item/sticker_pack(get_turf(target))
-	to_chat(usr, "<span class='notice'>Gave [count] sticker pack\s to [selected].</span>")
+	to_chat(usr, "<span class='notice'>将[count]贴纸包\s 给了[selected].</span>")
 	log_admin("[key_name(usr)] gave [count] sticker pack\s to [selected].")
 	message_admins("[key_name(usr)] gave [count] sticker pack\s to [selected].", key_name(usr))
 
@@ -86,7 +86,7 @@
 	if (!selected)
 		return
 	if(!length(GLOB.sticker_registry))
-		to_chat(usr, "<span class='warning'>The sticker registry is empty!</span>")
+		to_chat(usr, "<span class='warning'>贴纸注册表为空!</span>")
 		return
 	var/list/sticker_names = list()
 	for(var/id in GLOB.sticker_registry)
@@ -104,10 +104,10 @@
 			target = M
 			break
 	if (!target)
-		to_chat(usr, "<span class='warning'>Could not find mob for [selected]. They may not be in the game.</span>")
+		to_chat(usr, "<span class='warning'>找不到[selected]的生物.他们可能不在游戏中.</span>")
 		return
 	new /obj/item/sticker(get_turf(target), picked_id)
-	to_chat(usr, "<span class='notice'>Gave [picked_name] to [selected].</span>")
+	to_chat(usr, "<span class='notice'>将[picked_name]给了[selected].</span>")
 	log_admin("[key_name(usr)] gave sticker [picked_name] to [selected].")
 	message_admins("[key_name(usr)] gave sticker [picked_name] to [selected].", key_name(usr))
 
@@ -132,7 +132,7 @@
 	if (!target_ckey)
 		return
 	if(!length(GLOB.sticker_registry))
-		to_chat(usr, "<span class='warning'>The sticker registry is empty!</span>")
+		to_chat(usr, "<span class='warning'>贴纸注册表为空!</span>")
 		return
 	var/list/sticker_names = list()
 	for(var/id in GLOB.sticker_registry)
@@ -146,11 +146,11 @@
 	var/picked_id = sticker_names[picked_name]
 	var/list/player_stickers = get_player_stickers(target_ckey)
 	if(picked_id in player_stickers)
-		to_chat(usr, "<span class='warning'>[target_ckey] already has that sticker!</span>")
+		to_chat(usr, "<span class='warning'>[target_ckey]已经有那张贴纸了!</span>")
 		return
 	player_stickers += picked_id
 	save_sticker_collection(target_ckey, player_stickers)
-	to_chat(usr, "<span class='notice'>Unlocked [picked_name] for [target_ckey].</span>")
+	to_chat(usr, "<span class='notice'>为[target_ckey]解锁了[picked_name].</span>")
 	log_admin("[key_name(usr)] unlocked sticker [picked_name] for [target_ckey].")
 	message_admins("[key_name(usr)] unlocked sticker [picked_name] for [target_ckey].", key_name(usr))
 
@@ -177,6 +177,6 @@
 	if (alert(usr, "This will wipe ALL stickers for [target_ckey]. Continue?", "Reset Sticker Collection", "Yes", "No") != "Yes")
 		return
 	save_sticker_collection(target_ckey, list())
-	to_chat(usr, "<span class='notice'>Reset sticker collection for [target_ckey].</span>")
+	to_chat(usr, "<span class='notice'>重置了[target_ckey]的贴纸收藏.</span>")
 	log_admin("[key_name(usr)] reset sticker collection for [target_ckey].")
 	message_admins("[key_name(usr)] reset sticker collection for [target_ckey].", key_name(usr))

@@ -489,13 +489,13 @@ var/list/coefflist = list()
 		return
 	if (!lastpuke)
 		lastpuke = TRUE
-		to_chat(src, "<span class='warning'>You feel nauseous...</span>")
+		to_chat(src, "<span class='warning'>你感到恶心...</span>")
 		spawn(150)	//15 seconds until second warning
-			to_chat(src, "<span class='warning'>You feel like you are about to throw up!</span>")
+			to_chat(src, "<span class='warning'>你感觉自己快要吐了!</span>")
 			spawn(100)	//and you have 10 more for mad dash to the bucket
 				Stun(5)
 
-				visible_message("<span class='warning'>[src] throws up!</span>","<span class='warning'>You throw up!</span>")
+				visible_message("<span class='warning'>[src]吐了!</span>","<span class='warning'>你吐了!</span>")
 				playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
 
 				var/turf/location = loc
@@ -516,13 +516,13 @@ var/list/coefflist = list()
 		return
 	if (!lastpuke)
 		lastpuke = TRUE
-		to_chat(src, "<span class='warning'>You feel nauseous...</span>")
+		to_chat(src, "<span class='warning'>你感到恶心...</span>")
 		spawn(150)	//15 seconds until second warning
-			to_chat(src, "<span class='warning'>You feel like you are about to throw up!</span>")
+			to_chat(src, "<span class='warning'>你感觉自己快要吐了!</span>")
 			spawn(100)	//and you have 10 more for mad dash to the bucket
 				Stun(5)
 
-				visible_message("<span class='warning'>[src] throws up blood!</span>","<span class='warning'>You throw up blood!</span>")
+				visible_message("<span class='warning'>[src]吐血了!</span>","<span class='warning'>你吐血了!</span>")
 				playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
 
 				var/turf/location = loc
@@ -657,10 +657,10 @@ var/list/coefflist = list()
 	if (usr == src)
 		self = TRUE
 	if (!self)
-		usr.visible_message("<span class='notice'>[usr] kneels down, puts \his hand on [src]'s wrist and begins counting their pulse.</span>",\
+		usr.visible_message("<span class='notice'>[usr]跪下, 将\his 手放在[src]的手腕上, 开始数他们的脉搏.</span>",\
 		"You begin counting [src]'s pulse.")
 	else
-		usr.visible_message("<span class='notice'>[usr] begins counting their pulse.</span>",\
+		usr.visible_message("<span class='notice'>[usr]开始数他们的脉搏.</span>",\
 		"You begin counting your pulse.")
 
 	if (pulse())
@@ -669,11 +669,11 @@ var/list/coefflist = list()
 		to_chat(usr, SPAN_DANGER("[src] has no pulse!"))	//it is REALLY UNLIKELY that a dead person would check his own pulse
 		return
 
-	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
+	to_chat(usr, "你必须[self ? "" : " both"]保持不动, 直到数完为止.")
 	if (do_after(usr, 60, usr.loc))
-		to_chat(usr, "<span class='notice'>[self ? "Your" : "[src]'s"] pulse is [get_pulse(GETPULSE_HAND)].</span>")
+		to_chat(usr, "<span class='notice'>[self ? "Your" : "[src]'s"]的脉搏是[get_pulse(GETPULSE_HAND)].</span>")
 	else
-		to_chat(usr, "<span class='warning'>You failed to check the pulse. Try again.</span>")
+		to_chat(usr, "<span class='warning'>你未能检测到脉搏. 再试一次.</span>")
 
 /mob/living/human/proc/set_species(var/new_species, var/default_colour)
 //	to_chat(world, "set species")
@@ -842,7 +842,7 @@ var/list/coefflist = list()
 	if (istype(src, /mob/living/human))
 		var/mob/living/human/H = usr
 		if (!stat)
-			visible_message("<span class = 'notice'>[src] examines [gender==MALE?"himself":"herself"].</span>")
+			visible_message("<span class = 'notice'>[src]检查了[gender==MALE?"himself":"herself"].</span>")
 		if (ishuman(H))
 			for (var/obj/item/organ/external/org in H.organs)
 				var/status = ""
@@ -960,11 +960,11 @@ var/list/coefflist = list()
 	usr.setClickCooldown(20)
 
 	if (usr.stat > 0)
-		to_chat(usr, "You are unconcious and cannot do that!")
+		to_chat(usr, "你处于昏迷状态, 无法这样做!")
 		return
 
 	if (usr.restrained())
-		to_chat(usr, "You are restrained and cannot do that!")
+		to_chat(usr, "你被束缚住了, 无法这样做!")
 		return
 
 	var/mob/S = src
@@ -986,9 +986,9 @@ var/list/coefflist = list()
 	var/obj/item/organ/external/current_limb = organs_by_name[choice]
 
 	if (self)
-		to_chat(src, "<span class='warning'>You brace yourself to relocate your [current_limb.joint]...</span>")
+		to_chat(src, "<span class='warning'>你做好准备重新接上你的[current_limb.joint]...</span>")
 	else
-		to_chat(U, "<span class='warning'>You begin to relocate [S]'s [current_limb.joint]...</span>")
+		to_chat(U, "<span class='warning'>你开始重新接上[S]的[current_limb.joint]...</span>")
 
 	if (!do_after(U, 30, src))
 		return
@@ -996,10 +996,10 @@ var/list/coefflist = list()
 		return
 
 	if (self)
-		to_chat(src, "<span class='danger'>You pop your [current_limb.joint] back in!</span>")
+		to_chat(src, "<span class='danger'>你把你的[current_limb.joint]接回去了!</span>")
 	else
-		to_chat(U, "<span class='danger'>You pop [S]'s [current_limb.joint] back in!</span>")
-		to_chat(S, "<span class='danger'>[U] pops your [current_limb.joint] back in!</span>")
+		to_chat(U, "<span class='danger'>你把[S]的[current_limb.joint]接回去了!</span>")
+		to_chat(S, "<span class='danger'>[U]把你的[current_limb.joint]接回去了!</span>")
 	current_limb.undislocate()
 
 /mob/living/human/drop_from_inventory(var/obj/item/W, var/atom/Target = null)
@@ -1063,7 +1063,7 @@ var/list/coefflist = list()
 
 	if (stat) return
 	pulling_punches = !pulling_punches
-	to_chat(src, "<span class='notice'>You are now [pulling_punches ? "pulling your punches" : "not pulling your punches"].</span>")
+	to_chat(src, "<span class='notice'>你现在是[pulling_punches ? "pulling your punches" : "not pulling your punches"].</span>")
 	return
 
 //generates realistic-ish pulse output based on preset levels
@@ -1142,10 +1142,10 @@ var/list/coefflist = list()
 	else if (H.wear_mask && istype(H.wear_mask, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/currmask = H.wear_mask
 		if (currmask.blocks_scope)
-			to_chat(user, "You can't see any farther whilst wearing \the [currmask]!")
+			to_chat(user, "戴着\the [currmask]时, 你无法看得更远!")
 			return FALSE
 	else if (global_hud.darkMask[1] in user.client.screen)
-		to_chat(user, "Your visor gets in the way of seeing farther.")
+		to_chat(user, "你的面罩挡住了视线, 无法看得更远.")
 		return FALSE
 	else
 		var/obj/item/organ/eyes/E = H.internal_organs_by_name["eyes"]
@@ -1224,7 +1224,7 @@ var/list/coefflist = list()
 				animate(user.client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, time = 3, easing = SINE_EASING)
 				user.client.pixel_x = world.icon_size*_x
 				user.client.pixel_y = world.icon_size*_y
-			user.visible_message("[user] looks into the distance.", "You look into the distance.")
+			user.visible_message("[user]望向远方.", "你望向远方.")
 			handle_ui_visibility()
 			user.dizzycheck = TRUE
 	else//Resets
@@ -1324,7 +1324,7 @@ var/list/coefflist = list()
 			if (F.watertile)
 				phosphor_dye_timer = 0
 				set_light(0)
-				visible_message("<span class='notice'>The water washes the glowing phosphor dye off of [src]!</span>")
+				visible_message("<span class='notice'>水冲掉了[src]身上发光的磷光染料!</span>")
 
 	if (m_intent != "stealth")
 		var/range_val = 6

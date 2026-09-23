@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/projectile/automatic/stationary
-	name = "Maxim 1895"
-	desc = "Heavy Maxim machinegun on cart mount."
+	name = "马克沁1895"
+	desc = "安装在轮架上的重型马克沁机枪."
 	icon_state = "maxim"
 	base_icon = "maxim"
 	stat = "machinegun"

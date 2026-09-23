@@ -1,7 +1,7 @@
 var/global/list/ashtray_cache = list()
 
 /obj/item/weapon/material/ashtray
-	name = "ashtray"
+	name = "烟灰缸"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ashtray"
 	var/base_icon = "ashtray"
@@ -49,7 +49,7 @@ var/global/list/ashtray_cache = list()
 		return
 	if (istype(W,/obj/item/weapon/cigbutt) || istype(W,/obj/item/clothing/mask/smokable/cigarette) || istype(W, /obj/item/weapon/flame/match))
 		if (contents.len >= max_butts)
-			to_chat(user, "\The [src] is full.")
+			to_chat(user, "\The [src]已满.")
 			return
 		user.remove_from_mob(W)
 		W.loc = src
@@ -57,7 +57,7 @@ var/global/list/ashtray_cache = list()
 		if (istype(W,/obj/item/clothing/mask/smokable/cigarette))
 			var/obj/item/clothing/mask/smokable/cigarette/cig = W
 			if (cig.lit == TRUE)
-				visible_message("[user] crushes [cig] in \the [src], putting it out.")
+				visible_message("[user]在\the [src]中碾灭了[cig], 将其熄灭.")
 				processing_objects.Remove(cig)
 				var/obj/item/butt = new cig.type_butt(src)
 				cig.transfer_fingerprints_to(butt)
@@ -66,16 +66,16 @@ var/global/list/ashtray_cache = list()
 				//spawn(1)
 				//	TemperatureAct(150)
 			else if (cig.lit == FALSE)
-				to_chat(user, "You place [cig] in [src] without even smoking it. Why would you do that?")
+				to_chat(user, "你甚至没有点燃就把[cig]放进了[src]. 你为什么要这么做?")
 
-		visible_message("[user] places [W] in [src].")
+		visible_message("[user]将[W]放入了[src].")
 		user.update_inv_l_hand()
 		user.update_inv_r_hand()
 		add_fingerprint(user)
 		update_icon()
 	else
 		health = max(0,health - W.force)
-		to_chat(user, "You hit [src] with [W].")
+		to_chat(user, "你用[W]击中了[src].")
 		if (health < 1)
 			shatter()
 	return
@@ -84,7 +84,7 @@ var/global/list/ashtray_cache = list()
 	if (health > 0)
 		health = max(0,health - 3)
 		if (contents.len)
-			visible_message("<span class='danger'>\The [src] slams into [hit_atom], spilling its contents!</span>")
+			visible_message("<span class='danger'>\The [src]猛地撞上[hit_atom], 里面的东西洒了出来!</span>")
 		for (var/obj/item/clothing/mask/smokable/cigarette/O in contents)
 			O.loc = loc
 		if (health < 1)

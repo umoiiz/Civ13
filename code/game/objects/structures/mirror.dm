@@ -1,7 +1,7 @@
 //wip wip wup
 /obj/structure/mirror
-	name = "mirror"
-	desc = "A simple reflective surface of silvered glass."
+	name = "镜子"
+	desc = "一面简单的镀银玻璃反射面."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
 	density = FALSE
@@ -12,8 +12,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/mirror/obsidian
-	name = "mirror"
-	desc = "A single piece of obsidian skillfully cut and polished into a reflective surface."
+	name = "镜子"
+	desc = "一块被巧妙切割并抛光成反射面的黑曜石."
 	icon_state = "obsidian_mirror"
 
 /obj/structure/mirror/attack_hand(mob/user as mob)
@@ -48,14 +48,14 @@
 /obj/structure/mirror/attackby(obj/item/I as obj, mob/user as mob)
 	if ((istype(I, /obj/item/weapon/hammer)) && (!shattered))
 		var/obj/item/mirror/S = new(loc)
-		to_chat(user, "You unfasten \the [S] with your [I].")
+		to_chat(user, "你用你的[I]解开了\the [S].")
 		qdel(src)
 		return
 	else if ((istype(I, /obj/item/weapon/hammer)) && (shattered))
-		visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>")
+		visible_message("<span class='warning'>[user]开始拆解\the [src].</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(user,50,src))
-			visible_message("<span class='warning'>[user] deconstructs \the [src].</span>")
+			visible_message("<span class='warning'>[user]拆解了\the [src].</span>")
 			qdel(src)
 			return
 	else if ((!istype(I, /obj/item/weapon/hammer)) && (shattered))
@@ -63,10 +63,10 @@
 		return
 
 	if (prob(I.force * 2))
-		visible_message("<span class='warning'>[user] smashes [src] with [I]!</span>")
+		visible_message("<span class='warning'>[user]用[I]砸碎了[src]!</span>")
 		shatter()
 	else
-		visible_message("<span class='warning'>[user] hits [src] with [I]!</span>")
+		visible_message("<span class='warning'>[user]用[I]击中了[src]!</span>")
 		playsound(loc, 'sound/effects/Glasshit.ogg', 70, TRUE)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -78,10 +78,10 @@
 		return FALSE
 
 	if (damage)
-		user.visible_message("<span class='danger'>[user] smashes [src]!</span>")
+		user.visible_message("<span class='danger'>[user]砸碎了[src]!</span>")
 		shatter()
 	else
-		user.visible_message("<span class='danger'>[user] hits [src] and bounces off!</span>")
+		user.visible_message("<span class='danger'>[user]击中了[src]并被弹开了!</span>")
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	return TRUE
@@ -94,8 +94,8 @@
 	..()
 
 /obj/item/mirror
-	name = "mirror"
-	desc = "A simple glass mirror."
+	name = "镜子"
+	desc = "一面简单的玻璃镜."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
 	w_class = ITEM_SIZE_NORMAL		//big
@@ -116,6 +116,6 @@
 				if ("West")
 					S.pixel_x = -32
 				else return
-			to_chat(user, "You fasten \the [S] with your [H].")
+			to_chat(user, "你用你的[H]系紧了\the [S].")
 			qdel(src)
 	else ..()

@@ -1,7 +1,7 @@
 ////////////////////////WHEELS AND TRACKS///////////////////
 
 /obj/structure/vehicleparts/movement/sail
-	name = "wood mast"
+	name = "木制桅杆"
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "sail0"
 	base_icon = "sail1"
@@ -72,12 +72,12 @@
 		if (3.0)
 			if (!broken && prob(80))
 				broken = TRUE
-				visible_message("<span class='danger'>\The [name] breaks down!</span>")
+				visible_message("<span class='danger'>\The [name]断裂了!</span>")
 			return
 
 /obj/structure/vehicleparts/movement/sail/Destroy()
 	if (axis)
 		axis.wheels -= src
 	sails = null
-	visible_message("<span class='danger'>\The [name] gets destroyed!</span>")
+	visible_message("<span class='danger'>\The [name]被摧毁了!</span>")
 	..()

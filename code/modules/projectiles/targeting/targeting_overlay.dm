@@ -49,7 +49,7 @@
 
 	to_chat(owner, "<span class='[use_span]'>[aiming_at ? "\The [aiming_at] is" : "Your targets are"] [message].</span>")
 	if (aiming_at)
-		to_chat(aiming_at, "<span class='[use_span]'>You are [message].</span>")
+		to_chat(aiming_at, "<span class='[use_span]'>你是[message].</span>")
 
 /obj/aiming_overlay/process()
 	if (!owner)
@@ -91,17 +91,17 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 				gun_view += S.zoom_amt
 
 	if (!(aiming_with in owner) || (istype(owner, /mob/living/human) && (owner.l_hand != aiming_with && owner.r_hand != aiming_with)))
-		to_chat(owner, "<span class='warning'>You must keep hold of your weapon!</span>")
+		to_chat(owner, "<span class='warning'>你必须握紧你的武器!</span>")
 	else if (owner.eye_blind)
-		to_chat(owner, "<span class='warning'>You are blind and cannot see your target!</span>")
+		to_chat(owner, "<span class='warning'>你失明了,无法看到你的目标!</span>")
 	else if (!aiming_at || !istype(aiming_at.loc, /turf))
-		to_chat(owner, "<span class='warning'>You have lost sight of your target!</span>")
+		to_chat(owner, "<span class='warning'>你已失去目标的踪迹!</span>")
 	else if (owner.incapacitated() || owner.lying || owner.restrained())
-		to_chat(owner, "<span class='warning'>You must be conscious and standing to keep track of your target!</span>")
+		to_chat(owner, "<span class='warning'>你必须保持清醒并站立才能追踪你的目标!</span>")
 	else if (aiming_at.alpha == FALSE || (aiming_at.invisibility > owner.see_invisible))
-		to_chat(owner, "<span class='warning'>Your target has become invisible!</span>")
+		to_chat(owner, "<span class='warning'>你的目标已变得不可见!</span>")
 	else if (!(aiming_at in view(gun_view, owner)))
-		to_chat(owner, "<span class='warning'>Your target is too far away to track!</span>")
+		to_chat(owner, "<span class='warning'>你的目标太远,无法追踪!</span>")
 	else
 		cancel_aim = FALSE
 
@@ -136,14 +136,14 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 		if (aiming_at == target)
 			return
 		cancel_aiming(1)
-		owner.visible_message("<span class='danger'>\The [owner] starts to turn \the [thing] on \the [target]!</span>")
+		owner.visible_message("<span class='danger'>\The [owner]开始将\the [thing]对准\the [target]!</span>")
 		if (do_after(owner, 9, target))
-			owner.visible_message("<span class='danger'>\The [owner] turns \the [thing] on \the [target]!</span>")
+			owner.visible_message("<span class='danger'>\The [owner]将\the [thing]对准\the [target]!</span>")
 			success = TRUE
 	else
-		owner.visible_message("<span class='danger'>\The [owner] starts to aim \the [thing] at \the [target]!</span>")
+		owner.visible_message("<span class='danger'>\The [owner]开始将\the [thing]瞄准\the [target]!</span>")
 		if (do_after(owner, 9, target))
-			owner.visible_message("<span class='danger'>\The [owner] aims \the [thing] at \the [target]!</span>")
+			owner.visible_message("<span class='danger'>\The [owner]将\the [thing]瞄准\the [target]!</span>")
 			success = TRUE
 
 	if (success)
@@ -193,10 +193,10 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 
 	if (owner.client)
 		if (active)
-			to_chat(owner, "<span class='notice'>You will now aim rather than fire.</span>")
+			to_chat(owner, "<span class='notice'>你现在将进行瞄准而非开火.</span>")
 			owner.client.add_gun_icons()
 		else
-			to_chat(owner, "<span class='notice'>You will no longer aim rather than fire.</span>")
+			to_chat(owner, "<span class='notice'>你将不再进行瞄准而非开火.</span>")
 			owner.client.remove_gun_icons()
 
 /obj/aiming_overlay/proc/cancel_aiming(var/no_message = FALSE)
@@ -205,7 +205,7 @@ obj/aiming_overlay/proc/update_aiming_deferred()
 	if (istype(aiming_with, /obj/item/weapon/gun))
 		playsound(get_turf(owner), 'sound/weapons/TargetOff.ogg', 50,1)
 	if (!no_message)
-		owner.visible_message("<span class='notice'>\The [owner] lowers \the [aiming_with].</span>")
+		owner.visible_message("<span class='notice'>\The [owner]放下了\the [aiming_with].</span>")
 
 	GLOB.moved_event.unregister(owner, src)
 	if (aiming_at)

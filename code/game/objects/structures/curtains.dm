@@ -1,5 +1,5 @@
 /obj/structure/curtain
-	name = "curtain"
+	name = "帘子"
 	icon = 'icons/obj/curtain.dmi'
 	icon_state = "closed"
 	layer = MOB_LAYER + 0.03 // above new windows
@@ -26,7 +26,7 @@
 
 /obj/structure/curtain/bullet_act(obj/item/projectile/P, def_zone)
 	if (!P.nodamage)
-		visible_message("<span class='warning'>[P] tears [src] down!</span>")
+		visible_message("<span class='warning'>[P]扯下了[src]!</span>")
 		qdel(src)
 	else
 		..(P, def_zone)
@@ -58,7 +58,7 @@
 		R.update_transparency(0)
 
 /obj/structure/curtain/black
-	name = "black curtain"
+	name = "黑色帘子"
 	color = "#222222"
 
 /obj/structure/curtain/closed/red
@@ -74,25 +74,25 @@
 	color = "#FFD700"
 
 /obj/structure/curtain/medical
-	name = "plastic curtain"
+	name = "塑料帘子"
 	color = "#B8F5E3"
 	alpha = 200
 
 /obj/structure/curtain/open/bed
-	name = "bed curtain"
+	name = "床帘"
 	color = "#854636"
 
 /obj/structure/curtain/open/privacy
-	name = "privacy curtain"
+	name = "隐私帘"
 	color = "#B8F5E3"
 
 /obj/structure/curtain/open/shower
-	name = "shower curtain"
+	name = "浴帘"
 	color = "#ACD1E9"
 	alpha = 200
 
 /obj/structure/curtain/leather
-	name = "leather curtain"
+	name = "皮革帘"
 	color = "#624a2e"
 
 /obj/structure/curtain/open/red
@@ -106,10 +106,10 @@
 /obj/structure/curtain/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (user.a_intent == I_HELP)
 		if ((istype(W, /obj/item/weapon/material/kitchen/utensil/knife)))
-			visible_message("<span class='warning'>[user] starts to cut down \the [src].</span>")
+			visible_message("<span class='warning'>[user]开始砍伐\the [src].</span>")
 			playsound(src, 'sound/items/poster_ripped.ogg', 100, TRUE)
 			if (do_after(user,50,src))
-				visible_message("<span class='warning'>[user] cuts down \the [src].</span>")
+				visible_message("<span class='warning'>[user]砍倒了\the [src].</span>")
 				qdel(src)
 				return
 

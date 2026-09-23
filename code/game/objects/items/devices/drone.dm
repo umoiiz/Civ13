@@ -1,6 +1,6 @@
 /obj/item/drone_controller
-	name = "drone controller"
-	desc = "A controller for moving a drone."
+	name = "无人机控制器"
+	desc = "一个用于移动无人机的控制器."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "rc_control"
 	secondary_action = TRUE
@@ -81,8 +81,8 @@
 		to_chat(controller, SPAN_NOTICE("You try to [connected_drone.flying ? "decent \the [src] to the ground but nothing happens." : "fly \the [src] into the air but nothing happens.."]"))
 
 /obj/structure/drone
-	name = "drone"
-	desc = "A movable drone."
+	name = "无人机"
+	desc = "一个可移动的无人机."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "goliath"
 	var/obj/item/drone_controller/connected_controller = null
@@ -119,15 +119,15 @@
 			to_chat(user, SPAN_WARNING("\The [src] is already connected to a controller."))
 		return
 	if((istype(I, /obj/item/weapon/weldingtool) || istype(I, /obj/item/taperoll)) && broken)
-		visible_message("[user] starts repairing \the [src]...")
+		visible_message("[user]开始修理\the [src]...")
 		if (do_after(user, 100, src))
-			visible_message("[user] repairs \the [src].")
+			visible_message("[user]修理了\the [src].")
 			broken = FALSE
 		return
 	if(istype(I, /obj/item/weapon/grenade) && !payload && special && !flying)
-		visible_message("[user] starts attaching the [I] to \the [src]...")
+		visible_message("[user]开始将[I]安装到\the [src]上...")
 		if (do_after(user, 100, src))
-			visible_message("[user] attaches the [I] to \the [src].")
+			visible_message("[user]将[I]安装到\the [src]上.")
 			user.remove_from_mob(I)
 			I.loc = src
 			payload = I
@@ -244,8 +244,8 @@
 	return
 
 /obj/structure/drone/goliath
-	name = "Goliath SdKfz. 302"
-	desc = "The SdKfz. 302, also known as the Goliath, is a remote-controlled tracked mine carrying either 60 or 100 kg of high explosives. It is used for destroying tanks, disrupting dense infantry formations, and the demolition of buildings or bridges."
+	name = "歌利亚 SdKfz. 302"
+	desc = "SdKfz. 302,也被称为歌利亚,是一种遥控履带式地雷,携带60或100公斤高爆炸药.它用于摧毁坦克、打乱密集步兵阵型,以及爆破建筑物或桥梁."
 	movement_delay = 4.5
 	special = "detonate"
 	heavy_armor_penetration = 40
@@ -315,8 +315,8 @@
 	return
 
 /obj/structure/drone/flying
-	name = "drone"
-	desc = "A flying drone."
+	name = "无人机"
+	desc = "一架飞行无人机."
 	icon_state = "drone"
 	health = 50
 	movement_delay = 2
@@ -345,6 +345,6 @@
 	..()
 
 /obj/structure/drone/flying/grenade
-	name = "drone"
-	desc = "A flying drone. This one is capable of carrying and releasing grenades."
+	name = "无人机"
+	desc = "一架飞行无人机. 这架能够携带并投掷手榴弹."
 	special = "release"

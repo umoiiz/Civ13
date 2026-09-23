@@ -9,8 +9,8 @@
 //Gun Cleaning Kit
 //Sharpening Stone
 /obj/structure/repair
-	name = "repair bench"
-	desc = "Repair your gear!."
+	name = "修理台"
+	desc = "修理你的装备!."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gunbench1"
 	density = TRUE
@@ -37,8 +37,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/repair/gun
-	name = "firearm maintenance bench"
-	desc = "A bench with several tools for cleaning and repairing firearms."
+	name = "枪械维护台"
+	desc = "一张配有若干工具的工作台, 用于清洁和修理枪械."
 	repairamount = 25
 	damageamount = 1
 	itemtype1 = /obj/item/weapon/gun
@@ -51,31 +51,31 @@
 
 /obj/structure/repair/attackby(obj/item/M as obj, mob/user as mob)
 	if(istype(M, itemtype1) || istype(M, itemtype2) || istype(M, itemtype3) || istype(M, itemtype4) || istype(M, itemtype5) || istype(M, itemtype6) || istype(M, itemtype7) || istype(M, itemtype8) || istype(M, itemtype9) || istype(M, itemtype10) || istype(M, itemtype11))
-		visible_message("<span class='notice'>[user] starts to [actiontext] the [M.name]...</span>")
+		visible_message("<span class='notice'>[user]开始[actiontext][M.name]...</span>")
 		icon_state = activesprite
 		playsound(src,noise,40,1)
 		if (do_after(user, delay, src))
 			M.maxhealth -= damageamount
 			M.health = min(M.health + repairamount, M.maxhealth)
 			icon_state = idlesprite
-			visible_message("<span class='notice'>[user] finishes [actiontext]ing the [M.name].</span>")
+			visible_message("<span class='notice'>[user]完成了对[M.name]的[actiontext].</span>")
 			if(M.maxhealth <= 0 || M.health <= 0)
 				qdel(M)
 				playsound(src, "shatter", 70, TRUE)
-				visible_message("<span class='alert'>The [M.name] breaks from strain!</span>")
+				visible_message("<span class='alert'>[M.name]因过度受力而损坏!</span>")
 		else
-			visible_message("<span class='notice'>[user] stops [actiontext]ing the [M.name].</span>")
+			visible_message("<span class='notice'>[user]停止[actiontext][M.name].</span>")
 			icon_state = idlesprite
 	else if (istype(M, /obj/item/weapon/hammer) || istype(M, /obj/item/weapon/wrench))
 		..()
 		return
 	else
-		to_chat(user, "<span class='notice'>You cannot [actiontext] this with a [src.name]!</span>")
+		to_chat(user, "<span class='notice'>你无法用[src.name]来[actiontext]这个!</span>")
 		return
 
 /obj/structure/repair/grindstone
-	name = "grindstone"
-	desc = "For sharpening blades and refining metalwork."
+	name = "磨石"
+	desc = "用于磨利刀刃和精炼金属制品."
 	icon_state = "grindstone"
 	idlesprite = "grindstone"
 	activesprite = "grindstone_on"
@@ -96,8 +96,8 @@
 	actiontext = "sharpen"
 
 /obj/structure/repair/workbench
-	name = "armor repair workbench"
-	desc = "A sturdy workbench specifically designed for repairing various pieces of armor."
+	name = "护甲修理工作台"
+	desc = "一张坚固的工作台, 专为修理各种护甲而设计."
 	icon_state = "workbench"
 	idlesprite = "workbench"
 	activesprite = "workbench"
@@ -112,8 +112,8 @@
 	delay = 140
 
 /obj/item/weapon/gun_cleaning_kit
-	name = "gun cleaning kit"
-	desc = "A kit of tools used to clean firearms."
+	name = "枪械清洁套件"
+	desc = "一套用于清洁枪械的工具."
 	icon = 'icons/obj/guns/gun.dmi'
 	icon_state = "guncleaningkit_open"
 	slot_flags = SLOT_BELT
@@ -127,25 +127,25 @@
 			if ("No")
 				return
 			if ("Yes")
-				to_chat(user, "You start scratching the serial number of \the [src]...")
+				to_chat(user, "你开始刮除\the [src]的序列号...")
 				if (do_after(user,100,src))
-					to_chat(user, "You successfully scratch the serial number, making the gun untraceable.")
+					to_chat(user, "你成功刮除了序列号, 使这把枪无法被追踪.")
 					serial = ""
 					return
 	else if (istype(M, /obj/item/weapon/gun_cleaning_kit))
 		if (!istype(src, /obj/item/weapon/gun/projectile/bow))
 			if ((health/maxhealth)<0.5)
-				visible_message("<span class='warning'>\The [src.name]is too damaged, you need a specialized firearm repairing bench!</span>")
+				visible_message("<span class='warning'>\The [src.name]损坏太严重, 你需要一张专用的枪械修理台!</span>")
 			else if ((health/maxhealth)>0.8)
-				visible_message("<span class='warning'>You can't repair \the [src.name] more than this without a specialized firearm repairing bench!</span>")
+				visible_message("<span class='warning'>没有专用的枪械修理台, 你无法进一步修理\the [src.name]!</span>")
 
-			visible_message("<span class='notice'>[user] starts to clean the [src.name]...</span>")
+			visible_message("<span class='notice'>[user]开始清洁[src.name]...</span>")
 			if (do_after(user, 100, src))
 				health = src.maxhealth*0.8
-				visible_message("<span class='notice'>[user] finishes cleaning the [src.name].</span>")
+				visible_message("<span class='notice'>[user]完成了对[src.name]的清洁.</span>")
 				return
 			else
-				visible_message("<span class='notice'>[user] stops cleaning the [src.name].</span>")
+				visible_message("<span class='notice'>[user]停止清洁[src.name].</span>")
 				return
 	else
 		..()

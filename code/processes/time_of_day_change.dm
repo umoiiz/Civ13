@@ -21,7 +21,7 @@
 	time_of_day = changeto
 
 	if (admincaller)
-		to_chat(admincaller, "<span class = 'notice'>Updated lights for [time_of_day].</span>")
+		to_chat(admincaller, "<span class = 'notice'>更新了[time_of_day]的灯光.</span>")
 		var/M = "[key_name(admincaller)] changed the time of day from [O_time_of_day] to [time_of_day]."
 		log_admin(M)
 		message_admins(M)
@@ -56,4 +56,4 @@
 
 	if (announce)
 		for (var/M in player_list)
-			to_chat(M, "<font size=3><span class = 'notice'>It's <b>[lowertext(capitalize(time_of_day))]</b>.</span></font>")
+			to_chat(M, "<font size=3><span class = 'notice'>现在是<b>[lowertext(capitalize(time_of_day))]</b>.</span></font>")

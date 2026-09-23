@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/dinosaur/velociraptor
 	name = "velociraptor"
-	desc = "Yep. You are fucked."
+	desc = "没错. 你完蛋了."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "velociraptor"
 	icon_living = "velociraptor"
@@ -30,7 +30,7 @@
 	behaviour = "hostile"
 /mob/living/simple_animal/hostile/dinosaur/compsognathus
 	name = "compsognathus"
-	desc = "Deadly in numbers..."
+	desc = "数量多起来很致命..."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "compsognathus"
 	icon_living = "compsognathus"
@@ -60,7 +60,7 @@
 
 /mob/living/simple_animal/hostile/dinosaur/dimetrodon
 	name = "dimetrodon"
-	desc = "A large predatory reptile very deadly."
+	desc = "一种非常致命的巨大掠食性爬行动物."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "dimetrodon"
 	icon_living = "dimetrodon"
@@ -91,7 +91,7 @@
 
 /mob/living/simple_animal/hostile/dinosaur/trex
 	name = "tyrannosaurus rex"
-	desc = "A gargantuan carnivorous dinosaur of spine chillingly terrible majesty. The monarch of the prehistoric world"
+	desc = "一种庞然大物般的食肉恐龙, 其威严令人脊背发凉. 史前世界的君王."
 	icon = 'icons/mob/animal_128.dmi'
 	icon_state = "rex"
 	icon_living = "rex"

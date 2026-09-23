@@ -1,6 +1,6 @@
 /obj/structure/converter
-	name = "philosophers stone"
-	desc = "DONT USE THIS!!! (Lead to Gold)"
+	name = "贤者之石"
+	desc = "不要使用这个!!! (铅变金)"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "wood_pole1"
 	var/idlesprite = "wood_pole1" //Icon when not full.
@@ -28,15 +28,15 @@
 				M.amount -= inputamount
 				if(M.amount <= 0)
 					qdel(M)
-				to_chat(user, "<span class='notice'>You insert [inputamount] [M.name] into the [name]!</span>")
-				visible_message("<span class='notice'>The [M.name] starts [actiontext]ing.</span>")
+				to_chat(user, "<span class='notice'>你将[inputamount][M.name]插入[name]!</span>")
+				visible_message("<span class='notice'>[M.name]开始[actiontext].</span>")
 				icon_state = activesprite
 				playsound(src,activesound,60,1)
 				if(overlayed)
 					load_overlay(M)
 				filled = TRUE
 				spawn(delay)
-					visible_message("<span class='alert'>The [name] finishes [actiontext]ing.</span>")
+					visible_message("<span class='alert'>[name]完成了[actiontext].</span>")
 					for(var/i=1,i<=outputamount,i++)
 						new output(src.loc)
 					icon_state = idlesprite
@@ -45,12 +45,12 @@
 					playsound(src,endsound,60,1)
 					filled = FALSE
 			else
-				to_chat(user, "<span class='alert'> You need to insert [inputamount] [M.name]! </span>")
+				to_chat(user, "<span class='alert'>你需要插入[inputamount][M.name]!</span>")
 		else if (istype(M, /obj/item/weapon/hammer) || istype(M, /obj/item/weapon/wrench))
 			..()
 			return
 		else
-			to_chat(user, "<span class='alert'> That is not the right resource! </span>")
+			to_chat(user, "<span class='alert'>那不是正确的资源!</span>")
 			return
 	/*else
 		to_chat(user, "<span class='alert'> You empty the [name]. </span>")
@@ -71,8 +71,8 @@
 	src.overlays += icon(A.icon,A.icon_state)
 
 /obj/structure/converter/tanning
-	name = "tanning rack"
-	desc = "Turns hide into leather"
+	name = "鞣制架"
+	desc = "将兽皮制成皮革"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "drying_rack_empty"
 	idlesprite = "drying_rack_empty"
@@ -86,8 +86,8 @@
 	overlayed = FALSE
 
 /obj/structure/converter/retting_trough
-	name = "retting trough"
-	desc = "Soaks fiberous plants over time into retted fabric. Requires at least two seperate hemp or flax at a time."
+	name = "沤麻槽"
+	desc = "随时间将纤维植物浸泡成沤制纤维.每次至少需要两份分开的大麻或亚麻."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "retting_trough"
 	idlesprite = "retting_trough"
@@ -102,8 +102,8 @@
 	overlayed = FALSE
 
 /obj/structure/converter/acid_bath
-	name = "industrial acidic bath"
-	desc = "Soaks man-made fibres over time into usuable material. It would not be big or deep enough to fit say... a human body inside."
+	name = "工业酸浴槽"
+	desc = "随时间将人造纤维浸泡成可用材料.它的尺寸和深度不足以装下比如...一具人体."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "kevlar_trough"
 	idlesprite = "kevlar_trough"

@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/projectile/bow
-	name = "primitive bow"
+	name = "简陋弓"
 	icon = 'icons/obj/guns/bows.dmi'
-	desc = "A simple and crude bow."
+	desc = "一把简单粗糙的弓."
 	icon_state = "bow0"
 	item_state = "bow0"
 	w_class = ITEM_SIZE_LARGE
@@ -68,7 +68,7 @@
 		user.remove_from_mob(C)
 		C.loc = src
 		loaded.Insert(1, C) //add to the head of the list
-		user.visible_message("[user] inserts \a [C] into \the [src].", "<span class='notice'>You insert \a [C] into \the [src].</span>")
+		user.visible_message("[user]将\a [C]插入\the [src].", "<span class='notice'>你将\a [C]插入\the [src].</span>")
 		update_icon()
 		if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 
@@ -84,7 +84,7 @@
 			var/obj/item/ammo_casing/C = loaded[loaded.len]
 			loaded.len--
 			user.put_in_hands(C)
-			user.visible_message("[user] removes \a [C] from the [src].", SPAN_NOTICE("You remove \a [C] from the [src]."))
+			user.visible_message("[user]从[src]中取出\a [C].", SPAN_NOTICE("You remove \a [C] from the [src]."))
 			if (bulletinsert_sound) playsound(loc, bulletinsert_sound, 75, TRUE)
 	else
 		to_chat(user, SPAN_WARNING("[src] is empty."))
@@ -107,7 +107,7 @@
 
 /obj/item/weapon/gun/projectile/bow/handle_click_empty(mob/user)
 	if (user)
-		user.visible_message("", "<span class='danger'>You don't have \a [projtype] here!</span>")
+		user.visible_message("", "<span class='danger'>你这里没有\a [projtype]!</span>")
 	else
 		visible_message("")
 	return
@@ -136,8 +136,8 @@
 	update_icon()
 
 /obj/item/weapon/gun/projectile/bow/shortbow
-	name = "shortbow"
-	desc = "A short bow with a light draw weight."
+	name = "短弓"
+	desc = "一把拉重较轻的短弓."
 	icon_state = "shortbow0"
 	item_state = "shortbow0"
 	icotype = "shortbow"
@@ -163,8 +163,8 @@
 	accuracy = 6
 
 /obj/item/weapon/gun/projectile/bow/longbow
-	name = "longbow"
-	desc = "A long bow with a heavy draw weight."
+	name = "长弓"
+	desc = "一把拉重较大的长弓."
 	icon_state = "longbow0"
 	item_state = "longbow0"
 	icotype = "longbow"
@@ -190,8 +190,8 @@
 	accuracy = 4
 
 /obj/item/weapon/gun/projectile/bow/compoundbow
-	name = "compound bow"
-	desc = "A compound bow with a decent draw weight."
+	name = "复合弓"
+	desc = "一把拉重适中的复合弓."
 	icon_state = "compoundbow0"
 	item_state = "compoundbow0"
 	icotype = "compoundbow"
@@ -216,8 +216,8 @@
 	accuracy = 1
 
 /obj/item/weapon/gun/projectile/bow/sling
-	name = "sling"
-	desc = "A simple leather sling."
+	name = "投石索"
+	desc = "一条简单的皮革投石索."
 	icon_state = "sling0"
 	item_state = "sling0"
 	icotype = "sling"

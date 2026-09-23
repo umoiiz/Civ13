@@ -335,7 +335,7 @@ var/global/persistence_reboot_scheduled = FALSE
 				var/secsleft = 60-text2num(time2text(world.realtime,"ss"))
 				var/hr = (text2num(time2text(world.realtime,"hh")) & 0x1) //only odd hours
 				if (minsleft <= 2 && hr)
-					to_chat(world, "<font color='yellow' size=4><b>Attention - Round will be saved in approximately <b>[minsleft-1] minutes</b> and <b>[secsleft-1] seconds</b>. Game might lag up to a couple of minutes.</b></font>")
+					to_chat(world, "<font color='yellow' size=4><b>注意 - 回合将在约<b>[minsleft-1]分钟</b>又<b>[secsleft-1]秒</b>后保存.游戏可能会卡顿几分钟.</b></font>")
 				if (nextsave <= world.realtime)
 					nextsave = world.realtime + 216000
 					spawn(0)
@@ -353,13 +353,13 @@ var/global/persistence_reboot_scheduled = FALSE
 			start_persistence_loop()
 
 /proc/persistence_maintenance_reboot()
-	to_chat(world, "<font color='yellow' size=4><b>Attention - The server will save the world and restart for scheduled maintenance in 5 minutes.</b></font>")
+	to_chat(world, "<font color='yellow' size=4><b>注意 - 服务器将在5分钟后保存世界并重启以进行计划维护.</b></font>")
 	sleep(2400)
-	to_chat(world, "<font color='yellow' size=4><b>Attention - Saving and restarting in 1 minute. The world will resume from this save after the restart.</b></font>")
+	to_chat(world, "<font color='yellow' size=4><b>注意 - 将在1分钟后保存并重启.重启后世界将从该存档继续.</b></font>")
 	sleep(600)
 	nextsave = world.realtime + 216000 // suppress the periodic save around the reboot
 	if (ticker && ticker.savemap() && fexists("map_saves/save_complete.txt"))
-		to_chat(world, "<font color='yellow' size=4><b>Save complete. Rebooting - you can reconnect in a minute or two.</b></font>")
+		to_chat(world, "<font color='yellow' size=4><b>保存完成.正在重启 - 你可以在一两分钟后重新连接.</b></font>")
 		sleep(100)
 		world.Reboot("Scheduled persistence maintenance reboot.")
 	else

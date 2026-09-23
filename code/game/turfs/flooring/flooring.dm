@@ -40,7 +40,7 @@ var/list/flooring_types
 
 /decl/flooring/grass
 	name = "grass patch"
-	desc = "Simple grass."
+	desc = "普通的草."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "grass"
 	has_base_range = 3
@@ -50,7 +50,7 @@ var/list/flooring_types
 
 /decl/flooring/grass/savanna
 	name = "dry grass patch"
-	desc = "Dry savanna grass."
+	desc = "干燥的稀树草原草."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "dry_grass"
 	has_base_range = 0
@@ -60,7 +60,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt
 	name = "dirt patch"
-	desc = "Simple dirt."
+	desc = "普通的泥土."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "dirt"
 	has_base_range = 0
@@ -70,7 +70,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt/burned
 	name = "burnt ground"
-	desc = "Scorched earth."
+	desc = "焦土."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "burned_dirt"
 	has_base_range = 0
@@ -80,7 +80,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt/underground
 	name = "underground rock"
-	desc = "Solid rock."
+	desc = "坚硬的岩石."
 	icon = 'icons/turf/walls.dmi'
 	icon_base = "rocky"
 	has_base_range = 0
@@ -88,7 +88,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt/dry_lava
 	name = "dried lava"
-	desc = "Cooled volcanic rock."
+	desc = "冷却的火山岩."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "lava_dry"
 	has_base_range = 0
@@ -98,7 +98,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt/ploughed
 	name = "ploughed field"
-	desc = "Tilled soil ready for planting."
+	desc = "已翻耕、可供种植的土壤."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "dirt"
 	has_base_range = 0
@@ -108,7 +108,7 @@ var/list/flooring_types
 
 /decl/flooring/dirt/space
 	name = "space"
-	desc = "vast emptyness."
+	desc = "广阔的空无."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "space"
 	has_base_range = 0
@@ -117,7 +117,7 @@ var/list/flooring_types
 
 /decl/flooring/dust
 	name = "dry dirt patch"
-	desc = "Simple dry dirt."
+	desc = "普通的干土."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "dust"
 	has_base_range = 0
@@ -127,7 +127,7 @@ var/list/flooring_types
 
 /decl/flooring/flooded
 	name = "flooded plains dirt patch"
-	desc = "The dirt left after a flood recesses."
+	desc = "洪水退去后留下的泥土."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "flood_dirt"
 	has_base_range = 0
@@ -137,7 +137,7 @@ var/list/flooring_types
 
 /decl/flooring/water
 	name = "shallow water"
-	desc = "Simple water."
+	desc = "普通的水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow"
 	has_base_range = 0
@@ -147,7 +147,7 @@ var/list/flooring_types
 
 /decl/flooring/water_salt
 	name = "saltwater"
-	desc = "Salt water."
+	desc = "盐水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow"
 	has_base_range = 0
@@ -157,7 +157,7 @@ var/list/flooring_types
 
 /decl/flooring/water/ice
 	name = "frozen water"
-	desc = "A sheet of ice."
+	desc = "一片冰."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow_frozen"
 	has_base_range = 0
@@ -167,7 +167,7 @@ var/list/flooring_types
 
 /decl/flooring/water_deep
 	name = "deep water"
-	desc = "Deep water."
+	desc = "深水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seadeep"
 	has_base_range = 0
@@ -177,7 +177,7 @@ var/list/flooring_types
 
 /decl/flooring/water_deep_salt
 	name = "deep saltwater"
-	desc = "Deep salt water."
+	desc = "深层盐水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seadeep"
 	has_base_range = 0
@@ -187,7 +187,7 @@ var/list/flooring_types
 
 /decl/flooring/water_deep_underwater
 	name = "deep saltwater"
-	desc = "Deep salt water."
+	desc = "深层盐水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "underwater"
 	has_base_range = 0
@@ -201,7 +201,7 @@ var/list/flooring_types
 
 /decl/flooring/water_swamp
 	name = "swamp water"
-	desc = "Simple water."
+	desc = "普通水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow_swamp"
 	has_base_range = 0
@@ -211,7 +211,7 @@ var/list/flooring_types
 
 /decl/flooring/water_jungle1
 	name = "jungle river water"
-	desc = "Simple water."
+	desc = "普通水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow_jungle1"
 	has_base_range = 0
@@ -221,7 +221,7 @@ var/list/flooring_types
 
 /decl/flooring/water_jungle2
 	name = "jungle flooded land"
-	desc = "Simple water."
+	desc = "普通水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow_jungle2"
 	has_base_range = 0
@@ -231,7 +231,7 @@ var/list/flooring_types
 
 /decl/flooring/water_jungle3
 	name = "deep jungle river water"
-	desc = "Simple water."
+	desc = "普通水."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "seashallow_jungle3"
 	has_base_range = 0
@@ -241,7 +241,7 @@ var/list/flooring_types
 
 /decl/flooring/sand
 	name = "sand"
-	desc = "Simple sand."
+	desc = "普通沙子."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "sand"
 	has_base_range = 0
@@ -251,7 +251,7 @@ var/list/flooring_types
 
 /decl/flooring/sand/drywater
 	name = "dry riverbed"
-	desc = "A dried up riverbed."
+	desc = "干涸的河床."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "sand1"
 	has_base_range = 0
@@ -261,7 +261,7 @@ var/list/flooring_types
 
 /decl/flooring/sand_beach
 	name = "sand"
-	desc = "Simple sand."
+	desc = "普通沙子."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "sand"
 	has_base_range = 0
@@ -271,7 +271,7 @@ var/list/flooring_types
 
 /decl/flooring/desert
 	name = "desert sand"
-	desc = "Simple desert sand."
+	desc = "普通沙漠沙."
 	icon = 'icons/turf/beach.dmi'
 	icon_base = "desert"
 	has_base_range = 0
@@ -281,7 +281,7 @@ var/list/flooring_types
 
 /decl/flooring/sand/dark
 	name = "dark sand"
-	desc = "Simple dark sand."
+	desc = "普通暗色沙."
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "darksand"
 	has_base_range = 0
@@ -292,7 +292,7 @@ var/list/flooring_types
 
 /decl/flooring/snow
 	name = "snow"
-	desc = "Simple snow."
+	desc = "普通雪."
 	icon = 'icons/turf/snow.dmi'
 	icon_base = "snow"
 	has_base_range = 0
@@ -303,7 +303,7 @@ var/list/flooring_types
 
 /decl/flooring/snow_grass
 	name = "snowy grass"
-	desc = "Simple snow."
+	desc = "普通雪."
 	icon = 'icons/turf/snow.dmi'
 	icon_base = "snowgrass"
 	has_base_range = 0
@@ -313,7 +313,7 @@ var/list/flooring_types
 
 /decl/flooring/snow_dirt
 	name = "snowy dirt"
-	desc = "Simple snow."
+	desc = "普通雪."
 	icon = 'icons/turf/snow.dmi'
 	icon_base = "dirt"
 	has_base_range = 0
@@ -322,7 +322,7 @@ var/list/flooring_types
 	tier = 6
 /decl/flooring/carpet
 	name = "carpet"
-	desc = "Imported and comfy."
+	desc = "进口的,很舒适."
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_base = "carpet"
 	damage_temperature = T0C+200
@@ -354,7 +354,7 @@ var/list/flooring_types
 
 /decl/flooring/wood
 	name = "wooden floor"
-	desc = "Polished redwood planks."
+	desc = "抛光红木板."
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_base = "wood"
 	has_damage_range = 6

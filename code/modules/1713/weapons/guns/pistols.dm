@@ -20,7 +20,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/attackby(obj/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/attachment/bayonet))
-		to_chat(user, "<span class = 'danger'>That won't fit on there.</span>")
+		to_chat(user, "<span class = 'danger'>那个装不上去.</span>")
 		return FALSE
 	else
 		return ..()
@@ -35,8 +35,8 @@
 		overlays += barrel_image
 
 /obj/item/weapon/gun/projectile/pistol/nambu
-	name = "Type A Nambu"
-	desc = "Standard issue Japanese pistol. Chambered in 8x22mm Nambu."
+	name = "A 型南部手枪"
+	desc = "日本制式手枪. 发射 8x22mm 南部弹."
 	icon_state = "nambu"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "c8mmnambu"
@@ -57,8 +57,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/ww2/nambu
-	name = "Type 14 Nambu"
-	desc = "Standard issue Japanese pistol. Chambered in 8x22mm Nambu."
+	name = "南部十四年式手枪"
+	desc = "日本制式手枪. 发射 8x22mm 南部弹."
 	icon_state = "nambu_ww2"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "c8mmnambu"
@@ -80,8 +80,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/luger
-	name = "Luger P08"
-	desc = "A Luger P08 chambered in 9x19mm parabellum, german design."
+	name = "鲁格 P08"
+	desc = "鲁格 P08, 德国设计, 发射 9x19mm 帕拉贝鲁姆弹."
 	icon_state = "luger"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -102,8 +102,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/waltherp38
-	name = "Walther P38"
-	desc = "A Walther P38 chambered in 9x19mm parabellum, german design."
+	name = "瓦尔特 P38"
+	desc = "瓦尔特 P38, 德国设计, 发射 9x19mm 帕拉贝鲁姆弹."
 	icon_state = "waltherp38"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -131,8 +131,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/pistol/glock17
-	name = "Glock 17"
-	desc = "A modern pistol, loaded on 9x19mm, reliable and fast."
+	name = "格洛克 17"
+	desc = "一把现代手枪, 装填 9x19mm 弹药, 可靠且快速."
 	icon_state = "glock17"
 	fire_delay = 2.3
 	w_class = ITEM_SIZE_SMALL
@@ -171,7 +171,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/sig250
 	name = "SIG 250"
-	desc = "A modern pistol, loaded on 9x19mm, reliable and fast."
+	desc = "一把现代手枪, 装填 9x19mm 弹药, 可靠且快速."
 	icon_state = "sig250"
 	item_state = "sig250"
 	fire_delay = 2.3
@@ -196,7 +196,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/pl14
 	name = "PL-14"
-	desc = "A modern experimental pistol made by Kalashnikov (chambered in 9x19mm)."
+	desc = "卡拉什尼科夫制造的现代实验手枪 (发射 9x19mm 弹)."
 	icon_state = "pl14"
 	fire_delay = 1.8
 	w_class = ITEM_SIZE_SMALL
@@ -219,8 +219,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/mp443
-	name = "MP-443 Grach"
-	desc = "A Russian made pistol firing loaded on 9x19mm."
+	name = "MP-443 乌鸦"
+	desc = "一种俄罗斯制造的手枪, 使用 9x19mm 弹药."
 	icon_state = "mp443"
 	fire_delay = 3.15
 	w_class = ITEM_SIZE_SMALL
@@ -243,7 +243,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/tarus
 	name = "Tarus G3"
-	desc = "A modern pistol, loaded on 9x19mm, reliable and fast."
+	desc = "一把现代手枪, 装填 9x19mm 弹药, 可靠且快速."
 	icon_state = "tarusg3"
 	fire_delay = 2.3
 	w_class = ITEM_SIZE_SMALL
@@ -267,7 +267,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/p220
 	name = "SIG Sauer P220"
-	desc = "The SIG Sauer P220 is a semi-automatic pistol. Designed in 1975."
+	desc = "SIG Sauer P220 是一种半自动手枪. 设计于 1975 年."
 	icon_state = "p220"
 	fire_delay = 3.7
 	w_class = ITEM_SIZE_SMALL
@@ -297,7 +297,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/iogb7
 	name = "IOQ B-72"
-	desc = "Some fake shit invented by Re1taz."
+	desc = "Re1taz 发明的某种假货垃圾."
 	icon_state = "iogb7"
 	fire_delay = 1.1
 	w_class = ITEM_SIZE_SMALL
@@ -319,8 +319,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/mauser
-	name = "Mauser C96"
-	desc = "An early German pistol that can chamber 7.62x25mm TT."
+	name = "毛瑟 C96"
+	desc = "一种早期德国手枪, 可发射 7.62x25mm TT 弹."
 	icon_state = "mauser"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a762x25"
@@ -342,8 +342,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/borchardt
-	name = "Borchardt C93"
-	desc = "A German semi-automatic pistol chambered in 7.65x25mm Borchardt."
+	name = "博查特 C93"
+	desc = "一种德国半自动手枪, 发射 7.65x25mm 博查特弹."
 	icon_state = "borchardt"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a765x25"
@@ -363,8 +363,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/colthammerless
-	name = "Colt M1903 Pocket Hammerless"
-	desc = "An early, compact Colt pistol chambered in .32 ACP."
+	name = "柯尔特 M1903 无击锤袖珍手枪"
+	desc = "一种早期紧凑型柯尔特手枪, 发射 .32 ACP 弹."
 	icon_state = "coltpockethammerless"
 	w_class = ITEM_SIZE_SMALL
 	equiptimer = 4
@@ -388,8 +388,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/colthammerless/m1908
-	name = "Colt M1908 Pocket Hammerless"
-	desc = "A later version of the compact Colt pistol, chambered in .380 ACP."
+	name = "柯尔特 M1908 无击锤袖珍手枪"
+	desc = "紧凑型柯尔特手枪的后期版本, 发射 .380 ACP 弹."
 	icon_state = "coltpockethammerless"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a380acp"
@@ -402,8 +402,8 @@
 	handle_casings = EJECT_CASINGS
 
 /obj/item/weapon/gun/projectile/pistol/bergmann
-	name = "Bergmann No.2"
-	desc = "A particularly unique-in-appearance early German semi-automatic pistol."
+	name = "伯格曼 2 号"
+	desc = "一种外观特别独特的早期德国半自动手枪."
 	icon_state = "bergmann"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "c8mmnambu"
@@ -426,7 +426,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/m1911
 	name = "M1911A1"
-	desc = "The standard issue pistol of the US Armed forces from 1911 to 1985. Chambered in .45 ACP."
+	desc = "1911 年至 1985 年美国武装部队的制式手枪. 发射 .45 ACP 弹."
 	icon_state = "colt"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a45acp"
@@ -449,8 +449,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/blackm1911
-	name = "Colt Mark IV"
-	desc = "A slightly upgraded model of the M1911A1. Chambered in .45 ACP."
+	name = "柯尔特 Mark IV"
+	desc = "M1911A1 的略微升级型号. 发射 .45 ACP 弹."
 	icon_state = "colt"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a45acp"
@@ -480,7 +480,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/tt30
 	name = "TT-33"
-	desc = "The standard issue pistol of the Soviet Union before the 1950's. Chambered in 7.62x25mm Tokarev."
+	desc = "1950 年代前苏联的制式手枪. 发射 7.62x25mm 托卡列夫弹."
 	icon_state = "tt30"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a762x25"
@@ -517,8 +517,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/pistol/makarov
-	name = "Makarov PM"
-	desc = "The standard issue pistol of the Soviet Union and Russian Federation after the 1950's. Chambered in 9x18mm Makarov."
+	name = "马卡洛夫 PM"
+	desc = "1950 年代后苏联和俄罗斯联邦的制式手枪. 发射 9x18mm 马卡洛夫弹."
 	icon_state = "makarov"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x18"
@@ -546,8 +546,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/pistol/aps
-	name = "Stechkin APS"
-	desc = "A Soviet selective fire machine pistol. Chambered in 9x18mm Makarov."
+	name = "斯捷奇金 APS"
+	desc = "一种苏联选射冲锋手枪. 发射 9x18mm 马卡洛夫弹."
 	icon_state = "aps"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x18"
@@ -563,8 +563,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/pistol/m9beretta
-	name = "Beretta M9"
-	desc = "The standard issue pistol of US Armed Forces from 1985 to 2017. Chambered in 9mm Luger."
+	name = "伯莱塔 M9"
+	desc = "1985 年至 2017 年美国武装部队的制式手枪. 发射 9mm 鲁格弹."
 	icon_state = "m9beretta"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -592,8 +592,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/pistol/m9beretta/tan
-	name = "Beretta M9"
-	desc = "The standard issue pistol of US Armed Forces from 1985 to 2017. Chambered in 9mm Luger. This one blends in with the desert"
+	name = "伯莱塔 M9"
+	desc = "1985 年至 2017 年美国武装部队的制式手枪. 发射 9mm 鲁格弹. 这一把能与沙漠融为一体"
 	icon_state = "tanm9"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -614,8 +614,8 @@
 		icon_state = "tanm9_open"
 
 /obj/item/weapon/gun/projectile/pistol/jericho941
-	name = "Jericho 941"
-	desc = "The standard issue pistol of the IDF of the late 20th century. Chambered in 9mm Parabellum."
+	name = "杰里科 941"
+	desc = "20 世纪末以色列国防军的制式手枪. 发射 9mm 帕拉贝鲁姆弹."
 	icon_state = "jericho941"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -636,8 +636,8 @@
 		icon_state = "jericho941_open"
 	return
 /obj/item/weapon/gun/projectile/pistol/deagle
-	name = "Desert Eagle"
-	desc = "Designed and developed by Magnum Research Inc. Chambered in 50cal."
+	name = "沙漠之鹰"
+	desc = "由 Magnum Research Inc. 设计并开发. 发射 .50 口径弹."
 	icon_state = "deagle"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a50cal"
@@ -660,8 +660,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/deaglemagnum
-	name = "Desert Eagle (44.magnum)"
-	desc = "Designed and developed by Magnum Research Inc. Chambered in 44.magnum."
+	name = "沙漠之鹰 (44.马格南)"
+	desc = "由 Magnum Research Inc. 设计并开发. 发射 44 马格南弹."
 	icon_state = "deagle"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a44magnum"
@@ -684,8 +684,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/pistol/browninghp
-	name = "Browning hi-power"
-	desc = "Produced by Fabrique Nationale of Belgium, This old handgun is chambered in 9mm Parabellum."
+	name = "勃朗宁大威力"
+	desc = "由比利时 Fabrique Nationale 生产, 这种老式手枪发射 9mm 帕拉贝鲁姆弹."
 	icon_state = "browning_hp"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a9x19"
@@ -709,7 +709,7 @@
 
 /obj/item/weapon/gun/projectile/pistol/sti2011
 	name = "STI 2011"
-	desc = "A high end specialized version of a m1911 made by the request of the US marshal service chambered .45 S&W."
+	desc = "一种应美国法警局要求制造的 M1911 高端特化版本, 发射 .45 S&W 弹."
 	icon_state = "sti2011"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a45acp"

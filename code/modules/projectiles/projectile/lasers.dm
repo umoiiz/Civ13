@@ -1,5 +1,5 @@
 /obj/item/projectile/laser
-	name = "bolt"
+	name = "弩矢"
 	icon_state = "redbolt"
 	damage = 60
 	damage_type = BURN

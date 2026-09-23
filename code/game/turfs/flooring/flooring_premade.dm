@@ -257,19 +257,19 @@
 /turf/floor/dirt/examine(mob/user)
 	if (get_dist(src, user) <= 1)
 		if (soil_nutrition >= 130)
-			to_chat(user, "<span class='notice'>The soil looks very alive and the plants will grow very easily.</span>")
+			to_chat(user, "<span class='notice'>土壤看起来非常有活力,植物会很容易生长.</span>")
 		else if (soil_nutrition >= 80)
-			to_chat(user, "<span class='notice'>The soil looks alive, plants would grow very well.</span>")
+			to_chat(user, "<span class='notice'>土壤看起来有活力,植物会长得很好.</span>")
 		else if (soil_nutrition >= 25)
-			to_chat(user, "<span class='notice'>The soil seems half dead and the plants would not develop as well as they should.</span>")
+			to_chat(user, "<span class='notice'>土壤看起来半死不活,植物不会像应有的那样良好发育.</span>")
 		else if (soil_nutrition > 0)
-			to_chat(user, "<span class='notice'>The soil looks pretty dead and the plants would have a tough time growing.</span>")
+			to_chat(user, "<span class='notice'>土壤看起来相当死寂,植物很难生长.</span>")
 		else
-			to_chat(user, "<span class='notice'>The soil looks dead and plants would hardly grow.</span>")
+			to_chat(user, "<span class='notice'>土壤看起来已经死了,植物几乎无法生长.</span>")
 	if (ishuman(user))
 		var/mob/living/human/H = user
 		if (H.getStatCoeff("farming")>= 2.2)
-			to_chat(user, "[src]'s nutrition level is at <b>[soil_nutrition]/[max_soil_nutrition]</b>.")
+			to_chat(user, "[src]的营养水平为<b>[soil_nutrition]/[max_soil_nutrition]</b>.")
 	return ..()
 
 /turf/floor/space
@@ -283,7 +283,7 @@
 
 /turf/floor/dirt/dark_dirt
 	name = "dark dirt"
-	desc = "Darker than normal dirt, spooky."
+	desc = "比普通泥土更暗,阴森森的."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dark_dirt"
 	is_diggable = FALSE
@@ -295,7 +295,7 @@
 	name = "flood plains dirt"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "flood_dirt"
-	desc = "A fertile dirt patch, flooded during the wet season."
+	desc = "一块肥沃的泥土,在雨季会被淹没."
 	uses_winter_overlay = FALSE
 	may_become_muddy = TRUE
 	available_dirt = 3
@@ -335,7 +335,7 @@
 	name = "underground rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rocky"
-	desc = "This space is blocked off by soft earth and rocks. Can be mined."
+	desc = "这个空间被松软的泥土和岩石堵住了.可以挖掘."
 	uses_winter_overlay = FALSE
 	may_become_muddy = TRUE
 	available_dirt = 0
@@ -352,7 +352,7 @@
 	if(istype(W, /obj/item/weapon/chisel))
 		var design = "smooth"
 		if (!istype(H.l_hand, /obj/item/weapon/hammer) && !istype(H.r_hand, /obj/item/weapon/hammer))
-			to_chat(user, "<span class = 'warning'>You need to have a hammer in one of your hands to use a chisel.</span>")
+			to_chat(user, "<span class = 'warning'>你需要有一只手拿着锤子才能使用凿子.</span>")
 			return
 		else
 			var/display = list("Smooth", "Cave", "Underground Cave", "Brick", "Cobbled", "Tiled", "Cancel")
@@ -360,24 +360,24 @@
 			if (input == "Cancel")
 				return
 			else if  (input == "Smooth")
-				to_chat(user, "<span class='notice'>You will now carve the smooth design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻光滑图案!</span>")
 				design = "smooth"
 			else if  (input == "Cave")
-				to_chat(user, "<span class='notice'>You will now carve the cave design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻洞穴图案!</span>")
 				design = "cave"
 			else if  (input == "Underground Cave")
-				to_chat(user, "<span class='notice'>You will now carve the cave design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻洞穴图案!</span>")
 				design = "undercave"
 			else if  (input == "Brick")
-				to_chat(user, "<span class='notice'>You will now carve the brick design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻砖块图案!</span>")
 				design = "brick"
 			else if  (input == "Cobbled")
-				to_chat(user, "<span class='notice'>You will now carve the cobbled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻鹅卵石图案!</span>")
 				design = "cobbled"
 			else if  (input == "Tiled")
-				to_chat(user, "<span class='notice'>You will now carve the tiled design!</span>")
+				to_chat(user, "<span class='notice'>你现在将雕刻瓷砖图案!</span>")
 				design = "tiled"
-			visible_message("<span class='danger'>[user] starts to chisel a design!</span>", "<span class='danger'>You start chiseling a design.</span>")
+			visible_message("<span class='danger'>[user]开始雕刻一个图案!</span>", "<span class='danger'>你开始雕刻一个图案.</span>")
 			playsound(src,'sound/effects/pickaxe.ogg',60,1)
 			if (do_after(user, 60, src))
 			//Designs possible are "smooth", "cave", "brick", "cobbled", "tiled"
@@ -412,19 +412,19 @@
 	name = "sandy underground rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "sandyrocky"
-	desc = "This space is blocked off by soft earth and sandy stones. Can be mined."
+	desc = "这个空间被松软的泥土和沙质岩石堵住了.可以挖掘."
 	New()
 		..()
 /turf/floor/dirt/underground/sandy/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/chisel))
-		to_chat(user, "The sandy rock is too brittle to carve!")
+		to_chat(user, "沙质岩石太脆了,无法雕刻!")
 		return//Temp until I feel like improving chisel system.
 	..()
 /turf/floor/dirt/underground/icy
 	name = "icy underground rock"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "icyrocky"
-	desc = "This space is blocked off by frozen earth and rocks. Can be mined."
+	desc = "这个空间被冻土和岩石堵住了.可以挖掘."
 	New()
 		..()
 
@@ -433,7 +433,7 @@
 
 /turf/floor/dirt/underground/icy/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/chisel))
-		to_chat(user, "The frozen rock is too hard to carve!")
+		to_chat(user, "冻岩太硬了,无法雕刻!")
 		return //Temp until I feel like improving chisel system.
 	..()
 

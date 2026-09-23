@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/creed
-	name = "creed boots"
-	desc = "A pair of leather boots worn by the creed."
+	name = "刺客靴"
+	desc = "刺客穿着的皮靴."
 	icon_state = "ac_boots"
 	item_state = "ac_boots"
 	force = WEAPON_FORCE_WEAK
@@ -11,15 +11,15 @@
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/under/creed
-	name = "creed shirt"
-	desc = "A white shirt of the creed."
+	name = "刺客衬衫"
+	desc = "刺客的白色衬衫."
 	icon_state = "ac_shirt"
 	item_state = "ac_shirt"
 
 
 /obj/item/clothing/suit/armor/creed
-	name = "creed armor"
-	desc = "A leather armor worn by the creed."
+	name = "刺客护甲"
+	desc = "刺客穿着的皮甲."
 	icon_state = "ac_armor"
 	item_state = "ac_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -38,19 +38,19 @@
 		if (adjusted)
 			item_state = "ac_armor"
 			item_state_slots["slot_w_uniform"] = "ac_armor"
-			to_chat(usr, "<span class = 'danger'>You take down your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了护甲的兜帽.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "ac_armor_hood"
 			item_state_slots["slot_w_uniform"] = "ac_armor_hood"
-			to_chat(usr, "<span class = 'danger'>You put up your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了护甲的兜帽.</span>")
 			body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 			adjusted = TRUE
 	update_clothing_icon()
 
 /obj/item/clothing/suit/armor/creed/three
-	name = "creed armor"
-	desc = "A leather armor worn by the creed."
+	name = "刺客护甲"
+	desc = "刺客穿着的皮甲."
 	icon_state = "ac_armor_1713"
 	item_state = "ac_armor_1713"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -68,19 +68,19 @@
 		if (adjusted)
 			item_state = "ac_armor_1713"
 			item_state_slots["slot_w_uniform"] = "ac_armor_1713"
-			to_chat(usr, "<span class = 'danger'>You take down your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了护甲的兜帽.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "ac_armor_1713_hood"
 			item_state_slots["slot_w_uniform"] = "ac_armor_1713_hood"
-			to_chat(usr, "<span class = 'danger'>You put up your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了护甲的兜帽.</span>")
 			body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 			adjusted = TRUE
 	update_clothing_icon()
 
 /obj/item/clothing/suit/armor/creed/unity
-	name = "creed armor"
-	desc = "A leather armor worn by the creed."
+	name = "刺客护甲"
+	desc = "刺客穿着的皮甲."
 	icon_state = "ac_armor_napol"
 	item_state = "ac_armor_napol"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -98,19 +98,19 @@
 		if (adjusted)
 			item_state = "ac_armor_napol"
 			item_state_slots["slot_w_uniform"] = "ac_armor_napol"
-			to_chat(usr, "<span class = 'danger'>You take down your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了护甲的兜帽.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "ac_armor_napol_hood"
 			item_state_slots["slot_w_uniform"] = "ac_armor_napol_hood"
-			to_chat(usr, "<span class = 'danger'>You put up your armor's hood.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了护甲的兜帽.</span>")
 			body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 			adjusted = TRUE
 	update_clothing_icon()
 
 /obj/item/clothing/gloves/creed
-	name = "creed gauntlets"
-	desc = "A pair of armored creed gauntlets with a hidden blade."
+	name = "刺客护手"
+	desc = "一对带有隐藏刀刃的刺客护手."
 	icon_state = "ac_gauntlets"
 	item_state = "ac_gauntlets"
 	body_parts_covered = HANDS
@@ -121,8 +121,8 @@
 	health = 25
 
 /obj/item/clothing/head/creed
-	name = "creed hood"
-	desc = "It's hood that covers the head."
+	name = "刺客兜帽"
+	desc = "用来遮盖头部的兜帽."
 	icon_state = "ac_hood"
 	item_state = "ac_hood"
 	var/hood = FALSE
@@ -137,7 +137,7 @@
 		flags_inv = initial(flags_inv)
 		body_parts_covered = initial(body_parts_covered)
 		item_state_slots["slot_wear_suit"] = "ac_hood"
-		to_chat(usr, "<span class = 'danger'>You take off your hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你摘下了兜帽.</span>")
 		update_icon()
 		hood = FALSE
 		usr.update_inv_head(1)
@@ -148,7 +148,7 @@
 		flags_inv = BLOCKHAIR|HIDEFACE
 		body_parts_covered = HEAD|FACE
 		item_state_slots["slot_wear_suit"] = "ac_hood_up"
-		to_chat(usr, "<span class = 'danger'>You cover your head with your hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你用兜帽遮住了头部.</span>")
 		update_icon()
 		hood = TRUE
 		usr.update_inv_head(1)

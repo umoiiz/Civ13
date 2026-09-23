@@ -1,5 +1,5 @@
 /obj/item/clothing
-	name = "clothing"
+	name = "衣物"
 	siemens_coefficient = 0.9
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/proc/check_health()
 	if (health <= 0)
-		visible_message("\The [src] falls apart!")
+		visible_message("\The [src]散架了!")
 		if (ripable && rag_amount > 0)
 			new/obj/item/stack/material/rags(get_turf(src))
 		if (istype(loc, /mob/living))
@@ -59,26 +59,26 @@
 	var/healthp = (health/initial(health))*100
 	switch (healthp)
 		if (-100 to 30)
-			to_chat(user, "<font color='#7f0000'>Seems to be practically falling apart!</font>")
+			to_chat(user, "<font color='#7f0000'>看起来几乎要散架了!</font>")
 		if (31 to 55)
-			to_chat(user, "<font color='#a74510'>Seems to be in very bad condition.</font>")
+			to_chat(user, "<font color='#a74510'>看起来状况非常糟糕.</font>")
 		if (56 to 75)
-			to_chat(user, "<font color='#cccc00'>Seems to be in a rough condition.</font>")
+			to_chat(user, "<font color='#cccc00'>看起来状况很差.</font>")
 		if (76 to 90)
-			to_chat(user, "<font color='#4d5319'>Seems to be in a somewhat decent condition.</font>")
+			to_chat(user, "<font color='#4d5319'>看起来状况还算凑合.</font>")
 		if (91 to 1000)
-			to_chat(user, "<font color='#245319'>Seems to be in very good condition.</font>")
+			to_chat(user, "<font color='#245319'>看起来状况非常好.</font>")
 	switch (dirtyness)
 		if (-100 to 29)
-			to_chat(user, "Looks clean.")
+			to_chat(user, "看起来很干净.")
 		if (30 to 49)
-			to_chat(user, "Looks a bit dirty.")
+			to_chat(user, "看起来有点脏.")
 		if (50 to 70)
-			to_chat(user, "Looks very dirty!")
+			to_chat(user, "看起来非常脏!")
 		if (71 to 200)
-			to_chat(user, "Looks extremely dirty!")
+			to_chat(user, "看起来极其脏!")
 	if (fleas)
-		to_chat(user, "<b>\The [src] is infested with fleas!</b>")
+		to_chat(user, "<b>\The [src]身上爬满了跳蚤!</b>")
 ///////////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/head/helmet
@@ -89,7 +89,7 @@
 	flags = CONDUCT
 
 /obj/item/clothing/ears
-	name = "ears"
+	name = "耳朵"
 	w_class = ITEM_SIZE_TINY
 	throwforce = 2
 	slot_flags = SLOT_EARS
@@ -147,7 +147,7 @@
 		M.update_inv_ears()
 
 /obj/item/clothing/ears/offear
-	name = "Other ear"
+	name = "另一只耳朵"
 	w_class = ITEM_SIZE_HUGE
 	icon = 'icons/mob/screen/1713Style.dmi'
 	icon_state = "block"
@@ -162,8 +162,8 @@
 		set_dir(O.dir)
 
 /obj/item/clothing/ears/earmuffs
-	name = "earmuffs"
-	desc = "Protects your hearing from loud noises, and quiet ones as well."
+	name = "耳罩"
+	desc = "保护你的听力免受巨大噪音的伤害,安静的声音也一样."
 	icon_state = "earmuffs"
 	item_state = "earmuffs"
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
@@ -181,7 +181,7 @@ BLIND	 // can't see anything
 */
 
 /obj/item/clothing/glasses
-	name = "glasses"
+	name = "眼镜"
 	icon = 'icons/obj/clothing/glasses.dmi'
 	w_class = ITEM_SIZE_SMALL
 	body_parts_covered = EYES
@@ -202,7 +202,7 @@ BLIND	 // can't see anything
 */
 
 /obj/item/clothing/gloves
-	name = "gloves"
+	name = "手套"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = ITEM_SIZE_SMALL
 	icon = 'icons/obj/clothing/gloves.dmi'
@@ -233,8 +233,8 @@ BLIND	 // can't see anything
 			return
 
 		playsound(loc, 'sound/items/Wirecutter.ogg', 100, TRUE)
-		user.visible_message("<span class='red'>[user] cuts the fingertips off of the [src].</span>",
-							 "<span class='red'>You cut the fingertips off of the [src].</span>")
+		user.visible_message("<span class='red'>[user]切掉了[src]的指尖.</span>",
+							 "<span class='red'>你切掉了[src]的指尖.</span>")
 
 		clipped = TRUE
 		name = "modified [name]"
@@ -246,7 +246,7 @@ BLIND	 // can't see anything
 */
 
 /obj/item/clothing/head
-	name = "head"
+	name = "头部"
 	icon = 'icons/obj/clothing/hats.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_hats.dmi',
@@ -267,10 +267,10 @@ BLIND	 // can't see anything
 /obj/item/clothing/head/attack_self(mob/user)
 	if (brightness_on)
 		if (!isturf(user.loc))
-			to_chat(user, "You cannot turn the light on while in this [user.loc]")
+			to_chat(user, "你无法在这个[user.loc]里打开灯")
 			return
 		on = !on
-		to_chat(user, "You [on ? "enable" : "disable"] the helmet light.")
+		to_chat(user, "你[on ? "enable" : "disable"]了头盔灯.")
 		update_flashlight(user)
 	else
 		return ..(user)
@@ -324,7 +324,7 @@ BLIND	 // can't see anything
 */ 
 
 /obj/item/clothing/mask
-	name = "mask"
+	name = "面罩"
 	icon = 'icons/obj/clothing/masks.dmi'
 	body_parts_covered = HEAD
 	slot_flags = SLOT_MASK
@@ -349,9 +349,9 @@ BLIND	 // can't see anything
 */
 
 /obj/item/clothing/shoes
-	name = "shoes"
+	name = "鞋子"
 	icon = 'icons/obj/clothing/shoes.dmi'
-	desc = "Comfortable-looking shoes."
+	desc = "看起来很舒服的鞋子."
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	siemens_coefficient = 0.9
 	body_parts_covered = FEET
@@ -414,12 +414,12 @@ BLIND	 // can't see anything
 	 istype(I, /obj/item/weapon/gun/projectile/revolver/derringer) || \
 	 istype(I, /obj/item/weapon/attachment/bayonet))
 		if (holding)
-			to_chat(user, "<span class='warning'>\The [src] is already holding \a [holding].</span>")
+			to_chat(user, "<span class='warning'>\The [src]已经拿着\a [holding]了.</span>")
 			return
 		user.unEquip(I)
 		I.forceMove(src)
 		holding = I
-		user.visible_message("<span class='notice'>\The [user] shoves \a [I] into \the [src].</span>")
+		user.visible_message("<span class='notice'>\The [user]把\a [I]塞进了\the [src]里.</span>")
 		//verbs |= /obj/item/clothing/shoes/proc/draw_knife
 		update_icon()
 	else
@@ -439,7 +439,7 @@ BLIND	 // can't see anything
 
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/suits.dmi'
-	name = "suit"
+	name = "套装"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor = list(melee = FALSE, arrow = FALSE, gun = FALSE, energy = FALSE, bomb = FALSE, bio = FALSE, rad = FALSE)
 	slot_flags = SLOT_OCLOTHING
@@ -463,7 +463,7 @@ BLIND	 // can't see anything
 		slot_l_hand_str = 'icons/mob/items/lefthand_uniforms.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_uniforms.dmi',
 		)
-	name = "under"
+	name = "在下面"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	permeability_coefficient = 0.90
 	slot_flags = SLOT_ICLOTHING
@@ -490,9 +490,9 @@ BLIND	 // can't see anything
 	if (accessories && accessories.len && (src == user.r_hand || src == user.l_hand))
 		if (istype(accessories[1], /obj/item/clothing/accessory/storage/webbing))
 			var/obj/item/clothing/accessory/storage/webbing/webbing = accessories[1]
-			to_chat(user, "<span class = 'warning'>You start to remove the webbing from [src].</span>")
+			to_chat(user, "<span class = 'warning'>你开始从[src]上取下织带.</span>")
 			if (do_after(user, 50, get_turf(user)))
-				to_chat(user, "<span class = 'warning'>You finish removing the webbing from [src].</span>")
+				to_chat(user, "<span class = 'warning'>你完成了从[src]上取下织带.</span>")
 				accessories -= webbing
 				if (overlays.len == TRUE) // hack
 					overlays.Cut()

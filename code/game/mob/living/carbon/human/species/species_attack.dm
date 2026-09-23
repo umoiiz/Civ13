@@ -21,7 +21,7 @@
 	attack_damage = Clamp(attack_damage, TRUE, 5)
 
 	if (target == user)
-		user.visible_message("<span class='danger'>[user] [pick(attack_verb)] \himself in the [affecting.name]!</span>")
+		user.visible_message("<span class='danger'>[user][pick(attack_verb)]\him self在[affecting.name]里!</span>")
 		return FALSE
 
 	switch(zone)
@@ -29,9 +29,9 @@
 			// ----- HEAD ----- //
 			switch(attack_damage)
 				if (1 to 2)
-					user.visible_message("<span class='danger'>[user] scratched [target] across \his cheek!</span>")
+					user.visible_message("<span class='danger'>[user]抓过[target]\his 的脸颊!</span>")
 				if (3 to 4)
-					user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [target]'s [pick("head", "neck")]!</span>") //'with spread claws' sounds a little bit odd, just enough that conciseness is better here I think
+					user.visible_message("<span class='danger'>[user][pick(attack_verb)][target]的[pick("head", "neck")]!</span>") //'with spread claws' sounds a little bit odd, just enough that conciseness is better here I think
 				if (5)
 					user.visible_message(pick(
 						"<span class='danger'>[user] rakes \his [pick(attack_noun)] across [target]'s face!</span>",
@@ -40,9 +40,9 @@
 		else
 			// ----- BODY ----- //
 			switch(attack_damage)
-				if (1 to 2)	user.visible_message("<span class='danger'>[user] scratched [target]'s [affecting.name]!</span>")
-				if (3 to 4)	user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [pick("", "", "the side of")] [target]'s [affecting.name]!</span>")
-				if (5)		user.visible_message("<span class='danger'>[user] tears \his [pick(attack_noun)] [pick("deep into", "into", "across")] [target]'s [affecting.name]!</span>")
+				if (1 to 2)	user.visible_message("<span class='danger'>[user]抓过[target]的[affecting.name]!</span>")
+				if (3 to 4)	user.visible_message("<span class='danger'>[user][pick(attack_verb)][pick("", "", "the side of")][target]的[affecting.name]!</span>")
+				if (5)		user.visible_message("<span class='danger'>[user]撕扯\his [pick(attack_noun)][pick("deep into", "into", "across")][target]的[affecting.name]!</span>")
 
 /datum/unarmed_attack/claws/strong
 	attack_verb = list("slashed")
@@ -71,5 +71,5 @@
 
 /datum/unarmed_attack/stomp/weak/show_attack(var/mob/living/human/user, var/mob/living/human/target, var/zone, var/attack_damage)
 	var/obj/item/organ/external/affecting = target.get_organ(zone)
-	user.visible_message("<span class='warning'>[user] jumped up and down on \the [target]'s [affecting.name]!</span>")
+	user.visible_message("<span class='warning'>[user]在\the [target]的[affecting.name]上跳上跳下!</span>")
 	playsound(user.loc, attack_sound, 25, TRUE, -1)

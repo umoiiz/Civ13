@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/skeleton
 	name = "\improper Skeleton"
-	desc = "Scary, spooky skeletons!"
+	desc = "吓人, 阴森的骷髅!"
 	icon_state = "skeleton1"
 	icon_dead = "skeleton_remains1"
 	response_help = "pushes"
@@ -47,7 +47,7 @@
 
 /mob/living/simple_animal/hostile/human/skeleton/pirate
 	name = "Pirate Skeleton"
-	desc = "Scary, spooky skeletons! This one was once a pirate."
+	desc = "吓人, 阴森的骷髅! 这一个曾经是个海盗."
 	icon_state = "skeleton3_pir"
 	icon_dead = "skeleton_remains1"
 	response_help = "pushes"
@@ -78,7 +78,7 @@
 
 /mob/living/simple_animal/hostile/human/skeleton/draugr
 	name = "Draugr"
-	desc = "an undead nordic warrior"
+	desc = "一个亡灵北欧战士"
 	icon_state = "draugr1"
 	icon_dead = "skeleton_remains1"
 	response_help = "pushes"

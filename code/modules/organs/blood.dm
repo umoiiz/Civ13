@@ -56,7 +56,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 20
 	if (!L) // ditto for lungs
 		adjustOxyLoss(10)
 		if (prob(20))
-			to_chat(src, "<span class = 'danger'>You're suffocating!</span>")
+			to_chat(src, "<span class = 'danger'>你窒息了!</span>")
 		if (prob(40))
 			emote("gasp")
 
@@ -140,9 +140,9 @@ var/const/BLOOD_VOLUME_SURVIVE = 20
 						if(blinding)
 							H.eye_blurry = max(H.eye_blurry, 10)
 							H.eye_blind = max(H.eye_blind, 5)
-							to_chat(H, "<span class='danger'>You are blinded by a spray of blood!</span>")
+							to_chat(H, "<span class='danger'>你被喷溅的血液致盲了!</span>")
 						else
-							to_chat(H, "<span class='danger'>You are hit by a spray of blood!</span>")
+							to_chat(H, "<span class='danger'>你被喷溅的血液击中了!</span>")
 						hit_mob = TRUE
 
 				if(hit_mob || !A.CanPass(src, sprayloc))

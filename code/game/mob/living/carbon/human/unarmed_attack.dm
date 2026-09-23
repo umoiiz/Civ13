@@ -52,18 +52,18 @@ var/global/list/sparring_attack_cache = list()
 		switch(zone) // strong punches can have effects depending on where they hit
 			if ("head", "mouth", "eyes")
 				// Induce blurriness
-				target.visible_message("<span class='danger'>[target] looks momentarily disoriented.</span>", "<span class='danger'>You see stars.</span>")
+				target.visible_message("<span class='danger'>[target]看起来暂时失去了方向感。</span>", "<span class='danger'>你眼冒金星。</span>")
 				target.apply_effect(attack_damage*2, EYE_BLUR, armor)
 			if ("l_arm", "l_hand")
 				if (target.l_hand)
 					// Disarm left hand
 					//Urist McAssistant dropped the macguffin with a scream just sounds odd. Plus it doesn't work with NO_PAIN
-					target.visible_message("<span class='danger'>\The [target.l_hand] was knocked right out of [target]'s grasp!</span>")
+					target.visible_message("<span class='danger'>\The [target.l_hand]从[target]的抓握中被打飞了!</span>")
 					target.drop_l_hand()
 			if ("r_arm", "r_hand")
 				if (target.r_hand)
 					// Disarm right hand
-					target.visible_message("<span class='danger'>\The [target.r_hand] was knocked right out of [target]'s grasp!</span>")
+					target.visible_message("<span class='danger'>\The [target.r_hand]从[target]的抓握中被打飞了!</span>")
 					target.drop_r_hand()
 			if ("chest")
 				if (!target.lying)
@@ -72,7 +72,7 @@ var/global/list/sparring_attack_cache = list()
 						step(target, get_dir(get_turf(user), get_turf(target)))
 						target.visible_message("<span class='danger'>[pick("[target] was sent flying backwards!", "[target] staggers back from the impact!")]</span>")
 					else
-						target.visible_message("<span class='danger'>[target] slams into [T]!</span>")
+						target.visible_message("<span class='danger'>[target]猛撞向[T]!</span>")
 						target.Weaken(rand(1,2))
 						target.adjustBruteLoss(rand(10,15))
 						playsound(get_turf(target), 'sound/effects/gore/fallsmash.ogg', 100)
@@ -83,29 +83,29 @@ var/global/list/sparring_attack_cache = list()
 					target.apply_effect(attack_damage * 0.4, WEAKEN, armor)
 				
 			if ("groin")
-				target.visible_message("<span class='warning'>[target] looks like \he is in pain!</span>", "<span class='warning'>[(target.gender=="female") ? "Oh god that hurt!" : "Oh no, not your[pick("testicles", "crown jewels", "clockweights", "family jewels", "marbles", "bean bags", "teabags", "sweetmeats", "goolies")]!"]</span>")
+				target.visible_message("<span class='warning'>[target]看起来\he 很痛苦!</span>", "<span class='warning'>[(target.gender=="female") ? "Oh god that hurt!" : "Oh no, not your[pick("testicles", "crown jewels", "clockweights", "family jewels", "marbles", "bean bags", "teabags", "sweetmeats", "goolies")]!"]</span>")
 				target.apply_effects(stutter = attack_damage * 2, agony = attack_damage* 3, blocked = armor)
 			if ("l_leg", "l_foot", "r_leg", "r_foot")
 				if (!target.lying)
-					target.visible_message("<span class='warning'>[target] gives way slightly.</span>")
+					target.visible_message("<span class='warning'>[target]微微让步。</span>")
 					target.apply_effect(attack_damage*3, AGONY, armor)
 	else if (attack_damage >= 5 && !(target == user) && (stun_chance + attack_damage * 5 >= 100) && armor < 2) // Chance to get the usual throwdown as well (25% standard chance)
 		if (!target.lying)
-			target.visible_message("<span class='danger'>[target] [pick("slumps", "falls", "drops")] down to the ground!</span>")
+			target.visible_message("<span class='danger'>[target][pick("slumps", "falls", "drops")]倒地!</span>")
 		else
-			target.visible_message("<span class='danger'>[target] has been weakened!</span>")
+			target.visible_message("<span class='danger'>[target]已被削弱!</span>")
 		target.apply_effect(3, WEAKEN, armor)
 
 /datum/unarmed_attack/proc/show_attack(var/mob/living/human/user, var/mob/living/human/target, var/zone, var/attack_damage)
 	var/obj/item/organ/external/affecting = target.get_organ(zone)
-	user.visible_message("<span class='warning'>[user] [pick(attack_verb)] [target] in the [affecting.name]!</span>")
+	user.visible_message("<span class='warning'>[user][pick(attack_verb)][target]在[affecting.name]里!</span>")
 	playsound(user.loc, attack_sound, 25, TRUE, -1)
 
 /datum/unarmed_attack/proc/handle_eye_attack(var/mob/living/human/user, var/mob/living/human/target)
 	var/obj/item/organ/eyes/eyes = target.internal_organs_by_name["eyes"]
 	eyes.take_damage(rand(3,4), TRUE) // Roughly 4 eye_attacks to radial blind.
 
-	user.visible_message("<span class='danger'>[user] presses \his [eye_attack_text] into [target]'s [eyes.name]!</span>", "<span class = 'danger'>You press your [eye_attack_text] into [target]'s [eyes.name]!</span>")
+	user.visible_message("<span class='danger'>[user]将\his [eye_attack_text]按入[target]的[eyes.name]里!</span>", "<span class = 'danger'>你将你的[eye_attack_text]按入[target]的[eyes.name]里!</span>")
 	to_chat(target, SPAN_DANGER("You experience[(target.species.flags & NO_PAIN)? "" : " immense pain as you feel "][eye_attack_text_victim] being pressed into your [eyes.name][(target.species.flags & NO_PAIN)? "." : "!"]"))
 
 /datum/unarmed_attack/bite
@@ -138,7 +138,7 @@ var/global/list/sparring_attack_cache = list()
 	attack_damage = Clamp(attack_damage, TRUE, 5) // We expect damage input of TRUE to 5 for this proc. But we leave this check juuust in case.
 
 	if (target == user)
-		user.visible_message("<span class='danger'>[user] [pick(attack_verb)] \himself in the [organ]!</span>", "<span class = 'danger'>You [pick(attack_verb)] yourself in the [organ]!</span>")
+		user.visible_message("<span class='danger'>[user][pick(attack_verb)]\him self在[organ]里!</span>", "<span class = 'danger'>你[pick(attack_verb)]自己在[organ]里!</span>")
 		return FALSE
 
 	if (!target.lying)
@@ -147,7 +147,7 @@ var/global/list/sparring_attack_cache = list()
 				// ----- HEAD ----- //
 				switch(attack_damage)
 					if (1 to 2)
-						user.visible_message("<span class='danger'>[user] slapped [target] across \his cheek!</span>")
+						user.visible_message("<span class='danger'>[user]扇了[target]\his 一记耳光!</span>")
 					if (3 to 4)
 						user.visible_message(pick(
 							40; "<span class='danger'>[user] [pick(attack_verb)] [target] in the head!</span>",
@@ -163,15 +163,15 @@ var/global/list/sparring_attack_cache = list()
 			else
 				// ----- BODY ----- //
 				switch(attack_damage)
-					if (1 to 2)	user.visible_message("<span class='danger'>[user] threw a glancing punch at [target]'s [organ]!</span>")
-					if (1 to 4)	user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [target] in \his [organ]!</span>")
+					if (1 to 2)	user.visible_message("<span class='danger'>[user]朝[target]的[organ]打了一记擦边拳!</span>")
+					if (1 to 4)	user.visible_message("<span class='danger'>[user][pick(attack_verb)][target]在\his [organ]里!</span>")
 					if (5)
 						user.visible_message(pick(
 							50; "<span class='danger'>[user] smashed \his [pick(attack_noun)] into [target]'s [organ]!</span>",
 							50; "<span class='danger'>[user] landed a striking [pick(attack_noun)] on [target]'s [organ]!</span>"
 							))
 	else
-		user.visible_message("<span class='danger'>[user] [pick("punched", "threw a punch against", "struck", "slammed their [pick(attack_noun)] into")] [target]'s [organ]!</span>") //why do we have a separate set of verbs for lying targets?
+		user.visible_message("<span class='danger'>[user][pick("punched", "threw a punch against", "struck", "slammed their [pick(attack_noun)] into")][target]的[organ]!</span>") //why do we have a separate set of verbs for lying targets?
 
 /datum/unarmed_attack/kick
 	attack_verb = list("kicked", "kicked", "kicked", "kneed")
@@ -213,13 +213,13 @@ var/global/list/sparring_attack_cache = list()
 	attack_damage = Clamp(attack_damage, TRUE, 5)
 
 	if (target == user)
-		user.visible_message("<span class='danger'>[user] [pick(attack_verb)] \himself in the [organ]!</span>")
+		user.visible_message("<span class='danger'>[user][pick(attack_verb)]\him self在[organ]里!</span>")
 		return FALSE
 
 	switch(attack_damage)
-		if (1 to 2)	user.visible_message("<span class='danger'>[user] threw [target] a glancing [pick(attack_noun)] to the [organ]!</span>") //it's not that they're kicking lightly, it's that the kick didn't quite connect
-		if (3 to 4)	user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [target] in \his [organ]!</span>")
-		if (5)		user.visible_message("<span class='danger'>[user] landed a strong [pick(attack_noun)] against [target]'s [organ]!</span>")
+		if (1 to 2)	user.visible_message("<span class='danger'>[user]朝[target]的[organ]打了一记擦边[pick(attack_noun)]!</span>") //it's not that they're kicking lightly, it's that the kick didn't quite connect
+		if (3 to 4)	user.visible_message("<span class='danger'>[user][pick(attack_verb)][target]在\his [organ]里!</span>")
+		if (5)		user.visible_message("<span class='danger'>[user]对[target]的[organ]打出了一记重[pick(attack_noun)]!</span>")
 
 /datum/unarmed_attack/stomp
 	attack_verb = null
@@ -263,8 +263,8 @@ var/global/list/sparring_attack_cache = list()
 	attack_damage = Clamp(attack_damage, TRUE, 5)
 
 	switch(attack_damage)
-		if (1 to 4)	user.visible_message("<span class='danger'>[pick("[user] stomped on", "[user] slammed \his [shoes ? copytext(shoes.name, TRUE, -1) : "foot"] down onto")] [target]'s [organ]!</span>")
-		if (5)		user.visible_message("<span class='danger'>[pick("[user] landed a powerful stomp on", "[user] stomped down hard on", "[user] slammed \his [shoes ? copytext(shoes.name, TRUE, -1) : "foot"] down hard onto")] [target]'s [organ]!</span>") //Devastated lol. No. We want to say that the stomp was powerful or forceful, not that it /wrought devastation/
+		if (1 to 4)	user.visible_message("<span class='danger'>[pick("[user] stomped on", "[user] slammed \his [shoes ? copytext(shoes.name, TRUE, -1) : "foot"] down onto")][target]的[organ]!</span>")
+		if (5)		user.visible_message("<span class='danger'>[pick("[user] landed a powerful stomp on", "[user] stomped down hard on", "[user] slammed \his [shoes ? copytext(shoes.name, TRUE, -1) : "foot"] down hard onto")][target]的[organ]!</span>") //Devastated lol. No. We want to say that the stomp was powerful or forceful, not that it /wrought devastation/
 
 /datum/unarmed_attack/light_strike
 	deal_halloss = 3

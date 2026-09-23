@@ -115,7 +115,7 @@
 /obj/map_metadata/gulag13/proc/check_points_msg()
 	check_points()
 	spawn(1)
-		to_chat(world, "<font size = 4><span class = 'notice'><b>Current Score:</b></font></span>")
+		to_chat(world, "<font size = 4><span class = 'notice'><b>当前比分:</b></font></span>")
 		for (var/i=1,i<=points.len,i++)
 			to_chat(world, "<br><font size = 3><span class = 'notice'>[points[i][1]]: <b>[points[i][2]+points[i][3]]</b></span></font>")
 		var/donecheck = FALSE
@@ -123,7 +123,7 @@
 			if(H.stat!=DEAD && H.original_job && istype(H.original_job, /datum/job/civilian/prisoner) && !donecheck)
 				var/area/A = get_area(H)
 				if (istype(A, /area/caribbean/nomads/ice/target))
-					to_chat(world, "<br><font size = 3><span class = 'warning'>There are prisoners currently escaping!</span></font>")
+					to_chat(world, "<br><font size = 3><span class = 'warning'>目前有囚犯正在逃跑!</span></font>")
 					donecheck = TRUE
 
 	spawn(2400)
@@ -146,8 +146,8 @@
 
 
 /obj/item/weapon/prisoner_passport
-	name = "Prisoner's Documents"
-	desc = "The identification papers of a prisoner."
+	name = "囚犯文件"
+	desc = "一名囚犯的身份证明文件."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "passport"
 	item_state = "paper"
@@ -171,8 +171,8 @@
 				var/mob/living/human/H = loc
 				document_name = H.real_name
 				owner = H
-				name = "[document_name] prisoner documents"
-				desc = "The identification papers of <b>[document_name]</b>."
+				name = "[document_name] 囚犯文件"
+				desc = "<b>[document_name]</b>的身份证明文件."
 				var/crimereason = "Criminal Behaviour"
 				if (istype(H.original_job, /datum/job/civilian/prisoner))
 					var/datum/job/civilian/prisoner/P = H.original_job
@@ -204,17 +204,17 @@
 	to_chat(user, "<span class='info'>*---------*</span>")
 	..(user)
 	if (document_details.len >= 9)
-		to_chat(user, "<b><span class='info'>Hair:</b> [document_details[1]], [document_details[2]] color</span>")
+		to_chat(user, "<b><span class='info'>头发:</b> [document_details[1]], [document_details[2]]色</span>")
 		if (document_details[6] == "male")
-			to_chat(user, "<b><span class='info'>Face:</b> [document_details[3]], [document_details[4]] color</span>")
-		to_chat(user, "<b><span class='info'>Eyes:</b> [document_details[8]]</span>")
-		to_chat(user, "<b><span class='info'>Convicted of:</b> [document_details[5]]</span>")
-		to_chat(user, "<b><span class='info'>Sentence:</b> [document_details[7]] years</span>")
-		to_chat(user, "<b><span class='info'>Assigned:</b> [document_details[9]]</span>")
+			to_chat(user, "<b><span class='info'>面部:</b> [document_details[3]], [document_details[4]]色</span>")
+		to_chat(user, "<b><span class='info'>眼睛:</b> [document_details[8]]</span>")
+		to_chat(user, "<b><span class='info'>罪名:</b> [document_details[5]]</span>")
+		to_chat(user, "<b><span class='info'>刑期:</b> [document_details[7]] 年</span>")
+		to_chat(user, "<b><span class='info'>分配至:</b> [document_details[9]]</span>")
 	to_chat(user, "<span class='info'>*---------*</span>")
 	if (guardnotes.len)
 		for(var/i in guardnotes)
-			to_chat(user, "NOTE: [i]")
+			to_chat(user, "注意: [i]")
 	to_chat(user, "<span class='info'>*---------*</span>")
 
 /obj/item/weapon/prisoner_passport/attackby(var/obj/item/I, var/mob/living/human/H)
@@ -239,15 +239,15 @@
 	set name = "Sound the Siren"
 	set category = "Officer"
 	if (!map || (map.ID != MAP_GULAG13 && map.ID != MAP_ABASHIRI && map.ID != MAP_BAGNE13))
-		to_chat(usr, "You cannot use this in this map.")
+		to_chat(usr, "你无法在此地图中使用此物品.")
 		return
 	if (!original_job || (!(istype(original_job, /datum/job/russian)) && !(istype(original_job, /datum/job/japanese/abashiri/guard)) && !(istype(original_job, /datum/job/french/bagnedirecteur))))
-		to_chat(usr, "You cannot use this.")
+		to_chat(usr, "你无法使用此物品.")
 		return
 	if (istype(map, /obj/map_metadata/gulag13))
 		var/obj/map_metadata/gulag13/G13 = map
 		if (!G13.siren)
-			to_chat(world, "<font size=3 color='red'><center><b>ALARM</b><br>The siren has been activated, all prisoners must stop what they are doing and lay on the floor until the alarm is lifted!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center><b>警报</b><br>警报已启动,所有囚犯必须停止手头事务并趴在地上,直到警报解除!</center></font>")
 			var/warning_sound = sound("sound/misc/siren.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
@@ -259,7 +259,7 @@
 	if (istype(map, /obj/map_metadata/abashiri))
 		var/obj/map_metadata/abashiri/ABA = map
 		if (!ABA.siren)
-			to_chat(world, "<font size=3 color='red'><center><b>ALARM</b><br>The siren has been activated, all prisoners must stop what they are doing and lay on the floor until the alarm is lifted!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center><b>警报</b><br>警报已启动,所有囚犯必须停止手头事务并趴在地上,直到警报解除!</center></font>")
 			var/warning_sound = sound("sound/misc/siren.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
@@ -271,7 +271,7 @@
 	if (istype(map, /obj/map_metadata/abashiri))
 		var/obj/map_metadata/bagne13/BG = map
 		if (!BG.siren)
-			to_chat(world, "<font size=3 color='red'><center><b>ALARM</b><br>The siren has been activated, all prisoners must stop what they are doing and lay on the floor until the alarm is lifted!</center></font>")
+			to_chat(world, "<font size=3 color='red'><center><b>警报</b><br>警报已启动,所有囚犯必须停止手头事务并趴在地上,直到警报解除!</center></font>")
 			var/warning_sound = sound("sound/misc/siren.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
@@ -284,15 +284,15 @@
 	set name = "Stop the Siren"
 	set category = "Officer"
 	if (!map || (map.ID != MAP_GULAG13 && map.ID != MAP_ABASHIRI))
-		to_chat(usr, "You cannot use this in this map.")
+		to_chat(usr, "你无法在此地图中使用此物品.")
 		return
 	if (!original_job || (!(istype(original_job, /datum/job/russian)) && !(istype(original_job, /datum/job/japanese/abashiri/guard))))
-		to_chat(usr, "You cannot use this.")
+		to_chat(usr, "你无法使用此物品.")
 		return
 	if (istype(map, /obj/map_metadata/gulag13))
 		var/obj/map_metadata/gulag13/G13 = map
 		if (G13.siren)
-			to_chat(world, "<font size=3 color='green'><center><b>ALARM LIFTED</b><br>The siren has been stopped, prisoners can get back up.</center></font>")
+			to_chat(world, "<font size=3 color='green'><center><b>警报解除</b><br>警报已停止,囚犯可以重新站起.</center></font>")
 			var/warning_sound = sound(null, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
@@ -300,7 +300,7 @@
 	if (istype(map, /obj/map_metadata/abashiri))
 		var/obj/map_metadata/abashiri/ABA = map
 		if (ABA.siren)
-			to_chat(world, "<font size=3 color='green'><center><b>ALARM LIFTED</b><br>The siren has been stopped, prisoners can get back up.</center></font>")
+			to_chat(world, "<font size=3 color='green'><center><b>警报解除</b><br>警报已停止,囚犯可以重新站起.</center></font>")
 			var/warning_sound = sound(null, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
@@ -311,7 +311,7 @@
 		var/warning_sound = sound("sound/misc/siren.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 		for (var/mob/M in player_list)
 			M.client << warning_sound
-		to_chat(world, "<font size=3 color='red'><center><b>ALARM</b><br>The alarm is still on!</center></font>")
+		to_chat(world, "<font size=3 color='red'><center><b>警报</b><br>警报仍在持续!</center></font>")
 
 		spawn(285)
 			if (siren)
@@ -320,8 +320,8 @@
 
 
 /obj/structure/camp_exportbook
-	name = "camp exports"
-	desc = "Use this to export products from the camp and gain points for the guards."
+	name = "营地出口"
+	desc = "使用此设施从营地出口产品并为守卫赚取积分."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook2"
 	density = TRUE
@@ -338,7 +338,7 @@
 			for(var/i in G.points)
 				if (i[1]=="Guards")
 					i[2]+=S.amount*S.value
-					to_chat(H, "You export \the [S].")
+					to_chat(H, "你出口了 \the [S].")
 					qdel(S)
 					new/obj/item/stack/money/rubles(src.loc, round(S.amount*S.value))
 					return
@@ -348,7 +348,7 @@
 			for(var/i in AB.points)
 				if (i[1]=="Guards")
 					i[2]+=S.amount*S.value
-					to_chat(H, "You export \the [S].")
+					to_chat(H, "你出口了 \the [S].")
 					qdel(S)
 					new/obj/item/stack/money/yen(src.loc, round(S.amount*S.value))
 					return

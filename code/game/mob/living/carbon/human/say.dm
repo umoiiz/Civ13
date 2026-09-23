@@ -14,11 +14,11 @@
 	var/animalistic = FALSE
 	if ((werewolf || gorillaman) && body_build.name != "Default")
 		if (werewolf)
-			message = pick("grrrr!","woof", "wooof!", "rrrrr!")
+			message = pick("咕噜噜!","汪", "汪汪!", "噜噜噜!")
 			animalistic = TRUE
 		else if (gorillaman)
 			if (map && map.ID != MAP_TRIBES && map.ID != MAP_THREE_TRIBES && map.ID != MAP_FOUR_KINGDOMS && map.ID != MAP_NOMADS_NEW_WORLD && !map.is_fantrace)
-				message = pick("uh uh uh!","UH UH", "OOGA", "BOOGA")
+				message = pick("呃呃呃!","呃呃", "呜嘎", "布嘎")
 				animalistic = TRUE
 	message = capitalize(sanitize(message))
 

@@ -5,12 +5,12 @@
 	set name = "Mentorhelp"
 
 	if (say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class = 'red'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class = 'red'>语音目前已被管理员禁用.</span>")
 		return
 
 	//handle muting and automuting
 	if (prefs.muted & MUTE_MENTORHELP) // todo: add this
-		to_chat(src, "<font color='red'>Error: Mentor-PM: You cannot send mentorhelps (Muted).</font>")
+		to_chat(src, "<font color='red'>错误: 导师私信: 你无法发送导师求助 (已被禁言).</font>")
 		return
 
 	if (!showed_mentorhelp_popup)
@@ -34,9 +34,9 @@
 	if (!mob) //this doesn't happen
 		return
 
-	to_chat(src, "<font color=green>PM to-<b>Mentors </b>: [msg]</font>")
+	to_chat(src, "<font color=green>私信至-<b>导师 </b>: [msg]</font>")
 	if (config.discordurl)
-		to_chat(src, "<i>If no mentors are online, please ping @Mentor <a href = '[config.discordurl]'>in the discord</a>.</i>")
+		to_chat(src, "<i>如果没有导师在线, 请在discord中<a href = '[config.discordurl]'>@Mentor</a>.</i>")
 
 	discord_mentorhelp_log(key_name(src),msg)
 

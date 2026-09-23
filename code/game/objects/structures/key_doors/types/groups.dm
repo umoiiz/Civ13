@@ -10,7 +10,7 @@
 
 /obj/item/weapon/key/ancient
 	code = AN_CODE
-	name = "Key"
+	name = "钥匙"
 
 /obj/structure/simple_door/key_door/ancient
 	keyslot_type = /datum/keyslot/ancient
@@ -22,7 +22,7 @@
 
 /obj/item/weapon/key/ancient/roman
 	code = AN_CODE2
-	name = "Roman Fortress Key"
+	name = "罗马要塞钥匙"
 
 /obj/structure/simple_door/key_door/ancient/roman
 	keyslot_type = /datum/keyslot/ancient/roman
@@ -34,7 +34,7 @@
 
 /obj/item/weapon/key/ancient/greek
 	code = AN_CODE3
-	name = "Greek Fortress Key"
+	name = "希腊要塞钥匙"
 
 /obj/structure/simple_door/key_door/ancient/greek
 	keyslot_type = /datum/keyslot/ancient/greek
@@ -72,7 +72,7 @@
 
 /obj/item/weapon/key/civ
 	code = CV_CODE
-	name = "Key"
+	name = "钥匙"
 
 /obj/structure/simple_door/key_door/civ
 	keyslot_type = /datum/keyslot/civ
@@ -84,7 +84,7 @@
 
 /obj/item/weapon/key/civ/hall
 	code = CV_CODE2
-	name = "Gaurd's Key"
+	name = "卫兵钥匙"
 
 /obj/structure/simple_door/key_door/civ/hall
 	keyslot_type = /datum/keyslot/civ/hall
@@ -96,7 +96,7 @@
 
 /obj/item/weapon/key/civ/gov
 	code = CV_CODE3
-	name = "Leader's Key"
+	name = "首领钥匙"
 
 /obj/structure/simple_door/key_door/civ/gov
 	keyslot_type = /datum/keyslot/civ/gov
@@ -108,7 +108,7 @@
 
 /obj/item/weapon/key/civ/room1
 	code = CV_ROOM1
-	name = "Room #1 Key"
+	name = "1号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room1
 	keyslot_type = /datum/keyslot/civ/room1
@@ -121,7 +121,7 @@
 
 /obj/item/weapon/key/civ/room2
 	code = CV_ROOM2
-	name = "Room #2 Key"
+	name = "2号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room2
 	keyslot_type = /datum/keyslot/civ/room2
@@ -134,7 +134,7 @@
 
 /obj/item/weapon/key/civ/room3
 	code = CV_ROOM3
-	name = "Room #3 Key"
+	name = "3号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room3
 	keyslot_type = /datum/keyslot/civ/room3
@@ -147,7 +147,7 @@
 
 /obj/item/weapon/key/civ/room4
 	code = CV_ROOM4
-	name = "Room #4 Key"
+	name = "4号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room4
 	keyslot_type = /datum/keyslot/civ/room4
@@ -160,7 +160,7 @@
 
 /obj/item/weapon/key/civ/room5
 	code = CV_ROOM5
-	name = "Room #5 Key"
+	name = "5号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room5
 	keyslot_type = /datum/keyslot/civ/room5
@@ -173,7 +173,7 @@
 
 /obj/item/weapon/key/civ/room6
 	code = CV_ROOM6
-	name = "Room #6 Key"
+	name = "6号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room6
 	keyslot_type = /datum/keyslot/civ/room6
@@ -186,7 +186,7 @@
 
 /obj/item/weapon/key/civ/room7
 	code = CV_ROOM7
-	name = "Room #7 Key"
+	name = "7号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room7
 	keyslot_type = /datum/keyslot/civ/room7
@@ -199,7 +199,7 @@
 
 /obj/item/weapon/key/civ/room8
 	code = CV_ROOM8
-	name = "Room #8 Key"
+	name = "8号房间钥匙"
 
 /obj/structure/simple_door/key_door/civ/room8
 	keyslot_type = /datum/keyslot/civ/room8
@@ -212,7 +212,7 @@
 
 /obj/item/weapon/key/civ/inn
 	code = CV_INN
-	name = "Private Inn Key"
+	name = "私人旅店钥匙"
 
 /obj/structure/simple_door/key_door/civ/inn
 	keyslot_type = /datum/keyslot/civ/inn
@@ -224,7 +224,7 @@
 	custom_code = CV_INN
 
 /obj/structure/closet/crate/cash_register/inn
-	name = "Inn till"
+	name = "旅店钱柜"
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "cash_register_antique"
 	icon_opened = "cash_register_antique_opened"
@@ -232,7 +232,7 @@
 	custom_code = CV_INN
 	locked = TRUE
 /obj/structure/closet/cabinet/ceiling/liquer
-	name = "Liquer cabinet"
+	name = "酒柜"
 	custom_code = CV_INN
 	locked = TRUE
 
@@ -345,7 +345,7 @@
 
 /obj/item/weapon/key/civ/bank
 	code = CV_BANK
-	name = "staff only area"
+	name = "员工专用区域"
 
 /obj/structure/simple_door/key_door/civ/bank
 	keyslot_type = /datum/keyslot/civ/bank
@@ -358,7 +358,7 @@
 
 /obj/item/weapon/key/civ/sheriff
 	code = CV_SHERIFF
-	name = "Sheriff's Office"
+	name = "治安官办公室"
 
 /obj/structure/simple_door/key_door/civ/sherif
 	keyslot_type = /datum/keyslot/civ/sheriff
@@ -370,7 +370,7 @@
 
 /obj/item/weapon/key/pirates
 	code = PI_CODE
-	name = "Pirate key"
+	name = "海盗钥匙"
 
 /obj/structure/simple_door/key_door/pirates
 	keyslot_type = /datum/keyslot/pirates
@@ -383,7 +383,7 @@
 
 /obj/item/weapon/key/british
 	code = RN_CODE
-	name = "British key"
+	name = "英国钥匙"
 
 /obj/structure/simple_door/key_door/british
 	keyslot_type = /datum/keyslot/british
@@ -396,7 +396,7 @@
 
 /obj/item/weapon/key/spanish
 	code = SP_CODE
-	name = "Spanish Key"
+	name = "西班牙钥匙"
 
 /obj/structure/simple_door/key_door/spanish
 	keyslot_type = /datum/keyslot/spanish
@@ -409,18 +409,18 @@
 
 /obj/item/weapon/key/french
 	code = FR_CODE
-	name = "French key"
+	name = "法国钥匙"
 
 /obj/item/weapon/key/french/guard
 	code = FR_CODE
-	name = "Bagne guard key"
+	name = "流放地守卫钥匙"
 	health = 90000
 /obj/item/weapon/key/french/guard/max
 	code = FR_CODE+2
-	name = "Maximum Security guard key"
+	name = "最高安全监狱守卫钥匙"
 /obj/item/weapon/key/french/guard/max/command
 	code = FR_CODE+8
-	name = "Maximum Security commander key"
+	name = "最高安全监狱指挥官钥匙"
 
 /datum/keyslot/french/guard
 	code = FR_CODE
@@ -477,7 +477,7 @@
 
 /obj/item/weapon/key/portuguese
 	code = PT_CODE
-	name = "Portuguese key"
+	name = "葡萄牙钥匙"
 
 /obj/structure/simple_door/key_door/portuguese
 	keyslot_type = /datum/keyslot/portuguese
@@ -490,7 +490,7 @@
 
 /obj/item/weapon/key/russian
 	code = RU_CODE
-	name = "Russian key"
+	name = "俄罗斯钥匙"
 
 /obj/structure/simple_door/key_door/russian
 	keyslot_type = /datum/keyslot/russian
@@ -510,18 +510,18 @@
 
 /obj/item/weapon/key/soviet
 	code = RU_CODE
-	name = "Soviet key"
+	name = "苏联钥匙"
 
 /obj/item/weapon/key/soviet/guard
 	code = RU_CODE
-	name = "GULAG guard key"
+	name = "古拉格守卫钥匙"
 	health = 90000
 /obj/item/weapon/key/soviet/guard/max
 	code = RU_CODE+2
-	name = "Maximum Security guard key"
+	name = "最高安全监狱守卫钥匙"
 /obj/item/weapon/key/soviet/guard/max/command
 	code = RU_CODE+8
-	name = "Maximum Security commander key"
+	name = "最高安全指挥官钥匙"
 
 /obj/structure/simple_door/key_door/soviet
 	keyslot_type = /datum/keyslot/soviet
@@ -568,7 +568,7 @@
 
 /obj/item/weapon/key/dutch
 	code = NL_CODE
-	name = "Dutch key"
+	name = "荷兰钥匙"
 
 /obj/structure/simple_door/key_door/dutch
 	keyslot_type = /datum/keyslot/dutch
@@ -583,7 +583,7 @@
 
 /obj/item/weapon/key/japanese
 	code = JP_CODE
-	name = "Japanese key"
+	name = "日本钥匙"
 
 /obj/structure/simple_door/key_door/japanese
 	keyslot_type = /datum/keyslot/japanese
@@ -595,7 +595,7 @@
 
 /obj/item/weapon/key/abashiri
 	code = JPABA_CODE
-	name = "Abashiri Guard key"
+	name = "网走监狱守卫钥匙"
 
 /obj/structure/simple_door/key_door/abashiri
 	keyslot_type = /datum/keyslot/abashiri
@@ -604,7 +604,7 @@
 
 /obj/item/weapon/key/abashiri/head
 	code = JPABA_CODE + 2
-	name = "Abashiri Head Guard key"
+	name = "网走监狱守卫长钥匙"
 /datum/keyslot/abashiri/head
 	code = JPABA_CODE + 2
 /obj/structure/simple_door/key_door/abashiri/head
@@ -614,7 +614,7 @@
 #undef JPABA_CODE
 
 /obj/item/weapon/key/japanese/german////yeah ik i'm just lazy and already mapped so stfu bish
-	name = "German Officer key"
+	name = "德国军官钥匙"
 
 #define JP_OFF_CODE 995 * 7
 /datum/keyslot/japanese_officer
@@ -622,7 +622,7 @@
 
 /obj/item/weapon/key/japanese_officer
 	code = JP_OFF_CODE
-	name = "Japanese Officer key"
+	name = "日本军官钥匙"
 
 /obj/structure/simple_door/key_door/japanese_officer
 	keyslot_type = /datum/keyslot/japanese_officer
@@ -635,7 +635,7 @@
 
 /obj/item/weapon/key/german
 	code = DE_CODE
-	name = "German key"
+	name = "德国钥匙"
 
 /obj/structure/simple_door/key_door/german
 	keyslot_type = /datum/keyslot/german
@@ -662,7 +662,7 @@
 
 /obj/item/weapon/key/german/officer
 	code = DE_CODE_OFF
-	name = "German Officer key"
+	name = "德国军官钥匙"
 
 /obj/structure/simple_door/key_door/german/officer
 	keyslot_type = /datum/keyslot/german/officer
@@ -675,7 +675,7 @@
 
 /obj/item/weapon/key/italian
 	code = IT_CODE
-	name = "Italian key"
+	name = "意大利钥匙"
 
 /obj/structure/simple_door/key_door/italian
 	keyslot_type = /datum/keyslot/italian
@@ -688,7 +688,7 @@
 
 /obj/item/weapon/key/vietnamese
 	code = VC_CODE
-	name = "Vietnamese key"
+	name = "越南钥匙"
 
 /obj/structure/simple_door/key_door/vietnamese
 	keyslot_type = /datum/keyslot/vietnamese
@@ -701,7 +701,7 @@
 
 /obj/item/weapon/key/chinese
 	code = CH_CODE
-	name = "Chinese key"
+	name = "中国钥匙"
 
 /obj/structure/simple_door/key_door/chinese
 	keyslot_type = /datum/keyslot/chinese
@@ -714,7 +714,7 @@
 
 /obj/item/weapon/key/insurgent
 	code = INS_CODE
-	name = "Insurgent key"
+	name = "叛乱分子钥匙"
 
 /obj/structure/simple_door/key_door/insurgent
 	keyslot_type = /datum/keyslot/insurgent
@@ -733,11 +733,11 @@
 
 /obj/item/weapon/key/american
 	code = US_CODE
-	name = "American key"
+	name = "美国钥匙"
 
 /obj/item/weapon/key/american/facility
-	desc = "A Facility Key."
-	name = "Facility key"
+	desc = "设施钥匙."
+	name = "设施钥匙"
 
 /obj/structure/simple_door/key_door/american
 	keyslot_type = /datum/keyslot/american
@@ -747,12 +747,12 @@
 
 /obj/item/weapon/key/civ/police
 	code = 13443
-	name = "Police Officer key"
+	name = "警官钥匙"
 	health = 90000
 
 /obj/item/weapon/key/civ/police/chief
 	code = 13444
-	name = "Police Chief key"
+	name = "警察局长钥匙"
 
 /datum/keyslot/police
 	code = 13443
@@ -780,7 +780,7 @@
 
 /obj/item/weapon/key/civ/paramedics
 	code = 12443
-	name = "Hospital key"
+	name = "医院钥匙"
 	health = 90000
 
 /datum/keyslot/paramedics
@@ -794,7 +794,7 @@
 
 /obj/item/weapon/key/civ/mechanic
 	code = 12448
-	name = "Mechanic key"
+	name = "机械师钥匙"
 	health = 90000
 
 /datum/keyslot/mechanic
@@ -808,7 +808,7 @@
 
 /obj/item/weapon/key/civ/mckellen
 	code = 211919
-	name = "McKellen's key"
+	name = "麦凯伦的钥匙"
 
 /datum/keyslot/mckellen
 	code = 211919
@@ -821,7 +821,7 @@
 
 /obj/item/weapon/key/civ/mckellen/manager
 	code = 121922
-	name = "McKellen's Manager key"
+	name = "麦凯伦的经理钥匙"
 
 /datum/keyslot/mckellen/manager
 	code = 121922
@@ -839,7 +839,7 @@
 
 /obj/item/weapon/key/tribal
 	code = 666999
-	name = "tribal key"
+	name = "部落钥匙"
 
 /datum/keyslot/tribal
 	code = 666999

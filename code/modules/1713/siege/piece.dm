@@ -1,5 +1,5 @@
 /obj/structure/cannon
-	name = "cannon"
+	name = "火炮"
 	icon = 'icons/obj/cannon.dmi'
 	pixel_x = -16
 	pixel_y = 0
@@ -59,9 +59,9 @@
 		return
 
 	if (assembled)
-		visible_message("[usr] starts disassembling \the [src]...")
+		visible_message("[usr]开始拆卸\the [src]...")
 		if (do_after(usr, 70, src, can_move = FALSE))
-			visible_message("[usr] finishes disassembling \the [src].")
+			visible_message("[usr]完成了拆卸\the [src]。")
 			assembled = FALSE
 			anchored = FALSE
 			if (loader_chair && (loader_chair in range(3,src)))
@@ -75,9 +75,9 @@
 			icon_state = "feldkanone18"
 			update_icon()
 	else
-		visible_message("[usr] starts assembling \the [src]...")
+		visible_message("[usr]开始组装\the [src]...")
 		if (do_after(usr, 70, src, can_move = FALSE))
-			visible_message("[usr] finishes assembling \the [src].")
+			visible_message("[usr]完成了组装\the [src]。")
 			assembled = TRUE
 			anchored = TRUE
 			if (loader_chair)
@@ -171,9 +171,9 @@
 				W.anchored = TRUE
 	else
 		if (istype(W, /obj/item/weapon/weldingtool)) // Repair normally with a welding tool
-			visible_message("[M] starts repairing the [src]...")
+			visible_message("[M]开始修理[src]...")
 			if (do_after(M, 200, src))
-				visible_message("[M] sucessfully repairs the [src].")
+				visible_message("[M]成功修理了[src]。")
 				broken = FALSE
 				for (var/obj/structure/vehicleparts/frame/F in get_turf(src))
 					F.update_icon()
@@ -182,14 +182,14 @@
 		else if (istype(W, /obj/item/stack/material/steel)) // Repair at the cost of 10 steel and slower
 			var/obj/item/stack/material/MAT = W
 			if (MAT.amount >= 10)
-				visible_message("[M] starts repairing the [src]...")
+				visible_message("[M]开始修理[src]...")
 				if (do_after(M, 300, src))
-					visible_message("[M] sucessfully repairs the [src].")
+					visible_message("[M]成功修理了[src]。")
 					MAT.amount -= 10
 					broken = FALSE
 					return
 			else
-				to_chat(M, "You need 10 [MAT] to repair \the [src].")
+				to_chat(M, "你需要10个[MAT]来修理\the [src]。")
 			return
 		else
 			to_chat(M, SPAN_DANGER("\The [src] is broken! Repair it first."))
@@ -268,21 +268,21 @@
 				anchored = !anchored
 	else
 		if (istype(W, /obj/item/weapon/weldingtool)) // Repair normally with a welding tool
-			visible_message("[M] starts repairing the [src]...")
+			visible_message("[M]开始修理[src]...")
 			if (!do_after(M, 200, src))
 				return
-			visible_message("[M] sucessfully repairs the [src].")
+			visible_message("[M]成功修理了[src]。")
 			broken = FALSE
 			return
 		else if (istype(W, /obj/item/stack/material/steel)) // Repair at the cost of 10 steel and slower
 			var/obj/item/stack/material/MAT = W
 			if (MAT.amount < 10)
-				to_chat(M, "You need 10 [MAT] to repair \the [src].")
+				to_chat(M, "你需要10个[MAT]来修理\the [src]。")
 				return
-			visible_message("[M] starts repairing the [src]...")
+			visible_message("[M]开始修理[src]...")
 			if (!do_after(M, 300, src))
 				return
-			visible_message("[M] sucessfully repairs the [src].")
+			visible_message("[M]成功修理了[src]。")
 			MAT.amount -= 10
 			broken = FALSE
 			return
@@ -328,7 +328,7 @@
 
 /mob/proc/stop_using_cannon()
 	if (using_cannon)
-		to_chat(src, "You stopped using [using_cannon.name].")
+		to_chat(src, "你停止了使用[using_cannon.name]。")
 		using_cannon.clear_aiming_line(src)
 		src << browse(null, "window=artillery_window")
 		using_cannon.user = null

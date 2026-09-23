@@ -1,6 +1,6 @@
 /obj/roof
 	name = "wood roof"
-	desc = "A wooden roof."
+	desc = "一个木制屋顶."
 	icon = 'icons/turf/roofs.dmi'
 	icon_state = "wood_dm"
 	var/overlay_state = "wood"
@@ -39,9 +39,9 @@
 			return
 	if (istype(W, /obj/item/weapon/hammer))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "You start removing \the [src]...")
+		to_chat(user, "你开始移除 \the [src]...")
 		if (do_after(user, 60, src) && src)
-			to_chat(user, "You removed \the [src].")
+			to_chat(user, "你移除了 \the [src].")
 			qdel(src)
 			return
 	else
@@ -65,68 +65,68 @@
 
 /obj/roof/clay
 	name = "clay roof"
-	desc = "A clay tile roof."
+	desc = "一个黏土瓦屋顶."
 	flammable = FALSE
 	overlay_state = "clay"
 	icon_state = "clay_dm"
 
 /obj/roof/clay/blue
 	name = "clay roof"
-	desc = "A black clay tile roof."
+	desc = "一个黑色黏土瓦屋顶."
 	flammable = FALSE
 	overlay_state = "blueclay"
 	icon_state = "blueclay_dm"
 
 /obj/roof/clay/black
 	name = "black clay roof"
-	desc = "A black clay tile roof."
+	desc = "一个黑色黏土瓦屋顶."
 	flammable = FALSE
 	overlay_state = "blackclay"
 	icon_state = "blackclay_dm"
 
 /obj/roof/clay/kerawa
 	name = "kerawa roof"
-	desc = "A clay tile roof."
+	desc = "一个黏土瓦屋顶."
 	flammable = FALSE
 	overlay_state = "black_slateroof"
 	icon_state = "black_slateroof_dm"
 
 /obj/roof/concrete
 	name = "concrete roof"
-	desc = "A concrete roof."
+	desc = "一个混凝土屋顶."
 	flammable = FALSE
 	overlay_state = "cement"
 	icon_state = "cement_dm"
 
 /obj/roof/glass
 	name = "glass roof"
-	desc = "A glass panel roof."
+	desc = "一个玻璃板屋顶."
 	flammable = FALSE
 	overlay_state = "glass"
 	icon_state = "glass_dm"
 
 /obj/roof/thatch
 	name = "thatch roof"
-	desc = "A thatch roof."
+	desc = "一个茅草屋顶."
 	overlay_state = "thatch"
 	icon_state = "thatch_dm"
 
 /obj/roof/palm
 	name = "palm leaves roof"
-	desc = "A roof made of layered palm leaves."
+	desc = "一个由层叠棕榈叶制成的屋顶."
 	overlay_state = "palm"
 	icon_state = "palm_dm"
 
 /obj/roof/sandstone
 	name = "sandstone roof"
-	desc = "An egyptian-style sandstone roof."
+	desc = "一个埃及风格的砂岩屋顶."
 	overlay_state = "sandstone"
 	flammable = FALSE
 	icon_state = "sandstone_dm"
 
 /obj/roof/mayan
 	name = "mayan roof"
-	desc = "A mayan-style stone roof."
+	desc = "一个玛雅风格的石头屋顶."
 	overlay_state = "mayan"
 	flammable = FALSE
 	icon_state = "mayan_dm"
@@ -268,13 +268,13 @@
 			for (var/mob/living/human/M in range(1, src))
 				M.adjustBruteLoss(rand(17,27))
 				M.Weaken(15)
-				to_chat(M, "The roof collapses!")
+				to_chat(M, "屋顶坍塌了!")
 			Destroy()
 			qdel(src)
 
 /obj/item/weapon/roofbuilder
-	name = "roof builder"
-	desc = "Use this to build roofs."
+	name = "屋顶建造器"
+	desc = "用它来建造屋顶."
 	icon = 'icons/turf/roofs.dmi'
 	icon_state = "roof_builder"
 	w_class = ITEM_SIZE_SMALL
@@ -283,65 +283,65 @@
 	var/target_type = /obj/roof/wood
 
 /obj/item/weapon/roofbuilder/clay
-	name = "clay roofing"
-	desc = "Use this to build roofs."
+	name = "黏土屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "clay_roof_builder"
 	flammable = FALSE
 	target_type = /obj/roof/clay
 
 /obj/item/weapon/roofbuilder/clay/blue
-	name = "blue clay roofing"
+	name = "蓝色黏土屋顶材料"
 	icon_state = "blueclay_roof_builder"
 	target_type = /obj/roof/clay/blue
 
 /obj/item/weapon/roofbuilder/clay/black
-	name = "black clay roofing"
+	name = "黑色黏土屋顶材料"
 	icon_state = "blackclay_roof_builder"
 	target_type = /obj/roof/clay/black
 
 /obj/item/weapon/roofbuilder/clay/kerawa
-	name = "black clay roofing"
-	desc = "Use this to build roofs."
+	name = "黑色黏土屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "black_slateroof_builder"
 	flammable = FALSE
 	target_type = /obj/roof/clay/kerawa
 
 /obj/item/weapon/roofbuilder/leaves
-	name = "thatch roofing"
-	desc = "Use this to build roofs."
+	name = "茅草屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "thatch_roof_builder"
 	flammable = TRUE
 	target_type = /obj/roof/thatch
 
 /obj/item/weapon/roofbuilder/palm
-	name = "palm roofing"
-	desc = "Use this to build roofs."
+	name = "棕榈屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "palm_roof_builder"
 	flammable = TRUE
 	target_type = /obj/roof/palm
 
 /obj/item/weapon/roofbuilder/concrete
-	name = "concrete roofing"
-	desc = "Use this to build roofs."
+	name = "混凝土屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "concrete_roof_builder"
 	flammable = FALSE
 	target_type = /obj/roof/concrete
 
 /obj/item/weapon/roofbuilder/glass
-	name = "glass panel roofing"
+	name = "玻璃板屋顶材料"
 	icon_state = "glass_roof_builder"
 	target_type = /obj/roof/glass
 
 /obj/item/weapon/roofbuilder/sandstone
-	name = "sandstone roofing"
-	desc = "Use this to build roofs."
+	name = "砂岩屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "sandstone_roof_builder"
 	flammable = FALSE
 	target_type = /obj/roof/sandstone
 
 /obj/item/weapon/roofbuilder/mayan
-	name = "mayan roofing"
-	desc = "Use this to build roofs."
+	name = "玛雅屋顶材料"
+	desc = "用它来建造屋顶."
 	icon_state = "mayan_roof_builder"
 	flammable = FALSE
 	target_type = /obj/roof/mayan
@@ -367,10 +367,10 @@
 		covers_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
 	var/area/currentarea = get_area(get_step(user, user.dir))
 	if (istype(currentarea, /area/caribbean/no_mans_land/invisible_wall))
-		to_chat(user, "You cannot build a roof here.")
+		to_chat(user, "你无法在这里建造屋顶.")
 		return
 	for (var/obj/roof/RF in get_step(user, user.dir))
-		to_chat(user, "That area is already roofed!")
+		to_chat(user, "该区域已经有屋顶了!")
 		return
 	var/confirm = FALSE
 	for(var/obj/structure/roof_support/RS in range(3, get_step(user, user.dir)))
@@ -381,14 +381,14 @@
 		if (CV.wall)
 			confirm = TRUE
 	if (!confirm)
-		to_chat(user, "This area doesn't have a support for the roof! Build one first!")
+		to_chat(user, "该区域没有屋顶支撑! 请先建造一个!")
 		return
 	if (WWinput(user, "This will start building a roof [your_dir] of you.", "Roof Construction", "Continue", list("Continue", "Stop")) == "Continue")
 		visible_message(SPAN_DANGER("[user] starts building the roof."))
 		visible_message(user, SPAN_DANGER("You start building the roof."))
 		if (do_after(user, covers_time, user.loc) && src && !done)
 			for (var/obj/roof/RF in get_step(user, user.dir))
-				to_chat(user, "That area is already roofed!")
+				to_chat(user, "该区域已经有屋顶了!")
 				return
 			done = TRUE
 			new target_type(get_step(user, user.dir), user)
@@ -401,8 +401,8 @@
 		return
 
 /obj/structure/roof_support
-	name = "roof support"
-	desc = "A thick wood beam, used to support roofs in large buildings."
+	name = "屋顶支撑"
+	desc = "一根粗木梁, 用于支撑大型建筑的屋顶."
 	icon_state = "support_h"
 	flammable = TRUE
 	anchored = TRUE
@@ -413,7 +413,7 @@
 	not_disassemblable = FALSE
 
 /obj/structure/roof_support/admin
-	name = "roof support"
+	name = "屋顶支撑"
 	desc = ""
 	icon = 'icons/turf/roofs.dmi'
 	icon_state = "roof2"
@@ -429,18 +429,18 @@
 		icon_state = "roof"
 
 /obj/structure/roof_support/nordic
-	name = "nordic pillar"
-	desc = "A thick wood beam, in nordic style. Used to support roofs in large buildings."
+	name = "北欧柱"
+	desc = "一根北欧风格的粗木梁. 用于支撑大型建筑的屋顶."
 	icon_state = "nordic_pillar"
 
 /obj/structure/roof_support/bamboo
-	name = "bamboo pillar"
-	desc = "A thick bamboo beam, in nordic style. Used to support roofs in large buildings."
+	name = "竹柱"
+	desc = "一根北欧风格的粗竹梁. 用于支撑大型建筑的屋顶."
 	icon_state = "bamboo_support"
 
 /obj/structure/mine_support
-	name = "mine support"
-	desc = "A set of wood beams placed to support the mine shaft. Prevents cave-ins."
+	name = "矿用支撑"
+	desc = "一组用于支撑矿井的木质支架. 可防止塌方."
 	icon_state = "support_v"
 	flammable = TRUE
 	anchored = TRUE
@@ -451,8 +451,8 @@
 	not_disassemblable = FALSE
 
 /obj/structure/mine_support/stone
-	name = "stone pillar"
-	desc = "A stone pillar that can support roofs and mine shafts."
+	name = "石柱"
+	desc = "一根可以支撑屋顶和矿井的石柱."
 	icon_state = "support_st1"
 	flammable = FALSE
 	anchored = TRUE
@@ -463,8 +463,8 @@
 	not_disassemblable = TRUE
 
 /obj/structure/mine_support/stone/concrete
-	name = "concrete pillar"
-	desc = "A concrete pillar that can support roofs and mine shafts."
+	name = "混凝土柱"
+	desc = "一根可以支撑屋顶和矿井的混凝土柱."
 	icon_state = "concrete_pillar"
 	flammable = FALSE
 	anchored = TRUE
@@ -477,109 +477,109 @@
 /* Stone Pillar Subtypes*/
 
 /obj/structure/mine_support/stone/marble
-	name = "marble pillar"
-	desc = "A marble pillar that can support roofs and mine shafts."
+	name = "大理石柱"
+	desc = "一根可以支撑屋顶和矿井的大理石柱."
 	icon_state = "marble_support_st1"
 
 /obj/structure/mine_support/stone/sandstone
-	name = "sandstone pillar"
-	desc = "A sandstone pillar that can support roofs and mine shafts."
+	name = "砂岩柱"
+	desc = "一根可以支撑屋顶和矿井的砂岩柱."
 	icon_state = "sandstone_support_st1"
 
 /obj/structure/mine_support/stone/obsidian
-	name = "obsidian pillar"
-	desc = "A obsidian pillar that can support roofs and mine shafts."
+	name = "黑曜石柱"
+	desc = "一根可以支撑屋顶和矿井的黑曜石柱."
 	icon_state = "obsidian_support_st1"
 
 /* Ionic Pillars*/
 
 /obj/structure/mine_support/stone/ionic
-	name = "ionic column"
-	desc = "An marble ionic-style column that can support roofs and mine shafts."
+	name = "爱奥尼柱"
+	desc = "一根可以支撑屋顶和矿井的大理石爱奥尼式柱."
 	icon_state = "column_ionic"
 
 /obj/structure/mine_support/stone/ionic/rock
-	name = "stone ionic column"
-	desc = "An stone ionic-style column that can support roofs and mine shafts."
+	name = "石制爱奥尼柱"
+	desc = "一根可以支撑屋顶和矿井的石制爱奥尼式柱."
 	icon_state = "stone_column_ionic"
 
 /obj/structure/mine_support/stone/ionic/sandstone
-	name = "sandstone ionic column"
-	desc = "An sandstone ionic-style column that can support roofs and mine shafts."
+	name = "砂岩爱奥尼柱"
+	desc = "一根可以支撑屋顶和矿井的砂岩爱奥尼式柱."
 	icon_state = "sandstone_column_ionic"
 
 /obj/structure/mine_support/stone/ionic/obsidian
-	name = "obsidian ionic column"
-	desc = "An obsidian ionic-style column that can support roofs and mine shafts."
+	name = "黑曜石爱奥尼柱"
+	desc = "一根可以支撑屋顶和矿井的黑曜石爱奥尼式柱."
 	icon_state = "obsidian_column_ionic"
 
 /* Solomonic Pillars*/
 
 /obj/structure/mine_support/stone/solomonic
-	name = "solomonic column"
-	desc = "An solomonic-style column that can support roofs and mine shafts."
+	name = "所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的所罗门式柱."
 	icon_state = "column_solomonic1"
 
 /obj/structure/mine_support/stone/solomonic/rock
-	name = "stone solomonic column"
-	desc = "An stone solomonic-style column that can support roofs and mine shafts."
+	name = "石制所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的石制所罗门式柱."
 	icon_state = "stone_column_solomonic1"
 
 /obj/structure/mine_support/stone/solomonic/sandstone
-	name = "sandstone solomonic column"
-	desc = "An sandstone solomonic-style column that can support roofs and mine shafts."
+	name = "砂岩所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的砂岩所罗门式柱."
 	icon_state = "sandstone_column_solomonic1"
 
 /obj/structure/mine_support/stone/solomonic/obsidian
-	name = "obsidian solomonic column"
-	desc = "An obsidian solomonic-style column that can support roofs and mine shafts."
+	name = "黑曜石所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的黑曜石所罗门式柱."
 	icon_state = "obsidian_column_solomonic1"
 
 /obj/structure/mine_support/stone/solomonic/thick
-	name = "solomonic column"
-	desc = "An solomonic-style column that can support roofs and mine shafts."
+	name = "所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的所罗门式柱."
 	icon_state = "column_solomonic2"
 
 /obj/structure/mine_support/stone/solomonic/thick/rock
-	name = "stone solomonic column"
-	desc = "An stone solomonic-style column that can support roofs and mine shafts."
+	name = "石制所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的石制所罗门式柱."
 	icon_state = "stone_column_solomonic2"
 
 /obj/structure/mine_support/stone/solomonic/thick/sandstone
-	name = "sandstone solomonic column"
-	desc = "An sandstone solomonic-style column that can support roofs and mine shafts."
+	name = "砂岩所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的砂岩所罗门式柱."
 	icon_state = "sandstone_column_solomonic2"
 
 /obj/structure/mine_support/stone/solomonic/thick/obsidian
-	name = "obsidian solomonic column"
-	desc = "An obsidian solomonic-style column that can support roofs and mine shafts."
+	name = "黑曜石所罗门柱"
+	desc = "一根可以支撑屋顶和矿井的黑曜石所罗门式柱."
 	icon_state = "obsidian_column_solomonic2"
 
 /* Cultural Pillars*/
 
 /obj/structure/mine_support/stone/aztec
-	name = "aztec column"
-	desc = "An aztec-style column that can support roofs and mine shafts."
+	name = "阿兹特克柱"
+	desc = "一根可以支撑屋顶和矿井的阿兹特克式柱."
 	icon_state = "aztec_pillar"
 
 /obj/structure/mine_support/stone/aztec/marble
-	name = "marble aztec column"
-	desc = "An marble aztec-style column that can support roofs and mine shafts."
+	name = "大理石阿兹特克柱"
+	desc = "一根可以支撑屋顶和矿井的大理石阿兹特克式柱."
 	icon_state = "marble_aztec_pillar"
 
 /obj/structure/mine_support/stone/aztec/sandstone
-	name = "sandstone aztec column"
-	desc = "An sandstone aztec-style column that can support roofs and mine shafts."
+	name = "砂岩阿兹特克柱"
+	desc = "一根可以支撑屋顶和矿井的砂岩阿兹特克式柱."
 	icon_state = "sandstone_aztec_pillar"
 
 /obj/structure/mine_support/stone/aztec/obsidian
-	name = "obsidian aztec column"
-	desc = "An obsidian aztec-style column that can support roofs and mine shafts."
+	name = "黑曜石阿兹特克柱"
+	desc = "一根可以支撑屋顶和矿井的黑曜石阿兹特克式柱."
 	icon_state = "obsidian_aztec_pillar"
 
 /obj/structure/mine_support/stone/egyptian
-	name = "egyptian column"
-	desc = "An egyptian-style column that can support roofs and mine shafts."
+	name = "埃及柱"
+	desc = "一根可以支撑屋顶和矿井的埃及式柱."
 	icon_state = "egyptian_pillar"
 
 /obj/structure/mine_support/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -597,7 +597,7 @@
 
 /obj/structure/mine_support/proc/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>[src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>[src]碎成了碎片!</span>")
 		Destroy()
 		return
 
@@ -616,7 +616,7 @@
 
 /obj/structure/roof_support/proc/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>[src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>[src]碎成了碎片!</span>")
 		Destroy()
 		return
 

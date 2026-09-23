@@ -27,8 +27,8 @@
 	force = initial(force)
 
 /obj/item/weapon/melee/mace
-	name = "iron mace"
-	desc = "A iron mace, good for breaking bones and armor."
+	name = "铁制钉头锤"
+	desc = "一把铁制钉头锤,很适合打断骨头和盔甲."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "mace"
 	item_state = "mace"
@@ -39,8 +39,8 @@
 	flammable = FALSE
 
 /obj/item/weapon/melee/mace/kanabo
-	name = "iron kanabo"
-	desc = "A iron kanabo, this large blunt weapon of japanese origin pulps its victims under its weight & form."
+	name = "铁制金棒"
+	desc = "一把铁制金棒,这种源自日本的大型钝器以其重量和造型将受害者砸成肉泥."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "kanabo"
 	item_state = "kanabo"
@@ -51,8 +51,8 @@
 	flammable = FALSE
 
 /obj/item/weapon/melee/mace/mauler
-	name = "heavy mauler"
-	desc = "A intimidatingly large morningstar, could easily pulverize any person; let alone one head to toe in armor."
+	name = "重型晨星锤"
+	desc = "一把大得令人畏惧的晨星锤,可以轻易将任何人砸成肉酱;更不用说从头到脚全副武装的人了."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "maul"
 	item_state = "mauler1"
@@ -63,8 +63,8 @@
 	flammable = FALSE
 
 /obj/item/weapon/melee/classic_baton
-	name = "wood baton"
-	desc = "A wooden truncheon for beating criminal scum."
+	name = "木制警棍"
+	desc = "一根用来殴打罪犯渣滓的木制警棍."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
@@ -75,8 +75,8 @@
 	flags = FALSE
 
 /obj/item/weapon/melee/classic_baton/guard
-	name = "heavy baton"
-	desc = "A heavy wooden truncheon for beating criminal scum."
+	name = "重型警棍"
+	desc = "一根用来殴打罪犯渣滓的重型木制警棍."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
@@ -86,8 +86,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/melee/nightbaton
-	name = "police baton"
-	desc = "A stick used by police officers."
+	name = "警棍"
+	desc = "警察使用的棍子."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "nightbaton"
 	item_state = "nightbaton"
@@ -98,8 +98,8 @@
 	flags = FALSE
 
 /obj/item/weapon/melee/nightbaton/sandman
-	name = "Heavy duty"
-	desc = "A baton held by the camp commander nicknamed the sandman by prisoners because of how hard it hits."
+	name = "重型"
+	desc = "一根由营地指挥官持有的警棍,囚犯们因其击打之重而给它起了个绰号叫睡魔."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "kombaton"
 	item_state = "nightbaton"
@@ -116,12 +116,12 @@
 		spawn(100)
 			src.cooldown = FALSE
 	else
-		to_chat(user, "<span class='notice'>You have used this batton not long ago. Chill out!</span>")
+		to_chat(user, "<span class='notice'>你不久前才用过这根警棍.冷静点!</span>")
 	..()
 
 /obj/item/weapon/melee/classic_baton/club
-	name = "wood club"
-	desc = "One of the oldest weapons in the world. Good for when you need to knock people down."
+	name = "木棒"
+	desc = "世界上最古老的武器之一.当你需要把人打倒在地时很好用."
 	icon_state = "club"
 	item_state = "club"
 	slot_flags = SLOT_BACK
@@ -153,8 +153,8 @@
 */
 
 /obj/item/weapon/melee/classic_baton/whip
-	name = "whip"
-	desc = "A leather whip. To keep your slaves in order."
+	name = "鞭子"
+	desc = "一条皮鞭.用来让你的奴隶守规矩."
 	icon = 'icons/obj/items.dmi'
 	hitsound = 'sound/weapons/whipcrack.ogg'
 	icon_state = "whip"
@@ -164,8 +164,8 @@
 	flammable = TRUE
 
 /obj/item/weapon/melee/knuckle_duster
-	name = "knuckle duster"
-	desc = "A peice of metal that fits around your hand. Could break some teeth."
+	name = "指虎"
+	desc = "一块套在手上的金属.可以打碎几颗牙."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "knuckle_duster"
 	item_state = "knuckle_duster"
@@ -175,8 +175,8 @@
 	weakens = FALSE
 
 /obj/item/weapon/melee/baseball_bat
-	name = "wooden baseball bat"
-	desc = "A smooth wooden club used in the sport of baseball. Useful for damaging skulls."
+	name = "木制棒球棍"
+	desc = "一根用于棒球运动的平滑木棒.很适合砸碎头骨."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "woodbat"
 	item_state = "woodbat"
@@ -187,8 +187,8 @@
 	weakens = 1
 
 /obj/item/weapon/melee/baseball_bat/aluminium
-	name = "aluminium baseball bat"
-	desc = "A smooth metal club used in the sport of baseball. This one's stronger than a wooden one."
+	name = "铝制棒球棍"
+	desc = "一根用于棒球运动的平滑金属棒.这根比木制的更结实."
 	icon_state = "metalbat"
 	item_state = "metalbat"
 	slot_flags = SLOT_BACK
@@ -197,8 +197,8 @@
 	flags = CONDUCT
 
 /obj/item/weapon/melee/classic_baton/big_club
-	name = "big wood club"
-	desc = "This looks huge!"
+	name = "大木棒"
+	desc = "这看起来好大!"
 	icon_state = "big_club"
 	item_state = "big_club"
 	force = WEAPON_FORCE_PAINFUL
@@ -230,8 +230,8 @@
 */
 
 /obj/item/weapon/macuahuitl
-	name = "macuahuitl"
-	desc = "A Mesoamerican wooden club with obsidian blades."
+	name = "马夸威特"
+	desc = "一把带有黑曜石刀刃的中美洲木棒."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "macuahuitl"
 	item_state = "macuahuitl"
@@ -246,8 +246,8 @@
 
 ////////////////GARROTE/////////////////////
 /obj/item/garrote
-	name = "garrote"
-	desc = "A handheld ligature of rope, used to strangle a person."
+	name = "绞索"
+	desc = "一种手持的绳索勒具,用于勒死一个人."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "garrote"
 	item_state = "zippo"
@@ -280,7 +280,7 @@
 		return
 /obj/item/garrote/proc/start_garroting(mob/living/human/user,mob/living/human/target)
 	if (!user.has_empty_hand())
-		to_chat(user, "<span class='notice'>You need a free hand to use the garrote!</span>")
+		to_chat(user, "<span class='notice'>你需要一只空闲的手才能使用绞索!</span>")
 		return
 	var/obj/item/weapon/grab/GR = new /obj/item/weapon/grab(user, target)
 	user.put_in_hands(GR)
@@ -294,13 +294,13 @@
 		garroting_process(user,target,GR)
 		next_garrote = world.time + 40
 		user.visible_message(
-			"<span class='danger'>[user] has grabbed \the [target] with \the [src]!</span>",\
+			"<span class='danger'>[user]用\the [src]抓住了\the [target]!</span>",\
 			"<span class='danger'>You grab \the [target] with \the [src]!</span>",\
 			"You hear some struggling and muffled cries of surprise")
 		return
 /obj/item/garrote/proc/stop_garroting(mob/living/human/user,mob/living/human/target)
 	garroting = FALSE
-	to_chat(user, "<span class='notice'>You release the garrote on your victim.</span>") //Not the grab, though. Only the garrote.
+	to_chat(user, "<span class='notice'>你松开了勒住受害者的绞索.</span>") //Not the grab, though. Only the garrote.
 	update_icon()
 	return
 /obj/item/garrote/attack_self(mob/living/human/user)
@@ -346,8 +346,8 @@
 		return FALSE
 
 /obj/item/weapon/melee/telebaton
-	name = "telescopic baton"
-	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
+	name = "伸缩警棍"
+	desc = "一种紧凑但重新平衡过的个人防身武器.折叠时可以隐藏."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "telebaton_0"
 	item_state = "telebaton_0"
@@ -359,13 +359,13 @@
 /obj/item/weapon/melee/telebaton/attack_self(mob/user as mob)
 	on = !on
 	if(on)
-		user.visible_message("<span class='warning'>With a flick of their wrist, [user] extends their telescopic baton.</span>",\
+		user.visible_message("<span class='warning'>随着手腕一抖,[user]甩出了伸缩警棍.</span>",\
 		"<span class='warning'>You extend the baton.</span>",\
 		"You hear an ominous click.")
 		force = 15//quite robust
 		attack_verb = list("smacked", "struck", "slapped")
 	else
-		user.visible_message("<span class='notice'>\The [user] collapses their telescopic baton.</span>",\
+		user.visible_message("<span class='notice'>\The [user]收起了伸缩警棍.</span>",\
 		"<span class='notice'>You collapse the baton.</span>",\
 		"You hear a click.")
 		force = 3//not so robust now
@@ -389,8 +389,8 @@
 		overlays += blood_overlay
 
 /obj/item/weapon/soviet_flag // To be placed elsewhere in the code
-	desc = "The Soviet flag."
-	name = "soviet flag"
+	desc = "苏联国旗."
+	name = "苏联国旗"
 	icon = 'icons/obj/flags.dmi'
 	icon_state = "sov_flag_object"
 	item_icons = list(

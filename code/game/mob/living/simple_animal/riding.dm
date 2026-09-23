@@ -30,10 +30,10 @@
 /mob/living/simple_animal/MouseDrop_T(mob/living/M, mob/living/human/user)
 	if (can_ride && isnull(rider) && M == user && !user.lying && !user.prone && (!user.werewolf || user.body_build.name == "Default"))
 		var/mob/living/human/MM = M
-		M.visible_message("<span class='notice'>[M] starts trying to get on \the [src]'s back...</span>","<span class='notice'>You start trying to get on \the [src]'s back...</span>")
+		M.visible_message("<span class='notice'>[M]开始试图爬到\the [src]的背上...</span>","<span class='notice'>你开始试图爬到\the [src]的背上...</span>")
 		if (do_after(MM, 40, src))
 			M.plane = GAME_PLANE
-			M.visible_message("<span class='notice'>[M] manages to successfully climb into \the [src]'s back.</span>","<span class='notice'>You manage to successfully climb into \the [src]'s back.</span>")
+			M.visible_message("<span class='notice'>[M]成功爬到了\the [src]的背上。</span>","<span class='notice'>你成功爬到了\the [src]的背上。</span>")
 			ride = TRUE
 			rider = MM
 			MM.forceMove(src.loc)
@@ -50,9 +50,9 @@
 /mob/living/simple_animal/attack_hand(mob/living/human/M as mob)
 	if (can_ride && ride == TRUE && !isnull(rider))
 		if (rider == M)
-			M.visible_message("<span class='notice'>[M] starts to get off \the [src]...</span>","<span class='notice'>You start to get off \the [src]...</span>")
+			M.visible_message("<span class='notice'>[M]开始从\the [src]身上下来...</span>","<span class='notice'>你开始从\the [src]身上下来...</span>")
 			if (do_after(M, 40, src))
-				M.visible_message("<span class='danger'>[M] gets off \the [src].</span>","<span class='danger'>You get off \the [src].</span>")
+				M.visible_message("<span class='danger'>[M]从\the [src]身上下来了。</span>","<span class='danger'>你从\the [src]身上下来了。</span>")
 				M.riding = FALSE
 				M.riding_mob = null
 				ride = FALSE
@@ -63,9 +63,9 @@
 				stop_automated_movement = FALSE
 				return
 		else
-			M.visible_message("<span class='danger'>[M] tries to pull [rider] off from \the [src]!</span>","<span class='danger'>You try to pull [rider] off from \the [src]!</span>")
+			M.visible_message("<span class='danger'>[M]试图把[rider]从\the [src]身上拉下来!</span>","<span class='danger'>你试图把[rider]从\the [src]身上拉下来!</span>")
 			if (do_after(M, 40, src))
-				M.visible_message("<span class='danger'>[M] pulls [rider] off from \the [src]!</span>","<span class='danger'>You pull [rider] off from \the [src]!</span>")
+				M.visible_message("<span class='danger'>[M]把[rider]从\the [src]身上拉了下来!</span>","<span class='danger'>你把[rider]从\the [src]身上拉了下来!</span>")
 				rider.riding = FALSE
 				rider.riding_mob = null
 				rider.forceMove(locate(x+1,y,z))
@@ -84,7 +84,7 @@
 /mob/living/simple_animal/death()
 	..()
 	if (can_ride && !isnull(rider))
-		rider.visible_message("<span class='danger'>[rider] falls off from \the [src]!</span>", "<span class='danger'>You fall off from \the [src]!</span>")
+		rider.visible_message("<span class='danger'>[rider]从\the [src]身上掉了下来!</span>", "<span class='danger'>你从\the [src]身上掉了下来!</span>")
 		rider.riding = FALSE
 		rider.SpinAnimation(5,1)
 		rider.forceMove(locate(x+1,y,z))
@@ -97,7 +97,7 @@
 
 /mob/living/simple_animal/proc/trample(var/mob/living/tmob)
 	if (can_ride && tmob.stat != DEAD)
-		visible_message("<span class='danger'>\The [src] tramples [tmob]!</span>")
+		visible_message("<span class='danger'>\The [src]踩踏[tmob]!</span>")
 		playsound(tmob.loc, 'sound/effects/gore/fallsmash.ogg', 35, TRUE)
 		tmob.adjustBruteLoss(rand(6,7))
 		if (prob(35))

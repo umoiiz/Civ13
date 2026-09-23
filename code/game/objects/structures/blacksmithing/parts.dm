@@ -1,9 +1,9 @@
 //weapon parts (arrowheads, spearheads, etc) that need to be finished with hood handles and others
 /obj/item/weapon/material/part
-	name = "weapon part"
+	name = "武器部件"
 	icon = 'icons/obj/metallurgy.dmi'
 	icon_state = "crude_axehead"
-	desc = "A unfinished weapon part."
+	desc = "一个未完成的武器部件."
 	flags = CONDUCT
 	sharp = TRUE
 	edge = TRUE
@@ -17,45 +17,45 @@
 	material = "iron"
 
 /obj/item/weapon/material/part/axehead
-	name = "crude axe head"
+	name = "粗糙的斧头"
 	icon_state = "crude_axehead"
-	desc = "A metallic axe head. Needs a handle to be useful."
+	desc = "一个金属斧头.需要安装手柄才能使用."
 	result = /obj/item/weapon/material/hatchet
 	result_name = "axe"
 	material = null
 
 /obj/item/weapon/material/part/axehead/hatchet
-	name = "hatchet head"
+	name = "短柄斧头"
 	result = /obj/item/weapon/material/hatchet
 
 /obj/item/weapon/material/part/axehead/battleaxe
-	name = "battleaxe head"
+	name = "战斧头"
 	result = /obj/item/weapon/material/hatchet/battleaxe
 
 /obj/item/weapon/material/part/axehead/throwing
-	name = "throwing axe head"
+	name = "投掷斧头"
 	result = /obj/item/weapon/material/thrown/throwing_axe
 
 /obj/item/weapon/material/part/shovel
-	name = "crude shovel head"
+	name = "粗糙的铲头"
 	icon_state = "crude_shovel"
-	desc = "A metallic shovel head. Needs a handle to be useful."
+	desc = "一个金属铲头.需要安装手柄才能使用."
 	result = /obj/item/weapon/material/shovel
 	result_name = "shovel"
 	material = null
 
 /obj/item/weapon/material/part/pickaxe
-	name = "crude pickaxe head"
+	name = "粗糙的镐头"
 	icon_state = "crude_pickaxe"
-	desc = "A metallic pickaxe head. Needs a handle to be useful."
+	desc = "一个金属镐头.需要安装手柄才能使用."
 	result = /obj/item/weapon/material/pickaxe
 	result_name = "pickaxe"
 	material = null
 
 /obj/item/weapon/material/part/spearhead
-	name = "crude spearhead"
+	name = "粗糙的矛头"
 	icon_state = "crude_spearhead"
-	desc = "A metallic spearhead. Needs a handle to be useful."
+	desc = "一个金属矛头.需要安装手柄才能使用."
 	result = /obj/item/weapon/material/spear
 	result_name = "spear"
 	material = null
@@ -66,5 +66,5 @@
 		M.loc = H.loc
 		qdel(HANDLE)
 		qdel(src)
-		to_chat(H, "You finish assembling the [result_name].")
+		to_chat(H, "你完成了[result_name]的组装.")
 		return

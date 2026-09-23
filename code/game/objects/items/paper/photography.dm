@@ -11,9 +11,9 @@
 * film *
 *******/
 /obj/item/camera_film
-	name = "film cartridge"
+	name = "胶卷暗盒"
 	icon = 'icons/obj/device.dmi'
-	desc = "A camera film cartridge. Insert it into a camera to reload it."
+	desc = "一个相机胶卷暗盒.将其插入相机以重新装填."
 	icon_state = "film"
 	item_state = "film"
 	w_class = ITEM_SIZE_TINY
@@ -25,7 +25,7 @@
 var/global/photo_count = 0
 
 /obj/item/weapon/photo
-	name = "photo"
+	name = "照片"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "photo"
 	item_state = "paper"
@@ -75,7 +75,7 @@ var/global/photo_count = 0
 		show(user)
 		to_chat(user, desc)
 	else
-		to_chat(user, "<span class='notice'>It is too far away.</span>")
+		to_chat(user, "<span class='notice'>距离太远了.</span>")
 
 /obj/item/weapon/photo/proc/show(mob/user as mob)
 	send_rsc(user, img, "tmp_photo_[id].png")
@@ -106,7 +106,7 @@ var/global/photo_count = 0
 * photo album *
 **************/
 /obj/item/weapon/storage/photo_album
-	name = "Photo album"
+	name = "相册"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "album"
 	item_state = "briefcase"
@@ -142,9 +142,9 @@ var/global/photo_count = 0
 * camera *
 *********/
 /obj/item/camera
-	name = "camera"
+	name = "相机"
 	icon = 'icons/obj/device.dmi'
-	desc = "A polaroid camera."
+	desc = "一台拍立得相机."
 	icon_state = "camera_modern"
 	item_state = "camera"
 	w_class = ITEM_SIZE_SMALL
@@ -156,30 +156,30 @@ var/global/photo_count = 0
 	var/colorset = "color" //sepia, oldgrayscale, grayscale, oldcolor, color
 
 /obj/item/camera/early
-	name = "camera"
-	desc = "An early wooden camera. Takes sepia photos."
+	name = "相机"
+	desc = "一台早期木制相机.拍摄棕褐色照片."
 	icon_state = "camera_early"
 	colorset = "sepia"
 	pictures_max = 1
 
 /obj/item/camera/earlymodern
-	name = "camera"
-	desc = "An early 20th century camera. Takes black and white photos."
+	name = "相机"
+	desc = "一台20世纪早期的相机.拍摄黑白照片."
 	icon_state = "camera_ww2"
 	colorset = "grayscale"
 	pictures_max = 5
 
 /obj/item/camera/coldwar
-	name = "camera"
-	desc = "A late 20th century camera. Takes vintage color photos."
+	name = "相机"
+	desc = "一台20世纪晚期的相机.拍摄复古彩色照片."
 	icon_state = "camera_coldwar"
 	colorset = "oldcolor"
 	pictures_max = 8
 
 /obj/item/video_camera
-	name = "video camera"
+	name = "摄像机"
 	icon = 'icons/obj/device.dmi'
-	desc = "A video camera used for broadcasting on news channels."
+	desc = "一台用于新闻频道播报的摄像机."
 	icon_state = "video_camera"
 	item_state = "video_camera"
 
@@ -189,7 +189,7 @@ var/global/photo_count = 0
 	var/nsize = input("Photo Size","Pick a size of resulting photo.") as null|anything in list(1,3,5,7)
 	if(nsize)
 		size = nsize
-		to_chat(usr, "<span class='notice'>Camera will now take [size]x[size] photos.</span>")
+		to_chat(usr, "<span class='notice'>相机现在将拍摄[size]x[size]的照片.</span>")
 
 /obj/item/camera/attack(mob/living/human/M as mob, mob/user as mob)
 	return
@@ -197,9 +197,9 @@ var/global/photo_count = 0
 /obj/item/camera/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/camera_film))
 		if(pictures_left)
-			to_chat(user, "<span class='notice'>[src] still has some film in it!</span>")
+			to_chat(user, "<span class='notice'>[src]里面还有一些胶卷!</span>")
 			return
-		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
+		to_chat(user, "<span class='notice'>你把[I]插入了[src].</span>")
 		qdel(I)
 		pictures_left = pictures_max
 		return
@@ -230,15 +230,15 @@ var/global/photo_count = 0
 	captureimage(target, user, flag)
 
 	playsound(loc, pick('sound/items/polaroid1.ogg', 'sound/items/polaroid2.ogg'), 75, 1, -3)
-	visible_message("Click!")
+	visible_message("咔嚓!")
 	pictures_left--
-	to_chat(user, "<span class='notice'>[pictures_left] photos left.</span>")
+	to_chat(user, "<span class='notice'>[pictures_left]剩余照片数.</span>")
 
 	update_icon()
 
 /obj/item/camera/examine(mob/user)
 	. = ..()
-	to_chat(user, "It has [pictures_left] photo\s left.")
+	to_chat(user, "它还剩下[pictures_left]张照片\s .")
 
 //Proc for capturing check
 /mob/living/proc/can_capture_turf(turf/T)

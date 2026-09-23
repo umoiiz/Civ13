@@ -36,7 +36,7 @@
 	if ((season == "WINTER" && map.triggered_blizzard) && !map.blizzard)
 		if (prob(1) || map.triggered_blizzard)
 			if(prob(50) || map.triggered_blizzard)
-				to_chat(world, "<big>A huge blizzard is approaching!</big>")
+				to_chat(world, "<big>一场巨大的暴风雪正在逼近!</big>")
 				map.triggered_blizzard = FALSE
 				spawn(600)
 					map.blizzard = TRUE
@@ -47,19 +47,19 @@
 	if (map && (season == "SUMMER" || map.triggered_heatwave) && !map.heat_wave)
 		if (prob(1) || map.triggered_heatwave)
 			if(prob(50)|| map.triggered_heatwave)
-				to_chat(world, "<big>The weather starts to get hotter than normal...</big>")
+				to_chat(world, "<big>天气开始变得比平常更热...</big>")
 				map.triggered_heatwave = FALSE
 				spawn(600)
 					map.heat_wave = TRUE
 					change_weather(WEATHER_NONE)
-					to_chat(world, "<big>A heat wave has arrived in this area!</big>")
+					to_chat(world, "<big>热浪已经抵达该地区!</big>")
 					for(var/obj/structure/sink/S)
 						if (istype(S, /obj/structure/sink/well) || istype(S, /obj/structure/sink/puddle))
 							S.dry = TRUE
 							S.update_icon()
 					spawn(rand(3000,3600))
 						map.heat_wave = FALSE
-						to_chat(world, "<big>The heat wave has subsided.</big>")
+						to_chat(world, "<big>热浪已经消退.</big>")
 						for(var/obj/structure/sink/S)
 							if (istype(S, /obj/structure/sink/well) || istype(S, /obj/structure/sink/puddle))
 								S.dry = FALSE
@@ -67,7 +67,7 @@
 	if ((season == "Dry Season" && map.triggered_sandstorm) && !map.sandstorm)
 		if (prob(1) || map.triggered_sandstorm)
 			if(prob(50)|| map.triggered_sandstorm)
-				to_chat(world, "<big>You start seeing dark clouds in the horizon...</big>")
+				to_chat(world, "<big>你开始在地平线上看到乌云...</big>")
 				map.triggered_sandstorm = FALSE
 				spawn(600)
 					map.sandstorm = TRUE

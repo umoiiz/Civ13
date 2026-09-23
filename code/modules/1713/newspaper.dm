@@ -1,6 +1,6 @@
 /obj/item/weapon/newspaper
-	name = "newspaper"
-	desc = "An issue of a local Newspaper."
+	name = "报纸"
+	desc = "一份当地报纸."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
 	w_class = ITEM_SIZE_SMALL	//Let's make it fit in trashbags!
@@ -53,7 +53,7 @@
 obj/item/weapon/newspaper/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/pen))
 		if (scribble_page == curr_page)
-			to_chat(user, "<span class = 'notice'>There's already a scribble in this page... You wouldn't want to make things too cluttered, would you?</span>")
+			to_chat(user, "<span class = 'notice'>这一页上已经有涂鸦了...你不想让页面变得太乱,对吧?</span>")
 		else
 			var/s = sanitize(input(user, "Write something", "Newspaper", ""))
 			s = sanitize(s)

@@ -4,8 +4,8 @@
 	var/anchor = TRUE
 	var/ship = FALSE
 /obj/structure/vehicleparts/axis/ship
-	name = "ship rudder control"
-	desc = "An axis connecting the rudder to the ship's wheel."
+	name = "船舵控制"
+	desc = "连接船舵和船舶方向盘的轴。"
 	currentspeed = 0
 	speeds = 3
 	maxpower = 1200
@@ -15,7 +15,7 @@
 	ship = TRUE
 
 /obj/structure/vehicleparts/axis/ship/heavy
-	name = "heavy rudder control"
+	name = "重型船舵控制"
 	speeds = 3
 	maxpower = 2500
 	speedlist = alist(1=18,2=14,3=10)
@@ -65,7 +65,7 @@
 
 /obj/structure/vehicleparts/axis/ship/do_vehicle_check()
 	if (anchor)
-		visible_message("<span class = 'warning'>\The [name] can't move, the anchor is down!</span>")
+		visible_message("<span class = 'warning'>\The [name]无法移动,锚已放下!</span>")
 		moving = FALSE
 		stopmovementloop()
 		return FALSE
@@ -75,22 +75,22 @@
 			for(var/obj/structure/vehicleparts/movement/sail/MV in masts)
 				if (!engine || (engine && !engine.on))
 					if (MV.broken)
-						visible_message("<span class = 'warning'>\The [name] can't move, a [MV.ntype] is broken!</span>")
+						visible_message("<span class = 'warning'>\The [name]无法移动,[MV.ntype]损坏了!</span>")
 						moving = FALSE
 						stopmovementloop()
 						return FALSE
 					else if (!MV.sails)
-						visible_message("<span class = 'warning'>\The [name] can't move, a [MV.ntype] has no sail!</span>")
+						visible_message("<span class = 'warning'>\The [name]无法移动,[MV.ntype]没有帆!</span>")
 						moving = FALSE
 						stopmovementloop()
 						return FALSE
 					else if (!MV.sails_on)
-						visible_message("<span class = 'warning'>\The [name] can't move, the sails are down!</span>")
+						visible_message("<span class = 'warning'>\The [name]无法移动,帆已降下!</span>")
 						moving = FALSE
 						stopmovementloop()
 						return FALSE
 					else if (anchor)
-						visible_message("<span class = 'warning'>\The [name] can't move, the anchor is down!</span>")
+						visible_message("<span class = 'warning'>\The [name]无法移动,锚已放下!</span>")
 						moving = FALSE
 						stopmovementloop()
 						return FALSE
@@ -98,7 +98,7 @@
 			if (!engine || !engine.on)
 				return FALSE
 			else if (anchor)
-				visible_message("<span class = 'warning'>\The [name] can't move, the anchor is down!</span>")
+				visible_message("<span class = 'warning'>\The [name]无法移动,锚已放下!</span>")
 				moving = FALSE
 				stopmovementloop()
 				return FALSE
@@ -107,7 +107,7 @@
 			var/area/A = get_area(T)
 			if (map && A && map.caribbean_blocking_area_types.Find(A.type))
 				if (!map.faction1_can_cross_blocks() && !map.faction2_can_cross_blocks())
-					visible_message("<span class = 'danger'>You cannot cross the grace wall yet!</span>")
+					visible_message("<span class = 'danger'>你还不能越过恩典之墙!</span>")
 					moving = FALSE
 					stopmovementloop()
 					return FALSE
@@ -132,7 +132,7 @@
 					protec = TRUE
 				if (!protec)
 					if (current_weight >= 800)
-						visible_message("<span class='warning'>\the [src] goes over \the [L]!</span>","<span class='warning'>You go over \the [L]!</span>")
+						visible_message("<span class='warning'>\the [src]碾过\the [L]!</span>","<span class='warning'>你碾过\the [L]!</span>")
 						L.crush()
 						if (L)
 							qdel(L)
@@ -141,46 +141,46 @@
 							var/mob/living/human/HH = L
 							HH.adjustBruteLoss(rand(7,16)*abs(currentspeed))
 							HH.Weaken(rand(2,5))
-							visible_message("<span class='warning'>\the [src] hits \the [L]!</span>","<span class='warning'>You hit \the [L]!</span>")
+							visible_message("<span class='warning'>\the [src]撞到\the [L]!</span>","<span class='warning'>你撞到\the [L]!</span>")
 							L.forceMove(get_turf(get_step(TT,dir)))
 						else if (istype(L,/mob/living/simple_animal))
 							var/mob/living/simple_animal/SA = L
 							SA.adjustBruteLoss(rand(7,16)*abs(currentspeed))
 							if (SA.mob_size >= 30)
-								visible_message("<span class='warning'>\the [src] hits \the [SA]!</span>","<span class='warning'>You hit \the [SA]!</span>")
+								visible_message("<span class='warning'>\the [src]撞到\the [SA]!</span>","<span class='warning'>你撞到\the [SA]!</span>")
 								L.forceMove(get_turf(get_step(TT,dir)))
 							else
-								visible_message("<span class='warning'>\the [src] runs over \the [SA]!</span>","<span class='warning'>You run over \the [SA]!</span>")
+								visible_message("<span class='warning'>\the [src]碾过\the [SA]!</span>","<span class='warning'>你碾过\the [SA]!</span>")
 								SA.crush()
 			for(var/obj/structure/O in T)
 				var/done = FALSE
 				for (var/obj/structure/vehicleparts/frame/FM in O.loc)
 					done = TRUE
 					if (FM.axis != src)
-						visible_message("<span class='warning'>\the [src] hits \the [O]!</span>","<span class='warning'>You hit \the [O]!</span>")
+						visible_message("<span class='warning'>\the [src]撞到\the [O]!</span>","<span class='warning'>你撞到\the [O]!</span>")
 						moving = FALSE
 						stopmovementloop()
 						return FALSE
 				if (!done)
 					if (O.density == TRUE && !(O in transporting))
 						if (current_weight >= 400 && !istype(O, /obj/structure/mailbox) && !istype(O, /obj/structure/barricade/antitank) && !istype(O, /obj/structure/barricade/stone_h/cliffside) && !istype(O, /obj/structure/vehicleparts/frame)&& !istype(O, /obj/structure/vehicleparts/movement))
-							visible_message("<span class='warning'>\the [src] crushes \the [O]!</span>","<span class='warning'>You crush \the [O]!</span>")
+							visible_message("<span class='warning'>\the [src]压碎\the [O]!</span>","<span class='warning'>你压碎\the [O]!</span>")
 							qdel(O)
 						else
-							visible_message("<span class='warning'>\the [src] hits \the [O]!</span>","<span class='warning'>You hit \the [O]!</span>")
+							visible_message("<span class='warning'>\the [src]撞到\the [O]!</span>","<span class='warning'>你撞到\the [O]!</span>")
 							return FALSE
 					else if (O.density == FALSE && !(O in transporting))
 						if (!istype(O, /obj/structure/sign/traffic/zebracrossing) && !istype(O, /obj/structure/sign/traffic/side) && !istype(O, /obj/structure/sign/traffic/central) && !istype(O, /obj/structure/rails))
 	//						visible_message("<span class='warning'>\the [src] crushes \the [O]!</span>","<span class='warning'>You crush \the [O]!</span>")
 							qdel(O)
 			if (T.density == TRUE)
-				visible_message("<span class='warning'>\the [src] hits \the [T]!</span>","<span class='warning'>You hit \the [T]!</span>")
+				visible_message("<span class='warning'>\the [src]撞到\the [T]!</span>","<span class='warning'>你撞到\the [T]!</span>")
 				moving = FALSE
 				stopmovementloop()
 				return FALSE
 			for(var/obj/covers/CV in TT)
 				if  (!(CV in transporting))
-					visible_message("<span class='warning'>\the [src] hits \the [CV]!</span>","<span class='warning'>You hit \the [CV]!</span>")
+					visible_message("<span class='warning'>\the [src]撞到\the [CV]!</span>","<span class='warning'>你撞到\the [CV]!</span>")
 					moving = FALSE
 					stopmovementloop()
 					return FALSE
@@ -208,7 +208,7 @@
 			return FALSE
 		else if (masts.len >= 1)
 			if (get_weight() > maxpower)
-				visible_message("<span class='warning'>\The [src] is too overloaded!</span>")
+				visible_message("<span class='warning'>\The [src]超载太严重了!</span>")
 				return FALSE
 			return 1
 
@@ -223,11 +223,11 @@
 		else
 			if (istype(engine, /obj/structure/engine/external))
 				if (get_weight() > engine.maxpower*20 || get_weight() > maxpower)
-					visible_message("<span class='warning'>\The [engine] struggles and stalls!</span>")
+					visible_message("<span class='warning'>\The [engine]挣扎着熄火了!</span>")
 					return FALSE
 			else
 				if (get_weight() > engine.maxpower*2 || get_weight() > maxpower)
-					visible_message("<span class='warning'>\The [engine] struggles and stalls!</span>")
+					visible_message("<span class='warning'>\The [engine]挣扎着熄火了!</span>")
 					return FALSE
 			if (engine && engine.on)
 				return 2
@@ -239,7 +239,7 @@
 			return FALSE
 		else if (masts.len >= 1)
 			if (get_weight() > maxpower)
-				visible_message("<span class='warning'>\The [src] is too overloaded!</span>")
+				visible_message("<span class='warning'>\The [src]超载太严重了!</span>")
 				return FALSE
 			return 1
 
@@ -280,10 +280,10 @@
 	if (!ishuman(H))
 		return
 	for(var/obj/structure/vehicleparts/frame/F1 in get_turf(get_step(src, WEST)))
-		to_chat(H, "<span class='notice'>The axis needs to be placed at the <b>TOP LEFT</b> corner!</span>")
+		to_chat(H, "<span class='notice'>轴需要放置在<b>左上角</b>角落!</span>")
 		return
 	for(var/obj/structure/vehicleparts/frame/F2 in get_turf(get_step(src, NORTH)))
-		to_chat(H, "<span class='notice'>The axis needs to be placed at the <b>TOP LEFT</b> corner!</span>")
+		to_chat(H, "<span class='notice'>轴需要放置在<b>左上角</b>角落!</span>")
 		return
 	var/inp = WWinput(H, "Are you sure you wan't to assemble a ship here? This has to be the top left corner.", "Vehicle Assembly", "No", list("No", "Yes"))
 	if (inp == "No")
@@ -300,7 +300,7 @@
 			name = customname
 		dir = 1
 		new/obj/effect/autoassembler(locate(x+2,y-2,z))
-		to_chat(H, "<span class='warning'>Vehicle assembled.</span>")
+		to_chat(H, "<span class='warning'>载具已组装。</span>")
 		for (var/obj/O in components)
 			O.update_icon()
 		return
@@ -317,7 +317,7 @@
 			dir = 1
 			forceMove(F.loc)
 			new/obj/effect/autoassembler(locate(x+2,y-2,z))
-			to_chat(H, "<span class='warning'>Vehicle assembled.</span>")
+			to_chat(H, "<span class='warning'>载具已组装。</span>")
 			for (var/obj/O in components)
 				O.update_icon()
 			return
@@ -328,13 +328,13 @@
 		return
 	if(reverse)
 		if (!istype(get_turf(get_step(src,OPPOSITE_DIR(dir))), /turf/floor/beach/water) && !istype(get_turf(get_step(src,OPPOSITE_DIR(dir))), /turf/floor/trench/flooded))
-			visible_message("<span class='notice'>\The [src] crashes into \the [get_turf(get_step(src,dir))]!</span>")
+			visible_message("<span class='notice'>\The [src]撞上\the [get_turf(get_step(src,dir))]!</span>")
 			moving = FALSE
 			stopmovementloop()
 			return
 	else
 		if (!istype(get_turf(get_step(src,dir)), /turf/floor/beach/water) && !istype(get_turf(get_step(src,dir)), /turf/floor/trench/flooded))
-			visible_message("<span class='notice'>\The [src] crashes into \the [get_turf(get_step(src,dir))]!</span>")
+			visible_message("<span class='notice'>\The [src]撞上\the [get_turf(get_step(src,dir))]!</span>")
 			moving = FALSE
 			stopmovementloop()
 			return

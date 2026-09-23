@@ -1,19 +1,19 @@
 /obj/item/remains
-	name = "remains"
+	name = "遗骸"
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
 	anchored = FALSE
 	value = 0
 /obj/item/remains/human
-	desc = "They look like human remains. They have a strange aura about them."
+	desc = "看起来像是人类遗骸. 它们散发着一种奇怪的气息."
 
 /obj/item/remains/mouse
-	desc = "They look like the remains of a small rodent."
+	desc = "看起来像是小型啮齿动物的遗骸."
 	icon_state = "mouse"
 
 /obj/item/remains/lizard
-	desc = "They look like the remains of a small reptile."
+	desc = "看起来像是小型爬行动物的遗骸."
 	icon_state = "lizard"
 
 /obj/item/remains/attack_hand(mob/user as mob)

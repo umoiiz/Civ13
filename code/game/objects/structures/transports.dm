@@ -1,7 +1,7 @@
 /obj/structure/vehicle
-	name = "vehicle"
+	name = "载具"
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
-	desc = "A vehicle."
+	desc = "一辆载具."
 	icon_state = "motorcycle"
 	var/list/ontop = list()
 	var/list/ontop_o = list()
@@ -146,7 +146,7 @@
 				if (!driver)
 					if (wheeled)
 						if (M.put_in_active_hand(dwheel) == FALSE)
-							to_chat(M, "Your hands are full!")
+							to_chat(M, "你的双手已满!")
 							return
 
 					M.driver = TRUE
@@ -231,14 +231,14 @@
 					engine.power_off_connections()
 					engine.currentspeed = 0
 					engine.currentpower = 0
-					to_chat(user, "You turn off the engine.")
+					to_chat(user, "你关闭了引擎.")
 					set_light(0)
 					playsound(loc, engine.ending_snd, 65, FALSE, 2)
 					return
 
-			user.visible_message("<div class='notice'>[user] start leaving \the [src]...</div>","<div class='notice'>You start leaving \the [src]...</div>")
+			user.visible_message("<div class='notice'>[user]开始离开\the [src]...</div>","<div class='notice'>你开始离开\the [src]...</div>")
 			if (do_after(user, leave_time, src))
-				user.visible_message("<div class='notice'>[user] sucessfully leaves \the [src].</div>","<div class='notice'>You leave \the [src].</div>")
+				user.visible_message("<div class='notice'>[user]成功离开了\the [src].</div>","<div class='notice'>你离开了\the [src].</div>")
 				ontop -= user
 				user.pixel_x = 0
 				user.pixel_y = 0
@@ -263,8 +263,8 @@
 		..()
 ///////////////////////////////////////////////////////
 /obj/structure/vehicle/raft
-	name = "raft"
-	desc = "A simple wood raft. Can be used to cross water."
+	name = "木筏"
+	desc = "一个简单的木筏.可用于渡水."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "raft"
 	anchored = FALSE
@@ -282,14 +282,14 @@
 		return FALSE
 	if (driver && istype(DT, /turf/floor/beach/water) || istype(DT, /turf/floor/trench/flooded))
 		if (istype(DT, /turf/floor/beach/water/deep/saltwater) && istype(DT.loc, /area/caribbean/sea))
-			to_chat(driver, "<span class='danger'>You can't go further into the sea with a raft!</span>")
+			to_chat(driver, "<span class='danger'>你无法乘木筏继续深入大海!</span>")
 			return FALSE
 		if (driver in get_turf(src))
 			return TRUE
 		else
 			driver.driver = FALSE
 			driver.driver_vehicle = null
-			to_chat(driver, "You leave the [src].")
+			to_chat(driver, "你离开了[src].")
 			unbuckle_mob()
 			update_overlay()
 			update_icon()
@@ -319,8 +319,8 @@
 //E: 5,31; 5,19
 //W: 31,10; 31,20
 /obj/structure/vehicle/boat
-	name = "outrigger raft"
-	desc = "A simple wood boat. Can be powered by a motor."
+	name = "舷外支架木筏"
+	desc = "一艘简单的木船.可由马达驱动."
 	icon = 'icons/obj/vehicles/vehicleparts64x64.dmi'
 	icon_state = "outrigger_frame3"
 	anchored = FALSE
@@ -348,8 +348,8 @@
 		dwheel.origin = src
 
 /obj/structure/vehicle/boat/b400
-	name = "diesel outrigger"
-	desc = "A 400cc, diesel-powered outrigger. Has a 125u fueltank."
+	name = "柴油舷外支架船"
+	desc = "一艘400cc柴油动力舷外支架船.拥有125u燃料箱."
 	icon_state = "outrigger_frame3"
 	health = 130
 
@@ -369,8 +369,8 @@
 			dwheel.forceMove(src)
 
 /obj/structure/vehicle/boat/rhib
-	name = "rigid hull inflatable boat"
-	desc = "A 400cc, gasoline-powered Ridgid Inflatable Boat. Has a 180u fueltank."
+	name = "硬壳充气艇"
+	desc = "一艘400cc汽油动力硬壳充气艇.拥有180u燃料箱."
 	icon_state = "rib_frame3"
 	health = 300
 	axis = new/obj/structure/vehicleparts/axis/boat/fast
@@ -392,8 +392,8 @@
 			dwheel.forceMove(src)
 
 /obj/structure/vehicle/boat/sailboat
-	name = "sailing outrigger"
-	desc = "A sailing boat. Powered by the wind."
+	name = "帆船舷外支架"
+	desc = "一艘帆船.由风力驱动."
 	icon_state = "outrigger_frame1"
 	health = 130
 	sails = TRUE
@@ -414,7 +414,7 @@
 	if (!sails || !sails_on)
 		return
 	if (!istype(get_turf(get_step(src,dir)), /turf/floor/beach/water) && !istype(get_turf(get_step(src,dir)), /turf/floor/trench/flooded))
-		visible_message("<span class='notice'>\The [src] crashes into \the [get_turf(get_step(src,dir))]!</span>")
+		visible_message("<span class='notice'>\The [src]撞上了\the [get_turf(get_step(src,dir))]!</span>")
 		sails_on = FALSE
 		return
 	if (sails && sails_on)
@@ -622,9 +622,9 @@
 
 /obj/structure/vehicle/boat/attack_hand(mob/living/human/user as mob)
 	if ((user in ontop))
-		user.visible_message("<div class='notice'>[user] starts leaving \the [src]...</div>","<div class='notice'>You start leaving \the [src]...</div>")
+		user.visible_message("<div class='notice'>[user]开始离开\the [src]...</div>","<div class='notice'>你开始离开\the [src]...</div>")
 		if (do_after(user, leave_time, src))
-			user.visible_message("<div class='notice'>[user] leaves \the [src].</div>","<div class='notice'>You leave \the [src].</div>")
+			user.visible_message("<div class='notice'>[user]离开了\the [src].</div>","<div class='notice'>你离开了\the [src].</div>")
 			ontop -= user
 			user.pixel_x = 0
 			user.pixel_y = 0
@@ -678,7 +678,7 @@
 				if (GC && GC.reagents && GC.reagents.has_reagent(i))
 					found = TRUE
 			if (!found)
-				to_chat(user, "\The [W] has no acceptable fuel in it.")
+				to_chat(user, "\The [W]里没有可用的燃料.")
 				update_customdesc()
 				return
 			for (var/i in engine.fuels)
@@ -686,18 +686,18 @@
 					if (GC.reagents.get_reagent_amount(i)<= fueltank.reagents.maximum_volume-fueltank.reagents.total_volume)
 						fueltank.reagents.add_reagent(i,GC.reagents.get_reagent_amount(i))
 						GC.reagents.del_reagent(i)
-						to_chat(user, "You empty \the [W] into the fueltank.")
+						to_chat(user, "你将\the [W]倒入燃料箱.")
 						update_customdesc()
 						return
 					else
 						var/amttransf = fueltank.reagents.maximum_volume-fueltank.reagents.total_volume
 						fueltank.reagents.add_reagent(i,amttransf)
 						GC.reagents.remove_reagent(i,amttransf)
-						to_chat(user, "You fill the fueltank completly with \the [W].")
+						to_chat(user, "你用\the [W]将燃料箱完全加满.")
 						update_customdesc()
 						return
 		else
-			to_chat(user, "The fueltank is full already.")
+			to_chat(user, "燃料箱已经满了.")
 			update_customdesc()
 			return
 	else if (istype(W, /obj/item/vehicleparts/wheel))
@@ -708,16 +708,16 @@
 					engine.power_off_connections()
 					engine.currentspeed = 0
 					engine.currentpower = 0
-					to_chat(user, "You turn off the engine.")
+					to_chat(user, "你关闭了引擎.")
 					moving = FALSE
 					set_light(0)
 					playsound(loc, engine.ending_snd, 65, FALSE, 2)
 					stopmovementloop()
 					return
 
-			user.visible_message("<div class='notice'>[user] starts leaving \the [src]...</div>","<div class='notice'>You start leaving \the [src]...</div>")
+			user.visible_message("<div class='notice'>[user]开始离开\the [src]...</div>","<div class='notice'>你开始离开\the [src]...</div>")
 			if (do_after(user, leave_time, src))
-				user.visible_message("<div class='notice'>[user] sucessfully leaves \the [src].</div>","<div class='notice'>You leave \the [src].</div>")
+				user.visible_message("<div class='notice'>[user]成功离开了\the [src].</div>","<div class='notice'>你离开了\the [src].</div>")
 				ontop -= user
 				user.pixel_x = 0
 				user.pixel_y = 0
@@ -765,7 +765,7 @@
 		return FALSE
 
 	if (driver.stat == UNCONSCIOUS || driver.stat == DEAD)
-		visible_message("<span class='warning'>[driver] falls from \the [src]!</span>","<span class='warning'>You fall from \the [src]!</span>")
+		visible_message("<span class='warning'>[driver]从\the [src]上摔了下来!</span>","<span class='warning'>你从\the [src]上摔了下来!</span>")
 		stopmovementloop()
 		driver.driver = FALSE
 		driver.driver_vehicle = null
@@ -781,7 +781,7 @@
 		if (driver in get_turf(src))
 			return TRUE
 		else
-			to_chat(driver, "You fall off \the [src].")
+			to_chat(driver, "你从\the [src]上摔了下来.")
 			stopmovementloop()
 			driver.driver = FALSE
 			driver.driver_vehicle = null
@@ -823,8 +823,8 @@
 
 ///////////////////////////////////////////////////////
 /obj/structure/vehicle/motorcycle
-	name = "motorcycle"
-	desc = "A motorcycle."
+	name = "摩托车"
+	desc = "一辆摩托车."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "motorcycle"
 	anchored = FALSE
@@ -845,8 +845,8 @@
 		..()
 		dwheel.origin = src
 /obj/structure/vehicle/motorcycle/m125
-	name = "125cc motorcycle"
-	desc = "A 125cc, 4-stroke gasoline motorcycle."
+	name = "125cc摩托车"
+	desc = "一辆125cc四冲程汽油摩托车."
 	icon_state = "motorcycleX"
 	health = 130
 /obj/structure/vehicle/motorcycle/m125/New()
@@ -928,28 +928,28 @@
 	for (var/obj/covers/CV in T)
 		if (CV.density == TRUE)
 			blocked = 1
-			visible_message("<span class='warning'>\The [src] hits \the [CV]!</span>","<span class='warning'>You hit \the [CV]!</span>")
+			visible_message("<span class='warning'>\The [src]撞上了\the [CV]!</span>","<span class='warning'>你撞上了\the [CV]!</span>")
 	for (var/mob/living/L in T)
 		if (ishuman(L))
 			var/mob/living/human/HH = L
 			HH.adjustBruteLoss(rand(7,16)*axis.currentspeed)
 			HH.Weaken(rand(2,5))
 			blocked = 1
-			visible_message("<span class='warning'>\The [src] hits \the [L]!</span>","<span class='warning'>You hit \the [L]!</span>")
+			visible_message("<span class='warning'>\The [src]撞上了\the [L]!</span>","<span class='warning'>你撞上了\the [L]!</span>")
 		else if (istype(L,/mob/living/simple_animal))
 			var/mob/living/simple_animal/SA = L
 			SA.health -= rand(7,16)*axis.currentspeed
 			if (SA.mob_size >= 30)
 				blocked = 1
-				visible_message("<span class='warning'>\The [src] hits \the [SA]!</span>","<span class='warning'>You hit \the [SA]!</span>")
+				visible_message("<span class='warning'>\The [src]撞上了\the [SA]!</span>","<span class='warning'>你撞上了\the [SA]!</span>")
 			else
-				visible_message("<span class='warning'>\The [src] runs over \the [SA]!</span>","<span class='warning'>You run over \the [SA]!</span>")
+				visible_message("<span class='warning'>\The [src]碾过了\the [SA]!</span>","<span class='warning'>你碾过了\the [SA]!</span>")
 	if (blocked)
 		moving = FALSE
 		health -= rand(3,4)*axis.currentspeed
 		driver.adjustBruteLoss(rand(3,4)*axis.currentspeed)
 		if (axis.currentspeed >= 3 || (axis.currentspeed == 2 && prob(50)))
-			visible_message("<span class='warning'>[driver] falls from \the [src]!</span>","<span class='warning'>You fall from \the [src]!</span>")
+			visible_message("<span class='warning'>[driver]从\the [src]上摔了下来!</span>","<span class='warning'>你从\the [src]上摔了下来!</span>")
 			stopmovementloop()
 			driver.SpinAnimation(5,1)
 			var/list/turf/emptyTurfs = new
@@ -970,10 +970,10 @@
 			driver.Weaken(5)
 			driver.adjustBruteLoss(rand(8,19))
 			if (!driver.head)
-				to_chat(driver, "<span class='warning'>Your head hits the ground!</span>")
+				to_chat(driver, "<span class='warning'>你的头撞到了地面!</span>")
 				driver.adjustBrainLoss(rand(5,8))
 			if (driver.head && !istype(driver.head, /obj/item/clothing/head/helmet))
-				to_chat(driver, "<span class='warning'>Your head hits the ground!</span>")
+				to_chat(driver, "<span class='warning'>你的头撞到了地面!</span>")
 				driver.adjustBrainLoss(rand(3,6))
 			if (driver.l_hand == dwheel)
 				driver.remove_from_mob(dwheel)
@@ -1006,7 +1006,7 @@
 		else
 			driver.driver = FALSE
 			driver.driver_vehicle = null
-			to_chat(driver, "You leave the [src].")
+			to_chat(driver, "你离开了[src].")
 			driver.buckled  = null
 			driver.pixel_x = 0
 			driver.pixel_y = 0
@@ -1042,19 +1042,19 @@
 	if (istype(W, /obj/item/weapon/reagent_containers/glass))
 		var/obj/item/weapon/reagent_containers/glass/GC = W
 		if (fueltank.reagents.total_volume >= fueltank.reagents.maximum_volume)
-			to_chat(user, "The fueltank is full already.")
+			to_chat(user, "燃料箱已经满了.")
 		if (fueltank.reagents.total_volume < fueltank.reagents.maximum_volume)
 			if (!GC.reagents.has_reagent("gasoline"))
-				to_chat(user, "\The [W] has no gasoline in it.")
+				to_chat(user, "\The [W]里没有汽油.")
 			if (GC.reagents.get_reagent_amount("gasoline") <= fueltank.reagents.maximum_volume-fueltank.reagents.total_volume)
 				fueltank.reagents.add_reagent("gasoline",GC.reagents.get_reagent_amount("gasoline"))
 				GC.reagents.del_reagent("gasoline")
-				to_chat(user, "You empty \the [W] into the fueltank.")
+				to_chat(user, "你将\the [W]倒入燃料箱.")
 			else
 				var/amttransf = fueltank.reagents.maximum_volume-fueltank.reagents.total_volume
 				fueltank.reagents.add_reagent("gasoline",amttransf)
 				GC.reagents.remove_reagent("gasoline",amttransf)
-				to_chat(user, "You fill the fueltank completely with \the [W].")
+				to_chat(user, "你用\the [W]将燃料箱完全加满.")
 		update_customdesc()
 		return
 	..()
@@ -1069,7 +1069,7 @@
 		overlays += colorov
 
 /obj/structure/vehicle/carriage
-	name = "Carriage"
+	name = "马车"
 	icon = 'icons/obj/vehicles/vehicles96x96.dmi'
 	icon_state = "simple_carriage"
 	anchored = TRUE
@@ -1116,7 +1116,7 @@
 			var/mob/living/M = A
 			if(A == user && M == driver) //The driver shouldnt unbuckle himself like this
 				return
-			visible_message("<div class='notice'>[user] start to remove [M] from the [src]...</div>")
+			visible_message("<div class='notice'>[user]开始从[src]上卸下[M]...</div>")
 			if (do_after(user, 30, src))
 				if(bucklepoint1 == M)
 					bucklepoint1 = null
@@ -1128,7 +1128,7 @@
 					bucklepoint4 = null
 				else if(bucklepoint5 == M)
 					bucklepoint5 = null
-				visible_message("<div class='notice'>[user] sucessfully removes [M] from the [src].</div>")
+				visible_message("<div class='notice'>[user]成功从[src]上卸下了[M].</div>")
 				ontop -= M
 				M.pixel_x = 0
 				M.pixel_y = 0
@@ -1140,7 +1140,7 @@
 		else if(A == pulling1 || A == pulling2 || A == pulling3 || A == pulling4) //Removing a pulling animal?
 			if(istype(A, /mob/living/simple_animal/cattle))
 				var/mob/living/simple_animal/cattle/M = A
-				visible_message("<div class='notice'>[user] tries to untie the [A] from the [src]...</div>")
+				visible_message("<div class='notice'>[user]试图从[src]上解开[A]...</div>")
 				if (do_after(user, 40, src))
 					if(M == pulling1)
 						pulling1 = null
@@ -1154,7 +1154,7 @@
 					else if(M == pulling4)
 						pulling4 = null
 						ontop -= pulling4
-					visible_message("<div class='notice'>[user]  unties the [A] from the [src]...</div>")
+					visible_message("<div class='notice'>[user]从[src]上解开了[A]...</div>")
 					ontop -= M
 					buckled_animal_propulsion -= 1
 					M.buckled = null
@@ -1162,7 +1162,7 @@
 					M.pixel_x = 0
 			else if(istype(A, /mob/living/simple_animal/horse))
 				var/mob/living/simple_animal/horse/M = A
-				visible_message("<div class='notice'>[user] tries to untie the [A] from the [src]...</div>")
+				visible_message("<div class='notice'>[user]试图从[src]上解开[A]...</div>")
 				if (do_after(user, 40, src))
 					if(M == pulling1)
 						pulling1 = null
@@ -1176,7 +1176,7 @@
 					else if(M == pulling4)
 						pulling4 = null
 						ontop -= pulling4
-					visible_message("<div class='notice'>[user]  unties the [A] from the [src]...</div>")
+					visible_message("<div class='notice'>[user]从[src]上解开了[A]...</div>")
 					ontop -= M
 					buckled_animal_propulsion -= 2
 					M.buckled = null
@@ -1200,7 +1200,7 @@
 				ontop_o -= M
 				M.pixel_x = 0
 				M.pixel_y = 0
-				visible_message("[user] takes \the [M] from \the [src].","You take \the [M] from \the [src].")
+				visible_message("[user]从\the [src]上取下了\the [M].","你从\the [src]上取下了\the [M].")
 				current_cargo -= 1
 				M.layer -= src.layer
 				return
@@ -1209,10 +1209,10 @@
 		if(!(M in ontop) && M.driver == FALSE)
 			if (do_after(M, 40, src))
 				M.plane = GAME_PLANE
-				visible_message("<div class='notice'>[M] starts getting on \the driver seat of the [src]...</div>")
+				visible_message("<div class='notice'>[M]开始坐上[src]的\the 驾驶座...</div>")
 				if (wheeled)
 					if (M.put_in_active_hand(dwheel) == FALSE)
-						to_chat(M, "Your hands are full!")
+						to_chat(M, "你的双手已满!")
 						return
 				M.forceMove(get_turf(src))
 				M.driver = TRUE
@@ -1239,17 +1239,17 @@
 						M.pixel_x = -18
 						M.pixel_y = 16
 						M.dir = WEST
-				visible_message("<div class='notice'>[M] sucessfully climbs into the [src]'s driver seat.</div>")
+				visible_message("<div class='notice'>[M]成功爬进了[src]的驾驶座.</div>")
 		return
 	else if(istype(A, /mob/living/simple_animal/cattle) && (buckled_animal_propulsion < max_animal_propulsion)) //Attaching a pulling animal?
 		var/mob/living/simple_animal/cattle/M = A
 		if(pulling1 == null || pulling2 == null || pulling3 == null || pulling4 == null)
-			user.visible_message("[user] tries to tie the [M] to the [src].")
+			user.visible_message("[user]试图将[M]系到[src]上.")
 			if(do_after(user, 30, src))
 				buckle_mob(M)
 				ontop += M
 				M.buckled = 1
-				user.visible_message("[user] ties the [M] to the [src].")
+				user.visible_message("[user]将[M]系到了[src]上.")
 				if(!pulling1)
 					pulling1 = M
 				else if(!pulling2)
@@ -1265,12 +1265,12 @@
 	else if(istype(A, /mob/living/simple_animal/horse) && (buckled_animal_propulsion < max_animal_propulsion)) //Attaching a pulling animal?
 		var/mob/living/simple_animal/horse/M = A
 		if(pulling1 == null || pulling2 == null || pulling3 == null || pulling4 == null)
-			user.visible_message("[user] tries to tie the [M] to the [src].")
+			user.visible_message("[user]试图将[M]系到[src]上.")
 			if(do_after(user, 30, src))
 				buckle_mob(M)
 				ontop += M
 				M.buckled = 1
-				user.visible_message("[user] ties the [M] to the [src].")
+				user.visible_message("[user]将[M]系到[src]上.")
 				if(!pulling1)
 					pulling1 = M
 				else if(!pulling2)
@@ -1287,9 +1287,9 @@
 		var/seat = null
 		if(A != driver && (A != pulling1 && A != pulling2 && A != pulling3 && A != pulling4))
 			if(A == user) //Passenger climbing by himself
-				visible_message("<div class='notice'>[user] starts climbing on the [src] as a passenger...</div>")
+				visible_message("<div class='notice'>[user]作为乘客开始攀爬[src]...</div>")
 			else
-				visible_message("<div class='notice'>[user] tries to place [A] over the carriage...</div>")
+				visible_message("<div class='notice'>[user]试图将[A]放置在车厢上方...</div>")
 			if(!bucklepoint1)
 				if(istype(A, /mob/living))
 					var/mob/living/M = A
@@ -1398,7 +1398,7 @@
 			else if(istype(A, /mob/living))
 				var/mob/living/M = A
 				M.forceMove(get_turf(src))
-			visible_message("<div class='notice'>[user] sucessfully places [A] over the carriage...</div>")
+			visible_message("<div class='notice'>[user]成功将[A]放置在车厢上方...</div>")
 			switch(seat)
 				if(1)
 					A.pixel_x = pixel_x
@@ -1834,7 +1834,7 @@
 
 /obj/structure/vehicle/carriage/attack_hand(mob/living/human/user as mob)
 	if ((user in ontop))
-		visible_message("<div class='notice'>[user] starts leaving \the [src]...</div>","<div class='notice'>You start leaving \the [src]...</div>")
+		visible_message("<div class='notice'>[user]开始离开\the [src]...</div>","<div class='notice'>你开始离开\the [src]...</div>")
 		if (do_after(user, leave_time, src))
 			if(bucklepoint1 == user)
 				bucklepoint1 = null
@@ -1846,7 +1846,7 @@
 				bucklepoint4 = null
 			else if(bucklepoint5 == user)
 				bucklepoint5 = null
-			visible_message("<div class='notice'>[user] sucessfully leaves \the [src].</div>","<div class='notice'>You leave \the [src].</div>")
+			visible_message("<div class='notice'>[user]成功离开\the [src].</div>","<div class='notice'>你离开\the [src].</div>")
 			if (user == driver)
 				user.driver = FALSE
 				user.driver_vehicle = null
@@ -1899,12 +1899,12 @@
 	for (var/obj/structure/O in t1)
 		if (O.density == TRUE && O != src)
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [O]!</span>","<span class='warning'>You hit \the [O]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [O]!</span>","<span class='warning'>你击中\the [O]!</span>")
 			break
 	for (var/obj/structure/O in t2)
 		if (O.density == TRUE && O != src)
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [O]!</span>","<span class='warning'>You hit \the [O]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [O]!</span>","<span class='warning'>你击中\the [O]!</span>")
 			break
 	if (t1.density == TRUE || t2.density == TRUE)
 		blocked = 1
@@ -1913,16 +1913,16 @@
 			blocking = t1
 		else
 			blocking = t2
-		visible_message("<span class='warning'>\the [src] hits \the [blocking]!</span>","<span class='warning'>You hit \the [T]!</span>")
+		visible_message("<span class='warning'>\the [src]击中\the [blocking]!</span>","<span class='warning'>你击中\the [T]!</span>")
 	for (var/obj/covers/CV in t1)
 		if (CV.density == TRUE)
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [CV]!</span>","<span class='warning'>You hit \the [CV]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [CV]!</span>","<span class='warning'>你击中\the [CV]!</span>")
 			break
 	for (var/obj/covers/CV in t2)
 		if (CV.density == TRUE)
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [CV]!</span>","<span class='warning'>You hit \the [CV]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [CV]!</span>","<span class='warning'>你击中\the [CV]!</span>")
 			break
 	for(var/mob/living/L in t1)
 		if (ishuman(L))
@@ -1930,35 +1930,35 @@
 			HH.adjustBruteLoss(rand(7,16)*axis.currentspeed)
 			HH.Weaken(rand(2,5))
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [L]!</span>","<span class='warning'>You hit \the [L]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [L]!</span>","<span class='warning'>你击中\the [L]!</span>")
 		else if (istype(L,/mob/living/simple_animal))
 			var/mob/living/simple_animal/SA = L
 			SA.health -= rand(7,16)*axis.currentspeed
 			if (SA.mob_size >= 30)
 				blocked = 1
-				visible_message("<span class='warning'>\the [src] hits \the [SA]!</span>","<span class='warning'>You hit \the [SA]!</span>")
+				visible_message("<span class='warning'>\the [src]击中\the [SA]!</span>","<span class='warning'>你击中\the [SA]!</span>")
 			else
-				visible_message("<span class='warning'>\the [src] runs over \the [SA]!</span>","<span class='warning'>You run over \the [SA]!</span>")
+				visible_message("<span class='warning'>\the [src]碾过\the [SA]!</span>","<span class='warning'>你碾过\the [SA]!</span>")
 	for(var/mob/living/L in t2)
 		if (ishuman(L))
 			var/mob/living/human/HH = L
 			HH.adjustBruteLoss(rand(7,16)*axis.currentspeed)
 			HH.Weaken(rand(2,5))
 			blocked = 1
-			visible_message("<span class='warning'>\the [src] hits \the [L]!</span>","<span class='warning'>You hit \the [L]!</span>")
+			visible_message("<span class='warning'>\the [src]击中\the [L]!</span>","<span class='warning'>你击中\the [L]!</span>")
 		else if (istype(L,/mob/living/simple_animal))
 			var/mob/living/simple_animal/SA = L
 			SA.health -= rand(7,16)*axis.currentspeed
 			if (SA.mob_size >= 30)
 				blocked = 1
-				visible_message("<span class='warning'>\the [src] hits \the [SA]!</span>","<span class='warning'>You hit \the [SA]!</span>")
+				visible_message("<span class='warning'>\the [src]击中\the [SA]!</span>","<span class='warning'>你击中\the [SA]!</span>")
 			else
-				visible_message("<span class='warning'>\the [src] runs over \the [SA]!</span>","<span class='warning'>You run over \the [SA]!</span>")
+				visible_message("<span class='warning'>\the [src]碾过\the [SA]!</span>","<span class='warning'>你碾过\the [SA]!</span>")
 	if (blocked)
 		moving = FALSE
 		health -= rand(3,4)*axis.currentspeed
 		if (axis.currentspeed >= 3 || (axis.currentspeed == 2 && prob(30)))
-			visible_message("<span class='warning'>[driver] falls from \the [src]!</span>","<span class='warning'>You fall from \the [src]!</span>")
+			visible_message("<span class='warning'>[driver]从\the [src]上摔落!</span>","<span class='warning'>你从\the [src]上摔落!</span>")
 			stopmovementloop()
 			driver.SpinAnimation(5,1)
 			driver.buckled = null
@@ -1971,7 +1971,7 @@
 			driver.Weaken(3)
 			driver.adjustBruteLoss(rand(0,8))
 			if (prob(10)) //10% chance to hit the head hard, inside the 30% chance
-				to_chat(driver, "<span class='warning'>Your head hits the ground!</span>")
+				to_chat(driver, "<span class='warning'>你的头撞到了地面!</span>")
 				driver.adjustBrainLoss(rand(0,5))
 			if (driver.l_hand == dwheel)
 				driver.remove_from_mob(dwheel)
@@ -2005,7 +2005,7 @@
 		else
 			driver.driver = FALSE
 			driver.driver_vehicle = null
-			to_chat(driver, "You leave the [src].")
+			to_chat(driver, "你离开了[src].")
 			driver.buckled = null
 			driver.pixel_x = 0
 			driver.pixel_y = 0
@@ -2033,7 +2033,7 @@
 			if(pulling1.burnloss + pulling1.oxyloss + pulling1.toxloss + pulling1.bruteloss >= pulling1.health) //Is it dead?
 				axis.currentspeed = 0
 				stopmovementloop()
-				visible_message("<span class='warning'>The dead [pulling1.name] stops the [src] from moving!</span>")
+				visible_message("<span class='warning'>死亡的[pulling1.name]挡住了[src]的移动!</span>")
 				return
 			else
 				pulling1.simplehunger -= 1 //Each step -1 hunger. Basically doubles it's food comsuption while carrying the carriage
@@ -2041,7 +2041,7 @@
 			if(pulling2.burnloss + pulling2.oxyloss + pulling2.toxloss + pulling2.bruteloss >= pulling2.health) //Is it dead?
 				axis.currentspeed = 0
 				stopmovementloop()
-				visible_message("<span class='warning'>The dead [pulling2.name] stops the [src] from moving!</span>")
+				visible_message("<span class='warning'>死亡的[pulling2.name]挡住了[src]的移动!</span>")
 				return
 			else
 				pulling2.simplehunger -= 1
@@ -2049,7 +2049,7 @@
 			if(pulling3.burnloss + pulling3.oxyloss + pulling3.toxloss + pulling3.bruteloss >= pulling3.health) //Is it dead?
 				axis.currentspeed = 0
 				stopmovementloop()
-				visible_message("<span class='warning'>The dead [pulling2.name] stops the [src] from moving!</span>")
+				visible_message("<span class='warning'>死亡的[pulling2.name]挡住了[src]的移动!</span>")
 				return
 			else
 				pulling3.simplehunger -= 1
@@ -2057,7 +2057,7 @@
 			if(pulling4.burnloss + pulling4.oxyloss + pulling4.toxloss + pulling4.bruteloss >= pulling4.health) //Is it dead?
 				axis.currentspeed = 0
 				stopmovementloop()
-				visible_message("<span class='warning'>The dead [pulling2.name] stops the [src] from moving!</span>")
+				visible_message("<span class='warning'>死亡的[pulling2.name]挡住了[src]的移动!</span>")
 				return
 			else
 				pulling4.simplehunger -= 1

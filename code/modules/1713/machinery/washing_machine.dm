@@ -23,11 +23,11 @@
 
 	if(state != 4)
 		if (state == 5)
-			to_chat(usr, "The washing machine is already running.")
+			to_chat(usr, "洗衣机已经在运行了.")
 		else if (state == 3)
-			to_chat(usr, "You need to close the door first.")
+			to_chat(usr, "你需要先关上门.")
 		else
-			to_chat(usr, "You need to fill the washing machine with something.")
+			to_chat(usr, "你需要往洗衣机里放些东西.")
 		return
 	state = 5
 	update_icon()

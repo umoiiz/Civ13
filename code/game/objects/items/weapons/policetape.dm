@@ -1,6 +1,6 @@
 //Define all tape types in policetape.dm
 /obj/item/taperoll
-	name = "tape roll"
+	name = "胶带卷"
 	icon = 'icons/obj/policetape.dmi'
 	icon_state = "tape"
 	w_class = ITEM_SIZE_SMALL
@@ -14,11 +14,11 @@ var/list/image/hazard_overlays
 var/list/tape_roll_applications = list()
 
 /obj/item/taperoll/no_tape
-	name = "tape roll"
+	name = "胶带卷"
 	can_be_used = FALSE
 
 /obj/item/tape
-	name = "tape"
+	name = "胶带"
 	icon = 'icons/obj/policetape.dmi'
 	icon_state = "tape"
 	anchored = 1
@@ -50,14 +50,14 @@ var/list/tape_roll_applications = list()
 		hazard_overlays["[WEST]"]	= new/image('icons/effects/warning_stripes.dmi', icon_state = "W")
 
 /obj/item/taperoll/police
-	name = "police tape"
-	desc = "A roll of police tape used to block off crime scenes from the public."
+	name = "警戒线"
+	desc = "一卷用于封锁犯罪现场、阻止公众进入的警戒线."
 	tape_type = /obj/item/tape/police
 	color = COLOR_YELLOW
 
 /obj/item/tape/police
-	name = "police tape"
-	desc = "A length of police tape.  Do not cross."
+	name = "警戒线"
+	desc = "一段警戒线. 请勿跨越."
 	color = COLOR_YELLOW
 
 /obj/item/taperoll/update_icon()
@@ -88,14 +88,14 @@ var/list/tape_roll_applications = list()
 		return
 	if(!start)
 		start = get_turf(src)
-		to_chat(usr, "<span class='notice'>You place the first end of \the [src].</span>")
+		to_chat(usr, "<span class='notice'>你将\the [src]的第一端放置好.</span>")
 		update_icon()
 	else
 		end = get_turf(src)
 		if(start.y != end.y && start.x != end.x || start.z != end.z)
 			start = null
 			update_icon()
-			to_chat(usr, "<span class='notice'>\The [src] can only be laid horizontally or vertically.</span>")
+			to_chat(usr, "<span class='notice'>\The [src]只能水平或垂直铺设.</span>")
 			return
 
 		if(start == end)
@@ -113,7 +113,7 @@ var/list/tape_roll_applications = list()
 			if(!possible_dirs)
 				start = null
 				update_icon()
-				to_chat(usr, "<span class='notice'>You can't place \the [src] here.</span>")
+				to_chat(usr, "<span class='notice'>你无法在这里放置\the [src].</span>")
 				return
 			if(possible_dirs & (NORTH|SOUTH))
 				var/obj/item/tape/TP = new tape_type(start)
@@ -129,7 +129,7 @@ var/list/tape_roll_applications = list()
 				TP.update_icon()
 			start = null
 			update_icon()
-			to_chat(usr, "<span class='notice'>You finish placing \the [src].</span>")
+			to_chat(usr, "<span class='notice'>你完成了\the [src]的铺设.</span>")
 			return
 
 		var/turf/cur = start
@@ -154,7 +154,7 @@ var/list/tape_roll_applications = list()
 		if (!can_place)
 			start = null
 			update_icon()
-			to_chat(usr, "<span class='warning'>You can't run \the [src] through that!</span>")
+			to_chat(usr, "<span class='warning'>你无法让\the [src]穿过那里!</span>")
 			return
 
 		cur = start
@@ -192,7 +192,7 @@ var/list/tape_roll_applications = list()
 			cur = get_step_towards(cur,end)
 		start = null
 		update_icon()
-		to_chat(usr, "<span class='notice'>You finish placing \the [src].</span>")
+		to_chat(usr, "<span class='notice'>你完成了\the [src]的铺设.</span>")
 		return
 
 /obj/item/taperoll/afterattack(var/atom/A, mob/user as mob, proximity)
@@ -207,7 +207,7 @@ var/list/tape_roll_applications = list()
 		P.loc = locate(T.x,T.y,T.z)
 		P.update_icon()
 		P.layer = 3.2
-		to_chat(user, "<span class='notice'>You finish placing \the [src].</span>")
+		to_chat(user, "<span class='notice'>你完成了\the [src]的铺设.</span>")
 
 	if (isfloor(A))
 		var/turf/F = A
@@ -217,11 +217,11 @@ var/list/tape_roll_applications = list()
 			tape_roll_applications[F] = 0
 
 		if(tape_roll_applications[F] & direction) // hazard_overlay in F.overlays wouldn't work.
-			user.visible_message("\The [user] uses the adhesive of \the [src] to remove area markings from \the [F].", "You use the adhesive of \the [src] to remove area markings from \the [F].")
+			user.visible_message("\The [user]使用\the [src]的粘合剂来清除\the [F]上的区域标记.", "你使用\the [src]的粘合剂来清除\the [F]上的区域标记.")
 			F.overlays -= hazard_overlay
 			tape_roll_applications[F] &= ~direction
 		else
-			user.visible_message("\The [user] applied \the [src] on \the [F] to create area markings.", "You apply \the [src] on \the [F] to create area markings.")
+			user.visible_message("\The [user]将\the [src]贴附在\the [F]上以创建区域标记.", "你将\the [src]贴附在\the [F]上以创建区域标记.")
 			F.overlays |= hazard_overlay
 			tape_roll_applications[F] |= direction
 		return
@@ -240,7 +240,7 @@ var/list/tape_roll_applications = list()
 	if(!lifted && ismob(mover))
 		var/mob/M = mover
 		add_fingerprint(M)
-		to_chat(M, "<span class='warning'>You are not supposed to go past [src]...</span>")
+		to_chat(M, "<span class='warning'>你不应该越过[src]...</span>")
 		if(M.a_intent == I_HELP)
 			return 0
 		crumple()
@@ -295,7 +295,7 @@ var/list/tape_roll_applications = list()
 
 /obj/item/tape/proc/breaktape(obj/item/weapon/W as obj, mob/user as mob)
 	if(user.a_intent == I_HELP && ((!can_puncture(W))))
-		to_chat(user, "You can't break \the [src] with that!")
+		to_chat(user, "你无法用那个东西破坏\the [src]!")
 		return
 	user.show_viewers("<span class='notice'>\The [user] breaks \the [src]!</span>")
 

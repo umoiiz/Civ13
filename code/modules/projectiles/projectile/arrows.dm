@@ -1,5 +1,5 @@
 /obj/item/projectile/arrow
-	name = "arrow"
+	name = "箭"
 	icon_state = "arrow"
 	damage = 40
 	damage_type = BRUTE

@@ -63,7 +63,7 @@
 					return
 	// Added voice muffling for Issue 41.
 	if (stat == UNCONSCIOUS || sleeping > 0)
-		to_chat(src, "<I>... You can almost hear someone talking ...</I>")
+		to_chat(src, "<I>... 你几乎能听到有人在说话 ...</I>")
 	else
 		to_chat(src, msg)
 	return
@@ -308,7 +308,7 @@
 	if (mind)
 		mind.show_memory(src)
 	else
-		to_chat(src, "The game appears to have misplaced your mind datum, so we can't show you your notes.")
+		to_chat(src, "游戏似乎弄丢了你的思维数据,所以我们无法向你显示你的笔记.")
 
 
 /mob/verb/add_memory(msg as message)
@@ -372,7 +372,7 @@
 /mob/proc/update_flavor_text()
 	set src in usr
 	if (usr != src)
-		to_chat(usr, "No.")
+		to_chat(usr, "不.")
 	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null, extra = FALSE)
 
 	if (msg != null)
@@ -408,7 +408,7 @@
 
 	src << browse(null, "window=memory")
 
-	to_chat(src, "You can respawn now, enjoy your new life!")
+	to_chat(src, "你现在可以重生,享受你的新生活吧!")
 	stop_ambience(src)
 
 	log_game("[name]/[key] used abandon mob.")
@@ -548,22 +548,22 @@
 		return
 
 	if (AM.anchored || istype(AM, /obj/item/football))
-		to_chat(src, "<span class='warning'>It won't budge!</span>")
+		to_chat(src, "<span class='warning'>它纹丝不动!</span>")
 		return
 
 	var/mob/M = AM
 	if (ismob(AM))
 
 		if (!can_pull_mobs || !can_pull_size)
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, "<span class='warning'>它纹丝不动!</span>")
 			return
 
 		if ((mob_size < M.mob_size) && (can_pull_mobs != MOB_PULL_LARGER))
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, "<span class='warning'>它纹丝不动!</span>")
 			return
 
 		if ((mob_size == M.mob_size) && (can_pull_mobs == MOB_PULL_SMALLER))
-			to_chat(src, "<span class='warning'>It won't budge!</span>")
+			to_chat(src, "<span class='warning'>它纹丝不动!</span>")
 			return
 
 		// If your size is larger than theirs and you have some
@@ -579,7 +579,7 @@
 		var/obj/I = AM
 		if(!istype(I, /obj/structure/cannon/modern/voyage))
 			if (!can_pull_size || can_pull_size < I.w_class || istype(I, /obj/item/football))
-				to_chat(src, "<span class='warning'>It won't budge!</span>")
+				to_chat(src, "<span class='warning'>它纹丝不动!</span>")
 				return
 
 	if (pulling)
@@ -937,11 +937,11 @@ mob/proc/yank_out_object()
 	usr.setClickCooldown(20)
 
 	if (usr.stat == TRUE)
-		to_chat(usr, "You are unconscious and cannot do that!")
+		to_chat(usr, "你处于昏迷状态,无法这样做!")
 		return
 
 	if (usr.restrained())
-		to_chat(usr, "You are restrained and cannot do that!")
+		to_chat(usr, "你被束缚住了,无法这样做!")
 		return
 
 	var/mob/S = src
@@ -955,9 +955,9 @@ mob/proc/yank_out_object()
 	valid_objects = get_visible_implants(0)
 	if (!valid_objects.len)
 		if (self)
-			to_chat(src, "You have nothing stuck in your body that is large enough to remove.")
+			to_chat(src, "你体内没有卡着大到足以取出的东西.")
 		else
-			to_chat(U, "[src] has nothing stuck in their wounds that is large enough to remove.")
+			to_chat(U, "[src] 的伤口里没有卡着大到足以取出的东西.")
 		return
 
 	var/obj/item/weapon/selection = input("What do you want to yank out?", "Embedded objects") in valid_objects
@@ -1081,9 +1081,9 @@ mob/proc/yank_out_object()
 	set_face_dir()
 
 	if (!facing_dir)
-		to_chat(usr, "You are no longer facing anything.")
+		to_chat(usr, "你不再面向任何东西.")
 	else
-		to_chat(usr, "You are now facing [dir2text(facing_dir)].")
+		to_chat(usr, "你现在面向 [dir2text(facing_dir)].")
 	if (ishuman(src))
 		var/mob/living/human/H = src
 		if (H.HUDneed.Find("fixeye"))

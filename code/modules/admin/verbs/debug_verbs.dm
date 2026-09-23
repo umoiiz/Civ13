@@ -33,7 +33,7 @@ var/global/say_disabled = FALSE
 	set category = "Mapping"
 	set name = "Disable all communication verbs"
 
-	to_chat(usr, "<span class = 'red'>This proc is code-disabled.</span>")
+	to_chat(usr, "<span class = 'red'>此过程已被代码禁用.</span>")
 
 	/*say_disabled = !say_disabled
 	if (say_disabled)
@@ -48,7 +48,7 @@ var/global/movement_disabled_exception //This is the client that calls the proc,
 	set category = "Mapping"
 	set name = "Disable all movement"
 
-	to_chat(usr, "<span class = 'red'>This proc is code-disabled.</span>")
+	to_chat(usr, "<span class = 'red'>此过程已被代码禁用.</span>")
 
 	/*movement_disabled = !movement_disabled
 	if (movement_disabled)

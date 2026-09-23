@@ -59,20 +59,20 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 							message_admins("<span class='adminnotice'>Notice: DEFCON [defcon_pretty()]. The Master Controller has not fired in the last [(5-defcon) * processing_interval] ticks.</span>")
 							--defcon
 						if(2)
-							to_chat(admins, "<span class='boldannounce'>Warning: DEFCON [defcon_pretty()]. The Master Controller has not fired in the last [(5-defcon) * processing_interval] ticks. Automatic restart in [processing_interval] ticks.</span>")
+							to_chat(admins, "<span class='boldannounce'>警告: DEFCON [defcon_pretty()]. 主控制器在过去[(5-defcon) * processing_interval]个tick内未触发.将在[processing_interval]个tick后自动重启.</span>")
 							--defcon
 						if(1)
 
-							to_chat(admins, "<span class='boldannounce'>Warning: DEFCON [defcon_pretty()]. The Master Controller has still not fired within the last [(5-defcon) * processing_interval] ticks. Killing and restarting...</span>")
+							to_chat(admins, "<span class='boldannounce'>警告: DEFCON [defcon_pretty()]. 主控制器在过去[(5-defcon) * processing_interval]个tick内仍未触发.正在终止并重启...</span>")
 							--defcon
 							var/rtn = Recreate_MC()
 							if(rtn > 0)
 								defcon = 4
 								master_iteration = 0
-								to_chat(admins, "<span class='adminnotice'>MC restarted successfully</span>")
+								to_chat(admins, "<span class='adminnotice'>MC重启成功</span>")
 							else if(rtn < 0)
 								log_game("FailSafe: Could not restart MC, runtime encountered. Entering defcon 0")
-								to_chat(admins, "<span class='boldannounce'>ERROR: DEFCON [defcon_pretty()]. Could not restart MC, runtime encountered. I will silently keep retrying.</span>")
+								to_chat(admins, "<span class='boldannounce'>错误: DEFCON [defcon_pretty()]. 无法重启MC,遇到运行时错误.我将静默地继续重试.</span>")
 							//if the return number was 0, it just means the mc was restarted too recently, and it just needs some time before we try again
 							//no need to handle that specially when defcon 0 can handle it
 						if(0) //DEFCON 0! (mc failed to restart)
@@ -80,7 +80,7 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe)
 							if(rtn > 0)
 								defcon = 4
 								master_iteration = 0
-								to_chat(admins, "<span class='adminnotice'>MC restarted successfully</span>")
+								to_chat(admins, "<span class='adminnotice'>MC重启成功</span>")
 				else
 					defcon = min(defcon + 1,5)
 					master_iteration = Master.iteration

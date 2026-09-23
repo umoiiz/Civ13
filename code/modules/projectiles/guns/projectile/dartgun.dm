@@ -1,6 +1,6 @@
 //default dart
 /obj/item/projectile/bullet/chemdart
-	name = "dart"
+	name = "飞镖"
 	icon_state = "dart"
 	damage = 5
 	sharp = TRUE
@@ -23,15 +23,15 @@
 
 //bone dart
 /obj/item/projectile/bullet/chemdart/bone
-	name = "bone dart"
+	name = "骨镖"
 	icon_state = "bdart"
 	damage = 2.5
 	reagent_amount = 7
 
 //DARTS WHAT HOLD CHEMICALS
 /obj/item/ammo_casing/chemdart
-	name = "chemical dart"
-	desc = "A small hardened, hollow dart."
+	name = "化学镖"
+	desc = "一支小型硬化空心飞镖."
 	icon_state = "dart"
 	caliber = "dart"
 	projectile_type = /obj/item/projectile/bullet/chemdart
@@ -40,15 +40,15 @@
 	qdel(src)
 
 /obj/item/ammo_casing/chemdart/bone
-	name = "bone dart"
-	desc = "A small hardened, hollow dart."
+	name = "骨镖"
+	desc = "一支小型硬化空心飞镖."
 	icon_state = "bdart"
 	projectile_type = /obj/item/projectile/bullet/chemdart/bone
 
 //BASE FANCY DART GUN MAGAZINE
 /obj/item/ammo_magazine/chemdart
-	name = "dart cartridge"
-	desc = "A rack of hollow darts."
+	name = "飞镖弹匣"
+	desc = "一盒空心飞镖."
 	icon_state = "darts"
 	item_state = "darts"
 	mag_type = MAGAZINE
@@ -58,8 +58,8 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/chemdart/mag
-	name = "dart magazine"
-	desc = "A magazine of hollow darts."
+	name = "飞镖弹匣"
+	desc = "一匣空心飞镖."
 	icon_state = "dartmag"
 	item_state = "dartmag"
 	mag_type = MAGAZINE
@@ -86,8 +86,8 @@
 
 //FANCY DART GUN
 /obj/item/weapon/gun/projectile/dartgun/dartgun
-	name = "dart gun"
-	desc = "Zeng-Hu Pharmaceutical's entry into the arms market, the Z-H P Artemis is a gas-powered dart gun capable of delivering chemical cocktails swiftly across short distances."
+	name = "飞镖枪"
+	desc = "Zeng-Hu制药进军武器市场的产品,Z-H P Artemis是一种气动飞镖枪,能够在短距离内迅速投射化学混合剂."
 
 	icon_state = "dartgun-empty"
 
@@ -129,8 +129,8 @@
 
 	//BLOWGUN
 /obj/item/weapon/gun/projectile/dartgun/blowgun
-	name = "blow gun"
-	desc = "A bamboo tube used to spit single darts."
+	name = "吹箭筒"
+	desc = "一根用于吹射单支飞镖的竹管."
 	icon_state = "blowgun"
 	base_icon = "blowgun"
 	item_state = "blowgun"
@@ -166,11 +166,11 @@
 	//	return
 	..()
 	if (beakers.len)
-		to_chat(user, "<span class = 'notice'>[src] contains:</span>")
+		to_chat(user, "<span class = 'notice'>[src]包含:</span>")
 		for(var/obj/item/weapon/reagent_containers/B in beakers)
 			if(B.reagents && B.reagents.reagent_list.len)
 				for(var/datum/reagent/R in B.reagents.reagent_list)
-					to_chat(user, "<span class = 'notice'>[R.volume] units of [R.name]</span>")
+					to_chat(user, "<span class = 'notice'>[R.volume]单位[R.name]</span>")
 
 /obj/item/weapon/gun/projectile/dartgun/attackby(obj/item/I as obj, mob/user as mob)
 	if (..()) // handle attachments
@@ -178,16 +178,16 @@
 
 	if(istype(I, /obj/item/weapon/reagent_containers))
 		if(!istype(I, container_type))
-			to_chat(user, "<span class = 'notice'>[I] doesn't seem to fit into [src].</span>")
+			to_chat(user, "<span class = 'notice'>[I]似乎装不进[src].</span>")
 			return
 		if(beakers.len >= max_beakers)
-			to_chat(user, "<span class = 'notice'>[src] already has [max_beakers] beakers in it - another one isn't going to fit!</span>")
+			to_chat(user, "<span class = 'notice'>[src]里面已经有[max_beakers]个烧杯了 - 再放一个可装不下!</span>")
 			return
 		var/obj/item/weapon/reagent_containers/B = I
 		user.drop_item()
 		B.loc = src
 		beakers += B
-		to_chat(user, "<span class = 'notice'>You slot [B] into [src].</span>")
+		to_chat(user, "<span class = 'notice'>你将[B]放入[src].</span>")
 		updateUsrDialog()
 		return TRUE
 	..()
@@ -257,7 +257,7 @@
 		if(index <= beakers.len)
 			if(beakers[index])
 				var/obj/item/weapon/reagent_containers/B = beakers[index]
-				to_chat(usr, "You remove [B] from [src].")
+				to_chat(usr, "你从[src]中取出[B].")
 				mixing -= B
 				beakers -= B
 				B.loc = get_turf(src)
@@ -267,8 +267,8 @@
 	return
 
 /obj/item/weapon/gun/projectile/dartgun/bolt
-	name = "bolt action dart gun"
-	desc = "A single shot dart gun operated by bolt."
+	name = "栓动飞镖枪"
+	desc = "一种由枪栓操作的单发飞镖枪."
 	icon_state = "dartbolt"
 	base_icon = "dartbolt"
 	item_state = "dartbolt"
@@ -305,8 +305,8 @@
 
 
 /obj/item/weapon/gun/projectile/dartgun/mag
-	name = "semi-automatic dart gun"
-	desc = "A single shot dart gun operated by bolt."
+	name = "半自动飞镖枪"
+	desc = "一种由枪栓操作的单发飞镖枪."
 	icon_state = "magdart"
 
 	item_state = null

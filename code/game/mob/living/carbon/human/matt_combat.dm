@@ -19,5 +19,5 @@
 	step(src,lol) //move them
 	var/mob/living/human/H = src
 	H.adaptStat("dexterity", 2)
-	visible_message("<font color='yellow'><big><b>[src.name] dodges out of the way!</b></big></font>") //send a message
+	visible_message("<font color='yellow'><big><b>[src.name] 闪身躲开了!</b></big></font>") //send a message
 	//be on our way

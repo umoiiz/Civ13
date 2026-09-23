@@ -2,8 +2,8 @@
 ////////////////////PEMMICAN/////////////////////
 /////////////////////////////////////////////////
 /obj/item/weapon/reagent_containers/food/snacks/pemmican
-	name = "Pemmican"
-	desc = "A paste of dried meat mixed with melted fat."
+	name = "肉糜饼"
+	desc = "一种干肉与融化脂肪混合制成的糊状物."
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "pemmican"
 	center_of_mass = list("x"=17, "y"=18)
@@ -19,7 +19,7 @@
 		bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/driedmeat/minced_driedmeat //Dried meat, basically
-	name = "minced dried meat"
+	name = "切碎的干肉"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "minced_driedmeat"
 
@@ -45,8 +45,8 @@
 /////////////////////////////////////////////////
 
 /obj/item/weapon/pigleg
-	name = "raw ham"
-	desc = "A raw, bloody pork leg."
+	name = "生火腿"
+	desc = "一条生的、带血猪腿."
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "bloody_ham"
 	force = WEAPON_FORCE_WEAK+5
@@ -61,26 +61,26 @@
 
 /obj/item/weapon/pigleg/bloodless
 	bloody = FALSE
-	name = "bloodless raw ham"
-	desc = "A raw, bloodless pork leg."
+	name = "无血生火腿"
+	desc = "一条生的、无血猪腿."
 	icon_state = "no_blood_ham"
 
 /obj/item/weapon/pigleg/salted
 	bloody = FALSE
-	name = "salted ham"
-	desc = "A salted, but not dried, pork leg."
+	name = "腌火腿"
+	desc = "一条腌制但未干燥的猪腿."
 	icon_state = "salted_ham"
 	salted = TRUE
 
 /obj/item/weapon/pigleg/salted/dried
-	name = "dried ham"
-	desc = "A dried, ready-to-eat ham. Delicious!"
+	name = "干火腿"
+	desc = "一条干燥、即食的火腿. 美味!"
 	icon_state = "dried_ham"
 	ready = TRUE
 
 /obj/item/weapon/pigleg/salted/dried/packaged
-	name = "packaged ham"
-	desc = "A dried, ready-to-eat ham, wrapped in a protective case. Delicious!"
+	name = "包装火腿"
+	desc = "一条干燥、即食的火腿,包裹在保护壳中. 美味!"
 	icon_state = "labeled_ham"
 
 /obj/item/weapon/pigleg/attackby(var/obj/item/W as obj, var/mob/living/human/user as mob)
@@ -109,8 +109,8 @@
 /////////////////////////////////////////////////
 
 /obj/structure/salting_container
-	name = "salting container"
-	desc = "A wood container, used to salt foods for preservation."
+	name = "腌制容器"
+	desc = "一个木制容器,用于腌制食物以保存。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "salting_container"
 	flammable = TRUE
@@ -124,8 +124,8 @@
 	var/salting = FALSE
 
 /obj/item/weapon/reagent_containers/food/snacks/curedham
-	name = "cured ham slice"
-	desc = "Delicious Iberian-style jamon."
+	name = "腌制火腿片"
+	desc = "美味的伊比利亚风味火腿。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "ham_ready_to_eat"
 	trash = null
@@ -148,7 +148,7 @@
 			to_chat(user, SPAN_WARNING("Add some product first!"))
 			return
 		if (saltamount < 30)
-			user.visible_message(SPAN_NOTICE("[user] adds salt to the container."), "You [pick("drop", "throw", "lightly throw", "sprinkle")] \the [W] into the container.")
+			user.visible_message(SPAN_NOTICE("[user] adds salt to the container."), "你将[pick("drop", "throw", "lightly throw", "sprinkle")]\the [W]放入容器中。")
 			saltamount += W.reagents.get_reagent_amount("sodiumchloride")
 			qdel(W)
 			if (saltamount >= 30)
@@ -224,8 +224,8 @@
 
 ///////////////////////////////LARGE/DEHYDRATOR///////////////////////////////
 /obj/structure/drying_rack
-	name = "drying rack"
-	desc = "A large iron drying rack, used to dry hams and other food products."
+	name = "晾晒架"
+	desc = "一个大型铁制晾晒架,用于晾晒火腿和其他食品。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "drying_rack"
 	flammable = FALSE
@@ -247,8 +247,8 @@
 			if (P.salted && !P.bloody && !P.ready)
 				max_capacity = 3
 				H.visible_message(
-					"<span class='notice'>You can see how [H.name] hangs \the [W.name] to dry.</span>",
-					"<span class='notice'>You hang \the [W.name] to dry.")
+					"<span class='notice'>你可以看到[H.name]挂在\the [W.name]上晾晒。</span>",
+					"<span class='notice'>你将\the [W.name]挂起来晾晒。")
 				producttype_name = "ham"
 				producttype = /obj/item/weapon/pigleg
 				filled += 1
@@ -259,8 +259,8 @@
 		if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/sausage/salted))
 			max_capacity = 5
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] hangs \the [W.name] to dry.</span>",
-				"<span class='notice'>You hang \the [W.name] to dry.")
+				"<span class='notice'>你可以看到[H.name]挂在\the [W.name]上晾晒。</span>",
+				"<span class='notice'>你将\the [W.name]挂起来晾晒。")
 			producttype_name = "salami"
 			producttype = /obj/item/weapon/reagent_containers/food/snacks/sausage/salted
 			filled += 1
@@ -277,8 +277,8 @@
 			if (P.salted && !P.bloody && !P.ready)
 				max_capacity = 3
 				H.visible_message(
-					"<span class='notice'>You can see how [H.name] hangs \the [W.name] to dry.</span>",
-					"<span class='notice'>You hang \the [W.name] to dry.")
+					"<span class='notice'>你可以看到[H.name]挂在\the [W.name]上晾晒。</span>",
+					"<span class='notice'>你将\the [W.name]挂起来晾晒。")
 				producttype_name = "ham"
 				producttype = /obj/item/weapon/pigleg
 				filled += 1
@@ -289,8 +289,8 @@
 		if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/sausage/salted))
 			max_capacity = 5
 			H.visible_message(
-				"<span class='notice'>You can see how [H.name] hangs \the [W.name] to dry.</span>",
-				"<span class='notice'>You hang \the [W.name] to dry.")
+				"<span class='notice'>你可以看到[H.name]挂在\the [W.name]上晾晒。</span>",
+				"<span class='notice'>你将\the [W.name]挂起来晾晒。")
 			producttype_name = "salami"
 			producttype = /obj/item/weapon/reagent_containers/food/snacks/sausage/salted
 			filled += 1
@@ -303,7 +303,7 @@
 		if (obj_type == /obj/item/weapon/reagent_containers/food/snacks/sausage/salted)
 			if (isturf(src.loc))
 				new/obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami(src.loc)
-			visible_message("The [producttype_name] finishes drying.")
+			visible_message("[producttype_name]晾晒完成了。")
 			filled -= 1
 			if (filled)
 				icon_state = "drying_rack_[producttype_name]_[filled]"
@@ -316,7 +316,7 @@
 		if (obj_type == /obj/item/weapon/pigleg)
 			if (isturf(src.loc))
 				new/obj/item/weapon/pigleg/salted/dried(src.loc)
-			visible_message("The [producttype_name] finishes drying.")
+			visible_message("[producttype_name]晾晒完成了。")
 			filled -= 1
 			if (filled)
 				icon_state = "drying_rack_[producttype_name]_[filled]"
@@ -328,8 +328,8 @@
 /////////////////////////////////////////////////
 
 /obj/item/weapon/chicken_carcass
-	name = "chicken carcass"
-	desc = "A whole chicken."
+	name = "鸡胴体"
+	desc = "一整只鸡。"
 	icon = 'icons/obj/food/chicken.dmi'
 	icon_state = "chicken_carcass"
 	force = WEAPON_FORCE_WEAK
@@ -359,9 +359,9 @@
 
 /obj/item/weapon/chicken_carcass/attackby(obj/item/weapon/W as obj, mob/living/human/user as mob)
 	if (istype(W, /obj/item/weapon/material/kitchen/utensil/knife) && !rotten)
-		to_chat(user, "You start separating the chicken parts...")
+		to_chat(user, "你开始分解鸡肉...")
 		if (do_after(user, 75, src))
-			to_chat(user, "You finish cutting the chicken.")
+			to_chat(user, "你切好了鸡肉。")
 			new/obj/item/weapon/reagent_containers/food/snacks/chicken/breast(loc)
 			new/obj/item/weapon/reagent_containers/food/snacks/chicken/wing(loc)
 			new/obj/item/weapon/reagent_containers/food/snacks/chicken/drumstick(loc)
@@ -369,9 +369,9 @@
 		return
 	..()
 /obj/item/weapon/reagent_containers/food/snacks/chicken
-	name = "chicken part"
+	name = "鸡部位"
 	icon = 'icons/obj/food/chicken.dmi'
-	desc = "A large chicken breast."
+	desc = "一块大鸡胸肉。"
 	icon_state = "chicken_breast"
 	health = 180
 	filling_color = "#E7B7B4"
@@ -387,32 +387,32 @@
 	satisfaction = -3
 
 /obj/item/weapon/reagent_containers/food/snacks/chicken/breast
-	name = "chicken breast"
-	desc = "A large chicken breast."
+	name = "鸡胸肉"
+	desc = "一块大鸡胸肉。"
 	icon_state = "chicken_breast"
 	rotten_icon_state = "rotten_chicken_breast"
 
 	attackby(obj/item/weapon/W as obj, mob/living/human/user as mob)
 		if (istype(W, /obj/item/weapon/hammer) && !findtext(icon_state, "flat") && !rotten)
-			to_chat(user, "You start flattening the chicken breast...")
+			to_chat(user, "你开始拍平鸡胸肉...")
 			if (do_after(user, 50, src))
-				to_chat(user, "You finish flattening the chicken breast.")
-				name = "flattened chicken breast"
+				to_chat(user, "你拍平了鸡胸肉。")
+				name = "拍平的鸡胸肉"
 				icon_state = "chicken_breast_flat"
 			return
 		else if (istype(W, /obj/item/weapon/reagent_containers/food/condiment/flour) && !rotten && !findtext(icon_state, "crumbed") && findtext(icon_state, "flat"))
 			var/obj/item/weapon/reagent_containers/food/condiment/flour/F = W
 			if (F.reagents.has_reagent("flour", 5))
 				F.reagents.remove_reagent("flour", 5)
-			to_chat(user, "You roll \the [src] in the flour.")
+			to_chat(user, "你将\the [src]裹上面粉。")
 			satisfaction = -4
 			icon_state = "[icon_state]_crumbed"
-			name = "crumbed [name]"
+			name = "裹粉的[name]"
 			return
 		..()
 /obj/item/weapon/reagent_containers/food/snacks/chicken/wing
-	name = "chicken wing"
-	desc = "A chicken wing."
+	name = "鸡翅"
+	desc = "一只鸡翅。"
 	icon_state = "chicken_wing"
 	bitesize = 2
 	satisfaction = -2
@@ -427,16 +427,16 @@
 			var/obj/item/weapon/reagent_containers/food/condiment/flour/F = W
 			if (F.reagents.has_reagent("flour", 5))
 				F.reagents.remove_reagent("flour", 5)
-			to_chat(user, "You roll \the [src] in the flour.")
+			to_chat(user, "你将\the [src]裹上面粉。")
 			icon_state = "[icon_state]_crumbed"
-			name = "crumbed [name]"
+			name = "裹粉的[name]"
 			satisfaction = -3
 			return
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/chicken/drumstick
-	name = "chicken drumstick"
-	desc = "A chicken drumstick."
+	name = "鸡腿"
+	desc = "一只鸡腿。"
 	icon_state = "chicken_drumstick"
 	bitesize = 2
 	satisfaction = -2
@@ -450,10 +450,10 @@
 			var/obj/item/weapon/reagent_containers/food/condiment/flour/F = W
 			if (F.reagents.has_reagent("flour", 5))
 				F.reagents.remove_reagent("flour", 5)
-			to_chat(user, "You roll \the [src] in the flour.")
+			to_chat(user, "你将\the [src]裹上面粉。")
 			satisfaction = -3
 			icon_state = "[icon_state]_crumbed"
-			name = "crumbed [name]"
+			name = "裹粉的[name]"
 			return
 		..()
 
@@ -466,8 +466,8 @@
 	icon = 'icons/obj/complex_foods.dmi'
 
 /obj/item/weapon/reagent_containers/food/snacks/cow/stomach
-	name = "cow stomach"
-	desc = "A stomach from a cow."
+	name = "牛胃"
+	desc = "一个牛胃。"
 	icon_state = "cow_stomach"
 	bitesize = 1
 	satisfaction = -1
@@ -481,8 +481,8 @@
 		reagents.add_reagent("protein", 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/pig/stomach
-	name = "pig stomach"
-	desc = "A stomach from a pig."
+	name = "猪胃"
+	desc = "一个猪胃。"
 	icon_state = "pig_stomach"
 	bitesize = 1
 	satisfaction = -1
@@ -497,16 +497,16 @@
 
 //I am just adding it to pig/stomach since it drops less the a big ol' cow/stomach.
 /obj/item/weapon/reagent_containers/food/snacks/pig/stomach/goat
-	name = "goat stomach"
-	desc = "A stomach from a goat."
+	name = "羊胃"
+	desc = "一个羊胃。"
 
 /obj/item/weapon/reagent_containers/food/snacks/pig/stomach/sheep
-	name = "sheep stomach"
-	desc = "A stomach from a sheep."
+	name = "绵羊胃"
+	desc = "一个绵羊胃。"
 
 /obj/item/stack/sausagecasing
-	name = "Sausage Casing"
-	desc = "A casing made from a animals stomach to hold meat."
+	name = "肠衣"
+	desc = "由动物胃制成的肠衣,用于装肉。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "sausage_casing"
 	force = 0
@@ -518,7 +518,7 @@
 	if (!rotten && istype(W,/obj/item/weapon/material/kitchen/utensil/knife))
 		new /obj/item/weapon/reagent_containers/food/snacks/tripe(src)
 		new /obj/item/weapon/reagent_containers/food/snacks/tripe(src)
-		to_chat(user, "You cut the lining out of the stomach.")
+		to_chat(user, "你从胃上切下了内衬。")
 		if(map.ordinal_age >= 1)
 			var/obj/item/stack/sausagecasing/SC = new /obj/item/stack/sausagecasing(src)
 			SC.amount = 3
@@ -528,7 +528,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/pig/stomach/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (!rotten && istype(W,/obj/item/weapon/material/kitchen/utensil/knife))
 		new /obj/item/weapon/reagent_containers/food/snacks/tripe(src)
-		to_chat(user, "You cut the lining out of the stomach.")
+		to_chat(user, "你从胃上切下了内衬。")
 		if(map.ordinal_age >= 1)
 			var/obj/item/stack/sausagecasing/SC = new /obj/item/stack/sausagecasing(src)
 			SC.amount = 2
@@ -536,8 +536,8 @@
 	else
 		..()
 /obj/item/weapon/reagent_containers/food/snacks/tripe
-	name = "tripe"
-	desc = "stomach lining, tasty!"
+	name = "肚"
+	desc = "胃内衬,美味!"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "tripe"
 	bitesize = 1
@@ -552,8 +552,8 @@
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage
-	name = "sausage"
-	desc = "Meat in a convenient casing."
+	name = "香肠"
+	desc = "装在方便肠衣里的肉。"
 	icon_state = "sausage"
 	icon = 'icons/obj/complex_foods.dmi'
 	bitesize = 4
@@ -568,8 +568,8 @@
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage/bratwurst
-	name = "bratwurst"
-	desc = "German sausage in a slightly larger casing ."
+	name = "德式香肠"
+	desc = "装在稍大肠衣里的德国香肠。"
 	icon_state = "bratwurst"
 	icon = 'icons/obj/complex_foods.dmi'
 	bitesize = 5
@@ -584,8 +584,8 @@
 		reagents.add_reagent("protein", 4)
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage/salted
-	name = "salted sausage"
-	desc = "Meat in a convenient casing. Salted"
+	name = "腌香肠"
+	desc = "装在方便肠衣里的肉。腌制过的"
 	icon_state = "sausage_salted"
 	icon = 'icons/obj/complex_foods.dmi'
 	bitesize = 4
@@ -600,9 +600,9 @@
 
 /obj/item/stack/sausagecasing/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon/reagent_containers/food/snacks/mince))
-		to_chat(user, "You start stuffing the casing with the mince.")
+		to_chat(user, "你开始将肉馅灌入肠衣。")
 		if (do_after(user, 10))
-			to_chat(user, "You stuff the casing with the mince.")
+			to_chat(user, "你将肉馅灌入了肠衣。")
 			new /obj/item/weapon/reagent_containers/food/snacks/sausage(user.loc)
 			qdel(W)
 			src.amount -= 1
@@ -612,8 +612,8 @@
 		..()
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami
-	name = "salami"
-	desc = "Meat in a convenient casing, dried and salted."
+	name = "萨拉米香肠"
+	desc = "装在方便肠衣里的肉,经过晾晒和腌制。"
 	icon_state = "salami"
 	icon = 'icons/obj/complex_foods.dmi'
 	bitesize = 4
@@ -629,7 +629,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami/attackby(var/obj/item/W as obj, var/mob/living/human/user as mob)
 	if (istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
-		to_chat(user, "You slice the salami up.")
+		to_chat(user, "你切开了萨拉米香肠。")
 		new/obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami/slice(user.loc)
 		new/obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami/slice(user.loc)
 		new/obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami/slice(user.loc)
@@ -638,8 +638,8 @@
 		return
 
 /obj/item/weapon/reagent_containers/food/snacks/sausage/salted/salami/slice
-	name = "salami slice"
-	desc = "Meat in a convenient casing, dried and salted, sliced."
+	name = "萨拉米香肠片"
+	desc = "装在方便肠衣里的肉,经过晾晒和腌制,切片。"
 	icon_state = "salami_slice"
 	icon = 'icons/obj/complex_foods.dmi'
 	bitesize = 1
@@ -660,8 +660,8 @@
 //Make mincing work similar to how stew does, all ingredients described.
 
 /obj/item/weapon/reagent_containers/food/snacks/mince
-	name = "minced meat"
-	desc = "Blended meat."
+	name = "肉馅"
+	desc = "混合的肉。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "minced_meat"
 	filling_color = "#DB0000"
@@ -677,8 +677,8 @@
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/meatball
-	name = "meatball"
-	desc = "Round meat."
+	name = "肉丸"
+	desc = "圆形的肉。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "meatball_raw"
 	filling_color = "#DB0000"
@@ -694,8 +694,8 @@
 		reagents.add_reagent("protein", 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/patty
-	name = "meat patty"
-	desc = "Circular meat."
+	name = "肉饼"
+	desc = "圆形的肉。"
 	icon_state = "patty_raw"
 	icon = 'icons/obj/complex_foods.dmi'
 	filling_color = "#DB0000"
@@ -711,8 +711,8 @@
 		reagents.add_reagent("protein", 2)
 
 /obj/structure/meat_grinder
-	name = "meat grinder"
-	desc = "A tool used for grinding meat."
+	name = "绞肉机"
+	desc = "用于绞肉的工具。"
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "meat_grinder_new"
 	var/empty_state = "meat_grinder_new"
@@ -726,11 +726,11 @@
 
 /obj/structure/meat_grinder/attack_hand(mob/living/human/user as mob)
 	if (input != null)
-		to_chat(user, "You start to crank the lever.")
+		to_chat(user, "你开始转动摇杆。")
 		icon_state = active_state
 		if (do_after(user, 35))
 			playsound(loc, 'sound/effects/rollermove.ogg', 35, TRUE)
-			to_chat(user, "The grinder plops out some mince!")
+			to_chat(user, "绞肉机挤出了一些肉馅!")
 			for(var/i=1, i<=output_amount, i++)
 				new /obj/item/weapon/reagent_containers/food/snacks/mince(get_turf(src))
 			input = null
@@ -744,21 +744,21 @@
 			input = W
 			output_amount = 4
 			icon_state = full_state
-			to_chat(user, "You insert the [W] into the [src].")
+			to_chat(user, "你把[W]塞进了[src]里.")
 			qdel(W)
 			return
 		else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/meat) || istype(W, /obj/item/weapon/reagent_containers/food/snacks/rawfish/) || istype(W, /obj/item/weapon/reagent_containers/food/snacks/chicken))
 			input = W
 			output_amount = 2
 			icon_state = full_state
-			to_chat(user, "You insert the [W] into the [src].")
+			to_chat(user, "你把[W]塞进了[src]里.")
 			qdel(W)
 			return
 		else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/rawcutlet) || istype(W, /obj/item/weapon/reagent_containers/food/snacks/fishfillet))
 			input = W
 			output_amount = 1
 			icon_state = full_state
-			to_chat(user, "You insert the [W] into the [src].")
+			to_chat(user, "你把[W]塞进了[src]里.")
 			qdel(W)
 			return
 		else
@@ -771,8 +771,8 @@
 ///////////////////////////////////////////
 
 /obj/structure/cutting_board
-	name = "cutting board"
-	desc = "A wood board used to prepare food."
+	name = "砧板"
+	desc = "一块用来准备食物的木板."
 	icon = 'icons/obj/complex_foods.dmi'
 	icon_state = "cutting_board"
 	flammable = TRUE
@@ -783,27 +783,27 @@
 /obj/structure/cutting_board/attack_hand(var/mob/living/human/H)
 	if(input != null)
 		if(do_after(H, 20))
-			to_chat(H, "You scrape off the cutting board")
+			to_chat(H, "你刮掉了砧板上的东西")
 			input = null
 			icon_state = "cutting_board_dirty"
 			return
 		else
-			to_chat(H, "You stop scraping off the cutting board")
+			to_chat(H, "你停止了刮砧板")
 			return
 	else if(input == null && icon_state == "cutting_board_dirty")
 		if(do_after(H, 15))
-			to_chat(H, "You clean the cutting board of all it's filty grime")
+			to_chat(H, "你把砧板上所有肮脏的污垢都清理干净")
 			icon_state = "cutting_board"
 			return
 		else
-			to_chat(H, "You stop cleaning the cutting board")
+			to_chat(H, "你停止了清理砧板")
 			return
 
 /obj/structure/cutting_board/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/material/kitchen/utensil/knife))
 		if(input != null)
 			if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/fishfillet) || istype(input, /obj/item/weapon/reagent_containers/food/snacks/rawcutlet))
-				to_chat(user, "You begin to mince the [input].")
+				to_chat(user, "你开始切碎[input].")
 				playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
 				if(do_after(user, 180))
 					playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
@@ -812,10 +812,10 @@
 					new /obj/item/weapon/reagent_containers/food/snacks/mince(src.loc)
 					return
 				else
-					to_chat(user, "You stop mincing.")
+					to_chat(user, "你停止了切碎.")
 					return
 			else if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/meat) || istype(input, /obj/item/weapon/reagent_containers/food/snacks/rawfish))
-				to_chat(user, "You begin to mince the [input].")
+				to_chat(user, "你开始切碎[input].")
 				playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
 				if(do_after(user, 180))
 					playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
@@ -825,29 +825,29 @@
 					new /obj/item/weapon/reagent_containers/food/snacks/mince(src.loc)
 					return
 				else
-					to_chat(user, "You stop mincing.")
+					to_chat(user, "你停止了切碎.")
 					return
 			else if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/mince))
 				playsound(loc, 'sound/effects/squishy.ogg', 10, TRUE)
 				if(do_after(user, 10))
 					playsound(loc, 'sound/effects/squishy.ogg', 10, TRUE)
-					to_chat(user, "You form the [input] into a meatball!")
+					to_chat(user, "你把[input]捏成了一个肉丸!")
 					input = null
 					icon_state = "cutting_board_dirty"
 					new /obj/item/weapon/reagent_containers/food/snacks/meatball(src.loc)
 					return
 				else
-					to_chat(user, "You stop forming the [input].")
+					to_chat(user, "你停止了捏[input].")
 					return
 			else if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/meatball))
-				to_chat(user, "You smash the [input] into a patty!")
+				to_chat(user, "你把[input]拍成了一个肉饼!")
 				playsound(loc, 'sound/effects/squishy.ogg', 5, TRUE)
 				input = null
 				icon_state = "cutting_board_dirty"
 				new /obj/item/weapon/reagent_containers/food/snacks/patty(src.loc)
 				return
 			else if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/driedmeat))
-				to_chat(user, "You begin to mince the [input].")
+				to_chat(user, "你开始切碎[input].")
 				playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
 				if(do_after(user, 180))
 					playsound(loc, 'sound/effects/chop.ogg', 60, TRUE)
@@ -856,53 +856,53 @@
 					new /obj/item/weapon/reagent_containers/food/snacks/driedmeat/minced_driedmeat(src.loc)
 					return
 			else
-				to_chat(user, "You need to put something on the cutting board!")
+				to_chat(user, "你需要往砧板上放点东西!")
 				return
 	else if(input == null && istype(W, /obj/item/weapon/reagent_containers/food/snacks))
 		if(istype(input, /obj/item/weapon/reagent_containers/food/snacks/fishfillet) || istype(input, /obj/item/weapon/reagent_containers/food/snacks/rawcutlet))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_cutlet"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/mince))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_mince"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/mince))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_mince"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/meat))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_steak"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/rawfish))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_fish"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/meatball))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_meatball"
 			qdel(W)
 			return
 		else if(istype(W, /obj/item/weapon/reagent_containers/food/snacks/driedmeat))
 			input = W
-			to_chat(user, "You place the [W] on the cutting board.")
+			to_chat(user, "你把[W]放在了砧板上.")
 			icon_state = "cutting_board_driedmeat"
 			qdel(W)
 			return
 		else
-			to_chat(user, "You cannot put that on [src]!")
+			to_chat(user, "你不能把那个放在[src]上!")
 	else
 		..()
 	..()

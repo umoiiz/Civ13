@@ -23,13 +23,13 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/special_check(mob/user)
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险开启时你无法发射\the [src]!</span>")
 		return FALSE
 	if (!user.has_empty_hand(both = FALSE))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能发射\the [src]!</span>")
 		return FALSE
 	if (jammed_until > world.time)
-		to_chat(user, "<span class = 'danger'>\The [src] has jammed! You can't fire it until it has unjammed.</span>")
+		to_chat(user, "<span class = 'danger'>\The [src]卡壳了! 在排除故障前你无法发射它.</span>")
 		return FALSE
 	return TRUE
 
@@ -49,7 +49,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/svt
 	name = "SVT-40"
-	desc = "Soviet semi-automatic rifle chambered in 7.62x54mmR."
+	desc = "苏联半自动步枪,发射7.62x54mmR弹药."
 	icon_state = "svt"
 	item_state = "svt"
 	base_icon = "svt"
@@ -88,7 +88,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/ptrs
 	name = "PTRS-41"
-	desc = "Soviet semi-automatic antimaterial rifle chambered in 14.5x114mm."
+	desc = "苏联半自动反器材步枪,发射14.5x114mm弹药."
 	icon_state = "ptrs"
 	item_state = "ptrs"
 	base_icon = "ptrs"
@@ -117,8 +117,8 @@
 	scope_mounts = list("kochetov")
 
 /obj/item/weapon/gun/projectile/semiautomatic/avtomat
-	name = "Fedorov Avtomat"
-	desc = "Russian automatic rifle, used during WWI."
+	name = "费德洛夫自动步枪"
+	desc = "俄国自动步枪,曾在第一次世界大战中使用."
 	icon_state = "avtomat"
 	item_state = "svt"
 	base_icon = "avtomat"
@@ -144,8 +144,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/semiautomatic/remington11
-	name = "Remington 11"
-	desc = "An American semi-automatic shotgun."
+	name = "雷明顿11"
+	desc = "一款美国半自动霰弹枪."
 	icon_state = "remington11"
 	item_state = "remington11"
 	base_icon = "remington11"
@@ -165,7 +165,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/sks
 	name = "SKS"
-	desc = "A Soviet semi-automatic rifle chambered in 7.62x39mm."
+	desc = "一款苏联半自动步枪,发射7.62x39mm弹药."
 	icon_state = "sks"
 	item_state = "mosin"
 	base_icon = "sks"
@@ -200,14 +200,14 @@
 		overlays += scope_image
 
 /obj/item/weapon/gun/projectile/semiautomatic/sks/chinese
-	name = "Type 56 carbine"
-	desc = "A Chinese variant of the Soviet semi-automatic rifle chambered in 7.62x39mm."
+	name = "56式半自动步枪"
+	desc = "苏联半自动步枪的中国仿制型,发射7.62x39mm弹药."
 	weight = 3.86
 	barrel_x_offset = 15
 
 /obj/item/weapon/gun/projectile/semiautomatic/sks/sksm
 	name = "SKS-M"
-	desc = "A Soviet semi-automatic rifle chambered in 7.62x39mm. This is the updated version based on the Type 63 that is compatible with AK-47 magazines."
+	desc = "一款苏联半自动步枪,发射7.62x39mm弹药.这是基于63式改进、可兼容AK-47弹匣的版本."
 	icon_state = "sksm"
 	item_state = "sks"
 	base_icon = "sksm"
@@ -220,7 +220,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/svd
 	name = "SVD"
-	desc = "A Soviet designated marksman's rifle, feeding from detachable 10-round magazines. Chambered in 7.62x54mmR."
+	desc = "一款苏联精确射手步枪,使用可拆卸的10发弹匣供弹.发射7.62x54mmR弹药."
 	icon_state = "svd"
 	item_state = "svd"
 	base_icon = "svd"
@@ -268,7 +268,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/g41
 	name = "Gewehr 41"
-	desc = "A German semi-automatic rifle using 7.92x57mm Mauser ammunition in a 10 round non-detachable magazine."
+	desc = "一款德国半自动步枪,使用7.92x57mm毛瑟弹药,配备10发固定弹匣."
 	icon_state = "g41"
 	item_state = "g41"
 	base_icon = "g41"
@@ -301,7 +301,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/g43
 	name = "Gewehr 43"
-	desc = "A German semi-automatic rifle, the Gewehr 43, utilizes 7.92x57mm Mauser ammunition and features a 10-round detachable magazine."
+	desc = "一款德国半自动步枪,Gewehr 43使用7.92x57mm毛瑟弹药,配备10发可拆卸弹匣."
 	icon_state = "g43"
 	item_state = "g43"
 	base_icon = "g43"
@@ -336,7 +336,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/vg5
 	name = "Volkssturmkarabiner 98"
-	desc = "A very simple german semi automatic chambered in 7.92x33mm Kurz."
+	desc = "一款非常简易的德国半自动步枪,发射7.92x33mm Kurz弹药."
 	icon_state = "vg5"
 	item_state = "vg5"
 	base_icon = "vg5"
@@ -370,8 +370,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/semiautomatic/m1garand
-	name = "M1 Garand"
-	desc = "An American semi-automatic rifle, the M1 Garand, utilizes .30-06 ammunition and features an 8-round internal magazine."
+	name = "M1加兰德"
+	desc = "一款美国半自动步枪,M1加兰德使用.30-06弹药,配备8发内置弹匣."
 	icon_state = "m1garand"
 	item_state = "m1garand"
 	base_icon = "m1garand"
@@ -396,8 +396,8 @@
 	accuracy = 2
 
 /obj/item/weapon/gun/projectile/semiautomatic/m1garand/match //Match grade weapons are built to a higher standard than service grade weapons.
-	name = "M1 Garand Match"
-	desc = "An American semi-automatic rifle using .30-06 ammunition in a 8 round internal magazine, this one was made with better quality control."
+	name = "M1加兰德竞赛型"
+	desc = "一款美国半自动步枪,使用.30-06弹药,配备8发内置弹匣,这一款在质量控制上更为优良."
 	w_class = ITEM_SIZE_LARGE
 	weight = 4.8
 	force = 15
@@ -405,7 +405,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/ar15
 	name = "Bushmaster XM-15"
-	desc = "A civilian semi-automatic rifle chambered in 5.56x45mm."
+	desc = "一款民用半自动步枪,发射5.56x45mm弹药."
 	icon = 'icons/obj/guns/assault_rifles.dmi'
 	icon_state = "m4"
 	item_state = "m4"
@@ -430,8 +430,8 @@
 	accuracy = 3
 
 /obj/item/weapon/gun/projectile/semiautomatic/m1carbine
-	name = "M1 Carbine"
-	desc = "An American Light semi-automatic rifle using 7.62×33mm (Rimless.30 Carbine) ammunition in a external magazine."
+	name = "M1卡宾枪"
+	desc = "一款美国轻型半自动步枪,使用7.62×33mm(无缘式.30卡宾枪)弹药,采用外置弹匣供弹."
 	icon_state = "mcar"
 	item_state = "mcar"
 	base_icon = "mcar"
@@ -455,7 +455,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/vintorez
 	name = "VSS Vintorez"
-	desc = "A marksman's rifle featuring an integral supressor originating from the Soviet Union. Feeding from detachable 10-round magazines. Chambered in 9x39mm."
+	desc = "一款源自苏联的精确射手步枪,配备一体式消音器.使用可拆卸的10发弹匣供弹.发射9x39mm弹药."
 	icon_state = "vintorez"
 	item_state = "vintorez"
 	base_icon = "vintorez"
@@ -488,8 +488,8 @@
 	SP.attached(null,src,TRUE)
 
 /obj/item/weapon/gun/projectile/semiautomatic/barrett
-	name = "Barrett M82"
-	desc = "The Barrett M82 is a recoil-operated, semi-automatic anti-materiel rifle developed by the American company Barrett Firearms Manufacturing. Chambered in .50 BMG."
+	name = "巴雷特M82"
+	desc = "巴雷特M82是由美国巴雷特枪械制造公司研发的一款后坐式半自动反器材步枪.发射.50 BMG弹药."
 	icon_state = "m82"
 	item_state = "m82"
 	base_icon = "m82"
@@ -524,7 +524,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/bamr
 	name = "BAMR"
-	desc = "An old blugoslavian semi-auto, anti-tank rifle chambered in 15x115. Due to smart engineering the recoil isn't as bad as it could be."
+	desc = "一款老旧的黑斯拉夫半自动反坦克步枪,发射15x115弹药.得益于巧妙的设计,其后坐力并没有想象中那么糟糕."
 	icon_state = "bam"
 	item_state = "bam"
 	base_icon = "bam"
@@ -554,7 +554,7 @@
 
 /obj/item/weapon/gun/projectile/semiautomatic/bamr/telescope
 	name = "BAMR-T"
-	desc = "An old blugoslavian semi-auto, anti-tank rifle chambered in 15x115. This one comes with a integrated Scope."
+	desc = "一款老旧的黑斯拉夫半自动反坦克步枪,发射15x115弹药.这一款配备了一体式瞄准镜."
 	icon_state = "bamt"
 	has_telescopic = TRUE
 	equiptimer = 14

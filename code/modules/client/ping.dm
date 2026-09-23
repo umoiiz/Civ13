@@ -12,7 +12,7 @@
 	set hidden = TRUE
 	set instant = TRUE
 	set name = ".display_ping"
-	to_chat(src, "<span class='notice'>Round trip ping took [round(pingfromtime(time),1)]ms</span>")
+	to_chat(src, "<span class='notice'>往返延迟为[round(pingfromtime(time),1)]毫秒</span>")
 
 /client/verb/ping()
 	set name = "Ping"

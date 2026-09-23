@@ -47,7 +47,7 @@
 			qdel(W)
 		else
 			if (!disable_warning)
-				to_chat(src, "<span class = 'red'>You are unable to equip that.</span>") //Only print if del_on_fail is false)
+				to_chat(src, "<span class = 'red'>你无法装备那个.</span>") //Only print if del_on_fail is false)
 		return FALSE
 
 	equip_to_slot(W, slot, redraw_mob) //This proc should not ever fail.
@@ -195,7 +195,7 @@ var/list/slot_equipment_priority = list( \
 					MD.origin.engine.power_off_connections()
 					MD.origin.engine.currentspeed = 0
 					MD.origin.engine.currentpower = 0
-					to_chat(src, "You turn off the engine.")
+					to_chat(src, "你关闭了引擎.")
 					MD.origin.set_light(0)
 					playsound(loc, MD.origin.engine.ending_snd, 65, FALSE, 2)
 					MD.origin.attackby(MD,src)

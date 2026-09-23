@@ -1,5 +1,5 @@
 /obj/item/ammo_magazine/ak47
-	name = "AK magazine (7.62x39mm)"
+	name = "AK弹匣 (7.62x39mm)"
 	icon_state = "ak47"
 	attached_icon_state = "ak47_magak"
 	mag_type = MAGAZINE
@@ -10,7 +10,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/sksm
-	name = "SKS-M magazine (7.62x39mm)"
+	name = "SKS-M弹匣 (7.62x39mm)"
 	icon_state = "sksm"
 	attached_icon_state = "sksm_mag"
 	mag_type = MAGAZINE
@@ -21,7 +21,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ak74
-	name = "AK-74 magazine (5.45x39mm)"
+	name = "AK-74弹匣 (5.45x39mm)"
 	icon_state = "ak74"
 	attached_icon_state = "ak74_magak"
 	mag_type = MAGAZINE
@@ -32,7 +32,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ak74/rubber
-	name = "AK-74 magazine (5.45x39mm Rubber)"
+	name = "AK-74弹匣 (5.45x39mm橡胶弹)"
 	icon_state = "ak74"
 	mag_type = MAGAZINE
 	caliber = "a545x39"
@@ -42,7 +42,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ak74/box
-	name = "magazine box (5.45x39mm)"
+	name = "弹匣盒 (5.45x39mm)"
 	icon_state = "ak74"
 	mag_type = MAGAZINE
 	caliber = "a545x39"
@@ -53,7 +53,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/ak101
-	name = "AK-101 magazine (5.46x45mm)"
+	name = "AK-101弹匣 (5.46x45mm)"
 	icon_state = "ak47"
 	attached_icon_state = "ak74m_magak"
 	mag_type = MAGAZINE
@@ -64,17 +64,17 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ak101/drum
-	name = "AK-101 Drum magazine (5.46x45mm)"
+	name = "AK-101弹鼓 (5.46x45mm)"
 	icon_state = "tommydrum"
 	max_ammo = 75
 
 /obj/item/ammo_magazine/ak74/ak74m
-	name = "AK-74M magazine (5.45x39mm)"
+	name = "AK-74M弹匣 (5.45x39mm)"
 	icon_state = "ak74m"
 	attached_icon_state = "ak74m_magak"
 
 /obj/item/ammo_magazine/bx7
-	name = "BX-7 (.50 caliber)"
+	name = "BX-7 (.50口径)"
 	icon_state = "bx7"
 	mag_type = MAGAZINE
 	caliber = "a50cal"
@@ -84,7 +84,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ak47/makeshift
-	name = "Makeshift AK-47 magazine (7.62x39mm)"
+	name = "简易AK-47弹匣 (7.62x39mm)"
 	icon_state = "ak74"
 	attached_icon_state = "ak47_magmakeshift"
 	mag_type = MAGAZINE
@@ -95,7 +95,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m16
-	name = "STANAG magazine (5.56x45mm)"
+	name = "STANAG弹匣 (5.56x45mm)"
 	icon_state = "m16"
 	attached_icon_state = "m16_mag"
 	mag_type = MAGAZINE
@@ -117,7 +117,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m16/box
-	name = "magazine box (5.56x45mm)"
+	name = "弹匣箱 (5.56x45mm)"
 	icon_state = "556x45"
 	mag_type = MAGAZINE
 	caliber = "a556x45"
@@ -128,7 +128,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/ar10
-	name = "AR-10 magazine (7.62x51mm)"
+	name = "AR-10弹匣 (7.62x51mm)"
 	icon_state = "m16"
 	mag_type = MAGAZINE
 	caliber = "a762x51"
@@ -139,7 +139,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m14
-	name = "M14 magazine (7.62x51mm)"
+	name = "M14弹匣 (7.62x51mm)"
 	icon_state = "m14"
 	attached_icon_state = "m14_mag"
 	mag_type = MAGAZINE
@@ -150,7 +150,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/box_762x51
-	name = "ammo box (7.62x51mm)"
+	name = "弹药箱 (7.62x51mm)"
 	icon_state = "762x51"
 	mag_type = MAGAZINE
 	caliber = "a762x51"
@@ -161,7 +161,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/hk
-	name = "G3 magazine (7.62x51mm)"
+	name = "G3弹匣 (7.62x51mm)"
 	icon_state = "hk"
 	mag_type = MAGAZINE
 	caliber = "a762x51"
@@ -172,7 +172,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/fal
-	name = "FN Fal magazine (7.62x51mm)"
+	name = "FN Fal弹匣 (7.62x51mm)"
 	icon_state = "fal"
 	attached_icon_state = "fal_mag"
 	mag_type = MAGAZINE
@@ -183,7 +183,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mk18
-	name = "MK18 magazine (5.56mm NATO)"
+	name = "MK18弹匣 (5.56mm NATO)"
 	icon_state = "hk"
 	attached_icon_state = "m16_mag"
 	mag_type = MAGAZINE
@@ -194,7 +194,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/scarh
-	name = "SCAR-H magazine (7.62x51mm)"
+	name = "SCAR-H弹匣 (7.62x51mm)"
 	icon_state = "scarh"
 	attached_icon_state = "scarh_mag"
 	mag_type = MAGAZINE
@@ -205,7 +205,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ar12
-	name = "AR-12 magazine (12gauge)"
+	name = "AR-12弹匣 (12号口径)"
 	icon_state = "scarh"
 	attached_icon_state = "ar12_mag"
 	mag_type = MAGAZINE
@@ -216,7 +216,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/saiga12
-	name = "Saiga-12K magazine (12gauge buckshot)"
+	name = "Saiga-12K弹匣 (12号口径鹿弹)"
 	icon_state = "type99redtape"
 	attached_icon_state = "saiga12_mag"
 	mag_type = MAGAZINE
@@ -227,13 +227,13 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/saiga12/slug
-	name = "Saiga-12K magazine (slug)"
+	name = "Saiga-12K弹匣 (独头弹)"
 	icon_state = "type99"
 	ammo_type = /obj/item/ammo_casing/shotgun/slug
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/usas12
-	name = "USAS-12 magazine (buckshot)"
+	name = "USAS-12弹匣 (鹿弹)"
 	icon_state = "usas12"
 	attached_icon_state = "usas12_mag"
 	mag_type = MAGAZINE
@@ -244,14 +244,14 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/usas12/slug
-	name = "USAS-12 magazine (slug)"
+	name = "USAS-12弹匣 (独头弹)"
 	icon_state = "usas12slug"
 	attached_icon_state = "usas12"
 	ammo_type = /obj/item/ammo_casing/shotgun/slug
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/usas12drum
-	name = "USAS-12 magazine (buckshot)"
+	name = "USAS-12弹匣 (鹿弹)"
 	icon_state = "usas12drum"
 	attached_icon_state = "usas12_drum"
 	mag_type = MAGAZINE
@@ -262,13 +262,13 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/usas12drum/slug
-	name = "USAS-12 magazine (slug)"
+	name = "USAS-12弹匣 (独头弹)"
 	icon_state = "usas12drumslug"
 	ammo_type = /obj/item/ammo_casing/shotgun/slug
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/pkm
-	name = "PKM ammo belt (7.62x54mmR)"
+	name = "PKM弹链 (7.62x54mmR)"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -280,7 +280,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/pkm/c100
-	name = "PKM ammo belt (7.62x54mmR)"
+	name = "PKM弹链 (7.62x54mmR)"
 	icon_state = "b762x54"
 	attached_icon_state = "pkm_mag"
 	mag_type = MAGAZINE
@@ -291,7 +291,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ammo127
-	name = "Ammo can (12.7x108mm)"
+	name = "弹药罐 (12.7x108mm)"
 	icon_state = "b127"
 	attached_icon_state = "pkm_mag"
 	mag_type = MAGAZINE
@@ -302,7 +302,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ammo127/box
-	name = "Ammo Box (12.7x108mm)"
+	name = "弹药箱 (12.7x108mm)"
 	icon_state = "ab127"
 	mag_type = MAGAZINE
 	caliber = "a127"
@@ -313,17 +313,17 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/ak47/drum
-	name = "AK Drum Magazine (7.62x39mm)"
+	name = "AK弹鼓 (7.62x39mm)"
 	icon_state = "tommydrum"
 	max_ammo = 75
 
 /obj/item/ammo_magazine/ak74/drum
-	name = "AK-74 Drum Magazine (5.45x39mm)"
+	name = "AK-74弹鼓 (5.45x39mm)"
 	max_ammo = 75
 	icon_state = "tommydrum"
 
 /obj/item/ammo_magazine/rpd
-	name = "RPD drum (7.62x39)"
+	name = "RPD弹鼓 (7.62x39)"
 	icon_state = "rpd"
 	attached_icon_state = "rpd_mag"
 	mag_type = MAGAZINE
@@ -335,7 +335,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/rpk74
-	name = "RPK-74 magazine (5.45x39)"
+	name = "RPK-74弹匣 (5.45x39)"
 	icon_state = "rpk74mag"
 	attached_icon_state = "rpk74_mag"
 	mag_type = MAGAZINE
@@ -347,7 +347,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/rpk74/drum
-	name = "RPK-74 drum (5.45x39)"
+	name = "RPK-74弹鼓 (5.45x39)"
 	icon_state = "rpk74"
 	attached_icon_state = "drum"
 	mag_type = MAGAZINE
@@ -359,7 +359,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/rpk47
-	name = "RPK-47 magazine (7.62x39mm)"
+	name = "RPK-47弹匣 (7.62x39mm)"
 	icon_state = "rpk47mag"
 	attached_icon_state = "rpk47_mag"
 	mag_type = MAGAZINE
@@ -371,7 +371,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/rpk47/drum
-	name = "RPK-47 drum (7.62x39mm)"
+	name = "RPK-47弹鼓 (7.62x39mm)"
 	icon_state = "rpk47"
 	attached_icon_state = "drum"
 	mag_type = MAGAZINE
@@ -382,7 +382,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m9beretta
-	name = "Beretta M9 magazine (9x19mm)"
+	name = "Beretta M9弹匣 (9x19mm)"
 	icon_state = "m9beretta"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -393,7 +393,7 @@
 
 
 /obj/item/ammo_magazine/m9beretta/box
-	name = "magazine box (9x19mm)"
+	name = "弹匣箱 (9x19mm)"
 	icon_state = "9mm"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -404,7 +404,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/jericho
-	name = "Jericho 941 magazine (9x19mm)"
+	name = "Jericho 941弹匣 (9x19mm)"
 	icon_state = "m9beretta"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -414,7 +414,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/negev
-	name = "Negev Belt (5.56x45mm)"
+	name = "Negev弹链 (5.56x45mm)"
 	icon_state = "b762"
 	attached_icon_state = "negev_mag"
 	mag_type = MAGAZINE
@@ -425,7 +425,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m249
-	name = "belt (5.56x45mm)"
+	name = "弹链 (5.56x45mm)"
 	icon_state = "b762"
 	attached_icon_state = "m249_mag"
 	mag_type = MAGAZINE
@@ -436,7 +436,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m24
-	name = "clip (7.62x51mm)"
+	name = "弹夹 (7.62x51mm)"
 	icon_state = "clip"
 	attached_icon_state = "none"
 	ammo_type = /obj/item/ammo_casing/a762x51
@@ -447,7 +447,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/p90
-	name = "P90 magazine (5.7x28mm)"
+	name = "P90弹匣 (5.7x28mm)"
 	icon_state = "p90"
 	attached_icon_state = "p90_mag"
 	mag_type = MAGAZINE
@@ -458,7 +458,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/aps
-	name = "Stechkin APS magazine (9x18mm)"
+	name = "Stechkin APS弹匣 (9x18mm)"
 	icon_state = "m1911" //temporary, to be changed.
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a9x18
@@ -492,7 +492,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/sti2011
-	name = "STI 2011 magazine (9x19mm)"
+	name = "STI 2011弹匣 (9x19mm)"
 	icon_state = "sti2011"
 	mag_type = MAGAZINE
 	caliber = "a45acp"
@@ -502,7 +502,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/sig250
-	name = "SIG 250 magazine (9x19mm)"
+	name = "SIG 250弹匣 (9x19mm)"
 	icon_state = "glock17"
 	mag_type = MAGAZINE
 	caliber = "a9x19"
@@ -532,7 +532,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/uzi
-	name = "Uzi magazine (9x19mm Parabellum)"
+	name = "Uzi弹匣 (9x19mm Parabellum)"
 	icon_state = "uzi"
 	attached_icon_state = "uzi_mag"
 	mag_type = MAGAZINE
@@ -543,7 +543,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/mac10
-	name = "MAC-10 magazine (.45 ACP)"
+	name = "MAC-10弹匣 (.45 ACP)"
 	icon_state = "mac10"
 	attached_icon_state = "mac10_mag"
 	mag_type = MAGAZINE
@@ -565,7 +565,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/skorpion
-	name = "Skorpion magazine (9x19mm Parabellum)"
+	name = "Skorpion弹匣 (9x19mm Parabellum)"
 	icon_state = "skorpion"
 	attached_icon_state = "skorpion_mag"
 	mag_type = MAGAZINE
@@ -627,7 +627,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ar15
-	name = "AR15 magazine (5.56x45mm)"
+	name = "AR15弹匣 (5.56x45mm)"
 	icon_state = "m16"
 	attached_icon_state = "m16_mag"
 	mag_type = MAGAZINE
@@ -638,7 +638,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/sks
-	name = "clip (7.62x39mm)"
+	name = "弹夹 (7.62x39mm)"
 	icon_state = "clip"
 	caliber = "a762x39"
 	ammo_type = /obj/item/ammo_casing/a762x39
@@ -648,7 +648,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/ptrs
-	name = "clip (14.5x114mm)"
+	name = "弹夹 (14.5x114mm)"
 	icon_state = "clip"
 	caliber = "a145"
 	ammo_type = /obj/item/ammo_casing/a145_ap
@@ -658,7 +658,7 @@
 	clip = TRUE
 
 /obj/item/ammo_magazine/vintorez
-	name = "VSS Vintorez magazine (9x39mm)"
+	name = "VSS Vintorez弹匣 (9x39mm)"
 	icon_state = "g43"
 	attached_icon_state = "vss_mag"
 	caliber = "a9x39"
@@ -669,7 +669,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/srm
-	name = "SR-3 magazine (9x39mm)"
+	name = "SR-3弹匣 (9x39mm)"
 	icon_state = "srm"
 	attached_icon_state = "srm_mag"
 	caliber = "a9x39"
@@ -680,7 +680,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/srm/box
-	name = "Ammo Box (9x39mm)"
+	name = "弹药箱 (9x39mm)"
 	icon_state = "srm"
 	ammo_type = /obj/item/ammo_casing/a9x39
 	caliber = "a9x39"
@@ -690,7 +690,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/srm/srms
-	name = "SR-3 small magazine (9x39mm)"
+	name = "SR-3小型弹匣 (9x39mm)"
 	icon_state = "srms"
 	attached_icon_state = "srms_mag"
 	caliber = "a9x39"
@@ -701,7 +701,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/a50cal
-	name = "heavy bullet pouch (.50 BMG)"
+	name = "重型子弹袋 (.50 BMG)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a50cal
 	caliber = "a50cal"
@@ -711,7 +711,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/a50cal_ap
-	name = "heavy bullet pouch (.50 BMG)"
+	name = "重型子弹袋 (.50 BMG)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a50cal_ap
 	caliber = "a50cal"
@@ -721,7 +721,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/a50cal_he
-	name = "heavy bullet pouch (.50 BMG HE)"
+	name = "重型子弹袋 (.50 BMG HE)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a50cal_he
 	caliber = "a50cal"
@@ -731,7 +731,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/barrett
-	name = "magazine (.50 BMG)"
+	name = "弹匣 (.50 BMG)"
 	icon_state = "a50cal"
 	mag_type = MAGAZINE
 	w_class = ITEM_SIZE_SMALL
@@ -741,7 +741,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/bamr_ap
-	name = "BAM AP magazine (15x115mm)"
+	name = "BAM AP弹匣 (15x115mm)"
 	icon_state = "bamgreen"
 	mag_type = MAGAZINE
 	w_class = ITEM_SIZE_LARGE
@@ -751,7 +751,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/bamr_aphe
-	name = "BAM HE magazine (15x115mm)"
+	name = "BAM HE弹匣 (15x115mm)"
 	icon_state = "bamred"
 	mag_type = MAGAZINE
 	w_class = ITEM_SIZE_LARGE
@@ -761,7 +761,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/bamr
-	name = "BAM magazine (15x115mm)"
+	name = "BAM弹匣 (15x115mm)"
 	icon_state = "bam"
 	mag_type = MAGAZINE
 	w_class = ITEM_SIZE_LARGE
@@ -771,7 +771,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/ptrd_pouch
-	name = "heavy bullet pouch (14.5x114mm)"
+	name = "重型子弹袋 (14.5x114mm)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a145
 	caliber = "a145"
@@ -781,7 +781,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/ptrd_pouch/ap
-	name = "heavy bullet pouch (14.5x114mm AP)"
+	name = "重型子弹袋 (14.5x114mm AP)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a145_ap
 	caliber = "a145"
@@ -791,7 +791,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/ptrd_box
-	name = "14.5x114mm cartridge box"
+	name = "14.5x114mm弹药盒"
 	icon_state = "145x114"
 	ammo_type = /obj/item/ammo_casing/a145
 	caliber = "a145"
@@ -801,7 +801,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/ptrd_box/ap
-	name = "14.5x114mm AP cartridge box"
+	name = "14.5x114mm AP弹药盒"
 	icon_state = "145x114AP"
 	ammo_type = /obj/item/ammo_casing/a145_ap
 	caliber = "a145"
@@ -811,7 +811,7 @@
 	is_box = TRUE
 
 /obj/item/ammo_magazine/pzb_case
-	name = "7.92x94mm case"
+	name = "7.92x94mm弹壳"
 	icon_state = "pzb39"
 	ammo_type = /obj/item/ammo_casing/a792x94
 	mag_type = MAGAZINE
@@ -821,7 +821,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/pzb_case_ap
-	name = "7.92x94mm AP case"
+	name = "7.92x94mm AP弹壳"
 	icon_state = "pzb39"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a792x94_ap
@@ -831,7 +831,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/pzb_pouch
-	name = "heavy bullet pouch (7.92x94mm)"
+	name = "重弹袋 (7.92x94mm)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a792x94
 	caliber = "a792x94"
@@ -841,7 +841,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/pzb_pouch_ap
-	name = "heavy bullet pouch (7.92x94mm AP)"
+	name = "重弹袋 (7.92x94mm 穿甲弹)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/a792x94_ap
 	caliber = "a792x94"
@@ -851,7 +851,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/a50cal_can
-	name = ".50 BMG ammo can"
+	name = ".50 BMG 弹药箱"
 	icon_state = "b762x51"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a50cal/weak
@@ -863,7 +863,7 @@
 
 ///////////c6//////////
 /obj/item/ammo_magazine/c6belt
-	name = "C6 GPMG ammo belt"
+	name = "C6 通用机枪弹链"
 	icon_state = "maximbelt"
 	attached_icon_state = "belt_"
 	mag_type = MAGAZINE
@@ -876,7 +876,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/c6can
-	name = "C6 GPMG ammo can"
+	name = "C6 通用机枪弹药箱"
 	icon_state = "b762x51"
 	attached_icon_state = "c6_mag"
 	mag_type = MAGAZINE
@@ -889,7 +889,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/qbz95
-	name = "QBZ-95 magazine (5.8x42mm)"
+	name = "QBZ-95 弹匣 (5.8x42mm)"
 	icon_state = "type99"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/a58x42
@@ -899,7 +899,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/a25mm_ap
-	name = "AP-T ammo belt (25 mm)"
+	name = "穿甲曳光弹链 (25 mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a25"
@@ -911,7 +911,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/a25mm_he
-	name = "HE-T ammo belt (25 mm)"
+	name = "高爆曳光弹链 (25 mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a25"
@@ -928,7 +928,7 @@
 	max_ammo = 150
 
 /obj/item/ammo_magazine/a30mm_ap
-	name = "AP-T ammo belt (30mm)"
+	name = "穿甲曳光弹链 (30mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a30"
@@ -946,7 +946,7 @@
 	max_ammo = 10
 
 /obj/item/ammo_magazine/a30mm_he
-	name = "HE-T ammo belt (30mm)"
+	name = "高爆曳光弹链 (30mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a30"
@@ -965,7 +965,7 @@
 
 
 /obj/item/ammo_magazine/a35mm_fap
-	name = "FAP ammo belt (35mm)"
+	name = "燃烧穿甲弹链 (35mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a35"
@@ -977,7 +977,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/a35mm_hei
-	name = "HEI-T ammo belt (35mm)"
+	name = "高爆燃烧曳光弹链 (35mm)"
 	icon_state = "maximbelt"
 	mag_type = MAGAZINE
 	caliber = "a35"
@@ -989,7 +989,7 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/flare
-	name = "flare casing pouch (.50 BMG)"
+	name = "信号弹壳袋 (.50 BMG)"
 	icon_state = "pouch_closed"
 	ammo_type = /obj/item/ammo_casing/flare
 	caliber = "flare"
@@ -999,8 +999,8 @@
 	pouch = TRUE
 
 /obj/item/flare_pouch
-	name = "flare pouch"
-	desc = "A pouch for holding flares."
+	name = "信号弹袋"
+	desc = "用于存放信号弹的袋子."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "flarepouch"
 	w_class = ITEM_SIZE_SMALL
@@ -1017,10 +1017,10 @@
 	set name = "Toggle Open"
 	if (opened)
 		opened=FALSE
-		to_chat(usr, "You close the [src].")
+		to_chat(usr, "你关闭了[src].")
 	else
 		opened=TRUE
-		to_chat(usr, "You open the [src].")
+		to_chat(usr, "你打开了[src].")
 	update_icon()
 	return
 
@@ -1033,11 +1033,11 @@
 			var/obj/item/flashlight/flare/C = stored[stored.len]
 			stored.len--
 			user.put_in_hands(C)
-			visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			visible_message("[user]从[src]中取出了\a [C].", "<span class='notice'>你从[src]中取出了\a [C].</span>")
 			update_icon()
 			return
 		else
-			to_chat(user, "<span class='warning'>[src] is empty.</span>")
+			to_chat(user, "<span class='warning'>[src]是空的.</span>")
 			update_icon()
 	else
 		return ..()
@@ -1057,7 +1057,7 @@
 		return
 	if (istype(W, flare_type))
 		if (stored.len >= max)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src]是满的!</span>")
 			return
 		user.remove_from_mob(W)
 		W.loc = src

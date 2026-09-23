@@ -6,8 +6,8 @@
 
 //Food items that aren't eaten normally and leave an empty container behind.
 /obj/item/weapon/reagent_containers/food/condiment
-	name = "Condiment Container"
-	desc = "Just your average condiment container."
+	name = "调味品容器"
+	desc = "就是你常见的调味品容器."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "emptycondiment"
 	flags = OPENCONTAINER
@@ -39,15 +39,15 @@
 
 		if (istype(target, /obj/item/weapon/reagent_containers/food/snacks)) // These are not opencontainers but we can transfer to them
 			if (!reagents || !reagents.total_volume)
-				to_chat(user, "<span class='notice'>There is no condiment left in \the [src].</span>")
+				to_chat(user, "<span class='notice'>\the [src]里没有调味品了.</span>")
 				return
 
 			if (!target.reagents.get_free_space())
-				to_chat(user, "<span class='notice'>You can't add more condiment to \the [target].</span>")
+				to_chat(user, "<span class='notice'>你无法向\the [target]中添加更多调味品.</span>")
 				return
 
 			var/trans = reagents.trans_to_obj(target, amount_per_transfer_from_this)
-			to_chat(user, "<span class='notice'>You add [trans] units of the condiment to \the [target].</span>")
+			to_chat(user, "<span class='notice'>你向\the [target]中添加了[trans]单位调味品.</span>")
 		else
 			..()
 
@@ -55,7 +55,7 @@
 		playsound(user.loc, "drink", rand(10, 50), TRUE)
 
 	self_feed_message(var/mob/user)
-		to_chat(user, "<span class='notice'>You swallow some of contents of \the [src].</span>")
+		to_chat(user, "<span class='notice'>你咽下了\the [src]中的一些内容物.</span>")
 
 	on_reagent_change()
 		if (icon_state == "saltshakersmall" || icon_state == "peppermillsmall")
@@ -63,82 +63,82 @@
 		if (reagents.reagent_list.len > 0)
 			switch(reagents.get_master_reagent_id())
 				if ("ketchup")
-					name = "Ketchup"
-					desc = "You feel more American already."
+					name = "番茄酱"
+					desc = "你感觉自己更像美国人了."
 					icon_state = "ketchup"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("capsaicin")
-					name = "Hotsauce"
-					desc = "You can almost TASTE the stomach ulcers now!"
+					name = "辣酱"
+					desc = "你现在几乎能尝到胃溃疡了!"
 					icon_state = "hotsauce"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("enzyme")
-					name = "Yeast"
-					desc = "Used in fermentation of food and drinks."
+					name = "酵母"
+					desc = "用于食物和饮品的发酵."
 					icon_state = "enzyme"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("soysauce")
-					name = "Soy Sauce"
-					desc = "A salty soy-based flavoring."
+					name = "酱油"
+					desc = "一种咸味的豆制调味料."
 					icon_state = "soysauce"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("frostoil")
-					name = "Coldsauce"
-					desc = "Leaves the tongue numb in its passage."
+					name = "冰酱"
+					desc = "经过时会让舌头麻木."
 					icon_state = "coldsauce"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("sodiumchloride")
-					name = "salt pile"
-					desc = "Salt. From the oceans, presumably."
+					name = "盐堆"
+					desc = "盐. 大概来自海洋."
 				if ("blackpepper")
-					name = "Pepper Mill"
-					desc = "Often used to flavor food or make people sneeze."
+					name = "胡椒研磨器"
+					desc = "常用于给食物调味或让人打喷嚏."
 					icon_state = "peppermillsmall"
 					center_of_mass = list("x"=16, "y"=10)
 				if ("cornoil")
-					name = "Corn Oil"
-					desc = "A delicious oil used in cooking. Made from corn."
+					name = "玉米油"
+					desc = "一种用于烹饪的美味油脂. 由玉米制成."
 					icon_state = "oliveoil"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("sugar")
-					name = "Sugar"
-					desc = "Sweet!"
+					name = "糖"
+					desc = "甜!"
 					center_of_mass = list("x"=16, "y"=6)
 				if ("tea")
-					name = "Tea Leaves"
-					desc = "Mix with hot water."
+					name = "茶叶"
+					desc = "与热水混合."
 					center_of_mass = list("x"=16, "y"=6)
 				if ("flour")
-					name = "flour sack"
-					desc = "A sack of wheat flour."
+					name = "面粉袋"
+					desc = "一袋小麦面粉."
 					center_of_mass = list("x"=16, "y"=6)
 				if ("barleyflour")
-					name = "barley flour sack"
-					desc = "A sack of barley flour."
+					name = "大麦面粉袋"
+					desc = "一袋大麦面粉."
 					center_of_mass = list("x"=16, "y"=6)
 				if ("oatflour")
-					name = "oat flour sack"
-					desc = "A sack of oat flour."
+					name = "燕麦面粉袋"
+					desc = "一袋燕麦面粉."
 					center_of_mass = list("x"=16, "y"=6)
 				else
-					name = "Misc Condiment Bottle"
+					name = "杂项调味瓶"
 					if (reagents.reagent_list.len==1)
-						desc = "Looks like it is [reagents.get_master_reagent_name()], but you are not sure."
+						desc = "看起来是[reagents.get_master_reagent_name()],但你不确定."
 					else
-						desc = "A mixture of various condiments. [reagents.get_master_reagent_name()] is one of them."
+						desc = "多种调味品的混合物. [reagents.get_master_reagent_name()]是其中之一."
 					icon_state = "mixedcondiments"
 					center_of_mass = list("x"=16, "y"=6)
 		else
 			icon_state = "emptycondiment"
-			name = "Condiment Bottle"
-			desc = "An empty condiment bottle."
+			name = "调味瓶"
+			desc = "一个空调味瓶."
 			center_of_mass = list("x"=16, "y"=6)
 			qdel(src)
 			return
 
 /obj/item/weapon/reagent_containers/food/condiment/enzyme
-	name = "Yeast"
-	desc = "Used in fermentation of food and drinks."
+	name = "酵母"
+	desc = "用于食物和饮品的发酵."
 	icon_state = "enzyme"
 	decay = 30*600
 	New()
@@ -152,8 +152,8 @@
 		reagents.add_reagent("sugar", 50)
 
 /obj/item/weapon/reagent_containers/food/condiment/saltpile		//Seperate from above since it's a small shaker rather then
-	name = "salt pile"
-	desc = "Salt. From the oceans, presumably."
+	name = "盐堆"
+	desc = "盐. 大概来自海洋."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "salt"
 	possible_transfer_amounts = list(1,10)
@@ -164,8 +164,8 @@
 		reagents.add_reagent("sodiumchloride", 10)
 
 /obj/item/weapon/reagent_containers/food/condiment/saltpile/empty		//Seperate from above since it's a small shaker rather then
-	name = "salt pile"
-	desc = "Salt. From the oceans, presumably."
+	name = "盐堆"
+	desc = "盐. 大概来自海洋."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "salt"
 	possible_transfer_amounts = list(1,10)
@@ -173,8 +173,8 @@
 	volume = 10
 
 /obj/item/weapon/reagent_containers/food/condiment/saltshaker		//Seperate from above since it's a small shaker rather then
-	name = "Salt Shaker"											//	a large one.
-	desc = "Salt. From the oceans, presumably."
+	name = "盐瓶"											//	a large one.
+	desc = "盐. 大概来自海洋."
 	icon_state = "saltshakersmall"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
 	amount_per_transfer_from_this = TRUE
@@ -184,8 +184,8 @@
 		reagents.add_reagent("sodiumchloride", 20)
 
 /obj/item/weapon/reagent_containers/food/condiment/peppermill
-	name = "Pepper Mill"
-	desc = "Often used to flavor food or make people sneeze."
+	name = "胡椒研磨器"
+	desc = "常用于给食物调味或让人打喷嚏."
 	icon_state = "peppermillsmall"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
 	amount_per_transfer_from_this = TRUE
@@ -195,8 +195,8 @@
 		reagents.add_reagent("blackpepper", 20)
 
 /obj/item/weapon/reagent_containers/food/condiment/flour
-	name = "small flour sack"
-	desc = "A bag of flour. Good for baking!"
+	name = "小面粉袋"
+	desc = "一袋面粉. 适合烘焙!"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "flour"
 	item_state = "flour"
@@ -215,14 +215,14 @@
 		pixel_y = rand(-10.0, 10)
 
 /obj/item/weapon/reagent_containers/food/condiment/flour/barleyflour
-	name = "small barley flour sack"
+	name = "小大麦面粉袋"
 /obj/item/weapon/reagent_containers/food/condiment/flour/oatflour
-	name = "small oat flour sack"
+	name = "小燕麦面粉袋"
 /obj/item/weapon/reagent_containers/food/condiment/flour/attack_self(mob/user)
 	var/obj/item/weapon/reagent_containers/glass/WW
 	if (!istype(user.l_hand, /obj/item/weapon/reagent_containers/glass))
 		if(!istype(user.r_hand, /obj/item/weapon/reagent_containers/glass))
-			to_chat(user, "<span class = 'warning'>You need to be holding water in the other hand to make dough.</span>")
+			to_chat(user, "<span class = 'warning'>你需要另一只手拿着水才能制作面团.</span>")
 			return
 		else
 			WW = user.r_hand
@@ -245,15 +245,15 @@
 			new/obj/item/weapon/reagent_containers/food/snacks/dough(user.loc)
 			return
 		else
-			to_chat(user, "<span class = 'warning'>You need more flour.</span>")
+			to_chat(user, "<span class = 'warning'>你需要更多面粉.</span>")
 			return
 	else
-		to_chat(user, "<span class = 'warning'>You need more water.</span>")
+		to_chat(user, "<span class = 'warning'>你需要更多水。</span>")
 		return
 
 /obj/item/weapon/reagent_containers/food/condiment/bsugar
-	name = "sugarcane sugar"
-	desc = "A pile of unrefined brown sugar."
+	name = "甘蔗糖"
+	desc = "一堆未精炼的红糖。"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "sugar"
 	item_state = "flour"
@@ -266,8 +266,8 @@
 	decay = 0
 
 /obj/item/weapon/reagent_containers/food/condiment/tealeaves
-	name = "tea leaves"
-	desc = "some tea leaves. Mix with hot water."
+	name = "茶叶"
+	desc = "一些茶叶。与热水混合。"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "tea_leaves_dried"
 	item_state = "flour"

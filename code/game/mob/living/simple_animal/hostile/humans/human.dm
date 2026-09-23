@@ -692,13 +692,13 @@ var/global/list/npc_appearance_cache = list()
 			var/mob/living/human/H = target_obj
 			if (H.getTotalDmg()>95)
 				say(pick("!!Hang on buddy, you will be fine!","!!You'll be fine kid, don't worry."), language)
-		visible_message("<span class='notice'>[src] starts bandaging [target_obj]...</span>")
+		visible_message("<span class='notice'>[src]开始为[target_obj]包扎...</span>")
 		playsound(loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 		walk(src,0)
 		do_movement(loc)
 		spawn(70)
 			if (target_obj && src && get_dist(src,target_obj)<=1 && src.stat != DEAD && L.stat != DEAD)
-				visible_message("[target_obj] is all bandaged.")
+				visible_message("[target_obj]已经包扎好了.")
 				if (ishuman(target_obj))
 					var/mob/living/human/H = target_obj
 					for (var/obj/item/organ/external/affecting in H.organs)
@@ -750,7 +750,7 @@ var/global/list/npc_appearance_cache = list()
 			var/tdir = OPPOSITE_DIR(get_dir(src,MB))
 			do_movement(get_step(src,tdir))
 			
-		visible_message("<span class='warning'>[src] drags [patient] away!</span>")
+		visible_message("<span class='warning'>[src]把[patient]拖走了!</span>")
 
 
 
@@ -803,7 +803,7 @@ var/global/list/npc_appearance_cache = list()
 		return
 
 	playsound(src, 'sound/effects/throw.ogg', 50, TRUE)
-	visible_message("<span class = 'warning'>[src] throws \the [item]!</span>")
+	visible_message("<span class = 'warning'>[src]把\the [item]扔了出去!</span>")
 
 	item.throw_at(target, 7, item.throw_speed, src)
 

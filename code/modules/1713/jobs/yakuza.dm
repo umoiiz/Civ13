@@ -75,7 +75,7 @@
 	H.g_facial = hex2num(copytext(hex_hair, 4, 6))
 	H.b_facial = hex2num(copytext(hex_hair, 6, 8))
 
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Underboss of the Yamaguchi-Gumi!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是山口组的若头!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the gangmen and their orders. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -171,7 +171,7 @@
 	H.g_facial = hex2num(copytext(hex_hair, 4, 6))
 	H.b_facial = hex2num(copytext(hex_hair, 6, 8))
 
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Deputy Underboss of the Yamaguchi-Gumi Gang!!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是山口组帮派的若头代理!!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the gangmen and their orders. Second to underboss. The whole operation relies on you and your orders!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -343,7 +343,7 @@
 	give_random_name(H)
 	H.civilization = "Ichiwa-Kai"
 	H.equip_to_slot_or_del(new /obj/item/weapon/radio/walkietalkie/faction2(H), slot_wear_id)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Underboss of the Ichiwa-Kai!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是一和会的若头!</font></b>")
 
 	if (prob(75))
 		H.f_style = pick("Shaved")
@@ -438,7 +438,7 @@
 	H.civilization = "Ichiwa-Kai"
 	H.equip_to_slot_or_del(new /obj/item/weapon/radio/walkietalkie/faction2(H), slot_wear_id)
 	give_random_name(H)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Deputy Underboss of the Ichiwa-Kai Gang!!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是一和会帮派的若头代理!!</font></b>")
 
 	if (prob(75))
 		H.f_style = pick("Shaved")

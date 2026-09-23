@@ -1,6 +1,6 @@
 /obj/item/flashlight
-	name = "flashlight"
-	desc = "A hand-held emergency light."
+	name = "手电筒"
+	desc = "一个手持应急灯."
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "flashlight_off"
 	var/off_state = "flashlight_off"
@@ -32,7 +32,7 @@
 
 /obj/item/flashlight/attack_self(mob/user)
 	if (!isturf(user.loc))
-		to_chat(user, "You cannot turn the light on while in this [user.loc].") //To prevent some lighting anomalities.)
+		to_chat(user, "你不能在这个[user.loc]中打开灯.") //To prevent some lighting anomalities.)
 		return FALSE
 	on = !on
 	playsound(src, turn_on_sound, 75, TRUE)
@@ -45,7 +45,7 @@
 	if (istype(src, /obj/item/flashlight/torch) && user.a_intent == I_HARM)
 		if (on && world.time > cooloff)
 			M.adjustBurnLoss(rand(7,10))
-			user.visible_message("<span class='notice'>\The [user] hits [M] with the [src]!</span>", "<span class='notice'>You hit [M] with the [src]!</span>")
+			user.visible_message("<span class='notice'>\The [user]用[src]击中了[M]!</span>", "<span class='notice'>你用[src]击中了[M]!</span>")
 			user.do_attack_animation(M)
 			if (prob(5))
 				M.fire_stacks += 1
@@ -60,36 +60,36 @@
 		if (istype(H))
 			for (var/obj/item/clothing/C in list(H.head,H.wear_mask))
 				if (istype(C) && (C.body_parts_covered & EYES))
-					to_chat(user, "<span class='warning'>You're going to need to remove [C.name] first.</span>")
+					to_chat(user, "<span class='warning'>你需要先移除[C.name].</span>")
 					return
 
 			var/obj/item/organ/vision
 			if (H.species.vision_organ)
 				vision = H.internal_organs_by_name[H.species.vision_organ]
 			if (!vision)
-				to_chat(user, "<span class='warning'>You can't find any [H.species.vision_organ ? H.species.vision_organ : "eyes"] on [H]!</span>")
+				to_chat(user, "<span class='warning'>你在[H]上找不到任何[H.species.vision_organ ? H.species.vision_organ : "eyes"]!</span>")
 
-			user.visible_message("<span class='notice'>\The [user] directs [src] to [M]'s eyes.</span>", \
+			user.visible_message("<span class='notice'>\The [user]将[src]对准[M]的眼睛.</span>", \
 							 	 "<span class='notice'>You direct [src] to [M]'s eyes.</span>")
 			if (H == user)	//can't look into your own eyes buster
 				if (M.stat == DEAD || M.blinded)	//mob is dead or fully blind
-					to_chat(user, "<span class='warning'>\The [M]'s pupils do not react to the light!</span>")
+					to_chat(user, "<span class='warning'>\The [M]的瞳孔对光线没有反应!</span>")
 					return
 				if (vision.damage)
-					to_chat(user, "<span class='warning'>There's visible damage to [M]'s [vision.name]!</span>")
+					to_chat(user, "<span class='warning'>[M]的[vision.name]有明显的损伤!</span>")
 				else if (M.eye_blurry)
-					to_chat(user, "<span class='notice'>\The [M]'s pupils react slower than normally.</span>")
+					to_chat(user, "<span class='notice'>\The [M]的瞳孔反应比正常情况慢.</span>")
 				if (M.getBrainLoss() > 15)
-					to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
+					to_chat(user, "<span class='notice'>左右瞳孔的反应之间存在明显的延迟.</span>")
 
 				var/list/pinpoint = list("oxycodone"=1,"tramadol"=5)
 				var/list/dilating = list("peyote"=5,"mindbreaker"=1)
 				if (M.reagents.has_any_reagent(pinpoint) || H.ingested.has_any_reagent(pinpoint))
-					to_chat(user, "<span class='notice'>\The [M]'s pupils are already pinpoint and cannot narrow any more.</span>")
+					to_chat(user, "<span class='notice'>\The [M]的瞳孔已经缩到极小,无法再缩小了.</span>")
 				else if (M.reagents.has_any_reagent(dilating) || H.ingested.has_any_reagent(dilating))
-					to_chat(user, "<span class='notice'>\The [M]'s pupils narrow slightly, but are still very dilated.</span>")
+					to_chat(user, "<span class='notice'>\The [M]的瞳孔略微缩小,但仍然非常散大.</span>")
 				else
-					to_chat(user, "<span class='notice'>\The [M]'s pupils narrow.</span>")
+					to_chat(user, "<span class='notice'>\The [M]的瞳孔缩小了.</span>")
 
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //can be used offensively
 			if (M.HUDtech.Find("flash"))
@@ -102,8 +102,8 @@
 // FLARES
 
 /obj/item/flashlight/flare
-	name = "flare"
-	desc = "A red flare. There are instructions on the side reading 'pull cord, make light'. Lasts for about 5 minutes."
+	name = "照明弹"
+	desc = "一枚红色照明弹. 侧面印有说明, 写着'拉绳, 发光'. 持续约5分钟."
 	brightness_on = 4 // Pretty bright.
 	light_power = 2
 	light_color = "#e58775"
@@ -220,8 +220,8 @@
 	turn_on()
 
 /obj/item/flashlight/flare/white
-	name = "white phosphorus flare"
-	desc = "A white phosphorus flare. There are instructions on the side reading 'pull cord, make light'. Lasts for about 5 minutes."
+	name = "白磷照明弹"
+	desc = "一枚白磷照明弹. 侧面印有说明, 写着'拉绳, 发光'. 持续约5分钟."
 	icon_state = "flareW"
 	flame_base_tint = "#eeeeee"
 	projectile_type = /obj/item/flashlight/flare/white/on
@@ -230,8 +230,8 @@
 	turn_on()
 
 /obj/item/flashlight/flare/signal
-	name = "signal flare"
-	desc = "A signal flare for signalling spot to aircraft above. There are instructions on the side reading 'pull cord, make light'. Lasts for about 2 minutes."
+	name = "信号弹"
+	desc = "一枚用于向空中飞机指示地点的信号弹. 侧面印有说明, 写着'拉绳, 发光'. 持续约2分钟."
 	icon_state = "flareW"
 	flame_base_tint = "#07d800"
 	var/mob/living/human/callers = null

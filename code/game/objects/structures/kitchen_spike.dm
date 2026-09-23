@@ -1,10 +1,10 @@
 //////Kitchen Spike
 
 /obj/structure/kitchenspike
-	name = "a meat spike"
+	name = "一根肉刺"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "spike"
-	desc = "A spike for collecting meat from animals."
+	desc = "用于从动物身上收集肉类的尖刺。"
 	density = FALSE
 	anchored = TRUE
 	layer = MOB_LAYER + 0.01
@@ -18,14 +18,14 @@
 	if (!istype(G, /obj/item/weapon/grab) || !G.affecting)
 		return
 	if (occupied)
-		to_chat(user, "<span class = 'danger'>The spike already has something on it, finish collecting its meat first!</span>")
+		to_chat(user, "<span class = 'danger'>尖刺上已经有东西了,先把它上面的肉收集完!</span>")
 	else
 		if (spike(G.affecting))
-			visible_message("<span class = 'danger'>[user] has forced [G.affecting] onto the spike, killing them instantly!</span>")
+			visible_message("<span class = 'danger'>[user]将[G.affecting]强行刺到尖刺上,当场将其杀死!</span>")
 			qdel(G.affecting)
 			qdel(G)
 		else
-			to_chat(user, "<span class='danger'>They are too big for the spike, try something smaller!</span>")
+			to_chat(user, "<span class='danger'>它们对尖刺来说太大了,试试小一点的!</span>")
 
 /obj/structure/kitchenspike/proc/spike(var/mob/living/victim)
 
@@ -52,8 +52,8 @@
 	meat--
 	new meat_type(get_turf(src))
 	if (meat > 1)
-		to_chat(user, "You remove some meat from \the [victim_name].")
+		to_chat(user, "你从\the [victim_name]上取下了一些肉。")
 	else if (meat == TRUE)
-		to_chat(user, "You remove the last piece of meat from \the [victim_name]!")
+		to_chat(user, "你从\the [victim_name]上取下了最后一块肉!")
 		icon_state = "spike"
 		occupied = FALSE

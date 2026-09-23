@@ -1,6 +1,6 @@
 /mob/living/simple_animal/parrot
 	name = "parrot"
-	desc = "A parrot. Maybe it can sit on your shoulder?."
+	desc = "一只鹦鹉。也许它能坐在你的肩膀上?"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "parrot_sit"
 	icon_living = "parrot_sit"
@@ -24,7 +24,7 @@
 
 /mob/living/simple_animal/chick
 	name = "\improper chick"
-	desc = "Adorable! They make such a racket though."
+	desc = "真可爱!不过它们太吵了。"
 	icon_state = "chick"
 	icon_living = "chick"
 	icon_dead = "chick_dead"
@@ -76,7 +76,7 @@
 	..()
 /mob/living/simple_animal/chicken
 	name = "\improper chicken"
-	desc = "Hopefully the eggs are good this season."
+	desc = "希望这一季的蛋不错。"
 	icon_state = "brownhen"
 	icon_living = "brownhen"
 	icon_dead = "brownhen_dead"
@@ -170,7 +170,7 @@
 	if (isturf(loc) && chicken_count.len < 50)
 		amount_grown += 1
 		if (amount_grown >= 400)
-			visible_message("[src] hatches with a quiet cracking sound.")
+			visible_message("[src]伴随着一声轻轻的裂响孵化了。")
 			new /mob/living/simple_animal/chick(get_turf(src))
 			processing_objects -= src
 			qdel(src)
@@ -185,7 +185,7 @@
 
 /mob/living/simple_animal/rooster
 	name = "\improper rooster"
-	desc = "Hopefully the eggs are good this season."
+	desc = "希望这一季的蛋不错。"
 	icon_state = "brownrooster"
 	icon_living = "brownrooster"
 	icon_dead = "brownrooster_dead"
@@ -242,7 +242,7 @@
 ////////////////////////////////////////TURKEYS//////////////////////
 /mob/living/simple_animal/turkey_f
 	name = "\improper turkey"
-	desc = "A common american animal. Good for meat."
+	desc = "一种常见的美国动物。肉不错。"
 	icon_state = "turkey-hen"
 	icon_living = "turkey-hen"
 	icon_dead = "turkey-hen-dead"
@@ -270,7 +270,7 @@
 
 /mob/living/simple_animal/turkey_m
 	name = "\improper turkey"
-	desc = "A common american animal. Good for meat."
+	desc = "一种常见的美国动物。肉不错。"
 	icon_state = "turkey-tom"
 	icon_living = "turkey-tom"
 	icon_dead = "turkey-tom-dead"
@@ -297,7 +297,7 @@
 
 /mob/living/simple_animal/goose
 	name = "\improper goose"
-	desc = "A common american migratory bird. Quite dangerous."
+	desc = "一种常见的美国候鸟。相当危险。"
 	icon_state = "goose"
 	icon_living = "goose"
 	icon_dead = "goose-dead"
@@ -325,7 +325,7 @@
 
 /mob/living/simple_animal/pelican
 	name = "\improper pelican"
-	desc = "A common sea bird."
+	desc = "一种常见的海鸟。"
 	icon_state = "pelican-filled"
 	icon_living = "pelican-filled"
 	icon_dead = "pelican_dead"
@@ -353,7 +353,7 @@
 
 /mob/living/simple_animal/seagull
 	name = "\improper seagull"
-	desc = "A common sea bird."
+	desc = "一种常见的海鸟。"
 	icon_state = "gull"
 	icon_living = "gull"
 	icon_dead = "gull-dead"
@@ -382,7 +382,7 @@
 
 /mob/living/simple_animal/crow
 	name = "\improper crow"
-	desc = "A common scavenger bird."
+	desc = "一种常见的食腐鸟。"
 	icon_state = "crow"
 	icon_living = "crow"
 	icon_dead = "crow_dead"
@@ -415,7 +415,7 @@
 
 /mob/living/simple_animal/pigeon
 	name = "pigeon"
-	desc = "A common bird."
+	desc = "一种常见的鸟。"
 	icon_state = "pigeon_grey"
 	icon_living = "pigeon_grey"
 	icon_dead = "pigeon_grey_dead"
@@ -447,7 +447,7 @@
 
 /mob/living/simple_animal/turkeychick
 	name = "\improper turkey chick"
-	desc = "Adorable! They make such a racket though."
+	desc = "真可爱!不过它们太吵了。"
 	icon_state = "turkey-chick"
 	icon_living = "turkey-chick"
 	icon_dead = "turkey-chick-dead"
@@ -542,7 +542,7 @@
 	if (isturf(loc) && turkey_count.len < 35)
 		amount_grown += 1
 		if (amount_grown >= 400)
-			visible_message("[src] hatches with a quiet cracking sound.")
+			visible_message("[src]伴随着一声轻轻的裂响孵化了。")
 			new /mob/living/simple_animal/turkeychick(get_turf(src))
 			processing_objects -= src
 			qdel(src)

@@ -3,7 +3,7 @@
 
 /mob/living/simple_animal/hostile/poison/snake
 	name = "snake"
-	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike."
+	desc = "一条滑溜溜的蛇. 这些无腿的爬行动物是老鼠和冒险者共同的祸害."
 	icon_state = "snake"
 	icon_living = "snake"
 	icon_dead = "snake_dead"
@@ -29,7 +29,7 @@
 		return
 
 	if(istype(target_mob, /mob/living/simple_animal/mouse))
-		visible_message("<span class='notice'>[name] consumes [target_mob] in a single gulp!</span>", "<span class='notice'>You consume [target_mob] in a single gulp!</span>")
+		visible_message("<span class='notice'>[name]一口吞下了[target_mob]!</span>", "<span class='notice'>你一口吞下了[target_mob]!</span>")
 		qdel(target_mob)
 		adjustBruteLoss(-2)
 	else
@@ -58,7 +58,7 @@
 
 /mob/living/simple_animal/hostile/poison/snake/constrictor
 	name = "boa constrictor"
-	desc = "A large constrictor snake. Probably better to not make it angry."
+	desc = "一条大型蟒蛇. 最好别惹它生气."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "boa"
 	icon_living = "boa"
@@ -135,7 +135,7 @@
 		Paralyse(100)
 		L.adjustOxyLoss(25)
 		L.adjustBrainLoss(5)
-		to_chat(L, "<span class='danger'>You can't breathe!</span>")
+		to_chat(L, "<span class='danger'>你无法呼吸了!</span>")
 		if (L.stat == DEAD)
 			constricting = FALSE
 			stop_automated_movement = FALSE
@@ -153,7 +153,7 @@
 		return
 
 	if(istype(target_mob, /mob/living/simple_animal/mouse))
-		visible_message("<span class='notice'>[name] consumes [target_mob] in a single gulp!</span>", "<span class='notice'>You consume [target_mob] in a single gulp!</span>")
+		visible_message("<span class='notice'>[name]一口吞下了[target_mob]!</span>", "<span class='notice'>你一口吞下了[target_mob]!</span>")
 		qdel(target_mob)
 		adjustBruteLoss(-2)
 	else

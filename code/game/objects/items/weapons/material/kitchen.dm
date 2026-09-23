@@ -43,38 +43,38 @@
 			if (!M.can_eat(loaded))
 				return
 			else if (M.get_fullness() > 580)
-				to_chat(user, "<span class='danger'>You cannot force any more food to go down your throat.</span>")
+				to_chat(user, "<span class='danger'>你再也咽不下任何食物了.</span>")
 				return
-			M.visible_message("<span class='notice'>\The [user] eats some [loaded] from \the [src].</span>")
+			M.visible_message("<span class='notice'>\The [user]从\the [src]中吃了一些[loaded].</span>")
 		else
-			user.visible_message("<span class='warning'>\The [user] begins to feed \the [M]!</span>")
+			user.visible_message("<span class='warning'>\The [user]开始喂\the [M]!</span>")
 			if (!(M.can_force_feed(user, loaded) && do_mob(user, M, 5 SECONDS)))
 				return
 			else if (M.get_fullness() > 580)
-				to_chat(user, "<span class='danger'>You cannot force any more food to go down [M]'s throat.</span>")
+				to_chat(user, "<span class='danger'>你再也无法往[M]的嘴里塞更多食物了.</span>")
 				return
-			M.visible_message("<span class='notice'>\The [user] feeds some [loaded] to \the [M] with \the [src].</span>")
+			M.visible_message("<span class='notice'>\The [user]用\the [src]喂了\the [M]一些[loaded].</span>")
 		playsound(M.loc,"eat", rand(20,45), TRUE)
 		overlays.Cut()
 		return
 	else
-		to_chat(user, "<span class='warning'>You don't have anything on \the [src].</span>")	//if we have help intent and no food scooped up DON'T STAB OURSELVES WITH THE FORK
+		to_chat(user, "<span class='warning'>你的\the [src]上什么都没有.</span>")	//if we have help intent and no food scooped up DON'T STAB OURSELVES WITH THE FORK
 		return
 
 /obj/item/weapon/material/kitchen/utensil/fork
-	name = "fork"
-	desc = "It's a fork. Sure is pointy."
+	name = "叉子"
+	desc = "这是一把叉子. 确实很尖."
 	icon_state = "fork"
 
 /obj/item/weapon/material/kitchen/utensil/chopsticks
-	name = "chopsticks"
-	desc = "It's pair of chopsticks. Wan' sum rice muhda fukka?"
+	name = "筷子"
+	desc = "这是一双筷子. 要来点米饭吗, 混蛋?"
 	icon_state = "chopsticks"
 	material = "wood"
 	applies_material_colour = FALSE
 /obj/item/weapon/material/kitchen/utensil/spoon
-	name = "spoon"
-	desc = "It's a spoon. You can see your own upside-down face in it."
+	name = "勺子"
+	desc = "这是一把勺子. 你可以在里面看到自己倒过来的脸."
 	icon_state = "spoon"
 	attack_verb = list("attacked", "poked")
 	edge = FALSE
@@ -88,8 +88,8 @@
 #define BASH 3
 
 /obj/item/weapon/material/kitchen/utensil/knife
-	name = "knife"
-	desc = "A knife for eating with. Can cut through any food."
+	name = "餐刀"
+	desc = "一把用来吃饭的刀. 可以切开任何食物."
 	icon_state = "knife"
 	force_divisor = 0.1 // 6 when wielded with hardness 60 (steel)
 	scoop_food = FALSE
@@ -104,17 +104,17 @@
 		return
 	var/mob/living/human/M = user
 	suicide = TRUE
-	M.visible_message("<span class = 'red'>[user] sticks [M.gender == FEMALE ? "her" : "his"] [src] in [M.gender == FEMALE ? "her" : "his"] gut.</span>")
+	M.visible_message("<span class = 'red'>[user]把[M.gender == FEMALE ? "her" : "his"] [src]捅进了[M.gender == FEMALE ? "her" : "his"]的肚子.</span>")
 	if (!do_after(user, 60))
-		M.visible_message("<span class = 'notice'>[user] failed to commit suicide.</span>")
+		M.visible_message("<span class = 'notice'>[user]自杀失败了.</span>")
 		suicide = FALSE
 		return
 	else
-		to_chat(user, "<span class = 'notice'>Ow...</span>")
+		to_chat(user, "<span class = 'notice'>噢...</span>")
 		user.apply_effect(110,AGONY,0)
 		user.apply_damage(src.sharpness*2.5, "brute", "groin")
 		user.death()
-		user.visible_message("<span class = 'warning'>[user] cuts themselves open.</span>")
+		user.visible_message("<span class = 'warning'>[user]把自己割开了.</span>")
 		M.attack_log += "\[[time_stamp()]\] [M]/[M.ckey]</b> disemboweled themselves."
 		suicide = FALSE
 
@@ -126,8 +126,8 @@
 	return ..(A, user, target_zone)
 
 /obj/item/weapon/material/kitchen/utensil/knife/razorblade
-	name = "razor blade"
-	desc = "A folding blade, used to cut beard and hairs."
+	name = "剃须刀片"
+	desc = "一把折叠刀片, 用于刮胡子和剃毛发."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "razorblade"
 	item_state = "knife"
@@ -138,7 +138,7 @@
 	..()
 	if(atk_mode == SLASH)
 		atk_mode = STAB
-		to_chat(user, "<span class='notice'>You will now stab.</span>")
+		to_chat(user, "<span class='notice'>你现在将进行刺击.</span>")
 		edge = FALSE
 		sharp = TRUE
 		attack_verb = list("stabbed")
@@ -147,7 +147,7 @@
 
 	else if(atk_mode == STAB)
 		atk_mode = SLASH
-		to_chat(user, "<span class='notice'>You will now slash.</span>")
+		to_chat(user, "<span class='notice'>你现在将进行劈砍.</span>")
 		attack_verb = list("slashed", "diced")
 		hitsound = "slash_sound"
 		edge = TRUE
@@ -156,7 +156,7 @@
 
 /obj/item/weapon/material/kitchen/utensil/knife/razorblade/attack(mob/living/human/M as mob, mob/living/user as mob)
 	if (user.a_intent == I_DISARM && user.targeted_organ == "head" && ((M in range(user,1)) || M == user) && ishuman(M) && ishuman(user))
-		visible_message("[user] starts cutting [M]'s hair...","You start cutting [M]'s hair...")
+		visible_message("[user]开始剪[M]的头发...","你开始剪[M]的头发...")
 		if (do_after(user, 80, M))
 			var/list/hairlist = M.generate_valid_hairstyles(1,1)
 			var/new_hstyle = WWinput(usr, "Please select a hair style.", "Grooming", WWinput_first_choice(hairlist), WWinput_list_or_null(hairlist))
@@ -177,14 +177,14 @@
 							M.f_growth = S.growth
 			M.update_hair()
 			M.update_body()
-			visible_message("[user] finishes cutting [M]'s hair.","You finish cutting [M]'s hair.")
+			visible_message("[user]剪完了[M]的头发.","你剪完了[M]的头发.")
 			return
 	else
 		return ..()
 
 /obj/item/weapon/material/kitchen/utensil/knife/shank
-	name = "shank"
-	desc = "A small self-made knife."
+	name = "短刀"
+	desc = "一把自制的小刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "steelshank"
 	item_state = "knife"
@@ -195,26 +195,26 @@
 	default_material = "steel"
 
 /obj/item/weapon/material/kitchen/utensil/knife/shank/glass
-	name = "shank"
+	name = "短刀"
 	icon_state = "glassshank"
 	force_divisor = 0.45
 	default_material = "glass"
 
 /obj/item/weapon/material/kitchen/utensil/knife/shank/iron
-	name = "shank"
+	name = "短刀"
 	icon_state = "ironshank"
 	force_divisor = 0.4
 	default_material = "iron"
 /obj/item/weapon/material/kitchen/utensil/knife/shank/wood
-	name = "shank"
+	name = "短刀"
 	icon_state = "woodshank"
 	applies_material_colour = FALSE
 	force_divisor = 0.35
 	default_material = "wood"
 
 /obj/item/weapon/material/kitchen/utensil/knife/bowie
-	name = "bowie knife"
-	desc = "A rather large bowie knife."
+	name = "博伊刀"
+	desc = "一把相当大的博伊刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "bowie_knife"
 	item_state = "knife"
@@ -227,8 +227,8 @@
 	default_material = "iron"
 
 /obj/item/weapon/material/kitchen/utensil/knife/dagger
-	name = "dagger"
-	desc = "A dagger with two sharp edges alongside a very sharp point."
+	name = "匕首"
+	desc = "一把双刃锋利、尖端极其尖锐的匕首."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "dagger"
 	item_state = "knife"
@@ -241,8 +241,8 @@
 	default_material = "iron"
 
 /obj/item/weapon/material/kitchen/utensil/knife/switchblade
-	name = "switchblade knife"
-	desc = "A sharp, concealable, spring-loaded knife."
+	name = "弹簧刀"
+	desc = "一把锋利、便于隐藏、弹簧驱动的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "switchblade"
 	item_state = null
@@ -287,19 +287,19 @@
 
 /obj/item/weapon/material/kitchen/utensil/knife/switchblade/secondary_attack_self(mob/living/human/user)
 	if(!active)
-		visible_message("<span class='warning'>With a simple press, [user] extends the blade on their switchblade knife.</span>", 3)
+		visible_message("<span class='warning'>轻轻一按,[user]弹出了弹簧刀的刀刃.</span>", 3)
 		playsound(loc, 'sound/weapons/switchblade.ogg', 15, 1)
 		active = TRUE
 	else
-		visible_message("<span class='notice'>\The [user] retracts the blade on their switchblade knife.</span>", 3)
+		visible_message("<span class='notice'>\The [user]收回了弹簧刀的刀刃.</span>", 3)
 		active = FALSE
 	update_force()
 	update_icon()
 	add_fingerprint(user)
 
 /obj/item/weapon/material/kitchen/utensil/knife/fancy
-	name = "fancy knife"
-	desc = "A expensive knife."
+	name = "精致小刀"
+	desc = "一把昂贵的小刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "fancyknife"
 	item_state = "knife"
@@ -312,8 +312,8 @@
 	default_material = "silver"
 
 /obj/item/weapon/material/kitchen/utensil/knife/trench
-	name = "trench knife"
-	desc = "A rather large knife."
+	name = "战壕刀"
+	desc = "一把相当大的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "trenchknife"
 	item_state = "knife"
@@ -326,8 +326,8 @@
 	default_material = "iron"
 
 /obj/item/weapon/material/kitchen/utensil/knife/meat
-	name = "meat knife"
-	desc = "A rather medium knife."
+	name = "切肉刀"
+	desc = "一把中等大小的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "meatknife"
 	item_state = "knife"
@@ -337,8 +337,8 @@
 	force_divisor = 0.4
 
 /obj/item/weapon/material/kitchen/utensil/knife/shaggers
-	name = "shagger knife"
-	desc = "A makeshift knife made poorly by ghetto folks."
+	name = "混混刀"
+	desc = "一把由贫民区的人粗制滥造的简易刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "shagger"
 	item_state = "knife"
@@ -348,8 +348,8 @@
 	force_divisor = 0.4
 
 /obj/item/weapon/material/kitchen/utensil/knife/fish
-	name = "fish knife"
-	desc = "A rather medium knife."
+	name = "鱼刀"
+	desc = "一把中等大小的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "fishknife"
 	item_state = "knife"
@@ -362,8 +362,8 @@
 	default_material = "silver"
 
 /obj/item/weapon/material/kitchen/utensil/knife/tacticalknife
-	name = "tactical knife"
-	desc = "A rather tactical knife."
+	name = "战术刀"
+	desc = "一把相当战术化的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacticalknife"
 	item_state = "knife"
@@ -373,8 +373,8 @@
 	force_divisor = 0.6
 
 /obj/item/weapon/material/kitchen/utensil/knife/blackknife
-	name = "black knife"
-	desc = "A rather large knife."
+	name = "黑刀"
+	desc = "一把相当大的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "blackknife"
 	item_state = "knife"
@@ -384,8 +384,8 @@
 	force_divisor = 0.6
 
 /obj/item/weapon/material/kitchen/utensil/knife/military
-	name = "military knife"
-	desc = "A rather large knife."
+	name = "军刀"
+	desc = "一把相当大的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "militaryknife"
 	item_state = "knife"
@@ -398,8 +398,8 @@
 	default_material = "iron"
 
 /obj/item/weapon/material/kitchen/utensil/knife/shadowdagger
-	name = "shadow dagger"
-	desc = "A tactical knife."
+	name = "暗影匕首"
+	desc = "一把战术刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "smolknife"
 	item_state = "knife"
@@ -409,8 +409,8 @@
 	force_divisor = 0.6
 
 /obj/item/weapon/material/kitchen/utensil/knife/shadowdaggersal
-	name = "shadow dagger"
-	desc = "A tactical knife."
+	name = "暗影匕首"
+	desc = "一把战术刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "salamon"
 	item_state = "knife"
@@ -420,8 +420,8 @@
 	force_divisor = 0.6
 
 /obj/item/weapon/material/kitchen/utensil/knife/bread
-	name = "bread knife"
-	desc = "A rather large knife."
+	name = "面包刀"
+	desc = "一把相当大的刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "breadknife"
 	item_state = "knife"
@@ -431,8 +431,8 @@
 	force_divisor = 0.2
 
 /obj/item/weapon/material/kitchen/utensil/knife/survival
-	name = "survival knife"
-	desc = "A small compact survival knife."
+	name = "生存刀"
+	desc = "一把小巧紧凑的生存刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "survivalknife"
 	item_state = "knife"
@@ -442,8 +442,8 @@
 	force_divisor = 0.4
 
 /obj/item/weapon/material/kitchen/utensil/knife/bone
-	name = "tribal bone knife"
-	desc = "A small knife with a bone blade and ridged handle."
+	name = "部落骨刀"
+	desc = "一把骨制刀刃、带棱纹刀柄的小刀."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "boneknife"
 	item_state = "knife"
@@ -458,8 +458,8 @@
 	name = "bone knife"
 
 /obj/item/weapon/material/kitchen/utensil/knife/circumcision
-	name = "circumcision knife"
-	desc = "A small knife with a bone handle, used to perform circumcisions."
+	name = "割礼刀"
+	desc = "一把骨柄小刀,用于施行割礼."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "circumcision"
 	item_state = "knife"
@@ -477,12 +477,12 @@
 		var/mob/living/human/H = target
 		if (user.a_intent == I_HELP && H.gender == MALE)
 			if (H.circumcised)
-				to_chat(user, "<span class = 'notice'>[H] is already circumcised!</span>")
+				to_chat(user, "<span class = 'notice'>[H]已经受过割礼了!</span>")
 				return
 			else
-				visible_message("<span class = 'notice'>[user] starts to circumcise [H]...</span>")
+				visible_message("<span class = 'notice'>[user]开始给[H]施行割礼...</span>")
 				if (do_after(user, 90, H) && !H.circumcised)
-					visible_message("<span class = 'notice'>[user] successfully circumcises [H].</span>")
+					visible_message("<span class = 'notice'>[user]成功给[H]施行了割礼.</span>")
 					H.circumcised = TRUE
 					return
 				else
@@ -508,16 +508,16 @@
 	default_material = "wood"
 
 /obj/item/weapon/material/kitchen/utensil/knife/hook
-	name = "meat hook"
-	desc = "A sharp, metal hook what sticks into things."
+	name = "肉钩"
+	desc = "一个锋利的金属钩,能刺进东西里."
 	icon_state = "hook_knife"
 	item_state = "hook_knife"
 
 /obj/item/weapon/material/kitchen/utensil/knife/butcher
-	name = "butcher's cleaver"
+	name = "屠夫的切肉刀"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "butch"
-	desc = "A huge knife used for chopping and chopping up meat."
+	desc = "一把用于剁砍肉类的大刀."
 	edge = FALSE
 	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
 	attack_verb = list("cleaved", "slashed", "sliced", "torn", "ripped", "diced", "cut")
@@ -525,8 +525,8 @@
 	unbreakable = TRUE
 
 /obj/item/weapon/material/kitchen/utensil/knife/tanto
-	name = "tanto"
-	desc = "A knife used by the japanese for centuries. Made to slice and slash, not chop or saw. Often the tool of choice for ritual suicide."
+	name = "短刀"
+	desc = "日本人使用了数个世纪的刀.用于切片和劈砍,而非剁砍或锯切.常是切腹自尽的工具首选."
 	icon_state = "tanto"
 	item_state = "tanto"
 	block_chance = 10
@@ -542,8 +542,8 @@
  */
 
 /obj/item/weapon/material/kitchen/rollingpin
-	name = "rolling pin"
-	desc = "Used to knock out the Bartender."
+	name = "擀面杖"
+	desc = "用来打晕酒保."
 	icon_state = "rolling_pin"
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	default_material = "wood"

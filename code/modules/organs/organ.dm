@@ -1,7 +1,7 @@
 var/list/organ_cache = list()
 
 /obj/item/organ
-	name = "organ"
+	name = "器官"
 	icon = 'icons/obj/surgery.dmi'
 	value = 0
 	var/dead_icon
@@ -152,7 +152,7 @@ var/list/organ_cache = list()
 /obj/item/organ/examine(mob/user)
 	..(user)
 	if (status & ORGAN_DEAD)
-		to_chat(user, "<span class='notice'>The decay has set in.</span>")
+		to_chat(user, "<span class='notice'>已经开始腐烂了.</span>")
 
 /obj/item/organ/proc/handle_germ_effects()
 	//** Handle the effects of infections
@@ -310,7 +310,7 @@ var/list/organ_cache = list()
 /obj/item/organ/proc/bitten(mob/user)
 
 
-	to_chat(user, "<span class = 'notice'>You take an experimental bite out of \the [src].</span>")
+	to_chat(user, "<span class = 'notice'>你试探性地咬了一口\the [src].</span>")
 	var/datum/reagent/blood/B = locate(/datum/reagent/blood) in reagents.reagent_list
 	blood_splatter(src,B,1)
 
@@ -341,9 +341,9 @@ var/list/organ_cache = list()
 	if (istype(i, /obj/item/weapon))
 		var/obj/item/weapon/W = i
 		if (W.sharp)
-			user.visible_message("<span class = 'notice'>[user] starts to carve [src] into a few meat slabs.</span>")
+			user.visible_message("<span class = 'notice'>[user]开始将[src]切成几块肉排.</span>")
 			if (do_after(user, 30, src))
-				user.visible_message("<span class = 'notice'>[user] carves [src] into a few meat slabs.</span>")
+				user.visible_message("<span class = 'notice'>[user]将[src]切成几块肉排.</span>")
 				for (var/v in TRUE to rand(2,4))
 					var/obj/item/weapon/reagent_containers/food/snacks/meat/human/meat = new/obj/item/weapon/reagent_containers/food/snacks/meat/human(get_turf(src))
 					meat.name = "[name] meatsteak"

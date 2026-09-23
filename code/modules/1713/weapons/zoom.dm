@@ -4,7 +4,7 @@ Parts of code courtesy of Super3222
 */
 
 /obj/item/weapon/attachment/scope
-	name = "generic scope"
+	name = "通用瞄准镜"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "telescope1"
 	var/zoom_amt = 3
@@ -25,7 +25,7 @@ Parts of code courtesy of Super3222
 	build_zooming()
 
 /obj/item/weapon/attachment/scope/adjustable
-	name = "generic adjustable scope"
+	name = "通用可调瞄准镜"
 	var/min_zoom = 3
 	var/max_zoom = 3
 	var/looking = FALSE
@@ -36,22 +36,22 @@ Parts of code courtesy of Super3222
 
 //Not actually an attachment
 /obj/item/weapon/attachment/scope/adjustable/binoculars
-	name = "telescope"
-	desc = "A naval telescope."
+	name = "望远镜"
+	desc = "一个海军望远镜."
 	max_zoom = ZOOM_CONSTANT*3
 	attachable = FALSE
 	value = 15
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/small
-	name = "telescope"
-	desc = "A small telescope."
+	name = "望远镜"
+	desc = "一个小型望远镜."
 	max_zoom = 10
 	attachable = FALSE
 	value = 15
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/binoculars
-	name = "binoculars"
-	desc = "A pair of binoculars."
+	name = "双筒望远镜"
+	desc = "一副双筒望远镜."
 	icon_state = "binoculars"
 	max_zoom = ZOOM_CONSTANT*3
 	attachable = FALSE
@@ -69,16 +69,16 @@ Parts of code courtesy of Super3222
 	var/dist2 = abs(H.y-target.y)
 	var/distcon = max(dist1,dist2)
 	var/gdir = get_dir(H, target)
-	to_chat(H, "You start checking the range...")
+	to_chat(H, "你开始测距...")
 	if (do_after(H, 40, src, can_move = FALSE))
-		to_chat(H, "<big><b><font color='#ADD8E6'>Range: about [max(0,distcon+rand(-1,1))] meters [dir2text(gdir)]</font></b></big>")
+		to_chat(H, "<big><b><font color='#ADD8E6'>距离: 约[max(0,distcon+rand(-1,1))]米 [dir2text(gdir)]</font></b></big>")
 		checking = FALSE
 	else
 		checking = FALSE
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/periscope
-	name = "periscope"
-	desc = "A solid metal periscope."
+	name = "潜望镜"
+	desc = "一个坚固的金属潜望镜."
 	icon_state = "periscope"
 	max_zoom = ZOOM_CONSTANT*3
 	attachable = FALSE
@@ -90,8 +90,8 @@ Parts of code courtesy of Super3222
 	var/checking = FALSE
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/periscope/naval
-	name = "periscope"
-	desc = "A solid metal periscope."
+	name = "潜望镜"
+	desc = "一个坚固的金属潜望镜."
 	icon_state = "periscope"
 	max_zoom = 75
 
@@ -104,16 +104,16 @@ Parts of code courtesy of Super3222
 	var/dist2 = abs(H.y-target.y)
 	var/distcon = max(dist1,dist2)
 	var/gdir = get_dir(H, target)
-	to_chat(H, "You start checking the range...")
+	to_chat(H, "你开始测距...")
 	if (do_after(H, 25, src, can_move = TRUE))
-		to_chat(H, "<big><b><font color='#ADD8E6'>Range: about [max(0,distcon+rand(-1,1))] meters [dir2text(gdir)].</font></b></big>")
+		to_chat(H, "<big><b><font color='#ADD8E6'>距离: 约[max(0,distcon+rand(-1,1))]米 [dir2text(gdir)].</font></b></big>")
 		checking = FALSE
 	else
 		checking = FALSE
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/laser_designator
-	name = "laser designator"
-	desc = "A laser designator for marking airstrikes."
+	name = "激光指示器"
+	desc = "用于标记空袭的激光指示器."
 	icon_state = "laser_designator"
 	max_zoom = ZOOM_CONSTANT*4
 	attachable = FALSE
@@ -135,8 +135,8 @@ Parts of code courtesy of Super3222
 	var/debounce = FALSE
 
 /obj/item/weapon/attachment/scope/adjustable/binoculars/laser_designator/binoculars
-	name = "binocular designator"
-	desc = "A pair of binoculars for calling in airstrikes."
+	name = "双筒指示器"
+	desc = "用于呼叫空袭的双筒望远镜."
 	icon_state = "binoculars"
 	needs_instruments = TRUE
 
@@ -199,9 +199,9 @@ Parts of code courtesy of Super3222
 					if (2)
 						payload_remaining = faction2_airstrikes_remaining[get_payload_class()]
 
-			to_chat(H, "<b>Attack direction: <red>[attack_direction ? attack_direction : "None selected"]</red></b>")
-			to_chat(H, "<b>Payload type: <red>[payload ? payload : "None selected"]</red></b>")
-			to_chat(H, "<b>Payload type remaining: <red>[payload ? payload_remaining : "None selected"]</red></b>")
+			to_chat(H, "<b>攻击方向: <red>[attack_direction ? attack_direction : "None selected"]</red></b>")
+			to_chat(H, "<b>载荷类型: <red>[payload ? payload : "None selected"]</red></b>")
+			to_chat(H, "<b>载荷类型剩余: <red>[payload ? payload_remaining : "None selected"]</red></b>")
 		else // Failsafe for if a faction that does not have a jet or a faction which is not defined uses a designator
 			to_chat(H, SPAN_WARNING("<b>There's no friendly CAS that you can call in.</b>"))
 
@@ -220,7 +220,7 @@ Parts of code courtesy of Super3222
 /obj/item/weapon/attachment/scope/adjustable/binoculars/laser_designator/proc/rangecheck(var/mob/living/human/H, var/atom/target)
 	if(!ishuman(H))	return
 	if(map.ID == MAP_SYRIA && H.original_job.title != "Delta Force Operator")
-		to_chat(H, "You don't know how to use this.")
+		to_chat(H, "你不知道如何使用这个.")
 		return
 	else
 		if (!checking)
@@ -255,7 +255,7 @@ Parts of code courtesy of Super3222
 							to_chat(H, SPAN_WARNING("<big>You begin calling in the target, stay still...</big>"))
 
 							if (do_after(H, call_in_time, src, can_move = FALSE))
-								to_chat(H, "<big><b><font color='#ADD8E6'>Calling in airstrike: [distcon] meters [dir2text(gdir)].</font></b></big>")
+								to_chat(H, "<big><b><font color='#ADD8E6'>呼叫空袭: [distcon]米 [dir2text(gdir)].</font></b></big>")
 								checking = FALSE
 
 								var/turf/T = locate(target.x, target.y, target.z)
@@ -267,7 +267,7 @@ Parts of code courtesy of Super3222
 									if (2)
 										faction2_aircraft_cooldown = world.time + cooldown
 							else
-								to_chat(H, "<big><b><font color='#ADD8E6'>Canceling airstrike.</font></b></big>")
+								to_chat(H, "<big><b><font color='#ADD8E6'>取消空袭.</font></b></big>")
 								checking = FALSE
 								return
 						else
@@ -277,18 +277,18 @@ Parts of code courtesy of Super3222
 									if (1)
 										faction1_aircraft_rearming = TRUE
 										faction1_aircraft_cooldown = world.time + 5 MINUTES
-										to_chat(H, "<big><b><font color='#ADD8E6'>CAS now re-arming, it'll be back in [ceil((faction1_aircraft_cooldown - world.time)/10)/60] minutes.</font></b></big>")
+										to_chat(H, "<big><b><font color='#ADD8E6'>近距空中支援正在重新装弹,将在[ceil((faction1_aircraft_cooldown - world.time)/10)/60]分钟后回来.</font></b></big>")
 									if (2)
 										faction2_aircraft_rearming = TRUE
 										faction2_aircraft_cooldown = world.time + 5 MINUTES
-										to_chat(H, "<big><b><font color='#ADD8E6'>CAS now re-arming, it'll be back in [ceil((faction2_aircraft_cooldown - world.time)/10)/60] minutes.</font></b></big>")
+										to_chat(H, "<big><b><font color='#ADD8E6'>近距空中支援正在重新装弹,将在[ceil((faction2_aircraft_cooldown - world.time)/10)/60]分钟后回来.</font></b></big>")
 						return
 					else
 						switch (get_faction_num(H))
 							if (1)
-								to_chat(H, "<big><b><font color='#ADD8E6'>CAS is [faction1_aircraft_rearming ? "re-arming" : "making their way back around"], try again in [ceil((faction1_aircraft_cooldown - world.time)/10)] seconds.</font></b></big>")
+								to_chat(H, "<big><b><font color='#ADD8E6'>近距空中支援[faction1_aircraft_rearming ? "re-arming" : "making their way back around"],请在[ceil((faction1_aircraft_cooldown - world.time)/10)]秒后重试.</font></b></big>")
 							if (2)
-								to_chat(H, "<big><b><font color='#ADD8E6'>CAS is [faction2_aircraft_rearming ? "re-arming" : "making their way back around"], try again in [ceil((faction2_aircraft_cooldown - world.time)/10)] seconds.</font></b></big>")
+								to_chat(H, "<big><b><font color='#ADD8E6'>近距空中支援[faction2_aircraft_rearming ? "re-arming" : "making their way back around"],请在[ceil((faction2_aircraft_cooldown - world.time)/10)]秒后重试.</font></b></big>")
 						return
 				else
 					to_chat(H, SPAN_WARNING("<big><b>Select a payload first.</b></big>"))
@@ -332,14 +332,14 @@ Parts of code courtesy of Super3222
 
 		if (input > max_zoom)
 			if (zoom_amt == max_zoom)
-				to_chat(user, "<span class='warning'>You can't adjust it any further.</span>")
+				to_chat(user, "<span class='warning'>你无法再进一步调整它了.</span>")
 				return
 			else
 				zoom_amt = max_zoom
 				dial_check = TRUE
 		else if (input < min_zoom)
 			if (zoom_amt == min_zoom)
-				to_chat(user, "<span class='warning'>You can't adjust it any further.</span>")
+				to_chat(user, "<span class='warning'>你无法再进一步调整它了.</span>")
 				return
 			else
 				zoom_amt = min_zoom
@@ -348,7 +348,7 @@ Parts of code courtesy of Super3222
 				dial_check = TRUE
 			zoom_amt = input
 
-		to_chat(user, "<span class='notice'>You twist the dial on [src] [dial_check ? "clockwise, increasing" : "counterclockwise, decreasing"] the zoom range to [zoom_amt].</span>")
+		to_chat(user, "<span class='notice'>你转动[src]上的旋钮,[dial_check ? "clockwise, increasing" : "counterclockwise, decreasing"]将缩放范围调至[zoom_amt].</span>")
 
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/weapon/attachment/scope/proc/build_zooming()

@@ -1,6 +1,6 @@
 ////////////WIP ship wheel////////////////////
 /obj/structure/vehicleparts/shipwheel
-	name = "ship wheel"
+	name = "船舵"
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "ship_wheel"
 	layer = 2.99
@@ -151,7 +151,7 @@
 		if (get_dist(src, user) > 1)
 			user = null
 	if (!anchored)
-		to_chat(user, "<span class = 'danger'>You need to fix it to the floor before using.</span>")
+		to_chat(user, "<span class = 'danger'>使用前你需要先把它固定在地板上.</span>")
 		user = null
 	if (user && user != m)
 		if (user.client)
@@ -172,26 +172,26 @@
 	user.face_atom(src)
 
 	if (!locate(user) in range(1,src))
-		to_chat(user, "<span class = 'danger'>Get behind the wheel to use it.</span>")
+		to_chat(user, "<span class = 'danger'>到舵轮后面才能操作它.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个.</span>")
 		return FALSE
 
 	if (!anchored)
-		to_chat(user, "<span class = 'danger'>You need to fix it to the floor before using.</span>")
+		to_chat(user, "<span class = 'danger'>使用前你需要先把它固定在地板上.</span>")
 		return FALSE
 
 	if (href_list["set_anchor"])
 		if (ship)
 			ship.anchor = !ship.anchor
 			if (ship.anchor)
-				visible_message("<b>[ship]</b>'s anchor is dropped!")
+				visible_message("<b>[ship]</b>的锚已抛下!")
 				ship.moving = FALSE
 				ship.stopmovementloop()
 			else
-				visible_message("<b>[ship]'s</b> anchor is raised!")
+				visible_message("<b>[ship]的</b>锚已升起!")
 				ship.moving = TRUE
 				ship.add_transporting()
 				ship.startmovementloop()
@@ -206,28 +206,28 @@
 						M.sails_on = FALSE
 					M.update_icon()
 			if (!sails_on)
-				to_chat(user, "You hoist the sails on the [ship].")
+				to_chat(user, "你升起了[ship]上的船帆.")
 			else
-				to_chat(user, "You retract the sails on the [ship].")
+				to_chat(user, "你收起了[ship]上的船帆.")
 			spamtimer = world.time + 20
 			sails_on = !sails_on
 
 	if (href_list["set_heading_left"])
 		if (turndir(user,"left"))
-			to_chat(user, "You turn the ship to the left.")
+			to_chat(user, "你将船转向左侧.")
 			spamtimer = world.time + 20
 	if (href_list["set_heading_right"])
 		if (turndir(user,"right"))
-			to_chat(user, "You turn the ship to the right.")
+			to_chat(user, "你将船转向右侧.")
 			spamtimer = world.time + 20
 	if (href_list["set_reversed"])
 		if (!reversed)
-			to_chat(user, "You reverse the [ship].")
+			to_chat(user, "你让[ship]倒退.")
 			spamtimer = world.time + 20
 			reversed = TRUE
 			ship.reverse = TRUE
 		else
-			to_chat(user, "You return the [ship] to the heading.")
+			to_chat(user, "你让[ship]恢复航向.")
 			spamtimer = world.time + 20
 			reversed = FALSE
 			ship.reverse = FALSE
@@ -268,18 +268,18 @@
 				ahead = "astern"
 			if (ship.currentspeed == 1)
 				ship.moving = TRUE
-				to_chat(user, "You set the speed to <b>slow [ahead]</b>.")
+				to_chat(user, "你将速度设为<b>慢速[ahead]</b>.")
 				playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 				ship.vehicle_m_delay = spd
 				ship.add_transporting()
 				ship.startmovementloop()
 			else if (ship.currentspeed == 2)
-				to_chat(user, "You change the speed to <b>half-speed [ahead]</b>.")
+				to_chat(user, "你将速度改为<b>半速[ahead]</b>.")
 				playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 				ship.vehicle_m_delay = spd
 				return
 			else if (ship.currentspeed == 3)
-				to_chat(user, "You change the speed to <b>full-speed [ahead]</b>.")
+				to_chat(user, "你将速度改为<b>全速[ahead]</b>.")
 				playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 				ship.vehicle_m_delay = spd
 				return
@@ -291,7 +291,7 @@
 			return
 		if (ship && ship.engine && ship.currentspeed <= 0)
 			if (ship.engine.on)
-				to_chat(user, "You turn off the [ship.engine].")
+				to_chat(user, "你关闭了[ship.engine].")
 				ship.engine.on = FALSE
 				ship.moving = FALSE
 				ship.currentspeed = 0
@@ -303,7 +303,7 @@
 			var/spd = ship.get_speed()
 			if (spd <= 0 || ship.currentspeed == 0)
 				ship.moving = FALSE
-				to_chat(user, "You stop the ship.")
+				to_chat(user, "你停下了船.")
 				for (var/obj/structure/vehicleparts/movement/W in ship.wheels)
 					W.update_icon()
 				return
@@ -313,18 +313,18 @@
 					ahead = "astern"
 				if (ship.currentspeed == 1)
 					ship.moving = TRUE
-					to_chat(user, "You set the speed to <b>slow [ahead]</b>.")
+					to_chat(user, "你将速度设为<b>慢速[ahead]</b>.")
 					playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 					ship.vehicle_m_delay = spd
 					ship.add_transporting()
 					ship.startmovementloop()
 				else if (ship.currentspeed == 2)
-					to_chat(user, "You change the speed to <b>half-speed [ahead]</b>.")
+					to_chat(user, "你将速度改为<b>半速[ahead]</b>.")
 					playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 					ship.vehicle_m_delay = spd
 					return
 				else if (ship.currentspeed == 3)
-					to_chat(user, "You change the speed to <b>full-speed [ahead]</b>.")
+					to_chat(user, "你将速度改为<b>全速[ahead]</b>.")
 					playsound(loc, 'sound/effects/lever.ogg',40, TRUE)
 					ship.vehicle_m_delay = spd
 					return
@@ -368,12 +368,12 @@
 		for(var/obj/structure/vehicleparts/frame/VP in O.loc)
 			if (!VP.axis.ship)
 				if (mob)
-					to_chat(mob, "<span class='warning'>You can't turn, something is in the way!</span>")
+					to_chat(mob, "<span class='warning'>你无法转向,有东西挡住了去路!</span>")
 				return FALSE
 		for(var/obj/effect/pseudovehicle/PV in O.loc)
 			if (PV.link != ship)
 				if (mob)
-					to_chat(mob, "<span class='warning'>You can't turn, something is in the way!</span>")
+					to_chat(mob, "<span class='warning'>你无法转向,有东西挡住了去路!</span>")
 				return FALSE
 /*
 		var/turf/TF = get_turf(O)
@@ -389,7 +389,7 @@
 
 /obj/structure/vehicleparts/shipwheel/attack_hand(var/mob/attacker)
 	if (!anchored || !ship)
-		to_chat(attacker, "<span class = 'warning'>Fix the wheel in place first.</span>")
+		to_chat(attacker, "<span class = 'warning'>先把舵轮固定好.</span>")
 		return
 	else
 		interact(attacker)

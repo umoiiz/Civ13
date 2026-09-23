@@ -1,8 +1,8 @@
 /obj/structure/animalspawner/wolfcave
-	name = "Wolf Cave"
+	name = "狼洞穴"
 	icon = 'icons/obj/animal_spawner.dmi'
 	icon_state = "cave_den"
-	desc = "Thats a wolfcave. You probably want to stay away from it."
+	desc = "那是个狼洞穴.你大概最好离它远点."
 
 /obj/structure/animalspawner/wolfcave/New()
 	src.males = pick(1, 2, 3) //Initialize with some random amount of wolves, from 2 to 6
@@ -165,7 +165,7 @@
 		aggro()
 	if(istype(W,/obj/item/weapon/material/pickaxe) && empty)
 		if (do_after(user,65,src))
-			to_chat(user, "<span class='notice'>You break apart \the [src].</span>")
+			to_chat(user, "<span class='notice'>你拆开了\the [src].</span>")
 			new /obj/item/stack/material/stone(loc)
 			new /obj/item/stack/material/stone(loc)
 			new /obj/item/stack/material/stone(loc)

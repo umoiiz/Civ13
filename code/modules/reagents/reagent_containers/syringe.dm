@@ -6,8 +6,8 @@
 #define SYRINGE_BROKEN 2
 
 /obj/item/weapon/reagent_containers/syringe
-	name = "syringe"
-	desc = "A syringe."
+	name = "注射器"
+	desc = "一支注射器."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_0"
 	icon_state = "0"
@@ -59,11 +59,11 @@
 			return
 
 		if (single_use && used)
-			to_chat(user, "<span class='warning'>This [src] is used already!</span>")
+			to_chat(user, "<span class='warning'>这个[src]已经用过了!</span>")
 			return
 
 		if (mode == SYRINGE_BROKEN)
-			to_chat(user, "<span class='warning'>This syringe is broken!</span>")
+			to_chat(user, "<span class='warning'>这个注射器坏了!</span>")
 			return
 
 	/*	if (user.a_intent == I_HARM && ismob(target))
@@ -77,19 +77,19 @@
 			if (SYRINGE_DRAW)
 
 				if (!reagents.get_free_space())
-					to_chat(user, "<span class='warning'>The syringe is full.</span>")
+					to_chat(user, "<span class='warning'>注射器满了.</span>")
 					mode = SYRINGE_INJECT
 					return
 
 				if (ismob(target))//Blood!
 					if (reagents.has_reagent("blood"))
-						to_chat(user, "<span class='notice'>There is already a blood sample in this syringe.</span>")
+						to_chat(user, "<span class='notice'>这支注射器里已经有一个血样了.</span>")
 						return
 					if (istype(target, /mob/living/human))
 						var/amount = reagents.get_free_space()
 						var/mob/living/human/T = target
 						if (!T.dna)
-							to_chat(user, "<span class='warning'>You are unable to locate any blood. (To be specific, your target seems to be missing their DNA datum).</span>")
+							to_chat(user, "<span class='warning'>你无法找到任何血液. (具体来说,你的目标似乎缺少他们的DNA数据).</span>")
 							return
 						var/datum/reagent/B
 						if (istype(T, /mob/living/human))
@@ -106,21 +106,21 @@
 							reagents.update_total()
 							on_reagent_change()
 							reagents.handle_reactions()
-						to_chat(user, "<span class='notice'>You take a blood sample from [target].</span>")
+						to_chat(user, "<span class='notice'>你从[target]身上抽取了血样.</span>")
 						for (var/mob/O in viewers(4, user))
 							O.show_message("<span class='notice'>[user] takes a blood sample from [target].</span>", TRUE)
 
 				else //if not mob
 					if (!target.reagents.total_volume)
-						to_chat(user, "<span class='notice'>[target] is empty.</span>")
+						to_chat(user, "<span class='notice'>[target]是空的.</span>")
 						return
 
 					if (!target.is_open_container() && !istype(target, /obj/structure/reagent_dispensers))
-						to_chat(user, "<span class='notice'>You cannot directly remove reagents from this object.</span>")
+						to_chat(user, "<span class='notice'>你不能直接从这个物体中移除试剂.</span>")
 						return
 
 					var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
-					to_chat(user, "<span class='notice'>You fill the syringe with [trans] units of the solution.</span>")
+					to_chat(user, "<span class='notice'>你用[trans]单位的溶液装满注射器.</span>")
 					update_icon()
 
 				if (!reagents.get_free_space())
@@ -129,17 +129,17 @@
 
 			if (SYRINGE_INJECT)
 				if (!reagents.total_volume)
-					to_chat(user, "<span class='notice'>The syringe is empty.</span>")
+					to_chat(user, "<span class='notice'>注射器是空的.</span>")
 					mode = SYRINGE_DRAW
 					return
 /*				if (istype(target, /obj/item/weapon/implantcase/chem))
 					return*/
 
 				if (!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/weapon/reagent_containers/food) && !istype(target, /obj/item/clothing/mask/smokable/cigarette))
-					to_chat(user, "<span class='notice'>You cannot directly fill this object.</span>")
+					to_chat(user, "<span class='notice'>你不能直接填充这个物体.</span>")
 					return
 				if (!target.reagents.get_free_space())
-					to_chat(user, "<span class='notice'>[target] is full.</span>")
+					to_chat(user, "<span class='notice'>[target]满了.</span>")
 					return
 
 				var/mob/living/human/H = target
@@ -149,7 +149,7 @@
 						tgt = pick("l_foot","r_foot","l_leg","r_leg","chest","groin","l_arm","r_arm","l_hand","r_hand","eyes","mouth","head")
 					var/obj/item/organ/external/affected = H.get_organ(tgt)
 					if (!affected)
-						to_chat(user, "<span class='danger'>\The [H] is missing that limb!</span>")
+						to_chat(user, "<span class='danger'>\The [H] 缺少那个肢体!</span>")
 						return
 
 				if (ismob(target) && target != user)
@@ -168,15 +168,15 @@
 							return
 
 					if (injtime == time)
-						user.visible_message("<span class='warning'>[user] is trying to inject [target] with [visible_name]!</span>")
+						user.visible_message("<span class='warning'>[user]正试图用[visible_name]注射[target]!</span>")
 					else
-						user.visible_message("<span class='warning'>[user] begins hunting for an injection port on [target]'s suit!</span>")
+						user.visible_message("<span class='warning'>[user]开始寻找[target]套装上的注射口!</span>")
 
 					user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 					user.do_attack_animation(target)
 					var/turf/tloc = target.loc
 					if (do_after(user, injtime, tloc))
-						user.visible_message("<span class='warning'>[user] injects [target] with the syringe!</span>")
+						user.visible_message("<span class='warning'>[user]用注射器注射了[target]!</span>")
 					else
 						return
 
@@ -192,7 +192,7 @@
 					admin_inject_log(user, target, src, contained, trans)
 				else
 					trans = reagents.trans_to(target, amount_per_transfer_from_this)
-				to_chat(user, "<span class='notice'>You inject [trans] units of the solution. The syringe now contains [reagents.total_volume] units.</span>")
+				to_chat(user, "<span class='notice'>你注入了[trans]单位的溶液. 注射器现在含有[reagents.total_volume]单位.</span>")
 				if (single_use)
 					used = TRUE
 				if (reagents.total_volume <= 0 && mode == SYRINGE_INJECT)
@@ -240,7 +240,7 @@
 			var/obj/item/organ/external/affecting = H.get_organ(target_zone)
 
 			if (!affecting || affecting.is_stump())
-				to_chat(user, "<span class='danger'>They are missing that limb!</span>")
+				to_chat(user, "<span class='danger'>他们缺少那条肢体!</span>")
 				return
 
 			var/hit_area = affecting.name
@@ -260,13 +260,13 @@
 
 				return
 
-			user.visible_message("<span class='danger'>[user] stabs [target] in \the [hit_area] with [name]!</span>")
+			user.visible_message("<span class='danger'>[user]用[name]刺入了[target]的\the [hit_area]!</span>")
 
 			if (affecting.take_damage(3))
 				H.UpdateDamageIcon()
 
 		else
-			user.visible_message("<span class='danger'>[user] stabs [target] with [name]!</span>")
+			user.visible_message("<span class='danger'>[user]用[name]刺入了[target]!</span>")
 			target.take_organ_damage(3)// 7 is the same as crowbar punch
 
 
@@ -292,8 +292,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/reagent_containers/syringe/antitoxin
-	name = "Syringe (anti-toxin)"
-	desc = "Contains anti-toxins."
+	name = "注射器(抗毒素)"
+	desc = "含有抗毒素."
 	New()
 		..()
 		reagents.add_reagent("anti_toxin", 15)
@@ -301,8 +301,8 @@
 		update_icon()
 
 /obj/item/weapon/reagent_containers/syringe/penicillin
-	name = "Syringe (penicillin)"
-	desc = "Contains antibiotic agents."
+	name = "注射器(青霉素)"
+	desc = "含有抗生素."
 	New()
 		..()
 		reagents.add_reagent("penicillin", 15)
@@ -318,8 +318,8 @@
 
 // morphine syringes
 /obj/item/weapon/reagent_containers/syringe/morphine
-	name = "Morphine injector"
-	desc = "Injector containing 5 units of morphine. Administer two of these to make someone sleep."
+	name = "吗啡注射器"
+	desc = "含有5单位吗啡的注射器. 注射两支可使人入睡."
 	icon_state = "single_use0"
 	w_class = ITEM_SIZE_TINY
 	volume = 5
@@ -339,8 +339,8 @@
 		used = TRUE
 
 /obj/item/weapon/reagent_containers/syringe/sulfanomides
-	name = "sulfanomide injector"
-	desc = "Injector containing a single dose of IV sulfanomides. Used to prevent and treat systemic microbial infections."
+	name = "磺胺注射器"
+	desc = "含有单剂量静脉注射磺胺的注射器. 用于预防和治疗全身性微生物感染."
 	icon_state = "single_use2"
 	w_class = ITEM_SIZE_TINY
 	volume = 9
@@ -359,8 +359,8 @@
 		used = TRUE
 
 /obj/item/weapon/reagent_containers/syringe/adrenaline
-	name = "adrenaline injector"
-	desc = "Injector containing a single dose of adrenalin. Good to stabilize patients and help moderate shock."
+	name = "肾上腺素注射器"
+	desc = "含有单剂量肾上腺素的注射器. 有助于稳定病人并缓解中度休克."
 	icon_state = "single_use3"
 	w_class = ITEM_SIZE_TINY
 	volume = 30
@@ -379,8 +379,8 @@
 		used = TRUE
 
 /obj/item/weapon/reagent_containers/syringe/thc
-	name = "THC syringe"
-	desc = "Injector containing THC from cannabis."
+	name = "THC注射器"
+	desc = "含有大麻THC的注射器."
 	icon_state = "single_use1"
 	w_class = ITEM_SIZE_TINY
 	volume = 20
@@ -401,8 +401,8 @@
 		used = TRUE
 
 /obj/item/weapon/reagent_containers/syringe/salbutamol
-	name = "salbutamol injector"
-	desc = "Injector containing 5 units of salbutamol. Do NOT administer more than 10 units at once!"
+	name = "沙丁胺醇注射器"
+	desc = "含有5单位沙丁胺醇的注射器. 切勿一次注射超过10单位!"
 	icon_state = "single_use6"
 	w_class = ITEM_SIZE_TINY
 	volume = 5
@@ -424,8 +424,8 @@
 // Stupid syringes to be reworked or removed
 
 /obj/item/weapon/reagent_containers/syringe/combat
-	name = "combat syringe"
-	desc = "A single-use injector made to pump you full of lifesaving drugs."
+	name = "战斗注射器"
+	desc = "一次性注射器,用于给你注入救命药物."
 	icon_state = "single_use4"
 	w_class = ITEM_SIZE_TINY
 	volume = 50
@@ -449,8 +449,8 @@
 		used = TRUE
 
 /obj/item/weapon/reagent_containers/syringe/speed
-	name = "Speed syringe"
-	desc = "A single-use injector made to pump you full of muscle stimulating drugs, making you more aware and fast."
+	name = "速度注射器"
+	desc = "一次性注射器,用于给你注入肌肉兴奋药物,使你更加清醒和迅速."
 	icon_state = "single_use5"
 	w_class = ITEM_SIZE_TINY
 	volume = 37

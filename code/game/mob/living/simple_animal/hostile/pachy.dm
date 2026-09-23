@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/dinosaur/pachycephalosaurus
 	name = "Pachycephalosaurus"
-	desc = "Pachy for short."
+	desc = "简称肿头龙."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "pachycephalosaurus"
 	icon_living = "pachycephalosaurus"

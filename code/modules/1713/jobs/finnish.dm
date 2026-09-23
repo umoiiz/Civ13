@@ -38,7 +38,7 @@
 	var/obj/item/clothing/accessory/holster/hip/holsterh = new /obj/item/clothing/accessory/holster/hip(null)
 	uniform.attackby(holsterh, H)
 	give_random_name(H)
-	to_chat(world, "<big><b>[H.real_name] is the commander of the Finnish Forces!</b></big>")
+	to_chat(world, "<big><b>[H.real_name]是芬兰部队的指挥官!</b></big>")
 	H.add_note("Role", "You are a <b>[title]</b>, the highest ranking officer present. Your job is to command the german troops and organize them to victory.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)

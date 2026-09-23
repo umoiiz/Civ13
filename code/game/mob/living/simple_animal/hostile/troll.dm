@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/troll
 	name = "troll"
-	desc = "Huge green troll."
+	desc = "巨大的绿色巨魔."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "green_troll"
 	icon_living = "green_troll"

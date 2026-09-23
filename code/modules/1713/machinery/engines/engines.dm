@@ -14,8 +14,8 @@
 
 
 /obj/structure/engine
-	name = "engine"
-	desc = "A basic engine."
+	name = "引擎"
+	desc = "一个基础引擎."
 	icon = 'icons/obj/engines.dmi'
 	icon_state = "steam_static"
 	var/engineclass = "steam"
@@ -57,11 +57,11 @@
 			for(var/obj/structure/vehicleparts/frame/ship/S in loc)
 				done = TRUE
 			if (done == FALSE)
-				to_chat(user, "<span class='notice'>Max Power: <b>[maxpower*2]</b>.</span>")
+				to_chat(user, "<span class='notice'>最大功率: <b>[maxpower*2]</b>.</span>")
 			else
-				to_chat(user, "<span class='notice'>Max Power: <b>[maxpower*20]</b>.</span>")
+				to_chat(user, "<span class='notice'>最大功率: <b>[maxpower*20]</b>.</span>")
 		else
-			to_chat(user, "<span class='notice'>Max Power: <b>[maxpower*2]</b>.</span>")
+			to_chat(user, "<span class='notice'>最大功率: <b>[maxpower*2]</b>.</span>")
 /obj/structure/engine/proc/turn_on()
 	return
 
@@ -123,7 +123,7 @@
 /obj/structure/engine/attack_hand(mob/user as mob)
 	if (on)
 		on = FALSE
-		visible_message("[user] turns the [src] off.","You turn the [src] off.")
+		visible_message("[user]关闭了[src].","你关闭了[src].")
 		playsound(loc, ending_snd, 35, FALSE, 3)
 		power_off_connections()
 		currentspeed = 0
@@ -173,17 +173,17 @@
 
 /obj/structure/engine/attackby(obj/item/W as obj, mob/user as mob)
 	if (broken && istype(W, /obj/item/weapon/weldingtool))
-		visible_message("[user] starts repairing \the [src]...")
+		visible_message("[user]开始修理\the [src]...")
 		if (do_after(user, 200, src))
-			visible_message("[user] sucessfully repairs \the [src].")
+			visible_message("[user]成功修理了\the [src].")
 			broken = FALSE
 			return
 	else if (istype(W,/obj/item/weapon/wrench) && !not_movable)
 		if (powersource)
-			to_chat(user, "<span class='notice'>Remove the cables first.</span>")
+			to_chat(user, "<span class='notice'>请先移除线缆.</span>")
 			return
 		if (!isemptylist(connections))
-			to_chat(user, "<span class='notice'>Remove the cables first.</span>")
+			to_chat(user, "<span class='notice'>请先移除线缆.</span>")
 			return
 		playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 		to_chat(user, (anchored ? "<span class='notice'>You unfasten \the [src] from the floor.</span>" : "<span class='notice'>You secure \the [src] to the floor.</span>"))
@@ -199,17 +199,17 @@
 		return
 	else if (istype(W, /obj/item/stack/cable_coil))
 		if (!anchored)
-			to_chat(user, "<span class='notice'>Fix the engine in place with a wrench first.</span>")
+			to_chat(user, "<span class='notice'>请先用扳手将引擎固定到位.</span>")
 			return
 		for(var/obj/structure/cable/EXC in connections)
-			to_chat(user, "There's already a cable connected here! Split it further from the engine.")
+			to_chat(user, "这里已经连接了一根线缆! 请把它从引擎处再分开一些.")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		var/obj/structure/cable/NCC = CC.place_turf(get_turf(src), user, turn(get_dir(user,src),180))
 		if (!NCC) return
 		NCC.connections += src
 		connections += NCC
-		to_chat(user, "You connect the cable to \the [src].")
+		to_chat(user, "你将线缆连接到\the [src].")
 		var/opdir1 = 0
 		var/opdir2 = 0
 		if (NCC.tiledir == "horizontal")
@@ -227,7 +227,7 @@
 						NCOO.connections += NCC
 					if (!(NCOO in NCC.connections) && !list_cmp(NCC.connections, NCOO.connections))
 						NCC.connections += NCOO
-					to_chat(user, "You connect the two cables.")
+					to_chat(user, "你将两根线缆连接起来.")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(NCC,opdir2)))
 				if ((NCOC.tiledir == NCC.tiledir) && NCOC != NCC)
@@ -235,14 +235,14 @@
 						NCOC.connections += NCC
 					if (!(NCOC in NCC.connections) && !list_cmp(NCC.connections, NCOC.connections))
 						NCC.connections += NCOC
-					to_chat(user, "You connect the two cables.")
+					to_chat(user, "你将两根线缆连接起来.")
 	else
 		..()
 
 /////ENGINE MAKER/////////
 /obj/item/weapon/enginemaker
-	name = "engine maker"
-	desc = "Use this to craft engines."
+	name = "引擎制造机"
+	desc = "用于制造引擎."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "tools"
 	w_class = ITEM_SIZE_SMALL
@@ -254,7 +254,7 @@
 
 /obj/item/weapon/enginemaker/attack_self(mob/living/human/H)
 	if (!istype(H.l_hand, /obj/item/stack/material/steel) && !istype(H.r_hand, /obj/item/stack/material/steel))
-		to_chat(H, "<span class = 'warning'>You need to have a steel stack in one of your hands in order to make this.</span>")
+		to_chat(H, "<span class = 'warning'>你需要手中持有一叠钢材才能制造这个.</span>")
 		return
 	else
 		steelamt = 0
@@ -274,10 +274,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 200, maximum 45000)") as num
 			enginesize = Clamp(enginesize, 200, 45000)
 			if ((enginesize/1000)*33 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*66] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*66]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,220,src))
 					if (done)
@@ -291,7 +291,7 @@
 						NEN.name = "[NEN.enginesize]cc hot bulb engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -301,10 +301,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 250, maximum 18000)") as num
 			enginesize = Clamp(enginesize, 250, 18000)
 			if ((enginesize/1000)*73 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*136] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*136]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,220,src))
 					if (done)
@@ -318,7 +318,7 @@
 						NEN.name = "[NEN.enginesize]cc turbine engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -328,10 +328,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 49, maximum 1000)") as num
 			enginesize = Clamp(enginesize, 49, 1000)
 			if ((enginesize/1000)*40 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*90] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*90]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,200,src))
 					if (done)
@@ -345,7 +345,7 @@
 						NEN.name = "[NEN.enginesize]cc 2-S gasoline engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -355,10 +355,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 80, maximum 30000)") as num
 			enginesize = Clamp(enginesize, 80, 30000)
 			if ((enginesize/1000)*50 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*100] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*100]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,200,src))
 					if (done)
@@ -372,7 +372,7 @@
 						NEN.name = "[NEN.enginesize]cc 4-S gasoline engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -382,10 +382,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 100, maximum 30000)") as num
 			enginesize = Clamp(enginesize, 100, 30000)
 			if ((enginesize/1000)*100 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*100] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*100]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,200,src))
 					if (done)
@@ -399,7 +399,7 @@
 						NEN.name = "[NEN.enginesize]cc 4-S gasoline engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -409,10 +409,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 80, maximum 30000)") as num
 			enginesize = Clamp(enginesize, 80, 30000)
 			if ((enginesize/1000)*60 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*120] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你的钢材不足. 你需要[(enginesize/1000)*120]而你只有[steelamt]. 试着制造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,200,src))
 					if (done)
@@ -426,7 +426,7 @@
 						NEN.name = "[NEN.enginesize]cc 4-S ethanol-gasoline engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -436,10 +436,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 300, maximum 45000)") as num
 			enginesize = Clamp(enginesize, 300, 45000)
 			if ((enginesize/1000)*40 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*80] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你没有足够的钢材. 你需要[(enginesize/1000)*80]而你只有[steelamt]. 尝试建造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,270,src))
 					if (done)
@@ -453,7 +453,7 @@
 						NEN.name = "[NEN.enginesize]cc diesel engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -463,10 +463,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 300, maximum 45000)") as num
 			enginesize = Clamp(enginesize, 300, 45000)
 			if ((enginesize/1000)*45 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*90] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你没有足够的钢材. 你需要[(enginesize/1000)*90]而你只有[steelamt]. 尝试建造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,270,src))
 					if (done)
@@ -480,7 +480,7 @@
 						NEN.name = "[NEN.enginesize]cc biodiesel engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else
@@ -490,10 +490,10 @@
 			enginesize = input(H, "Choose the engine size, in cc: (minimum 200, maximum 55000)") as num
 			enginesize = Clamp(enginesize, 200, 55000)
 			if ((enginesize/1000)*43 > steelamt)
-				to_chat(H, "You don't have enough steel. You need [(enginesize/1000)*86] and you have [steelamt]. Try building a smaller engine.")
+				to_chat(H, "你没有足够的钢材. 你需要[(enginesize/1000)*86]而你只有[steelamt]. 尝试建造一个更小的引擎.")
 				return
 			else
-				to_chat(H, "You start building the engine...")
+				to_chat(H, "你开始建造引擎...")
 				done = TRUE
 				if (do_after(H,240,src))
 					if (done)
@@ -507,7 +507,7 @@
 						NEN.name = "[NEN.enginesize]cc hesselman engine"
 						NEN.maxpower *= (NEN.enginesize/1000)
 						NEN.fuelefficiency *= (NEN.enginesize/1000)
-						to_chat(H, "You finish building the engine.")
+						to_chat(H, "你完成了引擎的建造.")
 						done = FALSE
 						return
 				else

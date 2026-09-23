@@ -1,6 +1,6 @@
 /obj/structure/optable
-	name = "Operating Table"
-	desc = "Used for advanced medical procedures."
+	name = "手术台"
+	desc = "用于高级医疗程序."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "operating_table"
 	density = TRUE
@@ -73,9 +73,9 @@
 
 /obj/structure/optable/proc/take_victim(mob/living/human/C, mob/living/human/user as mob)
 	if (C == user)
-		user.visible_message("[user] climbs on \the [src].","You climb on \the [src].")
+		user.visible_message("[user]爬上了\the [src].","你爬上了\the [src].")
 	else
-		visible_message("<span class='notice'>\The [C] has been laid on \the [src] by [user].</span>", 3)
+		visible_message("<span class='notice'>\The [C]已被[user]放置在\the [src]上.</span>", 3)
 	C.resting = TRUE
 	C.loc = loc
 	for (var/obj/O in src)
@@ -113,17 +113,17 @@
 /obj/structure/optable/proc/check_table(mob/living/human/patient as mob)
 	check_victim()
 	if (victim && get_turf(victim) == get_turf(src) && victim.lying)
-		to_chat(usr, "<span class='warning'>\The [src] is already occupied!</span>")
+		to_chat(usr, "<span class='warning'>\The [src]已经被占用了!</span>")
 		return FALSE
 	if (patient.buckled)
-		to_chat(usr, "<span class='notice'>Unbuckle \the [patient] first!</span>")
+		to_chat(usr, "<span class='notice'>先解开\the [patient]!</span>")
 		return FALSE
 	return TRUE
 
 
 /obj/structure/medicalbed
-	name = "medical bed"
-	desc = "A bed that heals you up. The future is wonderful."
+	name = "医疗床"
+	desc = "一张能治疗你的床. 未来真奇妙."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "operating_table"
 	anchored = TRUE

@@ -1,40 +1,40 @@
 // COLOR SHOES
 /obj/item/clothing/shoes/color
-	name = "shoes"
-	desc = "A pair of shoes."
+	name = "鞋子"
+	desc = "一双鞋子."
 	icon_state = "white"
 
 /obj/item/clothing/shoes/color/white
-	name = "white shoes"
+	name = "白色鞋子"
 	icon_state = "white"
 
 /obj/item/clothing/shoes/color/blue
-	name = "blue shoes"
+	name = "蓝色鞋子"
 	icon_state = "blue"
 
 /obj/item/clothing/shoes/color/green
-	name = "green shoes"
+	name = "绿色鞋子"
 	icon_state = "green"
 
 /obj/item/clothing/shoes/color/yellow
-	name = "yellow shoes"
+	name = "黄色鞋子"
 	icon_state = "yellow"
 
 /obj/item/clothing/shoes/color/purple
-	name = "purple shoes"
+	name = "紫色鞋子"
 	icon_state = "purple"
 
 /obj/item/clothing/shoes/color/brown
-	name = "brown shoes"
+	name = "棕色鞋子"
 	icon_state = "brown"
 
 /obj/item/clothing/shoes/color/red
-	name = "red shoes"
-	desc = "Stylish red shoes."
+	name = "红色鞋子"
+	desc = "时尚的红色鞋子."
 	icon_state = "red"
 
 /obj/item/clothing/shoes/color/orange
-	name = "orange shoes"
+	name = "橙色鞋子"
 	icon_state = "orange"
 	var/obj/item/weapon/handcuffs/chained = null
 

@@ -1,6 +1,6 @@
 /obj/structure/brazier
-	name = "brazier"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "火盆"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "brazier0"
 	anchored = TRUE
 	density = TRUE
@@ -26,17 +26,17 @@
 	if (user.a_intent == I_HELP)
 		if (istype(W, /obj/item/weapon/wrench) || (istype(W, /obj/item/weapon/hammer)))
 			if (istype(W, /obj/item/weapon/wrench))
-				visible_message("<span class='warning'>[user] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[user]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面。</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(user,50,src))
-					visible_message("<span class='warning'>[user] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+					visible_message("<span class='warning'>[user][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面。</span>")
 					anchored = !anchored
 					return
 			else if (istype(W, /obj/item/weapon/hammer) || istype(W, /obj/item/weapon/hammer/modern))
-				visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>")
+				visible_message("<span class='warning'>[user]开始拆除\the [src]。</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(user,50,src))
-					visible_message("<span class='warning'>[user] deconstructs \the [src].</span>")
+					visible_message("<span class='warning'>[user]拆除了\the [src]。</span>")
 					qdel(src)
 					return
 		else if (istype(W, /obj/item/stack/ore/coal))
@@ -147,28 +147,28 @@
 // Other brazier type defines.
 
 /obj/structure/brazier/stone
-	name = "stone brazier"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "石火盆"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "s_brazier0"
 
 /obj/structure/brazier/sandstone
-	name = "sandstone brazier"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "砂岩火盆"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "sandstone_brazier0"
 
 /obj/structure/brazier/obsidian
-	name = "obsidian brazier"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "黑曜石火盆"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "obsidian_brazier0"
 
 /obj/structure/brazier/marble
-	name = "marble brazier"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "大理石火盆"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "marble_brazier0"
 
 /obj/structure/brazier/potbellystove // This is a stove not a brazier; todo: move this.
-	name = "potbelly stove"
-	desc = "Where you keep warm or light arrows and bolts on fire."
+	name = "铸铁火炉"
+	desc = "用来取暖或点燃箭矢和弩矢的地方。"
 	icon_state = "potbelly"
 
 // Other lit brazier procedures. - todo: call parent proc which handles all of this, save for the icon states, condensifying code as a result.

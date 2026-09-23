@@ -1,7 +1,7 @@
 //Dog
 /mob/living/simple_animal/pet/dog
 	name = "beagle"
-	desc = "A cute beagle."
+	desc = "一只可爱的比格犬。"
 	icon_state = "beagle"
 	item_state = "beagle"
 	icon_living = "beagle"

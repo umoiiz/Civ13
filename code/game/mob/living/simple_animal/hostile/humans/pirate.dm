@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/voyage/pirate
 	name = "Pirate"
-	desc = "Does what he wants cause a pirate is free."
+	desc = "为所欲为, 因为海盗是自由的."
 	icon_state = "piratemelee"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -35,7 +35,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/pirate/ranged
 	name = "Pirate"
-	desc = "Does what he wants cause a pirate is free."
+	desc = "为所欲为, 因为海盗是自由的."
 	icon_state = "pirateranged"
 	icon_dead = "pirateranged_dead"
 	response_help = "pushes"
@@ -79,7 +79,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/pirate/ranged/captain
 	name = "Pirate Captain"
-	desc = "Does what he wants cause a pirate is free. But isn't hostile at first. This one has a flaming beard, pretty cool."
+	desc = "为所欲为, 因为海盗是自由的. 但一开始并不敌对. 这个家伙留着燃烧的胡子, 挺酷的."
 	icon_state = "pirate_friendly_captain"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -114,7 +114,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/pirate/friendly
 	name = "Pirate"
-	desc = "Does what he wants cause a pirate is free. But isn't hostile at first."
+	desc = "为所欲为, 因为海盗是自由的. 但一开始并不敌对."
 	icon_state = "pirate_friendly1"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -158,7 +158,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/pirate/friendly/captain
 	name = "Pirate Captain"
-	desc = "Does what he wants cause a pirate is free. But isn't hostile at first. This one has a flaming beard, pretty cool."
+	desc = "为所欲为, 因为海盗是自由的. 但一开始并不敌对. 这个家伙留着燃烧的胡子, 挺酷的."
 	icon_state = "pirate_friendly_captain"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -193,7 +193,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/pirate/friendly/blindman
 	name = "Old Blind Pirate"
-	desc = "Does what he wants cause a pirate is free. But isn't hostile at first. This one has no vision, but is probably experienced enough to kick your ass, even with no eyes."
+	desc = "为所欲为, 因为海盗是自由的. 但一开始并不敌对. 这个家伙没有视力, 但可能经验丰富到足以在没有眼睛的情况下也能把你揍一顿."
 	icon_state = "pirate_friendly_blind"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -224,7 +224,7 @@
 		icon_state = "pirate_friendly_blind"
 /mob/living/simple_animal/hostile/human/voyage/pirate/friendly/female
 	name = "Pirate Woman"
-	desc = "Does what she wants cause a pirate is free. But isn't hostile at first.."
+	desc = "为所欲为, 因为海盗是自由的. 但一开始并不敌对.."
 	icon_state = "pirate_friendly_female"
 	icon_dead = "piratemelee_dead"
 	response_help = "pushes"
@@ -259,7 +259,7 @@
 
 /mob/living/simple_animal/hostile/human/voyage/slaver
 	name = "slaver"
-	desc = "A slave owner and conductor."
+	desc = "一个奴隶主兼指挥者."
 	icon_state = "slaver1"
 	icon_dead = "slaver1_dead"
 	response_help = "pushes"
@@ -293,7 +293,7 @@
 	use_generated_appearance = FALSE
 /mob/living/simple_animal/hostile/human/voyage/slaver/club
 	name = "slaver"
-	desc = "A slave owner and conductor."
+	desc = "一个奴隶主兼指挥者."
 	icon_state = "slaver2"
 	icon_dead = "slaver2_dead"
 	response_help = "pushes"

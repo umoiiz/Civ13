@@ -1,6 +1,6 @@
 /obj/item/wood_ash //This new item exists due to the cleanable/ash can only exist in one per tile
-	name = "ashes"
-	desc = "Ashes to ashes, dust to dust."
+	name = "灰烬"
+	desc = "尘归尘,土归土。"
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
@@ -15,7 +15,7 @@
 
 /obj/item/wood_ash/attackby(obj/item/weapon/reagent_containers/glass/C as obj, mob/user as  mob )
 	C.reagents.add_reagent("ash", 1)
-	to_chat(user, "You collect ash into \the [C.name]")
+	to_chat(user, "你将灰烬收集到\the [C.name]中")
 	qdel(src)
 	return
 

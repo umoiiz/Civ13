@@ -61,14 +61,14 @@
 					spawn(30)
 						cpr_time = TRUE
 
-					H.visible_message("<span class='danger'>\The [H] is trying perform CPR on \the [src]!</span>", "<span class ='notice'>You try to perform CPR on \the [src]!</span>", "You hear pumping.")
+					H.visible_message("<span class='danger'>\The [H]正在对\the [src]进行心肺复苏!</span>", "<span class ='notice'>你正在尝试对\the [src]进行心肺复苏!</span>", "你听到了按压声.")
 
 					if (!do_after(H, 30, src))
 						return
 
 					adjustOxyLoss(-(min(getOxyLoss(), 5)))
 					updatehealth()
-					H.visible_message("<span class='danger'>\The [H] performs CPR on \the [src]!</span>", "<span class ='notice'>You perform CPR on \the [src]! Repeat at least every <big>7</big> seconds.</span>", "You hear a gust of air going down a narrow tube.")
+					H.visible_message("<span class='danger'>\The [H]对\the [src]进行了心肺复苏!</span>", "<span class ='notice'>你对\the [src]进行了心肺复苏! 至少每<big>7</big>秒重复一次.</span>", "你听到一阵气流沿着狭窄的管道向下流动.")
 					if (stat != DEAD)
 						to_chat(src, SPAN_NOTICE("You feel a breath of fresh air enter your lungs. It feels good."))
 					to_chat(H, SPAN_WARNING("Repeat at least every 7 seconds."))
@@ -149,7 +149,7 @@
 
 				H.do_attack_animation(src)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
-				M.visible_message("<span class='warning'>[M] has grabbed [src] passively!</span>", "<span class='notice'>You have grabbed [src] passively.</span>")
+				M.visible_message("<span class='warning'>[M]被动地抓住了[src]!</span>", "<span class='notice'>你被动地抓住了[src]。</span>")
 				return TRUE
 			if (I_HARM)
 				var/tgtm = M.targeted_organ
@@ -158,7 +158,7 @@
 				if (tgtm == "mouth" && wear_mask && istype(wear_mask, /obj/item/weapon/grenade))
 					var/obj/item/weapon/grenade/G = wear_mask
 					if (!G.active)
-						M.visible_message("<span class='danger'>\The [M] <big>pulls the pin</big> from \the [src]'s [G.name]!</span>", "<span class='danger'>You <big>pull the pin</big> from \the [src]'s [G.name]!</span>", "You hear the distinct sound of a pin being pulled.")
+						M.visible_message("<span class='danger'>\The [M] <big>从\the [src]的[G.name]中拔出了拉环</big>!</span>", "<span class='danger'>你从\the [src]的[G.name]中拔出了拉环<big></big>!</span>", "你听到了拉环被拔出的独特声响。")
 						G.activate(M)
 						update_inv_wear_mask()
 					else
@@ -248,7 +248,7 @@
 				if (istype(affecting, /obj/item/organ/external/head) && prob(hitcheck * (hit_zone == "mouth" ? 5 : TRUE))) //MUCH higher chance to knock out teeth if you aim for mouth
 					var/obj/item/organ/external/head/U = affecting
 					if (U.knock_out_teeth(get_dir(H, src), round(rand(28, 38) * ((hitcheck*2)/100))))
-						M.visible_message("<span class='danger'>Some of [src]'s teeth sail off in an arc!</span>", \
+						M.visible_message("<span class='danger'>[src]的一些牙齿呈弧形飞了出去!</span>", \
 											"<span class='userdanger'>Some of your teeth sail off in an arc!</span>")
 
 				// See what attack they use
@@ -321,7 +321,7 @@
 							turfs += T
 						if (turfs.len)
 							var/turf/target = pick(turfs)
-							visible_message("<span class='danger'>[src]'s [W] goes off during the struggle!</span>")
+							visible_message("<span class='danger'>[src]的[W]在挣扎中走火了!</span>")
 							return W.afterattack(target,src)
 
 				var/randn = rand(1, 100)
@@ -330,9 +330,9 @@
 					apply_effect(3, WEAKEN, armor_check)
 					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 					if (armor_check < 2)
-						M.visible_message("<span class= 'danger'>[M] has pushed [src]!</span>", "<span class = 'danger'>You have pushed [src]!</span>")
+						M.visible_message("<span class= 'danger'>[M]推了[src]!</span>", "<span class = 'danger'>你推了[src]!</span>")
 					else
-						M.visible_message("<span class='warning'>[M] attempted to push [src]!</span>", "<span class = 'danger'>You attempt to push [src]!</span>")
+						M.visible_message("<span class='warning'>[M]试图推[src]!</span>", "<span class = 'danger'>你试图推[src]!</span>")
 					return
 
 				if (randn <= 60)
@@ -345,12 +345,12 @@
 					for (var/obj/item/I in holding)
 						if (I)
 							drop_from_inventory(I)
-							M.visible_message("<span class='danger'>[M] has disarmed [src]!</span>", "<span class='danger'>You have disarmed [src]!</span>")
+							M.visible_message("<span class='danger'>[M]缴了[src]的械!</span>", "<span class='danger'>你缴了[src]的械!</span>")
 							playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 							return
 
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, TRUE, -1)
-				M.visible_message("<span class = 'red'><b>[M] attempted to disarm [src]!</b></span>", "<span class = 'red'><b>You attempt to disarm [src]!</b></span>")
+				M.visible_message("<span class = 'red'><b>[M]试图缴[src]的械!</b></span>", "<span class = 'red'><b>你试图缴[src]的械!</b></span>")
 	return
 /mob/living/human/proc/resuscitate()
 	if(!is_asystole())
@@ -362,9 +362,9 @@
 		if(L)
 			active_breaths = L.active_breathing
 		if(active_breaths)
-			visible_message("\The [src] jerks and gasps for breath!")
+			visible_message("\The [src]猛地一抽,大口喘着气!")
 		else
-			visible_message("\The [src] twitches a bit as \his heart restarts!")
+			visible_message("\The [src]微微抽搐着,\his 心脏重新跳动了!")
 		shock_stage = min(shock_stage, 100) // 120 is the point at which the heart stops.
 		if(getOxyLoss() >= 75)
 			setOxyLoss(75)
@@ -382,7 +382,7 @@
 
 	user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [name] ([ckey])</font>")
 	attack_log += text("\[[time_stamp()]\] <font color='orange'>was attacked by [user.name] ([user.ckey])</font>")
-	visible_message("<span class='danger'>[user] has [attack_message] [src]!</span>")
+	visible_message("<span class='danger'>[user]被[attack_message] [src]了!</span>")
 	user.do_attack_animation(src)
 
 	var/dam_zone = pick(organs_by_name)
@@ -415,10 +415,10 @@
 	if (!organ || organ.is_dislocated() || organ.dislocated == -1)
 		return FALSE
 
-	user.visible_message("<span class='danger'>[user] begins to dislocate [src]'s [organ.joint]!</span>", "<span class = 'danger'>You begin to dislocate [src]'s [organ.joint]!</span>")
+	user.visible_message("<span class='danger'>[user]开始使[src]的[organ.joint]脱臼!</span>", "<span class = 'danger'>你开始使[src]的[organ.joint]脱臼!</span>")
 	if (do_after(user, 100, progress = FALSE))
 		organ.dislocate(1)
-		user.visible_message("<span class='danger'>[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses","dislocates")]!</span>", "<span class = 'danger'>You [pick("cave in","crumble","collapse","dislocate")] [src]'s [organ.joint]!</span>")
+		user.visible_message("<span class='danger'>[src]的[organ.joint][pick("gives way","caves in","crumbles","collapses","dislocates")]了!</span>", "<span class = 'danger'>你[pick("cave in","crumble","collapse","dislocate")]了[src]的[organ.joint]!</span>")
 		return TRUE
 	return FALSE
 
@@ -427,18 +427,18 @@
 	var/success = FALSE
 	if (pulling)
 		if (pulling != user)
-			visible_message("<span class='danger'>[user] has broken [src]'s grip on [pulling]!</span>")
+			visible_message("<span class='danger'>[user]挣脱了[src]对[pulling]的抓握!</span>")
 			success = TRUE
 			stop_pulling()
 		else
-			user.visible_message("<span class = 'danger'>[user] has broken [src]'s grip on them!</span>", "<span class = 'danger'>You have broken [src]'s grip on you!</span>")
+			user.visible_message("<span class = 'danger'>[user]挣脱了[src]对自己的抓握!</span>", "<span class = 'danger'>你挣脱了[src]对你的抓握!</span>")
 			success = TRUE
 			stop_pulling()
 
 	if (istype(l_hand, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/lgrab = l_hand
 		if (lgrab.affecting)
-			user.visible_message("<span class='danger'>[user] has broken [src]'s grip on [lgrab.affecting]!</span>", "<span class = 'danger'>You have broken [src]'s grip on [lgrab.affecting]!</span>")
+			user.visible_message("<span class='danger'>[user]挣脱了[src]对[lgrab.affecting]的抓握!</span>", "<span class = 'danger'>你挣脱了[src]对[lgrab.affecting]的抓握!</span>")
 			success = TRUE
 		spawn(1)
 			qdel(lgrab)
@@ -446,7 +446,7 @@
 	if (istype(r_hand, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/rgrab = r_hand
 		if (rgrab.affecting)
-			user.visible_message("<span class='danger'>[user] has broken [src]'s grip on [rgrab.affecting]!</span>", "<span class = 'danger'>You have broken [src]'s grip on [rgrab.affecting]!</span>")
+			user.visible_message("<span class='danger'>[user]挣脱了[src]对[rgrab.affecting]的抓握!</span>", "<span class = 'danger'>你挣脱了[src]对[rgrab.affecting]的抓握!</span>")
 			success = TRUE
 		spawn(1)
 			qdel(rgrab)
@@ -472,9 +472,9 @@
 		return 0
 
 	if(user == src)
-		user.visible_message("\The [user] starts applying pressure to \his [organ.name]!", "You start applying pressure to your [organ.name]!")
+		user.visible_message("\The [user]开始对\his [organ.name]施加压力!", "你开始对自己的[organ.name]施加压力!")
 	else
-		user.visible_message("\The [user] starts applying pressure to [src]'s [organ.name]!", "You start applying pressure to [src]'s [organ.name]!")
+		user.visible_message("\The [user]开始对[src]的[organ.name]施加压力!", "你开始对[src]的[organ.name]施加压力!")
 	spawn(0)
 		organ.applied_pressure = user
 		check_pressure(user,target_zone)
@@ -489,9 +489,9 @@
 		organ.applied_pressure = null
 
 		if(user == src)
-			user.visible_message("\The [user] stops applying pressure to \his [organ.name]!", "You stop applying pressure to your [organ.name]!")
+			user.visible_message("\The [user]停止对\his [organ.name]施加压力!", "你停止对自己的[organ.name]施加压力!")
 		else
-			user.visible_message("\The [user] stops applying pressure to [src]'s [organ.name]!", "You stop applying pressure to [src]'s [organ.name]!")
+			user.visible_message("\The [user]停止对[src]的[organ.name]施加压力!", "你停止对[src]的[organ.name]施加压力!")
 		return FALSE
 	else
 

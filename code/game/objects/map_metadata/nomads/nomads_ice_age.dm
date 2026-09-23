@@ -15,7 +15,7 @@
 /obj/map_metadata/nomads/ice_age/seasons()
 	if (real_season == "SUMMER")
 		season = "WINTER"
-		to_chat(world, "<big>It's getting very cold. <b>Winter</b> has started.</big>")
+		to_chat(world, "<big>天气变得非常寒冷. <b>冬季</b>已经开始.</big>")
 		change_weather_somehow()
 		for (var/obj/structure/wild/tree/live_tree/TREES)
 			TREES.change_season()
@@ -39,7 +39,7 @@
 		real_season = "WINTER"
 	else
 		season = "SUMMER"
-		to_chat(world, "<big>The weather gets warmer. <b>Summer</b> has started.</big>")
+		to_chat(world, "<big>天气变得温暖. <b>夏季</b>已经开始.</big>")
 		change_weather_somehow()
 		for (var/obj/structure/wild/tree/live_tree/TREES)
 			TREES.change_season()

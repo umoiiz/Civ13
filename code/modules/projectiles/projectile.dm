@@ -1,5 +1,5 @@
 /obj/item/projectile
-	name = "projectile"
+	name = "弹丸"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "bullet"
 	density = FALSE								// we no longer use Bump() to detect collisions - Kachnov
@@ -409,10 +409,10 @@
 	if (blockedhit == FALSE)
 		if (silenced)
 			if(hit_zone)
-				to_chat(target_mob, "<span class='danger'>You've been hit in the [parse_zone(hit_zone)] by \the [src]!</span>")
+				to_chat(target_mob, "<span class='danger'>你的[parse_zone(hit_zone)]被\the [src]击中了!</span>")
 		else
 			if(hit_zone)
-				visible_message("<span class='danger'>\The [target_mob] is hit in the [parse_zone(hit_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
+				visible_message("<span class='danger'>\The [target_mob]被击中了[parse_zone(hit_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 		if (istype(target_mob, /mob/living/simple_animal/hostile/human/zombie))
 			var/mob/living/simple_animal/hostile/human/zombie/Z = target_mob
 			if(hit_zone)

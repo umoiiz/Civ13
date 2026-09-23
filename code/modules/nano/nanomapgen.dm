@@ -25,19 +25,19 @@
 		endY = world.maxy
 
 	if (currentZ < 0 || currentZ > world.maxz)
-		to_chat(usr, "NanoMapGen: <b>ERROR: currentZ ([currentZ]) must be between TRUE and [world.maxz]</b>")
+		to_chat(usr, "NanoMapGen: <b>错误: 当前Z轴 ([currentZ]) 必须介于TRUE和[world.maxz]之间</b>")
 
 		sleep(3)
 		return NANOMAP_TERMINALERR
 
 	if (startX > endX)
-		to_chat(usr, "NanoMapGen: <b>ERROR: startX ([startX]) cannot be greater than endX ([endX])</b>")
+		to_chat(usr, "NanoMapGen: <b>错误: 起始X ([startX]) 不能大于结束X ([endX])</b>")
 
 		sleep(3)
 		return NANOMAP_TERMINALERR
 
 	if (startY > endX)
-		to_chat(usr, "NanoMapGen: <b>ERROR: startY ([startY]) cannot be greater than endY ([endY])</b>")
+		to_chat(usr, "NanoMapGen: <b>错误: 起始Y ([startY]) 不能大于结束Y ([endY])</b>")
 		sleep(3)
 		return NANOMAP_TERMINALERR
 
@@ -48,7 +48,7 @@
 		return NANOMAP_TERMINALERR
 
 	world.log << "NanoMapGen: <b>GENERATE MAP ([startX],[startY],[currentZ]) to ([endX],[endY],[currentZ])</b>"
-	to_chat(usr, "NanoMapGen: <b>GENERATE MAP ([startX],[startY],[currentZ]) to ([endX],[endY],[currentZ])</b>")
+	to_chat(usr, "NanoMapGen: <b>生成地图 ([startX],[startY],[currentZ]) 到 ([endX],[endY],[currentZ])</b>")
 	var/count = FALSE;
 	for (var/WorldX = startX, WorldX <= endX, WorldX++)
 		for (var/WorldY = startY, WorldY <= endY, WorldY++)
@@ -74,7 +74,7 @@
 
 	world.log << "NanoMapGen: <b>Done.</b>"
 
-	to_chat(usr, "NanoMapGen: <b>Done. File [mapFilename] uploaded to your cache.</b>")
+	to_chat(usr, "NanoMapGen: <b>完成. 文件[mapFilename]已上传到你的缓存.</b>")
 
 	if (Tile.Width() != NANOMAP_MAX_ICON_DIMENSION || Tile.Height() != NANOMAP_MAX_ICON_DIMENSION)
 		return NANOMAP_BADOUTPUT

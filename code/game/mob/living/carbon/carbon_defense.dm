@@ -37,10 +37,10 @@
 		return FALSE //unsuitable weapon
 
 	if(user.pacifist)
-		to_chat(src, "<font color='yellow'><big><b>I don't want to fight!</b></big></font>")
+		to_chat(src, "<font color='yellow'><big><b>我不想打架!</b></big></font>")
 		return FALSE
 
-	user.visible_message("<span class='danger'>\The [user] begins to slit [src]'s throat with \the [W]!</span>")
+	user.visible_message("<span class='danger'>\The [user]开始用\the [W]割开[src]的喉咙!</span>")
 
 	user.next_move = world.time + delay //also should prevent user from triggering this repeatedly
 	if (!do_after(user, delay, progress=0))
@@ -70,9 +70,9 @@
 
 	if (total_damage)
 		if (oxyloss >= 40)
-			user.visible_message("<span class='danger'>\The [user] slit [src]'s throat open with \the [W]!</span>")
+			user.visible_message("<span class='danger'>\The [user]用\the [W]割开了[src]的喉咙!</span>")
 		else
-			user.visible_message("<span class='danger'>\The [user] cut [src]'s neck with \the [W]!</span>")
+			user.visible_message("<span class='danger'>\The [user]用\the [W]割伤了[src]的脖子!</span>")
 
 		if (W.hitsound)
 			playsound(loc, W.hitsound, 50, TRUE, -1)

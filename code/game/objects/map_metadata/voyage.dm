@@ -75,15 +75,15 @@
 				tally += M.value*M.amount
 			for(var/obj/item/stack/money/M1 in S.loc)
 				tally += M1.value*M1.amount
-	to_chat(world, "<font size=4 color='yellow'>Total Treasure: [tally]</font>")
-	to_chat(world, "<font size=4 color='yellow'>Islands Visited: [statistics[2]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>Ships Defeated:</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Xebecs (lvl 1): [statistics[3][1]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Schooners (lvl 2): [statistics[3][2]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Flutes (lvl 3): [statistics[3][3]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Brigs (lvl 4): [statistics[3][4]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Galleons (lvl 5): [statistics[3][5]]</font>")
-	to_chat(world, "<font size=4 color='yellow'>	Man-O-Wars (lvl 6): [statistics[3][6]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>宝藏总数: [tally]</font>")
+	to_chat(world, "<font size=4 color='yellow'>已访问岛屿: [statistics[2]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>已击败船只:</font>")
+	to_chat(world, "<font size=4 color='yellow'>	三桅小帆船 (1级): [statistics[3][1]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>	纵帆船 (2级): [statistics[3][2]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>	长笛船 (3级): [statistics[3][3]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>	双桅横帆船 (4级): [statistics[3][4]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>	大帆船 (5级): [statistics[3][5]]</font>")
+	to_chat(world, "<font size=4 color='yellow'>	风帆战列舰 (6级): [statistics[3][6]]</font>")
 	no_spam = TRUE
 /obj/map_metadata/voyage/proc/nav()
 	check_roundend_conditions()
@@ -132,7 +132,7 @@
 /obj/map_metadata/voyage/proc/check_ships()
 	for(var/list/L in ships)
 		if (L[3] == latitude && L[4] == longitude)
-			to_chat(world, "<font size=4 color='yellow'>A ship approaches!</font>")
+			to_chat(world, "<font size=4 color='yellow'>一艘船正在靠近!</font>")
 			navmoving = FALSE
 			for(var/obj/effect/sailing_effect/S in world)
 				S.icon_state = "sailing_effect_stopped"
@@ -188,7 +188,7 @@
 	ship_anchored = TRUE
 	for(var/obj/structure/voyage/anchor_capstan/AC in world)
 		AC.update_icon()
-	to_chat(world, "<font size=4 color='yellow'>The ship arrives at the destination.</font>")
+	to_chat(world, "<font size=4 color='yellow'>船只已抵达目的地.</font>")
 	if (navdirection == "island")
 		if (prob(50))
 			load_map(pick("island1","island2","island3","piratetown","cursed_island"),"north")
@@ -210,7 +210,7 @@
 	ship_anchored = FALSE
 	for(var/obj/structure/voyage/anchor_capstan/AC in world)
 		AC.update_icon()
-	to_chat(world, "<font size=4 color='yellow'>The ship returns to the high seas.</font>")
+	to_chat(world, "<font size=4 color='yellow'>船只返回了公海.</font>")
 	for(var/obj/structure/grapplehook/G in world)
 		G.undeploy()
 	clear_map()
@@ -361,7 +361,7 @@
 		return "OBJECT;[nx];[ny];[nz];[A.type];[list2text(.)]"
 
 /obj/map_metadata/voyage/proc/do_export(saveloc = "maps/test")
-	to_chat(world, "<i><b>Saving the game... Might lag for a few seconds.</b></i>")
+	to_chat(world, "<i><b>正在保存游戏... 可能会卡顿几秒.</b></i>")
 	world.log << "Started saving at [time2text(world.realtime,"YYYY-MM-DD-(hh-mm-ss)")]."
 	var/F = file("[saveloc]/mobs.txt")
 	if (fexists(F))
@@ -394,7 +394,7 @@
 						text2file(list2text_assoc(O),F2)
 	sleep(1)
 	world.log << "Finished saving at [time2text(world.realtime,"YYYY-MM-DD-(hh-mm-ss)")]."
-	to_chat(world, "<i><b>Finished saving.</b></i>")
+	to_chat(world, "<i><b>保存完成.</b></i>")
 	return saveloc
 
 /////////////////////////////////////////////////////////////////
@@ -447,8 +447,8 @@
 /obj/structure/voyage/attackby(obj/P, mob/user)
 	return
 /obj/structure/voyage/shipwheel
-	name = "ship wheel"
-	desc = "Used to steer the ship."
+	name = "船舵"
+	desc = "用于操控船只."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "ship_wheel"
 	layer = 2.99
@@ -484,11 +484,11 @@
 					nmap.navdirection = newdir
 					if (findtext(nmap.navdirection,"Approach "))
 						nmap.navdirection = replacetext(nmap.navdirection,"Approach ","")
-					visible_message("<font size=3 color='yellow'>The ship heads to the <b>[nmap.navdirection]</b>.</font>")
+					visible_message("<font size=3 color='yellow'>船只正驶向<b>[nmap.navdirection]</b>.</font>")
 					return
 /obj/structure/voyage/tablemap
-	name = "map"
-	desc = "A map of the region. Used by the captain to plan the next moves."
+	name = "地图"
+	desc = "该地区的地图.船长用它来规划下一步行动."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "table_map"
 	layer = 3.2
@@ -527,8 +527,8 @@
 		examine(user)
 
 /obj/structure/voyage/boatswain_book
-	name = "crew log"
-	desc = "A book listing all the ship's crew and their assigned jobs."
+	name = "船员日志"
+	desc = "一本列出所有船员及其分配工作的书."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book_bs"
 	layer = 3.2
@@ -552,8 +552,8 @@
 		return t_text
 
 /obj/structure/voyage/quartermaster_book
-	name = "ship inventory"
-	desc = "A diary tracking the current inventory in the ship."
+	name = "船只库存"
+	desc = "一本记录船只当前库存的日志."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book_qm"
 	layer = 3.2
@@ -659,8 +659,8 @@
 		return tally
 
 /obj/structure/voyage/sextant
-	name = "sextant"
-	desc = "Used to determine the current latitude and longitude using the sun and stars."
+	name = "六分仪"
+	desc = "用于通过太阳和星星确定当前的纬度和经度."
 	icon = 'icons/obj/items.dmi'
 	icon_state = "sextant_tool"
 	layer = 3.2
@@ -674,15 +674,15 @@
 		if (map.ID == MAP_VOYAGE)
 			var/obj/map_metadata/voyage/nmap = map
 			if (nmap)
-				to_chat(H, "The ship is currently at <b>[nmap.latitude]</b>°N, <b>[nmap.longitude]</b>°W.")
-				to_chat(H, "The ship is heading to the <b>[nmap.navdirection]</b>, progress: <b>[nmap.navprogress]%</b>")
-				to_chat(H, "Sinking progress: <b>[nmap.get_sink()]%</b>")
+				to_chat(H, "本舰当前位于北纬<b>[nmap.latitude]</b>度, 西经<b>[nmap.longitude]</b>度.")
+				to_chat(H, "本舰正驶向<b>[nmap.navdirection]</b>, 进度: <b>[nmap.navprogress]%</b>")
+				to_chat(H, "沉没进度: <b>[nmap.get_sink()]%</b>")
 				if(nmap.ship_anchored)
-					to_chat(H, "The ship is <font color='red'><b>anchored</b></font>.")
+					to_chat(H, "本舰<font color='red'><b>已抛锚</b></font>.")
 
 /obj/structure/voyage/shipbell
-	name = "ship's bell"
-	desc = "Used to relay signals to the crew."
+	name = "船钟"
+	desc = "用于向船员传递信号."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "bell_stand"
 	layer = 4
@@ -700,7 +700,7 @@
 		if (world.time >= cooldown_bell_stand)
 			for (var/mob/M in player_list)
 				M.client << sound("sound/effects/bell_stand.ogg", repeat = FALSE, wait = TRUE, channel = 777)
-			to_chat(world, "<font size=4 color='yellow'>You hear the ship's bell!</font>")
+			to_chat(world, "<font size=4 color='yellow'>你听到了船钟声!</font>")
 			cooldown_bell_stand = world.time+50
 			icon_state = "bell_stand_ringing"
 			spawn(15)
@@ -708,8 +708,8 @@
 
 
 /obj/structure/voyage/ropeladder
-	name = "rope ladder"
-	desc = "A strong rope ladder leading up the mast."
+	name = "绳梯"
+	desc = "一条结实的绳梯, 通向桅杆上方."
 	icon = 'icons/turf/64x64.dmi'
 	icon_state = "ropeladder"
 	layer = 5
@@ -717,8 +717,8 @@
 	anchored = TRUE
 
 /obj/structure/voyage/anchor
-	name = "anchor"
-	desc = "A large iron anchor."
+	name = "锚"
+	desc = "一具巨大的铁锚."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "anchor"
 	layer = 5
@@ -726,8 +726,8 @@
 	anchored = TRUE
 
 /obj/structure/voyage/anchor_capstan
-	name = "anchor capstan"
-	desc = "A vertical-axled rotating machine used to raise and lower the ship's anchor."
+	name = "起锚机"
+	desc = "一种垂直轴旋转机械, 用于升降船锚."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "capstan"
 	layer = 4
@@ -749,7 +749,7 @@
 	proc/raise_anchor()
 		if(map.ID == MAP_VOYAGE)
 			var/obj/map_metadata/voyage/nmap = map
-			to_chat(world, "<font size=3 color='yellow'>The ship starts moving.</font>")
+			to_chat(world, "<font size=3 color='yellow'>本舰开始移动.</font>")
 			nmap.ship_anchored = FALSE
 			nmap.navmoving = TRUE
 			for(var/obj/effect/sailing_effect/S in world)
@@ -774,39 +774,39 @@
 					if (resp == "No")
 						return
 					else
-						to_chat(world, "<font size=4 color='yellow'>The ship is getting ready to leave, ALL crew outside must return within <b>2</b> minutes or be left behind!</font>")
+						to_chat(world, "<font size=4 color='yellow'>本舰正准备离港, 所有在外船员必须在<b>2</b>分钟内返回, 否则将被抛下!</font>")
 						spawn(600) // 1 minute
-							to_chat(world, "<font size=4 color='yellow'>The ship is leaving, ALL crew outside must return within <b>1</b> minute or be left behind!</font>")
+							to_chat(world, "<font size=4 color='yellow'>本舰即将离港, 所有在外船员必须在<b>1</b>分钟内返回, 否则将被抛下!</font>")
 						spawn(1200)
 							raise_anchor()
 							nmap.abandon_event()
 				else
-					to_chat(user, "You start [nmap.ship_anchored ? "raising" : "lowering"] the anchor...")
+					to_chat(user, "你开始[nmap.ship_anchored ? "raising" : "lowering"]锚...")
 					if (do_after(user, 60, src))
-						to_chat(user, "You lower the anchor.")
+						to_chat(user, "你放下了锚.")
 						lower_anchor()
 			else
-				to_chat(user, "You start [nmap.ship_anchored ? "raising" : "lowering"] the anchor...")
+				to_chat(user, "你开始[nmap.ship_anchored ? "raising" : "lowering"]锚...")
 				if (do_after(user, 60, src))
 					if (nmap.ship_anchored)
-						to_chat(user, "You raise the anchor.")
+						to_chat(user, "你升起了锚.")
 						raise_anchor()
 					else
-						to_chat(user, "You lower the anchor.")
+						to_chat(user, "你放下了锚.")
 						lower_anchor()
 
 /obj/structure/voyage/ropeladder/thin
 	icon_state = "ropeladder_thin"
 
 /obj/structure/closet/crate/chest/treasury/ship
-	name = "ship's treasury"
-	desc = "Where the ship's treasury is stored."
+	name = "船上的金库"
+	desc = "存放本舰金库的地方."
 	faction = "ship"
 	anchored = TRUE
 
 /obj/structure/voyage/grid
-	name = "loading gate"
-	desc = "A large gridded gate, used to load the ship."
+	name = "装卸门"
+	desc = "一扇大型格栅门, 用于装卸本舰货物."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "grid"
 	layer = 2.99
@@ -826,8 +826,8 @@
 	initial_icon_state = "grid_middle"
 
 /obj/structure/voyage/lever
-	name = "loading gate lever"
-	desc = "A lever used to open and close the loading gate."
+	name = "装卸门拉杆"
+	desc = "用于开启和关闭装卸门的拉杆."
 	icon = 'icons/obj/vehicles/train_lever.dmi'
 	icon_state = "lever_none"
 	anchored = TRUE
@@ -846,7 +846,7 @@
 /obj/structure/voyage/lever/attack_hand(mob/living/human/H as mob)
 	if(!ishuman(H))
 		return
-	visible_message("[H] starts [switched ? "closing" : "opening"] the loading gate...","You start [switched ? "closing" : "opening"] the loading gate...")
+	visible_message("[H]开始[switched ? "closing" : "opening"]装卸门...","你开始[switched ? "closing" : "opening"]装卸门...")
 	if(do_after(H, 80, src, can_move = FALSE))
 		switched = !switched
 		update_icon()
@@ -866,8 +866,8 @@
 		return
 
 /obj/structure/voyage/voicepipe
-	name = "voicepipe"
-	desc = "A brass tube used to communicate with different areas of the ship."
+	name = "传声管"
+	desc = "一根黄铜管, 用于与本舰不同区域通讯."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "voicepipe"
 	anchored = TRUE
@@ -878,23 +878,23 @@
 
 /obj/structure/voyage/voicepipe/cannons
 	vp_reference = "Gun Deck"
-	name = "voicepipe (gun deck)"
+	name = "传声管 (炮甲板)"
 
 /obj/structure/voyage/voicepipe/upper
 	vp_reference = "Upper Deck"
-	name = "voicepipe (upper deck)"
+	name = "传声管 (上甲板)"
 
 /obj/structure/voyage/voicepipe/medical
 	vp_reference = "Medical"
-	name = "voicepipe (medical)"
+	name = "传声管 (医疗舱)"
 
 /obj/structure/voyage/voicepipe/kitchen
 	vp_reference = "Kitchen"
-	name = "voicepipe (kitchen)"
+	name = "传声管 (厨房)"
 
 /obj/structure/voyage/voicepipe/prow
 	vp_reference = "Prow"
-	name = "voicepipe (prow post)"
+	name = "传声管 (船首哨位)"
 
 /obj/structure/voyage/voicepipe/proc/broadcast(var/msg, var/mob/living/human/speaker, var/verbage = "says")
 
@@ -915,7 +915,7 @@
 
 /obj/effect/sailing_effect
 	name = "waves"
-	desc = "Waves caused by the ship's movement."
+	desc = "本舰移动产生的水波."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "sailing_effect_stopped"
 	layer = 4
@@ -924,7 +924,7 @@
 
 /obj/effect/mast
 	name = "mast"
-	desc = "Waves caused by the ship's movement."
+	desc = "本舰移动产生的水波."
 	icon = 'icons/obj/vehicles/mast_vertical.dmi'
 	icon_state = "blank"
 	layer = 4
@@ -959,7 +959,7 @@
 
 /obj/effect/flooding
 	name = "flooded floor"
-	desc = "The water seems to be about 50cm deep."
+	desc = "水深似乎约为50厘米."
 	icon = 'icons/turf/beach.dmi'
 	icon_state = "flood_overlay1"
 	layer = 2.3
@@ -982,7 +982,7 @@
 					qdel(src)
 	update_icon()
 		icon_state = "flood_overlay[flood_level]"
-		desc = "The water seems to be about [flood_level*50]cm deep."
+		desc = "水深似乎约为[flood_level*50]厘米."
 		// Set overlay directly on the turf
 		var/turf/T = get_turf(src)
 		if(T)
@@ -1015,7 +1015,7 @@
 	attackby(obj/item/I, mob/living/human/user)
 		if(istype(I, /obj/item/weapon/reagent_containers/glass))
 			if (I.reagents.get_free_space() >= 50)
-				to_chat(user, "You start filling \the [I]...")
+				to_chat(user, "你开始灌装\the [I]...")
 				if (do_after(user, 15, src))
 					if (I.reagents.get_free_space() >= 50)
 						I.reagents.add_reagent("sodiumchloride", 8)

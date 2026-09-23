@@ -1,8 +1,8 @@
 
 /////////////////////////////TELEPHONE/////////////////////////////////////
 /obj/item/weapon/telephone
-	name = "telephone"
-	desc = "Used to communicate with other telephones. No number."
+	name = "电话"
+	desc = "用于与其他电话通信. 无号码."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "telephone"
 	flammable = FALSE
@@ -22,7 +22,7 @@
 	var/list/contacts = list()
 
 /obj/item/weapon/telephone/public
-	name = "phone booth"
+	name = "电话亭"
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "phonebooth_interior"
 	anchored = TRUE
@@ -141,9 +141,9 @@ var/list/global/phone_numbers = list()
 	if (ringing)
 		playsound(loc, 'sound/machines/telephone.ogg', 65)
 		if (!origin)
-			visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Ringing!")
+			visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>正在响铃!")
 		else
-			visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Incoming call: <b>[orname]</b> ([origin])")
+			visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>来电: <b>[orname]</b> ([origin])")
 	else
 		return
 
@@ -180,11 +180,11 @@ var/list/global/phone_numbers = list()
 			for (var/obj/structure/phoneline/PL in range(2,loc))
 				PL.ring_phone(tgtnum,phonenumber, src)
 				ringing = TRUE
-				visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Ringing [tgtnum]...")
+				visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>正在响铃 [tgtnum]...")
 				spawn(200)
 					if (!connected)
 						ringing = FALSE
-						visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Nobody picked up the phone at [tgtnum].")
+						visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>在 [tgtnum] 无人接听电话.")
 						return
 		else
 			var/found_tower = TRUE
@@ -194,32 +194,32 @@ var/list/global/phone_numbers = list()
 				ring_phone(tgtnum,phonenumber, src, user)
 				spawn(200)
 					if (!connected)
-						to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Nobody picked up the phone at [tgtnum].")
+						to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>在 [tgtnum] 无人接听电话.")
 						connected = FALSE
 						origincall = null
 						return
 			else
-				to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>No signal.")
+				to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>无信号。")
 				return
 	else if (connected)
 		connected = FALSE
 		if (origincall)
-			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You hang up the phone.")
+			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你挂断了电话。")
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话。")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话。")
 			origincall.connected = FALSE
 			origincall.origincall = null
 			origincall = null
 	else if (ringing && !ringingnum)
-		to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You hang up the phone.")
+		to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你挂断了电话。")
 		ringing = FALSE
 		if (origincall)
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话。")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone hangs up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人挂断了电话。")
 			origincall.origincall = null
 			origincall.connected = FALSE
 			origincall = null
@@ -230,11 +230,11 @@ var/list/global/phone_numbers = list()
 			origincall.connected = phonenumber
 			origincall.ringing = FALSE
 			origincall.origincall = src
-			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>You pick up the phone.")
+			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>你接起了电话。")
 			if (ishuman(origincall.loc))
-				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone picks up the phone.")
+				to_chat(origincall.loc, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人接起了电话。")
 			else
-				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Someone picks up the phone.")
+				origincall.visible_message("<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>有人接起了电话。")
 
 /obj/item/weapon/telephone/attack_hand(var/mob/living/human/H)
 	if (anchored && ishuman(H))
@@ -244,8 +244,8 @@ var/list/global/phone_numbers = list()
 		..()
 /////////////////////////////MOBILE PHONE/////////////////////////////////////
 /obj/item/weapon/telephone/mobile
-	name = "cellphone"
-	desc = "Used to communicate with other telephones. No number."
+	name = "手机"
+	desc = "用于与其他电话通讯。无号码。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "cellphone"
 	force = WEAPON_FORCE_WEAK+3
@@ -273,7 +273,7 @@ var/list/global/phone_numbers = list()
 			if (!input1)
 				return
 			if (input1 == phonenumber)
-				to_chat(user, "<span class='notice'>You can't add your own number!</span>")
+				to_chat(user, "<span class='notice'>你不能添加自己的号码!</span>")
 				return
 			var/addnum = 0
 			addnum = sanitize_integer(input1, min=1000, max=9999, default=0) //0 as a first digit doesnt really work
@@ -306,18 +306,18 @@ var/list/global/phone_numbers = list()
 					ring_phone(tgtnum,phonenumber, src, user)
 					spawn(200)
 						if (!connected)
-							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>Nobody picked up the phone at [tgtnum].")
+							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>在[tgtnum]无人接听电话。")
 							ringing = FALSE
 							return
 				else
-					to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>No signal.")
+					to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(src)] [src]:</b> </font>无信号。")
 					return
 	else
 		..()
 /////////////////////////////CELLPHONE TOWER/////////////////////////////////////
 /obj/structure/cell_tower
-	name = "cell tower"
-	desc = "A steel tower used to relay mobile communications."
+	name = "信号塔"
+	desc = "用于中继移动通讯的钢塔。"
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "radio_powered"
 	flammable = TRUE
@@ -349,25 +349,25 @@ var/list/global/phone_numbers = list()
 					TLG.ringproc(origin, originphone)
 					if (user)
 						if (targetc != "")
-							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>Ringing <b>[targetc]</b> ([target])...")
+							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>正在响铃 <b>[targetc]</b> ([target])...")
 						else
-							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>Ringing [target]...")
+							to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>正在响铃 [target]...")
 				else
-					to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>Number occupied.")
+					to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>号码占线。")
 					return
 		if (!found)
-			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>Number not found.")
+			to_chat(user, "<b><font size=2 color=#FFAE19>\icon[getFlatIcon(originphone)] [originphone]:</b> </font>未找到号码。")
 /obj/item/weapon/telephone/wireless
-	name = "telephone"
-	desc = "Used to communicate with other telephones. No number."
+	name = "电话"
+	desc = "用于与其他电话通讯。无号码。"
 	icon_state = "telephone"
 	connected = TRUE
 	wireless = TRUE
 	maxrange = 40
 
 /obj/item/weapon/telephone/mobile/police
-	name = "911 terminal"
-	desc = "Emergency calls will be received here."
+	name = "911终端"
+	desc = "紧急呼叫将在此处接收。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "police_intercom"
 	phonenumber = 911
@@ -379,7 +379,7 @@ var/list/global/phone_numbers = list()
 		if (map && map.ID == MAP_THE_ART_OF_THE_DEAL)
 			icon_state = "police_intercom"
 /obj/item/weapon/telephone/mobile/faction
-	name = "telephone"
+	name = "电话"
 	icon_state = "telephone"
 	anchored = TRUE
 	New()
@@ -396,31 +396,31 @@ var/list/global/phone_numbers = list()
 	update_icon()
 		icon_state = "telephone"
 /obj/item/weapon/telephone/mobile/faction/red
-	name = "Red phone"
+	name = "红色电话"
 	phonenumber = 1111
-	desc = "Used to communicate with other telephones. Number is 1111."
+	desc = "用于与其他电话通讯。号码为1111。"
 /obj/item/weapon/telephone/mobile/faction/blue
-	name = "Blue phone"
+	name = "蓝色电话"
 	phonenumber = 2222
-	desc = "Used to communicate with other telephones. Number is 2222."
+	desc = "用于与其他电话通讯。号码为2222。"
 	update_icon()
 		icon_state = "telephone_blue"
 /obj/item/weapon/telephone/mobile/faction/green
-	name = "Green phone"
+	name = "绿色电话"
 	phonenumber = 3333
-	desc = "Used to communicate with other telephones. Number is 3333."
+	desc = "用于与其他电话通讯。号码为3333。"
 	update_icon()
 		icon_state = "telephone_green"
 /obj/item/weapon/telephone/mobile/faction/yellow
-	name = "Yellow phone"
+	name = "黄色电话"
 	phonenumber = 4444
-	desc = "Used to communicate with other telephones. Number is 4444."
+	desc = "用于与其他电话通讯。号码为4444。"
 	update_icon()
 		icon_state = "telephone_yellow"
 /obj/item/weapon/telephone/mobile/faction/mckellen
-	name = "McKellen Entreprises phone"
+	name = "麦克莱伦企业电话"
 	phonenumber = 5555
-	desc = "Used to communicate with other telephones. Number is 5555."
+	desc = "用于与其他电话通讯。号码为5555。"
 
 /obj/item/weapon/telephone/mobile/faction/red/New()
 	..()
@@ -445,8 +445,8 @@ var/list/global/phone_numbers = list()
 
 //ROBERTS CELLPHONES//
 /obj/item/weapon/telephone/mobile/mobilefaction
-	name = "Corporate cellphone"
-	desc = "Used to communicate with other telephones."
+	name = "企业手机"
+	desc = "用于与其他电话通讯。"
 
 /obj/item/weapon/telephone/mobile/mobilefaction/New()
 	..()
@@ -459,27 +459,27 @@ var/list/global/phone_numbers = list()
 			if (F != src)
 				contacts += list(list(F.name,F.phonenumber))
 /obj/item/weapon/telephone/mobile/mobilefaction/blue
-	name = "Corporate cellphone"
-	desc = "Used to communicate with other telephones, intended for CEOs. Number: 2229."
+	name = "企业手机"
+	desc = "用于与其他电话通讯,专供首席执行官使用。号码:2229。"
 	phonenumber = 2229
 	color = "#0000FF"
 
 /obj/item/weapon/telephone/mobile/mobilefaction/green
-	desc = "Used to communicate with other telephones, intended for CEOs. Number: 3339."
+	desc = "用于与其他电话通讯,专供首席执行官使用。号码:3339。"
 	phonenumber = 3339
 	color = "#00FF00"
 
 /obj/item/weapon/telephone/mobile/mobilefaction/red
-	desc = "Used to communicate with other telephones, intended for CEOs. Number: 1119."
+	desc = "用于与其他电话通讯,专供首席执行官使用。号码:1119。"
 	phonenumber = 1119
 	color = "#FF0000"
 
 /obj/item/weapon/telephone/mobile/mobilefaction/yellow
-	desc = "Used to communicate with other telephones, intended for CEOs. Number: 4449."
+	desc = "用于与其他电话通讯,专供首席执行官使用。号码:4449。"
 	phonenumber = 4449
 	color = "#FFFF00"
 
 /obj/item/weapon/telephone/mobile/mobilefaction/mckellen
-	desc = "Used to communicate with other telephones, intended for CEOs. Number: 5559."
+	desc = "用于与其他电话通讯,专供首席执行官使用。号码:5559。"
 	phonenumber = 5559
 	color = "#FF7A00"

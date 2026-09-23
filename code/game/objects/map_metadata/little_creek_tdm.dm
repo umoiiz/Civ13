@@ -72,7 +72,7 @@
 
 
 /obj/structure/carriage_tdm
-	name = "Stagecoach Load"
+	name = "驿站马车装载"
 	desc = ""
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "miningcaropen"
@@ -94,7 +94,7 @@
 	if (istype(W,/obj/item/stack/money) || istype(W,/obj/item/stack/material/gold) || istype(W,/obj/item/stack/material/silver) || istype(W,/obj/item/stack/material/diamond))
 		storedvalue += (W.value*W.amount)
 		desc = "Stored Value: [storedvalue]."
-		to_chat(user, "You place \the [W] inside \the [src].")
+		to_chat(user, "你将 \the [W] 放入 \the [src].")
 		qdel(W)
 		if (storedvalue >= 1500)
 			map.update_win_condition()
@@ -103,5 +103,5 @@
 
 /obj/structure/carriage_tdm/proc/timer()
 	spawn(4000)
-		to_chat(world, "<big>Current status: Outlaws: <b>[storedvalue]/1500 Dollars</b></big>.")
+		to_chat(world, "<big>当前状态: 亡命徒: <b>[storedvalue]/1500美元</b></big>.")
 		timer()

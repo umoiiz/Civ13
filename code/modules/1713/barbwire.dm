@@ -1,5 +1,5 @@
 /obj/structure/barbwire
-	name = "barbwire"
+	name = "铁丝网"
 	icon_state = "barbwire"
 	anchored = TRUE
 	var/capture = FALSE

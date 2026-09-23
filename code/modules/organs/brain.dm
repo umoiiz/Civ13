@@ -1,7 +1,7 @@
 /obj/item/organ/brain
-	name = "brain"
+	name = "大脑"
 	health = 60 //They need to live awhile longer than other organs. Is this even used by organ code anymore?
-	desc = "A piece of juicy meat found in a person's head."
+	desc = "在人头里发现的一块多汁的肉."
 	organ_tag = "brain"
 	parent_organ = "head"
 	vital = TRUE
@@ -38,7 +38,7 @@
 
 /obj/item/organ/brain/examine(mob/user) // -- TLE
 	..(user)
-	to_chat(user, "This one seems particularly lifeless. Perhaps it will regain some of its luster later..")
+	to_chat(user, "这一个似乎特别没有生气. 也许它稍后会恢复一些光泽..")
 
 /obj/item/organ/brain/removed(var/mob/living/user)
 
@@ -62,7 +62,7 @@
 		owner.Weaken(round(damage, 1))
 
 /obj/item/organ/brain/proc/brain_damage_callback(var/damage) //Confuse them as a somewhat uncommon aftershock. Side note: Only here so a spawn isn't used. Also, for the sake of a unique timer.
-	to_chat(owner, "<span class = 'notice' font size='10'><B>I can't remember which way is forward...</B></span>")
+	to_chat(owner, "<span class = 'notice' font size='10'><B>我记不清哪边是前了...</B></span>")
 	owner.confused += damage
 
 /obj/item/organ/brain/proc/handle_disabilities()
@@ -79,15 +79,15 @@
 
 /obj/item/organ/brain/proc/handle_severe_brain_damage()
 	set waitfor = FALSE
-	to_chat(owner, "<span class = 'notice' font size='10'><B>Where am I...?</B></span>")
+	to_chat(owner, "<span class = 'notice' font size='10'><B>我在哪...?</B></span>")
 	sleep(5 SECONDS)
 	if(!owner)
 		return
-	to_chat(owner, "<span class = 'notice' font size='10'><B>What's going on...?</B></span>")
+	to_chat(owner, "<span class = 'notice' font size='10'><B>发生什么了...?</B></span>")
 	sleep(10 SECONDS)
 	if(!owner)
 		return
-	to_chat(owner, "<span class = 'notice' font size='10'><B>What happened...?</B></span>")
+	to_chat(owner, "<span class = 'notice' font size='10'><B>出什么事了...?</B></span>")
 	alert(owner, "You have taken massive brain damage! You will not be able to remember the events leading up to your injury.", "Brain Damaged")
 
 /obj/item/organ/brain/proc/tick_defib_timer()
@@ -108,14 +108,14 @@
 				if(damage > 0 && prob(1))
 					owner.custom_pain("Your head feels numb and painful.",9)
 				if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
-					to_chat(owner, "<span class='warning'>It becomes hard to see for some reason.</span>")
+					to_chat(owner, "<span class='warning'>不知为何,视线变得模糊了.</span>")
 					owner.eye_blurry = 10
 				if(is_broken() && prob(1) && owner.get_active_hand())
-					to_chat(owner, "<span class='danger'>Your hand won't respond properly, and you drop what you are holding!</span>")
+					to_chat(owner, "<span class='danger'>你的手不听使唤,你丢掉了手里拿着的东西!</span>")
 					owner.drop_item()
 				if((damage >= (max_damage * 0.75)))
 					if(!owner.lying && prob(2))
-						to_chat(owner, "<span class='danger'>You black out!</span>")
+						to_chat(owner, "<span class='danger'>你昏了过去!</span>")
 						owner.SetSleeping(rand(10,15)) // Sets the user to sleep (blackout).
 
 		// Brain damage from low oxygenation or lack of blood.
@@ -143,7 +143,7 @@
 						oxygen_reserve++
 			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 				if(prob(1))
-					to_chat(owner, "<span class='warning'>You feel [pick("dizzy","woozy","faint")]...</span>")
+					to_chat(owner, "<span class='warning'>你感到[pick("dizzy","woozy","faint")]...</span>")
 				if (oxygen_reserve > 0)
 					oxygen_reserve--
 				if(!past_damage_threshold(2) && oxygen_reserve <= 1)
@@ -156,7 +156,7 @@
 					take_damage(1)
 				if(prob(15))
 					owner.Paralyse(rand(1,3))
-					to_chat(owner, "<span class='warning'>You feel extremely [pick("dizzy","woozy","faint")]...</span>")
+					to_chat(owner, "<span class='warning'>你感到极度[pick("dizzy","woozy","faint")]...</span>")
 			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 				owner.eye_blurry = max(owner.eye_blurry,6)
 				if (oxygen_reserve > 0)
@@ -165,7 +165,7 @@
 					take_damage(1)
 				if(prob(15))
 					owner.Paralyse(3,5)
-					to_chat(owner, "<span class='warning'>You feel extremely [pick("dizzy","woozy","faint")]...</span>")
+					to_chat(owner, "<span class='warning'>你感到极度[pick("dizzy","woozy","faint")]...</span>")
 			if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
 				owner.eye_blurry = max(owner.eye_blurry,6)
 				if (oxygen_reserve > 0)

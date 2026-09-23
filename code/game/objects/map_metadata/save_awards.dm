@@ -108,7 +108,7 @@ AWARDS:
 	var/parsed_title = splittext(title, " (")
 	awards += list(list(_ckey,charname,awardtype,faction,parsed_title[1],time2text(world.realtime, "YYYY/MM/DD")))
 	if (L)
-		to_chat(L, "<font size=3 color='yellow'>You have received a [awardtype] medal!</font>")
+		to_chat(L, "<font size=3 color='yellow'>你获得了一枚[awardtype]勋章!</font>")
 		if (!(awardtype in L.awarded))
 			L.awarded += list(awardtype)
 		var/obj/item/clothing/accessory/medal/MEDAL = null

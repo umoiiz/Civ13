@@ -5,12 +5,12 @@
 	set name = "Adminhelp"
 
 	if (say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class = 'red'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class = 'red'>语音目前已被管理员禁用.</span>")
 		return
 
 	//handle muting and automuting
 	if (prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class = 'red'>Error: Admin-PM: You cannot send adminhelps (Muted).</span>")
+		to_chat(src, "<span class = 'red'>错误: 管理员私信: 你无法发送管理员求助 (已被禁言).</span>")
 		return
 
 	if (!showed_adminhelp_popup)
@@ -36,9 +36,9 @@
 		return
 
 	//show it to the person adminhelping too
-	to_chat(src, "<span class = 'notice'>PM to-<b>Admins </b>: [msg]</span>")
+	to_chat(src, "<span class = 'notice'>私信至-<b>管理员 </b>: [msg]</span>")
 	if (config.discordurl)
-		to_chat(src, "<i>If no admins are online, please ping @Admin <a href = '[config.discordurl]'>in the discord</a>.</i>")
+		to_chat(src, "<i>如果没有管理员在线, 请在discord中<a href = '[config.discordurl]'>@Admin</a>.</i>")
 	log_admin("HELP: [key_name(src)]: [msg]")
 	discord_ahelp_log(key_name(src),msg)
 	msg = "<span class = 'notice'><b><font color=red>Request for Help: </span>[get_options_bar(mob, 2, TRUE, TRUE)]:</b> [msg]</span>"

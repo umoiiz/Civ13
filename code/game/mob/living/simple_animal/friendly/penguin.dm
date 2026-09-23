@@ -1,6 +1,6 @@
 /mob/living/simple_animal/penguin
 	name = "penguin"
-	desc = "A black and white flightless bird."
+	desc = "一只黑白相间的不会飞的鸟."
 	icon_state = "penguin"
 	icon_living = "penguin"
 	icon_dead = "penguin_dead"

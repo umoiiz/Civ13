@@ -1,7 +1,7 @@
 
 /obj/structure/branch
-	name = "branch"
-	desc = "A tree branch still with leaves attached."
+	name = "树枝"
+	desc = "一根还带着叶子的树枝。"
 	icon = 'icons/obj/old_weapons.dmi'
 	icon_state = "leaved_stick"
 	density = FALSE
@@ -13,20 +13,20 @@
 	var/branched = TRUE
 
 /obj/structure/branch/cleared
-	name = "cleared branch"
-	desc = "A tree branch with all the leaves picked out."
+	name = "清理过的树枝"
+	desc = "一根摘光了所有叶子的树枝。"
 	icon_state = "cleared_stick"
 	leaves = FALSE
 
 /obj/structure/branch/attack_hand(mob/living/human/H)
 	if (H.a_intent == I_GRAB && leaves)
-		to_chat(H, "You start picking the leaves from the branch...")
+		to_chat(H, "你开始从树枝上摘叶子...")
 		if (do_after(H, 60, src))
 			if (src && leaves)
 				var /obj/item/stack/material/leaf/dropleaves = new /obj/item/stack/material/leaf(get_turf(src))
 				dropleaves.amount = 3
 				dropleaves.update_strings()
-				to_chat(H, "You pick up some leaves from the branch.")
+				to_chat(H, "你从树枝上摘了一些叶子。")
 				name = "cleared branch"
 				desc = "A tree branch with all the leaves picked out."
 				icon_state = "cleared_stick"
@@ -34,14 +34,14 @@
 				return
 		return
 	else if (H.a_intent == I_HARM && !leaves && branched)
-		to_chat(H, "You start removing the small twigs...")
+		to_chat(H, "你开始去除小细枝...")
 		if (do_after(H, 60, src))
 			if (src && branched)
 				if (map.ID == MAP_WIZARD_BOY)
 					new /obj/item/wand_part/pine_wood(get_turf(src))
 				else
 					new /obj/item/weapon/branch(get_turf(src))
-				to_chat(H, "You finish clearing the stick.")
+				to_chat(H, "你清理完了木棍。")
 				branched = FALSE
 				qdel(src)
 				return
@@ -50,8 +50,8 @@
 		..()
 
 /obj/item/weapon/branch
-	name = "stick"
-	desc = "A tree branch with all the leaves and small branches picked out."
+	name = "木棍"
+	desc = "一根摘光了所有叶子和细小枝条的树枝。"
 	icon_state = "debranched_stick"
 	item_state = "debranched_stick"
 	icon = 'icons/obj/old_weapons.dmi'
@@ -91,10 +91,10 @@
 
 /obj/item/weapon/branch/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.edge && !sharpened)
-		to_chat(user, "You start sharpening the stick...")
+		to_chat(user, "你开始削尖木棍...")
 		if (do_after(user, 80, src))
 			if (src && !sharpened)
-				to_chat(user, "You finish sharpening the stick.")
+				to_chat(user, "你削好了木棍.")
 				name = "sharpened stick"
 				desc = "A sharpened stick, to be used against bad apes."
 				icon_state = "sharpened_stick"
@@ -106,10 +106,10 @@
 	else if (sharpened && istype(W, /obj/item/weapon/flint))
 		var/obj/item/weapon/flint/F = W
 		if (F.sharpened)
-			to_chat(user, "You start attaching the flint to the stick...")
+			to_chat(user, "你开始把燧石绑到木棍上...")
 			if (do_after(user, 100, src))
 				if (src && F && F.sharpened)
-					to_chat(user, "You finish making the flint axe.")
+					to_chat(user, "你做好了燧石斧.")
 					new/obj/item/weapon/material/hatchet/tribal/flint(user.loc)
 					qdel(F)
 					qdel(src)
@@ -118,8 +118,8 @@
 		..()
 
 /obj/item/weapon/branch/sharpened
-	name = "sharpened stick"
-	desc = "A sharpened stick, to be used against bad apes."
+	name = "削尖的木棍"
+	desc = "一根削尖的木棍,用来对付坏猿猴."
 	icon_state = "sharpened_stick"
 	item_state = "sharpened_stick"
 	sharp = TRUE

@@ -55,12 +55,12 @@ var/list/radio_prefixes = list(";", ":b", ":l", ":r", ":t", ":f",
 
 /mob/living/say(var/message, var/datum/language/speaking = null, var/verb="says", var/alt_name = "", var/alt_message=null, var/animal = FALSE, var/howl = FALSE, var/original_message = "")
 	if (choked_by)
-		to_chat(src, "<span class='warning'>You cannot speak while being choked!</span>")
+		to_chat(src, "<span class='warning'>被掐住脖子时你无法说话!</span>")
 		return
 
 	if (client)
 		if (client.prefs.muted & MUTE_IC)
-			to_chat(src, "<span class = 'red'>You cannot speak in IC (Muted).</span>")
+			to_chat(src, "<span class = 'red'>你无法在IC中说话(被禁言)。</span>")
 			return
 
 	if (stat)
@@ -93,7 +93,7 @@ var/list/radio_prefixes = list(";", ":b", ":l", ":r", ":t", ":f",
 	verb = say_quote(message, speaking)
 
 	if (is_muzzled())
-		to_chat(src, "<span class='danger'>You're muzzled and cannot speak!</span>")
+		to_chat(src, "<span class='danger'>你被戴上了口套,无法说话!</span>")
 		return
 
 	original_message = message

@@ -1,6 +1,6 @@
 /obj/structure/machinery/sub_control
-	name = "submarine control console"
-	desc = "A heavy-duty industrial terminal with a green phosphor CRT display."
+	name = "潜艇控制台"
+	desc = "一个带有绿色磷光CRT显示屏的重型工业终端."
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer"
 	density = TRUE
@@ -47,14 +47,14 @@
 
 /obj/structure/machinery/sub_control/proc/can_use(mob/user)
 	if(broken || !active)
-		to_chat(user, "<span class='warning'>The console is powered down or broken.</span>")
+		to_chat(user, "<span class='warning'>控制台已断电或损坏.</span>")
 		return FALSE
 	// Ghost/dead check: allowed only in single-player mode (skip all below)
 	if(user.stat == DEAD || isobserver(user))
 		var/obj/map_metadata/subcom13/SM = map
 		if(istype(SM) && SM.single_player)
 			return TRUE
-		to_chat(user, "<span class='warning'>Single-player mode is not enabled.</span>")
+		to_chat(user, "<span class='warning'>未启用单人模式.</span>")
 		return FALSE
 	if(!user.IsAdvancedToolUser())
 		return FALSE
@@ -63,7 +63,7 @@
 	if(get_dist(user, src) > 1)
 		return FALSE
 	if(!my_sub)
-		to_chat(user, "<span class='notice'>No submarine link detected.</span>")
+		to_chat(user, "<span class='notice'>未检测到潜艇连接.</span>")
 		return FALSE
 	return TRUE
 
@@ -136,7 +136,7 @@
 // --- MANEUVER PANEL ---
 
 /obj/structure/machinery/sub_control/maneuver_panel
-	name = "helm control station"
+	name = "操舵控制台"
 	icon_state = "computer"
 	scr_overlay = "navigation"
 	window_size = "1000x600"
@@ -354,12 +354,12 @@
 		my_sub.target_depth = new_depth
 		if(new_depth >= 250)
 			playsound(src, 'sound/machines/submarine/dive_alarm.ogg', 80, 1)
-			visible_message("<span class='warning'><b>CRASH DIVE! Crash diving to [new_depth]m!</b></span>")
+			visible_message("<span class='warning'><b>紧急下潜! 紧急下潜至[new_depth]米!</b></span>")
 
 	if(href_list["blow_ballast"])
 		my_sub.target_depth = 0
 		my_sub.ballast = 0
-		visible_message("<span class='warning'>The ballast tanks hiss violently!</span>")
+		visible_message("<span class='warning'>压载水舱发出剧烈的嘶嘶声!</span>")
 		playsound(src, 'sound/machines/submarine/blowballast.ogg', 80, 1)
 		playsound(src, 'sound/machines/submarine/dive_alarm.ogg', 60, 1)
 
@@ -371,7 +371,7 @@
 // --- REACTOR PANEL ---
 
 /obj/structure/machinery/sub_control/reactor_panel
-	name = "reactor control station"
+	name = "反应堆控制台"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer-solgov"
 	scr_overlay = "fuel_screen"
@@ -519,7 +519,7 @@
 	if(href_list["scram"])
 		my_sub.r_scrammed[r_idx] = TRUE
 		my_sub.r_control_rods[r_idx] = 100
-		visible_message("<span class='warning'>A loud klaxon sounds! Reactor [r_idx] has been SCRAMMED!</span>")
+		visible_message("<span class='warning'>响起响亮的警报声! 反应堆[r_idx]已紧急停堆!</span>")
 		playsound(src, 'sound/machines/submarine/scram_alarm.ogg', 80, 1)
 
 	interact(usr)
@@ -527,7 +527,7 @@
 // --- MISC SYSTEMS PANEL ---
 
 /obj/structure/machinery/sub_control/misc_systems
-	name = "auxiliary systems console"
+	name = "辅助系统控制台"
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "transponder"
 	scr_overlay = "transponder_screen"
@@ -666,33 +666,33 @@
 		var/C = href_list["fss"]
 		fire_supp_active[C] = !fire_supp_active[C]
 		if(fire_supp_active[C])
-			visible_message("<span class='notice'>Hissing sounds heard from [C] fire suppression vents.</span>")
+			visible_message("<span class='notice'>从[C]灭火通风口传来嘶嘶声.</span>")
 			playsound(src, 'sound/machines/submarine/gas.ogg', 50, 1)
 
 	if(href_list["drain_all"])
 		if(global.subcom_flooding)
 			if(world.time < last_drain_time + drain_cooldown)
 				var/wait = round(((last_drain_time + drain_cooldown) - world.time) / 10)
-				to_chat(usr, "<span class='warning'>Emergency drain recharging. [wait]s remaining.</span>")
+				to_chat(usr, "<span class='warning'>紧急排水正在充能. 剩余[wait]秒.</span>")
 			else
 				last_drain_time = world.time
 				var/total_drained = 0
 				for(var/cid in global.subcom_flooding.compartment_turfs)
 					total_drained += global.subcom_flooding.emergency_drain(cid, 15)
-				to_chat(usr, "<span class='notice'>Emergency drain activated. [round(total_drained)]cm of water removed.</span>")
+				to_chat(usr, "<span class='notice'>紧急排水已启动. 已排出[round(total_drained)]厘米的水.</span>")
 
 	if(href_list["inject_o2"])
 		if(global.subcom_flooding)
 			for(var/cid in global.subcom_flooding.compartment_turfs)
 				global.subcom_flooding.inject_oxygen(cid, 5)
-			to_chat(usr, "<span class='notice'>Oxygen injection activated across all compartments.</span>")
+			to_chat(usr, "<span class='notice'>所有舱室的氧气注入已启动.</span>")
 
 	interact(usr)
 
 // --- RADAR PANEL ---
 
 /obj/structure/machinery/sub_control/radar_panel
-	name = "radar console"
+	name = "雷达控制台"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer-retro"
 	scr_overlay = "radar_screen"
@@ -854,13 +854,13 @@
 					for(var/mob/living/M in T)
 						M << sound('sound/machines/submarine/dgen.ogg', repeat = TRUE, wait = 0, volume = 15, channel = 771)
 		else
-			to_chat(usr, "<span class='warning'>Cannot activate radar while submerged!</span>")
+			to_chat(usr, "<span class='warning'>水下时无法启动雷达!</span>")
 
 	if(href_list["toggle_range"])
 		if(my_sub.radar_active)
 			my_sub.radar_range_long = !my_sub.radar_range_long
 		else
-			to_chat(usr, "<span class='notice'>Activate radar first to change range.</span>")
+			to_chat(usr, "<span class='notice'>请先启动雷达以更改范围.</span>")
 
 	if(href_list["tag_contact"])
 		var/tag_name = href_list["tag_contact"]
@@ -875,7 +875,7 @@
 // --- SONAR PANEL ---
 
 /obj/structure/machinery/sub_control/sonar_panel
-	name = "sonar console"
+	name = "声呐控制台"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer-retro"
 	scr_overlay = "sonar_screen"
@@ -1103,7 +1103,7 @@
 						for(var/mob/living/M in T)
 							M << sound('sound/machines/submarine/sonar_passive.ogg', repeat = TRUE, wait = 0, volume = 20, channel = 770)
 		else
-			to_chat(usr, "<span class='notice'>Activate sonar first to change mode.</span>")
+			to_chat(usr, "<span class='notice'>请先启动声呐以更改模式.</span>")
 
 	if(href_list["select_contact"])
 		// Match by ref first, then by name as fallback for stale refs
@@ -1134,7 +1134,7 @@
 // --- WEAPONS PANEL ---
 
 /obj/structure/machinery/sub_control/weapons_panel
-	name = "weapons control station"
+	name = "武器控制台"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer-retro"
 	scr_overlay = "targeting_peace"
@@ -1243,18 +1243,18 @@
 		var/tube_idx = text2num(href_list["launch_torpedo"])
 		if(tube_idx >= 1 && tube_idx <= 4)
 			if(my_sub.launch_torpedo(tube_idx))
-				visible_message("<span class='warning'>TORPEDO LAUNCHED from tube [tube_idx]!</span>")
+				visible_message("<span class='warning'>鱼雷已从发射管[tube_idx]发射!</span>")
 				playsound(src, 'sound/machines/submarine/torpedo_launch.ogg', 100, 1)
 			else
-				to_chat(usr, "<span class='warning'>Torpedo launch failed. Check master arm, tube status, and target lock.</span>")
+				to_chat(usr, "<span class='warning'>鱼雷发射失败. 请检查主武器保险, 发射管状态和目标锁定.</span>")
 
 	interact(usr)
 
 // --- RADIO / MISSION CONSOLE ---
 
 /obj/structure/machinery/sub_control/radio_console
-	name = "encrypted radio console"
-	desc = "A hardened military radio transceiver with frequency hopping and burst encryption."
+	name = "加密无线电控制台"
+	desc = "一种加固的军用无线电收发器,具有跳频和突发加密功能."
 	icon = 'icons/obj/machines/submarine.dmi'
 	icon_state = "transponder"
 	scr_overlay = "transponder-screen"
@@ -1334,8 +1334,8 @@
 // ============================================================
 
 /obj/structure/machinery/sub_control/compartment_panel
-	name = "compartment status panel"
-	desc = "A ruggedized flat-panel display showing real-time compartment status across the submarine."
+	name = "舱室状态面板"
+	desc = "一个加固的平板显示器,显示潜艇各舱室的实时状态."
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "computer"
 	scr_overlay = "comm_monitor"
@@ -1517,7 +1517,7 @@
 				for(var/turf/floor/sub_deck/T in vents)
 					T.vent_active = FALSE
 				global.subcom_flooding.vent_networks -= cid
-				to_chat(usr, "<span class='notice'>Ventilation shut down for [cid].</span>")
+				to_chat(usr, "<span class='notice'>[cid]的通风已关闭.</span>")
 			else
 				if(cid in global.subcom_flooding.compartment_turfs)
 					global.subcom_flooding.vent_networks[cid] = list()
@@ -1525,7 +1525,7 @@
 						T.vent_active = TRUE
 						T.vent_id = cid
 						global.subcom_flooding.vent_networks[cid] += T
-					to_chat(usr, "<span class='notice'>Ventilation restored for [cid].</span>")
+					to_chat(usr, "<span class='notice'>[cid]的通风已恢复.</span>")
 
 	interact(usr)
 
@@ -1534,7 +1534,7 @@
 // ============================================================
 
 /obj/structure/machinery/sub_control/map_display
-	name = "tactical map display"
+	name = "战术地图显示器"
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "wallconsole"
 	scr_overlay = "wallconsole_navigation"
@@ -1749,7 +1749,7 @@
 	if(href_list["action_stations"])
 		for(var/mob/M in world)
 			M << sound('sound/machines/submarine/action_stations2.ogg', volume = 80)
-		to_chat(usr, "<span class='notice'>Action stations alarm sounded.</span>")
+		to_chat(usr, "<span class='notice'>战斗警报已响起.</span>")
 
 	interact(usr)
 
@@ -1758,7 +1758,7 @@
 // ============================================================
 
 /obj/item/weapon/book/subcom_sonar_manual
-	name = "Sonar Operator's Manual"
+	name = "声呐操作员手册"
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book"
 	author = "US Navy Submarine Command"

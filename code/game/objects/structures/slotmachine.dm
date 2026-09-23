@@ -3,8 +3,8 @@
 //Prop object
 
 /obj/structure/props/slot_machine
-	name = "slot machine"
-	desc = "Gambling for the antisocial."
+	name = "老虎机"
+	desc = "反社会人士的赌博."
 	icon_state = "slotmachine0"
 	density = TRUE
 	anchored = TRUE
@@ -12,7 +12,7 @@
 
 /obj/machinery/slotmachine
 	name = "slot machine"
-	desc = "Wasting your money with style."
+	desc = "有格调地浪费你的钱."
 	icon = 'icons/obj/machines/slotmachine.dmi'
 	icon_state = "slotmachine"
 	density = TRUE
@@ -104,9 +104,9 @@
 		if (weight == "Seven") //Case of jackpot hitting, prize is equal to total jackpot
 			prize = jackpot
 			jackpot = 0
-			src.visible_message("<b>[name]</b> states, \" JACKPOT!!! Congratulations!\"")
+			src.visible_message("<b>[name]</b>显示,\"头奖!!!恭喜!\"")
 		else//regular small win, jackpot increased
-			src.visible_message("<b>[name]</b> states, \"Congratulations! You have won [prize] dollars!\"")
+			src.visible_message("<b>[name]</b>显示,\"恭喜!你赢了[prize]美元!\"")
 		var/obj/item/stack/money/dollar/D = new /obj/item/stack/money/dollar(user)
 		if (map.ID == MAP_THE_ART_OF_THE_DEAL)
 			D.amount = prize/5
@@ -121,7 +121,7 @@
 	sleep(5)
 	if(!check_win(user))// if we have not won anything - jackpot or regular bet
 		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 1)
-		src.visible_message("<b>[name]</b> states, \"Sorry, maybe, next time..\"")
+		src.visible_message("<b>[name]</b>显示,\"抱歉,也许下次吧..\"")
 		jackpot += bet
 
 /obj/machinery/slotmachine/attack_hand(mob/living/user)
@@ -135,7 +135,7 @@
 		spinning = TRUE
 		plays++
 
-		src.visible_message("<b>[name]</b> states, \"Your bet is [bet] $. Good luck!\"")
+		src.visible_message("<b>[name]</b>显示,\"你的赌注是[bet]美元.祝你好运!\"")
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 
 		set_spin_overlay()

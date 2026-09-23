@@ -115,7 +115,7 @@
 
 	for (var/client/C in admins)
 		if (C.is_preference_enabled(/datum/client_preference/admin/show_debug_logs))
-			to_chat(C, "<span class=\"log_message\">DEBUG: [text]</span>")
+			to_chat(C, "<span class=\"log_message\">调试: [text]</span>")
 
 /proc/log_game(text)
 	if (config.log_game)

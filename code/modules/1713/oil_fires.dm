@@ -1,6 +1,6 @@
 /obj/structure/oil_spring
-	name = "petroleum spring"
-	desc = "A hole on the ground where petroleum reaches the surface. Sticky!"
+	name = "石油泉"
+	desc = "地面上石油涌出地表的一个洞.黏糊糊的!"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "oil_spring1"
 	anchored = TRUE
@@ -12,7 +12,7 @@
 
 /obj/structure/oil_spring/attackby(obj/item/O as obj, mob/living/user as mob)
 	if (counter <= 0)
-		to_chat(user, "<span class='warning'>\The [src] is dry!</span>")
+		to_chat(user, "<span class='warning'>\The [src]是干的!</span>")
 		if (counter < 0)
 			counter = 0
 		return
@@ -22,7 +22,7 @@
 		if (istype(RG) && RG.is_open_container() && do_after(user, 15, src, check_for_repeats = FALSE))
 			if (counter > 0)
 				RG.reagents.add_reagent("petroleum", min(RG.volume - RG.reagents.total_volume, 10))
-				user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>", "<span class='notice'>You fill \the [RG] using \the [src].</span>")
+				user.visible_message("<span class='notice'>[user]使用\the [src]装满了\the [RG].</span>", "<span class='notice'>你使用\the [src]装满了\the [RG].</span>")
 				playsound(loc, 'sound/effects/watersplash.ogg', 100, TRUE)
 				user.setClickCooldown(20)
 				counter--
@@ -34,7 +34,7 @@
 	else if (istype(O, /obj/item/flashlight/torch))
 		var/obj/item/flashlight/torch/OO = O
 		if (counter > 0 && OO.on)
-			user.visible_message("<span class = 'red'>[user.name] sets \the [src] on fire!</span>", "<span class = 'red'>You set \the [src] on fire!</span>")
+			user.visible_message("<span class = 'red'>[user.name]点燃了\the [src]!</span>", "<span class = 'red'>你点燃了\the [src]!</span>")
 			counter = 0
 			timeout = world.time + 1800
 			refill()
@@ -147,10 +147,10 @@
 		var/obj/item/weapon/reagent_containers/CT = W
 		for (var/datum/reagent/R in CT.reagents.reagent_list)
 			if (istype(R, /datum/reagent/water))
-				user.visible_message("[user] empties \the [CT] into the fire!", "You empty \the [CT] into the fire!")
+				user.visible_message("[user]把\the [CT]倒进了火里!", "你把\the [CT]倒进了火里!")
 				if (prob(max(R.volume, 100)))
 					qdel(src)
-					visible_message("The fire is extinguished!")
+					visible_message("火被扑灭了!")
 				CT.reagents.clear_reagents()
 
 /obj/effect/fire/proc/burningproc()
@@ -238,14 +238,14 @@
 
 /obj/effect/decal/cleanable/blood/oil
 	name = "oil"
-	desc = "It's black and greasy."
+	desc = "它又黑又油腻."
 	basecolor="#030303"
 
 /obj/effect/decal/cleanable/blood/oil/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/flashlight/torch))
 		var/obj/item/flashlight/torch/OO = W
 		if (OO.on)
-			user.visible_message("<span class = 'red'>[user.name] sets \the [src] on fire!</span>", "<span class = 'red'>You set \the [src] on fire!</span>")
+			user.visible_message("<span class = 'red'>[user.name]点燃了\the [src]!</span>", "<span class = 'red'>你点燃了\the [src]!</span>")
 			ignite_turf(src.loc, 18, 20)
 			return
 

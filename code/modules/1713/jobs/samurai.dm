@@ -37,7 +37,7 @@
 	uniform.attackby(daishoh, H)
 	H.civilization = "Eastern Army"
 	give_random_name(H)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Daimyo of the Eastern Army!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是东军的大名!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the Eastern Army and their orders. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -88,7 +88,7 @@
 	uniform.attackby(daishoh, H)
 	H.civilization = "Eastern Army"
 	give_random_name(H)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is a Samurai of the Eastern Army!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是东军的武士!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the Eastern Army and their troops. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -230,7 +230,7 @@
 	uniform.attackby(daishoh, H)
 	H.civilization = "Western Army"
 	give_random_name(H)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is the Daimyo of the Western Army!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是西军的大名!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the Western Army and their orders. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -280,7 +280,7 @@
 	uniform.attackby(daishoh, H)
 	H.civilization = "Western Army"
 	give_random_name(H)
-	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] is a Samurai of the Western Army!</font></b>")
+	to_chat(world, "<b><font color='yellow' size=3>[H.real_name] 是西军的武士!</font></b>")
 	H.add_note("Role", "You are a <b>[title]</b>, an officer in charge of the Western Army and their troops. The whole operation relies on you!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)

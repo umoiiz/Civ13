@@ -1,6 +1,6 @@
 /obj/item/weapon/legcuffs
-	name = "legcuffs"
-	desc = "Use this to keep prisoners in line."
+	name = "脚镣"
+	desc = "用这个让囚犯守规矩."
 	gender = PLURAL
 	icon = 'icons/obj/items.dmi'
 	icon_state = "handcuff"

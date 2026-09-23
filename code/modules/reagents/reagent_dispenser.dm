@@ -1,7 +1,7 @@
 
 //basically, the dispensers are now wood barrels and wood crates.
 /obj/structure/reagent_dispensers
-	name = "Barrel"
+	name = "桶"
 	desc = "..."
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "barrel_wood"
@@ -29,9 +29,9 @@
 		if (istype(W, /obj/item/weapon/pen))
 			var/tmp_label = sanitizeSafe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
 			if (length(tmp_label) > 15)
-				to_chat(user, "<span class='notice'>The label can be at most 15 characters long.</span>")
+				to_chat(user, "<span class='notice'>标签最多只能有15个字符.</span>")
 			else
-				to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+				to_chat(user, "<span class='notice'>你将标签设置为\"[tmp_label]\".</span>")
 				label_text = tmp_label
 				update_name_label()
 			return
@@ -40,7 +40,7 @@
 		else if (istype(W, /obj/item/weapon/key))
 			var/obj/item/weapon/key/K = W
 			if (W.code != custom_code)
-				to_chat(user, "This key does not match this lock!")
+				to_chat(user, "这把钥匙与这把锁不匹配!")
 				return
 			if (custom_code == 0 && K.code != 0)
 				var/choice = WWinput(user, "Are you sure you want to assign this key to \the [src]?", "Lock", "No", list("Yes","No"))
@@ -49,17 +49,17 @@
 				else
 					locked = TRUE
 					custom_code = K.code
-					visible_message("<span class = 'notice'>[user] locks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user]锁上了\the [src].</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 			if (K.code == custom_code)
 				locked = !locked
 				if (locked == 1)
-					visible_message("<span class = 'notice'>[user] locks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user]锁上了\the [src].</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 				else if (locked == 0)
-					visible_message("<span class = 'notice'>[user] unlocks \the [src].</span>")
+					visible_message("<span class = 'notice'>[user]解锁了\the [src].</span>")
 					playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 					return
 		else if (istype(W, /obj/item/weapon/storage/belt/keychain) && custom_code != 0)
@@ -67,14 +67,14 @@
 				if (KK.code == custom_code)
 					locked = !locked
 					if (locked == 1)
-						visible_message("<span class = 'notice'>[user] locks \the [src].</span>")
+						visible_message("<span class = 'notice'>[user]锁上了\the [src].</span>")
 						playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 						return
 					else if (locked == 0)
-						visible_message("<span class = 'notice'>[user] unlocks \the [src].</span>")
+						visible_message("<span class = 'notice'>[user]解锁了\the [src].</span>")
 						playsound(get_turf(user), 'sound/effects/door_lock_unlock.ogg', 100)
 						return
-			to_chat(user, "No key in this keychain matches the lock!")
+			to_chat(user, "这个钥匙串中没有钥匙与这把锁匹配!")
 			return
 		else
 			return
@@ -90,7 +90,7 @@
 	examine(mob/user)
 		if (!..(user, 2))
 			return
-		to_chat(user, "<span class = 'notice'>It contains:</span>")
+		to_chat(user, "<span class = 'notice'>它包含:</span>")
 		if (reagents && reagents.reagent_list.len)
 			var/g_name = "nothing"
 			var/g_amount = 0
@@ -99,11 +99,11 @@
 					g_name = R.name
 					g_amount = R.volume
 			if (g_amount)
-				to_chat(user, "<span class = 'notice'>[g_amount] units of [g_name]</span>")
+				to_chat(user, "<span class = 'notice'>[g_name]的[g_amount]单位</span>")
 			else
-				to_chat(user, "<span class = 'notice'>Nothing.</span>")
+				to_chat(user, "<span class = 'notice'>什么都没有.</span>")
 		else
-			to_chat(user, "<span class = 'notice'>Nothing.</span>")
+			to_chat(user, "<span class = 'notice'>什么都没有.</span>")
 
 	verb/set_APTFT() //set amount_per_transfer_from_this
 		set name = "Set transfer amount"
@@ -142,21 +142,21 @@
 
 	if (dmode=="dispense")
 		dmode = "refill"
-		to_chat(usr, "[src] switched to refill mode.")
+		to_chat(usr, "[src]已切换到补充模式.")
 	else if (dmode=="refill")
 		dmode = "dispense"
-		to_chat(usr, "[src] switched to dispense mode.")
+		to_chat(usr, "[src]已切换到分配模式.")
 
 /obj/structure/reagent_dispensers/largebarrel
-	name = "large barrel"
-	desc = "A large barrel with high capacity."
+	name = "大桶"
+	desc = "一个高容量的大桶."
 	icon_state = "beer_barrel"
 	max_capacity = 1000
 
 
 /obj/structure/reagent_dispensers/largebarrel/beer
-	name = "large beer barrel"
-	desc = "A large barrel of beer. Keep it secured!"
+	name = "大啤酒桶"
+	desc = "一大桶啤酒.请妥善保管!"
 	amount_per_transfer_from_this = 20
 	density = TRUE
 	New()
@@ -164,8 +164,8 @@
 		reagents.add_reagent("beer",950)
 
 /obj/structure/reagent_dispensers/largebarrel/ale
-	name = "large ale barrel"
-	desc = "A large barrel of ale. Keep it secured!"
+	name = "大麦酒桶"
+	desc = "一大桶麦酒.请妥善保管!"
 	amount_per_transfer_from_this = 20
 	density = TRUE
 	New()
@@ -173,8 +173,8 @@
 		reagents.add_reagent("ale",950)
 
 /obj/structure/reagent_dispensers/largebarrel/water
-	name = "large water barrel"
-	desc = "A large barrel of water. Keep it secured!"
+	name = "大水桶"
+	desc = "一大桶水.请妥善保管!"
 	amount_per_transfer_from_this = 20
 	density = TRUE
 	New()
@@ -184,8 +184,8 @@
 
 
 /obj/structure/reagent_dispensers/peppertank
-	name = "Pepper Spray Refiller"
-	desc = "Refill pepper spray canisters."
+	name = "胡椒喷雾补充器"
+	desc = "补充胡椒喷雾罐."
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "peppertank"
 	anchored = TRUE
@@ -196,8 +196,8 @@
 		reagents.add_reagent("condensedcapsaicin",1000)
 
 /obj/structure/reagent_dispensers/fountain
-	name = "water fountain"
-	desc = "A water fountain with a big tank on top."
+	name = "饮水机"
+	desc = "顶部带有一个大水箱的饮水机."
 	icon_state = "dispenser_water1"
 	anchored = TRUE
 	amount_per_transfer_from_this = 10

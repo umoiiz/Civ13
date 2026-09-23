@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/commanded/dog
 	name = "dog"
-	desc = "A friendly white dog."
+	desc = "一只友好的白狗."
 
 	icon_state = "samoyed"
 	icon_living = "samoyed"

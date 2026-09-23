@@ -1,5 +1,5 @@
 /obj/item
-	name = "item"
+	name = "物品"
 	icon = 'icons/obj/items.dmi'
 	w_class = ITEM_SIZE_NORMAL
 	layer = 3.01 // stops supply drop items from appearing under their crate
@@ -376,19 +376,19 @@ var/list/global/slot_flags_enumeration = list(
 		if (slot_wear_id)
 			if (!H.w_uniform && (slot_w_uniform in mob_equip))
 				if (!disable_warning)
-					to_chat(H, "<span class='warning'>You need clothes before you can hang this [name].</span>")
+					to_chat(H, "<span class='warning'>你需要穿上衣服才能挂上这个 [name].</span>")
 				return FALSE
 		if (slot_l_store, slot_r_store)
 			if (!H.w_uniform && (slot_w_uniform in mob_equip))
 				if (!disable_warning)
-					to_chat(H, "<span class='warning'>You need clothes to put things in your pockets.</span>")
+					to_chat(H, "<span class='warning'>你需要穿上衣服才能把东西放进你的口袋.</span>")
 				return FALSE
 			if (w_class > ITEM_SIZE_SMALL && (!(slot_flags & SLOT_POCKET)))
 				return FALSE
 			if (istype(src, /obj/item/weapon/gun))
 				var/obj/item/weapon/gun/G = src
 				if (G.silencer || !G.pocket)
-					to_chat(H, "<span class='warning'>[G] doesn't fit in your pockets!</span>")
+					to_chat(H, "<span class='warning'>[G] 放不进你的口袋!</span>")
 					return
 		if (slot_handcuffed)
 			if (!istype(src, /obj/item/weapon/handcuffs))
@@ -407,11 +407,11 @@ var/list/global/slot_flags_enumeration = list(
 		if (slot_accessory)
 			if (!H.w_uniform && (slot_w_uniform in mob_equip))
 				if (!disable_warning)
-					to_chat(H, "<span class='warning'>You need clothes before you can attach this [name].</span>")
+					to_chat(H, "<span class='warning'>你需要穿上衣服才能附上这个 [name].</span>")
 				return FALSE
 			if (uniform.accessories.len && !uniform.can_attach_accessory(src))
 				if (!disable_warning)
-					to_chat(H, "<span class='warning'>You already have an accessory of this type attached to your [uniform].</span>")
+					to_chat(H, "<span class='warning'>你的 [uniform] 上已经附有这种类型的饰品了.</span>")
 				return FALSE
 	return TRUE
 
@@ -436,22 +436,22 @@ var/list/global/slot_flags_enumeration = list(
 	if (!usr.canmove || usr.stat || usr.restrained() || !Adjacent(usr))
 		return
 	if ((!istype(usr, /mob/living/human)))//Is humanoid, and is not a brain
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>你无法拾取东西!</span>")
 		return
 	if ( usr.stat || usr.restrained() )//Is not asleep/dead and is not restrained
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>你无法拾取东西!</span>")
 		return
 	if (anchored) //Object isn't anchored
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>你无法拾取那个东西!</span>")
 		return
 	if (!usr.hand && usr.r_hand) //Right hand is not full
-		to_chat(usr, "<span class='warning'>Your right hand is full.</span>")
+		to_chat(usr, "<span class='warning'>你的右手满了.</span>")
 		return
 	if (usr.hand && usr.l_hand) //Left hand is not full
-		to_chat(usr, "<span class='warning'>Your left hand is full.</span>")
+		to_chat(usr, "<span class='warning'>你的左手满了.</span>")
 		return
 	if (!istype(loc, /turf)) //Object is on a turf
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>你无法拾取那个东西!</span>")
 		return
 	//All checks are done, time to pick it up!
 	usr.UnarmedAttack(src)
@@ -524,12 +524,12 @@ var/list/global/slot_flags_enumeration = list(
 			to_chat(M, SPAN_DANGER("[user] stabs you in the eyes with \the [src]!"))
 			to_chat(user, SPAN_DANGER("You stab [M] in the eyes with \the [src]!"))
 		else
-			user.visible_message("<span class = 'danger'>[user] has stabbed \himself in the eye with \the [src]!</span>", "<span class = 'danger'>You stab yourself in the eyes with \the [src]!</span>")
+			user.visible_message("<span class = 'danger'>[user] 用 \the [src] 刺中了 \him self 的眼睛!</span>", "<span class = 'danger'>你用 \the [src] 刺中了自己的眼睛!</span>")
 		eyes.damage += rand(3,4)
 		if (eyes.damage >= eyes.min_bruised_damage)
 			if (prob(50))
 				if (M.stat != 2)
-					M.visible_message("[M] drops what they're holding and clutches at their eyes!", "You drop what you're holding and clutch at your eyes!")
+					M.visible_message("[M] 丢下了手中拿着的东西并捂住了眼睛!", "你丢下了手中拿着的东西并捂住了眼睛!")
 					M.drop_item()
 				M.eye_blurry += 10
 				M.Paralyse(1)
@@ -635,7 +635,7 @@ var/list/global/slot_flags_enumeration = list(
 				if(new_turf && new_turf.density)
 					break
 			throw_at(target, rand(1,3), throw_speed)
-			user.visible_message("[user] kicks \the [src.name].")
+			user.visible_message("[user] 踢了 \the [src.name].")
 		else
 			to_chat(user, SPAN_WARNING("You can't kick something while you're lying down!"))
 			return
@@ -649,4 +649,4 @@ var/list/global/slot_flags_enumeration = list(
 			if(new_turf && new_turf.density)
 				break
 		throw_at(target, rand(1,3), throw_speed)
-		user.visible_message("[user] kicks \the [src.name].")
+		user.visible_message("[user] 踢了 \the [src.name].")

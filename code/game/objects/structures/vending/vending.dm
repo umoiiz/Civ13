@@ -2,8 +2,8 @@
  *  A vending machine
  */
 /obj/structure/vending
-	name = "Vendomat"
-	desc = "A generic vending machine."
+	name = "自动售货机"
+	desc = "一台通用自动售货机。"
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "apparel_british"
 	layer = 2.9
@@ -119,28 +119,28 @@
 	if (istype(W, /obj/item/weapon/wrench))
 		playsound(loc, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (anchored)
-			user.visible_message("[user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
+			user.visible_message("[user]开始从地板上解除固定\the [src]。", "你开始从地板上解除固定\the [src]。")
 		else
-			user.visible_message("[user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
+			user.visible_message("[user]开始将\the [src]固定到地板上。", "你开始将\the [src]固定到地板上。")
 
 		if (do_after(user, 20, src))
 			if (!src) return
-			to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+			to_chat(user, "<span class='notice'>你[anchored? "un" : ""]固定了\the [src]!</span>")
 			anchored = !anchored
 		return
 
 	if (istype(W, /obj/item/weapon/hammer))
-		visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>")
+		visible_message("<span class='warning'>[user]开始拆解\the [src]。</span>")
 		playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 		if (do_after(user,50,src))
-			visible_message("<span class='warning'>[user] deconstructs \the [src].</span>")
+			visible_message("<span class='warning'>[user]拆解了\the [src]。</span>")
 			qdel(src)
 			return
 	else
 		if (istype(src, /obj/structure/vending/craftable))
 			var/obj/structure/vending/craftable/CTB = src
 			if (product_records.len >= CTB.max_products)
-				to_chat(user, "<span class='notice'>\The [src] is full!</span>")
+				to_chat(user, "<span class='notice'>\The [src]已满!</span>")
 				return FALSE
 			else
 				var/datum/data/vending_product/product = new/datum/data/vending_product(src, W.type, W.name, _icon = W.icon, _icon_state = W.icon_state, M = W)
@@ -256,7 +256,7 @@
 	if (!user.unEquip(W))
 		return
 
-	to_chat(user, "<span class='notice'>You insert \the [W] in \the [src].</span>")
+	to_chat(user, "<span class='notice'>你将\the [W]插入\the [src]。</span>")
 	R.amount++
 	qdel(W)
 

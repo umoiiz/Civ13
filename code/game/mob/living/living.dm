@@ -15,7 +15,7 @@
 	if (!..())
 		return FALSE
 
-	usr.visible_message("<b>[src]</b> points to [A].")
+	usr.visible_message("<b>[src]</b>指向[A].")
 	return TRUE
 
 /*one proc, four uses
@@ -64,12 +64,12 @@ default behaviour is:
 			for (var/mob/living/M in range(tmob, TRUE))
 				if (tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == FALSE)) || locate(/obj/item/weapon/grab, tmob.grabbed_by.len)) )
 					if ( !(world.time % 5) )
-						to_chat(src, "<span class='warning'>[tmob] is restrained, you cannot push past.</span>")
+						to_chat(src, "<span class='warning'>[tmob]被束缚住了,你无法挤过去.</span>")
 					now_pushing = FALSE
 					return
 				if ( tmob.pulling == M && ( M.restrained() && !( tmob.restrained() ) && tmob.stat == FALSE) )
 					if ( !(world.time % 5) )
-						to_chat(src, "<span class='warning'>[tmob] is restraining [M], you cannot push past.</span>")
+						to_chat(src, "<span class='warning'>[tmob]正在束缚[M],你无法挤过去.</span>")
 					now_pushing = FALSE
 					return
 
@@ -186,16 +186,16 @@ default behaviour is:
 	if (map.ID == MAP_WIZARD_BOY)
 		var/area/H_area = get_area(src)
 		if (H_area && istype(H_area, /area/caribbean/houses/nml_three))
-			to_chat(src, "<span class = 'notice'>You cannot succumb while in prison.</span>")
+			to_chat(src, "<span class = 'notice'>你在监狱中无法放弃生命.</span>")
 			return
 	if (getTotalDmg() > 50)
 		if (WWinput(src, "Are you sure you want to succumb? You only live once.", "", "Cancel", list("Succumb", "Cancel")) == "Succumb")
 			adjustBrainLoss(300)
 			death()
-			to_chat(src, "<span class = 'notice'>You have given up life and succumbed to death.</span>")
+			to_chat(src, "<span class = 'notice'>你放弃了生命并屈服于死亡.</span>")
 			return
 	else
-		to_chat(src, "<span class = 'notice'>You cannot succumb in this map unless you have very high damage!</span>")
+		to_chat(src, "<span class = 'notice'>除非你受到非常高的伤害,否则你无法在此地图上放弃生命!</span>")
 		return
 
 
@@ -350,7 +350,7 @@ default behaviour is:
 	var/obj/map_metadata/wizard_boy/WB = map
 	if (WB.check_level(H.client.ckey) == "4")
 		WB.change_level(H.client.ckey, "5")
-		to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b> ([H.key]) has progressed to qualification level 5 (<b>C.H.A.D.</b>) by defeating <b>[real_name]</b> ([key]) in the Arena!</font>")
+		to_chat(world, "<font size=3 class='wizard'><b>[H.real_name]</b>([H.key])通过在竞技场中击败<b>[real_name]</b>([key]),已晋升至资格等级5(<b>C.H.A.D.</b>)!</font>")
 
 // ++++ROCKDTBEN++++ MOB PROCS //END
 
@@ -625,10 +625,10 @@ default behaviour is:
 	if (choked_by)
 		resisting++
 		if (prob(15))
-			visible_message("<span class='warning'>[src] has struggled and broken free from [choked_by]'s strangling vine!</span>", "<span class='warning'>You have successfully struggled and broken free from [choked_by]'s strangling vine!</span>")
+			visible_message("<span class='warning'>[src]挣扎着从[choked_by]的绞杀藤蔓中挣脱了!</span>", "<span class='warning'>你成功挣扎着从[choked_by]的绞杀藤蔓中挣脱了!</span>")
 			choked_by.release_mob()
 		else
-			visible_message("<span class='warning'>[src] struggles desperately against [choked_by]'s strangling vine!</span>", "<span class='warning'>You struggle desperately but fail to break free from [choked_by]'s strangling vine!</span>")
+			visible_message("<span class='warning'>[src]拼命挣扎着对抗[choked_by]的绞杀藤蔓!</span>", "<span class='warning'>你拼命挣扎,但未能从[choked_by]的绞杀藤蔓中挣脱!</span>")
 	for (var/obj/O in requests)
 		requests.Remove(O)
 		qdel(O)
@@ -640,15 +640,15 @@ default behaviour is:
 				qdel(G)
 			if (GRAB_AGGRESSIVE)
 				if (prob(19)) //same chance of breaking the grab as disarm
-					visible_message("<span class='warning'>[src] has broken free of [G.assailant]'s grip!</span>", "<span class='warning'>You have broken free of [G.assailant]'s grip!</span>")
+					visible_message("<span class='warning'>[src]从[G.assailant]的抓握中挣脱了!</span>", "<span class='warning'>你从[G.assailant]的抓握中挣脱了!</span>")
 					qdel(G)
 			if (GRAB_NECK)
 				//If you move when grabbing someone then it's easier for them to break free. Same if the affected mob is immune to stun.
 				if (((world.time - G.assailant.l_move_time < 30 || !stunned) && prob(15)) || prob(3))
-					visible_message("<span class='warning'>[src] has broken free of [G.assailant]'s headlock!</span>", "<span class='warning'>You have broken free of [G.assailant]'s headlock!</span>")
+					visible_message("<span class='warning'>[src]从[G.assailant]的锁头中挣脱了!</span>", "<span class='warning'>你从[G.assailant]的锁头中挣脱了!</span>")
 					qdel(G)
 	if (resisting)
-		visible_message("<span class='danger'>[src] resists!</span>", "<span class ='warning'>You resist!</span>")
+		visible_message("<span class='danger'>[src]抵抗了!</span>", "<span class ='warning'>你抵抗了!</span>")
 
 
 /mob/living/verb/lay_down()
@@ -717,7 +717,7 @@ default behaviour is:
 		//cultify() // Maybe another time.
 		return*/
 
-	to_chat(src, "<b>You are now \the [src]!</b>")
+	to_chat(src, "<b>你现在是\the [src]!</b>")
 	to_chat(src, SPAN_NOTICE("Remember to stay in character for a mob of this type!"))
 	return TRUE
 

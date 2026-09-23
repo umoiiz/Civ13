@@ -50,9 +50,9 @@
 	return FALSE
 
 /obj/map_metadata/alleyway/proc/points_check()
-	to_chat(world, "<big><b>Current Points:</b></big>")
-	to_chat(world, "<big>Yamaguchi-Gumi: [scores["Yamaguchi-Gumi"]]</big>")
-	to_chat(world, "<big>Ichiwa-Kai: [scores["Ichiwa-Kai"]]</big>")
+	to_chat(world, "<big><b>当前分数:</b></big>")
+	to_chat(world, "<big>山口组: [scores["Yamaguchi-Gumi"]]</big>")
+	to_chat(world, "<big>一和会: [scores["Ichiwa-Kai"]]</big>")
 	spawn(300)
 		points_check()
 

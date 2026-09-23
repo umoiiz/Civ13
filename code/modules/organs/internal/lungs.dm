@@ -1,5 +1,5 @@
 /obj/item/organ/lungs
-	name = "lungs"
+	name = "肺"
 	icon_state = "lungs"
 	gender = PLURAL
 	organ_tag = "lungs"

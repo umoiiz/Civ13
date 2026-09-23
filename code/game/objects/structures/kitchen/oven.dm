@@ -1,5 +1,5 @@
 /obj/structure/oven
-	name = "Oven"
+	name = "烤箱"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "oven"
 	layer = 2.9
@@ -28,7 +28,7 @@
 
 	if (istype(I, /obj/item/weapon/reagent_containers/glass/small_pot))
 		var/obj/item/weapon/reagent_containers/glass/small_pot/POT = I
-		to_chat(H, "You place the [POT] on top of the [src].")
+		to_chat(H, "你把[POT]放在[src]上面.")
 		H.remove_from_mob(POT)
 		POT.loc = src.loc
 		POT.on_stove = TRUE
@@ -36,53 +36,53 @@
 
 	if (istype(I, /obj/item/stack/material/wood))	//FUEL NORMAL (without * multiplication or + addition, only input)
 		fuel += I.amount
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/stack/material/bamboo))
 		fuel += I.amount
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/weapon/branch))	// FUEL +0.5 (adds a flat numerical addition ontop of the input reagent's baseline fuel, recommended for non stack objects)
 		fuel += I.amount+0.5
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/stack/material/leaf))
 		fuel += I.amount+0.5
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/stack/dung))	// FUEL +1
 		fuel += I.amount+1
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/stack/ore/charcoal))	//FUEL *2.5 (multiplies it by 2 and a half)
 		fuel += I.amount*2.5
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 	else if (istype(I, /obj/item/stack/ore/coal))	//FUEL *3
 		fuel += I.amount*3
-		to_chat(H, "You place \the [I] in \the [src], refueling it.")
+		to_chat(H, "你把\the [I]放入\the [src], 为其添加燃料.")
 		qdel(I)
 		return
 
 	if (istype(I, /obj/item/weapon/wrench) || (istype(I, /obj/item/weapon/hammer)))
 		if (istype(I, /obj/item/weapon/wrench))
-			visible_message("<span class='warning'>[H] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+			visible_message("<span class='warning'>[H]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面.</span>")
 			playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 			if (do_after(H,50,src))
-				visible_message("<span class='warning'>[H] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[H][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面.</span>")
 				anchored = !anchored
 				return
 		else if (istype(I, /obj/item/weapon/hammer))
-			visible_message("<span class='warning'>[H] starts to deconstruct \the [src].</span>")
+			visible_message("<span class='warning'>[H]开始拆除\the [src].</span>")
 			playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 			if (do_after(H,50,src))
-				visible_message("<span class='warning'>[H] deconstructs \the [src].</span>")
+				visible_message("<span class='warning'>[H]拆除了\the [src].</span>")
 				empty()
 				qdel(src)
 				return
@@ -91,20 +91,20 @@
 	for (var/obj/item/II in contents)
 		space -= II.w_class
 	if (space <= 0 || space - I.w_class < 0)
-		to_chat(H, "<span class = 'warning'>The [name] is full.</span>")
+		to_chat(H, "<span class = 'warning'>[name]已满.</span>")
 		return
 	H.remove_from_mob(I)
 	I.loc = src
-	visible_message("<span class = 'notice'>[H] puts [I] in the [name].</span>")
+	visible_message("<span class = 'notice'>[H] 将 [I] 放入 [name] 中.</span>")
 
 // todo: fix eggs not roasting & roasted meat sandwiches turning to burnt mess
 /obj/structure/oven/attack_hand(var/mob/living/human/H)
 	if (!on && fuel > 0)
-		visible_message("<span class = 'notice'>[H] turns the [name] on.</span>")
+		visible_message("<span class = 'notice'>[H] 打开了 [name].</span>")
 		on = TRUE
 		fire_loop()
 	else
-		to_chat(H, "<span class = 'warning'>The [name] doesn't have enough fuel! Fill it with wood or coal.</span>")
+		to_chat(H, "<span class = 'warning'>[name] 没有足够的燃料! 往里面添加木头或煤炭.</span>")
 
 /obj/structure/oven/proc/fire_loop()
 	if (on && fuel > 0)
@@ -130,7 +130,7 @@
 					I.on_stove = FALSE
 					I.reagents.del_reagent("food_poisoning")
 					I.reagents.del_reagent("cholera")
-					visible_message("<span class = 'notice'>\The [I] finishes boiling.</span>")
+					visible_message("<span class = 'notice'>\The [I] 煮好了.</span>")
 					if (I.reagents.get_reagent_amount("sodiumchloride")>0 && I.reagents.get_reagent_amount("water")>0)
 						var/obj/item/weapon/reagent_containers/food/condiment/saltpile/empty/NSP = new /obj/item/weapon/reagent_containers/food/condiment/saltpile/empty(get_turf(src))
 						NSP.reagents.add_reagent("sodiumchloride",I.reagents.get_reagent_amount("sodiumchloride"))
@@ -145,7 +145,7 @@
 						I.reagents.del_reagent("lard")
 						I.reagents.add_reagent("fat_oil", lard_amnt/2)
 			if (fuel <= 0 && consume_itself == TRUE)
-				visible_message("<span class = 'warning'>\The [src] burns out.</span>")
+				visible_message("<span class = 'warning'>\The [src] 烧尽了.</span>")
 				new/obj/item/stack/ore/charcoal(loc)
 				qdel(src)
 
@@ -231,8 +231,8 @@
 		I.loc = get_turf(src)
 
 /obj/structure/oven/fireplace
-	name = "campfire"
-	desc = "A campfire made with wood logs."
+	name = "篝火"
+	desc = "用原木搭成的篝火."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "fireplace"
 	layer = 2.9
@@ -298,11 +298,11 @@
 				if (x == HH.x)
 					currdir = ""
 			if (currdir != "somewhere" && currdir != "")
-				to_chat(HH, "<b>You see some smoke signals [currdir] of you...</b>")
+				to_chat(HH, "<b>你看到一些烟雾信号位于你的[currdir]...</b>")
 
 /obj/structure/oven/fireplace/attackby(var/obj/item/I, var/mob/living/human/H)
 	if (on && (istype(I, /obj/item/stack/material/leather) || istype(I, /obj/item/stack/material/cloth)))
-		to_chat(H, "You produce some smoke signals.")
+		to_chat(H, "你发出了烟雾信号.")
 		smoke_signals()
 	else
 		..()
@@ -314,8 +314,8 @@
 		M.visible_message(SPAN_WARNING("[M] gets <big>burnt</big> by \the [name]!"), SPAN_WARNING("You get <big>burnt</big> by \the [name]!"))
 
 /obj/structure/oven/fireplace/pit
-	name = "fire pit"
-	desc = "A small pit surrounded by stones used for housing fires."
+	name = "火坑"
+	desc = "一个四周用石头围起来的小坑, 用来生火."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "ringed_campfire"
 	density = TRUE
@@ -334,8 +334,8 @@
 		I.loc = get_turf(src)
 
 /obj/structure/oven/woodstove
-	name = "wood stove"
-	desc = "A stove fueled with wood logs."
+	name = "木柴炉"
+	desc = "以原木为燃料的炉子."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "woodstove"
 	layer = 2.9
@@ -348,8 +348,8 @@
 	fuel = 4
 
 /obj/structure/oven/stove
-	name = "stove"
-	desc = "A stove that runs on electricity."
+	name = "炉子"
+	desc = "以电力运行的炉子."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "stove"
 	layer = 2.9
@@ -365,8 +365,8 @@
 	icon_state = "gasstove"
 
 /obj/structure/oven/grill
-	name = "metal grill"
-	desc = "A grill with a raised inner fire-pit for refuelling."
+	name = "金属烤架"
+	desc = "带有凸起内置火坑以便添加燃料的烤架."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "grill"
 	layer = 2.9
@@ -381,14 +381,14 @@
 //////////////////Following objects are grill or oven subtypes until proper cooking/kitchen mechanics will be implemented
 
 /obj/structure/oven/grill/gas
-	name = "gas grill"
-	desc = "A gas-fueled grill."
+	name = "燃气烤架"
+	desc = "以燃气为燃料的烤架."
 	icon_state = "grill2"
 	base_state = "grill2"
 
 /obj/structure/oven/griddle
-	name = "electric griddle"
-	desc = "A heavy, flat iron plate that is heated and used for cooking food."
+	name = "电煎盘"
+	desc = "一块沉重扁平的铁板, 加热后用来烹饪食物."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "griddle"
 	layer = 3
@@ -401,8 +401,8 @@
 	fuel = 4
 
 /obj/structure/oven/fryer
-	name = "fryer"
-	desc = "A large, deep container for frying food."
+	name = "油炸锅"
+	desc = "用于油炸食物的大型深容器."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "fryer"
 	layer = 3
@@ -416,8 +416,8 @@
 
 //for the survival objective in antarctica
 /obj/structure/oven/big
-	name = "furnace"
-	desc = "Your survival hangs on this - keep the furnace on!"
+	name = "熔炉"
+	desc = "你的生存全靠这个 - 保持熔炉开启!"
 	icon = 'icons/obj/kitchen_big.dmi'
 	not_movable = TRUE
 	not_disassemblable = TRUE
@@ -464,4 +464,4 @@
 
 /obj/structure/oven/big/examine(mob/user)
 	..()
-	to_chat(user, "It has <b>[fuel] minutes</b> of fuel remaining.")
+	to_chat(user, "它还剩 <b>[fuel] 分钟</b> 的燃料.")

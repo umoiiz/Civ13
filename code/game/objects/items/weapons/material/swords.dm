@@ -1,6 +1,6 @@
 /obj/item/weapon/material/sword
-	name = "claymore"
-	desc = "What are you standing around staring at this for? Get to killing!"
+	name = "双刃大剑"
+	desc = "你还站在这盯着它看什么?快去杀敌!"
 	icon_state = "claymore"
 	item_state = "claymore"
 	slot_flags = SLOT_BELT
@@ -29,27 +29,27 @@
 	if (user.tactic == "defend")
 		isdefend = 1.2
 	if(default_parry_check(user, attacker, damage_source) && prob(isdefend*(min(block_chance * (H_user.getStatCoeff("swords")*modif),92))) && (user.get_active_hand() == src))//You gotta be holding onto that sheesh bro.
-		user.visible_message("<font color='#E55300'><big>\The [user] parries [attack_text] with \the [src]!</big></font>")
+		user.visible_message("<font color='#E55300'><big>\The [user]用\the [src]招架了[attack_text]的攻击!</big></font>")
 		var/mob/living/human/H = user
 		H.adaptStat("swords", 1*modif)
 		playsound(user.loc, pick('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg'), 50, 1)
 		if (istype(damage_source, /obj/item/weapon/sledgehammer))
 			health -= 10
 			if(prob(35))
-				user.visible_message("<font color='#E55300'><big>\The [src] flies out of \the [user]'s hand!</big></font>")
+				user.visible_message("<font color='#E55300'><big>\The [src]从\the [user]手中飞了出去!</big></font>")
 				user.drop_from_inventory(src)
 				throw_at(get_edge_target_turf(src, pick(alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 
 		else if (istype(damage_source, /obj/item/weapon/melee) || istype(damage_source, /obj/item/weapon/material/hatchet))
 			health -= 5
 			if(prob(15))
-				user.visible_message("<font color='#E55300'><big>\The [src] flies out of \the [user]'s hand!</big></font>")
+				user.visible_message("<font color='#E55300'><big>\The [src]从\the [user]手中飞了出去!</big></font>")
 				user.drop_from_inventory(src)
 				throw_at(get_edge_target_turf(src, pick(alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 		else
 			health-= 0.5
 			if(prob(10))
-				user.visible_message("<font color='#E55300'><big>\The [src] flies out of \the [user]'s hand!</big></font>")
+				user.visible_message("<font color='#E55300'><big>\The [src]从\the [user]手中飞了出去!</big></font>")
 				user.drop_from_inventory(src)
 				throw_at(get_edge_target_turf(src, pick(alldirs)), rand(1,3), throw_speed)//Throw that sheesh away
 		return 1
@@ -59,7 +59,7 @@
 	..()
 	if(atk_mode == SLASH)
 		atk_mode = STAB
-		to_chat(user, "<span class='notice'>You will now stab.</span>")
+		to_chat(user, "<span class='notice'>你现在将进行刺击.</span>")
 		edge = FALSE
 		sharp = TRUE
 		attack_verb = list("stabbed")
@@ -67,7 +67,7 @@
 
 	else if(atk_mode == STAB)
 		atk_mode = BASH
-		to_chat(user, "<span class='notice'>You will now bash.</span>")
+		to_chat(user, "<span class='notice'>你现在将进行钝击.</span>")
 		edge = FALSE
 		sharp = FALSE
 		attack_verb = list("bashed", "smacked")
@@ -75,15 +75,15 @@
 
 	else if(atk_mode == BASH)
 		atk_mode = SLASH
-		to_chat(user, "<span class='notice'>You will now slash.</span>")
+		to_chat(user, "<span class='notice'>你现在将进行斩击.</span>")
 		edge = TRUE
 		sharp = TRUE
 		attack_verb = list("slashed", "diced")
 		hitsound = "slash_sound"
 
 /obj/item/weapon/material/sword/training
-	name = "training sword"
-	desc = "A wood sword used for nonlethal practice."
+	name = "训练剑"
+	desc = "一把用于非致命练习的木剑."
 	icon_state = "wood_sword"
 	item_state = "wood_sword"
 	block_chance = 50
@@ -103,8 +103,8 @@
 	default_material = "wood"
 
 /obj/item/weapon/material/sword/training/bamboo
-	name = "bokken"
-	desc = "A bamboo sword used for nonlethal practice."
+	name = "木刀"
+	desc = "一把用于非致命练习的竹剑."
 	icon_state = "bokken_sword"
 	item_state = "bokken_sword"
 	default_material = "bamboo"
@@ -115,8 +115,8 @@
 	sharp = FALSE
 
 /obj/item/weapon/material/sword/katana
-	name = "katana"
-	desc = "A sword used by the japanese for centuries. Made to slice and slash, not chop or saw."
+	name = "武士刀"
+	desc = "日本人使用了数个世纪的剑.用于切割和斩击,而非劈砍或锯切."
 	icon_state = "katana"
 	item_state = "katana"
 	block_chance = 27
@@ -145,8 +145,8 @@ obj/item/weapon/material/sword/wakazashi/yakuza
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/smallsword
-	name = "small sword"
-	desc = "A common european sword, with about one meter in length."
+	name = "小型剑"
+	desc = "一种常见的欧洲剑,长约一米."
 	icon_state = "smallsword"
 	item_state = "smallsword"
 	throw_speed = 2
@@ -168,8 +168,8 @@ obj/item/weapon/material/sword/smallsword/bronze
 	default_material = "bronze"
 
 /obj/item/weapon/material/sword/spadroon
-	name = "spadroon"
-	desc = "A medium sword with a straight blade. Common among the military."
+	name = "军刀"
+	desc = "一种直刃的中型剑.在军队中很常见."
 	icon_state = "spadroon"
 	item_state = "longsword2"
 	throw_speed = 3
@@ -191,8 +191,8 @@ obj/item/weapon/material/sword/spadroon/bronze
 	default_material = "bronze"
 
 /obj/item/weapon/material/sword/armingsword
-	name = "arming sword"
-	desc = "A very common medieval medium-sized sword."
+	name = "武装剑"
+	desc = "一种非常常见的中世纪中型剑."
 	icon_state = "armingsword"
 	item_state = "longsword2"
 	throw_speed = 3
@@ -214,8 +214,8 @@ obj/item/weapon/material/sword/armingsword/bronze
 	default_material = "bronze"
 
 /obj/item/weapon/material/sword/vikingsword
-	name = "carolingian sword"
-	desc = "A medium-size sword with a rounded tip used by the vikings."
+	name = "加洛林剑"
+	desc = "一种圆头的中型剑,维京人使用."
 	icon_state = "viking_sword"
 	item_state = "longsword2"
 	throw_speed = 3
@@ -238,8 +238,8 @@ obj/item/weapon/material/sword/vikingsword/bronze
 
 
 /obj/item/weapon/material/sword/mersksword
-	name = "mersks sword"
-	desc = "A very common medieval medium-sized sword."
+	name = "梅尔斯克剑"
+	desc = "一种非常常见的中世纪中型剑."
 	icon_state = "mersksword"
 	item_state = "longsword2"
 	throw_speed = 3
@@ -252,8 +252,8 @@ obj/item/weapon/material/sword/vikingsword/bronze
 	value = 50
 
 /obj/item/weapon/material/sword/vangar
-	name = "Vangar's sword"
-	desc = "A special, customized sword with 'Vangar' engraved on the hilt."
+	name = "范加之剑"
+	desc = "一把特制的定制剑,剑柄上刻有'范加'."
 	icon_state = "vangar"
 	item_state = "longsword2"
 	throw_speed = 4
@@ -265,8 +265,8 @@ obj/item/weapon/material/sword/vikingsword/bronze
 	cooldownw = 7
 
 /obj/item/weapon/material/sword/bolo
-	name = "bolo"
-	desc = "A very common filipino machete like sword."
+	name = "博洛刀"
+	desc = "一种非常常见的菲律宾砍刀式剑."
 	icon_state = "bolo"
 	item_state = "bolo"
 	throw_speed = 3
@@ -284,8 +284,8 @@ obj/item/weapon/material/sword/vikingsword/bronze
 	value = 25
 
 /obj/item/weapon/material/sword/kukri
-	name = "kukri"
-	desc = "A very distinctly shaped machete originating in the outback for hacking through thick brush."
+	name = "弯刀"
+	desc = "一种形状非常独特的砍刀,起源于内陆,用于劈开茂密的灌木丛."
 	icon_state = "kukri"
 	item_state = "kukri"
 	throw_speed = 3
@@ -303,8 +303,8 @@ obj/item/weapon/material/sword/vikingsword/bronze
 	value = 25
 
 /obj/item/weapon/material/sword/cutlass
-	name = "cutlass"
-	desc = "A medium-sized, curved sword, preferred by pirates."
+	name = "短弯刀"
+	desc = "一种中型弯剑,海盗偏爱使用."
 	icon_state = "cutlass"
 	item_state = "cutlass"
 	throw_speed = 2
@@ -320,8 +320,8 @@ obj/item/weapon/material/sword/cutlass/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/scimitar
-	name = "scimitar"
-	desc = "A medium-sized, curved sword, preferred by arabs."
+	name = "弯刀"
+	desc = "一种中型弯剑,阿拉伯人偏爱使用."
 	icon_state = "scimitar"
 	item_state = "sabre"
 	throw_speed = 2
@@ -337,8 +337,8 @@ obj/item/weapon/material/sword/scimitar/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/longquan
-	name = "longquan"
-	desc = "A medium-sized oriental sword; preferred by chinese warriors & soldiers."
+	name = "龙泉剑"
+	desc = "一种中型东方剑;中国武士和士兵偏爱使用."
 	icon_state = "longquan"
 	item_state = "longquan"
 	throw_speed = 2
@@ -355,8 +355,8 @@ obj/item/weapon/material/sword/scimitar/iron
 	value = 40
 
 /obj/item/weapon/material/sword/plasmaquan
-	name = "Plasmaquan"
-	desc = "A sword based on the longquan."
+	name = "等离子龙泉剑"
+	desc = "一种基于龙泉剑的剑."
 	icon_state = "plasmaquan"
 	item_state = "plasmaquan"
 	throw_speed = 2
@@ -373,8 +373,8 @@ obj/item/weapon/material/sword/scimitar/iron
 	value = 40
 
 /obj/item/weapon/material/sword/saif
-	name = "saif"
-	desc = "A medium sword, original from the arab peninsula."
+	name = "赛义夫剑"
+	desc = "一种中型剑,源自阿拉伯半岛."
 	icon_state = "umar_sword"
 	item_state = "umar_sword"
 	throw_speed = 2
@@ -390,8 +390,8 @@ obj/item/weapon/material/sword/saif/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/sabre
-	name = "sabre"
-	desc = "A small, slightly curved sword, favored by cavalry and light infantry units."
+	name = "军刀"
+	desc = "一种小型、略微弯曲的剑,骑兵和轻步兵部队偏爱使用."
 	icon_state = "sabre"
 	item_state = "sabre"
 	throw_speed = 2
@@ -407,8 +407,8 @@ obj/item/weapon/material/sword/sabre/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/longsword
-	name = "longsword"
-	desc = "A sword with a long blade. Commonly used in the medieval era."
+	name = "长剑"
+	desc = "一种长刃剑.中世纪时代常用."
 	icon_state = "longsword"
 	item_state = "longsword"
 	throw_speed = 2
@@ -430,8 +430,8 @@ obj/item/weapon/material/sword/longsword/diamond
 	default_material = "diamond"
 
 /obj/item/weapon/material/sword/zweihander
-	name = "Zweihander"
-	desc = "A German sword used by knights."
+	name = "双手大剑"
+	desc = "一种骑士使用的德国剑."
 	icon_state = "zweihander"
 	item_state = "longsword"
 	throw_speed = 1
@@ -444,8 +444,8 @@ obj/item/weapon/material/sword/longsword/diamond
 	value = 60
 
 /obj/item/weapon/material/sword/claymore
-	name = "claymore"
-	desc = "A Scottish longsword."
+	name = "双刃大剑"
+	desc = "一种苏格兰长剑."
 	icon_state = "claymore"
 	item_state = "longsword"
 	throw_speed = 1
@@ -462,8 +462,8 @@ obj/item/weapon/material/sword/claymore/iron
 
 
 /obj/item/weapon/material/sword/rapier
-	name = "rapier"
-	desc = "A light sword with a thin, stright blade. Commonly used by officers and nobility."
+	name = "刺剑"
+	desc = "一种轻型剑,剑刃细而直.军官和贵族常用."
 	icon_state = "rapier"
 	item_state = "rapier"
 	throw_speed = 4
@@ -479,8 +479,8 @@ obj/item/weapon/material/sword/rapier/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/broadsword
-	name = "broadsword"
-	desc = "A sword with a long thick blade. Commonly used in the medieval era."
+	name = "阔剑"
+	desc = "一种长而厚重的剑.中世纪时代常用."
 	icon_state = "broadsword"
 	item_state = "longsword"
 	throw_speed = 2
@@ -496,8 +496,8 @@ obj/item/weapon/material/sword/rapier/iron
 // Created as per template then subtypes for spawning into TDM & admin debug access.
 
 /obj/item/weapon/material/sword/gladius
-	name = "gladius"
-	desc = "A relatively small sword, used by Roman soldiers."
+	name = "罗马短剑"
+	desc = "一种相对较小的剑,罗马士兵使用."
 	icon_state = "gladius"
 	item_state = "gladius"
 	throw_speed = 2
@@ -516,8 +516,8 @@ obj/item/weapon/material/sword/rapier/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/gaelic
-	name = "gaelic shortsword"
-	desc = "A relatively small sword with a dramatic hilt, used by Gaelic warriors."
+	name = "盖尔短剑"
+	desc = "一种相对较小的剑,带有夸张的剑柄,盖尔战士使用."
 	icon_state = "gaelic_short"
 	item_state = "gaelic_short"
 	throw_speed = 2
@@ -536,8 +536,8 @@ obj/item/weapon/material/sword/rapier/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/khopesh //template for multi-material crafting
-	name = "khopesh"
-	desc = "A curved sword, used by soldiers of egyptian dynasties & desert warriors."
+	name = "镰形剑"
+	desc = "一种弯剑,埃及王朝的士兵和沙漠战士使用."
 	icon_state = "khopesh"
 	item_state = "khopesh"
 	throw_speed = 2
@@ -556,8 +556,8 @@ obj/item/weapon/material/sword/rapier/iron
 	default_material = "iron"
 
 /obj/item/weapon/material/sword/xiphos //template for multi-material crafting
-	name = "xiphos"
-	desc = "A small sword, used by hellenic soldiers."
+	name = "希腊短剑"
+	desc = "一种小型剑,希腊士兵使用."
 	icon_state = "xiphos"
 	item_state = "gladius"
 	throw_speed = 2
@@ -577,8 +577,8 @@ obj/item/weapon/material/sword/rapier/iron
 
 //////////////////////////////////SKYRIM////////////////////////////////////////
 /obj/item/weapon/material/sword/tes13/twohanded
-	name = "twohanded steel sword"
-	desc = "A sword with a long blade and handle meant to be used with 2 hands."
+	name = "双手钢剑"
+	desc = "一种长刃长柄的剑,设计为双手使用."
 	icon_state = "twohanded"
 	item_state = "twohanded"
 	throw_speed = 2
@@ -591,8 +591,8 @@ obj/item/weapon/material/sword/rapier/iron
 	value = 60
 
 /obj/item/weapon/material/sword/tes13/steel
-	name = "imperial steel sword"
-	desc = "A sword with a steel blade commonly used by the empire."
+	name = "帝国钢剑"
+	desc = "一种钢刃剑,帝国常用."
 	icon_state = "imperial"
 	item_state = "longsword"
 	throw_speed = 2
@@ -605,8 +605,8 @@ obj/item/weapon/material/sword/rapier/iron
 	value = 60
 
 /obj/item/weapon/material/sword/tes13/steel/balgruuf
-	name = "balgruuf's imperial steel sword"
-	desc = "A sword with a steel blade commonly used by the empire. This one was especially forged for balgruuf."
+	name = "巴尔古夫的帝国钢剑"
+	desc = "一种钢刃剑,帝国常用.这一把是专为巴尔古夫锻造的."
 	icon_state = "imperial"
 	item_state = "longsword"
 	throw_speed = 2
@@ -621,8 +621,8 @@ obj/item/weapon/material/sword/rapier/iron
 
 //////////////////////////////////GAME OF THRONES////////////////////////////////////////
 /obj/item/weapon/material/sword/longclaw
-	name = "longclaw"
-	desc = "The Longclaw is a ancestral Valyrian steel bastard sword from the house of mormont."
+	name = "长爪"
+	desc = "长爪是来自莫尔蒙家族的祖传瓦雷利亚钢制杂种剑."
 	icon_state = "longclaw"
 	item_state = "longsword"
 	throw_speed = 2

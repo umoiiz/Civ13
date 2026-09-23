@@ -1,6 +1,6 @@
 /obj/item/ammo_casing
-	name = "bullet casing"
-	desc = "A bullet casing."
+	name = "子弹壳"
+	desc = "一枚子弹壳。"
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "rifle-casing"
 	flags = CONDUCT
@@ -60,15 +60,15 @@
 /obj/item/ammo_casing/examine(mob/user)
 	..()
 	if (!BB)
-		to_chat(user, "This one is spent.")
+		to_chat(user, "这枚已经用过了。")
 
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
-	name = "ammo magazine"
+	name = "弹药弹匣"
 	var/pouch = FALSE
 	var/opened = FALSE
 	flags = CONDUCT
-	desc = "A magazine for some kind of gun."
+	desc = "某种枪械的弹匣。"
 	icon_state = "357"
 	icon = 'icons/obj/ammo.dmi'
 	flags = CONDUCT
@@ -104,10 +104,10 @@
 
 /obj/item/ammo_magazine/secondary_attack_self(mob/living/human/user)
 	if (stored_ammo.len >= max_ammo)
-		to_chat(user, "<span class='warning'>[src] is full!</span>")
+		to_chat(user, "<span class='warning'>[src]已满!</span>")
 		return
 	else if (!caliber)
-		to_chat(user, "<span class='warning'>This [src] has no caliber associated - manually add ammunition first.</span>")
+		to_chat(user, "<span class='warning'>这个[src]没有关联口径 - 请先手动添加弹药。</span>")
 		return
 	else
 		var/count = 0
@@ -117,12 +117,12 @@
 				stored_ammo.Insert(1, AC) //add to the head of the list
 				count = 1
 		if (count > 0)
-			to_chat(user, "<span class='warning'>You fill the [src] with the ammunition on the floor.</span>")
+			to_chat(user, "<span class='warning'>你用地上的弹药装填[src]。</span>")
 			update_icon()
 		return
 
 /obj/item/ammo_magazine/emptypouch
-	name = "bullet pouch (20)"
+	name = "子弹袋 (20)"
 	icon_state = "pouch_closed"
 	ammo_type = null
 	caliber = null
@@ -132,7 +132,7 @@
 	pouch = TRUE
 
 /obj/item/ammo_magazine/emptyclip
-	name = "clip (5)"
+	name = "弹夹 (5)"
 	clip = TRUE
 	icon_state = "clip"
 	attached_icon_state = "none"
@@ -143,7 +143,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/emptyspeedloader
-	name = "speedloader (6)"
+	name = "快速装弹器 (6)"
 	mag_type = SPEEDLOADER
 	icon_state = "38"
 	ammo_type = null
@@ -153,7 +153,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/m44speedloader
-	name = "speedloader (6)"
+	name = "快速装弹器 (6)"
 	mag_type = SPEEDLOADER
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/a44magnum
@@ -163,7 +163,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/emptymagazine
-	name = "drum magazine (65)"
+	name = "弹鼓 (65)"
 	mag_type = MAGAZINE
 	icon_state = "ppsh"
 	caliber = null
@@ -174,7 +174,7 @@
 
 
 /obj/item/ammo_magazine/emptymagazine/rifle
-	name = "magazine (30)"
+	name = "弹匣 (30)"
 	mag_type = MAGAZINE
 	icon_state = "ak47"
 	caliber = null
@@ -193,17 +193,17 @@
 	icon_state = "mp40"
 
 /obj/item/ammo_magazine/emptymagazine/rifle/m16/filled
-	name = "magazine (5.56x45mm)"
+	name = "弹匣 (5.56x45mm)"
 	caliber = "a556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 
 /obj/item/ammo_magazine/emptymagazine/rifle/ak47/filled
-	name = "magazine (7.62x39mm)"
+	name = "弹匣 (7.62x39mm)"
 	caliber = "a762x39"
 	ammo_type = /obj/item/ammo_casing/a762x39
 
 /obj/item/ammo_magazine/emptymagazine/pistol
-	name = "pistol magazine (15)"
+	name = "手枪弹匣 (15)"
 	mag_type = MAGAZINE
 	icon_state = "m9beretta"
 	ammo_type = null
@@ -213,13 +213,13 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/emptymagazine/pistol/filled
-	name = "pistol magazine (9mm)"
+	name = "手枪弹匣 (9mm)"
 	caliber = "a9x19"
 	ammo_type = /obj/item/ammo_casing/a9x19
 	max_ammo = 15
 
 /obj/item/ammo_magazine/emptymagazine/pistol/a45
-	name = "pistol magazine (8)"
+	name = "手枪弹匣 (8)"
 	mag_type = MAGAZINE
 	icon_state = "waltherp"
 	caliber = null
@@ -229,7 +229,7 @@
 	multiple_sprites = TRUE
 
 /obj/item/ammo_magazine/emptybelt
-	name = "belt (100)"
+	name = "弹链 (100)"
 	mag_type = MAGAZINE
 	icon_state = "b762x54"
 	caliber = null
@@ -241,19 +241,19 @@
 	belt = TRUE
 
 /obj/item/ammo_magazine/emptybelt/filled_762x54
-	name = "belt (7.62x54mm)"
+	name = "弹链 (7.62x54mm)"
 	icon_state = "b762x54"
 	caliber = "a762x54"
 	ammo_type = /obj/item/ammo_casing/a762x54
 
 /obj/item/ammo_magazine/emptybelt/filled_556x45
-	name = "belt (5.56x45mm)"
+	name = "弹链 (5.56x45mm)"
 	icon_state = "b762x54"
 	caliber = "a556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 
 /obj/item/ammo_magazine/emptymagazine/p90
-	name = "P90 magazine (50)"
+	name = "P90弹匣 (50)"
 	mag_type = MAGAZINE
 	icon_state = "p90"
 	attached_icon_state = "p90_mag"
@@ -271,10 +271,10 @@
 		return FALSE
 	if (opened)
 		opened=FALSE
-		to_chat(usr, "You close the [src].")
+		to_chat(usr, "你关闭了[src]。")
 	else
 		opened=TRUE
-		to_chat(usr, "You open the [src].")
+		to_chat(usr, "你打开了[src]。")
 	update_icon()
 	return
 
@@ -299,18 +299,18 @@
 					count++
 				stored_ammo.Cut()
 			if (count)
-				visible_message("[user] empties \the [src].", "<span class='notice'>You remove [count] round\s from [src].</span>")
+				visible_message("[user]清空了\the [src]。", "<span class='notice'>你从[src]中取出[count]发\s 。</span>")
 			update_icon()
 			return
 		else
 			var/obj/item/ammo_casing/C = stored_ammo[stored_ammo.len]
 			stored_ammo.len--
 			user.put_in_hands(C)
-			visible_message("[user] removes \a [C] from [src].", "<span class='notice'>You remove \a [C] from [src].</span>")
+			visible_message("[user]从[src]中取出\a [C]。", "<span class='notice'>你从[src]中取出\a [C]。</span>")
 			update_icon()
 			return
 	else
-		to_chat(user, "<span class='warning'>[src] is empty.</span>")
+		to_chat(user, "<span class='warning'>[src]是空的。</span>")
 		update_icon()
 		return
 
@@ -382,10 +382,10 @@
 	if (istype(W, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/C = W
 		if (C.caliber != caliber && caliber != null)
-			to_chat(user, "<span class='warning'>[C] does not fit into [src].</span>")
+			to_chat(user, "<span class='warning'>[C]无法装入[src]。</span>")
 			return
 		if (stored_ammo.len >= max_ammo)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src]是满的!</span>")
 			return
 		user.remove_from_mob(C)
 		C.loc = src
@@ -404,13 +404,13 @@
 	else if (istype(W, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/M = W
 		if (M.caliber != caliber && caliber != null)
-			to_chat(user, "<span class='warning'>[M]'s ammo type does not fit into [src].</span>")
+			to_chat(user, "<span class='warning'>[M]的弹药类型无法装入[src]。</span>")
 			return
 		if (stored_ammo.len >= max_ammo)
-			to_chat(user, "<span class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src]是满的!</span>")
 			return
 		if (M.stored_ammo.len == FALSE)
-			to_chat(user, "<span class='warning'>[M] is empty!</span>")
+			to_chat(user, "<span class='warning'>[M]是空的!</span>")
 			return
 
 		var/filled = FALSE
@@ -425,7 +425,7 @@
 				caliber = C.caliber
 				name = "bullet pouch ([C])"
 		if (filled)
-			to_chat(user, "<span class = 'notice'>You fill [src] with [M]'s ammo.</span>")
+			to_chat(user, "<span class = 'notice'>你用[M]的弹药装填了[src]。</span>")
 
 		update_icon()
 		W.update_icon()
@@ -442,7 +442,7 @@
 	if (cont)
 		var/turf/T = get_turf(src)
 		// so people know who to lynch
-		T.visible_message("<span class = 'notice'>[user] empties [src].</span>", "<span class='notice'>You empty [src].</span>")
+		T.visible_message("<span class = 'notice'>[user]清空了[src]。</span>", "<span class='notice'>你清空了[src]。</span>")
 		for (var/obj/item/ammo_casing/C in stored_ammo)
 			C.loc = user.loc
 			C.set_dir(pick(cardinal))
@@ -452,7 +452,7 @@
 
 /obj/item/ammo_magazine/examine(mob/user)
 	..()
-	to_chat(user, "There [(stored_ammo.len == TRUE)? "is" : "are"] [stored_ammo.len] round\s left!")
+	to_chat(user, "还剩[(stored_ammo.len == TRUE)? "is" : "are"][stored_ammo.len]发\s !")
 
 //magazine icon state caching
 /var/global/list/magazine_icondata_keys = list()

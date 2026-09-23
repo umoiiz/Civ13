@@ -14,14 +14,14 @@
 	if (istype(O, /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/paperaffected = O
 		paperaffected.clearpaper()
-		to_chat(usr, "The solution dissolves the ink on the paper.")
+		to_chat(usr, "溶液溶解了纸上的墨水.")
 		return
 	if (istype(O, /obj/item/weapon/book))
 		if (volume < 5)
 			return
 		var/obj/item/weapon/book/affectedbook = O
 		affectedbook.dat = null
-		to_chat(usr, "<span class='notice'>The solution dissolves the ink on the book.</span>")
+		to_chat(usr, "<span class='notice'>溶液溶解了书上的墨水.</span>")
 	return
 
 /datum/reagent/hexachloroetane
@@ -194,7 +194,7 @@
 				remove_self(volume)
 				return*/
 			if (removed > meltdose)
-				to_chat(H, "<span class='danger'>Your [H.head] melts away!</span>")
+				to_chat(H, "<span class='danger'>你的[H.head]融化了!</span>")
 				qdel(H.head)
 				H.update_inv_head(1)
 				H.update_hair(1)
@@ -208,7 +208,7 @@
 				remove_self(volume)
 				return*/
 			if (removed > meltdose)
-				to_chat(H, "<span class='danger'>Your [H.wear_mask] melts away!</span>")
+				to_chat(H, "<span class='danger'>你的[H.wear_mask]融化了!</span>")
 				qdel(H.wear_mask)
 				H.update_inv_wear_mask(1)
 				H.update_hair(1)
@@ -230,7 +230,7 @@
 		var/obj/effect/decal/cleanable/molten_item/I = new/obj/effect/decal/cleanable/molten_item(O.loc)
 		I.desc = "Looks like this was \an [O] some time ago."
 		for (var/mob/M in viewers(5, O))
-			to_chat(M, "<span class='warning'>\The [O] melts.</span>")
+			to_chat(M, "<span class='warning'>\The [O]融化了.</span>")
 		qdel(O)
 		remove_self(meltdose) // 10 units of acid will not melt EVERYTHING on the tile
 

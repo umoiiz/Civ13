@@ -274,7 +274,7 @@
 
 /turf/floor/beach/water
 	name = "shallow water"
-	desc = "Water. Seems to be shallow."
+	desc = "水. 似乎很浅."
 	icon_state = "seashallow"
 	move_delay = 3
 	water_level = 30 // in centimeters
@@ -289,17 +289,17 @@
 
 /turf/floor/beach/water/coastwater
 	name = "coast water"
-	desc = "lovely water hitting the coast line"
+	desc = "可爱的海水拍打着海岸线"
 	icon_state = "beach"
 
 /turf/floor/beach/water/coastwater/corner
 	name = "coast water corner"
-	desc = "lovely water hitting the coast line"
+	desc = "可爱的海水拍打着海岸线"
 	icon_state = "beachcorner"
 
 /turf/floor/beach/water/coastwater/layer
 	name = "coast water"
-	desc = "lovely water hitting the coast line"
+	desc = "可爱的海水拍打着海岸线"
 	icon_state = "seashallow_edgesX"
 
 /turf/floor/beach/water/shallowsaltwater
@@ -310,7 +310,7 @@
 /turf/floor/beach/water/deep
 	name = "deep water"
 	icon_state = "seadeep"
-	desc = "Water. Seems to be very deep, you cant see the bottom."
+	desc = "水. 似乎非常深,你看不到底部."
 	water_level = 200
 	density = FALSE
 	initial_flooring = /decl/flooring/water_deep
@@ -355,7 +355,7 @@
 /turf/floor/beach/water/deep/jungle
 	name = "deep jungle river"
 	icon_state = "seashallow_jungle3"
-	desc = "Water. Seems to be very deep, you cant see the bottom."
+	desc = "水. 似乎非常深,你看不到底部."
 	water_level = 200
 	density = FALSE
 	initial_flooring = /decl/flooring/water_jungle3
@@ -363,7 +363,7 @@
 /turf/floor/beach/water/deep/swamp
 	name = "deep swamp"
 	icon_state = "seashallow_swamp"
-	desc = "Water. Seems to be very deep, you cant see the bottom."
+	desc = "水. 似乎非常深,你看不到底部."
 	water_level = 200
 	density = FALSE
 	initial_flooring = /decl/flooring/water_swamp

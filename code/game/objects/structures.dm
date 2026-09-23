@@ -348,7 +348,7 @@
 
 /obj/structure/proc/connect_cable(var/mob/user, var/obj/item/stack/cable_coil/W)
 	if (powersource)
-		to_chat(user, "There's already a cable connected here! Split it further from \the [src]")
+		to_chat(user, "这里已经连接了一根电缆! 从\the [src]处进一步分开它")
 		return
 	var/obj/item/stack/cable_coil/CC = W
 	powersource = CC.place_turf(get_turf(src), user, turn(get_dir(user,src),180))
@@ -372,7 +372,7 @@
 					NCOO.connections += powersource
 				if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 					powersource.connections += NCOO
-				to_chat(user, "You connect the two cables.")
+				to_chat(user, "你将两根电缆连接起来.")
 
 		for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 			if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)

@@ -1,6 +1,6 @@
 /obj/item/cannon_ball
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "cannon ball"
+	name = "炮弹"
 	icon_state = "cannon_ball"
 	w_class = ITEM_SIZE_LARGE
 	value = 15
@@ -12,14 +12,14 @@
 	var/subtype = /obj/item/projectile/shell
 
 /obj/item/cannon_ball/chainshot
-	name = "chain shot"
+	name = "链弹"
 	icon_state = "chainshot"
 	damage = 60
 	subtype = /obj/item/projectile/shell/cannonball/chainshot
 	atype = "chainshot"
 
 /obj/item/cannon_ball/grapeshot
-	name = "grape shot"
+	name = "霰弹"
 	icon_state = "grapeshot"
 	damage = 30
 	subtype = /obj/item/projectile/shell/cannonball/grapeshot
@@ -27,7 +27,7 @@
 
 /obj/item/cannon_ball/rocket
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "rocket"
+	name = "火箭"
 	icon_state = "rocket"
 	w_class = ITEM_SIZE_LARGE
 	value = 30
@@ -55,13 +55,13 @@
 			qdel(src)
 
 /obj/item/cannon_ball/rocket/incendiary
-	name = "incendiary rocket"
+	name = "燃烧火箭"
 	icon_state = "rocket_incendiary"
 	atype = "INCENDIARY"
 
 /obj/item/cannon_ball/shell
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "artillery shell"
+	name = "炮弹"
 	icon_state = "shell"
 	w_class = ITEM_SIZE_LARGE
 	value = 55
@@ -99,13 +99,13 @@
 			qdel(src)
 
 /obj/item/cannon_ball/shell/incendiary
-	name = "incendiary artillery shell"
+	name = "燃烧炮弹"
 	icon_state = "shell_incendiary"
 	atype = "INCENDIARY"
 
 /obj/item/cannon_ball/shell/tank
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "cannon shell"
+	name = "加农炮弹"
 	icon_state = "shellHE"
 	w_class = ITEM_SIZE_HUGE
 	value = 20
@@ -114,7 +114,7 @@
 	atype = "HE"
 	New()
 		..()
-		name = "[caliber]mm [atype] shell"
+		name = "[caliber]毫米[atype]炮弹"
 		icon_state = "shell[atype]"
 
 /obj/item/cannon_ball/shell/tank/HE37
@@ -374,7 +374,7 @@
 
 /obj/item/cannon_ball/shell/naval
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "naval shell"
+	name = "舰炮炮弹"
 	icon_state = "navalshell"
 	w_class = ITEM_SIZE_GARGANTUAN
 	value = 20
@@ -402,9 +402,9 @@
 
 /obj/item/cannon_ball/mortar_shell
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "mortar shell"
+	name = "迫击炮弹"
 	icon_state = "shell_mortar"
-	desc = "A small mortar shell, keep it safe and sound otherwise it might explode."
+	desc = "一枚小型迫击炮弹,妥善保管否则可能会爆炸。"
 	w_class = ITEM_SIZE_NORMAL //simplified logistics, 60mm shell is smaller than a 160mm artillery shell
 	value = 20
 
@@ -431,16 +431,16 @@
 
 
 /obj/item/cannon_ball/mortar_shell/type89
-	name = "type 89 mortar shell"
+	name = "89式迫击炮弹"
 	icon_state = "shell_mortar_89"
 
 /obj/item/cannon_ball/mortar_shell/smoke
-	name = "smoke mortar shell"
+	name = "烟雾迫击炮弹"
 	icon_state = "shell_mortar_smoke"
 	reagent_payload = "smokescreen"
 
 /obj/item/cannon_ball/mortar_shell/incendiary
-	name = "incendiary mortar shell"
+	name = "燃烧迫击炮弹"
 	icon_state = "shell_mortar_incendiary"
 	atype = "INCENDIARY"
 
@@ -448,32 +448,32 @@
 
 /obj/item/cannon_ball/shell/gas/chlorine
 	reagent_payload = "chlorine"
-	name = "Chlorine Shell"
+	name = "氯气弹"
 	icon_state = "shell_chlorine"
 
 /obj/item/cannon_ball/shell/gas/mustard
 	reagent_payload = "mustard_gas"
-	name = "Mustard Gas Shell"
+	name = "芥子气弹"
 	icon_state = "shell_mustard"
 
 /obj/item/cannon_ball/shell/gas/phosgene
 	reagent_payload = "phosgene_gas"
-	name = "Phosgene Gas Shell"
+	name = "光气弹"
 	icon_state = "shell_phosgene"
 
 /obj/item/cannon_ball/shell/gas/white_phosphorus
 	reagent_payload = "white_phosphorus_gas"
-	name = "White Phosphorus Shell"
+	name = "白磷弹"
 	icon_state = "shell_wp"
 
 /obj/item/cannon_ball/shell/gas/xylyl_bromide
 	reagent_payload = "xylyl_bromide"
-	name = "Xylyl Bromide Shell"
+	name = "二甲苯溴弹"
 	icon_state = "shell_xb"
 
 /obj/item/cannon_ball/shell/gas/zyklon_b
 	reagent_payload = "zyclon_b"
-	name = "Zyklon B Shell"
+	name = "齐克隆B弹"
 	icon_state = "shell_xb"
 
 // Nuclear
@@ -486,53 +486,53 @@
 		icon_state = "shell_nuclear"
 
 /obj/item/cannon_ball/rocket/nuclear
-	name = "Nuclear Rocket"
-	desc = "You might want to step back a bit..."
+	name = "核火箭弹"
+	desc = "你最好退后一点..."
 	icon_state = "shell_nuclear_rocket"
 	value = 80
 	atype = "NUCLEAR"
 
 /obj/item/cannon_ball/shell/nuclear
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "Nuclear Shell"
-	desc = "A nuclear shell"
+	name = "核炮弹"
+	desc = "一枚核炮弹"
 	icon_state = "shell_nuclear"
 	value = 80
 	atype = "NUCLEAR"
 
 /obj/item/cannon_ball/shell/nuclear/nomads
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "Nuclear Shell"
-	desc = "A nuclear shell, once the genie is out of the bottle you can't put it back in..."
+	name = "核炮弹"
+	desc = "一枚核炮弹,一旦精灵从瓶子里出来,你就无法把它放回去了..."
 	icon_state = "shell_nuclear"
 	value = 60
 
 /obj/item/cannon_ball/shell/nuclear/W9
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "W9 Atomic Demolition Munition"
-	desc = "A W9 nuclear shell"
+	name = "W9原子爆破弹药"
+	desc = "一枚W9核炮弹"
 	icon_state = "shell_nuclear"
 	value = 80
 
 /obj/item/cannon_ball/shell/nuclear/W19
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "W19 Katie Nuclear Shell"
-	desc = "A W19 Katie nuclear shell"
+	name = "W19凯蒂核炮弹"
+	desc = "一枚W19凯蒂核炮弹"
 	icon_state = "shell_nuclear"
 	atype = "NUCLEAR"
 	value = 80
 
 /obj/item/cannon_ball/shell/nuclear/W33
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "W33 Nuclear Shell"
-	desc = "A W33 nuclear shell"
+	name = "W33核炮弹"
+	desc = "一枚W33核炮弹"
 	icon_state = "shell_nuclear"
 	value = 80
 
 /obj/item/cannon_ball/shell/nuclear/W33Boosted
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "Boosted W33 Nuclear Shell"
-	desc = "A boosted nuclear shell for extra destruction"
+	name = "增强型W33核炮弹"
+	desc = "一枚增强型核炮弹,用于额外破坏"
 	icon_state = "shell_nuclear_boosted"
 	value = 80
 
@@ -540,8 +540,8 @@
 ////////////////////////////////////////////////////////
 /obj/structure/shellrack
 	icon = 'icons/obj/structures.dmi'
-	name = "shell rack"
-	desc = "A rack for storage your explosive goods."
+	name = "炮弹架"
+	desc = "用于存放你的爆炸物的架子."
 	icon_state = "shellrack0"
 	w_class = 10.0
 	var/obj/item/weapon/storage/internal/storage
@@ -586,8 +586,8 @@
 		icon_state = "shellrack[storage.contents.len]"
 
 /obj/structure/shellrack/autoloader
-	name = "shell rack"
-	desc = "A rack for storage your explosive goods. This one designed to feed into an autoloader, neat!"
+	name = "炮弹架"
+	desc = "用于存放你的爆炸物的架子.这个设计用于供弹到自动装弹机,真不错!"
 	anchored = TRUE
 	not_movable = TRUE
 	not_disassemblable = TRUE

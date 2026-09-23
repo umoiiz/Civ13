@@ -66,7 +66,7 @@
 				H.football = null
 				H.do_attack_animation(get_step(H,H.dir))
 				playsound(loc, 'sound/effects/football_kick.ogg', 100, 1)
-				visible_message("[src] kicks \the [FB.name].")
+				visible_message("[src]踢出了\the [FB.name].")
 				return
 			else if (ishuman(A) && get_dist(H,A) <= 1) //if we dont have the ball, try to apply pressure and take the ball without tackling
 				H.football_pressure(A)
@@ -168,7 +168,7 @@
 		var/mob/living/human/H = src
 		if (istype(H) && H.laddervision)
 			H.update_laddervision(null)
-			H.visible_message("<span class = 'notice'>[H] stops looking [H.laddervision_direction()] the ladder.</span>")
+			H.visible_message("<span class = 'notice'>[H]不再看着[H.laddervision_direction()]梯子.</span>")
 			return
 	if (restrained())
 		setClickCooldown(10)
@@ -295,7 +295,7 @@
 
 /mob/living/UnarmedAttack(var/atom/A, var/proximity_flag, icon_x, icon_y)
 	if (!ticker)
-		to_chat(src, "You cannot attack people before the game has started.")
+		to_chat(src, "游戏开始前你不能攻击别人.")
 		return FALSE
 	if (stat)
 		return FALSE
@@ -435,7 +435,7 @@
 	if (stat || buckled || paralysis || stunned || sleeping || (status_flags & FAKEDEATH) || restrained() || (weakened > 10))
 		return FALSE
 	if (!has_limbs)
-		to_chat(src, "<span class = 'red'>You can't even move yourself - you have no limbs!</span>")
+		to_chat(src, "<span class = 'red'>你甚至无法移动自己 - 你没有四肢!</span>")
 		return FALSE
 	if (scrambling)
 		return FALSE
@@ -446,7 +446,7 @@
 	var/slowness = weakened ? 1.50 : 1.00
 	scrambling = TRUE
 	sleep(9*slowness)
-	visible_message("<span class = 'red'><b>[src]</b> crawls with difficulty!</span>")
+	visible_message("<span class = 'red'><b>[src]</b>艰难地爬行!</span>")
 	var/nloc = loc
 	if (nloc == oloc)
 		Move(F)
@@ -458,7 +458,7 @@
 	if (stat || buckled || paralysis || stunned || sleeping || (status_flags & FAKEDEATH) || restrained() || (weakened > 10))
 		return FALSE
 	if (!has_limbs)
-		to_chat(src, "<span class = 'red'>You can't even move yourself - you have no limbs!</span>")
+		to_chat(src, "<span class = 'red'>你甚至无法移动自己 - 你没有四肢!</span>")
 		return FALSE
 	if (scrambling)
 		return FALSE

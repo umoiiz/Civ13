@@ -27,8 +27,8 @@
 //		  Trash bag
 // -----------------------------
 /obj/item/weapon/storage/bag/trash
-	name = "trash bag"
-	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!"
+	name = "垃圾袋"
+	desc = "它是那种重型黑色聚合物材质的. 该去倒垃圾了!"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "trashbag0"
 	item_state = "trashbag"
@@ -56,8 +56,8 @@
 // -----------------------------
 
 /obj/item/weapon/storage/bag/plasticbag
-	name = "plastic bag"
-	desc = "It's a very flimsy, very noisy alternative to a bag."
+	name = "塑料袋"
+	desc = "它是一种非常脆弱, 非常吵的袋子替代品."
 	icon = 'icons/obj/trash.dmi'
 	icon_state = "plasticbag"
 	item_state = "plasticbag"
@@ -104,10 +104,10 @@
 // However, making it a storage/bag allows us to reuse existing code in some places. -Sayu
 
 /obj/item/weapon/storage/bag/sheetsnatcher
-	name = "sheet snatcher"
+	name = "板材收纳器"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "sheetsnatcher"
-	desc = "A patented storage system designed for any kind of mineral sheet."
+	desc = "一种为任何种类的矿物板材设计的专利存储系统."
 
 	var/capacity = 300; //the number of sheets it can carry.
 	w_class = ITEM_SIZE_NORMAL
@@ -122,14 +122,14 @@
 	can_be_inserted(obj/item/W as obj, stop_messages = FALSE)
 		if (!istype(W,/obj/item/stack/material))
 			if (!stop_messages)
-				to_chat(usr, "The snatcher does not accept [W].")
+				to_chat(usr, "收纳器不接受[W].")
 			return FALSE
 		var/current = FALSE
 		for (var/obj/item/stack/material/S in contents)
 			current += S.amount
 		if (capacity == current)//If it's full, you're done
 			if (!stop_messages)
-				to_chat(usr, "<span class='warning'>The snatcher is full.</span>")
+				to_chat(usr, "<span class='warning'>收纳器已满.</span>")
 			return FALSE
 		return TRUE
 
@@ -236,10 +236,10 @@
 // -----------------------------
 
 /obj/item/weapon/storage/bag/cash
-	name = "cash bag"
+	name = "现金袋"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "moneybag"
-	desc = "A bag for carrying lots of cash. It's got a big dollar sign printed on the front."
+	desc = "一个用来携带大量现金的袋子. 正面印着一个大大的美元符号."
 	max_storage_space = 15
 	max_w_class = 3
 	w_class = ITEM_SIZE_SMALL

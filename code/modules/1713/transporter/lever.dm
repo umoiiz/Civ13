@@ -1,5 +1,5 @@
 /obj/structure/transport_lever // same icon as the train lever for now
-	name = "Landing Craft control"
+	name = "登陆艇控制"
 	icon = 'icons/obj/vehicles/train_lever.dmi'
 	icon_state = "lever_none"
 	
@@ -16,7 +16,7 @@
 /obj/structure/transport_lever/attack_hand(var/mob/user as mob)
 	if (world.time < next_activation)
 		next_activation = world.time + 5 SECONDS
-		visible_message("This Landing Craft isn't ready to depart yet.</span>")
+		visible_message("这艘登陆艇还没准备好出发.</span>")
 		
 	else
 		next_activation = world.time + 40 SECONDS //to give it time to reach the destination
@@ -24,7 +24,7 @@
 			M.playsound_local(get_turf(M), depart_sound, 100 - get_dist(M, src))
 
 		if (position == "docked")
-			visible_message("The Landing Craft is departing!</span>")
+			visible_message("登陆艇正在出发!</span>")
 			if (icon_state == none_state) // Push lever
 				icon_state = pushed_state
 			for (var/turf/floor/plating/concrete/T in range(10, src))
@@ -43,14 +43,14 @@
 						O.z = 2
 					else if (O.z == 2)
 						O.z = 1
-				visible_message("The Landing Craft has arrived.</span>")
+				visible_message("登陆艇已经抵达.</span>")
 				spawn(5)
 					for (var/turf/floor/plating/concrete/T in range(10, src))
 						T.opacity = FALSE
 						T.density = FALSE
 				spawn (400)
 					if (z == 1)
-						visible_message("The Landing Craft is returning!</span>")
+						visible_message("登陆艇正在返回!</span>")
 						for (var/mob/M in range(14, src))
 							M.playsound_local(get_turf(M), 'sound/landing_craft.ogg', 100 - get_dist(M, src))
 						for (var/mob/M in range(5, src))
@@ -72,7 +72,7 @@
 			position = "launched"
 
 		else if (position == "launched")
-			visible_message("The Landing Craft is departing!</span>")
+			visible_message("登陆艇正在出发!</span>")
 			if (icon_state == none_state)
 				icon_state = pushed_state
 			for (var/turf/floor/plating/concrete/T in range(10, src))
@@ -93,14 +93,14 @@
 							O.z = 2
 						else if (O.z == 2)
 							O.z = 1
-				visible_message("The Landing Craft has arrived.</span>")
+				visible_message("登陆艇已经抵达.</span>")
 				spawn(5)
 					for (var/turf/floor/plating/concrete/T in range(10, src))
 						T.opacity = FALSE
 						T.density = FALSE
 				spawn (400)
 					if (z == 1)
-						visible_message("The Landing Craft is returning!</span>")
+						visible_message("登陆艇正在返回!</span>")
 						for (var/mob/M in range(14, src))
 							M.playsound_local(get_turf(M), 'sound/landing_craft.ogg', 100 - get_dist(M, src))
 						for (var/mob/M in range(5, src))
@@ -121,7 +121,7 @@
 							T.density = FALSE
 
 /obj/structure/boat_spawn_lever // same icon as the train lever for now
-	name = "boat spawner"
+	name = "船只生成器"
 	icon = 'icons/obj/vehicles/train_lever.dmi'
 	icon_state = "lever_none"
 	

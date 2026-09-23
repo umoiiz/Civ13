@@ -1,33 +1,33 @@
 /obj/item/weapon/folder
-	name = "folder"
-	desc = "A folder."
+	name = "文件夹"
+	desc = "一个文件夹."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "folder"
 	w_class = ITEM_SIZE_SMALL
 	flags = FALSE
 
 /obj/item/weapon/folder/blue
-	desc = "A blue folder."
+	desc = "一个蓝色文件夹."
 	icon_state = "folder_blue"
 
 /obj/item/weapon/folder/red
-	desc = "A red folder."
+	desc = "一个红色文件夹."
 	icon_state = "folder_red"
 
 /obj/item/weapon/folder/yellow
-	desc = "A yellow folder."
+	desc = "一个黄色文件夹."
 	icon_state = "folder_yellow"
 
 /obj/item/weapon/folder/white
-	desc = "A white folder."
+	desc = "一个白色文件夹."
 	icon_state = "folder_white"
 
 /obj/item/weapon/folder/black
-	desc = "A black folder."
+	desc = "一个黑色文件夹."
 	icon_state = "folder_black"
 
 /obj/item/weapon/folder/sred
-	desc = "A black folder with a red bar."
+	desc = "一个带红色条纹的黑色文件夹."
 	icon_state = "folder_sred"
 
 /obj/item/weapon/folder/update_icon()

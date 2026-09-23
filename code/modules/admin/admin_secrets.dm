@@ -82,7 +82,7 @@ var/datum/admin_secrets/admin_secrets = new()
 
 /datum/admin_secret_category/final_solutions
 	name = "Final Solutions"
-	desc = "(Warning, these will end the round!)"
+	desc = "(警告, 这些将结束回合!)"
 
 /*************************
 * Pre-defined base items *

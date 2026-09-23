@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/roman
 	name = "Legionary"
-	desc = "A Roman legionary!"
+	desc = "一名罗马军团士兵!"
 	icon_state = "legionary"
 	icon_dead = "legionary_dead"
 	response_help = "pushes"
@@ -26,7 +26,7 @@
 
 /mob/living/simple_animal/hostile/human/roman/friendly
 	name = "Roman Garrison"
-	desc = "A Roman garrison soldier, hired to defend the colony."
+	desc = "一名罗马驻军士兵, 受雇保卫殖民地."
 	maxHealth = 300 //shhhh
 	health = 300
 	faction = CIVILIAN

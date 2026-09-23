@@ -9,7 +9,7 @@
 
 	if(!check_rights(R_ADMIN)) return
 	if(!istype(map, /obj/map_metadata/subcom13))
-		to_chat(usr, "<span class='warning'>Not on SUBCOM13 map.</span>")
+		to_chat(usr, "<span class='warning'>不在SUBCOM13地图上.</span>")
 		return
 
 	usr.client.holder.show_subcom13_panel()

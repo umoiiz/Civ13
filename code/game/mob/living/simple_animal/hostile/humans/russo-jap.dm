@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/japanese
 	name = "Japanese Soldier"
-	desc = "A japanese soldier."
+	desc = "一名日本士兵."
 	use_generated_appearance = TRUE
 	icon_state = "japmelee"
 	icon_dead = "japmelee_dead"
@@ -31,7 +31,7 @@
 
 /mob/living/simple_animal/hostile/human/japanesecap
 	name = "Japanese Captain"
-	desc = "A japanese captain."
+	desc = "一名日本上尉."
 	icon_state = "japcommander"
 	icon_dead = "japmelee_dead"
 	response_help = "pushes"
@@ -60,7 +60,7 @@
 
 /mob/living/simple_animal/hostile/human/ww2_jap
 	name = "Japanese Soldier"
-	desc = "A jap soldier! he looks hostile!"
+	desc = "一个日本兵! 他看起来充满敌意!"
 	use_generated_appearance = TRUE
 	icon_state = "ww2_jap_ranged1"
 	icon_dead = "bandit2_dead"
@@ -255,7 +255,7 @@
 
 /mob/living/simple_animal/hostile/human/ww2_american
 	name = "American Soldier"
-	desc = "An american soldier! he looks hostile!"
+	desc = "一个美国兵! 他看起来充满敌意!"
 	use_generated_appearance = TRUE
 	icon_state = "ww2_american_ranged1"
 	icon_dead = "bandit2_dead"

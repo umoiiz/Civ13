@@ -4,8 +4,8 @@
 	var/being_used = 0
 
 /obj/structure/fitness/punchingbag
-	name = "punching bag"
-	desc = "A punching bag."
+	name = "沙袋"
+	desc = "一个沙袋."
 	icon_state = "pbag"
 	color = "#801a08"
 	density = 1
@@ -16,7 +16,7 @@
 		..()
 		return
 	if(H.nutrition < 20)
-		to_chat(H, "<span class='warning'>You need more energy to use the punching bag. Go eat something.</span>")
+		to_chat(H, "<span class='warning'>你需要更多能量才能使用沙袋.去吃点东西吧.</span>")
 	else
 		if(H.a_intent == I_HARM)
 			H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -30,11 +30,11 @@
 					H.adaptStat("strength", 1)
 				else
 					H.adaptStat("dexterity", 1)
-			to_chat(H, "<span class='warning'>You [pick(hit_message)] \the [src].</span>")
+			to_chat(H, "<span class='warning'>你[pick(hit_message)]\the [src].</span>")
 
 /obj/structure/fitness/weightlifter
-	name = "weightlifting machine"
-	desc = "A machine used to lift weights."
+	name = "举重机"
+	desc = "一台用于举重的机器."
 	icon_state = "weightlifter"
 	var/weight = 1
 	var/list/qualifiers = list("with ease", "without any trouble", "with great effort")
@@ -43,22 +43,22 @@
 	if(istype(W, /obj/item/weapon/wrench))
 		playsound(src.loc, 'sound/items/Deconstruct.ogg', 75, 1)
 		weight = ((weight) % qualifiers.len) + 1
-		to_chat(H, "You set the machine's weight level to [weight].")
+		to_chat(H, "你将机器的重量等级设置为[weight].")
 
 /obj/structure/fitness/weightlifter/attack_hand(var/mob/living/human/H)
 	if(!istype(H))
 		return
 	if(H.loc != src.loc)
-		to_chat(H, "<span class='warning'>You must be on the weight machine to use it.</span>")
+		to_chat(H, "<span class='warning'>你必须站在举重机上才能使用它.</span>")
 		return
 	if(H.nutrition < 50)
-		to_chat(H, "<span class='warning'>You need more energy to lift weights. Go eat something.</span>")
+		to_chat(H, "<span class='warning'>你需要更多能量才能举重.去吃点东西吧.</span>")
 		return
 	if(H.water < 50)
-		to_chat(H, "<span class='warning'>You're getting dehydrated. Go drink something.</span>")
+		to_chat(H, "<span class='warning'>你开始脱水了.去喝点东西吧.</span>")
 		return
 	if(being_used)
-		to_chat(H, "<span class='warning'>The weight machine is already in use by somebody else.</span>")
+		to_chat(H, "<span class='warning'>举重机已经被其他人占用了.</span>")
 		return
 	else
 		being_used = 1
@@ -69,10 +69,10 @@
 			playsound(src.loc, 'sound/effects/weightdown.ogg', 25, 1)
 			H.nutrition -= (weight * DEFAULT_HUNGER_FACTOR)
 			H.water -= (weight * 0.05)
-			to_chat(H, "<span class='notice'>You lift the weights [qualifiers[weight]].</span>")
+			to_chat(H, "<span class='notice'>你[qualifiers[weight]]举起了重物.</span>")
 			if (prob(60))
 				H.adaptStat("strength", 1)
 			being_used = 0
 		else
-			to_chat(H, "<span class='notice'>Against your previous judgement, perhaps working out is not for you.</span>")
+			to_chat(H, "<span class='notice'>与你之前的判断相反,也许健身并不适合你.</span>")
 			being_used = 0

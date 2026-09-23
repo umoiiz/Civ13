@@ -3,7 +3,7 @@
 		return FALSE
 	var/obj/item/weapon/reagent_containers/glass/G = O
 	if (stat == CONSCIOUS && istype(G) && G.is_open_container())
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>")
+		user.visible_message("<span class='notice'>[user]用\the [O]挤[src]的奶。</span>")
 		var/transfered = udder.trans_id_to(G, "milk", rand(5,10))
 		if (G.reagents.total_volume >= G.volume)
 			to_chat(user, SPAN_RED("The [O] is full."))
@@ -45,7 +45,7 @@
 /mob/living/simple_animal/cattle/cow
 	name = "cow"
 	cattle_gender = "female"
-	desc = "Known for their milk, just don't tip them over."
+	desc = "以产奶闻名,只是别把它们弄翻。"
 	icon_state = "cow"
 	icon_living = "cow"
 	icon_dead = "cow_dead"
@@ -75,7 +75,7 @@
 /mob/living/simple_animal/cattle/bull
 	name = "bull"
 	cattle_gender = "male"
-	desc = "Good for meat."
+	desc = "肉不错。"
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"
@@ -181,7 +181,7 @@
 				if(plough)
 					return
 				var/obj/item/stack/material/rope/NR
-				to_chat(user, "You try to attach the plough to the cattle.")
+				to_chat(user, "你试图把犁套到牛身上。")
 				if(istype(user.l_hand, /obj/item/stack/material/rope/))	//Check in which hand is the rope to not mess up
 					NR = user.l_hand
 					if (NR.amount < 2)
@@ -203,7 +203,7 @@
 						icon_state = "bull_plough"
 					plough = TRUE
 		else
-			to_chat(user, "You need a rope to attach the plough to the cattle.")
+			to_chat(user, "你需要一根绳子才能把犁套到牛身上。")
 	else
 		..()						//If its not set here as new action, just assume the previous one for attackby
 
@@ -224,7 +224,7 @@
 			road_status = "Adjust to make Roads"
 		var/choice1 = WWinput(usr, "What would you like to do with the cow's plough?", "Cattle Pulled Plough", "Remove", list("Remove", road_status, plough_status, "Cancel"))
 		if (choice1 == "Remove")
-			to_chat(user, "You try to detach the plough from the cow.")
+			to_chat(user, "你试图把犁从牛身上卸下来。")
 			if (do_after(user,35,src))
 				if(cattle_gender == "female")
 					icon_state = "cow"
@@ -344,7 +344,7 @@
 			else
 				var/mob/living/simple_animal/cattle/bull/B = new/mob/living/simple_animal/cattle/bull(loc)
 				B.calf = TRUE
-			visible_message("A calf has been born!")
+			visible_message("一头小牛出生了!")
 
 /mob/living/simple_animal/cattle/cow/attack_hand(mob/living/human/M as mob)
 	if (!stat && M.a_intent == I_DISARM && icon_state != icon_dead)
@@ -368,7 +368,7 @@
 //pig
 /mob/living/simple_animal/pig_boar
 	name = "pig boar"
-	desc = "A small Mammal, with a stocky Body, Flat snout and small eyes they are a member of the Suidae Family."
+	desc = "一种小型哺乳动物,身体粗壮,口鼻扁平,眼睛小,属于猪科。"
 	icon_state = "pig_boar"
 	icon_living = "pig_boar"
 	icon_dead = "pig_boar_dead"
@@ -400,7 +400,7 @@
 
 /mob/living/simple_animal/pig_gilt
 	name = "pig gilt"
-	desc = "A small Mammal, with a stocky Body, Flat snout and small eyes they are a member of the Suidae Family."
+	desc = "一种小型哺乳动物,身体粗壮,口鼻扁平,眼睛小,属于猪科。"
 	icon_state = "pig_gilt"
 	icon_living = "pig_gilt"
 	icon_dead = "pig_gilt_dead"
@@ -531,11 +531,11 @@
 			else
 				var/mob/living/simple_animal/pig_boar/B = new/mob/living/simple_animal/pig_boar(loc)
 				B.piglet = TRUE
-			visible_message("A piglet has been born!")
+			visible_message("一只小猪出生了!")
 
 /mob/living/simple_animal/boar_boar
 	name = "boar"
-	desc = "A small, wooly mammal with a stocky body, long snout, and small eyes. They are a member of the Suidae family."
+	desc = "一种小型、毛茸茸的哺乳动物,身体粗壮,口鼻长,眼睛小。它们属于猪科。"
 	icon_state = "boar_boar"
 	icon_living = "boar_boar"
 	icon_dead = "boar_dead"
@@ -569,7 +569,7 @@
 
 /mob/living/simple_animal/boar_gilt
 	name = "boar gilt"
-	desc = "A small, wooly mammal with a stocky body, long snout, and small eyes. They are a member of the Suidae family."
+	desc = "一种小型、毛茸茸的哺乳动物,身体粗壮,口鼻长,眼睛小。它们属于猪科。"
 	icon_state = "boar_gilt"
 	icon_living = "boar_gilt"
 	icon_dead = "boar_dead"
@@ -680,13 +680,13 @@
 			else
 				var/mob/living/simple_animal/boar_boar/B = new/mob/living/simple_animal/boar_gilt(loc)
 				B.piglet = TRUE
-			visible_message("A boar piglet has been born!")
+			visible_message("一只野猪幼崽出生了!")
 
 
 //goat
 /mob/living/simple_animal/goat
 	name = "goat ram"
-	desc = "A male goat. Not known for their pleasant disposition."
+	desc = "一只公山羊。以脾气不友善而闻名。"
 	icon_state = "goat_ram"
 	icon_living = "goat_ram"
 	icon_dead = "goat_ram_dead"
@@ -737,7 +737,7 @@
 
 /mob/living/simple_animal/goat/female
 	name = "goat ewe"
-	desc = "A female goat. You can milk it."
+	desc = "一只母山羊。你可以挤它的奶。"
 	icon_state = "goat_ewe"
 	icon_living = "goat_ewe"
 	icon_dead = "goat_ewe_dead"
@@ -816,12 +816,12 @@
 			else
 				var/mob/living/simple_animal/goat/female/B = new/mob/living/simple_animal/goat/female(loc)
 				B.lamb = TRUE
-			visible_message("A goat lamb has been born!")
+			visible_message("一只小山羊出生了!")
 
 //sheep
 /mob/living/simple_animal/sheep
 	name = "sheep ram"
-	desc = "A male sheep. Good for wool."
+	desc = "一只公绵羊。适合产羊毛。"
 	icon_state = "sheep_ram"
 	icon_living = "sheep_ram"
 	icon_dead = "sheep_ram_dead"
@@ -876,7 +876,7 @@
 
 /mob/living/simple_animal/sheep/female
 	name = "sheep ewe"
-	desc = "A female sheep. You can milk it."
+	desc = "一只母绵羊。你可以挤它的奶。"
 	icon_state = "sheep_ewe"
 	icon_living = "sheep_ewe"
 	icon_dead = "sheep_ewe_dead"
@@ -937,9 +937,9 @@
 		if (try_milk(O, user, udder))
 			return
 	else if (istype(O, /obj/item/weapon/shears) && sheared == FALSE)
-		to_chat(user, "You start shearing \the [src]...")
+		to_chat(user, "你开始给\the [src]剪毛...")
 		if (do_after(user, 150, src) && sheared == FALSE)
-			to_chat(user, "You finish shearing \the [src].")
+			to_chat(user, "你给\the [src]剪完了毛。")
 			sheared = TRUE
 			update_icons()
 			regrowth()
@@ -949,9 +949,9 @@
 		..()
 /mob/living/simple_animal/sheep/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if (istype(O, /obj/item/weapon/shears) && sheared == FALSE)
-		to_chat(user, "You start shearing \the [src]...")
+		to_chat(user, "你开始给\the [src]剪毛...")
 		if (do_after(user, 150, src) && sheared == FALSE)
-			to_chat(user, "You finish shearing \the [src].")
+			to_chat(user, "你给\the [src]剪完了毛。")
 			sheared = TRUE
 			update_icons()
 			regrowth()
@@ -1000,10 +1000,10 @@
 			else
 				var/mob/living/simple_animal/sheep/female/B = new/mob/living/simple_animal/sheep/female(loc)
 				B.lamb = TRUE
-			visible_message("A sheep lamb has been born!")
+			visible_message("一只小绵羊出生了!")
 /mob/living/simple_animal/camel
 	name = "camel"
-	desc = "Good for meat."
+	desc = "肉不错。"
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "camel"
 	icon_living = "camel"
@@ -1034,11 +1034,11 @@
 /mob/living/simple_animal/camel/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if (!stat && user.a_intent == I_HELP && icon_state != icon_dead && !istype(O, /obj/item/weapon/leash))
 		if (content_size + O.w_class > max_content_size)
-			to_chat(user, "The camel is too burdened already!")
+			to_chat(user, "骆驼已经负担太重了!")
 			return
 		else
 			content_size += O.w_class
-			visible_message("[user] places \the [O] on the camel's back.","You put \the [O] on the camel's back.")
+			visible_message("[user]把\the [O]放到骆驼背上。","你把\the [O]放到骆驼背上。")
 			packed_items += O
 			user.drop_from_inventory(O)
 			O.forceMove(locate(0,0,0))
@@ -1058,7 +1058,7 @@
 	set name = "Remove Pack"
 	set src in range(2, usr)
 	if (!content_size)
-		to_chat(usr, "The camel is not carrying anything.")
+		to_chat(usr, "骆驼没有驮任何东西。")
 		return
 	else
 		var/list/choicelist = list("Cancel")
@@ -1072,7 +1072,7 @@
 				if (ITS.name == choice1)
 					ITS.loc = locate(usr.x,usr.y,usr.z)
 					packed_items -= ITS
-					visible_message("[usr] removes \the [ITS] from the camel's back.","You remove \the [ITS] from the camel's back.")
+					visible_message("[usr]从骆驼背上取下了\the [ITS]。","你从骆驼背上取下了\the [ITS]。")
 					content_size -= ITS.w_class
 					if (!content_size)
 						packed = FALSE

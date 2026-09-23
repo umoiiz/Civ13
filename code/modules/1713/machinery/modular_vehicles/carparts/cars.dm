@@ -7,11 +7,11 @@
 		material = get_material_by_name(material)
 	update_icon()
 		if (material)
-			name = "[material] driver's seat"
+			name = "[material]驾驶座"
 			color = material.icon_colour
 /obj/structure/bed/chair/carseat
-	name = "car seat"
-	desc = "A leather car seat."
+	name = "汽车座椅"
+	desc = "一个皮革汽车座椅."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "carseat_middle"
 	material = "leather"
@@ -20,7 +20,7 @@
 		material = get_material_by_name(material)
 	update_icon()
 		if (material)
-			name = "[material.use_name] car seat"
+			name = "[material.use_name]汽车座椅"
 			color = material.icon_colour
 
 /obj/structure/bed/chair/carseat/left
@@ -203,8 +203,8 @@
 	hasoverlay = "um_erstenklasse_back_right"
 	removesroof = TRUE
 /obj/structure/table/carboot
-	name = "boot"
-	desc = "A compartment of the car used to store stuff."
+	name = "后备箱"
+	desc = "汽车上用于存放物品的隔间."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "boot"
 	fixedsprite = TRUE
@@ -500,7 +500,7 @@
 ///////////////axis///////////////
 /obj/structure/vehicleparts/axis/car/piccolino
 	name = "ASNO Piccolino"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -510,7 +510,7 @@
 
 /obj/structure/vehicleparts/axis/car/quattroporte
 	name = "ASNO Quattroporte"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -520,7 +520,7 @@
 
 /obj/structure/vehicleparts/axis/car/erstenklasse
 	name = "Ubermacht Erstenklasse"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -530,7 +530,7 @@
 
 /obj/structure/vehicleparts/axis/car/cv
 	name = "CV 33"
-	desc = "A powered axis from a tankette."
+	desc = "来自小型坦克的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -540,7 +540,7 @@
 
 /obj/structure/vehicleparts/axis/car/falcon
 	name = "SMC Falcon"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -564,7 +564,7 @@
 
 /obj/structure/vehicleparts/axis/car/shinobu
 	name = "Yamasaki Shinobu"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -573,7 +573,7 @@
 	turntimer = 4
 
 /obj/structure/vehicleparts/axis/car/shinobu/police
-	name = "Yamasaki Shinobu Police Interceptor"
+	name = "Yamasaki Shinobu 警用拦截者"
 	color = "#383838"
 	New()
 		..()
@@ -586,7 +586,7 @@
 
 /obj/structure/vehicleparts/axis/car/kazoku
 	name = "Yamasaki Kazoku"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -594,8 +594,8 @@
 	speedlist = alist(1=6,2=5,3=4,4=2.5)
 	turntimer = 5
 /obj/structure/vehicleparts/axis/car/type95
-	name = "Kurogane Type 95"
-	desc = "A powered axis from a car."
+	name = "Kurogane 95式"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -604,8 +604,8 @@
 	turntimer = 4
 
 /obj/structure/vehicleparts/axis/car/type94
-	name = "Isuzu Type 94"
-	desc = "A powered axis from a car."
+	name = "Isuzu 94式"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -614,7 +614,7 @@
 	turntimer = 5
 
 /obj/structure/vehicleparts/axis/car/falcon/police
-	name = "SMC Falcon Police Interceptor"
+	name = "SMC Falcon 警用拦截者"
 	color = "#383838"
 	New()
 		..()
@@ -624,7 +624,7 @@
 
 /obj/structure/vehicleparts/axis/car/volle
 	name = "Ubermacht Volle"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -634,7 +634,7 @@
 
 /obj/structure/vehicleparts/axis/car/wyoming
 	name = "SMC Wyoming"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -644,7 +644,7 @@
 
 /obj/structure/vehicleparts/axis/car/toyota
 	name = "Toyota"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	color = "#BDB76B"
@@ -654,8 +654,8 @@
 	turntimer = 7
 
 /obj/structure/vehicleparts/axis/car/daf
-	name = "DAF YA-4442 Truck"
-	desc = "A powered axis from a car."
+	name = "DAF YA-4442 卡车"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -665,7 +665,7 @@
 
 /obj/structure/vehicleparts/axis/car/mercedes
 	name = "Mercedes-Benz G280"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -675,7 +675,7 @@
 
 /obj/structure/vehicleparts/axis/car/tigr
 	name = "AMN-233114 Tigr-M"
-	desc = "A powered axis from a car."
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -684,8 +684,8 @@
 	turntimer = 8
 
 /obj/structure/vehicleparts/axis/car/ba64
-	name = "Ba-64 armored car"
-	desc = "A powered axis from a car."
+	name = "Ba-64 装甲车"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -701,8 +701,8 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/car/t20komsomoletstractor
-	name = "T-20 Komsomolets tractor"
-	desc = "A powered axis from a car."
+	name = "T-20 Komsomolets 牵引车"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -718,8 +718,8 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/car/unattr
-	name = "UN Attack Vehicle"
-	desc = "A powered axis from a car."
+	name = "UN 攻击载具"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 4
@@ -735,8 +735,8 @@
 		name = "[name] \'[pickedname]\'"
 
 /obj/structure/vehicleparts/axis/car/kamaz
-	name = "KamAZ-4350 Truck"
-	desc = "A powered axis from a car."
+	name = "KamAZ-4350 卡车"
+	desc = "来自汽车的驱动轴."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "axis_powered"
 	speeds = 5
@@ -745,7 +745,7 @@
 	turntimer = 8
 
 /obj/structure/vehicleparts/axis/car/volle/ambulance
-	name = "Ubermacht Volle KW Ambulance"
+	name = "Ubermacht Volle KW 救护车"
 	color = "#FFFFFF"
 	New()
 		..()
@@ -759,11 +759,11 @@
 	enginesize = 3000
 
 /obj/structure/engine/internal/gasoline/premade/v6
-	name = "V6 gasoline engine"
+	name = "V6 汽油发动机"
 	enginesize = 7000
 
 /obj/structure/engine/internal/gasoline/premade/mik
-	name = "V12 Mikulin M-17T gasoline engine"
+	name = "V12 Mikulin M-17T 汽油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/erstenklasse
@@ -811,48 +811,48 @@
 	enginesize = 12500
 
 /obj/structure/engine/internal/diesel/premade/omw22_2
-	name = "OMW 15 liter diesel engine"
+	name = "OMW 15升柴油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/gasoline/premade/baf1_a
-	name = "BAF 12 gasoline engine"
+	name = "BAF 12 汽油发动机"
 	enginesize = 12000
 
 /obj/structure/engine/internal/turbine/abrams
-	name = "Honeywell AGT1500 turbine engine"
+	name = "Honeywell AGT1500 涡轮发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/v12
-	name = "V12 diesel engine"
+	name = "V12柴油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/v6
-	name = "V6 diesel engine"
+	name = "V6柴油发动机"
 	enginesize = 8000
 
 /obj/structure/engine/internal/diesel/premade/mtlb
-	name = "YaMZ 238 diesel engine"
+	name = "YaMZ 238柴油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/m113
-	name = "Detroit 6V53T diesel engine"
+	name = "底特律6V53T柴油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/bmd2
-	name = "5D-20 15 diesel engine"
+	name = "5D-20 15柴油发动机"
 	enginesize = 15000
 
 /obj/structure/engine/internal/diesel/premade/adrian
-	name = "Type 9 Adrian 15 diesel engine"
+	name = "9型阿德里安15柴油发动机"
 	enginesize = 8000
 
 /obj/structure/engine/internal/diesel/premade/btr80
-	name = "KamAZ-7403 diesel engine"
+	name = "卡玛斯-7403柴油发动机"
 	enginesize = 15000
 
 /obj/structure/emergency_lights
-	name = "emergency lights control"
-	desc = "controls the emergency lights and the wailing siren."
+	name = "应急灯控制"
+	desc = "控制应急灯和警笛。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "modern_intercom"
 	anchored = TRUE
@@ -879,7 +879,7 @@
 	if (!ishuman(H))
 		return
 	if (map.ID == MAP_THE_ART_OF_THE_DEAL && (H.civilization != "Sheriff Office" && H.civilization != "Paramedics"))
-		to_chat(usr, "<span class ='warning'>You're not part of the emergency services.</span>")
+		to_chat(usr, "<span class ='warning'>你不是应急服务人员。</span>")
 		return
 	on = !on
 	if (on)

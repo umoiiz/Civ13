@@ -1,5 +1,5 @@
 /obj/item/weapon
-	name = "weapon"
+	name = "武器"
 	icon = 'icons/obj/weapons.dmi'
 	hitsound = "swing_hit"
 	flags = CONDUCT

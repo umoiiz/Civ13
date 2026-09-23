@@ -14,8 +14,8 @@ var/global/list/vehicle_walls = list( \
 )
 
 /obj/structure/vehicleparts/frame/wood
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木质框架"
+	desc = "一个木质载具框架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 90
@@ -161,56 +161,56 @@ var/global/list/vehicle_walls = list( \
 /obj/structure/vehicleparts/frame/car/bootcenter
 	w_back = list("c_door",TRUE,TRUE,0,0.1,TRUE,TRUE)
 /obj/structure/vehicleparts/frame/car/left
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木质框架"
+	desc = "一个木质载具框架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 90
 	noroof = TRUE
 	w_left = list("c_wall",TRUE,TRUE,0,0.1,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/right
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木质框架"
+	desc = "一个木质载具框架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 90
 	noroof = TRUE
 	w_right = list("c_wall",TRUE,TRUE,0,0.1,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/left/armored
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木质框架"
+	desc = "一个木质载具框架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 90
 	noroof = TRUE
 	w_left = list("c_wall",TRUE,TRUE,10,30,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/right/armored
-	name = "wood frame"
-	desc = "A wood vehicle frame."
+	name = "木质框架"
+	desc = "一个木质载具框架。"
 	icon_state = "frame_wood"
 	flammable = TRUE
 	resistance = 90
 	noroof = TRUE
 	w_right = list("c_wall",TRUE,TRUE,10,30,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/left/metal
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制框架"
+	desc = "一个钢制载具框架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
 	noroof = FALSE
 	w_left = list("c_wall",TRUE,TRUE,0,0.1,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/left/metalreinforced
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制框架"
+	desc = "一个钢制载具框架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
 	noroof = FALSE
 	w_left = list("c_wall",TRUE,TRUE,30,30,FALSE,FALSE)
 /obj/structure/vehicleparts/frame/car/right/metal
-	name = "steel frame"
-	desc = "A steel vehicle frame."
+	name = "钢制框架"
+	desc = "一个钢制载具框架。"
 	icon_state = "frame_steel"
 	flammable = TRUE
 	resistance = 150
@@ -275,7 +275,7 @@ var/global/list/vehicle_walls = list( \
 			else if (choice2 > 200)
 				return
 			else if (choice2/10 > S.amount)
-				to_chat(H, "<span class='warning'>Not enough steel!</span>")
+				to_chat(H, "<span class='warning'>钢材不足!</span>")
 				return
 
 		var/choice3 = WWinput(H, "Which type of wall?", "Wall Creation", "Cancel", list("Cancel","wall","door","armoredfront","window","windshield"))
@@ -322,8 +322,8 @@ var/global/list/license_plate_numbers = list()
 /obj/structure/vehicleparts/license_plate
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "license_plate_us"
-	name = "license plate"
-	desc = "A vehicle registration plate."
+	name = "车牌"
+	desc = "一块载具牌照。"
 	layer = 12.1
 	var/reg_number = "000"
 	var/centered = FALSE
@@ -336,7 +336,7 @@ var/global/list/license_plate_numbers = list()
 		if (!do_not_initiate && axis && axis.reg_number != "000")
 			reg_number = axis.reg_number
 			name = "[reg_number]"
-			desc = "A vehicle registration plate reading <b>[reg_number]</b>."
+			desc = "一块载具牌照,上面写着<b>[reg_number]</b>。"
 			update_icon()
 		update_icon()
 	update_icon()

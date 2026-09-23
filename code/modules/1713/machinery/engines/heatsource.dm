@@ -1,6 +1,6 @@
 /obj/structure/heatsource
-	name = "iron furnace"
-	desc = "A big iron furnace. Can be used to power external-powered engines."
+	name = "铁炉"
+	desc = "一个大型铁炉. 可用于为外燃引擎提供动力."
 	icon = 'icons/obj/engines32.dmi'
 	icon_state = "furnace_open_off"
 	anchored = TRUE
@@ -20,17 +20,17 @@
 	if (user.a_intent == I_HELP)
 		if (istype(W, /obj/item/weapon/wrench) || (istype(W, /obj/item/weapon/hammer)))
 			if (istype(W, /obj/item/weapon/wrench))
-				visible_message("<span class='warning'>[user] starts to [anchored ? "unsecure" : "secure"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+				visible_message("<span class='warning'>[user]开始[anchored ? "unsecure" : "secure"]\the [src][anchored ? "from" : "to"]地面.</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(user,50,src))
-					visible_message("<span class='warning'>[user] [anchored ? "unsecures" : "secures"] \the [src] [anchored ? "from" : "to"] the ground.</span>")
+					visible_message("<span class='warning'>[user][anchored ? "unsecures" : "secures"]\the [src][anchored ? "from" : "to"]地面.</span>")
 					anchored = !anchored
 					return
 			else if (istype(W, /obj/item/weapon/hammer))
-				visible_message("<span class='warning'>[user] starts to deconstruct \the [src].</span>")
+				visible_message("<span class='warning'>[user]开始拆除\the [src].</span>")
 				playsound(src, 'sound/items/Ratchet.ogg', 100, TRUE)
 				if (do_after(user,50,src))
-					visible_message("<span class='warning'>[user] deconstructs \the [src].</span>")
+					visible_message("<span class='warning'>[user]拆除了\the [src].</span>")
 					qdel(src)
 					return
 		else if (istype(W, /obj/item/stack/ore/coal))

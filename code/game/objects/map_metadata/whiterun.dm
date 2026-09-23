@@ -123,7 +123,7 @@ var/no_loop_whrn = FALSE
 				current_loser = "Imperials"
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The Imperials have recaptured the city!</font>")
+			to_chat(world, "<font size = 3>帝国军已重新夺回城市!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

@@ -35,8 +35,8 @@
 /* Medieval Shoes & Boots*/
 
 /obj/item/clothing/shoes/medieval
-	name = "leather shoes"
-	desc = "A pair of simple, thin leather shoes. Covers up to the ankle."
+	name = "皮鞋"
+	desc = "一双简单轻薄的皮鞋.遮到脚踝."
 	icon_state = "medieval"
 	item_state = "medieval"
 	force = WEAPON_FORCE_WEAK
@@ -45,8 +45,8 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/medieval/arab
-	name = "arabic leather shoes"
-	desc = "A pair of simple, thin leather shoes. Loose at the tip."
+	name = "阿拉伯皮鞋"
+	desc = "一双简单轻薄的皮鞋.鞋尖宽松."
 	icon_state = "arab"
 	item_state = "arab"
 	force = WEAPON_FORCE_WEAK
@@ -55,8 +55,8 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/medieval/emirate
-	name = "emirate leather shoes"
-	desc = "A pair of simple, arabic style leather shoes. Extra padded & loose at the tip."
+	name = "埃米尔皮鞋"
+	desc = "一双简单的阿拉伯风格皮鞋.额外加垫且鞋尖宽松."
 	icon_state = "emir"
 	item_state = "emir"
 	force = WEAPON_FORCE_WEAK
@@ -65,8 +65,8 @@
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/shoes/medieval/knight
-	name = "Sabatons"
-	desc = "A pair of plated armored boots."
+	name = "铁靴"
+	desc = "一双板甲靴."
 	icon_state = "knight"
 	item_state = "knight"
 	body_parts_covered = FEET
@@ -80,8 +80,8 @@
 /* Medieval Gloves & Gauntlets*/
 
 /obj/item/clothing/gloves/gauntlets
-	name = "armored gauntlets"
-	desc = "A pair of armored iron gauntlets."
+	name = "装甲护手"
+	desc = "一双铁制装甲护手."
 	icon_state = "gauntlet"
 	item_state = "gauntlet"
 	body_parts_covered = HANDS
@@ -95,88 +95,88 @@
 /* Medieval Headpieces*/
 
 /obj/item/clothing/head/artisan
-	name = "artisan hat"
-	desc = "A large artisan hat."
+	name = "工匠帽"
+	desc = "一顶宽大的工匠帽."
 	icon_state = "artisan"
 	item_state = "artisan"
 
 /obj/item/clothing/head/feathered_hat
-	name = "feathered hat"
-	desc = "A feathered hat."
+	name = "羽毛帽"
+	desc = "一顶羽毛帽."
 	icon_state = "feathered_hat"
 	item_state = "feathered_hat"
 
 /obj/item/clothing/head/count_hat
-	name = "count hat"
-	desc = "A fancy, feathered hat."
+	name = "伯爵帽"
+	desc = "一顶华丽且带羽毛的帽子."
 	icon_state = "medieval_count_hat"
 	item_state = "medieval_count_hat"
 
 /obj/item/clothing/head/cavalier
-	name = "cavalier hat"
-	desc = "A free willled and fanciful leather feathered hat."
+	name = "骑士帽"
+	desc = "一顶自由奔放且花哨的皮革羽毛帽."
 	icon_state = "cavalier"
 	item_state = "cavalier"
 
 /obj/item/clothing/head/noblehat1
-	name = "brown noble hat"
+	name = "棕色贵族帽"
 	icon_state = "noblehat1"
 	item_state = "noblehat1"
 
 /obj/item/clothing/head/noblehat2
-	name = "black noble hat"
+	name = "黑色贵族帽"
 	icon_state = "noblehat2"
 	item_state = "noblehat2"
 
 /obj/item/clothing/head/phrigian_hat
-	name = "phrigian hat"
-	desc = "A knob ended hat of the ancient phrigian design. Often worn by merchants or peasants of jewish descent."
+	name = "弗里吉亚帽"
+	desc = "一顶古代弗里吉亚风格的圆球顶帽. 常被犹太裔商人或农民佩戴."
 	icon_state = "phrigian_hat"
 	item_state = "phrigian_hat"
 
 /obj/item/clothing/head/phrigian_hat/red
-	name = "red phrigian hat"
+	name = "红色弗里吉亚帽"
 	icon_state = "phrigian_hat_red"
 	item_state = "phrigian_hat_red"
 
 /obj/item/clothing/head/phrigian_hat/blue
-	name = "blue phrigian hat"
+	name = "蓝色弗里吉亚帽"
 	icon_state = "phrigian_hat_blue"
 	item_state = "phrigian_hat_blue"
 
 /obj/item/clothing/head/phrigian_hat/doge
-	name = "doge hat"
-	desc = "A ornate knob ended hat banded in gold of the ancient phrigian design. Often worn by republic rulers over many petty merchantile aristocrats."
+	name = "总督帽"
+	desc = "一顶古代弗里吉亚风格的华丽圆球顶帽, 饰有金边. 常被共和国统治者佩戴, 凌驾于众多小商贾贵族之上."
 	icon_state = "doge"
 	item_state = "doge"
 
 /obj/item/clothing/head/hooded_cape
-	name = "long black hooded cape"
-	desc = "A long black hooded cape. Often worn those wishing to conceal themselves in the shadows."
+	name = "黑色长兜帽斗篷"
+	desc = "一件黑色长兜帽斗篷. 常被那些希望在阴影中隐藏自己的人佩戴."
 	icon_state = "black_cape"
 	item_state = "black_cape"
 	body_parts_covered = HEAD
 	flags_inv = BLOCKHAIR|HIDEFACE
 
 /obj/item/clothing/head/plaguedoctor
-	name = "plague doctor hat"
-	desc = "A a short brimmed black hat. Often worn by plague doctors to cut a discreet figure in the streets between visitations."
+	name = "瘟疫医生帽"
+	desc = "一顶黑色短檐帽. 常被瘟疫医生佩戴, 以便在出诊途中于街上保持低调."
 	icon_state = "plaguedoctor"
 	item_state = "plaguedoctor"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/nun_hood //path can't be changed, has dependencies in civilian.dm & civ_factions.dm
-	name = "nun hood"
-	desc = "A typical nun hood. Made in such a way to indicate commitment, like that found in marriage to the faith."
+	name = "修女头巾"
+	desc = "典型的修女头巾. 其制作方式象征着奉献, 如同与信仰缔结婚约一般."
 	icon_state = "nun_hood"
 	item_state = "nun_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/turban
-	name = "turban"
-	desc = "A colored, light fabric turban."
+	name = "头巾"
+	desc = "一条彩色的轻质布头巾."
 	icon_state = "turban1"
 	item_state = "turban1"
 	heat_protection = HEAD
@@ -187,8 +187,8 @@
 	item_state = pickcolor
 
 /obj/item/clothing/head/turban/imam
-	name = "white turban"
-	desc = "A simple white turban."
+	name = "白色头巾"
+	desc = "一条简单的白色头巾."
 	icon_state = "turban_w"
 	item_state = "turban_w"
 /obj/item/clothing/head/turban/imam/New()
@@ -197,8 +197,8 @@
 	item_state = "turban_w"
 
 /obj/item/clothing/head/turban/sultan
-	name = "grand turban"
-	desc = "A large turban often worn by figures of importance.."
+	name = "大头巾"
+	desc = "一条常被重要人物佩戴的大头巾.."
 	icon_state = "sultan"
 	item_state = "sultan"
 	heat_protection = HEAD
@@ -208,8 +208,8 @@
 	item_state = "sultan"
 
 /obj/item/clothing/head/keffiyeh
-	name = "keffiyeh"
-	desc = "A headdress fashioned from a scarf with a checkered pattern."
+	name = "阿拉伯头巾"
+	desc = "一种由方格图案围巾制成的头饰."
 	icon_state = "keffiyeh_black"
 	item_state = "keffiyeh_black"
 	heat_protection = HEAD
@@ -219,8 +219,8 @@
 	item_state = "keffiyeh_red"
 
 /obj/item/clothing/head/pakol
-	name = "pakol"
-	desc = "A soft round-topped men's cap made of wool."
+	name = "帕科尔帽"
+	desc = "一顶柔软的圆顶羊毛男帽."
 	icon_state = "pakol_rose"
 	item_state = "pakol_rose"
 	heat_protection = HEAD
@@ -233,60 +233,60 @@
 /*Medieval Suits*/
 
 /obj/item/clothing/suit/storage/jacket/arabic_robe
-	name = "arabic robe"
-	desc = "A light, loose fitting arabic robe."
+	name = "阿拉伯长袍"
+	desc = "一件轻便宽松的阿拉伯长袍."
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	icon_state = "arabw_robe"
 	item_state = "arabw_robe"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/arabic_robe
-	name = "light white arabic robe"
-	desc = "A light, white, loose fitting garment for keeping the sun off."
+	name = "白色轻便阿拉伯长袍"
+	desc = "一件轻便的白色宽松衣物, 用于遮阳."
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	icon_state = "arab2"
 	item_state = "arab2"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/arabic_robe
-	name = "light white arabic robe"
-	desc = "A light, white, loose fitting garment for keeping the sun off."
+	name = "白色轻便阿拉伯长袍"
+	desc = "一件轻便的白色宽松衣物, 用于遮阳."
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	icon_state = "arab2"
 	item_state = "arab2"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/jacket/plaguedoctor //moved from jobs.dm
-	name = "plague doctor suit"
-	desc = "Used by plague doctors. Only adds to the mystery behind their methods."
+	name = "瘟疫医生套装"
+	desc = "瘟疫医生所用. 只会让他们方法背后的谜团更加深重."
 	icon_state = "plaguedoctor"
 	icon_state = "plaguedoctor"
 	icon_state = "plaguedoctor"
 
 /obj/item/clothing/suit/storage/coat/fancy_fur_coat
-	name = "fancy fur coat"
-	desc = "A fancy and expensive fur coat."
+	name = "华丽毛皮大衣"
+	desc = "一件华丽而昂贵的毛皮大衣."
 	icon_state = "fancy_fur_coat"
 	item_state = "fancy_fur_coat"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/coat/overlord_coat
-	name = "overlord robe"
-	desc = "An extremely elegant robe worn by powerful undead."
+	name = "霸主长袍"
+	desc = "一件极其优雅的长袍, 由强大的亡灵佩戴."
 	icon_state = "overlord_coat"
 	item_state = "overlord_coat"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/storage/jacket/regal
-	name = "regal ermine cape"
-	desc = "A large cape finely decked in stylized fur pattern often used to denote the most prominent members amongst noble circles."
+	name = "皇家貂皮披风"
+	desc = "一件饰有精美风格化毛皮图案的大披风, 常用于彰显贵族圈中最显赫的成员."
 	icon_state = "regal_cape"
 	item_state = "regal_cape"
 	cold_protection = UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/coat/monk_robes
-	name = "monk robes"
-	desc = "Robes commonly worn by monks, warm in the winters."
+	name = "僧侣长袍"
+	desc = "僧侣常穿的长袍, 冬季保暖."
 	icon_state = "monk_robes"
 	item_state = "monk_robes"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -305,7 +305,7 @@
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT
 		item_state_slots["slot_wear_suit"] = "monk_robes"
-		to_chat(usr, "<span class = 'danger'>you take off your robes' hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你脱下长袍的兜帽.</span>")
 		update_icon()
 		hood = FALSE
 		usr.update_inv_head(1)
@@ -317,7 +317,7 @@
 		body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HEAD
 		cold_protection = UPPER_TORSO|LOWER_TORSO|LEG_LEFT|LEG_RIGHT|ARM_LEFT|ARM_RIGHT|HEAD
 		item_state_slots["slot_wear_suit"] = "monk_robes_hood"
-		to_chat(usr, "<span class = 'danger'>you cover your head with your robes' hood.</span>")
+		to_chat(usr, "<span class = 'danger'>你用长袍的兜帽遮住头部.</span>")
 		update_icon()
 		hood = TRUE
 		usr.update_inv_head(1)
@@ -327,38 +327,38 @@
 /* Medieval Uniforms*/
 
 /obj/item/clothing/under/medieval
-	name = "white tunic"
-	desc = "A long white tunic, with golden trimmings."
+	name = "白色束腰外衣"
+	desc = "一件带金色镶边的白色长束腰外衣."
 	icon_state = "white_tunic_long"
 	item_state = "white_tunic_long"
 
 /obj/item/clothing/under/count_outfit
-	name = "count outfit"
-	desc = "A fancy count outfit."
+	name = "伯爵套装"
+	desc = "一套华丽的伯爵套装."
 	icon_state = "count_outfit"
 	item_state = "count_outfit"
 
 /obj/item/clothing/under/renaissance
-	name = "purple renaissance clothing"
-	desc = "A baggy renaissance-style outfit."
+	name = "紫色文艺复兴服装"
+	desc = "一套宽松的文艺复兴风格服装."
 	icon_state = "renaissance"
 	item_state = "renaissance"
 
 /obj/item/clothing/under/renaissance/doge
-	name = "doge outfit"
-	desc = "A gold embroidered baggy renaissance-style outfit. Often worn by republic rulers over many petty merchantile aristocrats."
+	name = "总督套装"
+	desc = "一套金绣宽松的文艺复兴风格服装. 常被共和国统治者佩戴, 凌驾于众多小商贾贵族之上."
 	icon_state = "doge"
 	item_state = "doge"
 
 /obj/item/clothing/under/renaissance_pontifical
-	name = "pontifical renaissance clothing"
-	desc = "A baggy renaissance-style outfit, with colored stripes."
+	name = "教宗文艺复兴服装"
+	desc = "一套宽松的文艺复兴风格服装, 带有彩色条纹."
 	icon_state = "pontifical"
 	item_state = "pontifical"
 
 /obj/item/clothing/under/medieval/crusader
-	name = "crusader tunic"
-	desc = "A white tunic with a red cross in the middle."
+	name = "十字军束腰外衣"
+	desc = "一件中间带有红色十字的白色束腰外衣."
 	icon_state = "crusader1"
 	item_state = "crusader1"
 
@@ -369,166 +369,166 @@
 	item_state = randcloth
 
 /obj/item/clothing/under/medieval/yellow
-	name = "yellow tunic"
-	desc = "A light yellow tunic."
+	name = "黄色束腰外衣"
+	desc = "一件浅黄色束腰外衣."
 	icon_state = "yellow_tunic"
 	item_state = "yellow_tunic"
 
 /obj/item/clothing/under/medieval/leather
-	name = "leather tunic"
-	desc = "A light leather tunic."
+	name = "皮革束腰外衣"
+	desc = "一件轻便的皮革束腰外衣."
 	icon_state = "leather_tunic"
 	item_state = "leather_tunic"
 
 /obj/item/clothing/under/medieval/kilt
-	name = "kilt"
-	desc = "A green and tartan woolen kilt."
+	name = "苏格兰短裙"
+	desc = "一条绿色格纹羊毛苏格兰短裙."
 	icon_state = "kilt"
 	item_state = "kilt"
 
 /obj/item/clothing/under/medieval/beggar_clothing
-	name = "beggar clothing"
-	desc = "Loosely stitched from patch cloth, contains deep pockets for spare change."
+	name = "乞丐服装"
+	desc = "由碎布粗略缝制而成, 带有用于装零钱的深口袋."
 	icon_state = "beggar_clothing"
 	item_state = "beggar_clothing"
 
 /obj/item/clothing/under/medieval/blue
-	name = "blue tunic"
-	desc = "A light blue tunic."
+	name = "蓝色束腰外衣"
+	desc = "一件浅蓝色束腰外衣."
 	icon_state = "blue_tunic"
 	item_state = "blue_tunic"
 
 /obj/item/clothing/under/medieval/blue2
-	name = "blue-white tunic"
-	desc = "A light blue and white tunic."
+	name = "蓝白束腰外衣"
+	desc = "一件浅蓝色和白色束腰外衣."
 	icon_state = "blue_tunic2"
 	item_state = "blue_tunic2"
 
 /obj/item/clothing/under/medieval/green
-	name = "green tunic"
-	desc = "A light green tunic."
+	name = "绿色束腰外衣"
+	desc = "一件浅绿色束腰外衣."
 	icon_state = "green_tunic"
 	item_state = "green_tunic"
 
 /obj/item/clothing/under/medieval/red
-	name = "red tunic"
-	desc = "A light red tunic."
+	name = "红色束腰外衣"
+	desc = "一件浅红色束腰外衣."
 	icon_state = "red_tunic"
 	item_state = "red_tunic"
 
 /obj/item/clothing/under/medieval/red2
-	name = "yellow-red tunic"
-	desc = "A light red and yellow tunic."
+	name = "黄红束腰外衣"
+	desc = "一件浅红色和黄色束腰外衣."
 	icon_state = "red_tunic2"
 	item_state = "red_tunic2"
 
 /obj/item/clothing/under/medieval/arabic_tunic
-	name = "fancy arabic tunic"
-	desc = "A light fitting tunic with arabic motifs."
+	name = "华丽阿拉伯束腰外衣"
+	desc = "一件带有阿拉伯图案的轻便束腰外衣."
 	icon_state = "arabw_tunic"
 	item_state = "arabw_tunic"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/medieval/lighttunic
-	name = "light brown tunic"
-	desc = "A light, loose fitting tunic."
+	name = "浅棕色束腰外衣"
+	desc = "一件轻便宽松的束腰外衣."
 	icon_state = "arab1"
 	item_state = "arab1"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/medieval/emirate
-	name = "emirate tunic"
-	desc = "A loose fitting green tunic with arabic motifs and long sleeves. Often worn by emirate rulers"
+	name = "酋长束腰外衣"
+	desc = "一件宽松的绿色束腰外衣,带有阿拉伯纹样和长袖.常被酋长统治者穿着"
 	icon_state = "emir_tunic"
 	item_state = "emir_tunic"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/medieval/arab1
-	name = "light brown arabic tunic"
-	desc = "A light, loose fitting arabic tunic."
+	name = "浅棕色阿拉伯束腰外衣"
+	desc = "一件轻便宽松的阿拉伯束腰外衣."
 	icon_state = "arab1"
 	item_state = "arab1"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/medieval/arab2
-	name = "light white arabic tunic"
-	desc = "A light, loose fitting arabic tunic."
+	name = "浅白色阿拉伯束腰外衣"
+	desc = "一件轻便宽松的阿拉伯束腰外衣."
 	icon_state = "arab2"
 	item_state = "arab2"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/medieval/arab3
-	name = "white arabic tunic"
-	desc = "A loose fitting arabic tunic."
+	name = "白色阿拉伯束腰外衣"
+	desc = "一件宽松的阿拉伯束腰外衣."
 	icon_state = "arab3"
 	item_state = "arab3"
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/nun
-	name = "nun dress"
-	desc = "A very modest nun dress. With a small cross around the neck, to aide protection against temptation."
+	name = "修女服"
+	desc = "一件非常端庄的修女服.脖子上挂着一个小十字架,以助抵御诱惑."
 	icon_state = "nun"
 	item_state = "nun"
 
 /obj/item/clothing/under/medieval/wise_knight
-	name = "Wise Knight robes"
-	desc = "A lightly darkened robe used by wise knights."
+	name = "睿智骑士长袍"
+	desc = "一件略带暗色的长袍,由睿智骑士穿着."
 	icon_state = "wise_knight"
 	item_state = "wise_knight"
 
 /obj/item/clothing/under/medieval/arrogant_warrior
-	name = "Arrogant Warrior robes"
-	desc = "A darkened robe used by upset warriors."
+	name = "傲慢战士长袍"
+	desc = "一件暗色的长袍,由愤怒的战士穿着."
 	icon_state = "arrogant_warrior"
 	item_state = "arrogant_warrior"
 
 /obj/item/clothing/under/christian_priest
-	name = "black priest outfit"
-	desc = "A plain black outfit with a clerical white collar around the neck, often worn by priests of organized religions."
+	name = "黑色牧师装束"
+	desc = "一件朴素的黑色装束,脖子上有神职人员的白色领子,常被有组织宗教的牧师穿着."
 	icon_state = "christian_priest"
 	item_state = "christian_priest"
 
 /obj/item/clothing/under/landschneckt
-	name = "green landschneckt uniform"
-	desc = "A ornate and bright uniform often worn by elite mercenaries & central european troops during the 15th century."
+	name = "绿色雇佣兵制服"
+	desc = "一件华丽而鲜艳的制服,常被15世纪的精英雇佣兵和中欧军队穿着."
 	icon_state = "landschneckt"
 	item_state = "landschneckt"
 
 /obj/item/clothing/under/landschneckt/blue
-	name = "blue landschneckt uniform"
-	desc = "A ornate and bright uniform often worn by elite mercenaries & central european troops during the 15th century."
+	name = "蓝色雇佣兵制服"
+	desc = "一件华丽而鲜艳的制服,常被15世纪的精英雇佣兵和中欧军队穿着."
 	icon_state = "b_landschneckt"
 	item_state = "b_landschneckt"
 
 /obj/item/clothing/under/landschneckt/red
-	name = "red landschneckt uniform"
-	desc = "A ornate and bright uniform often worn by elite mercenaries & central european troops during the 15th century."
+	name = "红色雇佣兵制服"
+	desc = "一件华丽而鲜艳的制服,常被15世纪的精英雇佣兵和中欧军队穿着."
 	icon_state = "r_landschneckt"
 	item_state = "r_landschneckt"
 
 /obj/item/clothing/under/blackdress
-	name = "plain black dress"
-	desc = "A plain black dress for women to properly uphold their modesty"
+	name = "朴素黑色连衣裙"
+	desc = "一件朴素的黑色连衣裙,供女性恰当地维护她们的端庄"
 	icon_state = "dress_black"
 	item_state = "dress_black"
 
 /obj/item/clothing/under/sari/blue
-	name = "blue sari"
-	desc = "A satin layered piece of clothing for women, made in indian style"
+	name = "蓝色纱丽"
+	desc = "一件缎面分层女装,以印度风格制作"
 	icon_state = "blue_sari"
 	item_state = "blue_sari"
 
 /obj/item/clothing/under/sari/red
-	name = "red sari"
-	desc = "A satin layered piece of clothing for women, made in indian style"
+	name = "红色纱丽"
+	desc = "一件缎面分层女装,以印度风格制作"
 	icon_state = "red_sari"
 	item_state = "red_sari"
 
 /* Medieval Armor*/
 
 /obj/item/clothing/suit/armor/medieval
-	name = "plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "knight_simple"
 	item_state = "knight_simple"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -538,8 +538,8 @@
 	health = 60
 
 /obj/item/clothing/suit/armor/royal
-	name = "royal plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "皇家板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "royalplate"
 	item_state = "royalplate"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -549,38 +549,38 @@
 	health = 90
 
 /obj/item/clothing/suit/armor/medieval/blue
-	name = "blue plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "蓝色板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "knight_blue"
 	item_state = "knight_blue"
 
 /obj/item/clothing/suit/armor/medieval/red
-	name = "red plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "红色板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
 /obj/item/clothing/suit/armor/medieval/yellow
-	name = "yellow plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "黄色板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"
 
 /obj/item/clothing/suit/armor/medieval/green
-	name = "green plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body."
+	name = "绿色板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 
 /obj/item/clothing/suit/armor/medieval/templar
-	name = "templar plated armor"
-	desc = "A thick, expensive iron armor, covering most of the body. This one is covered by white linen with the cross."
+	name = "圣殿骑士板甲"
+	desc = "一件厚重昂贵的铁甲,覆盖身体的大部分.这一件覆有带十字架的白色亚麻布."
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
 
 /obj/item/clothing/suit/armor/medieval/bronze_chestplate
-	name = "bronze chestplate"
-	desc = "A bronze chestplate."
+	name = "青铜胸甲"
+	desc = "一件青铜胸甲."
 	icon_state = "bronze_chestplate"
 	item_state = "bronze_chestplate"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -590,8 +590,8 @@
 	health = 48
 
 /obj/item/clothing/suit/armor/medieval/iron_chestplate
-	name = "iron chestplate"
-	desc = "An iron chestplate."
+	name = "铁胸甲"
+	desc = "一件铁胸甲."
 	icon_state = "iron_chestplate"
 	item_state = "iron_chestplate"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -613,8 +613,8 @@
 	item_state = "iron_chestplateb"
 
 /obj/item/clothing/suit/armor/medieval/leather
-	name = "leather armor"
-	desc = "Several pressed sheets of leather, making a reasonable armor plate."
+	name = "皮甲"
+	desc = "几层压制的皮革片,制成一件尚可的护甲板."
 	icon_state = "leather_armor"
 	item_state = "leather_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -625,8 +625,8 @@
 	health = 33
 
 /obj/item/clothing/suit/armor/medieval/hauberk
-	name = "hauberk"
-	desc = "A longer version of the chainmail, worn as a coat. Offers greater protection."
+	name = "锁子甲长衫"
+	desc = "锁子甲的长款版本,作为外套穿着.提供更强的防护."
 	icon_state = "hauberk"
 	item_state = "hauberk"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -636,8 +636,8 @@
 	health = 60
 
 /obj/item/clothing/suit/armor/medieval/emirate
-	name = "emirate armor"
-	desc = "A loosely fitting but protective suit of armor to wrap around the body & tunic for a emirate lord"
+	name = "酋长护甲"
+	desc = "一件宽松但具防护性的护甲,可裹在身体和束腰外衣外,供酋长领主使用"
 	icon_state = "emir_armor"
 	item_state = "emir_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -647,8 +647,8 @@
 	health = 50
 
 /obj/item/clothing/suit/armor/medieval/chainmail
-	name = "chainmail"
-	desc = "Wearable armor made of several small interlinked chains."
+	name = "锁子甲"
+	desc = "由若干相互连接的小链环制成的可穿戴护甲."
 	icon_state = "chainmail"
 	item_state = "chainmail"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -675,8 +675,8 @@
 	return mob_overlay
 
 /obj/item/clothing/accessory/armor/chainmail
-	name = "chainmail"
-	desc = "Wearable armor made of several small interlinked chains."
+	name = "锁子甲"
+	desc = "由若干相互连接的小链环制成的可穿戴护甲."
 	icon_state = "chainmail"
 	item_state = "chainmail"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -688,15 +688,15 @@
 /* Medieval Crowns*/
 
 /obj/item/clothing/head/helmet/gold_crown
-	name = "gold crown"
-	desc = "A crown of gold. Fancy."
+	name = "金冠"
+	desc = "一顶金冠.华丽."
 	icon_state = "gold_crown"
 	item_state = "gold_crown"
 	armor = list(melee = 20, arrow = 15, gun = 10, energy = 15, bomb = 15, bio = 10, rad = FALSE)
 
 /obj/item/clothing/head/helmet/silver_crown
-	name = "silver crown"
-	desc = "A crown of silver. Fancy."
+	name = "银冠"
+	desc = "一顶银冠.华丽."
 	icon_state = "silver_crown"
 	item_state = "silver_crown"
 	armor = list(melee = 20, arrow = 15, gun = 10, energy = 15, bomb = 15, bio = 10, rad = FALSE)
@@ -704,15 +704,15 @@
 //Insert more inlaid crowns here.
 
 /obj/item/clothing/head/helmet/gold_crown_diamond
-	name = "inlaid gold crown"
-	desc = "A crown of gold, with a diamond in it. Extra Fancy."
+	name = "镶金冠"
+	desc = "一顶金冠,其中镶有一颗钻石.格外华丽."
 	icon_state = "gold_crown_diamond"
 	item_state = "gold_crown_diamond"
 	armor = list(melee = 25, arrow = 20, gun = 10, energy = 25, bomb = 20, bio = 15, rad = FALSE)
 
 /obj/item/clothing/head/helmet/silver_crown_diamond
-	name = "inlaid silver crown"
-	desc = "A crown of silver, with a diamond in it. Extra Fancy."
+	name = "镶银冠"
+	desc = "一顶银冠,其中镶有一颗钻石.格外华丽."
 	icon_state = "silver_crown_diamond"
 	item_state = "silver_crown_diamond"
 	armor = list(melee = 25, arrow = 20, gun = 10, energy = 25, bomb = 20, bio = 15, rad = FALSE)
@@ -721,7 +721,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/diamond))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You place the diamond in the crown.</span>")
+		to_chat(user, "<span class='notice'>你将钻石放入冠中.</span>")
 		if(W.amount <= 1)
 			qdel(src)
 			qdel(W)
@@ -735,7 +735,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/diamond))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You place the diamond in the crown.</span>")
+		to_chat(user, "<span class='notice'>你将钻石放入冠中.</span>")
 		if(W.amount <= 1)
 			qdel(src)
 			qdel(W)
@@ -749,8 +749,8 @@
 /* Medieval Helmets*/
 
 /obj/item/clothing/head/helmet/brown_eisenbruck
-	name = "brown padded head-cap"
-	desc = "A padded brown coif, applies practical if modest protection."
+	name = "棕色软垫头巾"
+	desc = "一顶带衬垫的棕色头巾,提供实用但朴素的防护."
 	icon_state = "brown_eisenbruck"
 	item_state = "brown_eisenbruck"
 	body_parts_covered = HEAD
@@ -758,8 +758,8 @@
 	health = 20
 
 /obj/item/clothing/head/helmet/grey_eisenbruck
-	name = "grey padded head-cap"
-	desc = "A padded grey coif, applies practical if modest protection."
+	name = "灰色软垫头巾"
+	desc = "一顶带衬垫的灰色头巾,提供实用但朴素的防护."
 	icon_state = "grey_eisenbruck"
 	item_state = "grey_eisenbruck"
 	body_parts_covered = HEAD
@@ -767,8 +767,8 @@
 	health = 20
 
 /obj/item/clothing/head/helmet/aged_eisenbruck
-	name = "ratty old padded head-cap"
-	desc = "A ratty, old padded coif, its color faded but remains protective."
+	name = "破旧的老软垫头巾"
+	desc = "一顶破旧的老式带衬垫头巾,颜色已褪去但仍具防护性."
 	icon_state = "aged_eisenbruck"
 	item_state = "aged_eisenbruck"
 	body_parts_covered = HEAD
@@ -778,8 +778,8 @@
 /*Sallets*/
 
 /obj/item/clothing/head/helmet/sallet/italian
-	name = "italian sallet"
-	desc = "A very protective helmet used by archers and crossbowmen in the 15th century throughout europe."
+	name = "意大利轻盔"
+	desc = "一顶防护性很强的头盔,15世纪全欧洲的弓箭手和弩手使用."
 	icon_state = "italian_sallet_o"
 	item_state = "italian_sallet_o"
 	armor = list(melee = 55, arrow = 45, gun = 5, energy = 15, bomb = 60, bio = 30, rad = FALSE)
@@ -797,7 +797,7 @@
 			item_state = "italian_sallet_o"
 			icon_state = "italian_sallet_o"
 			item_state_slots["slot_head"] = "italian_sallet_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你掀起了头盔的面甲.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -806,15 +806,15 @@
 			item_state = "italian_sallet"
 			icon_state = "italian_sallet"
 			item_state_slots["slot_head"] = "italian_sallet"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面甲。</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/sallet/german
-	name = "german sallet"
-	desc = "A very protective helmet used by archers and crossbowmen in the 15th century throughout europe."
+	name = "德国轻盔"
+	desc = "15世纪欧洲弓箭手和弩手使用的防护性很强的头盔。"
 	icon_state = "german_sallet_o"
 	item_state = "german_sallet_o"
 	armor = list(melee = 55, arrow = 45, gun = 5, energy = 15, bomb = 60, bio = 30, rad = FALSE)
@@ -832,7 +832,7 @@
 			item_state = "german_sallet_o"
 			icon_state = "german_sallet_o"
 			item_state_slots["slot_head"] = "german_sallet_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你掀起了头盔的面甲。</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -841,15 +841,15 @@
 			item_state = "german_sallet"
 			icon_state = "german_sallet"
 			item_state_slots["slot_head"] = "german_sallet"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面甲。</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/sallet/burg
-	name = "burgundian sallet"
-	desc = "A very protective helmet used by archers and crossbowmen in the 15th century throughout europe, providing moderate protection."
+	name = "勃艮第轻盔"
+	desc = "15世纪欧洲弓箭手和弩手使用的防护性很强的头盔,提供中等防护。"
 	icon_state = "burg_sallet_o"
 	item_state = "burg_sallet_o"
 	armor = list(melee = 55, arrow = 45, gun = 5, energy = 15, bomb = 60, bio = 30, rad = FALSE)
@@ -867,7 +867,7 @@
 			item_state = "burg_sallet_o"
 			icon_state = "burg_sallet_o"
 			item_state_slots["slot_head"] = "burg_sallet_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你掀起了头盔的面甲。</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -876,7 +876,7 @@
 			item_state = "burg_sallet"
 			icon_state = "burg_sallet"
 			item_state_slots["slot_head"] = "burg_sallet"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面甲。</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
@@ -885,8 +885,8 @@
 /* Sallets End*/
 
 /obj/item/clothing/head/helmet/bascinet
-	name = "hounskull bascinet"
-	desc = "A bascinet helmet with a large outward faceguard; used by knights & heavy infantry in the 14th century."
+	name = "猎犬面甲盔"
+	desc = "一种带有大型外凸面甲的头盔;14世纪骑士和重步兵使用。"
 	icon_state = "bascinet_o"
 	item_state = "bascinet_o"
 	armor = list(melee = 70, arrow = 90, gun = 10, energy = 15, bomb = 60, bio = 20, rad = FALSE)
@@ -904,7 +904,7 @@
 			item_state = "bascinet_o"
 			icon_state = "bascinet_o"
 			item_state_slots["slot_head"] = "bascinet_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你掀起了头盔的面甲。</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -913,15 +913,15 @@
 			item_state = "bascinet_hounskull"
 			icon_state = "bascinet_hounskull"
 			item_state_slots["slot_head"] = "bascinet_hounskull"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's visor.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面甲。</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/medieval
-	name = "knight helmet"
-	desc = "A thick knight helmet."
+	name = "骑士头盔"
+	desc = "一种厚重的骑士头盔。"
 	icon_state = "knight_simple"
 	item_state = "knight_simple"
 	body_parts_covered = HEAD|FACE|EYES
@@ -932,8 +932,8 @@
 	slowdown = 0.25
 
 /obj/item/clothing/head/helmet/medieval/helmet1
-	name = "protective conical helmet"
-	desc = "A conical helmet, with nose and ear protection."
+	name = "防护锥形盔"
+	desc = "一种带有护鼻和护耳的锥形头盔。"
 	icon_state = "medieval_helmet1"
 	item_state = "medieval_helmet1"
 	body_parts_covered = HEAD|FACE
@@ -942,8 +942,8 @@
 	health = 35
 
 /obj/item/clothing/head/helmet/medieval/helmet2
-	name = "kettle helmet"
-	desc = "A wide brim iron helmet."
+	name = "水壶盔"
+	desc = "一种宽檐铁盔。"
 	icon_state = "medieval_helmet2"
 	item_state = "medieval_helmet2"
 	body_parts_covered = HEAD
@@ -952,8 +952,8 @@
 	health = 28
 
 /obj/item/clothing/head/helmet/medieval/helmet3
-	name = "conical helmet"
-	desc = "A conical helmet, with nose protection."
+	name = "锥形盔"
+	desc = "一种带有护鼻的锥形头盔。"
 	icon_state = "medieval_helmet3"
 	item_state = "medieval_helmet3"
 	body_parts_covered = HEAD
@@ -962,8 +962,8 @@
 	health = 32
 
 /obj/item/clothing/head/helmet/medieval/coif
-	name = "iron coif"
-	desc = "A chainmail headcover."
+	name = "铁锁子头巾"
+	desc = "一种锁子甲头罩。"
 	icon_state = "coif"
 	item_state = "coif"
 	body_parts_covered = HEAD
@@ -972,8 +972,8 @@
 	health = 37
 
 /obj/item/clothing/head/helmet/medieval/coif_helmet
-	name = "iron coif and helmet"
-	desc = "A chainmail headcover, with a conical helmet on top."
+	name = "铁锁子头巾和头盔"
+	desc = "一种锁子甲头罩,顶部带有锥形头盔。"
 	icon_state = "coif_helmet"
 	item_state = "coif_helmet"
 	body_parts_covered = HEAD
@@ -982,8 +982,8 @@
 	health = 45
 
 /obj/item/clothing/head/helmet/leather_skullcap
-	name = "leather skullcap helmet"
-	desc = "A iron studded leather helmet. Often used by raiders or bands of mercenaries."
+	name = "皮革头骨帽"
+	desc = "一种镶铁钉的皮革头盔。常被劫掠者或雇佣兵团使用。"
 	icon_state = "leather_skullcap_helmet"
 	item_state = "leather_skullcap_helmet"
 	body_parts_covered = HEAD
@@ -991,8 +991,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/medieval/arab
-	name = "conical arabic helmet and turban"
-	desc = "An iron helmet, covered with a turban."
+	name = "阿拉伯锥形头盔和头巾"
+	desc = "一种铁盔,覆盖着头巾。"
 	icon_state = "turhelm1"
 	item_state = "turhelm1"
 	body_parts_covered = HEAD
@@ -1001,8 +1001,8 @@
 	health = 32
 
 /obj/item/clothing/head/helmet/medieval/arab2
-	name = "long arabic helmet and turban"
-	desc = "An iron helmet, covered with a turban, with side protections for the face."
+	name = "阿拉伯长头盔和头巾"
+	desc = "一种铁盔,覆盖着头巾,带有面部侧面防护。"
 	icon_state = "arabw_helmet1"
 	item_state = "arabw_helmet1"
 	body_parts_covered = HEAD|FACE
@@ -1011,8 +1011,8 @@
 	health = 32
 
 /obj/item/clothing/head/helmet/medieval/arab3
-	name = "long arabic helmet"
-	desc = "An iron helmet, covered with a turban, with side protections for the face."
+	name = "阿拉伯长头盔"
+	desc = "一种铁盔,覆盖着头巾,带有面部侧面防护。"
 	icon_state = "arabw_helmet"
 	item_state = "arabw_helmet"
 	body_parts_covered = HEAD|FACE
@@ -1029,8 +1029,8 @@
 /* Nomads Arabic Helmets*/
 
 /obj/item/clothing/head/helmet/medieval/nomads/arab
-	name = "purple arabic turban helmet"
-	desc = "An iron helmet, covered with a purple turban."
+	name = "紫色阿拉伯头巾盔"
+	desc = "一种铁盔,覆盖着紫色头巾。"
 	icon_state = "turhelm1"
 	item_state = "turhelm1"
 	body_parts_covered = HEAD|FACE
@@ -1039,8 +1039,8 @@
 	health = 25
 
 /obj/item/clothing/head/helmet/medieval/nomads/arab2
-	name = "red arabic turban helmet"
-	desc = "An iron helmet, covered with a red turban."
+	name = "红色阿拉伯头巾盔"
+	desc = "一种铁盔,覆盖着红色头巾。"
 	icon_state = "turhelm2"
 	item_state = "turhelm2"
 	body_parts_covered = HEAD|FACE
@@ -1049,8 +1049,8 @@
 	health = 25
 
 /obj/item/clothing/head/helmet/medieval/nomads/arab3
-	name = "green arabic turban helmet"
-	desc = "An iron helmet, covered with a green turban."
+	name = "绿色阿拉伯头巾盔"
+	desc = "一种铁盔,覆盖着绿色头巾。"
 	icon_state = "turhelm3"
 	item_state = "turhelm3"
 	body_parts_covered = HEAD|FACE
@@ -1059,8 +1059,8 @@
 	health = 25
 
 /obj/item/clothing/head/helmet/medieval/nomads/arab4
-	name = "blue arabic turban helmet"
-	desc = "An iron helmet, covered with a blue turban."
+	name = "蓝色阿拉伯头巾盔"
+	desc = "一种铁盔,覆盖着蓝色头巾。"
 	icon_state = "turhelm3"
 	item_state = "turhelm3"
 	body_parts_covered = HEAD|FACE
@@ -1069,8 +1069,8 @@
 	health = 25
 
 /obj/item/clothing/head/helmet/medieval/nomads/longarab
-	name = "long arabic helmet"
-	desc = "An long conical iron helmet, in arabic style, with side protections for the face. Often worn by arabic soldiers"
+	name = "阿拉伯长头盔"
+	desc = "一种阿拉伯风格的长锥形铁盔,带有面部侧面防护。常被阿拉伯士兵佩戴。"
 	icon_state = "arabw_helmet"
 	item_state = "arabw_helmet"
 	body_parts_covered = HEAD|FACE
@@ -1079,8 +1079,8 @@
 	health = 32
 
 /obj/item/clothing/head/helmet/medieval/nomads/longarab/female
-	name = "feminine long arabic helmet"
-	desc = "An long conical iron helmet, in arabic style, with side protections for the face. Often worn by arabic princesses"
+	name = "女性阿拉伯长头盔"
+	desc = "一种阿拉伯风格的长锥形铁盔,带有面部侧面防护。常被阿拉伯公主佩戴。"
 	icon_state = "arabw_helmet1"
 	item_state = "arabw_helmet1"
 	body_parts_covered = HEAD|FACE
@@ -1091,8 +1091,8 @@
 /* Nomads Arabic Helmet -End*/
 
 /obj/item/clothing/head/helmet/medieval/emirate
-	name = "emirate helmet"
-	desc = "An iron helmet, covered with a green turban & cloth wrapped around. Often worn by rulers of emirate kingdoms"
+	name = "埃米尔头盔"
+	desc = "一种铁盔,覆盖着绿色头巾并缠绕布料。常被埃米尔王国的统治者佩戴。"
 	icon_state = "emir_turban"
 	item_state = "emir_turban"
 	body_parts_covered = HEAD|FACE
@@ -1105,8 +1105,8 @@
 //the classic goofy helmet, leaving path in place to not disturb mapping, very chicken & egg issue.
 
 /obj/item/clothing/head/helmet/medieval/templar
-	name = "templar knight helmet"
-	desc = "A thick knight helmet, with a yellow cross painted on the front."
+	name = "圣殿骑士头盔"
+	desc = "一种厚重的骑士头盔,正面绘有黄色十字。"
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
 	flags_inv = BLOCKHAIR
@@ -1115,8 +1115,8 @@
 //where the nomads helmets begins
 
 /obj/item/clothing/head/helmet/medieval/crusader
-	name = "crusader helmet"
-	desc = "A thick knight helmet, with narrow slit eye holes."
+	name = "十字军头盔"
+	desc = "一种厚重的骑士头盔,带有狭窄的细缝眼孔。"
 	icon_state = "crusader"
 	item_state = "crusader"
 	flags_inv = BLOCKHAIR
@@ -1129,7 +1129,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/gold ))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You embellish the gold ingots upon the crusader helm</span>")
+		to_chat(user, "<span class='notice'>你在十字军头盔上镶嵌了金锭</span>")
 		if(W.amount <= 5)
 			qdel(src)
 			qdel(W)
@@ -1142,7 +1142,7 @@
 //the craftable iteration.
 
 /obj/item/clothing/head/helmet/medieval/nomads/templar
-	desc = "A thick knight helmet, embellished with a gold cross on the front. It has narrow slit eye holes."
+	desc = "一种厚重的骑士头盔,正面镶嵌着金十字。带有狭窄的细缝眼孔。"
 	icon_state = "new_knight_templar"
 	item_state = "new_knight_templar"
 	restricts_view = 1
@@ -1153,7 +1153,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/gold ))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You embellish a gold crown upon the templar crusader helm</span>")
+		to_chat(user, "<span class='notice'>你在圣殿十字军头盔上镶嵌了一顶金冠</span>")
 		if(W.amount <= 10)
 			qdel(src)
 			qdel(W)
@@ -1165,8 +1165,8 @@
 			return
 
 /obj/item/clothing/head/helmet/medieval/crusaderking
-	name = "crusader king helmet"
-	desc = "A thick knight helmet, embellished with a gold cross on the front and crown on top. It has narrow slit eye holes."
+	name = "十字军国王头盔"
+	desc = "一种厚重的骑士头盔,正面镶嵌着金十字,顶部有王冠。带有狭窄的细缝眼孔。"
 	icon_state = "crusader_king"
 	item_state = "crusader_king"
 	flags_inv = BLOCKHAIR
@@ -1181,7 +1181,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/bone ))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You affix the bone horns upon the crusader helm.</span>")
+		to_chat(user, "<span class='notice'>你将骨角固定在十字军头盔上。</span>")
 		if(W.amount <= 3)
 			qdel(src)
 			qdel(W)
@@ -1192,8 +1192,8 @@
 			new/obj/item/clothing/head/helmet/medieval/baltic(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/baltic
-	name = "baltic crusader helmet"
-	desc = "A thick knight helmet with menacing horns affixed to the side. It has narrow slit eye holes."
+	name = "波罗的十字军头盔"
+	desc = "一种厚重的骑士头盔,侧面固定着令人生畏的角。带有狭窄的细缝眼孔。"
 	icon_state = "baltic_crusader"
 	item_state = "baltic_crusader"
 	flags_inv = BLOCKHAIR
@@ -1206,7 +1206,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/silver ))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin to decorate the baltic crusader helm in grandmaster patterns.</span>")
+		to_chat(user, "<span class='notice'>你开始用大师团图案装饰波罗的十字军头盔。</span>")
 		if(W.amount <= 5)
 			qdel(src)
 			qdel(W)
@@ -1217,8 +1217,8 @@
 			new/obj/item/clothing/head/helmet/medieval/grandmaster(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/grandmaster
-	name = "baltic grandmaster helmet"
-	desc = "A thick knight helmet with menacing horns affixed to the side and a grandmaster's pattern decoration. It has narrow slit eye holes."
+	name = "波罗的大师团头盔"
+	desc = "一种厚重的骑士头盔,侧面固定着令人生畏的角,并带有大师团图案装饰。带有狭窄的细缝眼孔。"
 	icon_state = "baltic_crusader_grandmaster"
 	item_state = "baltic_crusader_grandmaster"
 	flags_inv = BLOCKHAIR
@@ -1231,7 +1231,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/silver))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You embellish a silver crown upon the grandmaster helm!</span>")
+		to_chat(user, "<span class='notice'>你在大师团头盔上镶嵌了一顶银冠!</span>")
 		if(W.amount <= 10)
 			qdel(src)
 			qdel(W)
@@ -1242,8 +1242,8 @@
 			new/obj/item/clothing/head/helmet/medieval/baltic_crusaderking(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/baltic_crusaderking
-	name = "baltic crusader king helmet"
-	desc = "A thick knight helmet with menacing horns affixed to the side, a grandmaster's pattern decoration & a silver crown. It has narrow slit eye holes."
+	name = "波罗的十字军国王头盔"
+	desc = "一种厚重的骑士头盔,侧面固定着令人生畏的角,带有大师团图案装饰和一顶银冠。带有狭窄的细缝眼孔。"
 	icon_state = "baltic_crusader_king"
 	item_state = "baltic_crusader_king"
 	flags_inv = BLOCKHAIR
@@ -1258,7 +1258,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/cloth)) //unsure if this will take wool at the moment, just ret some cloth.
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin to anoint & sow the cloth dome to your helmet.</span>")
+		to_chat(user, "<span class='notice'>你开始为头盔涂抹圣油并缝上布质顶罩。</span>")
 		if(W.amount <= 3)
 			qdel(src)
 			qdel(W)
@@ -1269,8 +1269,8 @@
 			new/obj/item/clothing/head/helmet/medieval/priest(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/priest
-	name = "templar priest helmet"
-	desc = "A thick knight helmet with a covered cloth dome in templar colors, it has narrow slit eye holes."
+	name = "圣殿祭司头盔"
+	desc = "一种厚重的骑士头盔,带有圣殿骑士配色的布质顶罩,带有狭窄的细缝眼孔。"
 	icon_state = "templar_priest"
 	item_state = "templar_priest"
 	flags_inv = BLOCKHAIR
@@ -1283,7 +1283,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/cloth)) //unsure if this will take wool at the moment, just ret some cloth.
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin to anoint & sow the cloth dome to your helmet.</span>")
+		to_chat(user, "<span class='notice'>你开始为头盔涂抹圣油并缝上布质顶罩。</span>")
 		if(W.amount <= 3)
 			qdel(src)
 			qdel(W)
@@ -1294,8 +1294,8 @@
 			new/obj/item/clothing/head/helmet/medieval/baltic_priest(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/baltic_priest
-	name = "baltic priest helmet"
-	desc = "A thick knight helmet with a covered cloth dome in baltic colors, it has narrow slit eye holes."
+	name = "波罗的祭司头盔"
+	desc = "一种厚重的骑士头盔,带有波罗的配色的布质顶罩,带有狭窄的细缝眼孔。"
 	icon_state = "baltic_priest"
 	item_state = "baltic_priest"
 	flags_inv = BLOCKHAIR
@@ -1307,13 +1307,13 @@
 /* Medieval Equipment Crates*/
 
 /obj/structure/closet/crate/equipment
-	name = "wood crate"
+	name = "木箱"
 	icon_state = "wood_crate"
 	icon_opened = "wood_crate_opened"
 	icon_closed = "wood_crate"
 
 /obj/structure/closet/crate/equipment/knight_armor
-	name = "knight's equipment crate"
+	name = "骑士装备箱"
 	paths = list(/obj/item/clothing/head/helmet/medieval = 1,
 				/obj/item/clothing/suit/armor/medieval = 1,
 				/obj/item/clothing/under/medieval/red2 = 1,
@@ -1322,7 +1322,7 @@
 				/obj/item/weapon/shield/iron/semioval = 1,)
 
 /obj/structure/closet/crate/equipment/mamluk_armor
-	name = "mamluk's equipment crate"
+	name = "马穆鲁克装备箱"
 	paths = list(/obj/item/clothing/head/helmet/medieval = 1,
 				/obj/item/clothing/suit/armor/medieval/hauberk = 1,
 				/obj/item/clothing/under/medieval/arabic_tunic = 1,
@@ -1332,7 +1332,7 @@
 				/obj/item/weapon/shield/arab_buckler = 1,)
 
 /obj/structure/closet/crate/equipment/sayaf
-	name = "sayaf's equipment crate"
+	name = "赛亚夫装备箱"
 	paths = list(/obj/item/clothing/head/helmet/medieval/arab = 1,
 				/obj/item/clothing/suit/armor/medieval/chainmail = 1,
 				/obj/item/clothing/under/medieval/arab2 = 1,
@@ -1345,29 +1345,29 @@
 	/* Medieval Mayan*/
 
 /obj/item/clothing/head/mayan_headdress
-	name = "mayan headdress"
-	desc = "A mayan style headdress."
+	name = "玛雅头饰"
+	desc = "玛雅风格的头饰."
 	icon_state = "mayan_headdress"
 	item_state = "mayan_headdress"
 
 /obj/item/clothing/under/huipil
-	name = "huipil"
-	desc = "A light cloth, with blue trimmings."
+	name = "维皮尔"
+	desc = "一块浅色布料, 带有蓝色镶边."
 	icon_state = "huipil"
 	item_state = "huipil"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO|ARMS
 
 /obj/item/clothing/under/halfhuipil
-	name = "half huipil"
-	desc = "A light cloth, covering the lower part of the body. With red trimmings."
+	name = "半身维皮尔"
+	desc = "一块浅色布料, 覆盖身体下半部分. 带有红色镶边."
 	icon_state = "halfhuipil"
 	item_state = "halfhuipil"
 
 /* Medieval Norse Armor*/
 
 /obj/item/clothing/head/helmet/medieval/viking
-	name = "viking helmet"
-	desc = "A rounded viking helmet, with nose and ear protection"
+	name = "维京头盔"
+	desc = "一顶圆形的维京头盔, 带有护鼻和护耳"
 	icon_state = "new_viking" //to keep seperate from the wagner-esque viking helmet
 	item_state = "new_viking"
 	body_parts_covered = HEAD|FACE
@@ -1379,7 +1379,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/gold))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You decorate the soon to be royal helmet carefully with gold.</span>")
+		to_chat(user, "<span class='notice'>你小心地用黄金装饰这顶即将成为皇家头盔的头盔.</span>")
 		if(W.amount <= 5)
 			qdel(src)
 			qdel(W)
@@ -1390,8 +1390,8 @@
 			new/obj/item/clothing/head/helmet/medieval/viking/king(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/viking/king
-	name = "royal viking helmet"
-	desc = "A royally decorated gold rounded viking helmet, with nose and ear protection"
+	name = "皇家维京头盔"
+	desc = "一顶饰有皇家黄金装饰的圆形维京头盔, 带有护鼻和护耳"
 	icon_state = "viking_king"
 	item_state = "viking_king"
 	body_parts_covered = HEAD|FACE
@@ -1400,8 +1400,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/medieval/viking/valkyrie
-	name = "royal viking helmet"
-	desc = "A rounded valkyrie helmet, it is protective and adorned with wings"
+	name = "皇家维京头盔"
+	desc = "一顶圆形的女武神头盔, 具有防护性并饰有翅膀"
 	icon_state = "valkyrie"
 	item_state = "valkyrie"
 	body_parts_covered = HEAD|FACE
@@ -1413,7 +1413,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/gold))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You decorate the soon to be royal helmet carefully with gold.</span>")
+		to_chat(user, "<span class='notice'>你小心地用黄金装饰这顶即将成为皇家头盔的头盔.</span>")
 		if(W.amount <= 5)
 			qdel(src)
 			qdel(W)
@@ -1424,8 +1424,8 @@
 			new/obj/item/clothing/head/helmet/medieval/viking/valkyrie_queen(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/viking/valkyrie_queen
-	name = "royal viking helmet"
-	desc = "A royally decorated gold rounded valkyrie helmet, it is protective and adorned with wings"
+	name = "皇家维京头盔"
+	desc = "一顶饰有皇家黄金装饰的圆形女武神头盔, 具有防护性并饰有翅膀"
 	icon_state = "valkyrie_queen"
 	item_state = "valkyrie_queen"
 	body_parts_covered = HEAD|FACE
@@ -1434,8 +1434,8 @@
 	health = 40
 
 /obj/item/clothing/head/helmet/medieval/viking/varangian
-	name = "varangian helmet"
-	desc = "A robust varangian guard style helmet, with tightly wrapped chainmail over everything but the eye holes."
+	name = "瓦兰吉头盔"
+	desc = "一顶坚固的瓦兰吉卫队风格头盔, 除眼孔外全部紧密缠绕锁子甲."
 	icon_state = "varangian_guard"
 	item_state = "varangian_guard"
 	flags_inv = BLOCKHAIR
@@ -1446,8 +1446,8 @@
 	slowdown = 0.25
 
 /obj/item/clothing/suit/armor/medieval/varangian
-	name = "varangian lamellar armor"
-	desc = "A close fitting armor of small iron rectangular shapes to make a scale vest. Manageably heavy but flexible."
+	name = "瓦兰吉札甲"
+	desc = "一件贴身的小铁矩形片制成的鳞甲背心. 重量适中但灵活."
 	icon_state = "varangian_lamellar"
 	item_state = "varangian_lamellar"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1458,8 +1458,8 @@
 /* Medieval Chinese Armor*/
 
 /obj/item/clothing/head/helmet/medieval/imperial_chinese
-	name = "imperial chinese helmet"
-	desc = "A iron helmet with a quilted neck covering and a decorative red plume, made in a imperial chinese style. "
+	name = "中华帝国头盔"
+	desc = "一顶铁制头盔, 带有绗缝护颈和装饰性红色羽饰, 采用中华帝国风格制作."
 	icon_state = "imperial_chinese"
 	item_state = "imperial_chinese"
 	body_parts_covered = HEAD|FACE
@@ -1469,8 +1469,8 @@
 	slowdown = 0.25
 
 /obj/item/clothing/suit/armor/medieval/imperial_chinese
-	name = "imperial chinese armor"
-	desc = "A well built & laquered armor with iron plates concealed inwardly and outwardly protecting the body, made in imperial chinese style"
+	name = "中华帝国铠甲"
+	desc = "一件制作精良并涂漆的铠甲, 内外隐藏铁片保护身体, 采用中华帝国风格制作"
 	icon_state = "imperial_chinese"
 	item_state = "imperial_chinese"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1483,8 +1483,8 @@
 /* Medieval Mamluk Armor*/
 
 /obj/item/clothing/head/helmet/medieval/mamluk/helmet
-	name = "mamluk conical helmet"
-	desc = "A conical helmet, with nose and ear protection in mamluk style."
+	name = "马穆鲁克锥形头盔"
+	desc = "一顶锥形头盔, 带有护鼻和护耳, 采用马穆鲁克风格."
 	icon_state = "mamluk_helmet"
 	item_state = "mamluk_helmet"
 	body_parts_covered = HEAD|FACE
@@ -1493,8 +1493,8 @@
 	health = 35
 
 /obj/item/clothing/head/helmet/medieval/mamluk/helmet/lord //not as brute strength protective, but its users are unrestricted fast & nasty.
-	name = "lordly mamluk conical helmet"
-	desc = "A conical helmet, with nose and ear protection in mamluk style. It is wrapped in chainmail."
+	name = "贵族马穆鲁克锥形头盔"
+	desc = "一顶锥形头盔, 带有护鼻和护耳, 采用马穆鲁克风格. 它缠绕着锁子甲."
 	icon_state = "mamluk_lord"
 	item_state = "mamluk_lord"
 	body_parts_covered = HEAD|FACE
@@ -1507,7 +1507,7 @@
 	if (!istype(W)) return
 	if (istype(W, /obj/item/stack/material/gold))
 		playsound(loc, 'sound/machines/click.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You decorate the lordly helmet carefully with gold.</span>")
+		to_chat(user, "<span class='notice'>你小心地用黄金装饰这顶贵族头盔.</span>")
 		if(W.amount <= 5)
 			qdel(src)
 			qdel(W)
@@ -1518,8 +1518,8 @@
 			new/obj/item/clothing/head/helmet/medieval/mamluk/helmet/king(user.loc)
 
 /obj/item/clothing/head/helmet/medieval/mamluk/helmet/king
-	name = "royal mamluk conical helmet"
-	desc = "A royally decorated gold plated conical helmet, with nose and ear protection in mamluk style. It is wrapped in chainmail."
+	name = "皇家马穆鲁克锥形头盔"
+	desc = "一顶饰有皇家黄金镀层的锥形头盔, 带有护鼻和护耳, 采用马穆鲁克风格. 它缠绕着锁子甲."
 	icon_state = "mamluk_king"
 	item_state = "mamluk_king"
 	body_parts_covered = HEAD|FACE
@@ -1529,8 +1529,8 @@
 	slowdown = 0.15
 
 /obj/item/clothing/head/helmet/medieval/mamluk/coif
-	name = "coif wrapped mamluk helmet"
-	desc = "A chainmail headcover and pointed helmet, in mamluk style"
+	name = "锁子甲头巾包裹的马穆鲁克头盔"
+	desc = "一个锁子甲头罩和尖顶头盔, 采用马穆鲁克风格"
 	icon_state = "mamluk_coif_helmet"
 	item_state = "mamluk_coif_helmet"
 	body_parts_covered = HEAD|FACE
@@ -1541,22 +1541,22 @@
 /* Medieval Steppe Clothes & Armor*/
 
 /obj/item/clothing/head/steppe_shaman
-	name = "steppe shaman wool hat"
-	desc = "A dyed red wool hat of steppe nomad design. Often worn by shamans to protect themselves from the elements on the steppe whilst performing rituals"
+	name = "草原萨满羊毛帽"
+	desc = "一顶染成红色的羊毛帽, 采用草原游牧民族设计. 萨满在草原上举行仪式时经常佩戴以保护自己免受恶劣天气影响"
 	icon_state = "steppe_shaman_wool_hat"
 	item_state = "steppe_shaman_wool_hat"
 	cold_protection = HEAD
 
 /obj/item/clothing/suit/storage/jacket/steppe_shaman
-	name = "steppe shaman wool coat"
-	desc = "A colorful woolen coat, used by shamans to wrap warm whilst performing rituals on the open steppe."
+	name = "草原萨满羊毛外套"
+	desc = "一件色彩鲜艳的羊毛外套, 萨满在开阔的草原上举行仪式时用来保暖."
 	icon_state = "steppe_shaman_wool_coat"
 	item_state = "steppe_shaman_wool_coat"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/suit/armor/medieval/steppe_leather
-	name = "steppe leather armor"
-	desc = "Leather armor made from sheets of leather bound in a steppe nomad style, making adequate protection for prospective warriors."
+	name = "草原皮甲"
+	desc = "由皮革片制成的皮甲, 以草原游牧民族风格绑制, 为有前途的战士提供足够的保护."
 	icon_state = "steppe_leather_armor"
 	item_state = "steppe_leather_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -1567,15 +1567,15 @@
 	health = 33
 
 /obj/item/clothing/under/medieval/steppe_tunic
-	name = "steppe wool tunic"
-	desc = "A brown tunic made out of wool. Often worn by nomads upon the great steppes."
+	name = "草原羊毛束腰外衣"
+	desc = "一件由羊毛制成的棕色束腰外衣. 游牧民族在大草原上经常穿着."
 	icon_state = "steppe_wool_tunic"
 	item_state = "steppe_wool_tunic"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/shoes/steppe_shoes
-	name = "steppe wool shoe"
-	desc = "A pair of insulated rough woolen shoes for keeping feet warm on the open steppe."
+	name = "草原羊毛鞋"
+	desc = "一双保暖的粗糙羊毛鞋, 用于在开阔的草原上保持双脚温暖."
 	icon_state = "steppe_wool_shoes"
 	item_state = "steppe_wool_shoes"
 	body_parts_covered = FEET
@@ -1590,8 +1590,8 @@
 	/* Medieval Japanese*/
 
 /obj/item/clothing/suit/armor/samurai
-	name = "leather samurai armor"
-	desc = "A protective & lightweight armor, bound to and covering most of the body yet slightly flexible. Often worn by a lord's bodyguards."
+	name = "皮革武士甲"
+	desc = "一件具有防护性且轻便的铠甲, 绑缚并覆盖身体大部分区域, 但略有灵活性. 通常由领主的保镖穿着."
 	icon_state = "samurai3"
 	item_state = "samurai3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -1601,23 +1601,23 @@
 	health = 35
 
 /obj/item/clothing/suit/armor/samurai/red
-	name = "red leather samurai armor"
+	name = "红色皮革武士甲"
 	icon_state = "samurai1"
 	item_state = "samurai1"
 
 /obj/item/clothing/suit/armor/samurai/blue
-	name = "blue leather samurai armor"
+	name = "蓝色皮革武士甲"
 	icon_state = "samurai2"
 	item_state = "samurai2"
 
 /obj/item/clothing/suit/armor/samurai/black
-	name = "black leather samurai armor"
+	name = "黑色皮革武士甲"
 	icon_state = "samurai4"
 	item_state = "samurai4"
 
 /obj/item/clothing/suit/armor/samurai/warrior
-	name = "samurai armor"
-	desc = "A dense, metal armor of japanese origin, covering most of the body. Often worn by a loyal warriors to a feudal lord."
+	name = "武士甲"
+	desc = "一件源自日本的密集金属铠甲, 覆盖身体大部分区域. 通常由效忠封建领主的忠诚武士穿着."
 	icon_state = "samurai_warrior3"
 	item_state = "samurai_warrior3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
@@ -1626,23 +1626,23 @@
 	slowdown = 0.9
 
 /obj/item/clothing/suit/armor/samurai/warrior/red
-	name = "red samurai armor"
+	name = "红色武士甲"
 	icon_state = "samurai_warrior1"
 	item_state = "samurai_warrior1"
 
 /obj/item/clothing/suit/armor/samurai/warrior/blue
-	name = "blue kozane armor"
+	name = "蓝色小札甲"
 	icon_state = "samurai_warrior2"
 	item_state = "samurai_warrior2"
 
 /obj/item/clothing/suit/armor/samurai/warrior/black
-	name = "black kozane armor"
+	name = "黑色小札甲"
 	icon_state = "samurai_warrior4"
 	item_state = "samurai_warrior4"
 
 /obj/item/clothing/suit/armor/samurai/lord
-	name = "samurai lord armor"
-	desc = "A thick, expensive armor of japanese origin. Often worn by feudal lords."
+	name = "武士领主甲"
+	desc = "一件源自日本的厚重昂贵铠甲. 通常由封建领主穿着."
 	icon_state = "samurai_lord3"
 	item_state = "samurai_lord3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -1652,99 +1652,99 @@
 	health = 60
 
 /obj/item/clothing/suit/armor/samurai/lord/red
-	name = "red samurai lord armor"
+	name = "红色武士领主甲"
 	icon_state = "samurai_lord1"
 	item_state = "samurai_lord1"
 
 /obj/item/clothing/suit/armor/samurai/lord/blue
-	name = "blue samurai lord armor"
+	name = "蓝色武士领主甲"
 	icon_state = "samurai_lord2"
 	item_state = "samurai_lord2"
 
 /obj/item/clothing/suit/armor/samurai/lord/black
-	name = "black samurai lord armor"
+	name = "黑色武士领主甲"
 	icon_state = "samurai_lord4"
 	item_state = "samurai_lord4"
 
 	/* Medieval Japanese Uniforms*/
 
 /obj/item/clothing/under/hanfu
-	name = "dark hanfu"
-	desc = "A light, loose fitting hanfu."
+	name = "深色汉服"
+	desc = "一件轻便宽松的汉服."
 	icon_state = "dark_hanfu"
 	item_state = "dark_hanfu"
 
 /obj/item/clothing/under/hanfu/light
-	name = "light hanfu"
-	desc = "A light, loose fitting hanfu."
+	name = "浅色汉服"
+	desc = "一件轻便宽松的汉服."
 	icon_state = "light_hanfu"
 	item_state = "light_hanfu"
 
 /obj/item/clothing/under/hanfu/green
-	name = "green hanfu"
-	desc = "A green, loose fitting hanfu."
+	name = "绿色汉服"
+	desc = "一件绿色轻便宽松的汉服."
 	icon_state = "green_hanfu"
 	item_state = "green_hanfu"
 
 /obj/item/clothing/under/artisan
-	name = "artisan clothing"
-	desc = "A light, loose fitting bit of clothes."
+	name = "工匠服装"
+	desc = "一件轻便宽松的衣物."
 	icon_state = "artisan1"
 	item_state = "artisan1"
 
 /obj/item/clothing/under/artisan/dark
-	name = "dark artisan clothing"
-	desc = "A light, loose fitting bit of clothes."
+	name = "深色工匠服装"
+	desc = "一件轻便宽松的衣物."
 	icon_state = "artisan2"
 	item_state = "artisan2"
 
 /obj/item/clothing/under/artisan/light
-	name = "light artisan clothing"
-	desc = "A light, loose fitting bit of clothes."
+	name = "浅色工匠服装"
+	desc = "一件轻便宽松的衣物."
 	icon_state = "artisan3"
 	item_state = "artisan3"
 
 /obj/item/clothing/under/haori
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物, 在日本穿着."
 	icon_state = "haori"
 	item_state = "haori"
 
 /obj/item/clothing/under/haori/blue
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物, 在日本穿着."
 	icon_state = "haori3"
 	item_state = "haori3"
 
 /obj/item/clothing/under/haori/red
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物,在日本穿着."
 	icon_state = "haori2"
 	item_state = "haori2"
 
 /obj/item/clothing/under/haori/samurai
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物,在日本穿着."
 	icon_state = "haori_samurai"
 	item_state = "haori_samurai"
 
 /obj/item/clothing/under/haori/samurai/blue
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物,在日本穿着."
 	icon_state = "haori_samurai2"
 	item_state = "haori_samurai2"
 
 /obj/item/clothing/under/haori/samurai/red
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物,在日本穿着."
 	icon_state = "haori_samurai3"
 	item_state = "haori_samurai3"
 
 	/* Medieval Japanese Shoes & Boots*/
 
 /obj/item/clothing/shoes/geta
-	name = "geta sandals"
-	desc = "A pair of simple, wood sandals. Keeps you elevated off he ground slightly."
+	name = "木屐"
+	desc = "一双简单的木制凉鞋.能让你稍微离地."
 	icon_state = "geta"
 	item_state = "geta"
 	force = WEAPON_FORCE_PAINFUL
@@ -1785,7 +1785,7 @@
 
 /obj/item/clothing/shoes/tsuranuki
 	name = "tsuranuki"
-	desc = "A pair of plated shin guards & shoes of japanese origin."
+	desc = "一双日式来源的镀甲护胫和鞋."
 	icon_state = "tsuranuki"
 	item_state = "tsuranuki"
 	body_parts_covered = FEET|LEG_RIGHT|LEG_LEFT
@@ -1797,8 +1797,8 @@
 	item_flags = NOSLIP
 
 /obj/item/clothing/gloves/gauntlets/kote
-	name = "kote gauntlets"
-	desc = "A pair of armored iron bracer guards of japanese origin."
+	name = "笼手"
+	desc = "一双日式来源的装甲铁护腕."
 	icon_state = "kote"
 	item_state = "kote"
 	body_parts_covered = HANDS|ARM_RIGHT|ARM_LEFT
@@ -1812,8 +1812,8 @@
 	/* Medieval Japanese Headpieces & Helmets*/
 
 /obj/item/clothing/head/helmet/samurai
-	name = "samurai helmet"
-	desc = "A thick metal helmet of japanese origin. Typically worn by feudal warriors."
+	name = "武士头盔"
+	desc = "一顶日式来源的厚重金属头盔.通常由封建武士佩戴."
 	icon_state = "samurai_warrior3"
 	item_state = "samurai_warrior3"
 	body_parts_covered = HEAD
@@ -1821,8 +1821,8 @@
 	health = 45
 
 /obj/item/clothing/head/helmet/samurai/lord/brown
-	name = "samurai lord helmet"
-	desc = "A impressionable & thick metal helmet with a jaw protective plate built in of japanese origin. Typically worn by feudal warriors."
+	name = "武士领主头盔"
+	desc = "一顶日式来源的令人印象深刻且厚重的金属头盔,内置下颌防护板.通常由封建武士佩戴."
 	icon_state = "samurai_lord3"
 	item_state = "samurai_lord3"
 	armor = list(melee = 70, arrow = 90, gun = 10, energy = 15, bomb = 60, bio = 20, rad = FALSE)
@@ -1840,7 +1840,7 @@
 			item_state = "samurai_lord3_o"
 			icon_state = "samurai_lord3_o"
 			item_state_slots["slot_head"] = "samurai_lord3_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面罩.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -1849,15 +1849,15 @@
 			item_state = "samurai_lord3"
 			icon_state = "samurai_lord3"
 			item_state_slots["slot_head"] = "samurai_lord3"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了头盔的面罩.</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/jingasa
-	name = "jingasa"
-	desc = "A thick leather and straw hat of japanese origin. Typically worn by ranged combatant samurai."
+	name = "阵笠"
+	desc = "一顶日式来源的厚皮革和草编帽子.通常由远程战斗武士佩戴."
 	icon_state = "jingasa"
 	item_state = "jingasa"
 	body_parts_covered = HEAD
@@ -1874,18 +1874,18 @@
 		if (adjusted)
 			item_state = "jingasa"
 			item_state_slots["slot_head"] = "jingasa"
-			to_chat(usr, "<span class = 'danger'>You adjust your jingasa's flaps.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了阵笠的帽檐.</span>")
 			adjusted = FALSE
 		else if (!adjusted)
 			item_state = "jingasa_flaps"
 			item_state_slots["slot_head"] = "jingasa_flaps"
-			to_chat(usr, "<span class = 'danger'>You adjust your jingasa's flaps.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整了阵笠的帽檐.</span>")
 			adjusted = TRUE
 	update_clothing_icon()
 
 /obj/item/clothing/head/helmet/kasa
-	name = "kasa"
-	desc = "A thick straw hat of japanese origin. Typically worn by travelers."
+	name = "斗笠"
+	desc = "一顶日式来源的厚草帽.通常由旅行者佩戴."
 	icon_state = "kasa"
 	item_state = "kasa"
 	body_parts_covered = HEAD
@@ -1893,8 +1893,8 @@
 	health = 30
 
 /obj/item/clothing/head/helmet/samurai/guard
-	name = "leather samurai helmet"
-	desc = "A thick leather helmet of japanese origin. Typically worn by petty guards and light infantry."
+	name = "皮革武士头盔"
+	desc = "一顶日式来源的厚皮革头盔.通常由低级守卫和轻步兵佩戴."
 	icon_state = "samurai_guard3"
 	item_state = "samurai_guard3"
 	body_parts_covered = HEAD
@@ -1902,32 +1902,32 @@
 	health = 32
 
 /obj/item/clothing/head/helmet/samurai/guard/red
-	name = "red leather samurai helmet"
-	desc = "A thick leather helmet of japanese origin. Typically worn by petty guards and light infantry."
+	name = "红色皮革武士头盔"
+	desc = "一顶日式来源的厚皮革头盔.通常由低级守卫和轻步兵佩戴."
 	icon_state = "samurai_guard1"
 	item_state = "samurai_guard1"
 
 /obj/item/clothing/head/helmet/samurai/guard/blue
-	name = "blue leather samurai helmet"
-	desc = "A thick leather helmet of japanese origin. Typically worn by petty guards and light infantry."
+	name = "蓝色皮革武士头盔"
+	desc = "一顶日式来源的厚皮革头盔.通常由低级守卫和轻步兵佩戴."
 	icon_state = "samurai_guard2"
 	item_state = "samurai_guard2"
 
 /obj/item/clothing/head/helmet/samurai/guard/black
-	name = "black leather samurai helmet"
-	desc = "A thick leather helmet of japanese origin. Typically worn by petty guards and light infantry."
+	name = "黑色皮革武士头盔"
+	desc = "一顶日式来源的厚皮革头盔.通常由低级守卫和轻步兵佩戴."
 	icon_state = "samurai_guard4"
 	item_state = "samurai_guard4"
 
 /obj/item/clothing/head/helmet/samurai/red
-	name = "red samurai helmet"
-	desc = "A thick metal helmet of japanese origin. Typically worn by feudal warriors."
+	name = "红色武士头盔"
+	desc = "一顶日式来源的厚重金属头盔.通常由封建武士佩戴."
 	icon_state = "samurai_warrior1"
 	item_state = "samurai_warrior1"
 
 /obj/item/clothing/head/helmet/samurai/blue
-	name = "blue samurai helmet"
-	desc = "A thick metal helmet of japanese origin. Typically worn by feudal warriors."
+	name = "蓝色武士头盔"
+	desc = "一顶日式来源的厚重金属头盔.通常由封建武士佩戴."
 	icon_state = "samurai_warrior2"
 	item_state = "samurai_warrior2"
 
@@ -1938,8 +1938,8 @@ obj/item/clothing/head/helmet/samurai/black
 	item_state = "samurai_warrior4"
 
 /obj/item/clothing/head/helmet/samurai/lord/red
-	name = "red samurai lord helmet"
-	desc = "A impressionable & thick metal helmet with a jaw protective plate built in of japanese origin. Typically worn by feudal warriors."
+	name = "红色武士领主头盔"
+	desc = "一顶日式来源的令人印象深刻且厚重的金属头盔,内置下颌防护板.通常由封建武士佩戴."
 	icon_state = "samurai_lord1"
 	item_state = "samurai_lord1"
 	var/toggled = FALSE
@@ -1954,7 +1954,7 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord1_o"
 			icon_state = "samurai_lord1_o"
 			item_state_slots["slot_head"] = "samurai_lord1_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面罩.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -1963,15 +1963,15 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord1"
 			icon_state = "samurai_lord1"
 			item_state_slots["slot_head"] = "samurai_lord1"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了头盔的面罩.</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/samurai/lord/blue
-	name = "blue samurai lord helmet"
-	desc = "A impressionable & thick metal helmet with a jaw protective plate built in of japanese origin. Typically worn by feudal warriors."
+	name = "蓝色武士领主头盔"
+	desc = "一顶日式来源的令人印象深刻且厚重的金属头盔,内置下颌防护板.通常由封建武士佩戴."
 	icon_state = "samurai_lord2"
 	item_state = "samurai_lord2"
 	var/toggled = FALSE
@@ -1986,7 +1986,7 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord2_o"
 			icon_state = "samurai_lord2_o"
 			item_state_slots["slot_head"] = "samurai_lord2_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面罩.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -1995,15 +1995,15 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord2"
 			icon_state = "samurai_lord2"
 			item_state_slots["slot_head"] = "samurai_lord2"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了头盔的面罩.</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
 			flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/helmet/samurai/lord/black
-	name = "black samurai lord helmet"
-	desc = "A impressionable & thick metal helmet with a jaw protective plate built in of japanese origin. Typically worn by feudal warriors."
+	name = "黑色武士领主头盔"
+	desc = "一顶日式来源的令人印象深刻且厚重的金属头盔,内置下颌防护板.通常由封建武士佩戴."
 	icon_state = "samurai_lord4"
 	item_state = "samurai_lord4"
 	var/toggled = FALSE
@@ -2018,7 +2018,7 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord4_o"
 			icon_state = "samurai_lord4_o"
 			item_state_slots["slot_head"] = "samurai_lord4_o"
-			to_chat(usr, "<span class = 'danger'>You put up your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你放下了头盔的面罩.</span>")
 			toggled = FALSE
 			update_clothing_icon()
 			body_parts_covered = HEAD
@@ -2027,7 +2027,7 @@ obj/item/clothing/head/helmet/samurai/black
 			item_state = "samurai_lord4"
 			icon_state = "samurai_lord4"
 			item_state_slots["slot_head"] = "samurai_lord4"
-			to_chat(usr, "<span class = 'danger'>You put down your helmet's faceguard.</span>")
+			to_chat(usr, "<span class = 'danger'>你拉起了头盔的面罩.</span>")
 			toggled = TRUE
 			update_clothing_icon()
 			body_parts_covered = HEAD|FACE
@@ -2036,8 +2036,8 @@ obj/item/clothing/head/helmet/samurai/black
 	/* Medieval Japanese Masks*/
 
 /obj/item/clothing/mask/samurai
-	name = "samurai mask"
-	desc = "A mask of metal, often worn by lords to protect their face."
+	name = "武士面具"
+	desc = "一面金属面具,常由领主佩戴以保护面部."
 	icon_state = "samurai1"
 	item_state = "samurai1"
 	body_parts_covered = FACE|EYES
@@ -2048,28 +2048,28 @@ obj/item/clothing/head/helmet/samurai/black
 	restricts_view = 1
 
 /obj/item/clothing/mask/samurai/red
-	name = "red samurai mask"
+	name = "红色武士面具"
 	icon_state = "samurai2"
 	item_state = "samurai2"
 
 /obj/item/clothing/mask/samurai/blue
-	name = "blue samurai mask"
+	name = "蓝色武士面具"
 	icon_state = "samurai3"
 	item_state = "samurai3"
 
 /* Miscallenous Medieval Extra-Cultural Clothes*/
 
 /obj/item/clothing/head/gat
-	name = "gat hat"
-	desc = "A traditional korean hat."
+	name = "gat帽"
+	desc = "一顶传统的韩国帽子."
 	icon_state = "gat"
 	item_state = "gat"
 
 /* Fantasy Medieval Clothes*/ //tell admins to iconswap preferencially to spawning in the piece itself if engaging in a event duel, since these are more op than they appear.
 
 /obj/item/clothing/head/turban/toadstool
-	name = "toadstool hat"
-	desc = "The princess is in another castle."
+	name = "毒蘑菇帽"
+	desc = "公主在另一座城堡里."
 	icon_state = "toadstool"
 	item_state = "toadstool"
 	heat_protection = HEAD
@@ -2081,8 +2081,8 @@ obj/item/clothing/head/helmet/samurai/black
 	/* Fantasy Crusader Helmets */
 
 /obj/item/clothing/head/helmet/medieval/whitestrake
-	name = "penlianal_whitestrake helmet"
-	desc = "The thick legendary paladin helmet of a martially gifted genocidal maniac. Or great hero from particular point of view."
+	name = "penlianal_whitestrake头盔"
+	desc = "一顶传奇的圣骑士厚重头盔,属于一位武艺高超的种族灭绝狂人.或者从某个角度看,是一位伟大的英雄."
 	icon_state = "penlianal_whitestrake"
 	item_state = "penlianal_whitestrake"
 	flags_inv = BLOCKHAIR
@@ -2092,8 +2092,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.10
 
 /obj/item/clothing/head/helmet/medieval/hellknight
-	name = "hell knight helmet"
-	desc = "The thick horned helmet of elite demonic champions. A green furor of anger and hatred spills out of its narrow slit eye holes."
+	name = "地狱骑士头盔"
+	desc = "一顶精英恶魔勇士的厚重带角头盔.一股愤怒与仇恨的绿色狂怒从它狭窄的裂眼孔中溢出."
 	icon_state = "hell_champion"
 	item_state = "hell_champion"
 	flags_inv = BLOCKHAIR
@@ -2103,8 +2103,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.10
 
 /obj/item/clothing/head/helmet/medieval/saint
-	name = "saint helmet"
-	desc = "The thick helmet of those chosen of divinity, a angelic halo hangs overhead."
+	name = "圣徒头盔"
+	desc = "一顶神性选民所戴的厚重头盔,头顶悬挂着天使光环."
 	icon_state = "crusader_saint"
 	item_state = "crusader_saint"
 	flags_inv = BLOCKHAIR
@@ -2116,8 +2116,8 @@ obj/item/clothing/head/helmet/samurai/black
 	/* Dark Souls Armor*/
 
 /obj/item/clothing/head/helmet/medieval/giantdad
-	name = "lordran helmet"
-	desc = "The legendary helmet of the father, it is said its former owner's booming voice could answer any challenge"
+	name = "罗德兰头盔"
+	desc = "一顶传奇的父之头盔,据说其前任主人的洪亮嗓音能回应任何挑战."
 	icon_state = "giantdad"
 	item_state = "giantdad"
 	flags_inv = BLOCKHAIR
@@ -2163,8 +2163,8 @@ obj/item/clothing/head/helmet/samurai/black
 */
 ///////////////////////////////////////////////SKYRIM////////////////////////////////////////////////////////
 /obj/item/clothing/head/helmet/medieval/tes13/dwemmer
-	name = "dwemmer helmet"
-	desc = "The thick helmet of elite dwemmer warriors."
+	name = "矮人头盔"
+	desc = "一顶精英矮人战士的厚重头盔."
 	icon_state = "dwelmet"
 	item_state = "dwelmet"
 	body_parts_covered = HEAD|FACE|EYES
@@ -2175,8 +2175,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.10
 
 /obj/item/clothing/gloves/gauntlets/tes13/dwemmer
-	name = "dwemmer gauntlets"
-	desc = "A pair of armored dwemmer bracer guards of dwemmer origin."
+	name = "矮人护手"
+	desc = "一双矮人来源的装甲护腕."
 	icon_state = "dwoves"
 	item_state = "dwoves"
 	body_parts_covered = HANDS|ARM_RIGHT|ARM_LEFT
@@ -2188,8 +2188,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 50
 
 /obj/item/clothing/shoes/dwemmer
-	name = "dwemmer boots"
-	desc = "A pair of plated boots made of dwemmer metal."
+	name = "矮人靴子"
+	desc = "一双由矮人金属制成的镀甲靴子."
 	icon_state = "dwoots"
 	item_state = "dwoots"
 	body_parts_covered = FEET|LEG_RIGHT|LEG_LEFT
@@ -2201,8 +2201,8 @@ obj/item/clothing/head/helmet/samurai/black
 	item_flags = NOSLIP
 
 /obj/item/clothing/suit/armor/tes13/dwemmer
-	name = "dwemmer armor"
-	desc = "A thick, expensive armor of dwemmer metal."
+	name = "矮人护甲"
+	desc = "一件由矮人金属制成的厚重昂贵护甲."
 	icon_state = "dwarmor"
 	item_state = "dwarmor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -2212,8 +2212,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 80
 ////////whiterun/stormcloaks/////////
 /obj/item/clothing/under/tes13/stormcloak
-	name = "stormcloak curass"
-	desc = "A blue tabard over some leather armor with chainmail underneath."
+	name = "风暴斗篷胸甲"
+	desc = "一件蓝色罩袍覆盖在皮革护甲上,下面还有锁子甲."
 	icon_state = "stormcloak"
 	item_state = "stormcloak"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -2222,13 +2222,13 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 60
 
 /obj/item/clothing/under/tes13/stormcloak/female
-	desc = "A blue tabard over some leather armor with chainmail underneath. This one is fitted for women."
+	desc = "一件蓝色战袍罩在皮甲外,内衬锁子甲.这件为女性量身定做."
 	icon_state = "stormcloak_f"
 	item_state = "stormcloak_f"
 
 /obj/item/clothing/under/tes13/whiterun
-	name = "whiterun guard curass"
-	desc = "An orange tabard over some leather armor with chainmail underneath."
+	name = "白漫城卫兵胸甲"
+	desc = "一件橙色战袍罩在皮甲外,内衬锁子甲."
 	icon_state = "whiterun"
 	item_state = "whiterun"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -2237,13 +2237,13 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 60
 
 /obj/item/clothing/under/tes13/whiterun/female
-	desc = "An orange tabard over some leather armor with chainmail underneath. This one is fitted for women."
+	desc = "一件橙色战袍罩在皮甲外,内衬锁子甲.这件为女性量身定做."
 	icon_state = "whiterun_f"
 	item_state = "whiterun_f"
 
 /obj/item/clothing/head/helmet/medieval/tes13/guard
-	name = "guard helmet"
-	desc = "A thick helmet of steel worn often by soldiers or guards."
+	name = "卫兵头盔"
+	desc = "一顶厚重的钢制头盔,常由士兵或卫兵佩戴."
 	icon_state = "tes13"
 	item_state = "tes13"
 	body_parts_covered = HEAD|FACE|EYES
@@ -2254,8 +2254,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.05
 
 /obj/item/clothing/head/helmet/medieval/tes13/hide
-	name = "hide helmet"
-	desc = "A thick helmet of hide worn often by soldiers or guards."
+	name = "皮制头盔"
+	desc = "一顶厚重的皮制头盔,常由士兵或卫兵佩戴."
 	icon_state = "tes13_hide"
 	item_state = "tes13_hide"
 	body_parts_covered = HEAD
@@ -2266,8 +2266,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.01
 
 /obj/item/clothing/head/helmet/medieval/tes13/iron
-	name = "iron helmet"
-	desc = "A thick horned helmet of iron worn often by bandits mercenaries and travelers."
+	name = "铁制头盔"
+	desc = "一顶厚重的带角铁制头盔,常由强盗、雇佣兵和旅行者佩戴."
 	icon_state = "tes13_iron"
 	item_state = "tes13_iron"
 	body_parts_covered = HEAD|FACE
@@ -2278,8 +2278,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.02
 
 /obj/item/clothing/suit/armor/tes13/stormcloak
-	name = "stormcloak officer armor"
-	desc = "A thick, leather armor of hide with a bearpelt draped over it."
+	name = "风暴斗篷军官护甲"
+	desc = "一件厚重的皮制护甲,上面披着一张熊皮."
 	icon_state = "stormcloak"
 	item_state = "stormcloak"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -2290,8 +2290,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 80
 
 /obj/item/clothing/suit/armor/tes13/imperial
-	name = "imperial officer armor"
-	desc = "A thick, steel armor worn by imperial officers"
+	name = "帝国军官护甲"
+	desc = "一件厚重的钢制护甲,由帝国军官佩戴."
 	icon_state = "imperial_officer"
 	item_state = "imperial_officer"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -2302,8 +2302,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 80
 
 /obj/item/clothing/head/helmet/medieval/tes13/stormcloak
-	name = "stormcloak officer helmet"
-	desc = "A bear pelt helmet with an armored lining."
+	name = "风暴斗篷军官头盔"
+	desc = "一顶带装甲内衬的熊皮头盔."
 	icon_state = "stormcloak"
 	item_state = "stormcloak"
 	body_parts_covered = HEAD|FACE|EYES
@@ -2315,8 +2315,8 @@ obj/item/clothing/head/helmet/samurai/black
 
 
 /obj/item/clothing/under/tes13/imperial
-	name = "imperial armor"
-	desc = "A red tunic with leather armor overtop."
+	name = "帝国护甲"
+	desc = "一件红色束腰外衣,外罩皮甲."
 	icon_state = "tes13_imperial"
 	item_state = "tes13_imperial"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -2325,8 +2325,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 60
 
 /obj/item/clothing/head/helmet/medieval/tes13/imperial
-	name = "imperial helmet"
-	desc = "An imperial helmet made of leather"
+	name = "帝国头盔"
+	desc = "一顶皮制帝国头盔"
 	icon_state = "tes13_imperial"
 	item_state = "tes13_imperial"
 	body_parts_covered = HEAD
@@ -2337,8 +2337,8 @@ obj/item/clothing/head/helmet/samurai/black
 	slowdown = 0.01
 
 /obj/item/clothing/head/helmet/medieval/tes13/imperial/officer
-	name = "imperial officer helmet"
-	desc = "An imperial helmet made of steel"
+	name = "帝国军官头盔"
+	desc = "一顶钢制帝国头盔"
 	icon_state = "tes13_imperial_officer"
 	item_state = "tes13_imperial_officer"
 	body_parts_covered = HEAD
@@ -2350,8 +2350,8 @@ obj/item/clothing/head/helmet/samurai/black
 
 
 /obj/item/clothing/under/tes13/stormcloak/ulfirc
-	name = "Ulfric Stormcloak's clothes"
-	desc = "A suit of blue fine clothing over some trousers"
+	name = "乌弗瑞克·风暴斗篷的衣服"
+	desc = "一套蓝色精美服装搭配长裤"
 	icon_state = "ulfric"
 	item_state = "ulfric"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -2361,8 +2361,8 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 200
 
 /obj/item/clothing/under/tes13/imperial/bolgruf
-	name = "Jarl Bolgruf's clothes"
-	desc = "A suit of fine clothing over some trousers"
+	name = "领主巴尔古夫的衣服"
+	desc = "一套精美服装搭配长裤"
 	icon_state = "bolgruf"
 	item_state = "bolgruf"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
@@ -2372,16 +2372,16 @@ obj/item/clothing/head/helmet/samurai/black
 	health = 200
 /////////////tes13 civilian/////////////////////////
 /obj/item/clothing/suit/storage/coat/tes13/fine_clothing
-	name = "fine clothing"
-	desc = "A fine fur jacket and shirt, for the better off people."
+	name = "精美服装"
+	desc = "一件精美的毛皮夹克和衬衫,供较为富裕的人穿着."
 	icon_state = "fine_clothes"
 	item_state = "fine_clothes"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	health = 60
 
 /obj/item/clothing/suit/storage/coat/tes13/fine_clothing/blue
-	name = "fine clothing"
-	desc = "A fine fur jacket and shirt, for the better off people. This one is blue"
+	name = "精美服装"
+	desc = "一件精美的毛皮夹克和衬衫,供较为富裕的人穿着.这件是蓝色的"
 	icon_state = "fine_clothes2"
 	item_state = "fine_clothes2"
 	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS

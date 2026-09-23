@@ -11,8 +11,8 @@
  */
 
 /obj/structure/morgue
-	name = "morgue"
-	desc = "Used to keep bodies in until someone fetches them."
+	name = "太平间"
+	desc = "用于存放尸体,直到有人来取走."
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "morgue1"
 	dir = EAST
@@ -127,8 +127,8 @@
  * Morgue tray
  */
 /obj/structure/m_tray
-	name = "morgue tray"
-	desc = "Apply corpse before closing."
+	name = "太平间托盘"
+	desc = "关闭前放入尸体."
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "morguet"
 	density = TRUE
@@ -168,7 +168,7 @@
 	if (user != O)
 		for (var/mob/B in viewers(user, 3))
 			if ((B.client && !( B.blinded )))
-				to_chat(B, "<span class='warning'>\The [user] stuffs [O] into [src]!</span>")
+				to_chat(B, "<span class='warning'>\The [user]把[O]塞进了[src]!</span>")
 	return
 
 //////////////
@@ -176,8 +176,8 @@
 //////////////
 
 /obj/structure/cremator
-	name = "cremator"
-	desc = "An incinerator designed for cremating human corpses."
+	name = "火化炉"
+	desc = "一台用于火化人类尸体的焚化炉."
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "crema1"
 	density = TRUE
@@ -229,7 +229,7 @@
 
 /obj/structure/cremator/attack_hand(mob/user as mob)
 	if (cremating)
-		to_chat(usr, "<span class='warning'>It's locked.</span>")
+		to_chat(usr, "<span class='warning'>它被锁上了.</span>")
 		return
 	if ((src.connected) && (src.locked == FALSE))
 		for (var/atom/movable/A as mob|obj in src.connected.loc)
@@ -317,7 +317,7 @@
 					L.emote("scream")
 			if(M.stat == DEAD)
 				admin_attack_log(A, M, "Cremated their victim.", "Was cremated.", "cremated alive")
-				M.audible_message("[M]'s screams cease, as does any movement within the [src]. All that remains is a dull, empty silence.")
+				M.audible_message("[M]的尖叫声停止了,[src]内的任何动静也停止了. 剩下的只有沉闷而空洞的寂静.")
 				qdel(M)
 		for (var/obj/O in contents) //obj instead of obj/item so that bodybags and ashes get destroyed. We dont want tons and tons of ash piling up
 			qdel(O)
@@ -334,8 +334,8 @@
  */
 
 /obj/structure/c_tray
-	name = "cremator tray"
-	desc = "Apply body before burning."
+	name = "火化炉托盘"
+	desc = "焚烧前放入尸体."
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "cremat"
 	density = TRUE
@@ -378,8 +378,8 @@
 //Cremator button//
 
 /obj/structure/button/cremator
-	name = "cremator igniter"
-	desc = "Burn baby burn!"
+	name = "火化炉点火器"
+	desc = "烧吧宝贝烧吧!"
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "crema_switch"
 	anchored = TRUE
@@ -395,8 +395,8 @@
 	..()
 
 /obj/structure/autopsy_table
-	name = "autopsy table"
-	desc = "A stationary table designed to hold cadavers during autopsy procedures."
+	name = "尸检台"
+	desc = "一张用于在尸检过程中固定尸体的固定台."
 	icon = 'icons/obj/morgue.dmi'
 	icon_state = "autopsy_table"
 	anchored = TRUE

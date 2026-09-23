@@ -1,6 +1,6 @@
 /obj/item/weapon/prosthesis
-	name = "prosthesis"
-	desc = "Used to replace missing limbs."
+	name = "假肢"
+	desc = "用于替换缺失的肢体."
 	icon = 'icons/mob/human_races/masks/prosthesis.dmi'
 	icon_state = "pegleg"
 	force = WEAPON_FORCE_NORMAL
@@ -13,15 +13,15 @@
 	flags = FALSE
 
 /obj/item/weapon/prosthesis/pegleg
-	name = "wooden pegleg"
-	desc = "A simple wood pegleg, used to replace a missing leg."
+	name = "木制假腿"
+	desc = "一个简单的木制假腿,用于替换缺失的腿."
 	icon_state = "pegleg"
 	limb_type = "leg"
 	flammable = TRUE
 
 /obj/item/weapon/prosthesis/woodfoot
-	name = "wooden foot"
-	desc = "A simple wood shoe, used to replace a missing foot."
+	name = "木制假脚"
+	desc = "一个简单的木制鞋,用于替换缺失的脚."
 	icon_state = "woodfoot"
 	limb_type = "foot"
 	flammable = TRUE
@@ -31,7 +31,7 @@
 		return ..()
 
 	if (user.getStatCoeff("medical") < 1.5)
-		to_chat(user, "Your medical skill is too low for a such complicated procedure!")
+		to_chat(user, "你的医疗技能太低,无法进行如此复杂的手术!")
 		return
 	
 	var/mod = 1
@@ -41,16 +41,16 @@
 		if ("leg")
 			var/obj/item/organ/external/GR = C.get_organ("groin")
 			if (GR.is_stump())
-				to_chat(user, "The whole lower body is missing! You have nowhere to attach \the [src] to!")
+				to_chat(user, "整个下半身都缺失了!你没有地方可以连接\the [src]!")
 				return
 			var/obj/item/organ/external/LL = C.get_organ("l_leg")
 			var/obj/item/organ/external/RL = C.get_organ("r_leg")
 			if ((LL && LL.is_stump() && LL.prosthesis == FALSE || !LL))
-				visible_message("[user] starts to attatch \the [src] to [C]'s left leg stump...","You start attaching \the [src] to [C]'s left leg stump...")
+				visible_message("[user]开始将\the [src]连接到[C]的左腿残端...","你开始将\the [src]连接到[C]的左腿残端...")
 				if (do_after(user, 150*user.getStatCoeff("medical"), C))
 					if (!LL)
 						return
-					visible_message("[user] finishes attaching \the [src] to [C]'s left leg stump.","You finish attaching \the [src] to [C]'s left leg stump.")
+					visible_message("[user]完成了将\the [src]连接到[C]的左腿残端.","你完成了将\the [src]连接到[C]的左腿残端.")
 					LL.prosthesis = TRUE
 					LL.prosthesis_type = icon_state
 					C.update_mutations(1)
@@ -58,9 +58,9 @@
 					qdel(src)
 				return
 			else if ((RL && RL.is_stump() && RL.prosthesis == FALSE || !RL))
-				visible_message("[user] starts to attatch \the [src] to [C]'s right leg stump...","You start attaching \the [src] to [C]'s right leg stump...")
+				visible_message("[user]开始将\the [src]连接到[C]的右腿残端...","你开始将\the [src]连接到[C]的右腿残端...")
 				if (do_after(user, 150*user.getStatCoeff("medical"), C))
-					visible_message("[user] finishes attaching \the [src] to [C]'s right leg stump.","You finish attaching \the [src] to [C]'s right leg stump.")
+					visible_message("[user]完成了将\the [src]连接到[C]的右腿残端.","你完成了将\the [src]连接到[C]的右腿残端.")
 					RL.prosthesis = TRUE
 					RL.prosthesis_type = icon_state
 					C.update_mutations(1)
@@ -72,15 +72,15 @@
 			var/obj/item/organ/external/RL = C.get_organ("r_leg")
 			if ((RL && RL.is_stump() && RL.prosthesis == FALSE) || !RL)
 				if ((LL && LL.is_stump() && LL.prosthesis == FALSE) || !LL)
-					to_chat(user, "Both legs are missing! There is nowhere to attach the [src]!")
+					to_chat(user, "双腿都缺失了!没有地方可以连接[src]!")
 					return
 
 			var/obj/item/organ/external/LF = C.get_organ("l_foot")
 			var/obj/item/organ/external/RF = C.get_organ("r_foot")
 			if (LF && LF.is_stump() && LF.prosthesis == FALSE && !LL.is_stump())
-				visible_message("[user] starts to attatch \the [src] to [C]'s left foot stump...","You start attaching \the [src] to [C]'s left foot stump...")
+				visible_message("[user]开始将\the [src]连接到[C]的左脚残端...","你开始将\the [src]连接到[C]的左脚残端...")
 				if (do_after(user, 130*user.getStatCoeff("medical"), C))
-					visible_message("[user] finishes attaching \the [src] to [C]'s left foot stump.","You finish attaching \the [src] to [C]'s left foot stump.")
+					visible_message("[user]完成了将\the [src]连接到[C]的左脚残端.","你完成了将\the [src]连接到[C]的左脚残端.")
 					LF.prosthesis = TRUE
 					LF.prosthesis_type = icon_state
 					C.update_mutations(1)
@@ -88,9 +88,9 @@
 					qdel(src)
 				return
 			else if (RF && RF.is_stump() && RF.prosthesis == FALSE && !RL.is_stump())
-				visible_message("[user] starts to attatch \the [src] to [C]'s right foot stump...","You start attaching \the [src] to [C]'s right foot stump...")
+				visible_message("[user]开始将\the [src]连接到[C]的右脚残端...","你开始将\the [src]连接到[C]的右脚残端...")
 				if (do_after(user, 130*user.getStatCoeff("medical"), C))
-					visible_message("[user] finishes attaching \the [src] to [C]'s right foot stump.","You finish attaching \the [src] to [C]'s right foot stump.")
+					visible_message("[user]完成了将\the [src]连接到[C]的右脚残端.","你完成了将\the [src]连接到[C]的右脚残端.")
 					RF.prosthesis = TRUE
 					RF.prosthesis_type = icon_state
 					C.update_mutations(1)

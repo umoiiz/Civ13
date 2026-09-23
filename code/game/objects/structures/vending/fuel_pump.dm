@@ -1,8 +1,8 @@
 
 ////////////////////////FUEL PUMP//////////////////////////////////
 /obj/structure/fuelpump
-	name = "fuel pump"
-	desc = "A fuel pump. You need to pay to use it."
+	name = "加油泵"
+	desc = "一个燃油泵. 你需要付费才能使用."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "oilpump1"
 	flammable = FALSE
@@ -26,7 +26,7 @@
 		return ..(proj, def_zone)
 	if (vol >= 10)
 		if (prob(20))
-			visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+			visible_message("<span class = 'warning'>\The [src] 爆炸了!</span>")
 			explosion(loc, 1, 2, 2, 0)
 			qdel(src)
 		else
@@ -34,7 +34,7 @@
 	return TRUE
 
 /obj/structure/fuelpump/premade
-	name = "fuel pump"
+	name = "燃油泵"
 	price = 3
 	owner = "Global"
 	var/brand = "UngOil"
@@ -117,19 +117,19 @@
 			user << browse(dat, "window=fuelpump_confirm;size=350x200")
 			return
 		else
-			to_chat(user, "You lock the pump, finishing the transaction.")
+			to_chat(user, "你锁上了油泵, 完成了交易.")
 			unlocked = 0
 			unlockedvol = 0
 			return
 	else
-		to_chat(user, "Put money on the pump to use it.")
+		to_chat(user, "把钞票放到油泵上才能使用.")
 		return
 
 /obj/structure/fuelpump/attackby(obj/item/weapon/W as obj, mob/user as mob)
 
 	if (istype(W, /obj/item/stack/money))
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		var/obj/item/stack/money/MN = W
 		var/valp = MN.amount*MN.value
@@ -145,16 +145,16 @@
 			user << browse(dat, "window=fuelpump_buy;size=350x200")
 			return
 		else
-			to_chat(user, "<span class = 'notice'>The fuelpump doesn't have that much fuel inside! Try with a smaller amount. This pump has [vol] units of [fueltype] inside.</span>")
+			to_chat(user, "<span class = 'notice'>燃油泵里没有那么多燃料! 试试更少的量. 这个泵里有 [vol] 单位的 [fueltype].</span>")
 
 	else if (istype(W, /obj/item/weapon/reagent_containers/glass))
 		var/obj/item/weapon/reagent_containers/glass/GC = W
 		if (fueltype == "none")
-			to_chat(user, "This fuel pump has no associated fuel type.")
+			to_chat(user, "这个燃油泵没有关联的燃料类型.")
 			return
 		if (unlocked && unlockedvol<=0)
 			unlockedvol = 0
-			to_chat(user, "All the paid for fuel has been used. Finish the transaction.")
+			to_chat(user, "所有已付费的燃料都已用完. 完成交易.")
 			updatedesc()
 			return
 		if (unlocked && unlockedvol>0)
@@ -162,7 +162,7 @@
 			if (unlockedvol <= avvol)
 				vol -= unlockedvol
 				GC.reagents.add_reagent(fueltype,unlockedvol)
-				to_chat(user, "You fill the [GC] with all the purchased [fueltype].")
+				to_chat(user, "你将 [GC] 装满了所有购买的 [fueltype].")
 				unlockedvol = 0
 				updatedesc()
 				return
@@ -170,7 +170,7 @@
 				unlockedvol -= avvol
 				vol -= avvol
 				GC.reagents.add_reagent(fueltype,avvol)
-				to_chat(user, "You fill the [GC] completely. There are [unlockedvol] units remanining in the pump.")
+				to_chat(user, "你将 [GC] 完全装满. 泵里还剩下 [unlockedvol] 单位.")
 				updatedesc()
 				return
 
@@ -180,21 +180,21 @@
 					if (GC.reagents.get_reagent_amount(fueltype)<= maxvol-vol)
 						vol += (GC.reagents.get_reagent_amount(fueltype))
 						GC.reagents.del_reagent(fueltype)
-						to_chat(user, "You empty \the [W] into \the [src].")
+						to_chat(user, "你将 \the [W] 倒入 \the [src].")
 						updatedesc()
 						return
 					else
 						var/amttransf = maxvol-vol
 						vol += amttransf
 						GC.reagents.remove_reagent(fueltype,amttransf)
-						to_chat(user, "You fill \the [src] completly with \the [W].")
+						to_chat(user, "你将 \the [src] 完全装满 \the [W].")
 						updatedesc()
 						return
 				else
-					to_chat(user, "\The [W] has no [fueltype] in it.")
+					to_chat(user, "\The [W] 里没有 [fueltype].")
 					return
 			else
-				to_chat(user, "\The [src] is already full.")
+				to_chat(user, "\The [src] 已经满了.")
 				return
 	else
 		..()
@@ -213,11 +213,11 @@
 
 	if (find_company_member(user, owner))
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		show_manage_ui(user)
 	else
-		to_chat(user, "<span class = 'notice'>You are not part of [owner]!</span>")
+		to_chat(user, "<span class = 'notice'>你不属于 [owner]!</span>")
 		return
 
 /obj/structure/fuelpump/proc/show_manage_ui(mob/user)
@@ -260,10 +260,10 @@ function changePrice() {
 		else if (istype(user.r_hand, /obj/item/stack/money))
 			MN = user.r_hand
 		if (!MN)
-			to_chat(user, "You no longer have the money in your hand.")
+			to_chat(user, "你手里已经没有钱了.")
 			return
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		var/valp = MN.amount*MN.value
 		if (price > 0 && (valp/price) <= vol)
@@ -271,11 +271,11 @@ function changePrice() {
 			storedval += MN
 			MN.forceMove(locate(0,0,0))
 			unlockedvol = (valp/price)
-			to_chat(user, "<span class = 'notice'>You can now withdraw [unlockedvol] units of [fueltype] from this pump.</span>")
+			to_chat(user, "<span class = 'notice'>你现在可以从这个泵中提取 [unlockedvol] 单位的 [fueltype].</span>")
 			unlocked = 1
 			return
 		else
-			to_chat(user, "<span class = 'notice'>The fuelpump doesn't have that much fuel inside! Try with a smaller amount.</span>")
+			to_chat(user, "<span class = 'notice'>燃油泵里没有那么多燃料! 试试更少的量.</span>")
 			return
 
 	if (href_list["action"] == "buy_no")
@@ -300,7 +300,7 @@ function changePrice() {
 
 	if (href_list["action"] == "change_name_direct")
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		var/custn = input(user, "Choose a name for this pump:") as text|null
 		if (custn == "" || custn == null)
@@ -312,7 +312,7 @@ function changePrice() {
 
 	if (href_list["action"] == "change_name")
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		var/custn = href_list["name"]
 		if (custn && custn != "")
@@ -323,10 +323,10 @@ function changePrice() {
 
 	if (href_list["action"] == "change_fuel")
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		if (vol > 0)
-			to_chat(user, "<span class = 'notice'>The [src] still has fuel inside! Empty it before changing!</span>")
+			to_chat(user, "<span class = 'notice'>[src] 里面还有燃料! 更换前先清空它!</span>")
 			return
 		var/dat = {"<html><head>
 [common_browser_style]
@@ -353,7 +353,7 @@ function changePrice() {
 
 	if (href_list["action"] == "change_price_direct")
 		if (unlocked)
-			to_chat(user, "The pump is being used! Finish it first.")
+			to_chat(user, "油泵正在被使用! 先完成它.")
 			return
 		var/custp = input(user, "What should the price be, in silver coins? (Min: 0, Max: 50):") as num|null
 		if (!isnum(custp))

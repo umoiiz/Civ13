@@ -1,6 +1,6 @@
 /obj/item/weapon/swatter
-	name = "bug swatter"
-	desc = "A wood handle with animal fur on top. To get rid of those pesky bugs."
+	name = "苍蝇拍"
+	desc = "一个木制手柄,顶部有动物毛皮。用来消灭那些讨厌的虫子。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "swatter"
 	item_state = "swatter"
@@ -11,8 +11,8 @@
 	throw_range = 9
 
 /obj/item/weapon/swatter/modern
-	name = "bug swatter"
-	desc = "A metal handle with a plastic swatting end. To get rid of those pesky bugs."
+	name = "苍蝇拍"
+	desc = "一个金属手柄,带有塑料拍打端。用来消灭那些讨厌的虫子。"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "swatter_modern"
 	item_state = "swatter_modern"

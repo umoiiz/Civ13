@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/briefcase
-	name = "briefcase"
-	desc = "It's made of AUTHENTIC faux-leather and has a price-tag still attached. Its owner must be a real professional."
+	name = "公文包"
+	desc = "它由正宗的人造皮革制成, 上面还挂着价格标签. 它的主人一定是个真正的专业人士."
 	icon_state = "briefcase"
 	item_state = "briefcase"
 	flags = CONDUCT

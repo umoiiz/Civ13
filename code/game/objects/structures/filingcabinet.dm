@@ -10,8 +10,8 @@
  * Filing Cabinets
  */
 /obj/structure/filingcabinet
-	name = "filing cabinet"
-	desc = "A large cabinet with drawers."
+	name = "档案柜"
+	desc = "一个带抽屉的大柜子."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "filingcabinet"
 	density = TRUE
@@ -21,7 +21,7 @@
 	not_disassemblable = TRUE
 
 /obj/structure/filingcabinet/chestdrawer
-	name = "chest drawer"
+	name = "箱子抽屉"
 	icon_state = "chestdrawer"
 
 
@@ -37,7 +37,7 @@
 
 /obj/structure/filingcabinet/attackby(obj/item/P as obj, mob/user as mob)
 	if (istype(P, /obj/item/weapon/paper) || istype(P, /obj/item/weapon/paper_bundle) || istype(P, /obj/item/weapon/folder))
-		to_chat(user, "<span class='notice'>You put [P] in [src].</span>")
+		to_chat(user, "<span class='notice'>你把[P]放进了[src].</span>")
 		user.drop_item()
 		P.loc = src
 		icon_state = "[initial(icon_state)]-open"
@@ -47,14 +47,14 @@
 	else if (istype(P, /obj/item/weapon/wrench))
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
 		anchored = !anchored
-		to_chat(user, "<span class='notice'>You [anchored ? "wrench" : "unwrench"] \the [src].</span>")
+		to_chat(user, "<span class='notice'>你[anchored ? "wrench" : "unwrench"]\the [src].</span>")
 	else
-		to_chat(user, "<span class='notice'>You can't put [P] in [src]!</span>")
+		to_chat(user, "<span class='notice'>你不能把[P]放进[src]!</span>")
 
 
 /obj/structure/filingcabinet/attack_hand(mob/user as mob)
 	if (contents.len <= 0)
-		to_chat(user, "<span class='notice'>\The [src] is empty.</span>")
+		to_chat(user, "<span class='notice'>\The [src]是空的.</span>")
 		return
 
 	user.set_using_object(src)

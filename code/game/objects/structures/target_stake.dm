@@ -1,7 +1,7 @@
 // Practice target/dummy for training character skills.
 /obj/structure/practice_dummy
-	name = "practice dummy"
-	desc = "A wood platform, covered in straw. Used for training both melee and ranged weapons."
+	name = "训练假人"
+	desc = "一个覆盖着稻草的木制平台.用于训练近战和远程武器."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_dummy"
 	var/target_type = "dummy"
@@ -36,19 +36,19 @@
 	//If the user is holding dummy armor, equips the dummy(not target) with it and increases it's health.
 	if (istype(W, /obj/item/weapon/dummy_armor))
 		if(src.humanoid)
-			visible_message("<span class='notice'>[user] put [W] on \the [src]!</span>","<span class='notice'>You put [W] on \the [src]!</span>")
+			visible_message("<span class='notice'>[user]把[W]放到了\the [src]上!</span>","<span class='notice'>你把[W]放到了\the [src]上!</span>")
 			src.icon_state = icon_state + "_armor"
 			src.health += 200
 			qdel(W)
 		else
-			to_chat(user, "<span class='notice'>That doesn't fit on [src]</span>")
+			to_chat(user, "<span class='notice'>那个放不到[src]上</span>")
 	//Flavor text when hitting the dummy with weapons.
 	if (istype(W, /obj/item/weapon/material))
 		user.setClickCooldown(W.cooldownw)
 		if (W.attack_verb.len)
-			visible_message("<span class='notice'>[user] [pick(W.attack_verb)] \the [src] with \the [W]!</span>","<span class='notice'>You have [pick(W.attack_verb)] \the [src] with \the [W]!</span>")
+			visible_message("<span class='notice'>[user][pick(W.attack_verb)]\the [src]用\the [W]!</span>","<span class='notice'>你用\the [W][pick(W.attack_verb)]\the [src]了!</span>")
 		else
-			visible_message("<span class='notice'>[user] hit \the [src] with \the [W]!</span>","<span class='notice'>You have hit \the [src] with \the [W]!</span>")
+			visible_message("<span class='notice'>[user]用\the [W]击中了\the [src]!</span>","<span class='notice'>你用\the [W]击中了\the [src]!</span>")
 
 		playsound(get_turf(src), W.hitsound, 100)
 		user.do_attack_animation(src)
@@ -72,9 +72,9 @@
 	if (user.a_intent == I_HARM)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if (prob(67))
-			visible_message("<span class='notice'>[user] punches \the [src]!</span>","<span class='notice'>You punch \the [src]!</span>")
+			visible_message("<span class='notice'>[user]用拳头打了\the [src]!</span>","<span class='notice'>你用拳头打了\the [src]!</span>")
 		else
-			visible_message("<span class='notice'>[user] kicks \the [src]!</span>","<span class='notice'>You kick \the [src]!</span>")
+			visible_message("<span class='notice'>[user]踢了\the [src]!</span>","<span class='notice'>你踢了\the [src]!</span>")
 		playsound(get_turf(src), pick('sound/weapons/punch1.ogg','sound/weapons/punch2.ogg','sound/weapons/punch3.ogg'), 100)
 		user.do_attack_animation(src)
 		health -= 2
@@ -111,8 +111,8 @@
 					if (GUN_TYPE_BOW)
 						if(ranged)
 							H.adaptStat("bows", 1)
-		visible_message("<span class='notice'>[H] hits \the [src] with \the [proj]!</span>","<span class='notice'>You hit \the [src] with \the [proj]!</span>")
-		to_chat(H, "<font size=4><b>You hit the target!</b></font>")
+		visible_message("<span class='notice'>[H]用\the [proj]击中了\the [src]!</span>","<span class='notice'>你用\the [proj]击中了\the [src]!</span>")
+		to_chat(H, "<font size=4><b>你击中了目标!</b></font>")
 		//If the user shoots at a target, check if it's an arrow or a bolt and have a chance of dropping the arrow/bolt.
 		if(istype(src, /obj/structure/practice_dummy/target))
 			if (istype(proj, /obj/item/projectile/arrow/arrow))
@@ -135,9 +135,9 @@
 						new/obj/item/ammo_casing/arrow/modern(src.loc)
 					else
 						new/obj/item/ammo_casing/arrow(src.loc)
-					visible_message("<span class = 'warning'>The arrow falls to the ground!</span>")
+					visible_message("<span class = 'warning'>箭矢掉到了地上!</span>")
 				else
-					visible_message("<span class = 'warning'>The arrow shatters!</span>")
+					visible_message("<span class = 'warning'>箭矢碎裂了!</span>")
 			else if (istype(proj, /obj/item/projectile/arrow/bolt))
 				if(prob(75))
 					if(istype(proj, /obj/item/projectile/arrow/bolt/stone))
@@ -158,9 +158,9 @@
 						new/obj/item/ammo_casing/bolt/modern(src.loc)
 					else
 						new/obj/item/ammo_casing/bolt(src.loc)
-					visible_message("<span class = 'warning'>The bolt falls to the ground!</span>")
+					visible_message("<span class = 'warning'>弩矢掉到了地上!</span>")
 				else
-					visible_message("<span class = 'warning'>The bolt shatters!</span>")
+					visible_message("<span class = 'warning'>弩矢碎裂了!</span>")
 	else
 		spawn (0.01)
 		qdel(proj)
@@ -169,7 +169,7 @@
 //Checks the dummy health, if it drops to 0 or below, turns it into a wreckage.
 /obj/structure/practice_dummy/proc/check_health()
 	if (health <= 0)
-		visible_message("<span class='notice'>The training [target_type] is broken apart!</span>")
+		visible_message("<span class='notice'>训练用[target_type]被击碎了!</span>")
 		var/obj/structure/practice_dummy/wreckage/JUNK = new /obj/structure/practice_dummy/wreckage(src.loc)
 		JUNK.target_type = src.target_type //Determines what it was before turning into wreckage and stores it in the variable.
 		JUNK.name = "[target_type] wreckage"
@@ -181,14 +181,14 @@
 
 //Explosion result!
 /obj/structure/practice_dummy/ex_act()
-	visible_message("\The [src] blows up!")
+	visible_message("\The [src]爆炸了!")
 	qdel(src)
 	return
 
 //Dummy armor that can be equipped on the training dummy to increase health.
 /obj/item/weapon/dummy_armor
-	name = "dummy armor"
-	desc = "A set of preadjusted cheap armor, to extend the life of a training dummy."
+	name = "假人护甲"
+	desc = "一套预先调整好的廉价护甲,用于延长训练假人的使用寿命."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "dummy_armor"
 	w_class = ITEM_SIZE_NORMAL
@@ -198,8 +198,8 @@
 
 //Wreckage object created when a dummy/target is destroyed.
 /obj/structure/practice_dummy/wreckage/
-	name = "dummy wreckage"
-	desc = "The wreckage of a training dummy. Can be fixed with wood."
+	name = "假人残骸"
+	desc = "训练假人的残骸.可以用木材修复."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_dummy_wreckage"
 	target_type = "dummy"
@@ -221,9 +221,9 @@
 	var/mob/living/human/H = user
 	if(istype(W, /obj/item/stack/material/wood))
 		if(W.amount >= 3)
-			visible_message("<span class='danger'>[user] starts repairing the dummy..</span>")
+			visible_message("<span class='danger'>[user]开始修理假人..</span>")
 			if(do_after(H, (60 / H.getStatCoeff("crafting")), H.loc))
-				visible_message("<span class='danger'>[user] finishes repairing the dummy.</span>")
+				visible_message("<span class='danger'>[user]完成了假人的修理.</span>")
 				W.amount -= 3
 				if(W.amount <= 0)
 					qdel(W)
@@ -237,8 +237,8 @@
 
 //Works like a practice dummy, but only for ranged training, cannot improve health.
 /obj/structure/practice_dummy/target
-	name = "practice target"
-	desc = "A wood target, covered in straw. Used for training ranged weapons."
+	name = "训练靶"
+	desc = "一个木制靶子,上面覆盖着稻草.用于训练远程武器."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_dummy_target"
 	target_type = "target"
@@ -259,8 +259,8 @@
 	icon_state = "target_dummy_target"
 
 /obj/structure/practice_dummy/target/human
-	name = "practice target"
-	desc = "A cardboard target. Used for training ranged weapons."
+	name = "练习靶"
+	desc = "一个纸板靶子.用于训练远程武器."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_h"
 /obj/structure/practice_dummy/target/human/New()

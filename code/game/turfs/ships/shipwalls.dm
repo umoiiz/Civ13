@@ -1,12 +1,12 @@
 /obj/structure/window/barrier/ship
-	name = "wall"
-	desc = "A thin wood ship wall."
+	name = "墙"
+	desc = "一面薄木船墙."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	dismantlable = FALSE
 
 /obj/structure/barricade/ship
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
 	icon_state = "boat1"
 	material_name = "wood"
@@ -31,7 +31,7 @@
 	return
 /obj/effect/decal/cleanable/debris
 	name = "ship debris"
-	desc = "Bits and pieces blown off a ship."
+	desc = "从船上吹落的碎片."
 	density = FALSE
 	anchored = TRUE
 	icon = 'icons/obj/vehicles/vehicleparts_boats.dmi'
@@ -68,7 +68,7 @@
 			proj.throw_source = proj.starting
 
 			if (ishuman(proj.firer) && (proj.firer.lying || proj.firer.prone))
-				visible_message("<span class = 'warning'>[mover] hits \the [src]!</span>")
+				visible_message("<span class = 'warning'>[mover]击中了\the [src]!</span>")
 				if (istype(mover, /obj/item/projectile))
 					var/obj/item/projectile/B = mover
 					if (B.atype == "chainshot")
@@ -108,7 +108,7 @@
 						return TRUE
 
 			if (check_cover(mover, mover.throw_source) && prob(bullet_deflection_chance(mover)))
-				visible_message("<span class = 'warning'>[mover] hits \the [src]!</span>")
+				visible_message("<span class = 'warning'>[mover]击中了\the [src]!</span>")
 				if (istype(mover, /obj/item/projectile))
 					var/obj/item/projectile/B = mover
 					B.damage = 0 // make sure we can't hurt people after hitting a sandbag
@@ -165,151 +165,151 @@
 
 
 /obj/structure/barricade/ship/wall1
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon_state = "boat1_a"
 	opacity = FALSE
 /obj/structure/barricade/ship/wall2
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon_state = "boat2"
 
 /obj/structure/barricade/ship/wall2/doorway
-	name = "doorway"
-	desc = "A wooden ship doorway."
+	name = "门口"
+	desc = "一个木船门口."
 	icon_state = "boat2_doorway"
 	density = FALSE
 	opacity = FALSE
 
 
 /obj/structure/barricade/ship/blue
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b1"
 
 /obj/structure/barricade/ship/blue/b1
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b1"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b2
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b2"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b3
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b3"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b4
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b4"
 /obj/structure/barricade/ship/blue/b5
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b5"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b6
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b6"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b7
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b7"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b8
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b8"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b9
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "一面木船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b9"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b10
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b10"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b11
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b11"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b12
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b12"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b13
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b13"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b14
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b14"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b15
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b15"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b16
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b16"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b17
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b17"
 /obj/structure/barricade/ship/blue/b18
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b18"
 	opacity = TRUE
 /obj/structure/barricade/ship/blue/b19
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b19"
 
 /obj/structure/barricade/ship/blue/b20
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b20"
 	opacity = TRUE
 
 /obj/structure/window/barrier/ship/blue/bport0
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port0"
 	opacity = FALSE
@@ -319,43 +319,43 @@
 	dir = SOUTH
 
 /obj/structure/window/barrier/ship/blue/bport9
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port9"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport5
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port5"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport5
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port5"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport_north
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port_1"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport_10
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port_10"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport_6
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port_6"
 	opacity = FALSE
@@ -370,15 +370,15 @@
 	icon_state = "boat_b_port9-2"
 
 /obj/structure/window/barrier/ship/blue/bport1
-	name = "holed wall"
-	desc = "A thin wood ship wall, with a lower part to fire through."
+	name = "带孔墙"
+	desc = "薄木船墙,下半部分可用于射击."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port1"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/blue/bport3
-	name = "crenelated wall"
-	desc = "A thin wood ship wall, with a lower part to fire through."
+	name = "垛口墙"
+	desc = "薄木船墙,下半部分可用于射击."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_port3"
 	opacity = FALSE
@@ -388,98 +388,98 @@
 	dir = SOUTH
 
 /obj/structure/barricade/ship/blue/bwest
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_west"
 	opacity = FALSE
 	dir = NORTH
 
 /obj/structure/barricade/ship/blue/bwest2
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_west2"
 	opacity = FALSE
 
 /obj/structure/barricade/ship/blue/beast
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_east"
 	opacity = FALSE
 
 /obj/structure/barricade/ship/blue/beast2
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon = 'icons/turf/boat_b.dmi'
 	icon_state = "boat_b_east2"
 	opacity = FALSE
 
 /obj/structure/barricade/ship/wood
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a1"
 	opacity = TRUE
 
 
 /obj/structure/barricade/ship/wood/a1
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a1"
 /obj/structure/barricade/ship/wood/a2
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a2"
 /obj/structure/barricade/ship/wood/a3
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a3"
 /obj/structure/barricade/ship/wood/a4
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a4"
 /obj/structure/barricade/ship/wood/a5
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a5"
 /obj/structure/barricade/ship/wood/a6
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a6"
 /obj/structure/barricade/ship/wood/a7
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a7"
 /obj/structure/barricade/ship/wood/a8
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a8"
 /obj/structure/barricade/ship/wood/a9
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a9"
 /obj/structure/barricade/ship/wood/a10
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a10"
 /obj/structure/barricade/ship/wood/a11
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a11"
 /obj/structure/barricade/ship/wood/a12
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a12"
 
 /obj/structure/barricade/ship/wood/a12
-	name = "wall"
-	desc = "A wooden ship wall."
+	name = "墙"
+	desc = "木制船墙."
 	icon_state = "boat_a12"
 
 /obj/structure/window/barrier/ship/wood/port0
-	name = "wall"
-	desc = "A thin wood ship wall."
+	name = "墙"
+	desc = "一面薄木船墙."
 	icon_state = "boat_port0"
 	opacity = FALSE
 	dir = NORTH
@@ -492,35 +492,35 @@
 	dir = SOUTH
 
 /obj/structure/window/barrier/ship/wood/portl1
-	name = "wall"
-	desc = "A thin wood ship wall."
+	name = "墙"
+	desc = "一面薄木船墙."
 	icon_state = "boat_portl1"
 	opacity = FALSE
 	dir = EAST
 
 /obj/structure/window/barrier/ship/wood/portl2
-	name = "wall"
-	desc = "A thin wood ship wall."
+	name = "墙"
+	desc = "一面薄木船墙."
 	icon_state = "boat_portl2"
 	opacity = FALSE
 	dir = WEST
 
 /obj/structure/window/barrier/ship/wood/portl3
-	name = "wall"
-	desc = "A thin wood ship wall."
+	name = "墙"
+	desc = "一面薄木船墙."
 	icon_state = "boat_portl3"
 	opacity = FALSE
 
 /obj/structure/window/barrier/ship/wood/port1
-	name = "holed wall"
-	desc = "A thin wood ship wall, with a hole to fire through."
+	name = "带孔墙"
+	desc = "一面薄木船墙,带有一个可供射击的孔."
 	icon_state = "boat_port1"
 	opacity = FALSE
 	dir = NORTH
 
 /obj/structure/window/barrier/ship/wood/port2
-	name = "crenelated wall"
-	desc = "A thin wood ship wall, with a lower part to fire through."
+	name = "垛口墙"
+	desc = "一面薄木船墙,下半部分可供射击."
 	icon_state = "boat_port2"
 	density = FALSE
 	opacity = FALSE
@@ -534,8 +534,8 @@
 
 
 /obj/structure/barricade/ship/aport0
-	name = "closed cannon port"
-	desc = "A port used to fire cannons out of. This one is closed."
+	name = "关闭的炮门"
+	desc = "用于向外开炮的炮门.这个是关闭的."
 	icon_state = "boat1_port0"
 	opacity = TRUE
 	protection_chance = 100
@@ -548,7 +548,7 @@
 		..()
 		if (open)
 			if (do_after(H, 35, src))
-				to_chat(H, "You close the port.")
+				to_chat(H, "你关闭了炮门.")
 				open = FALSE
 				opacity = TRUE
 				protection_chance = 100
@@ -557,7 +557,7 @@
 
 		else
 			if (do_after(H, 35, src))
-				to_chat(H, "You open the port.")
+				to_chat(H, "你打开了炮门.")
 				open = TRUE
 				opacity = FALSE
 				protection_chance = 60
@@ -577,7 +577,7 @@
 			return
 		if (open)
 			if (do_after(usr, 35, src))
-				to_chat(usr, "You close the port.")
+				to_chat(usr, "你关闭了炮门.")
 				open = FALSE
 				opacity = TRUE
 				protection_chance = 100
@@ -586,7 +586,7 @@
 
 		else
 			if (do_after(usr, 35, src))
-				to_chat(usr, "You open the port.")
+				to_chat(usr, "你打开了炮门.")
 				open = TRUE
 				opacity = FALSE
 				protection_chance = 60
@@ -601,32 +601,32 @@
 		else
 			icon_state = "boat1_port0_up"
 /obj/structure/barricade/ship/aport1
-	name = "open cannon port"
-	desc = "A port used to fire cannons out of. This one is open."
+	name = "打开的炮门"
+	desc = "用于向外开炮的炮门.这个是打开的."
 	icon_state = "boat1_port1"
 	opacity = FALSE
 	protection_chance = 30
 	ispartial = TRUE
 
 /obj/structure/barricade/ship/aport1/north
-	name = "open cannon port"
-	desc = "A port used to fire cannons out of. This one is open."
+	name = "打开的炮门"
+	desc = "用于向外开炮的炮门.这个是打开的."
 	icon_state = "boat1_port1_up"
 	opacity = FALSE
 	protection_chance = 30
 	ispartial = TRUE
 
 /obj/structure/barricade/ship/aport2
-	name = "open cannon port"
-	desc = "A port used to fire cannons out of. This one is open and has a cannon poking out."
+	name = "打开的炮门"
+	desc = "用于向外开炮的炮门.这个是打开的,并且有一门炮伸了出来."
 	icon_state = "boat1_port2"
 	opacity = FALSE
 	protection_chance = 45
 	ispartial = TRUE
 
 /obj/structure/barricade/ship/cport0
-	name = "closed cannon port"
-	desc = "A port used to fire cannons out of. This one is closed."
+	name = "关闭的炮门"
+	desc = "用于向外开炮的炮门.这个是关闭的."
 	icon_state = "boat2_port0"
 	opacity = TRUE
 	protection_chance = 60
@@ -634,16 +634,16 @@
 	density = TRUE
 
 /obj/structure/barricade/ship/cport1
-	name = "open cannon port"
-	desc = "A port used to fire cannons out of. This one is open."
+	name = "打开的炮门"
+	desc = "用于向外开炮的炮门.这个是打开的."
 	icon_state = "boat2_port1"
 	opacity = FALSE
 	protection_chance = 30
 	ispartial = TRUE
 
 /obj/structure/barricade/ship/cport2
-	name = "open cannon port"
-	desc = "A port used to fire cannons out of. This one is open and has a cannon poking out."
+	name = "打开的炮门"
+	desc = "用于向外开炮的炮门.这个是打开的,并且有一门炮伸了出来."
 	icon_state = "boat2_port2"
 	opacity = FALSE
 	protection_chance = 45
@@ -652,7 +652,7 @@
 /obj/structure/barricade/ship/ex_act(severity)
 	switch(severity)
 		if (1.0)
-			visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+			visible_message("<span class='danger'>\The [src] 被炸碎了!</span>")
 			for(var/obj/structure/barricade/ship/mast/large/L in range(3,src))
 				L.sailhealth -= 5
 				L.rigginghealth -= 5
@@ -665,7 +665,7 @@
 		if (2.0)
 			health -= (200 + round(maxhealth * 0.30))
 			if (health <= 0)
-				visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+				visible_message("<span class='danger'>\The [src] 被炸碎了!</span>")
 				for(var/obj/structure/barricade/ship/mast/large/L in range(3,src))
 					L.sailhealth -= rand(2,3)
 					L.rigginghealth -= rand(2,3)
@@ -678,7 +678,7 @@
 		if (3.0)
 			health -= (100 + round(maxhealth * 0.10))
 			if (health <= 0)
-				visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+				visible_message("<span class='danger'>\The [src] 被炸碎了!</span>")
 				for(var/obj/structure/barricade/ship/mast/large/L in range(3,src))
 					L.sailhealth -= rand(1,2)
 					L.rigginghealth -= rand(1,2)
@@ -690,8 +690,8 @@
 			return
 
 /obj/structure/barricade/ship/mast
-	name = "mast"
-	desc = "A wooden ship mast."
+	name = "桅杆"
+	desc = "木制船桅."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "wood_mast"
 	protection_chance = 60
@@ -728,20 +728,20 @@
 			sailstat_t = "Reduced Sail"
 		else if (sailstat <= 0)
 			sailstat_t = "Retracted"
-		to_chat(user, "Sails: <b>[sailstat_t]</b>")
-		to_chat(user, "Sail Status: <b>[sailhealth]%</b>")
-		to_chat(user, "Rigging Status: <b>[rigginghealth]%</b>")
+		to_chat(user, "船帆: <b>[sailstat_t]</b>")
+		to_chat(user, "船帆状态: <b>[sailhealth]%</b>")
+		to_chat(user, "索具状态: <b>[rigginghealth]%</b>")
 
 	attackby(obj/item/I, mob/living/human/H)
 		if (istype(I, /obj/item/stack/material))
 			var/obj/item/stack/material/M = I
 			if (istype(I,/obj/item/stack/material/cloth))
 				if (sailhealth < 100)
-					to_chat(H, "You start patching the sails...")
+					to_chat(H, "你开始修补船帆...")
 					if(do_after(H,30,src))
 						if(M.amount >= 1)
 							M.amount--
-							to_chat(H, "You repair one of the holes.")
+							to_chat(H, "你修补了其中一个破洞.")
 							if (M.amount <= 0)
 								qdel(M)
 							sailhealth+=2
@@ -750,11 +750,11 @@
 
 			else if (istype(I,/obj/item/stack/material/rope))
 				if (rigginghealth < 100)
-					to_chat(H, "You start replacing the damaged riggings...")
+					to_chat(H, "你开始更换损坏的索具...")
 					if(do_after(H,30,src))
 						if(M.amount >= 1)
 							M.amount--
-							to_chat(H, "You fix one of the ropes.")
+							to_chat(H, "你修好了其中一根绳索.")
 							if (M.amount <= 0)
 								qdel(M)
 							rigginghealth+=2
@@ -762,10 +762,10 @@
 								rigginghealth = 100
 			else if (istype(I,/obj/item/stack/material/wood))
 				if (upgrade_mast < 500)
-					to_chat(H, "You start upgrading the mast")
+					to_chat(H, "你开始升级桅杆")
 					if(do_after(H,30,src))
 						if(M.amount >= 1)
-							to_chat(H, "You add some upgrades to the mast")
+							to_chat(H, "你为桅杆添加了一些升级")
 							if (M.amount <= 0)
 								qdel(M)
 							upgrade_mast+= M.amount

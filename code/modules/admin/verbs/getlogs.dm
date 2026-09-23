@@ -21,12 +21,12 @@
 	set category = null
 
 	if (!holder)
-		to_chat(src, "<font color='red'>Only Admins may use this command.</font>")
+		to_chat(src, "<font color='red'>只有管理员可以使用此命令.</font>")
 		return
 	var/path = "civ13.log"
 	message_admins("[key_name_admin(src)] accessed file: [path]", key_name_admin(src))
 	src << run( file(path) )
-	to_chat(src,"Attempting to send file, this may take a fair few minutes if the file is very large.")
+	to_chat(src,"正在尝试发送文件, 如果文件非常大, 这可能需要几分钟.")
 	return
 
 
@@ -46,7 +46,7 @@
 
 	message_admins("[key_name_admin(src)] accessed file: [path]", key_name_admin(src))
 	src << run( file(path) )
-	to_chat(src, "Attempting to send file, this may take a fair few minutes if the file is very large.")
+	to_chat(src, "正在尝试发送文件, 如果文件非常大, 这可能需要几分钟.")
 	return
 
 

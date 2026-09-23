@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/launcher/grenade
-	name = "grenade launcher"
-	desc = "A bulky pump-action grenade launcher. Holds up to 6 grenades in a revolving magazine."
+	name = "榴弹发射器"
+	desc = "一把笨重的泵动式榴弹发射器. 转轮弹仓最多可容纳6发榴弹."
 	icon_state = "grenade_launcher"
 	item_state = "grenade_launcher"
 	w_class = ITEM_SIZE_HUGE
@@ -38,7 +38,7 @@
 
 /obj/item/weapon/gun/launcher/grenade/examine(mob/user)
 	if (..(user, 2))
-		to_chat(user, "Has [grenades.len] grenade\s remaining.")
+		to_chat(user, "剩余[grenades.len]发榴弹\s .")
 
 /obj/item/weapon/gun/launcher/grenade/proc/load(obj/item/weapon/grenade/G, mob/user)
 	if (!can_load_grenade_type(G, user))
@@ -89,7 +89,7 @@
 
 /obj/item/weapon/gun/launcher/grenade/proc/can_load_grenade_type(obj/item/weapon/grenade/G, mob/user)
 	if (is_type_in_list(G, blacklisted_grenades) && ! is_type_in_list(G, whitelisted_grenades))
-		to_chat(user, "<span class='warning'>\The [G] doesn't seem to fit in \the [src]!</span>")
+		to_chat(user, "<span class='warning'>\The [G]似乎装不进\the [src]!</span>")
 		return FALSE
 	return TRUE
 
@@ -109,8 +109,8 @@
 
 //Underslung grenade launcher to be used with the Z8
 /obj/item/weapon/gun/launcher/grenade/underslung
-	name = "underslung grenade launcher"
-	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
+	name = "下挂式榴弹发射器"
+	desc = "不过是一根管子加一个发射机构, 这款榴弹发射器设计用于安装在步枪上."
 	icon = 'icons/obj/gun_att.dmi'
 	icon_state = "grenade_launcher"
 	w_class = ITEM_SIZE_NORMAL
@@ -150,10 +150,10 @@
 //////////////////////////// underslug and launcher ////////////////////////////
 
 /obj/item/weapon/gun/launcher/grenade/underslung/m203
-	name = "M203 grenade launcher"
+	name = "M203 榴弹发射器"
 	release_force = 2
 	firing_range = 40
-	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
+	desc = "不过是一根管子加一个发射机构, 这款榴弹发射器设计用于安装在步枪上."
 	mount = "m203_mount"
 	whitelisted_grenades = list(
 		/obj/item/weapon/grenade/frag/ugl/shell40mm,
@@ -170,10 +170,10 @@
 		)
 
 /obj/item/weapon/gun/launcher/grenade/underslung/gp25
-	name = "GP-25 'Koster' grenade launcher"
+	name = "GP-25 '科斯特' 榴弹发射器"
 	release_force = 2
 	firing_range = 40
-	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
+	desc = "不过是一根管子加一个发射机构, 这款榴弹发射器设计用于安装在步枪上."
 	mount = "gp25_mount"
 	whitelisted_grenades = list(
 		/obj/item/weapon/grenade/frag/ugl/vog25,
@@ -190,8 +190,8 @@
 
 //Grenade Launcher
 /obj/item/weapon/gun/launcher/grenade/standalone
-	name = "Standalone Grenade Launcher"
-	desc = "A generic standalone grenade launcher"
+	name = "独立榴弹发射器"
+	desc = "一把通用的独立榴弹发射器"
 	icon_state = "hk69"
 	item_state = "hk69"
 	w_class = ITEM_SIZE_LARGE
@@ -258,9 +258,9 @@
 			update_icon()
 			playsound(src, 'sound/weapons/guns/interact/launcher_empty.ogg', 50, 1)
 		else
-			to_chat(user, "<span class='warning'>\The [src] is empty.</span>")
+			to_chat(user, "<span class='warning'>\The [src]是空的.</span>")
 	else
-		to_chat(user, "<span class='warning'>\The [src] is closed.</span>")
+		to_chat(user, "<span class='warning'>\The [src]已关闭.</span>")
 
 /obj/item/weapon/gun/launcher/grenade/standalone/proc/toggle_cover(mob/user)
 	cover_opened = !cover_opened
@@ -283,8 +283,8 @@
 
 
 /obj/item/weapon/gun/launcher/grenade/standalone/hk69
-	name = "HK69A1 grenade launcher"
-	desc = "A German made multi-use 40mm grenade launcher."
+	name = "HK69A1 榴弹发射器"
+	desc = "德国制造的多用途40毫米榴弹发射器."
 	icon_state = "hk69"
 	item_state = "hk69"
 	whitelisted_grenades = list(
@@ -301,8 +301,8 @@
 		)
 
 /obj/item/weapon/gun/launcher/grenade/standalone/m79
-	name = "M79 Grenade Launcher"
-	desc = "An American multi-use 40mm grenade launcher."
+	name = "M79榴弹发射器"
+	desc = "美国制造的多用途40毫米榴弹发射器."
 	icon_state = "m79"
 	item_state = "m79"
 	whitelisted_grenades = list(
@@ -319,8 +319,8 @@
 		)
 
 /obj/item/weapon/gun/launcher/grenade/standalone/admin
-	name = "Grenade Launcher"
-	desc = "By the power of gods you can launch any grenade!"
+	name = "榴弹发射器"
+	desc = "以神之力,你可以发射任何榴弹!"
 	icon_state = "m79"
 	item_state = "m79"
 	whitelisted_grenades = list(

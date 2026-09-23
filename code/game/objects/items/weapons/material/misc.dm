@@ -1,10 +1,10 @@
 /obj/item/weapon/material
 	var/chopping_speed = 5
 /obj/item/weapon/material/harpoon
-	name = "harpoon"
+	name = "鱼叉"
 	sharp = TRUE
 	edge = TRUE
-	desc = "Good for whale hunting."
+	desc = "适合捕鲸."
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "harpoon"
 	item_state = "harpoon"
@@ -20,14 +20,14 @@
 	cooldownw = 7
 
 /obj/item/weapon/material/harpoon/iron
-	name = "iron harpoon"
+	name = "铁鱼叉"
 	default_material = "iron"
 
 /obj/item/weapon/material/handle
-	name = "handle"
+	name = "手柄"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A basic stick with a slot on top to attach something. Can be made into a veriety of weapons and tools."
+	desc = "一根顶部带有插槽用于连接物品的基础棍子.可以制成各种武器和工具."
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "handle"
 	item_state = "spear"
@@ -42,10 +42,10 @@
 	cooldownw = 7
 
 /obj/item/weapon/material/trowel
-	name = "planting trowel"
+	name = "种植铲"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A short spade used for gardening activities like emptying or filling plant-pots."
+	desc = "一种用于园艺活动的短铲,例如清空或填充花盆."
 	icon_state = "trowel"
 	item_state = "trowel"
 	default_material = "iron"
@@ -58,10 +58,10 @@
 
 
 /obj/item/weapon/material/bust
-	name = "bust"
+	name = "半身像"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A stone bust of a person"
+	desc = "一尊人物石雕半身像"
 	icon_state = "bust"
 	item_state = "bust"
 	default_material = "stone"
@@ -76,10 +76,10 @@
 	cooldownw = 7
 
 /obj/item/weapon/material/hippocratic
-	name = "bust of hippocrates"
+	name = "希波克拉底半身像"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A stone bust of hippocrates"
+	desc = "一尊希波克拉底石雕半身像"
 	icon_state = "hippocratic"
 	item_state = "hippocratic"
 	default_material = "stone"
@@ -94,10 +94,10 @@
 	cooldownw = 7
 
 /obj/item/weapon/material/marx
-	name = "bronze bust of karl marx"
+	name = "卡尔·马克思青铜半身像"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A bronze bust of karl marx"
+	desc = "一尊卡尔·马克思青铜半身像"
 	icon_state = "marx"
 	item_state = "marx"
 	default_material = "bronze"
@@ -113,10 +113,10 @@
 
 
 /obj/item/weapon/material/pitchfork
-	name = "pitchfork"
+	name = "干草叉"
 	sharp = TRUE
 	edge = FALSE
-	desc = "It's used for removing weeds or scratching your back."
+	desc = "用于除草或挠背."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "rake"
 	item_state = "rake"
@@ -129,10 +129,10 @@
 
 /turf/floor/grass/attackby(obj/item/C as obj, mob/user as mob)
 	if (istype(C, /obj/item/weapon/material/pitchfork))
-		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "You hear something being uprooted.")
+		user.visible_message(SPAN_NOTICE("[user] starts to remove the grass layer."), SPAN_NOTICE("[user] starts to remove the grass layer."), "你听到某物被连根拔起.")
 		if (!do_after(user, (C.cooldownw * C.force)))
 			return
-		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "You hear something being removed.")
+		user.visible_message(SPAN_NOTICE("[user] removes the grass layer."), SPAN_NOTICE("[user] removes the grass layer."), "你听到某物被移除.")
 		var/area/AREA = get_area(src)
 		if(map.ID == MAP_NOMADS_DESERT)
 			ChangeTurf(/turf/floor/dirt/dust)
@@ -144,17 +144,17 @@
 /obj/structure/wild/attackby(obj/item/C as obj, mob/user as mob)
 	if (istype(src, /obj/structure/wild/junglebush) || istype(src, /obj/structure/wild/smallbush/) || istype(src, /obj/structure/wild/burnedbush/) || istype(src, /obj/structure/wild/tallgrass2) || istype(src, /obj/structure/wild/tallgrass) || istype(src, /obj/structure/wild/flowers) || istype(src, /obj/structure/wild/bush/big) || istype(src, /obj/structure/wild/bush))
 		if (istype(C, /obj/item/weapon/material/pitchfork))
-			user.visible_message(SPAN_NOTICE("[user] starts to uproot the [src]."), SPAN_NOTICE("[user] starts to uproot the [src]."), "You hear something being uprooted.")
+			user.visible_message(SPAN_NOTICE("[user] starts to uproot the [src]."), SPAN_NOTICE("[user] starts to uproot the [src]."), "你听到某物被连根拔起.")
 			if (!do_after(user, (C.cooldownw * C.force)))
 				return
-			user.visible_message(SPAN_NOTICE("[user] uproots the [src]."), SPAN_NOTICE("[user] uproots the [src]."), "You hear something being uprooted.")
+			user.visible_message(SPAN_NOTICE("[user] uproots the [src]."), SPAN_NOTICE("[user] uproots the [src]."), "你听到某物被连根拔起.")
 			qdel(src)
 	..()
 /obj/item/weapon/material/spear
-	name = "spear"
+	name = "长矛"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A crude, yet effective weapon."
+	desc = "一种粗糙但有效的武器."
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "spear"
 	item_state = "spear"
@@ -170,13 +170,13 @@
 	cooldownw = 9
 
 /obj/item/weapon/material/spear/iron
-	name = "iron spear"
+	name = "铁长矛"
 	default_material = "iron"
 /obj/item/weapon/material/spear/attack(atom/A, mob/living/user, def_zone)
 	..()
 	if (isliving(A) && prob(33))
 		var/mob/living/TARGETMOB = A
-		visible_message("<span class = 'danger'>[TARGETMOB] is pushed back!")
+		visible_message("<span class = 'danger'>[TARGETMOB]被击退了!")
 		for (var/obj/structure/noose/N in get_turf(TARGETMOB))
 			if (N.hanging == TARGETMOB)
 				return
@@ -194,7 +194,7 @@
 							slammed_into = S
 							break
 				if (slammed_into.density)
-					visible_message("<span class = 'danger'>[TARGETMOB] is pushed back into \the [slammed_into]!</span>")
+					visible_message("<span class = 'danger'>[TARGETMOB]被击退进了\the [slammed_into]!</span>")
 					TARGETMOB.adjustBruteLoss(rand(3,6))
 					for (var/obj/structure/window/W in get_turf(slammed_into))
 						W.shatter()
@@ -218,8 +218,8 @@
 				return
 
 /obj/item/weapon/material/spear/assagai
-	name = "assagai spear"
-	desc = "A long hafted wood spear with a finely sharpened iron point; rewnown for being the weapon of choice of zulu warriors."
+	name = "阿萨盖长矛"
+	desc = "一柄长木杆长矛,配有精磨锋利的铁尖;因作为祖鲁战士的首选武器而闻名."
 	icon_state = "assagai"
 	item_state = "assagai"
 	force_divisor = 0.8 // 32 with hardness 40 (wood)
@@ -227,8 +227,8 @@
 
 //New batons
 /obj/item/weapon/material/classic_baton
-	name = "baton"
-	desc = "A wooden truncheon for beating criminal scum."
+	name = "警棍"
+	desc = "一根用于殴打罪犯渣滓的木制短棍."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "baton"
 	item_state = "classic_baton"
@@ -250,15 +250,15 @@
 
 
 /obj/item/weapon/material/classic_baton/guard
-	desc = "A Heavy wooden truncheon for beating criminal scum this one is made of harder wood material."
+	desc = "一根用于殴打罪犯渣滓的重型木制短棍,这根由更硬的木材制成."
 	default_material = "hardwood"
 	force_divisor = 1
 	block_chance = 27
 	cooldownw = 8
 
 /obj/item/weapon/material/classic_baton/nightstick
-	name = "Nightstick"
-	desc = "A police officers nightstick used to keep the streets clean."
+	name = "夜棍"
+	desc = "警员用来保持街道清洁的夜棍."
 	default_material = "hardwood"
 	icon_state = "nightbaton"
 	item_state = "nightbaton"
@@ -267,15 +267,15 @@
 	cooldownw = 8
 
 /obj/item/weapon/material/classic_baton/guard/metal
-	desc = "A Heavy metal truncheon for beating criminal scum this one is made of iron and likely to injure someone quckily aim anywhere but the head!."
+	desc = "一根用于殴打罪犯渣滓的重型金属短棍,这根由铁制成,很可能迅速致人受伤,瞄准除头部以外的任何地方!"
 	default_material = "iron"
 	force_divisor = 1
 	block_chance = 27
 	cooldownw = 10
 
 /obj/item/weapon/material/classic_baton/blackjack
-	name = "Blackjack"
-	desc = "A Heavy leather wrapped truncheon with a hefty lead weight in the tip for makeing scum comply."
+	name = "铅头棍"
+	desc = "一根用厚重皮革包裹的短棍,尖端带有沉重的铅块,用于让渣滓服从."
 	icon_state = "blackjack"
 	item_state = "blackjack"
 	default_material = "leather"
@@ -286,10 +286,10 @@
 
 
 /obj/item/weapon/material/quarterstaff
-	name = "quarterstaff"
+	name = "长棍"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A simple wood staff, doesn't do too much damage but its fast at blocking and hitting"
+	desc = "一根简单的木棍,伤害不高,但格挡和打击速度很快"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "quarterstaff"
 	item_state = "quarterstaff"
@@ -305,10 +305,10 @@
 	cooldownw = 6
 
 /obj/item/weapon/material/fancycane
-	name = "black cane"
+	name = "黑色手杖"
 	sharp = FALSE
 	edge = FALSE
-	desc = "A fancy cane used to walk with. This one looks quite expensive."
+	desc = "一根用于行走的花哨手杖.这根看起来相当昂贵."
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "fancycane"
 	item_state = "woodcane1"
@@ -324,10 +324,10 @@
 	applies_material_colour = FALSE
 
 /obj/item/weapon/material/naginata
-	name = "naginata"
+	name = "薙刀"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A wood staff with a blade on the end, good for impaling those who insult your lord."
+	desc = "一根末端带刃的木杆,适合刺穿那些侮辱你领主的人."
 	slot_flags = SLOT_SHOULDER
 	icon_state = "naginata"
 	item_state = "naginata"
@@ -350,8 +350,8 @@
 	cooldownw = 6
 
 /obj/item/weapon/material/hatchet
-	name = "hatchet"
-	desc = "A very sharp axe blade upon a short wood handle. It has a long history of chopping things. This one is intended for chopping wood."
+	name = "短柄斧"
+	desc = "一柄装在短木柄上的非常锋利的斧刃.它有着悠久的劈砍历史.这把用于劈柴."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hatchet"
 	force_divisor = 0.5 // 30 with hardness 60 (steel)
@@ -387,8 +387,8 @@
 	default_material = "bronze"
 
 /obj/item/weapon/material/machete
-	name = "machete"
-	desc = "A small sized machete used by wood cutters."
+	name = "砍刀"
+	desc = "一把伐木工使用的小型砍刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "machete"
 	force_divisor = 0.7 // 30 with hardness 60 (steel)
@@ -408,8 +408,8 @@
 	maxhealth = 15
 
 /obj/item/weapon/material/machete1
-	name = "machete"
-	desc = "A small sized machete used by wood cutters."
+	name = "砍刀"
+	desc = "一把伐木工使用的小型砍刀."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "machete1"
 	force_divisor = 0.7 // 30 with hardness 60 (steel)
@@ -427,8 +427,8 @@
 	chopping_speed = 1.6
 
 /obj/item/weapon/material/hatchet/tribal
-	name = "hatchet"
-	desc = "A crude hatchet, made with wood and stone."
+	name = "短柄斧"
+	desc = "一把粗糙的短柄斧,由木头和石头制成."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalaxe"
 	material = "stone"
@@ -447,7 +447,7 @@
 /obj/item/weapon/material/hatchet/tribal/bone
 	material = "bone"
 	default_material = "stone"
-	desc = "A crude hatchet, made with wood and bone."
+	desc = "一把粗糙的短柄斧,由木头和骨头制成."
 	icon_state = "bonehatchet"
 	item_state = "bonehatchet"
 	chopping_speed = 4
@@ -456,15 +456,15 @@
 
 /obj/item/weapon/material/hatchet/tribal/flint
 	material = "flint"
-	desc = "A very crude hatchet, made with wood and flint."
+	desc = "一把非常粗糙的短柄斧,由木头和燧石制成."
 	icon = 'icons/obj/old_weapons.dmi'
 	icon_state = "flint_axe"
 	item_state = "flinthatchet"
 	chopping_speed = 3.5
 
 /obj/item/weapon/material/boarding_axe
-	name = "boarding axe"
-	desc = "A short axe, useful for breaking wood and boarding enemy ships."
+	name = "登船斧"
+	desc = "一把短斧,可用于劈开木头和登上敌船."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "combat_axe"
 	default_material = "steel"
@@ -482,8 +482,8 @@
 	chopping_speed = 2.7
 
 /obj/item/weapon/material/minihoe // -- Numbers
-	name = "mini hoe"
-	desc = "It's used for removing weeds or scratching your back."
+	name = "小锄头"
+	desc = "用于除草或挠背。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "hoe"
 	item_state = "hoe"
@@ -495,8 +495,8 @@
 
 /obj/item/weapon/material/scythe
 	icon_state = "scythe0"
-	name = "scythe"
-	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
+	name = "镰刀"
+	desc = "长纤维金属柄上的锋利弯刃,让你轻松收割所种之物。"
 	force_divisor = 0.275 // 16 with hardness 60 (steel)
 	thrown_force_divisor = 0.25 // 5 with weight 20 (steel)
 	sharp = TRUE
@@ -510,8 +510,8 @@
 
 /obj/item/weapon/material/scythe/old
 	icon_state = "scythe"
-	name = "scythe"
-	desc = "A sharp and curved blade on a long wooden handle, this tool makes it easy to reap what you sow."
+	name = "镰刀"
+	desc = "长木柄上的锋利弯刃,让你轻松收割所种之物。"
 	force_divisor = 0.275 // 16 with hardness 60 (steel)
 	thrown_force_divisor = 0.25 // 5 with weight 20 (steel)
 	sharp = TRUE
@@ -524,10 +524,10 @@
 	cooldownw = 5
 
 /obj/item/weapon/material/pilum
-	name = "pilum"
+	name = "重标枪"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A 2-meter long javelin with an iron tip, used by the Roman Army."
+	desc = "一柄2米长、带铁尖的标枪,罗马军队使用。"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "pilum"
 	item_state = "pilum"
@@ -549,10 +549,10 @@
 	desc = "A meter long short spear that can be used as a hand launched missle or for close combat." */
 
 /obj/item/weapon/material/roman_standard
-	name = "roman standard"
+	name = "罗马军旗"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A standard of a roman legion, with the aquila on top."
+	desc = "罗马军团的军旗,顶端饰有鹰徽。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "roman_standard"
 	item_state = "roman_standard"
@@ -572,10 +572,10 @@
 	name = "roman standard"
 
 /obj/item/weapon/material/greek_standard
-	name = "greek standard"
+	name = "希腊军旗"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A standard of the hellenic armies. It is laquered in red carrying red feathers."
+	desc = "希腊军队的军旗。涂有红漆,饰有红色羽毛。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "greek_standard"
 	item_state = "greek_standard"
@@ -595,10 +595,10 @@
 	name = "greek standard"
 
 /obj/item/weapon/material/egyptian_standard
-	name = "egyptian standard"
+	name = "埃及军旗"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A standard of the phaoroic armies with a mighty lion in gold attached upon it."
+	desc = "法老军队的军旗,上面附有一头威武的金狮。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "egyptian_standard"
 	item_state = "egyptian_standard"
@@ -618,10 +618,10 @@
 	name = "egyptian standard"
 
 /obj/item/weapon/material/spear/dory
-	name = "dory"
+	name = "长矛"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A 2 meter long spear, used by soldiers of the Hellenic culture."
+	desc = "一柄2米长的矛,希腊文化士兵使用。"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "dory"
 	item_state = "dory"
@@ -637,14 +637,14 @@
 	cooldownw = 10
 
 /obj/item/weapon/material/spear/dory/bronze
-	name = "bronze spear"
+	name = "青铜矛"
 	default_material = "bronze"
 
 /obj/item/weapon/material/spear/sarissa
-	name = "sarissa"
+	name = "萨里沙长矛"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A 5 meter long spear, used by phalanx soldiers."
+	desc = "一柄5米长的矛,方阵士兵使用。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "sarissa"
 	item_state = "sarissa"
@@ -666,11 +666,11 @@
 	if (do_after(user, 15, src, can_move = TRUE))
 		if (deployed)
 			deployed = FALSE
-			to_chat(user, "<span class='notice'>You lift your [name] up, falling out of formation.</span>")
+			to_chat(user, "<span class='notice'>你举起你的[name],脱离阵型。</span>")
 			return
 		else
 			deployed = TRUE
-			to_chat(user, "<span class='notice'>You turn your [name] down, forming a spear wall!</span>")
+			to_chat(user, "<span class='notice'>你放下你的[name],组成矛墙!</span>")
 			update_icon()
 			check_dmg()
 			return
@@ -707,7 +707,7 @@
 									slammed_into = S
 									break
 						if (slammed_into.density)
-							visible_message("<span class = 'danger'>[TARGETMOB] is pushed back into \the [slammed_into]!</span>")
+							visible_message("<span class = 'danger'>[TARGETMOB]被推回\the [slammed_into]!</span>")
 							TARGETMOB.adjustBruteLoss(rand(3,6))
 							for (var/obj/structure/window/W in get_turf(slammed_into))
 								W.shatter()
@@ -742,7 +742,7 @@
 									slammed_into = S
 									break
 						if (slammed_into.density)
-							visible_message("<span class = 'danger'>[TARGETMOB] is pushed back into \the [slammed_into]!</span>")
+							visible_message("<span class = 'danger'>[TARGETMOB]被推回\the [slammed_into]!</span>")
 							TARGETMOB.adjustBruteLoss(rand(3,6))
 							for (var/obj/structure/window/W in get_turf(slammed_into))
 								W.shatter()
@@ -795,16 +795,16 @@
 			update_icon()
 
 /obj/item/weapon/material/spear/sarissa/bronze
-	name = "bronze spear"
+	name = "青铜矛"
 	default_material = "bronze"
 
 /obj/item/weapon/material/spear/sarissa/dja
-	name = "bronze dja"
+	name = "青铜弯刀"
 	default_material = "bronze"
 
 /obj/item/weapon/material/spear/sarissa/pike
-	name = "pike"
-	desc = "A long spear."
+	name = "长枪"
+	desc = "一柄长矛。"
 	slot_flags = SLOT_SHOULDER
 //	icon_state = "pike"
 //	item_state = "pike"
@@ -824,10 +824,10 @@
 	block_chance = 21
 
 /obj/item/weapon/material/spear/naginata
-	name = "naginata"
+	name = "薙刀"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A wood staff with a blade on the end, good for impaling those who insult your lord."
+	desc = "木杆末端带刃,适合刺穿那些侮辱你领主的人。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "naginata"
 	item_state = "naginata"
@@ -850,10 +850,10 @@
 	cooldownw = 6
 
 /obj/item/weapon/material/halberd
-	name = "halberd"
+	name = "戟"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A spear topped by an axe blade."
+	desc = "顶端装有斧刃的长矛。"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "halberd"
 	item_state = "halberd"
@@ -873,10 +873,10 @@
 	value = 20
 
 /obj/item/weapon/material/spear/halberd
-	name = "halberd"
+	name = "戟"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A spear topped by an axe blade."
+	desc = "顶端装有斧刃的长矛。"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "halberd"
 	item_state = "halberd"
@@ -896,10 +896,10 @@
 	value = 20
 
 /obj/item/weapon/material/pike
-	name = "pike"
+	name = "长枪"
 	sharp = TRUE
 	edge = TRUE
-	desc = "A long spear."
+	desc = "一柄长矛。"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "pike"
 	item_state = "pike"
@@ -922,8 +922,8 @@
 	maxhealth = 30
 
 /obj/item/weapon/material/hatchet/battleaxe
-	name = "battle axe"
-	desc = "A very sharp axe blade upon a long wood handle. Great at chopping most things."
+	name = "战斧"
+	desc = "长木柄上非常锋利的斧刃。劈砍大多数东西都很在行。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "battleaxe"
 	item_state = "battleaxe"
@@ -961,9 +961,9 @@
 	applies_material_colour = TRUE
 
 /obj/item/weapon/material/hatchet/bone_battleaxe
-	name = "battle axe"
+	name = "战斧"
 	material = "bone"
-	desc = "A very sharp bone axe blade upon a long wood handle. Not great at chopping wood but excellent at chopping limbs."
+	desc = "长木柄上非常锋利的骨斧刃。劈木头不太行,但砍肢体非常出色。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "bone_battleaxe"
 	item_state = "bone_battleaxe"
@@ -990,13 +990,13 @@
 	chopping_speed = 1.9
 	health = 25
 	maxhealth = 25
-	desc = "A very sharp stone axe blade upon a long wood handle. Not great at chopping wood but excellent at chopping limbs."
+	desc = "长木柄上非常锋利的石斧刃。劈木头不太行,但砍肢体非常出色。"
 
 /obj/item/weapon/material/scepter
-	name = "scepter" // corrects to gold scepter because of the default_material
+	name = "权杖" // corrects to gold scepter because of the default_material
 	sharp = FALSE
 	edge = FALSE
-	desc = "An old golden staff, doesn't do too much damage but its fast at blocking and hitting"
+	desc = "一根古老的金杖,伤害不高,但格挡和打击速度很快"
 	slot_flags = SLOT_SHOULDER | SLOT_BELT
 	icon_state = "scepter"
 	item_state = "scepter"
@@ -1012,8 +1012,8 @@
 	cooldownw = 5
 
 /obj/item/weapon/lungemine
-	name = "lunge mine"
-	desc = "A long pole with an anti tank mine at the end, results in the users death."
+	name = "刺雷"
+	desc = "一根长杆末端装有反坦克地雷,使用后使用者会死亡。"
 	slot_flags = SLOT_SHOULDER
 	icon_state = "lungemine"
 	item_state = "lungemine"
@@ -1036,51 +1036,51 @@
 			if ("left")
 				if (w_left[5] > 0)
 					w_left[5] -= heavy_armor_penetration
-					visible_message("<span class = 'danger'><big>The left hull gets damaged!</big></span>")
+					visible_message("<span class = 'danger'><big>左侧船体受损!</big></span>")
 			if ("right")
 				if (w_right[5] > 0)
 					w_right[5] -= heavy_armor_penetration
-					visible_message("<span class = 'danger'><big>The right hull gets damaged!</big></span>")
+					visible_message("<span class = 'danger'><big>右侧船体受损!</big></span>")
 			if ("front")
 				if (w_front[5] > 0)
 					w_front[5] -= heavy_armor_penetration
-					visible_message("<span class = 'danger'><big>The front hull gets damaged!</big></span>")
+					visible_message("<span class = 'danger'><big>前部船体受损!</big></span>")
 			if ("back")
 				if (w_back[5] > 0)
 					w_back[5] -= heavy_armor_penetration
-					visible_message("<span class = 'danger'><big>The rear hull gets damaged!</big></span>")
+					visible_message("<span class = 'danger'><big>后部船体受损!</big></span>")
 			if ("frontleft")
 				if (w_left[5] > 0 && w_front[5] > 0)
 					if (w_left[4] > w_front[4] && w_left[5]>0)
 						w_left[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The left hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>左侧船体受损!</big></span>")
 					else
 						w_front[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The front hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>前部船体受损!</big></span>")
 			if ("frontright")
 				if (w_right[5] > 0 && w_front[5] > 0)
 					if (w_right[4] > w_front[4] && w_right[5]>0)
 						w_right[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The right hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>右侧船体受损!</big></span>")
 					else
 						w_front[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The front hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>前部船体受损!</big></span>")
 			if ("backleft")
 				if (w_left[5] > 0 && w_back[5] > 0)
 					if (w_left[4] > w_back[4] && w_left[5]>0)
 						w_left[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The left hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>左侧船体受损!</big></span>")
 					else
 						w_back[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The rear hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>后部船体受损!</big></span>")
 			if ("backright")
 				if (w_right[5] > 0 && w_back[5] > 0)
 					if (w_right[4] > w_back[4] && w_right[5]>0)
 						w_right[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The right hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>右侧船体受损!</big></span>")
 					else
 						w_back[5] -= heavy_armor_penetration
-						visible_message("<span class = 'danger'><big>The rear hull gets damaged!</big></span>")
+						visible_message("<span class = 'danger'><big>后部船体受损!</big></span>")
 		if (H)
 			H.awards["tank"]+=(heavy_armor_penetration/200)
 	else
@@ -1088,10 +1088,10 @@
 
 ////////////////////////////////////////SKYRIM//////////////////////////////////////
 /obj/item/weapon/material/tes13/mace
-	name = "mace"
+	name = "钉头锤"
 	sharp = TRUE
 	edge = FALSE
-	desc = "A steel mace, with 5 large spikes on it."
+	desc = "一把钢制钉头锤,上面有5根大尖刺。"
 	slot_flags = SLOT_BELT
 	icon_state = "steel_mace"
 	item_state = "mace"
@@ -1107,8 +1107,8 @@
 	cooldownw = 6
 
 /obj/item/weapon/material/hatchet/battleaxe/tes13
-	name = "war axe"
-	desc = "A very sharp axe blade upon a steel handle. Not pratical for chopping wood, but pratical for chopping limbs."
+	name = "战斧"
+	desc = "钢柄上非常锋利的斧刃。劈木头不实用,但砍肢体很实用。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "waraxe_tes13"
 	item_state = "battleaxe"
@@ -1130,8 +1130,8 @@
 	chopping_speed = 2.5
 
 /obj/item/weapon/material/hatchet/battleaxe/tes13/battleaxe
-	name = "battle axe"
-	desc = "A very sharp double axe blade upon a twohanded steel handle. Not pratical for felling trees but perhaps felling people."
+	name = "战斧"
+	desc = "双手钢柄上非常锋利的双刃斧。砍树不实用,但砍人也许可以。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "battleaxe_tes13"
 	force_divisor = 0.8 // 30 with hardness 60 (steel)
@@ -1143,8 +1143,8 @@
 	chopping_speed = 2.3
 
 /obj/item/weapon/material/hatchet/battleaxe/tes13/ulfric
-	name = "ulfric's war axe"
-	desc = "A very sharp axe blade upon a steel handle. Not pratical for chopping wood, but pratical for chopping limbs. This one belongs to the Jarl of Windhelm, Ulfric Stormcloak."
+	name = "乌弗瑞克战斧"
+	desc = "钢柄上非常锋利的斧刃。劈木头不实用,但砍肢体很实用。这一把属于风盔城领主乌弗瑞克·风暴斗篷。"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "waraxe_tes13"
 	item_state = "battleaxe"

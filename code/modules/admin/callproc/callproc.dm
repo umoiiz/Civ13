@@ -21,10 +21,10 @@
 
 	if (hastarget)
 		if (!target)
-			to_chat(usr, "Your callproc target no longer exists.")
+			to_chat(usr, "你的 callproc 目标已不存在.")
 			return
 		if (!hascall(target, procname))
-			to_chat(usr, "\The [target] has no call [procname]()")
+			to_chat(usr, "\The [target] 没有调用 [procname]()")
 			return
 
 	var/list/arguments = list()
@@ -33,7 +33,7 @@
 
 	while (!done)
 		if (hastarget && !target)
-			to_chat(usr, "Your callproc target no longer exists.")
+			to_chat(usr, "你的 callproc 目标已不存在.")
 			return
 		switch(input("Type of [arguments.len+1]\th variable", "argument [arguments.len+1]") as null|anything in list(
 				"finished", "null", "text", "num", "type", "obj reference", "mob reference",
@@ -103,7 +103,7 @@
 
 	if (hastarget)
 		if (!target)
-			to_chat(usr, "Your callproc target no longer exists.")
+			to_chat(usr, "你的 callproc 目标已不存在.")
 			return
 		var/M = "[key_name(src)] called [target]'s [procname]() with [arguments.len ? "the arguments [list2params(arguments)]" : "no arguments"]."
 		log_admin(M)
@@ -119,5 +119,5 @@
 		returnval = call(procname)(arglist(arguments))
 
 
-	to_chat(usr, "<span class='info'>[procname]() returned: [isnull(returnval) ? "null" : returnval]</span>")
+	to_chat(usr, "<span class='info'>[procname]() 返回: [isnull(returnval) ? "null" : returnval]</span>")
 

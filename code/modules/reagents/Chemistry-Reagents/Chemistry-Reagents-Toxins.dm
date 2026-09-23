@@ -112,7 +112,7 @@
 	if (!M.crab)
 		M.adjustToxLoss(5 * removed)
 		if (prob(30))
-			to_chat(M, "<span class = 'warning'>You feel sick...</span>")
+			to_chat(M, "<span class = 'warning'>你感到恶心...</span>")
 
 /datum/reagent/toxin/cholera
 	name = "Cholera"
@@ -316,7 +316,7 @@
 
 /datum/reagent/slimejelly/affect_blood(var/mob/living/human/M, var/alien, var/removed)
 	if (prob(10))
-		to_chat(M, "<span class='danger'>Your insides are burning!</span>")
+		to_chat(M, "<span class='danger'>你的内脏在燃烧!</span>")
 		M.adjustToxLoss(rand(100, 300) * removed)
 	else if (prob(40))
 		M.heal_organ_damage(25 * removed, FALSE)

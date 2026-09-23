@@ -145,7 +145,7 @@
 			map.default_research = 19
 		map.gamemode = "Persistent (Auto-Research)"
 		config.allow_vote_restart = FALSE
-		to_chat(world, "<big><b>The current round has been set as a Persistent Round.</b></big>")
+		to_chat(world, "<big><b>当前回合已被设为持久回合.</b></big>")
 
 		// Resume from the last completed save for this map, if any. The daily
 		// save+reboot cycle (see start_persistence_loop()) relies on this to
@@ -157,7 +157,7 @@
 					nextsave = world.realtime + 216000 // don't immediately resave what we are about to load
 					spawn(50)
 						if (ticker)
-							to_chat(world, "<big><b>Restoring the world from the last persistent save...</b></big>")
+							to_chat(world, "<big><b>正在从上次持久存档恢复世界...</b></big>")
 							ticker.loadmap()
 				else
 					admin_notice("<span class='danger'>A map save exists but has no completion marker (interrupted save?). Not auto-loading; restore map_saves/ from map_backups/ and use the Load Map verb if needed.</span>", R_DEBUG)

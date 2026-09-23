@@ -53,7 +53,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		to_chat(user, SPAN_NOTICE("the airtight lid seals it completely!"))
 
 /obj/item/weapon/reagent_containers/glass/self_feed_message(var/mob/user)
-	user.visible_message("<span class='notice'>[src] drinks from \the [src].</span>", "<span class='notice'>You swallow a gulp from \the [src].</span>") // Different perspectives from different point of views of the 	clients.
+	user.visible_message("<span class='notice'>[src]从\the [src]中喝了一口.</span>", "<span class='notice'>你从\the [src]中吞下一大口.</span>") // Different perspectives from different point of views of the 	clients.
 
 /obj/item/weapon/reagent_containers/glass/feed_sound(var/mob/user)
 	playsound(user.loc, "drink", rand(10, 50), TRUE)
@@ -63,10 +63,10 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 	if (!(istype(src,/obj/item/weapon/reagent_containers/glass/fire_extinguisher)))
 		if (is_open_container())
 			playsound(src,'sound/effects/Lid_Removal_Bottle_mono.ogg',50,1)
-			user.visible_message("<span class = 'notice'>[usr] puts the lid on \the [src].</span>", "<span class = 'notice'>You put the lid on \the [src].</span>")
+			user.visible_message("<span class = 'notice'>[usr]盖上了\the [src]的盖子.</span>", "<span class = 'notice'>你盖上了\the [src]的盖子.</span>")
 			flags &= ~OPENCONTAINER
 		else
-			user.visible_message("<span class = 'notice'>[usr] takes the lid off \the [src].</span>", "<span class = 'notice'>You take the lid off \the [src].</span>")
+			user.visible_message("<span class = 'notice'>[usr]打开了\the [src]的盖子.</span>", "<span class = 'notice'>你打开了\the [src]的盖子.</span>")
 			flags |= OPENCONTAINER
 	update_icon()
 
@@ -75,13 +75,13 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		if (is_open_container())
 			if (reagents.total_volume)
 				if (user.a_intent == I_HARM)
-					user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [attacked]!</span>", \
+					user.visible_message("<span class='danger'>[user]把[src]中的东西泼到了[attacked]上!</span>", \
 										"<span class='notice'>You splash the contents of [src] onto [attacked].</span>")
 					proper_spill(attacked, reagents.total_volume)
 					return TRUE
 				else if (istype(attacked, /turf/floor/dirt))
 					if (locate(/obj/structure/farming/plant) in attacked)
-						user.visible_message("<span class='notice'>[user] pours the contents of [src] onto [attacked]!</span>", \
+						user.visible_message("<span class='notice'>[user]把[src]中的东西倒到了[attacked]上!</span>", \
 											"<span class='notice'>You pour the contents of [src] onto [attacked].</span>")
 						proper_spill(attacked, amount_per_transfer_from_this)
 					return TRUE
@@ -116,185 +116,185 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/grapes)) //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] smashes the grapes against the container.</span>", "<span class='notice'>You smash the grapes into its juice inside the container.</span>", "<span class='notice'>You hear the sound of something grinding.</span>")
+		user.visible_message("<span class='warning'>[user]把葡萄在容器里捣碎.</span>", "<span class='notice'>你把葡萄在容器里捣碎成汁.</span>", "<span class='notice'>你听到某种研磨的声音.</span>")
 		reagents.add_reagent("grapejuice", 5)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/cinchona)) //liquid transfer? solid??? (error sprite???)
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
-		user.visible_message("<span class='warning'>[user] grinds the cinchona plant against the container.</span>", "<span class='notice'>You grind the cinchona plant into quinine inside the container.</span>", "<span class='notice'>You hear the sound of something grinding.</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
+		user.visible_message("<span class='warning'>[user]把金鸡纳树在容器里研磨.</span>", "<span class='notice'>你把金鸡纳树在容器里研磨成奎宁.</span>", "<span class='notice'>你听到某种研磨的声音.</span>")
 		reagents.add_reagent("quinine", 10)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/olives))  //liquid transfer? solid???
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] grinds the olives against the container.</span>", "<span class='notice'>You grind the olives into an olive oil mixture inside the container.</span>", "<span class='notice'>You hear the sound of something grinding.</span>")
+		user.visible_message("<span class='warning'>[user]把橄榄在容器里研磨.</span>", "<span class='notice'>你把橄榄在容器里研磨成橄榄油混合物.</span>", "<span class='notice'>你听到某种研磨的声音.</span>")
 		reagents.add_reagent("olive_oil", 6)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/juniper))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] crushes the juniper berry against the container.</span>", "<span class='notice'>You crush the juniper berry to extract its juice inside the container.</span>", "<span class='notice'>You hear the sound of something crushing.</span>")
+		user.visible_message("<span class='warning'>[user]把杜松子在容器里碾碎.</span>", "<span class='notice'>你把杜松子在容器里碾碎以提取其汁液.</span>", "<span class='notice'>你听到某种碾碎的声音.</span>")
 		reagents.add_reagent("juniper_juice", 6)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/animalfat))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] smashes and grinds the animal fat inside the container.</span>", "<span class='notice'>You smash and grind the animal fat inside the container into a mixture of lard.</span>", "<span class='notice'>You hear the sound of repetitive grinding and smashing.</span>")
+		user.visible_message("<span class='warning'>[user]把动物脂肪在容器里捣碎并研磨.</span>", "<span class='notice'>你把动物脂肪在容器里捣碎并研磨成猪油混合物.</span>", "<span class='notice'>你听到反复研磨和捣碎的声音.</span>")
 		reagents.add_reagent("lard", 10)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/potato))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
 
-		user.visible_message("<span class='warning'>[user] smashes the potato against the container.</span>", "<span class='notice'>You smash the potato and extract its juice inside the container.</span>", "<span class='notice'>You hear the sound of something smashing.</span>")
+		user.visible_message("<span class='warning'>[user]把土豆在容器里捣碎.</span>", "<span class='notice'>你把土豆在容器里捣碎并提取其汁液.</span>", "<span class='notice'>你听到某种捣碎的声音.</span>")
 		reagents.add_reagent("potato", 5)	
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/agave))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] rips up the agave leaf against the container.</span>", "<span class='notice'>You rip up the agave leaf and collect its nectar inside the container.</span>", "<span class='notice'>You hear the sound of something ripping.</span>")
+		user.visible_message("<span class='warning'>[user]把龙舌兰叶在容器里撕碎.</span>", "<span class='notice'>你把龙舌兰叶在容器里撕碎并收集其花蜜.</span>", "<span class='notice'>你听到某种撕裂的声音.</span>")
 		reagents.add_reagent("agave", 10)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/sapote))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] crushes the sapote fruit against the container.</span>", "<span class='notice'>You crush the sapote fruit and let its juice seep into the container.</span>", "<span class='notice'>You hear the sound of something crushing.</span>")
+		user.visible_message("<span class='warning'>[user]把人心果在容器里碾碎.</span>", "<span class='notice'>你把人心果碾碎并让汁液渗入容器中.</span>", "<span class='notice'>你听到某种碾碎的声音.</span>")
 		reagents.add_reagent("sapotejuice", 4)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/apple))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[src] smashes the apple against the container.</span>", "<span class='notice'>You smash the apple against the container and let its juice seep into the container.</span>", "<span class='notice'>You hear the sound of something smashing.</span>")
+		user.visible_message("<span class='warning'>[src]把苹果在容器里捣碎.</span>", "<span class='notice'>你把苹果在容器里捣碎并让汁液渗入容器中.</span>", "<span class='notice'>你听到某种捣碎的声音.</span>")
 		reagents.add_reagent("applejuice", 10)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/sapodilla))  //liquid transfer?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[src] smashes the sapodilla against the container.</span>", "<span class='notice'>You smash the sapodilla and let its juice seep inside the container.</span>", "<span class='notice'>You hear the sound of something smashing.</span>")
+		user.visible_message("<span class='warning'>[src]把人心果在容器里捣碎.</span>", "<span class='notice'>你把人心果捣碎并让汁液渗入容器中.</span>", "<span class='notice'>你听到某种捣碎的声音.</span>")
 		reagents.add_reagent("sapodillajuice", 10)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/rawfish/cod))  //item transfer? what?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]已关闭.</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]已满!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] throws the fish into \the [src].</span>", "<span class='notice'>You throw the fish into \the [src].</span>", "<span class='notice'>You throw the fish into \the [src].</span>", "You hear the sound of something entering the container.")
+		user.visible_message("<span class='warning'>[user]把鱼扔进了\the [src].</span>", "<span class='notice'>你把鱼扔进了\the [src]。</span>", "<span class='notice'>你把鱼扔进了\the [src]。</span>", "You hear the sound of something entering the container.")
 		reagents.add_reagent("fish", 5)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/rawfish))  //item transfer? what is it?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]是关闭的。</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]满了!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] throws the fish into \the [src].</span>", "<span class='notice'>You throw the fish into \the [src].</span>", "<span class='notice'>You throw the fish into \the [src].</span>", "You hear the sound of something entering the container.")
+		user.visible_message("<span class='warning'>[user]把鱼扔进了\the [src]。</span>", "<span class='notice'>你把鱼扔进了\the [src]。</span>", "<span class='notice'>你把鱼扔进了\the [src]。</span>", "You hear the sound of something entering the container.")
 		reagents.add_reagent("fish", 5)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/rice)) //item transfer? what is it?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]是关闭的。</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]满了!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] smashes the rice against \the insides of \the [src].</span>", "<span class='notice'>You smash the rice and produce a rice paste inside the container.</span>", "<span class='notice'>You smash the rice and produce a rice paste inside the container.</span>", "You hear the sound of activity.")
+		user.visible_message("<span class='warning'>[user]把米捣碎在\the [src]的\the 内壁上。</span>", "<span class='notice'>你把米捣碎,在容器内制成了米糊。</span>", "<span class='notice'>你把米捣碎,在容器内制成了米糊。</span>", "You hear the sound of activity.")
 		reagents.add_reagent("rice", 5)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/coffee)) //item transfer? what is it?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]是关闭的。</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]满了!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] grinds the coffee against \the [src].</span>", "<span class='notice'>You grind the coffee and produce a coffee drink.</span>", "<span class='notice'>You grind the coffee and produce a coffee drink.</span>", "You hear the sound of something grinding.")
+		user.visible_message("<span class='warning'>[user]把咖啡研磨在\the [src]上。</span>", "<span class='notice'>你研磨咖啡,制成了咖啡饮品。</span>", "<span class='notice'>你研磨咖啡,制成了咖啡饮品。</span>", "You hear the sound of something grinding.")
 		reagents.add_reagent("coffee", 15)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/stack/material/cotton)) //item transfer? what is it?
 		var/obj/item/stack/material/cotton/CT = W
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]是关闭的。</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]满了!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] puts the cotton inside \the [src].</span>", "<span class='notice'>You put the cotton inside \the [src].</span>", "<span class='notice'>You put the cotton inside \the [src].</span>", "You hear the sound of activity.")
+		user.visible_message("<span class='warning'>[user]把棉花放进\the [src]里。</span>", "<span class='notice'>你把棉花放进\the [src]里。</span>", "<span class='notice'>你把棉花放进\the [src]里。</span>", "You hear the sound of activity.")
 		reagents.add_reagent("cotton", CT.amount)
 		qdel(W)
 		return
 	else if (istype(W, /obj/item/weapon/reagent_containers/food/snacks/grown/corn)) //item transfer? what is it?
 		if (!is_open_container())
-			to_chat(user, "<span class='notice'>\The [src] is closed.</span>")
+			to_chat(user, "<span class='notice'>\The [src]是关闭的。</span>")
 			return
 		if (!reagents.get_free_space())
-			to_chat(user, "<span class='danger'>\The [src] is full!</span>")
+			to_chat(user, "<span class='danger'>\The [src]满了!</span>")
 			return
-		user.visible_message("<span class='warning'>[user] grinds the corn against \the [src].</span>", "<span class='notice'>You grind the corn and produce corn oil.</span>", "<span class='notice'>You grind the corn and produce corn oil.</span>", "You hear the sound of something grinding.")
+		user.visible_message("<span class='warning'>[user]把玉米研磨在\the [src]上。</span>", "<span class='notice'>你研磨玉米,制成了玉米油。</span>", "<span class='notice'>你研磨玉米,制成了玉米油。</span>", "You hear the sound of something grinding.")
 		reagents.add_reagent("cornoil", 5)
 		qdel(W)
 		return
 	else if(istype(W, /obj/item/stack/material/rope)) //Lard candle making
 		if (reagents.get_reagent_amount("lard") >= 5)
 			var/obj/item/stack/material/rope/R = W
-			user.visible_message("<span class='warning'>[user] starts to dip the <span class='notice'>[R.name]</span> into the <span class='notice'>[src.name]</span>, shaping a candle.</span>", "<span class='notice'>You start to dip the <span class='notice'>[R.name]</span> into the <span class='notice'>[src.name]</span>, shaping a candle.</span>", "<span class='notice'>You hear the sound of something shaping.</span>")
+			user.visible_message("<span class='warning'>[user]开始将<span class='notice'>[R.name]</span>浸入<span class='notice'>[src.name]</span>中,塑造成一根蜡烛。</span>", "<span class='notice'>你开始将<span class='notice'>[R.name]</span>浸入<span class='notice'>[src.name]</span>中,塑造成一根蜡烛。</span>", "<span class='notice'>你听到某种塑形的声音。</span>")
 			if(do_after(user, 40, user))
 				reagents.remove_reagent("lard", 5)
 				new/obj/item/weapon/flame/candle/lard(user.loc)
@@ -340,15 +340,15 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 			qdel(I)
 			return
 	else
-		to_chat(user, "The [src] is full!")
+		to_chat(user, "[src]满了!")
 	..()
 
 /obj/item/weapon/reagent_containers/glass/proc/update_name_label(mob/user)
 	var/tmp_label = sanitizeSafe(input(user, "Enter a label for [base_name]", "Label", label_text), MAX_NAME_LEN)
 	if (length(tmp_label) > 15)
-		to_chat(user, "<span class='notice'>The label can be at most 15 characters long.</span>")
+		to_chat(user, "<span class='notice'>标签最多只能有15个字符长。</span>")
 	else
-		to_chat(user, "<span class='notice'>You set the label to \"[tmp_label]\".</span>")
+		to_chat(user, "<span class='notice'>你把标签设置为\"[tmp_label]\"。</span>")
 		label_text = tmp_label
 		playsound(src,'sound/effects/pen.ogg',40,1)
 		if (label_text == "")
@@ -358,7 +358,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 
 /obj/item/weapon/reagent_containers/glass/proc/pierced_reagent_lost(var/lost_amount=10)
 	//TO DO TODO: glass after piercing must lose max_volume??? and start lose liquids...
-	visible_message("<span class = 'warning'>\The [src] gets pierced!</span>")
+	visible_message("<span class = 'warning'>\The [src]被刺穿了!</span>")
 	if (reagents)
 		if (reagents.total_volume > 0)
 			var/part = lost_amount / reagents.total_volume
@@ -384,21 +384,21 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		var/obj/item/projectile/shell/S = proj
 		if (S.atype == "HE")
 			if (prob(90))
-				visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+				visible_message("<span class = 'warning'>\The [src]爆炸了!</span>")
 				explosion(loc, 2, 3, 2, 0)
 				qdel(src)
 			else
 				pierced_reagent_lost(15)
 		else
 			if (prob(20))
-				visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+				visible_message("<span class = 'warning'>\The [src]爆炸了!</span>")
 				explosion(loc, 1, 1, 2, 0)
 				qdel(src)
 			else if (prob(75))
 				pierced_reagent_lost(25)
 	else
 		if (prob(16))
-			visible_message("<span class = 'warning'>\The [src] explodes!</span>")
+			visible_message("<span class = 'warning'>\The [src]爆炸了!</span>")
 			explosion(loc, 1, 2, 2, 0)
 			qdel(src)
 		else if (prob(30))
@@ -406,8 +406,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 	return TRUE
 
 /obj/item/weapon/reagent_containers/glass/beaker
-	name = "beaker"
-	desc = "A beaker."
+	name = "烧杯"
+	desc = "一个烧杯。"
 	icon = 'icons/obj/chemical.dmi'
 	unacidable = TRUE
 	icon_state = "beaker"
@@ -440,22 +440,22 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += lid
 
 /obj/item/weapon/reagent_containers/glass/beaker/large
-	name = "large beaker"
-	desc = "A large beaker."
+	name = "大烧杯"
+	desc = "一个大烧杯。"
 	icon_state = "beakerlarge"
 	volume = 120
 	possible_transfer_amounts = list(5,10,15,25,30,60,120)
 
 /obj/item/weapon/reagent_containers/glass/beaker/vial
-	name = "vial"
-	desc = "A small glass vial."
+	name = "小瓶"
+	desc = "一个小玻璃瓶。"
 	icon_state = "vial"
 	volume = 30
 	possible_transfer_amounts = list(5,10,15,25,30)
 
 /obj/item/weapon/reagent_containers/glass/bucket
-	name = "bucket"
-	desc = "It's a bucket."
+	name = "水桶"
+	desc = "这是一个水桶。"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "bucket"
 	item_state = "bucket"
@@ -466,8 +466,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 	flammable = TRUE
 
 /obj/item/weapon/reagent_containers/glass/bucket/steel
-	name = "steel bucket"
-	desc = "It's a bucket."
+	name = "钢桶"
+	desc = "这是一个水桶。"
 	icon_state = "steel_bucket"
 	item_state = "steel_bucket"
 	volume = 150
@@ -476,10 +476,10 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 /obj/item/weapon/reagent_containers/glass/bucket/attackby(var/obj/D, mob/user as mob)
 	if (istype(D, /obj/item/weapon/mop))
 		if (reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+			to_chat(user, "<span class='warning'>\The [src]是空的!</span>")
 		else
 			reagents.trans_to_obj(D, 5)
-			to_chat(user, "<span class='notice'>You wet \the [D] in \the [src].</span>")
+			to_chat(user, "<span class='notice'>你把\the [D]浸湿在\the [src]中。</span>")
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		return
 	..(D, user)
@@ -504,8 +504,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += filling
 
 /obj/item/weapon/reagent_containers/glass/small_pot
-	desc = "A small tin pot."
-	name = "small tin pot"
+	desc = "一个小锡壶。"
+	name = "小锡壶"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "small_pot"
 	item_state = "bucket" //TODO: need be checked
@@ -539,8 +539,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += filling
 
 /obj/item/weapon/reagent_containers/glass/small_pot/hangou
-	desc = "A japanese pot used by the military all the way back to the meiji era."
-	name = "han-gou"
+	desc = "一种可追溯到明治时代、被军队使用的日式壶。"
+	name = "饭盒"
 	icon_state = "han_gou_open"
 	item_state = "bucket" //TODO: need be checked
 	possible_transfer_amounts = list(10,20,30,80)
@@ -554,23 +554,23 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		..()
 
 /obj/item/weapon/reagent_containers/glass/small_pot/copper_small
-	desc = "A small copper pot."
-	name = "small copper pot"
+	desc = "一个小铜壶。"
+	name = "小铜壶"
 	icon_state = "copperpot1"
 	item_state = "bucket" //TODO: need be checked
 	volume = 90
 
 /obj/item/weapon/reagent_containers/glass/small_pot/copper_large
-	desc = "A large copper pot."
-	name = "large copper pot"
+	desc = "一个大铜壶。"
+	name = "大铜壶"
 	icon_state = "copperpot2"
 	item_state = "bucket" //TODO: need be checked
 	w_class = ITEM_SIZE_LARGE
 	volume = 160
 
 /obj/item/weapon/reagent_containers/glass/small_pot/clay
-	name = "clay cooking pot"
-	desc = "A primitive clay pot, specifically designed and used for boiling water and holding liquids."
+	name = "陶土锅"
+	desc = "一种原始的陶土锅,专门设计用于烧水和盛放液体。"
 	icon = 'icons/obj/claystuff.dmi'
 	icon_state = "cookingpot"
 	item_state = "bucket" //TODO: need be checked
@@ -594,8 +594,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 */
 
 /obj/item/weapon/reagent_containers/glass/barrel
-	name = "wood barrel"
-	desc = "A wood barrel. You can put liquids inside."
+	name = "木桶"
+	desc = "一个木桶。你可以把液体装进去。"
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "barrel_wood"
 	//item_state = ???? TO DO TODO or check
@@ -627,7 +627,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += filling
 
 /obj/item/weapon/reagent_containers/glass/barrel/water
-	name = "wood barrel (drinking water)"
+	name = "木桶(饮用水)"
 	label_text = "drinking water"
 	New()
 		..()
@@ -636,7 +636,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("water",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/beer
-	name = "wood barrel (beer)"
+	name = "木桶(啤酒)"
 	label_text = "beer"
 	New()
 		..()
@@ -645,7 +645,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("beer",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/ale
-	name = "wood barrel (ale)"
+	name = "木桶(麦芽酒)"
 	label_text = "ale"
 	New()
 		..()
@@ -654,7 +654,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("ale",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/rum
-	name = "wood barrel (rum)"
+	name = "木桶(朗姆酒)"
 	label_text = "rum"
 	New()
 		..()
@@ -663,7 +663,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("rum",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/whiskey
-	name = "wood barrel (whiskey)"
+	name = "木桶(威士忌)"
 	label_text = "whiskey"
 	New()
 		..()
@@ -672,7 +672,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("whiskey",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/tequila
-	name = "wood barrel (tequila)"
+	name = "木桶(龙舌兰酒)"
 	label_text = "tequila"
 	New()
 		..()
@@ -681,7 +681,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("tequila",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/gin
-	name = "wood barrel (gin)"
+	name = "木桶(金酒)"
 	label_text = "gin"
 	New()
 		..()
@@ -690,7 +690,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("gin",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/vodka
-	name = "wood barrel (vodka)"
+	name = "木桶(伏特加)"
 	label_text = "vodka"
 	New()
 		..()
@@ -699,7 +699,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("vodka",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/cognac
-	name = "wood barrel (cognac)"
+	name = "木桶(干邑)"
 	label_text = "cognac"
 	New()
 		..()
@@ -708,7 +708,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("cognac",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/wine
-	name = "wood barrel (wine)"
+	name = "木桶(葡萄酒)"
 	label_text = "wine"
 	New()
 		..()
@@ -717,7 +717,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("wine",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/tea
-	name = "wood barrel (tea)"
+	name = "木桶(茶)"
 	label_text = "tea"
 	New()
 		..()
@@ -726,7 +726,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("tea",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/oil
-	name = "wood barrel (petroleum)"
+	name = "木桶(石油)"
 	label_text = "petroleum"
 	New()
 		..()
@@ -735,7 +735,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("petroleum",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/olive_oil
-	name = "wood barrel (olive oil)"
+	name = "木桶(橄榄油)"
 	label_text = "olive oil"
 	New()
 		..()
@@ -744,7 +744,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("olive_oil",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/fat_oil
-	name = "wood barrel (fat oil)"
+	name = "木桶(油脂)"
 	label_text = "fat oil"
 	New()
 		..()
@@ -753,7 +753,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("fat_oil",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/ethanol
-	name = "wood barrel (ethanol)"
+	name = "木桶(乙醇)"
 	label_text = "ethanol"
 	New()
 		..()
@@ -762,8 +762,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("pethanol",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern
-	name = "steel barrel"
-	desc = "A steel barrel. You can put liquids inside."
+	name = "钢桶"
+	desc = "一个钢桶.你可以把液体装进去."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "barrel"
 	//item_state = ???? TO DO TODO or check
@@ -790,7 +790,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += filling
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/water
-	name = "steel barrel (drinking water)"
+	name = "钢桶(饮用水)"
 	label_text = "drinking water"
 	New()
 		..()
@@ -800,8 +800,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 
 //////////yellow barrel/////////////////////////
 /obj/item/weapon/reagent_containers/glass/barrel/modern/yellow
-	name = "yellow steel barrel"
-	desc = "A yellow steel barrel. You can put liquids inside."
+	name = "黄色钢桶"
+	desc = "一个黄色钢桶.你可以把液体装进去."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "barreln"
 	//item_state = ???? TO DO TODO or check
@@ -811,7 +811,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 //////////Galactic Battles//////////////////////
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/bmilk
-	name = "steel barrel (blue milk)"
+	name = "钢桶(蓝色牛奶)"
 	label_text = "blue milk"
 	New()
 		..()
@@ -822,7 +822,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 ////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/oil
-	name = "steel barrel (petroleum)"
+	name = "钢桶(石油)"
 	label_text = "petroleum"
 	New()
 		..()
@@ -831,7 +831,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("petroleum",350)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/gasoline
-	name = "steel barrel (gasoline)"
+	name = "钢桶(汽油)"
 	label_text = "gasoline"
 	New()
 		..()
@@ -840,7 +840,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("gasoline",350)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/diesel
-	name = "steel barrel (diesel)"
+	name = "钢桶(柴油)"
 	label_text = "diesel"
 	New()
 		..()
@@ -849,7 +849,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("diesel",250)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/diesel/low
-	name = "steel barrel (diesel)"
+	name = "钢桶(柴油)"
 	label_text = "diesel"
 	New()
 		..()
@@ -857,7 +857,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("diesel",30)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/biodiesel
-	name = "steel barrel (biodiesel)"
+	name = "钢桶(生物柴油)"
 	label_text = "biodiesel"
 	New()
 		..()
@@ -866,7 +866,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("biodiesel",350)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/sterilizine
-	name = "steel barrel (sterilizine)"
+	name = "钢桶(消毒剂)"
 	label_text = "sterilizine"
 	New()
 		..()
@@ -876,7 +876,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("cleaner", volume * 0.34)
 
 /obj/item/weapon/reagent_containers/glass/barrel/modern/ethanol
-	name = "steel barrel (ethanol)"
+	name = "钢桶(乙醇)"
 	label_text = "ethanol"
 	New()
 		..()
@@ -885,8 +885,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("pethanol",350)
 
 /obj/item/weapon/reagent_containers/glass/barrel/jerrycan
-	name = "jerrycan"
-	desc = "A steel jerrycan. Good for transporting fuel."
+	name = "油桶"
+	desc = "一个钢制油桶.适合运输燃料."
 	icon = 'icons/obj/barrel.dmi'
 	icon_state = "jerrycan"
 	amount_per_transfer_from_this = 30
@@ -904,7 +904,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += lid
 
 /obj/item/weapon/reagent_containers/glass/barrel/jerrycan/gasoline/
-	name = "jerrycan (gasoline)"
+	name = "油桶(汽油)"
 	label_text = "gasoline"
 	New()
 		..()
@@ -912,7 +912,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("gasoline",150)
 
 /obj/item/weapon/reagent_containers/glass/barrel/jerrycan/diesel
-	name = "jerrycan (diesel)"
+	name = "油桶(柴油)"
 	label_text = "diesel"
 	New()
 		..()
@@ -920,8 +920,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("diesel",150)
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank
-	name = "large fueltank"
-	desc = "A metalic fueltank. Used to connect to a engine and supply it with fuel."
+	name = "大型燃料箱"
+	desc = "一个金属燃料箱.用于连接到发动机并为其供应燃料."
 	icon = 'icons/obj/vehicles/vehicleparts.dmi'
 	icon_state = "fueltank_large"
 	volume = 250
@@ -947,17 +947,17 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += filling
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/small
-	name = "small fueltank"
+	name = "小型燃料箱"
 	icon_state = "fueltank_small"
 	volume = 120
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/bike25
-	name = "25u motorcycle fueltank"
+	name = "25u摩托车燃料箱"
 	icon_state = "fueltank_bike"
 	volume = 25
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/bike
-	name = "50u motorcycle fueltank"
+	name = "50u摩托车燃料箱"
 	icon_state = "fueltank_bike"
 	volume = 50
 
@@ -967,17 +967,17 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		reagents.add_reagent("gasoline",50)
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/bike75
-	name = "75u motorcycle fueltank"
+	name = "75u摩托车燃料箱"
 	icon_state = "fueltank_bike"
 	volume = 75
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/tank
-	name = "huge fueltank"
+	name = "巨型燃料箱"
 	icon_state = "fueltank_large_tank"
 	volume = 450
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/tank/highcap
-	name = "High capacity fueltank"
+	name = "高容量燃料箱"
 	icon_state = "fueltank_large_tank"
 	volume = 550
 
@@ -1013,7 +1013,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 
 
 /obj/item/weapon/reagent_containers/glass/barrel/fueltank/smalltank
-	name = "medium fueltank"
+	name = "中型燃料箱"
 	icon_state = "fueltank_small_tank"
 	volume = 180
 
@@ -1031,8 +1031,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 
 /obj/item/weapon/reagent_containers/glass/barrel/gunpowder
 	//TO DO TODO: REWORK IT'S BUGGY THING LATER!!!
-	name = "gunpowder barrel"
-	desc = "A barrel of gunpowder. Don't light it on fire."
+	name = "火药桶"
+	desc = "一桶火药.别把它点着了."
 	icon_state = "barrel_wood_gunpowder"
 	New()
 		..()
@@ -1041,7 +1041,7 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 /obj/item/weapon/reagent_containers/glass/barrel/gunpowder/bullet_act(var/obj/item/projectile/proj)
 	if (proj && !proj.nodamage)
 		if (prob(30))
-			visible_message("<span class = 'danger'>\The [src] is hit by \the [proj] and explodes!</span>")
+			visible_message("<span class = 'danger'>\The [src]被\the [proj]击中并爆炸了!</span>")
 			explode()
 			return TRUE
 	return FALSE
@@ -1066,8 +1066,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 /obj/item/weapon/reagent_containers/glass/extraction_kit
 	//TO DO TO DO: Unify to one procedure all using of extraction kit
 	//             Add restart process (by atack_self if not empty)
-	name = "extraction kit"
-	desc = "A professional kit for extracting elements from raw ores."
+	name = "提取套件"
+	desc = "一套用于从原矿中提取元素的专业套件."
 	icon_state = "extraction_kit"
 	amount_per_transfer_from_this = 5
 	volume = 5
@@ -1092,8 +1092,8 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 		overlays += lid
 
 /obj/item/weapon/analyser
-	name = "analyser"
-	desc = "An electronic analyser, to check the ingredients of a chemical mixture."
+	name = "分析仪"
+	desc = "一台电子分析仪,用于检查化学混合物的成分."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "spectrometer"
 	w_class = ITEM_SIZE_SMALL
@@ -1108,6 +1108,6 @@ var/list/not_resolved_in_attackby_objects = list(/obj/structure/chemical_dispens
 /obj/item/weapon/analyser/afterattack(obj/M, mob/user)
 	if (istype(M, /obj/item/weapon/reagent_containers))
 		var/obj/item/weapon/reagent_containers/RG = M
-		to_chat(user, "<font color='yellow'><big><b>Reagents detected:</b></big></font>")
+		to_chat(user, "<font color='yellow'><big><b>检测到试剂:</b></big></font>")
 		for(var/i=1 to RG.reagents.reagent_list.len)
-			to_chat(user, "<font color='yellow'><i><b>[RG.reagents.reagent_list[i].name]: </b>[RG.reagents.reagent_list[i].volume] units</i></font>")
+			to_chat(user, "<font color='yellow'><i><b>[RG.reagents.reagent_list[i].name]: </b>[RG.reagents.reagent_list[i].volume]单位</i></font>")

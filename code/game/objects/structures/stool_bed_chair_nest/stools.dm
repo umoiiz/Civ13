@@ -2,8 +2,8 @@
 var/global/list/stool_cache = list() //haha stool
 
 /obj/item/weapon/stool
-	name = "stool"
-	desc = "Apply butt."
+	name = "凳子"
+	desc = "把屁股放上去."
 	icon = 'icons/obj/bed_chair.dmi'
 	icon_state = "stool_preview" //set for the map
 	force = 10
@@ -23,8 +23,8 @@ var/global/list/stool_cache = list() //haha stool
 	icon_state = "stool_padded_preview" //set for the map
 
 /obj/item/weapon/barstool
-	name = "bar stool"
-	desc = "A fancy stool made for catering."
+	name = "吧台凳"
+	desc = "为餐饮服务打造的精致凳子."
 	icon = 'icons/obj/bed_chair.dmi'
 	icon_state = "barstool_red"
 	force = 10
@@ -104,7 +104,7 @@ var/global/list/stool_cache = list() //haha stool
 
 /obj/item/weapon/stool/attack(mob/M as mob, mob/user as mob)
 	if (prob(5) && istype(M,/mob/living))
-		user.visible_message("<span class='danger'>[user] breaks [src] over [M]'s back!</span>")
+		user.visible_message("<span class='danger'>[user]把[src]砸在[M]的背上折断了!</span>")
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(M)
 
@@ -145,7 +145,7 @@ var/global/list/stool_cache = list() //haha stool
 		qdel(src)
 	else if (istype(W,/obj/item/stack))
 		if (padding_material)
-			to_chat(user, "\The [src] is already padded.")
+			to_chat(user, "\The [src]已经有软垫了.")
 			return
 		var/obj/item/stack/C = W
 		if (C.amount < 1) // How??
@@ -158,20 +158,20 @@ var/global/list/stool_cache = list() //haha stool
 			if (M.material && (M.material.flags & MATERIAL_PADDING))
 				padding_type = "[M.material.name]"
 		if (!padding_type)
-			to_chat(user, "You cannot pad \the [src] with that.")
+			to_chat(user, "你不能用那个给\the [src]加软垫.")
 			return
 		C.use(1)
 		if (!istype(loc, /turf))
 			user.drop_from_inventory(src)
 			loc = get_turf(src)
-		to_chat(user, "You add padding to \the [src].")
+		to_chat(user, "你给\the [src]加上了软垫.")
 		add_padding(padding_type)
 		return
 	else if (istype(W, /obj/item/weapon/wirecutters))
 		if (!padding_material)
-			to_chat(user, "\The [src] has no padding to remove.")
+			to_chat(user, "\The [src]没有软垫可以移除.")
 			return
-		to_chat(user, "You remove the padding from \the [src].")
+		to_chat(user, "你移除了\the [src]的软垫.")
 		playsound(src, 'sound/items/Wirecutter.ogg', 100, TRUE)
 		remove_padding()
 	else

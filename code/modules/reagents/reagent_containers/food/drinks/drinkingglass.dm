@@ -1,6 +1,6 @@
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass
-	name = "drinking glass"
-	desc = "A standard drinking glass."
+	name = "玻璃杯"
+	desc = "一个标准的玻璃杯."
 	icon_state = "glass-highball"
 	amount_per_transfer_from_this = 5
 	volume = 30
@@ -68,9 +68,9 @@
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/cocktail_stuff))
 		if (umbrella || cocktail_food)
-			to_chat(user, "<span class='warning'>There's not enough room to add [W.name]!</span>")
+			to_chat(user, "<span class='warning'>没有足够的空间添加[W.name]!</span>")
 			return
-		to_chat(user, "<span class='notice'>You add [W.name] to [name].</span>")
+		to_chat(user, "<span class='notice'>你将[W.name]添加到[name].</span>")
 		if (istype(W, /obj/item/cocktail_stuff/maraschino_cherry))
 			cocktail_food = "cherry"
 		else if (istype(W, /obj/item/cocktail_stuff/cocktail_olive))
@@ -82,16 +82,16 @@
 		return
 	else if (W && W.reagents && istype(W, /obj/item/weapon/reagent_containers) && W.is_open_container() && W.reagents.has_reagent("sodiumchloride"))
 		if (salted)
-			to_chat(user, "<span class='warning'>The rim of [name] is already salted!</span>")
+			to_chat(user, "<span class='warning'>[name]的杯口已经沾了盐!</span>")
 			return
 		else if (W.reagents.get_reagent_amount("sodiumchloride") >= 5)
-			to_chat(user, "<span class='notice'>You salt the rim of [name].</span>")
+			to_chat(user, "<span class='notice'>你在[name]的杯口上撒了盐.</span>")
 			W.reagents.remove_reagent("sodiumchloride", 5)
 			salted = TRUE
 			update_icon()
 			return
 		else
-			to_chat(user, "<span class='warning'>There's not enough salt in [W.name] to salt the rim!</span>")
+			to_chat(user, "<span class='warning'>[W.name]里没有足够的盐来给杯口撒盐!</span>")
 			return
 	else
 		return ..()
@@ -103,7 +103,7 @@
 	if (cocktail_food)
 		actions += "Remove the [cocktail_food]"
 	if (!actions.len)
-		to_chat(user, "<span class='warning'>You can't think of anything to do with the glass.</span>")
+		to_chat(user, "<span class='warning'>你想不出能用这个杯子做什么.</span>")
 		return
 
 	var/action = input(user, "What do you want to do with [src]?") as null|anything in actions
@@ -121,64 +121,64 @@
 	return
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/shot
-	name = "shot glass"
+	name = "烈酒杯"
 	icon_state = "glass-shot"
 	glass_type = "shot"
 	amount_per_transfer_from_this = 15
 	volume = 15
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/lowball
-	name = "lowball glass"
+	name = "矮脚杯"
 	icon_state = "glass-lowball"
 	glass_type = "lowball"
 	volume = 30
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cocktail
-	name = "cocktail glass"
+	name = "鸡尾酒杯"
 	icon_state = "glass-cocktail"
 	glass_type = "cocktail"
 	volume = 20
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/beermug
-	name = "beer mug"
+	name = "啤酒杯"
 	icon_state = "beermug"
 	glass_type = "beermug"
 	volume = 40
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/beermug_fancy
-	name = "fancy beer mug"
+	name = "精致啤酒杯"
 	icon_state = "beermug_fancy"
 	glass_type = "beermug_fancy"
 	volume = 50
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/wine
-	name = "wine glass"
+	name = "葡萄酒杯"
 	icon_state = "glass-wine"
 	glass_type = "wine"
 	volume = 30
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/flute
-	name = "flute glass"
+	name = "笛形杯"
 	icon_state = "glass-flute"
 	glass_type = "flute"
 	volume = 20
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/wood
-	name = "wood mug"
+	name = "木杯"
 	icon_state = "wood_cup"
 	glass_type = "mug"
 	volume = 40
 	flammable = TRUE
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/tankard
-	name = "tankard"
+	name = "大酒杯"
 	icon_state = "tankard"
 	glass_type = "mug"
 	volume = 40
 	flammable = FALSE
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/waterskin
-	name = "waterskin"
-	desc = "A leather waterskin."
+	name = "水囊"
+	desc = "一个皮革水囊."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "waterskin"
 	glass_type = "waterskin"
@@ -188,76 +188,76 @@
 	flammable = TRUE
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/waterskin/cognac
-	name = "cognac skin"
-	desc = "A leather for holding your cognac reserves."
+	name = "干邑酒囊"
+	desc = "一个用于存放你干邑储备的皮革囊."
 	New()
 		..()
 		reagents.add_reagent("cognac", 70)
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/waterskin/tea
-	name = "tea skin"
-	desc = "A leather skin for holding your tea reserves."
+	name = "茶囊"
+	desc = "一个用于存放你茶叶储备的皮革囊."
 	New()
 		..()
 		reagents.add_reagent("tea", 70)
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/waterskin/mush
-	name = "Fermented mush"
-	desc = "A leather skin for holding your personal blend of fermented mush for use as a painkiller or as a great party drink."
+	name = "发酵糊"
+	desc = "一个皮革囊,用于存放你个人调配的发酵糊,可用作止痛药或绝佳的派对饮品."
 	New()
 		..()
 		reagents.add_reagent("thirteenloko", 70)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/mug
-	name = "mug"
-	desc = "A clay mug."
+	name = "马克杯"
+	desc = "一个陶制马克杯."
 	icon_state = "mug"
 	glass_type = "mug"
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/mug/red
-	name = "mug"
-	desc = "A clay mug, this one is red."
+	name = "马克杯"
+	desc = "一个陶制马克杯,这个是红色的."
 	icon_state = "r_mug"
 	glass_type = "mug"
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/mug/brit
-	name = "mug"
-	desc = "A cup with the British flag emblazoned on it."
+	name = "马克杯"
+	desc = "一个印有英国国旗的杯子."
 	icon_state = "brit_mug"
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/tribalpot
-	name = "tribal pot"
-	desc = "A tribal clay pot."
+	name = "部落陶罐"
+	desc = "一个部落陶罐."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalpot"
 	glass_type = "pot"
 	volume = 60
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/amphora
-	name = "amphora"
-	desc = "A clay amphora."
+	name = "双耳瓶"
+	desc = "一个陶制双耳瓶."
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "amphora"
 	glass_type = "amphora"
 	volume = 150
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/amphora/wine
-	name = "amphora of wine"
+	name = "葡萄酒双耳瓶"
 	New()
 		..()
 		reagents.add_reagent("wine", 120)
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/amphora/water
-	name = "amphora of water"
+	name = "水双耳瓶"
 	New()
 		..()
 		reagents.add_reagent("water", 150)
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/tribalpot/palmsap
-	name = "tribal pot"
-	desc = "A tribal clay pot."
+	name = "部落陶罐"
+	desc = "一个部落陶罐."
 	icon = 'icons/misc/tribal.dmi'
 	icon_state = "tribalpot"
 	glass_type = "pot"
@@ -277,7 +277,7 @@
 		desc = "A tribal clay pot."
 		volume = 60
 		reagents.add_reagent("palmwine", 15)
-		visible_message("The palm sap ferments into palm wine.")
+		visible_message("棕榈汁发酵成棕榈酒.")
 		return
 
 

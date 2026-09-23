@@ -1,6 +1,6 @@
 /obj/structure/computer/nopower/aotd
-	name = "desktop computer"
-	desc = "A desktop computer running the latest version of Unga OS. Has a floppy drive."
+	name = "台式计算机"
+	desc = "一台运行最新版 Unga OS 的台式计算机。带有一个软盘驱动器。"
 	powered = TRUE
 	powerneeded = FALSE
 	anchored = TRUE
@@ -61,45 +61,45 @@
 				src.operatingsystem = OSD.operatingsystem
 				src.programs = list()
 				src.boot(OSD.operatingsystem)
-				to_chat(H, "You sucessfully install \the [src.operatingsystem] on this machine.")
+				to_chat(H, "你成功将 \the [src.operatingsystem] 安装到这台机器上。")
 				playsound(get_turf(src), 'sound/machines/computer/floppydisk.ogg', 100, TRUE)
 			else
-				to_chat(H, "You already have this operating system installed.")
+				to_chat(H, "你已经安装了此操作系统。")
 			return
 		else if (istype(W, /obj/item/weapon/disk/program))
 			var/obj/item/weapon/disk/program/PD = W
 			if (!(operatingsystem in PD.compatible_os))
-				to_chat(H, "This operating system is not supported.")
+				to_chat(H, "不支持此操作系统。")
 				return
 			if (PD.included)
 				var/datum/program/NP = new PD.included
 				NP.origin = src
 				for(var/datum/program/EP in programs)
 					if (istype(EP,NP))
-						to_chat(H, "This program is already installed on this machine.")
+						to_chat(H, "此程序已安装在这台机器上。")
 						return
 				programs += NP
 				playsound(get_turf(src), 'sound/machines/computer/floppydisk.ogg', 100, TRUE)
-				to_chat(H, "You load \the [NP.name] into this machine.")
+				to_chat(H, "你将 \the [NP.name] 载入这台机器。")
 			return
 		var/obj/item/weapon/disk/D = W
 		if (D.faction == H.civilization)
-			to_chat(H, "<span class='notice'>You can't read a disk belonging to your company.</span>")
+			to_chat(H, "<span class='notice'>你无法读取属于你公司的磁盘。</span>")
 			return
 		else if (src.faction != H.civilization)
-			to_chat(H, "<span class='notice'>You can't read a disk on another's company computer.</span>")
+			to_chat(H, "<span class='notice'>你无法在另一家公司的计算机上读取磁盘。</span>")
 			return
 		else if (H.civilization == "Sheriff Office")
-			to_chat(H, "<span class='notice'>You do not know how to decrypt this... You should put it in the evidence room instead.</span>")
+			to_chat(H, "<span class='notice'>你不知道如何解密这个... 你应该把它放到证物室。</span>")
 			return
 		else if (H.civilization == "Paramedics")
-			to_chat(H, "<span class='notice'>You do not know how to decrypt this... You should hand it over to the Sheriff Office instead.</span>")
+			to_chat(H, "<span class='notice'>你不知道如何解密这个... 你应该把它交给警长办公室。</span>")
 			return
 		else if (H.civilization == "Government")
-			to_chat(H, "<span class='notice'>You do not know how to decrypt this... You should hand it over to the Sheriff Office instead.</span>")
+			to_chat(H, "<span class='notice'>你不知道如何解密这个... 你应该把它交给警长办公室。</span>")
 			return
 		else if (D.used)
-			to_chat(H, "<span class='notice'>This disk has already been decrypted and wiped.</span>")
+			to_chat(H, "<span class='notice'>此磁盘已被解密并擦除。</span>")
 			return
 		else
 			playsound(get_turf(src), 'sound/machines/computer/floppydisk.ogg', 100, TRUE)
@@ -167,8 +167,8 @@
 //////////////////////////////////////////////////////////////
 
 /obj/structure/computer/nopower/carsales
-	name = "CARTRADER Terminal"
-	desc = "A computer terminal connected to the CARTRADER network."
+	name = "CARTRADER 终端"
+	desc = "一台连接到 CARTRADER 网络的计算机终端。"
 	powered = TRUE
 	powerneeded = FALSE
 	anchored = TRUE
@@ -178,8 +178,8 @@
 		programs += new/datum/program/cartrader
 
 /obj/structure/computer/nopower/carspawn
-	name = "Vehicle Supply Terminal"
-	desc = "A computer terminal connected to a supply network."
+	name = "载具补给终端"
+	desc = "一台连接到补给网络的计算机终端。"
 	powered = TRUE
 	powerneeded = FALSE
 	anchored = TRUE
@@ -193,17 +193,17 @@
 		var/mob/living/human/H = user
 		switch (H.faction_text)
 			if (DUTCH)
-				to_chat(H, "You currently have [faction1_supply_points] supply points.")
+				to_chat(H, "你当前拥有 [faction1_supply_points] 补给点。")
 			if (RUSSIAN)
-				to_chat(H, "You currently have [faction2_supply_points] supply points.")
+				to_chat(H, "你当前拥有 [faction2_supply_points] 补给点。")
 			if (BRITISH)
-				to_chat(H, "You currently have [faction1_supply_points] supply points.")
+				to_chat(H, "你当前拥有 [faction1_supply_points] 补给点。")
 
 //////////////////////////////////////////////////////////////
 
 /obj/structure/computer/nopower/police
-	name = "Police Processing Terminal"
-	desc = "A computer running unga OS 94 Law Enforcement Edition, with access to both civilians and LEOs."
+	name = "警务处理终端"
+	desc = "一台运行 unga OS 94 执法版的计算机, 可访问平民和执法人员的资料。"
 	icon_state = "research_on"
 	powered = TRUE
 	powerneeded = FALSE
@@ -228,8 +228,8 @@
 //////////////////////////////////////////////////////////////
 
 /obj/structure/computer/nopower/platoontracker
-	name = "Military Asset Tracking System"
-	desc = "A satellite-based system, allowing realtime tracking of your troops."
+	name = "军事资产追踪系统"
+	desc = "一套基于卫星的系统, 可实时追踪你的部队。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "tracking"
 	powered = TRUE
@@ -245,8 +245,8 @@
 /////////DISKS///////////////////////////
 
 /obj/item/weapon/disk
-	name = "diskette"
-	desc = "Some kind of diskette."
+	name = "软盘"
+	desc = "某种软盘。"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "disk_red"
 	item_state = "disk_red"
@@ -271,105 +271,105 @@
 	..()
 	if (faction)
 		if (used)
-			to_chat(user, "<font color='yellow'><i><b>The disk was already decrypted and wiped</b></i></font>.")
+			to_chat(user, "<font color='yellow'><i><b>该磁盘已被解密并擦除</b></i></font>。")
 		if (exchange_state == -1)
-			to_chat(user, "The disk is <b><font color='red'>inactive</font></b>.")
+			to_chat(user, "该磁盘 <b><font color='red'>未激活</font></b>。")
 		else
-			to_chat(user, "The disk is <b><font color='green'>active</font></b>.")
+			to_chat(user, "该磁盘 <b><font color='green'>已激活</font></b>。")
 		if (ishuman(user))
 			var/mob/living/human/H = user
 			if (H.civilization == faction)
-				to_chat(H, "This is a <b>[fake ? "<font color ='red'>fake</font>" : "<font color ='green'>real</font>"]</b> disk.")
+				to_chat(H, "这是一张 <b>[fake ? "<font color ='red'>fake</font>" : "<font color ='green'>real</font>"]</b> 磁盘。")
 		else if (isghost(user))
-			to_chat(user, "This is a <b>[fake ? "<font color ='red'>fake</font>" : "<font color ='green'>real</font>"]</b> disk.")
+			to_chat(user, "这是一张 <b>[fake ? "<font color ='red'>fake</font>" : "<font color ='green'>real</font>"]</b> 磁盘。")
 
 /obj/item/weapon/disk/attackby(var/obj/item/weapon/disk/D, var/mob/living/human/H)
 	if (istype(D, /obj/item/weapon/disk))
 		H.setClickCooldown(20)
 		if (src.faction == D.faction)
-			to_chat(H, "These disks are of the same faction, you need another faction's disk to activate them.")
+			to_chat(H, "这些磁盘属于同一阵营, 你需要另一阵营的磁盘来激活它们。")
 			return
 		else if (src.used)
-			to_chat(H, "\The [src] has already been used and wiped.")
+			to_chat(H, "\The [src] 已被使用并擦除。")
 			return
 		else if (D.used)
-			to_chat(H, "\The [src] has already been used and wiped.")
+			to_chat(H, "\The [src] 已被使用并擦除。")
 			return
 		else if (src.exchange_state != -1 && D.exchange_state != -1)
-			visible_message("<big><font color='red'>Both disks are already active.</font></big>")
+			visible_message("<big><font color='red'>两张磁盘都已激活。</font></big>")
 			return
 		else if (src.exchange_state != -1)
-			visible_message("<big><font color='yellow'>\The [src] has already been activated.</font></big>")
+			visible_message("<big><font color='yellow'>\The [src] 已被激活。</font></big>")
 			return
 		else if (D.exchange_state != -1)
-			visible_message("<big><font color='yellow'>\The [D] has already been activated.</font></big>")
+			visible_message("<big><font color='yellow'>\The [D] 已被激活。</font></big>")
 			return
 
 		if (D.fake && src.fake) //both fake
 			D.exchange_state = 0
 			src.exchange_state = 0
-			visible_message("<big><font color='green'>Both disks get activated, completing the transaction.</font></big>")
+			visible_message("<big><font color='green'>两张磁盘都被激活, 完成了交易。</font></big>")
 			return
 		else if ((D.fake && !src.fake) || (!D.fake && src.fake)) //one is fake
 			D.exchange_state = 1
 			src.exchange_state = 1
-			visible_message("<big><font color='green'>Both disks get activated, completing the transaction.</font></big>")
+			visible_message("<big><font color='green'>两张磁盘都被激活, 完成了交易。</font></big>")
 			return
 		else if (!D.fake && !src.fake) //both real
 			D.exchange_state = 2
 			src.exchange_state = 2
-			visible_message("<big><font color='green'>Both disks get activated, completing the transaction.</font></big>")
+			visible_message("<big><font color='green'>两张磁盘都被激活, 完成了交易。</font></big>")
 			return
 	else
 		..()
 /obj/item/weapon/disk/red
-	name = "red diskette"
+	name = "红色软盘"
 	icon_state = "disk_red"
 	item_state = "disk_red"
 	faction = "Rednikov Industries"
 
 /obj/item/weapon/disk/red/fake
-	name = "red diskette"
+	name = "红色软盘"
 	faction = "Rednikov Industries"
 	fake = TRUE
 
 /obj/item/weapon/disk/blue
-	name = "blue diskette"
+	name = "蓝色软盘"
 	icon_state = "disk_blue"
 	item_state = "disk_blue"
 	faction = "Giovanni Blu Stocks"
 
 /obj/item/weapon/disk/blue/fake
-	name = "blue diskette"
+	name = "蓝色软盘"
 	faction = "Giovanni Blu Stocks"
 	fake = TRUE
 
 /obj/item/weapon/disk/yellow
-	name = "yellow diskette"
+	name = "黄色软盘"
 	icon_state = "disk_yellow"
 	item_state = "disk_yellow"
 	faction = "Goldstein Solutions"
 
 /obj/item/weapon/disk/yellow/fake
-	name = "yellow diskette"
+	name = "黄色软盘"
 	faction = "Goldstein Solutions"
 	fake = TRUE
 
 /obj/item/weapon/disk/green
-	name = "green diskette"
+	name = "绿色软盘"
 	icon_state = "disk_green"
 	item_state = "disk_green"
 	faction = "Kogama Kraftsmen"
 
 /obj/item/weapon/disk/green/fake
-	name = "green diskette"
+	name = "绿色软盘"
 	faction = "Kogama Kraftsmen"
 	fake = TRUE
 ///OSes/////////////////
 
 /obj/item/weapon/disk/os
-	name = "unga OS boot disk"
-	desc = "A disk used to boot unga OS."
+	name = "unga OS 启动盘"
+	desc = "一张用于启动 unga OS 的磁盘。"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "disk_uos0"
 	item_state = "disk_uos0"
@@ -380,23 +380,23 @@
 		return
 
 /obj/item/weapon/disk/os/uos94
-	name = "unga OS 94 boot disk"
-	desc = "A disk used to boot unga OS 94."
+	name = "unga OS 94 启动盘"
+	desc = "用于启动 unga OS 94 的磁盘."
 	icon_state = "disk_uos94"
 	item_state = "disk_uos94"
 	operatingsystem = "unga OS 94"
 
 /obj/item/weapon/disk/os/uos94pe
-	name = "unga OS 94 LE boot disk"
-	desc = "A disk used to boot unga OS 94 Law Enforcement Edition."
+	name = "unga OS 94 LE 启动盘"
+	desc = "用于启动 unga OS 94 执法版 的磁盘."
 	icon_state = "disk_uos94"
 	item_state = "disk_uos94"
 	operatingsystem = "unga OS 94 Law Enforcement Edition"
 ///////////////components/////////////////////
 /obj/item/stack/component
 	icon = 'icons/obj/computers.dmi'
-	name = "electronic component"
-	desc = "A basic electronic chip."
+	name = "电子元件"
+	desc = "一块基础电子芯片."
 	icon_state = "generic_chip"
 	amount = 1
 	value = 400
@@ -405,30 +405,30 @@
 	flags = CONDUCT
 
 /obj/item/stack/component/red
-	name = "RDKV S-445 chip"
-	desc = "A highly advanced chip, manufactured by Rednikov Industries."
+	name = "RDKV S-445 芯片"
+	desc = "一块高度先进的芯片, 由 Rednikov 工业制造."
 	icon_state = "card_red"
 
 /obj/item/stack/component/green
-	name = "KOGM S5R1 chip"
-	desc = "A highly advanced chip, manufactured by Kogama Kraftsmen."
+	name = "KOGM S5R1 芯片"
+	desc = "一块高度先进的芯片, 由 Kogama Kraftsmen 制造."
 	icon_state = "card_ram"
 
 /obj/item/stack/component/blue
-	name = "GBSA-1994 chip"
-	desc = "A highly advanced chip, manufactured by Giovanni Blu Stocks."
+	name = "GBSA-1994 芯片"
+	desc = "一块高度先进的芯片, 由 Giovanni Blu Stocks 制造."
 	icon_state = "cpu_chip_blue"
 
 /obj/item/stack/component/yellow
-	name = "GS-IC-M3 chip"
-	desc = "A highly advanced chip, manufactured by Goldstein Solutions."
+	name = "GS-IC-M3 芯片"
+	desc = "一块高度先进的芯片, 由 Goldstein Solutions 制造."
 	icon_state = "yellow_card"
 /////////////////precursors///////////////////
 ///////////////components/////////////////////
 /obj/item/stack/precursor
 	icon = 'icons/obj/mining.dmi'
-	name = "crystal"
-	desc = "A rare chemical, in crystallized form."
+	name = "晶体"
+	desc = "一种稀有的化学物质, 呈结晶形态."
 	icon_state = "ore_diamond"
 	var/produces = /obj/item/stack/component
 	amount = 1
@@ -437,33 +437,33 @@
 	max_amount = 20
 
 /obj/item/stack/precursor/red
-	name = "crimsonite crystals"
-	desc = "A rare chemical, in crystallized form. Has a red tinge."
+	name = "绯红晶体"
+	desc = "一种稀有的化学物质, 呈结晶形态. 带有红色色调."
 	icon_state = "ore_crimsonite"
 	produces = /obj/item/stack/component/red
 
 /obj/item/stack/precursor/green
-	name = "verdine crystals"
-	desc = "A rare chemical, in crystallized form. Has a green tinge."
+	name = "翠绿晶体"
+	desc = "一种稀有的化学物质, 呈结晶形态. 带有绿色色调."
 	icon_state = "ore_verdine"
 	produces = /obj/item/stack/component/green
 
 /obj/item/stack/precursor/blue
-	name = "indigon crystals"
-	desc = "A rare chemical, in crystallized form. Has a blue tinge."
+	name = "靛蓝晶体"
+	desc = "一种稀有的化学物质, 呈结晶形态. 带有蓝色色调."
 	icon_state = "ore_indigon"
 	produces = /obj/item/stack/component/blue
 
 /obj/item/stack/precursor/yellow
-	name = "galdonium crystals"
-	desc = "A rare chemical, in crystallized form. Has a yellow tinge."
+	name = "加尔多尼姆晶体"
+	desc = "一种稀有的化学物质, 呈结晶形态. 带有黄色色调."
 	icon_state = "ore_galdonium"
 	produces = /obj/item/stack/component/yellow
 
 //////////////////assembler/////////////////////
 /obj/structure/assembler
-	name = "assembler"
-	desc = "An automated machine, part of a conveyor belt, that assembles a circuit."
+	name = "组装机"
+	desc = "一台自动化机器, 是传送带的一部分, 用于组装电路."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "stacker0"
 	var/base_icon = "stacker"
@@ -478,14 +478,14 @@
 /obj/structure/assembler/processor
 
 /obj/structure/assembler/loader
-	name = "loader"
-	desc = "An automated machine, part of a conveyor belt, that loads the precursors."
+	name = "装载机"
+	desc = "一台自动化机器, 是传送带的一部分, 用于装载前体材料."
 	icon_state = "loader0"
 	base_icon = "loader"
 
 /obj/structure/assembler/unloader
-	name = "unloader"
-	desc = "An automated machine, part of a conveyor belt, that unloads the final product."
+	name = "卸载机"
+	desc = "一台自动化机器, 是传送带的一部分, 用于卸载最终产品."
 	icon_state = "unloader0"
 	base_icon = "unloader"
 
@@ -515,24 +515,24 @@
 	var/found1 = FALSE
 	var/found2 = FALSE
 	if (faction && H.civilization != faction)
-		to_chat(H, "You are not trained to operate this machine.")
+		to_chat(H, "你没有接受过操作这台机器的训练.")
 		return
 	if (on)
-		to_chat(H, "The assembler is busy, please wait...")
+		to_chat(H, "组装机正忙, 请稍候...")
 		return
 	for(var/obj/structure/assembler/processor/A in locate(x+1,y,z))
 		found1 = TRUE
 	for(var/obj/structure/assembler/unloader/A in locate(x+2,y,z))
 		found2 = TRUE
 	if (!found1 && !found2)
-		to_chat(H, "The assembler is incomplete and cannot be used.")
+		to_chat(H, "组装机不完整, 无法使用.")
 		return
 	if (istype(I, requires))
 		H.drop_from_inventory(I)
 		I.forceMove(locate(1,1,1))
 		manufacture(I,H)
 	else
-		to_chat(H, "<span class='warning'>This is the wrong precursor!</span>")
+		to_chat(H, "<span class='warning'>这是错误的前体材料!</span>")
 		return
 /obj/structure/assembler/loader/manufacture(var/obj/item/stack/precursor/P,var/mob/living/human/H)
 	if (istype(P,/obj/item/stack/precursor))
@@ -577,8 +577,8 @@
 //////////////////programs////////////////////
 
 /obj/item/weapon/disk/program
-	name = "program disk"
-	desc = "A disk used to boot unga OS."
+	name = "程序盘"
+	desc = "用于启动 unga OS 的磁盘."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "disk_black"
 	item_state = "disk_black"
@@ -590,24 +590,24 @@
 		return
 
 /obj/item/weapon/disk/program/orion_trail
-	name = "Orion Trail installation disk"
-	desc = "Learn how our descendants will get to Orion, and have fun in the process!"
+	name = "猎户座之旅 安装盘"
+	desc = "了解我们的后代将如何抵达猎户座, 并在此过程中享受乐趣!"
 	compatible_os = list("unga OS 94")
 	New()
 		..()
 		included = /datum/program/orion_trail
 
 /obj/item/weapon/disk/program/monkeysoftmail
-	name = "MonkeySoft Mail installation disk"
-	desc = "Send and Receive emails using the latest MonkeySoft Mail Client!"
+	name = "MonkeySoft Mail 安装盘"
+	desc = "使用最新的 MonkeySoft Mail 客户端发送和接收电子邮件!"
 	compatible_os = list("unga OS 94", "unga OS")
 	New()
 		..()
 		included = /datum/program/monkeysoftmail
 
 /obj/item/weapon/disk/program/squadtracker
-	name = "Squad-Trak installation disk"
-	desc = "Tracks the location of your squad."
+	name = "Squad-Trak 安装盘"
+	desc = "追踪你小队的位置."
 	compatible_os = list("unga OS 94","unga OS 94 Law Enforcement Edition")
 	New()
 		..()

@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/gas
-	name = "gas mask"
-	desc = "A face-covering mask that filters harmful gases from the air."
+	name = "防毒面具"
+	desc = "一种覆盖面部的面具, 可以过滤空气中的有害气体."
 	icon_state = "gas_alt"
 	item_flags = BLOCK_GAS_SMOKE_EFFECT | AIRTIGHT
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
@@ -56,7 +56,7 @@
 
 /obj/item/clothing/mask/gas/halfmask
 	blocks_scope = FALSE
-	name = "Half mask"
+	name = "半面罩"
 	restricts_view = 1
 	icon_state = "halfmask"
 	item_state = "halfmask"
@@ -71,32 +71,32 @@
 /obj/item/clothing/mask/gas/russia
 	icon_state = "russiamask"
 	item_state = "russiamask"
-	name = "GP-9 gas mask"
-	desc = "A panoramic gas mask intented for civilian use and civil denfense."
+	name = "GP-9防毒面具"
+	desc = "一款面向民用和民防的全景防毒面具."
 
 /obj/item/clothing/mask/gas/soviet
-	name = "ShM-1 gas mask"
-	desc = "A Soviet helmet styled-rubber mask introduced right before WW2."
+	name = "ShM-1防毒面具"
+	desc = "一款二战前夕推出的苏联头盔式橡胶面具."
 	icon_state = "shm1"
 	item_state = "shm1"
 
 /obj/item/clothing/mask/gas/soviet/gp5
-	name = "GP-5 gas mask"
-	desc = "A Soviet helmet styled-rubber mask."
+	name = "GP-5防毒面具"
+	desc = "一款苏联头盔式橡胶面具."
 	icon_state = "gp5"
 	item_state = "gp5"
 
 /obj/item/clothing/mask/gas/soviet/pmk1
 	icon_state = "pmk1"
 	item_state = "pmk1"
-	name = "PMK-1 gas mask"
-	desc = "Compact combined mask designed in the late 1970s, used by Soviet and Russian Armed Forces."
+	name = "PMK-1防毒面具"
+	desc = "一款20世纪70年代末设计的紧凑型组合面具, 供苏联和俄罗斯武装部队使用."
 
 /obj/item/clothing/mask/gas/american
 	icon_state = "m2"
 	item_state = "m2"
-	name = "M2 gas mask"
-	desc = "Compact combined mask designed in 1939, used by the US army."
+	name = "M2防毒面具"
+	desc = "一款1939年设计的紧凑型组合面具, 供美国陆军使用."
 
 /obj/item/clothing/mask/gas/swat
 	icon_state = "swatmask"

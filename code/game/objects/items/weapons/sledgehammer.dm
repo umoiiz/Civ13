@@ -1,7 +1,7 @@
 //Melee, two handed.
 /obj/item/weapon/sledgehammer
-	name = "generic sledgehammer"
-	desc = "A generic sledgehammer, very heavy, but good for crushing things."
+	name = "通用大锤"
+	desc = "一把普通的双手大锤,非常沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sledgehammer"
 	item_state = "sledgehammer"
@@ -16,12 +16,12 @@
 			//Orcs and Apes can use it onehanded.
 		else*/
 	if (!(user.has_empty_hand(both = FALSE)))
-		to_chat(user, "<span class='warning'>You need both hands to swing the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能挥动[src]!</span>")
 		return FALSE
 
 /obj/item/weapon/sledgehammer/stone/sledgehammer
-	name = "Stone Sledgehammer"
-	desc = "A stone sledgehammer, very heavy, but good for crushing things."
+	name = "石制大锤"
+	desc = "一把石制大锤,非常沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "stone_sledgehammer"
 	item_state = "stone_sledgehammer"
@@ -33,8 +33,8 @@
 	weight = 80
 	force = 24
 /obj/item/weapon/sledgehammer/lead/sledgehammer
-	name = "Lead Sledgehammer"
-	desc = "A lead sledgehammer, extremely heavy, nearly impossible to use."
+	name = "铅制大锤"
+	desc = "一把铅制大锤,极其沉重,几乎无法使用."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "lead_sledgehammer"
 	item_state = "lead_sledgehammer"
@@ -47,8 +47,8 @@
 	force = 32
 
 /obj/item/weapon/sledgehammer/bronze/sledgehammer
-	name = "Bronze Sledgehammer"
-	desc = "A bronze sledgehammer, pretty heavy, but good for crushing things."
+	name = "青铜大锤"
+	desc = "一把青铜大锤,相当沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "bronze_sledgehammer"
 	item_state = "bronze_sledgehammer"
@@ -61,8 +61,8 @@
 	force = 40
 
 /obj/item/weapon/sledgehammer/iron/sledgehammer
-	name = "Iron Sledgehammer"
-	desc = "A Iron sledgehammer, very heavy, but good for crushing things."
+	name = "铁制大锤"
+	desc = "一把铁制大锤,非常沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "iron_sledgehammer"
 	item_state = "Iron_sledgehammer"
@@ -75,8 +75,8 @@
 	force = 52
 
 /obj/item/weapon/sledgehammer/steel/sledgehammer
-	name = "Steel Sledgehammer"
-	desc = "A Steel sledgehammer, extremely heavy, but good for crushing things."
+	name = "钢制大锤"
+	desc = "一把钢制大锤,极其沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "steel_sledgehammer"
 	item_state = "steel_sledgehammer"
@@ -90,8 +90,8 @@
 	slowdown = 5
 
 /obj/item/weapon/sledgehammer/uranium/sledgehammer
-	name = "Uranium Sledgehammer"
-	desc = "A Uranium sledgehammer, kinda heavy, but good for crushing things."
+	name = "铀制大锤"
+	desc = "一把铀制大锤,有点沉重,但很适合砸碎东西."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "uranium_sledgehammer"
 	item_state = "uranium_sledgehammer"

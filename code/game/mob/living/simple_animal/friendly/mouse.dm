@@ -1,7 +1,7 @@
 /mob/living/simple_animal/mouse
 	name = "mouse"
 	real_name = "mouse"
-	desc = "It's a small rodent."
+	desc = "它是一只小型啮齿动物."
 	icon_state = "mouse_gray"
 	item_state = "mouse_gray"
 	icon_living = "mouse_gray"
@@ -92,7 +92,7 @@
 				dmod = 2
 			if (find_trait("Strong Immune System"))
 				dmod = 0.2
-			to_chat(M, "<span class = 'notice'>\icon[getFlatIcon(src)] Squeek!</span>")
+			to_chat(M, "<span class = 'notice'>\icon[getFlatIcon(src)]吱吱!</span>")
 			to_chat(M, 'sound/effects/mousesqueek.ogg')
 			target_mob = M
 			stance = HOSTILE_STANCE_ATTACK
@@ -121,9 +121,9 @@
 	if (!istype(W) || !W.sharp)
 		return ..()
 	else if (W.sharp)
-		user.visible_message("<span class = 'notice'>[user] starts to butcher [src].</span>")
+		user.visible_message("<span class = 'notice'>[user]开始肢解[src].</span>")
 		if (do_after(user, 30, src))
-			user.visible_message("<span class = 'notice'>[user] butchers [src] into a sole meat slab.</span>")
+			user.visible_message("<span class = 'notice'>[user]将[src]肢解成一块纯肉排.</span>")
 			var/obj/item/weapon/reagent_containers/food/snacks/meat/human/meat = new/obj/item/weapon/reagent_containers/food/snacks/meat/human(get_turf(src))
 			meat.name = "[name] meatsteak"
 			meat.radiation = radiation/2
@@ -160,7 +160,7 @@
 //TOM IS ALIVE! SQUEEEEEEEE~K :)
 /mob/living/simple_animal/mouse/brown/Tom
 	name = "Tom"
-	desc = "Jerry the cat is not amused."
+	desc = "猫咪杰瑞并不觉得有趣."
 
 /mob/living/simple_animal/mouse/brown/Tom/New()
 	..()

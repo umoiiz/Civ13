@@ -140,7 +140,7 @@
 	if (healing_stage >= 30 && (istype(buckled, /obj/structure/bed) || istype(buckled, /obj/structure/optable) || istype(buckled, /obj/structure/medicalbed)))
 		if (istype(buckled, /obj/structure/medicalbed))
 			rejuvenate()
-			to_chat(src, "You feel much better.")
+			to_chat(src, "你感觉好多了.")
 		healing_stage = 0
 		if (getBruteLoss() >= 15)
 			adjustBruteLoss(-2)
@@ -238,7 +238,7 @@
 			stats["stamina"][2] = 80
 
 		if (getStat("stamina") == getMaxStat("stamina")-1 && m_intent == "walk")
-			to_chat(src, "<span class = 'good'>You feel like you can run for a while.</span>")
+			to_chat(src, "<span class = 'good'>你感觉自己能跑一阵子了.</span>")
 
 	nutrition = min(nutrition, max_nutrition)
 	nutrition = max(nutrition, -max_nutrition)
@@ -282,7 +282,7 @@
 			disease_progression += 0.5
 			// first 3 minutes
 			if (prob(7))
-				to_chat(src, "You feel painful lumps on your skin.")
+				to_chat(src, "你感到皮肤上有疼痛的肿块.")
 				adjustToxLoss(rand(8,12))
 			//3 more minutes
 			else if (disease_progression >= 90 && prob(10) && stat != DEAD)
@@ -290,7 +290,7 @@
 			// 3 more minutes
 			else if (disease_progression >= 180 && disease_progression <= 300 && prob(15))
 				adjustBrainLoss(rand(3,5))
-				to_chat(src, "You feel your body burning up from fever!")
+				to_chat(src, "你感到身体因发烧而燃烧!")
 				Weaken(5)
 				bodytemperature = 313.15
 			// 4 more minutes
@@ -298,7 +298,7 @@
 				disease = 0
 				disease_type = "none"
 				disease_progression = 0
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_immunity += "plague"
 				disease_treatment = 0
 				bodytemperature = 310.055
@@ -310,7 +310,7 @@
 				disease_progression += 2
 			// first 2 minutes
 			if (disease_progression == 25)
-				to_chat(src, "You feel a little feverish.")
+				to_chat(src, "你感到有点发烧.")
 				disease_treatment = 0
 				apply_effect(10, DROWSY, FALSE)
 				bodytemperature = 311.35
@@ -319,14 +319,14 @@
 				emote("sniff")
 				apply_effect(5, DROWSY, FALSE)
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 312.15 && prob(10))
-				to_chat(src, "You feel like your fever is getting worse!")
+				to_chat(src, "你感觉你的发烧正在加重!")
 				apply_effect(5, AGONY, FALSE)
 				apply_effect(5, DROWSY, FALSE)
 				emote(pick("cough","sneeze"))
 				bodytemperature = 312.15
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 313.15 && prob(1))
 				adjustBrainLoss(rand(7,10))
-				to_chat(src, "You feel your body burning up from fever!")
+				to_chat(src, "你感到身体因发烧而燃烧!")
 				apply_effect(10, AGONY, FALSE)
 				apply_effect(5, DROWSY, FALSE)
 				emote(pick("cough","sneeze"))
@@ -334,12 +334,12 @@
 				bodytemperature = 313.15
 			// 2 more minutes
 			else if (disease_progression >= 180 && disease_progression < 240 && bodytemperature >= 313.15 && prob(8))
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				apply_effect(5, DROWSY, FALSE)
 				emote(pick("cough","sneeze"))
 				bodytemperature = 312.35
 			else if (disease_progression >= 180 && disease_progression < 240 && bodytemperature >= 312.15 && prob(2))
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				emote(pick("cough","sneeze"))
 				bodytemperature = 310.055
 			else if (disease_progression >= 240 && prob(35))
@@ -347,7 +347,7 @@
 				disease_type = "none"
 				disease_progression = 0
 				bodytemperature = 310.055
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_treatment = 0
 				if (prob(25))
 					disease_immunity += "flu"
@@ -360,7 +360,7 @@
 				disease_progression += 5
 			// first 2 minutes
 			if (disease_progression == 25)
-				to_chat(src, "You feel a little feverish.")
+				to_chat(src, "你感到有点发烧.")
 				disease_treatment = 0
 				apply_effect(10, DROWSY, FALSE)
 				bodytemperature = 311.35
@@ -370,17 +370,17 @@
 					emote("cough")
 					apply_effect(5, DROWSY, FALSE)
 				else
-					to_chat(src, "Your muscles ache!")
+					to_chat(src, "你的肌肉酸痛!")
 					apply_effect(5, AGONY, FALSE)
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 312.15 && prob(4))
-				to_chat(src, "You feel like your fever is getting worse!")
+				to_chat(src, "你感觉你的发烧正在加重!")
 				apply_effect(5, AGONY, FALSE)
 				apply_effect(5, DROWSY, FALSE)
 				emote(pick("cough"))
 				bodytemperature = 312.15
 				adjustBrainLoss(1)
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 313.15 && prob(1))
-				to_chat(src, "You feel very nauseous!")
+				to_chat(src, "你感到非常恶心!")
 				apply_effect(8, AGONY, FALSE)
 				spawn(200)
 					water -= 35
@@ -388,12 +388,12 @@
 			// 2 more minutes
 			else if (disease_progression >= 180 && disease_progression < 240 && bodytemperature >= 313.15 && prob(8))
 				if (prob(50))
-					to_chat(src, "You feel your fever going down.")
+					to_chat(src, "你的发烧正在消退.")
 					apply_effect(5, DROWSY, FALSE)
 					emote(pick("cough"))
 					bodytemperature = 312.35
 				else
-					to_chat(src, "You feel nauseous!")
+					to_chat(src, "你感到恶心!")
 					apply_effect(5, AGONY, FALSE)
 					spawn(200)
 						water -= 12
@@ -403,7 +403,7 @@
 					var/obj/item/organ/external/E = get_organ("groin")
 					var/datum/wound/W = new /datum/wound/internal_bleeding(35, internal_organs_by_name["liver"])
 					E.wounds += W
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				emote(pick("cough"))
 				bodytemperature = 310.055
 			else if (disease_progression >= 240 && prob(35))
@@ -411,7 +411,7 @@
 				disease_type = "none"
 				disease_progression = 0
 				bodytemperature = 310.055
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_treatment = 0
 				if (prob(25))
 					disease_immunity += "typhus"
@@ -424,7 +424,7 @@
 				disease_progression += 1.5
 			// first 2 minutes
 			if (disease_progression == 25)
-				to_chat(src, "You feel a little feverish.")
+				to_chat(src, "你感到有点发烧.")
 				disease_treatment = 0
 				apply_effect(10, DROWSY, FALSE)
 				bodytemperature = 311.35
@@ -433,7 +433,7 @@
 				emote("shiver")
 				apply_effect(7, DROWSY, FALSE)
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 312.15 && prob(10))
-				to_chat(src, "You feel like your fever is getting worse!")
+				to_chat(src, "你感觉你的发烧正在加重!")
 				adjustBrainLoss(rand(2,3))
 				apply_effect(8, AGONY, FALSE)
 				apply_effect(6, DROWSY, FALSE)
@@ -444,7 +444,7 @@
 				bodytemperature = 312.15
 			else if (disease_progression >= 60 && disease_progression < 180 && bodytemperature < 313.15 && prob(1) && !disease_treatment)
 				adjustBrainLoss(rand(7,10))
-				to_chat(src, "You feel your body burning up from fever!")
+				to_chat(src, "你感到身体因发烧而燃烧!")
 				apply_effect(12, AGONY, FALSE)
 				apply_effect(7, DROWSY, FALSE)
 				spawn(200)
@@ -454,13 +454,13 @@
 				bodytemperature = 313.15
 			// 2 more minutes
 			else if (disease_progression >= 180 && disease_progression < 240 && bodytemperature >= 313.15 && prob(8) && !disease_treatment)
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				adjustBrainLoss(rand(4,6))
 				apply_effect(6, DROWSY, FALSE)
 				emote("shiver")
 				bodytemperature = 312.35
 			else if (disease_progression >= 180 && disease_progression < 240 && bodytemperature >= 312.15 && prob(2))
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				adjustBrainLoss(rand(2,3))
 				emote("shiver")
 				bodytemperature = 310.055
@@ -469,7 +469,7 @@
 				disease_type = "none"
 				disease_progression = 0
 				bodytemperature = 310.055
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_treatment = 0
 
 		else if (disease_type == "cholera")
@@ -480,7 +480,7 @@
 				disease_progression += 1.5
 			// first 3 minutes
 			if (disease_progression == 90)
-				to_chat(src, "You feel nauseous.")
+				to_chat(src, "你感到恶心.")
 				disease_treatment = 0
 				apply_effect(5, AGONY, FALSE)
 			//5 more minutes
@@ -488,7 +488,7 @@
 				emote("shiver")
 				apply_effect(7, DROWSY, FALSE)
 			else if (disease_progression >= 90 && disease_progression < 240 && prob(10))
-				to_chat(src, "You feel very nauseous!")
+				to_chat(src, "你感到非常恶心!")
 				apply_effect(8, AGONY, FALSE)
 				spawn(200)
 					water -= 55
@@ -502,7 +502,7 @@
 				disease_type = "none"
 				disease_progression = 0
 				bodytemperature = 310.055
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_treatment = 0
 		else if (disease_type == "zombie")
 			mood -= 0.15
@@ -513,11 +513,11 @@
 				disease_type = "none"
 				disease_progression = 0
 				bodytemperature = 310.055
-				to_chat(src, "You feel much better now! The disease is finally gone!")
+				to_chat(src, "你现在感觉好多了!疾病终于消失了!")
 				disease_treatment = 0
 
 			if (disease_progression == 25)
-				to_chat(src, "You feel your temperature rising.")
+				to_chat(src, "你感到体温在上升.")
 				apply_effect(10, DROWSY, FALSE)
 				bodytemperature = 311.35
 			if (prob(1))
@@ -534,7 +534,7 @@
 				bodytemperature = 314.15
 
 			else if (disease_progression >= 200 && disease_progression < 240 && prob(8) && !disease_treatment)
-				to_chat(src, "You feel your fever going down.")
+				to_chat(src, "你的发烧正在消退.")
 				adjustBrainLoss(rand(4,6))
 				apply_effect(6, DROWSY, FALSE)
 				bodytemperature = 313.35
@@ -542,7 +542,7 @@
 				adjustBrainLoss(200)
 				var/mob/living/simple_animal/hostile/human/zombie/playerzombie //make a var for the zombie
 				playerzombie = new /mob/living/simple_animal/hostile/human/zombie/ //make a zombie!
-				visible_message("<big>[src] turns into a zombie!</big>")
+				visible_message("<big>[src]变成了僵尸!</big>")
 				//transferring vars.
 				playerzombie.loc = loc
 				playerzombie.name = "[real_name]'s zombie"
@@ -759,11 +759,11 @@
 		heatDamageFromClothingTimer++
 
 		if (heatDamageFromClothingTimer == 5)
-			to_chat(src, "<span class = 'warning'><big>You are sweating inside your coat. It's way too warm to wear one.</big></span>")
+			to_chat(src, "<span class = 'warning'><big>你在外套里出汗了.穿外套实在太热了.</big></span>")
 
 		if (heatDamageFromClothingTimer >= 35)
 			if (prob(50))
-				to_chat(src, "<span class = 'warning'><big>You are very uncomfortable. Remove the coat.</big></span>")
+				to_chat(src, "<span class = 'warning'><big>你非常不舒服.脱掉外套.</big></span>")
 			heatDamageFromClothingTimer = 6
 			adjustBurnLoss(2)
 
@@ -1013,13 +1013,13 @@
 		if (cold_protection_disabled_timer > 0)
 			cold_protection_disabled_timer = max(0, cold_protection_disabled_timer - 1)
 			if (cold_protection_disabled_timer <= 0)
-				to_chat(src, "<span class='notice'>You feel your body heat starting to stabilize.</span>")
+				to_chat(src, "<span class='notice'>你感到体温开始稳定下来.</span>")
 
 		if (phosphor_dye_timer > 0)
 			phosphor_dye_timer = max(0, phosphor_dye_timer - 1)
 			if (phosphor_dye_timer <= 0)
 				set_light(0)
-				to_chat(src, "<span class='notice'>The glowing phosphor dye has finally faded.</span>")
+				to_chat(src, "<span class='notice'>发光的磷光染料终于褪去了.</span>")
 	return TRUE
 
 /mob/living/human/handle_regular_hud_updates()
@@ -1138,15 +1138,15 @@
 
 	if (nutrition < 220 && nutrition >= 150)
 		if (prob(3))
-			to_chat(src, "<span class = 'warning'>You're getting a bit hungry.</span>")
+			to_chat(src, "<span class = 'warning'>你有点饿了.</span>")
 
 	else if (nutrition < 150 && nutrition >= 100)
 		if (prob(4))
-			to_chat(src, "<span class = 'warning'>You're pretty hungry.</span>")
+			to_chat(src, "<span class = 'warning'>你相当饿了.</span>")
 
 	else if (nutrition < 100 && nutrition >= 20)
 		if (prob(5))
-			to_chat(src, "<span class = 'danger'>You're getting really hungry!</span>")
+			to_chat(src, "<span class = 'danger'>你真的饿了!</span>")
 
 	else if (nutrition < 20) //Nutrition is below 20 = starvation
 
@@ -1196,13 +1196,13 @@
 					eye_blurry += 10
 					Weaken(10)
 					adjustToxLoss(rand(1,15))
-					to_chat(src, "<span class='danger'>You're starving! The lack of strength makes you black out for a few moments...</span>")
+					to_chat(src, "<span class='danger'>你饿坏了!力量的缺失让你昏迷了片刻...</span>")
 
 			if (STARVATION_NEARDEATH to STARVATION_WEAKNESS) //5-30, 5% chance of weakening and TRUE-230 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
 				if (sleeping) return
 
 				if (!informed_starvation[num2text(-STARVATION_NEARDEATH)])
-					to_chat(src, "<span class='danger'>You're starving. You feel your life force slowly leaving your body...</span>")
+					to_chat(src, "<span class='danger'>你饿坏了.你感到生命力正慢慢离开你的身体...</span>")
 
 				informed_starvation[num2text(-STARVATION_NOTICE)] = TRUE
 				informed_starvation[num2text(-STARVATION_WEAKNESS)] = TRUE
@@ -1212,13 +1212,13 @@
 				if (prob(7))
 
 					adjustToxLoss(rand(1,20))
-					to_chat(src, "<span class='danger'>You're starving. You feel your life force slowly leaving your body...</span>")
+					to_chat(src, "<span class='danger'>你饿坏了.你感到生命力正慢慢离开你的身体...</span>")
 					eye_blurry += 20
 					if (weakened < 1) Weaken(20)
 
 				else if (paralysis<1 && prob(7)) //Mini seizure (25% duration and strength of a normal seizure)
 
-					visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", \
+					visible_message("<span class='danger'>\The [src]开始抽搐了!</span>", \
 							"<span class='warning'>You have a seizure!</span>")
 					Paralyse(5)
 					make_jittery(500)
@@ -1228,7 +1228,7 @@
 			if (-INFINITY to STARVATION_NEARDEATH) //Fuck the whole body up at this point
 
 				if (!informed_starvation[num2text(-STARVATION_NEGATIVE_INFINITY)])
-					to_chat(src, "<span class='danger'>You are dying from starvation!</span>")
+					to_chat(src, "<span class='danger'>你正在饿死!</span>")
 
 				informed_starvation[num2text(-STARVATION_NOTICE)] = TRUE
 				informed_starvation[num2text(-STARVATION_WEAKNESS)] = TRUE
@@ -1236,7 +1236,7 @@
 				informed_starvation[num2text(-STARVATION_NEGATIVE_INFINITY)] = TRUE
 
 				if (prob(10))
-					to_chat(src, "<span class='danger'>You are dying from starvation!</span>")
+					to_chat(src, "<span class='danger'>你正在饿死!</span>")
 
 				adjustToxLoss(STARVATION_TOX_DAMAGE)
 				adjustBrainLoss(STARVATION_BRAIN_DAMAGE)
@@ -1259,15 +1259,15 @@
 
 	if (water < 200 && water >= 150)
 		if (prob(3))
-			to_chat(src, "<span class = 'warning'>You're getting a bit thirsty.</span>")
+			to_chat(src, "<span class = 'warning'>你有点渴了.</span>")
 
 	else if (water < 150 && water >= 100)
 		if (prob(4))
-			to_chat(src, "<span class = 'warning'>You're pretty thirsty.</span>")
+			to_chat(src, "<span class = 'warning'>你相当渴了.</span>")
 
 	else if (water < 100 && water >= 20)
 		if (prob(5))
-			to_chat(src, "<span class = 'danger'>You're really thirsty!</span>")
+			to_chat(src, "<span class = 'danger'>你真的渴了!</span>")
 
 	else if (water < 20) //Nutrition is below 20 = dehydration
 
@@ -1317,13 +1317,13 @@
 					eye_blurry += 10
 					Weaken(10)
 					adjustToxLoss(rand(1,15))
-					to_chat(src, "<span class='danger'>You're dehydrating! The lack of strength makes you black out for a few moments...</span>")
+					to_chat(src, "<span class='danger'>你正在脱水! 力量的缺失让你昏迷了片刻...</span>")
 
 			if (DEHYDRATION_NEARDEATH to DEHYDRATION_WEAKNESS) //5-30, 5% chance of weakening and TRUE-230 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
 				if (sleeping) return
 
 				if (!informed_dehydration[num2text(-DEHYDRATION_NEARDEATH)])
-					to_chat(src, "<span class='danger'>You're dehydrating. You feel your life force slowly leaving your body...</span>")
+					to_chat(src, "<span class='danger'>你正在脱水. 你感到生命力正缓缓离开你的身体...</span>")
 
 				informed_dehydration[num2text(-DEHYDRATION_NOTICE)] = TRUE
 				informed_dehydration[num2text(-DEHYDRATION_WEAKNESS)] = TRUE
@@ -1333,13 +1333,13 @@
 				if (prob(7))
 
 					adjustToxLoss(rand(1,20))
-					to_chat(src, "<span class='danger'>You're dehydrating. You feel your life force slowly leaving your body...</span>")
+					to_chat(src, "<span class='danger'>你正在脱水. 你感到生命力正缓缓离开你的身体...</span>")
 					eye_blurry += 20
 					if (weakened < 1) Weaken(20)
 
 				else if (paralysis<1 && prob(7)) //Mini seizure (25% duration and strength of a normal seizure)
 
-					visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", \
+					visible_message("<span class='danger'>\The [src] 开始抽搐!</span>", \
 							"<span class='warning'>You have a seizure!</span>")
 					Paralyse(5)
 					make_jittery(500)
@@ -1349,7 +1349,7 @@
 			if (-INFINITY to DEHYDRATION_NEARDEATH) //Fuck the whole body up at this point
 
 				if (!informed_dehydration[num2text(-DEHYDRATION_NEGATIVE_INFINITY)])
-					to_chat(src, "<span class='danger'>You are dying from dehydration!</span>")
+					to_chat(src, "<span class='danger'>你正因脱水而濒死!</span>")
 
 				informed_dehydration[num2text(-DEHYDRATION_NOTICE)] = TRUE
 				informed_dehydration[num2text(-DEHYDRATION_WEAKNESS)] = TRUE
@@ -1357,7 +1357,7 @@
 				informed_dehydration[num2text(-DEHYDRATION_NEGATIVE_INFINITY)] = TRUE
 
 				if (prob(10))
-					to_chat(src, "<span class='danger'>You are dying from dehydration!</span>")
+					to_chat(src, "<span class='danger'>你正因脱水而濒死!</span>")
 
 				adjustToxLoss(DEHYDRATION_TOX_DAMAGE)
 				adjustBrainLoss(DEHYDRATION_BRAIN_DAMAGE)
@@ -1750,7 +1750,7 @@
 						holder2.overlays += icon(holder2.icon,"nco")
 			if (map.ID == MAP_CAMPAIGN || map.ID == MAP_OPERATION_FALCON || map.ID == MAP_VADSO_CITY || map.ID == CAMPAIGN_MAP_LIST_MAPID_OR)
 				if (original_job.is_commander)
-					to_chat(world, "<font color='green' size=4>[ckey] is now the <b>[capitalize(lowertext(faction_text))] Army</b> Commander!</font>")
+					to_chat(world, "<font color='green' size=4>[ckey] 现在是 <b>[capitalize(lowertext(faction_text))] 军队</b>指挥官!</font>")
 			if (original_job.is_medic)
 				holder2.overlays += icon(holder2.icon,"medic")
 			hud_list[BASE_FACTION] = holder2
@@ -1843,11 +1843,11 @@
 		if (stat == DEAD)
 			spawn(30000)
 				if (stat == DEAD)
-					visible_message("[src]'s body starts to rot.")
+					visible_message("[src]的身体开始腐烂.")
 					rotting_stage = 1
 					spawn(30000)
 						if (stat == DEAD)
-							visible_message("[src]'s body is visibly rotten!")
+							visible_message("[src]的身体已经明显腐烂!")
 							rotting_stage = 2
 							if(map.ID != "TANTIVEIV" && map.ID != MAP_VERDUN)
 								if (isturf(loc))
@@ -1899,7 +1899,7 @@
 		spawn(300)
 			if (buriedalive && stat != DEAD)
 				adjustOxyLoss(5)
-				to_chat(src, "<span class='danger'>You can't breathe!</span>")
+				to_chat(src, "<span class='danger'>你无法呼吸!</span>")
 
 
 /mob/living/human/proc/process_addictions(drug = null, value = 0)
@@ -1959,21 +1959,21 @@
 					if (0 to 13)
 						if (prob(5))
 							emote("shiver")
-							to_chat(src, "You feel slightly sick.")
+							to_chat(src, "你感到有点恶心.")
 						return
 					if (13 to 25)
 						if (prob(10))
 							custom_pain("You feel a slight itch.",0)
 						if (prob(8))
 							emote("shiver")
-							to_chat(src, "You feel sick.")
+							to_chat(src, "你感到恶心.")
 						return
 					if (25 to 48)
 						if (prob(10))
 							custom_pain("Your body itches all over.",1)
 						if (prob(11))
 							emote("shiver")
-							to_chat(src, "You feel sick.")
+							to_chat(src, "你感到恶心.")
 						if (prob(6))
 							vomit()
 						return
@@ -2076,7 +2076,7 @@
 			if (/*!istype(O,/obj/item/weapon/implant) && */prob(2)) //Moving with things stuck in you could be bad.
 				// All kinds of embedded objects cause bleeding.
 				if (species.flags & NO_PAIN)
-					to_chat(src, "<span class='warning'>You feel [O] moving inside your [organ.name].</span>")
+					to_chat(src, "<span class='warning'>你感到 [O] 在你的 [organ.name] 里移动.</span>")
 				else
 					var/msg = pick( \
 						"<span class='warning'>A spike of pain jolts your [organ.name] as you bump [O] inside.</span>", \

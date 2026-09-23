@@ -116,50 +116,50 @@ obj/item/weapon/gun/projectile/ancient/tanegashima
 			return
 	else if (istype(W, /obj/item/weapon/reagent_containers))
 		if (gunpowder)
-			to_chat(user, "<span class='notice'>The [src] is already packed with gunpowder.</span>")
+			to_chat(user, "<span class='notice'>[src]已经装满了火药.</span>")
 			return
 		else if (!W.reagents.has_reagent("gunpowder",1))
-			to_chat(user, "<span class = 'notice'>You need enough gunpowder in a gunpowder container in your hands to fill \the [src].</span>")
+			to_chat(user, "<span class = 'notice'>你手中需要有一个装有足够火药的容器才能填装\the [src].</span>")
 			return
 		else
-			to_chat(user, "<span class='notice'>You begin packing \the [src] with gunpowder...</span>")
+			to_chat(user, "<span class='notice'>你开始用火药填装\the [src]...</span>")
 			if (ishuman(user))
 				var/mob/living/human/H = user
 				if (do_after(user, (60 / H.getStatCoeff(stat)), src, can_move = TRUE))
 					if (!gunpowder)
 						if (W.reagents.has_reagent("gunpowder",1))
-							to_chat(user, "<span class='notice'>You finish packing \the [src] with gunpowder.</span>")
+							to_chat(user, "<span class='notice'>你完成了用火药填装\the [src].</span>")
 							W.reagents.remove_reagent("gunpowder",1)
 							gunpowder = TRUE
 							return
 						else
-							to_chat(user, "<span class = 'notice'>You need enough gunpowder in a gunpowder container in your hands to fill \the [src].</span>")
+							to_chat(user, "<span class = 'notice'>你手中需要有一个装有足够火药的容器才能填装\the [src].</span>")
 							return
 			else
 				if (do_after(user, 60, src, can_move = TRUE))
 					if (!gunpowder)
 						if (W.reagents.has_reagent("gunpowder",1))
-							to_chat(user, "<span class='notice'>You finish packing \the [src] with gunpowder.</span>")
+							to_chat(user, "<span class='notice'>你完成了用火药填装\the [src].</span>")
 							W.reagents.remove_reagent("gunpowder",1)
 							gunpowder = TRUE
 							return
 						else
-							to_chat(user, "<span class = 'notice'>You need enough gunpowder in a gunpowder container in your hands to fill \the [src].</span>")
+							to_chat(user, "<span class = 'notice'>你手中需要有一个装有足够火药的容器才能填装\the [src].</span>")
 							return
 	else if (istype(W, /obj/item/stack/ammopart/stoneball))
 		var/obj/item/stack/ammopart/stoneball/ST = W
 		if (!gunpowder)
-			to_chat(user, "<span class='notice'>You need to put in the gunpowder first.</span>")
+			to_chat(user, "<span class='notice'>你需要先放入火药.</span>")
 		else if (bullet)
-			to_chat(user, "<span class='notice'>There is already a projectile inside.</span>")
+			to_chat(user, "<span class='notice'>里面已经有一个弹丸了.</span>")
 			return
 		else if (!bullet && gunpowder)
-			to_chat(user, "<span class='notice'>You begin loading \the [src] with \the [W]...</span>")
+			to_chat(user, "<span class='notice'>你开始用\the [W]装填\the [src]...</span>")
 			if (ishuman(user))
 				var/mob/living/human/H = user
 				if (do_after(user, (100 / H.getStatCoeff(stat)), src, can_move = TRUE))
 					if (!bullet)
-						to_chat(user, "<span class='notice'>You load \the [src].</span>")
+						to_chat(user, "<span class='notice'>你装填了\the [src].</span>")
 						bullet = TRUE
 						var/obj/item/ammo_casing/stoneball/SBL = new/obj/item/ammo_casing/stoneball
 						loaded += SBL
@@ -180,7 +180,7 @@ obj/item/weapon/gun/projectile/ancient/tanegashima
 			else
 				if (do_after(user, 100, src, can_move = TRUE))
 					if (!bullet)
-						to_chat(user, "<span class='notice'>You load \the [src].</span>")
+						to_chat(user, "<span class='notice'>你装填了\the [src].</span>")
 						bullet = TRUE
 						var/obj/item/ammo_casing/stoneball/SBL = new/obj/item/ammo_casing/stoneball
 						loaded += SBL
@@ -205,19 +205,19 @@ obj/item/weapon/gun/projectile/ancient/tanegashima
 	if (ishuman(user))
 		var/mob/living/human/H = user
 		if (H.faction_text == INDIANS)
-			to_chat(user, "<span class='warning'>You don't know how to use this.</span>")
+			to_chat(user, "<span class='warning'>你不知道如何使用这个.</span>")
 			return FALSE
 	if (!gunpowder)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] without gunpowder!</span>")
+		to_chat(user, "<span class='warning'>没有火药你无法发射\the [src]!</span>")
 		return FALSE
 	if (!bullet)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] without a projectile!</span>")
+		to_chat(user, "<span class='warning'>没有弹丸你无法发射\the [src]!</span>")
 		return FALSE
 	if (!lighted && !istype(src, /obj/item/weapon/gun/projectile/ancient/matchlock) && (/obj/item/weapon/gun/projectile/ancient/tanegashima))
-		to_chat(user, "<span class='warning'>You can't fire \the [src] without lighting it!</span>")
+		to_chat(user, "<span class='warning'>没有点燃你无法发射\the [src]!</span>")
 		return FALSE
 	if (!(user.has_empty_hand(both = FALSE)) && istype(src, /obj/item/weapon/gun/projectile/ancient/matchlock) && (/obj/item/weapon/gun/projectile/ancient/tanegashima))
-		to_chat(user, "<span class='warning'>You need both hands to fire \the [src]!</span>")
+		to_chat(user, "<span class='warning'>你需要双手才能发射\the [src]!</span>")
 		return FALSE
 	return ..()
 

@@ -11,4 +11,4 @@
 		log_admin("[key_name(usr)] triggered am epoch vote.")
 		message_admins("[key_name(usr)] triggered an epoch vote.")
 	else
-		to_chat(src, "<span class = 'notice'>There is no processes.epochswap datum, or it is not ready.</span>")
+		to_chat(src, "<span class = 'notice'>没有processes.epochswap数据,或者它尚未就绪.</span>")

@@ -1,6 +1,6 @@
 /obj/structure/gatecontrol
-	name = "gate control"
-	desc = "Controls nearby gates."
+	name = "大门控制"
+	desc = "控制附近的大门."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gate_control"
 	anchored = TRUE
@@ -13,8 +13,8 @@
 	crushable = FALSE
 
 /obj/structure/gatecontrol/blastcontrol
-	name = "blast door control"
-	desc = "Controls nearby blastdoors."
+	name = "防爆门控制"
+	desc = "控制附近的防爆门."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "blast_control"
 	anchored = TRUE
@@ -27,9 +27,9 @@
 	if (cooldown <= world.time)
 		for (var/obj/structure/gate/blast/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the blast doors!</span>",
-									"<span class='notice'>You close the blast doors.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user] 关闭了防爆门!</span>",
+									"<span class='notice'>你关闭了防爆门.</span>",
+									"你听到有什么东西正在关闭.")
 				G.open = FALSE
 				cooldown = world.time + 3 SECONDS
 				playsound(G.loc, 'sound/effects/rollermove.ogg', 100)
@@ -40,9 +40,9 @@
 					G.density = TRUE
 					G.opacity = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the blast doors!</span>",
-									"<span class='notice'>You open the blast doors.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user] 打开了防爆门!</span>",
+									"<span class='notice'>你打开了防爆门.</span>",
+									"你听到有什么东西正在打开.")
 				G.open = TRUE
 				cooldown = world.time + 3 SECONDS
 				playsound(G.loc, 'sound/effects/lever.ogg', 100)
@@ -54,16 +54,16 @@
 					G.opacity = FALSE
 
 /obj/structure/gatecontrol/blastcontrol/garage
-	name = "garage shutter control"
-	desc = "Controls nearby garage shutters"
+	name = "车库卷帘门控制"
+	desc = "控制附近的车库卷帘门"
 
 /obj/structure/gatecontrol/blastcontrol/garage/attack_hand(var/mob/user as mob)
 	if (cooldown <= world.time)
 		for (var/obj/structure/gate/blast/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the shutters!</span>",
-									"<span class='notice'>You close the shutters.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user] 关闭了卷帘门!</span>",
+									"<span class='notice'>你关闭了卷帘门.</span>",
+									"你听到有什么东西正在关闭.")
 				G.open = FALSE
 				cooldown = world.time + 6 SECONDS
 				flick("garage_closing",G)
@@ -73,9 +73,9 @@
 					G.density = TRUE
 					G.opacity = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the shutters!</span>",
-									"<span class='notice'>You open the shutters.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user] 打开了卷帘门!</span>",
+									"<span class='notice'>你打开了卷帘门.</span>",
+									"你听到有什么东西正在打开.")
 				G.open = TRUE
 				cooldown = world.time + 6 SECONDS
 				flick("garage_opening",G)
@@ -86,15 +86,15 @@
 					G.opacity = FALSE
 
 /obj/structure/gatecontrol/sandstone
-	name = "gate control"
+	name = "大门控制"
 
 /obj/structure/gatecontrol/attack_hand(var/mob/user as mob)
 	if (cooldown <= world.time)
 		for (var/obj/structure/gate/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the gates!</span>",
-									"<span class='notice'>You close the gates.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user] 关闭了大门!</span>",
+									"<span class='notice'>你关闭了大门.</span>",
+									"你听到有什么东西正在关闭.")
 				G.open = FALSE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "gate")
@@ -104,9 +104,9 @@
 						G.icon_state = "gate0"
 						G.density = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the gates!</span>",
-									"<span class='notice'>You open the gates.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user] 打开了大门!</span>",
+									"<span class='notice'>你打开了大门.</span>",
+									"你听到有什么东西正在打开.")
 				G.open = TRUE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "gate")
@@ -120,9 +120,9 @@
 	if (cooldown <= world.time)
 		for (var/obj/structure/gate/sandstone/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the gates!</span>",
-									"<span class='notice'>You close the gates.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user] 关闭了大门!</span>",
+									"<span class='notice'>你关闭了大门.</span>",
+									"你听到有什么东西正在关闭.")
 				G.open = FALSE
 				cooldown = world.time + 6 SECONDS
 				playsound(G.loc, 'sound/effects/castle_gate.ogg', 100)
@@ -131,9 +131,9 @@
 					G.icon_state = "s_gate0"
 					G.density = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the gates!</span>",
-									"<span class='notice'>You open the gates.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user] 打开了大门!</span>",
+									"<span class='notice'>你打开了大门.</span>",
+									"你听到有什么东西正在打开.")
 				G.open = TRUE
 				cooldown = world.time + 6 SECONDS
 				playsound(G.loc, 'sound/effects/castle_gate.ogg', 100)
@@ -143,8 +143,8 @@
 					G.density = FALSE
 
 /obj/structure/gate
-	name = "gate"
-	desc = "An iron gate."
+	name = "大门"
+	desc = "一扇铁门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "gate0"
 	anchored = TRUE
@@ -157,8 +157,8 @@
 	crushable = FALSE
 
 /obj/structure/gate/open
-	name = "gate"
-	desc = "An iron gate."
+	name = "大门"
+	desc = "一扇铁门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "gate1"
 	anchored = TRUE
@@ -167,13 +167,13 @@
 
 /obj/structure/gate/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/siegeladder))
-		user.visible_message("<span class='danger'>\The [user] starts deploying \the [W.name].</span>",
-							"<span class='notice'>You start deploying \the [W.name].</span>",
-							"You hear something being deployed.")
+		user.visible_message("<span class='danger'>\The [user] 开始部署 \the [W.name].</span>",
+							"<span class='notice'>你开始部署 \the [W.name].</span>",
+							"你听到有什么东西正在被部署.")
 		if (do_after(user, 8 SECONDS, src))
-			user.visible_message("<span class='danger'>\The [user] has deployed \the [W.name]!</span>",
-								"<span class='notice'>You have deployed \the [W.name]!</span>",
-								"You hear something being deployed.")
+			user.visible_message("<span class='danger'>\The [user] 已部署 \the [W.name]!</span>",
+								"<span class='notice'>你已部署 \the [W.name]!</span>",
+								"你听到有什么东西正在被部署.")
 			var/obj/item/weapon/siegeladder/ANCH = W
 			user.remove_from_mob(ANCH)
 			ANCH.loc = src.loc
@@ -184,15 +184,15 @@
 			ANCH.dir = src.dir
 			return
 	if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/wrench) && !istype(W,/obj/item/weapon/hammer)) //No weapons can harm me! If not weapon and not a wrench.
-		user.visible_message("<span class='warning'>[user] hits \the [src] uselessly!</span>",
-							"<span class='warning'>You hit \the [src] uselessly!</span>",
-							"You hear something being hit!")
+		user.visible_message("<span class='warning'>[user] 徒劳地击中 \the [src]!</span>",
+							"<span class='warning'>你徒劳地击中 \the [src]!</span>",
+							"你听到有什么东西被击中了!")
 
 	..()
 
 /obj/structure/gate/blast
-	name = "blast door"
-	desc = "An thick steel blast door."
+	name = "防爆门"
+	desc = "一扇厚重的钢制防爆门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "blast"
 	anchored = TRUE
@@ -204,8 +204,8 @@
 	not_disassemblable = TRUE
 
 /obj/structure/gate/blast/open
-	name = "blast door"
-	desc = "An thick steel blast door."
+	name = "防爆门"
+	desc = "一扇厚重的钢制防爆门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "blastopen"
 	opacity = FALSE
@@ -219,14 +219,14 @@
 
 /obj/structure/gate/blast/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/wrench) && !istype(W,/obj/item/weapon/hammer)) //No weapons can harm me! If not weapon and not a wrench.
-		user.visible_message("<span class='warning'>[user] hits \the [src] uselessly!</span>",
-							"<span class='warning'>You hit \the [src] uselessly!</span>",
-							"You hear something being hit!")
+		user.visible_message("<span class='warning'>[user] 徒劳地击中 \the [src]!</span>",
+							"<span class='warning'>你徒劳地击中 \the [src]!</span>",
+							"你听到有什么东西被击中了!")
 		..()
 
 /obj/structure/gate/blast/garage
-	name = "garage shutter"
-	desc = "A steel garage shutter."
+	name = "车库卷帘门"
+	desc = "一扇钢制车库卷帘门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "garage_closed"
 	anchored = TRUE
@@ -237,8 +237,8 @@
 	not_movable = TRUE
 
 /obj/structure/gate/blast/garage/open
-	name = "garage shutter"
-	desc = "A steel garage shutter."
+	name = "车库卷帘门"
+	desc = "一扇钢制车库卷帘门."
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "garage_open"
 	opacity = FALSE
@@ -251,20 +251,20 @@
 
 /obj/structure/gate/blast/garage/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/weldingtool)) //No weapons can harm me!
-		user.visible_message("<span class='warning'>[user] hits \the [src] uselessly!</span>",
-							"<span class='warning'>You hit \the [src] uselessly!</span>",
-							"You hear something being hit!")
+		user.visible_message("<span class='warning'>[user] 徒劳地击中 \the [src]!</span>",
+							"<span class='warning'>你徒劳地击中了\the [src]!</span>",
+							"你听到有什么东西被击中了!")
 	else if (istype(W,/obj/item/weapon/weldingtool)) //ARGH! MY ONLY WEAKNESS... WELDINGTOOLS!
-		user.visible_message("<span class='warning'>[user] starts cutting through \the [src]...</span>",
-							"<span class='notice'>You start cutting through \the [src]...</span>",
-							"You hear something being cut.")
+		user.visible_message("<span class='warning'>[user]开始切割\the [src]...</span>",
+							"<span class='notice'>你开始切割\the [src]...</span>",
+							"你听到有什么东西被切割了.")
 		playsound(loc, 'sound/effects/extinguish.ogg', 50, TRUE)
 		if (do_after(user, 5 SECONDS, src))
 			qdel(src)
 			return
 
 /obj/structure/gate/sandstone
-	name = "sandstone gate"
+	name = "砂岩门"
 	icon_state = "s_gate0"
 	anchored = TRUE
 	density = TRUE
@@ -276,8 +276,8 @@
 	open = TRUE
 
 /obj/structure/gate/whiterun
-	name = "whiterun gate"
-	desc = "A large wooden double door"
+	name = "白漫城门"
+	desc = "一扇大型木制双开门"
 	icon = 'icons/obj/doors/gates_64x96.dmi'
 	icon_state = "whiterun1"
 	anchored = TRUE
@@ -292,18 +292,18 @@
 
 /obj/structure/gate/whiterun/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W,/obj/item/weapon) && !istype(W,/obj/item/weapon/wrench) && !istype(W,/obj/item/weapon/hammer)) //No weapons can harm me! If not weapon and not a wrench.
-		user.visible_message("<span class='warning'>[user] hits the gate uselessly!</span>",
-							"<span class='warning'>You hit the gate uselessly!</span>",
-							"You hear something being hit!")
+		user.visible_message("<span class='warning'>[user]徒劳地击中了大门!</span>",
+							"<span class='warning'>你徒劳地击中了大门!</span>",
+							"你听到有什么东西被击中了!")
 	else
 		..()
 
 /obj/structure/gate/whiterun/r
-	name = "Whiterun gate"
+	name = "白漫城门"
 	icon_state = "whiterun2"
 
 /obj/structure/gate/whiterun/l
-	name = "Whiterun gate"
+	name = "白漫城门"
 	icon_state = "whiterun1"
 
 /obj/structure/gate/ex_act(severity)
@@ -316,13 +316,13 @@
 			health -= rand(50, 100)
 			
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is blown apart!</span>")
+		visible_message("<span class='danger'>\The [src]被炸碎了!</span>")
 		qdel(src)
 		return
 
 /obj/structure/gatecontrol/whiterun
-	name = "gate control"
-	desc = "Controls nearby gates."
+	name = "大门控制"
+	desc = "控制附近的大门."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gate_control"
 	anchored = TRUE
@@ -335,9 +335,9 @@
 	if (cooldown <= world.time)
 		for (var/obj/structure/gate/whiterun/r/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the gates!</span>",
-									"<span class='notice'>You close the gates.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user]关闭了大门!</span>",
+									"<span class='notice'>你关闭了大门.</span>",
+									"你听到有什么东西关闭了.")
 				G.open = FALSE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "Whiterun gate")
@@ -347,9 +347,9 @@
 						G.icon_state = "whiterun2"
 						G.density = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the gates!</span>",
-									"<span class='notice'>You open the gates.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user]打开了大门!</span>",
+									"<span class='notice'>你打开了大门.</span>",
+									"你听到有什么东西打开了.")
 				G.open = TRUE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "Whiterun gate")
@@ -361,9 +361,9 @@
 
 		for (var/obj/structure/gate/whiterun/l/G in range(distance,src.loc))
 			if (G.open)
-				user.visible_message("<span class='warning'>[user] closes the gates!</span>",
-									"<span class='notice'>You close the gates.</span>",
-									"You hear something closing.")
+				user.visible_message("<span class='warning'>[user]关闭了大门!</span>",
+									"<span class='notice'>你关闭了大门.</span>",
+									"你听到有什么东西关闭了.")
 				G.open = FALSE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "Whiterun gate")
@@ -373,9 +373,9 @@
 						G.icon_state = "whiterun1"
 						G.density = TRUE
 			else
-				user.visible_message("<span class='warning'>[user] opens the gates!</span>",
-									"<span class='notice'>You open the gates.</span>",
-									"You hear something opening.")
+				user.visible_message("<span class='warning'>[user]打开了大门!</span>",
+									"<span class='notice'>你打开了大门.</span>",
+									"你听到有什么东西打开了.")
 				G.open = TRUE
 				cooldown = world.time + 6 SECONDS
 				if (G.name == "Whiterun gate")
@@ -387,8 +387,8 @@
 
 /////////////////////////////////////////////////////////////////////////////////
 /obj/structure/gate/barrier
-	name = "barrier gate"
-	desc = "A long barrier gate."
+	name = "屏障门"
+	desc = "一道长长的屏障门."
 	icon = 'icons/obj/doors/gates_64x64.dmi'
 	icon_state = "barriergate"
 	anchored = TRUE
@@ -406,8 +406,8 @@
 	crushable = TRUE
 
 /obj/structure/gate/barrier/vertical
-	name = "barrier gate"
-	desc = "A long barrier gate."
+	name = "屏障门"
+	desc = "一道长长的屏障门."
 	icon = 'icons/obj/doors/gates_64x64.dmi'
 	icon_state = "barriergate_vertical_left"
 	anchored = TRUE
@@ -426,9 +426,9 @@
 /obj/structure/gate/barrier/attack_hand(var/mob/user as mob)
 	if (cooldown <= world.time)
 		if (open)
-			user.visible_message("<span class='notice'>[user] closes the barrier gate!</span>",
-								"<span class='notice'>You close the barrier gate.</span>",
-								"You hear something closing.")
+			user.visible_message("<span class='notice'>[user]关闭了屏障门!</span>",
+								"<span class='notice'>你关闭了屏障门.</span>",
+								"你听到有什么东西关闭了.")
 			open = FALSE
 			cooldown = world.time + 2 SECONDS
 			playsound(loc, 'sound/effects/lever.ogg', 100)
@@ -436,9 +436,9 @@
 			density = TRUE
 			return
 		else
-			user.visible_message("<span class='notice'>[user] opens the barrier gate!</span>",
-								"<span class='notice'>You open the barrier gate.</span>",
-								"You hear something opening.")
+			user.visible_message("<span class='notice'>[user]打开了屏障门!</span>",
+								"<span class='notice'>你打开了屏障门.</span>",
+								"你听到有什么东西打开了.")
 			open = TRUE
 			cooldown = world.time + 2 SECONDS
 			playsound(loc, 'sound/effects/lever.ogg', 100)
@@ -449,9 +449,9 @@
 /obj/structure/gate/barrier/vertical/attack_hand(var/mob/user as mob)
 	if (cooldown <= world.time)
 		if (open)
-			user.visible_message("<span class='notice'>[user] closes the barrier gate!</span>",
-								"<span class='notice'>You close the barrier gate.</span>",
-								"You hear something closing.")
+			user.visible_message("<span class='notice'>[user]关闭了屏障门!</span>",
+								"<span class='notice'>你关闭了屏障门.</span>",
+								"你听到有什么东西关闭了.")
 			open = FALSE
 			cooldown = world.time + 2 SECONDS
 			playsound(loc, 'sound/effects/lever.ogg', 100)
@@ -459,9 +459,9 @@
 			density = TRUE
 			return
 		else
-			user.visible_message("<span class='notice'>[user] opens the barrier gate!</span>",
-								"<span class='notice'>You open the barrier gate.</span>",
-								"You hear something opening.")
+			user.visible_message("<span class='notice'>[user]打开了屏障门!</span>",
+								"<span class='notice'>你打开了屏障门.</span>",
+								"你听到有什么东西打开了.")
 			open = TRUE
 			cooldown = world.time + 2 SECONDS
 			playsound(loc, 'sound/effects/lever.ogg', 100)
@@ -474,8 +474,8 @@
 /////Pseudo-Elavators///// Currently designed for a 2x2 enclosed space, code needs to be overhauled in case we want bigger, more complex elevators (see about porting Baystation's turbolifts)
 
 /obj/structure/gate/elevator_door
-	name = "elevator door"
-	desc = "An elevator."
+	name = "电梯门"
+	desc = "一部电梯."
 	icon = 'icons/obj/doors/doors_64x32.dmi'
 	icon_state = "elevator_door"
 	anchored = TRUE
@@ -507,7 +507,7 @@
 /obj/structure/gate/elevator_door/proc/toggle()
 	playsound(src.loc, 'sound/effects/elevatordoor.ogg', 100)
 	if (open)
-		visible_message("The elevator door closes.")
+		visible_message("电梯门关闭了.")
 		open = FALSE
 		flick("elevator_doorclosing",src)
 		spawn(6)
@@ -517,7 +517,7 @@
 			for(var/atom/movable/S in opacity_objects)
 				S.set_opacity(TRUE)
 	else
-		visible_message("The elevator door opens.")
+		visible_message("电梯门打开了.")
 		open = TRUE
 		flick("elevator_dooropening",src)
 		spawn(6)
@@ -536,8 +536,8 @@
 			return
 
 /obj/structure/gatecontrol/elevator_door
-	name = "elevator door button"
-	desc = "Calls for an elevator."
+	name = "电梯门按钮"
+	desc = "呼叫电梯."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "lift_panel2"
 	anchored = TRUE
@@ -553,7 +553,7 @@
 		cooldown = world.time + 6 SECONDS
 
 /obj/structure/elevator_button
-	name = "elevator control button"
+	name = "电梯控制按钮"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "lift_panel"
 	anchored = TRUE
@@ -572,14 +572,14 @@
 			if (D.open)
 				D.toggle()
 		spawn(5)
-			visible_message("The elevator is departing!")
+			visible_message("电梯正在离开!")
 			spawn(10)
 				for (var/mob/M in range(1, src))
 					if (M.z == 1)
 						M.z = 2
 					else if (M.z == 2)
 						M.z = 1
-					to_chat(M, "The elevator has arrived!")
+					to_chat(M, "电梯已到达!")
 				for (var/obj/O in range(1, src))
 					if (!istype(O, /obj/structure/elevator_button/) && !istype (O, /obj/covers/))
 						if (O.z == 1)

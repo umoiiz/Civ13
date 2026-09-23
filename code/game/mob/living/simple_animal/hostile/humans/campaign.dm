@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/redmenian_ng
 	name = "NGR rifleman"
-	desc = "A conscripted soldier of the National Guard of Redmenia."
+	desc = "一名红人国国民警卫队征召兵."
 	icon_state = "rng1"
 	icon_dead = "rng1_dead"
 	response_help = "pushes"
@@ -49,7 +49,7 @@
 
 /mob/living/simple_animal/hostile/human/redmenian_ng/sl
 	name = "NGR squad leader"
-	desc = "A squad leader of the National Guard of Redmenia."
+	desc = "一名红人国国民警卫队队长."
 	icon_state = "rng_sl"
 	icon_dead = "rng_sl_dead"
 	maxHealth = 150
@@ -68,7 +68,7 @@
 
 /mob/living/simple_animal/hostile/human/redmenian_ng/medic
 	name = "NGR corpsman"
-	desc = "A corpsman of the National Guard of Redmenia."
+	desc = "一名红人国国民警卫队医护兵."
 	icon_state = "rng_medic"
 	icon_dead = "rng_medic_dead"
 	maxHealth = 150

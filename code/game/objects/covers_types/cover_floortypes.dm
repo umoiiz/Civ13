@@ -1,8 +1,8 @@
 // Floor Repair Item.
 
 /obj/item/weapon/covers
-	name = "floor cover"
-	desc = "Use this to cover holes."
+	name = "地板盖"
+	desc = "用它来盖住洞口."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wood_ship_repaired2"
 	w_class = ITEM_SIZE_SMALL
@@ -12,7 +12,7 @@
 	
 /obj/covers/repairedfloor
 	name = "repaired floor"
-	desc = "A repaired wood floor."
+	desc = "一块修复过的木地板."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "wood_ship_repaired"
 	layer = 1.98
@@ -24,7 +24,7 @@
 	spawn(15)
 		var/turf/T = get_turf(src)
 		if (istype(T, /turf/floor/beach/water/deep/saltwater) && map.ID != MAP_RIVER_KWAI && map.ID != MAP_VOYAGE && map.ID != MAP_MISSIONARY_RIDGE && map.ID != MAP_BATTLE_SHIPS)
-			visible_message("The [src] sinks!")
+			visible_message("[src]沉没了!")
 			qdel(src)
 			return
 
@@ -32,7 +32,7 @@
 
 /obj/covers/repairedfloor/ship
 	name = "ship floor"
-	desc = "A wooden ship floor."
+	desc = "一块木制船地板."
 	icon_state = "wood_ship"
 	material = "Wood"
 	passable = TRUE
@@ -52,7 +52,7 @@
 		maxhealth = 50
 		icon_state = "wood_ship_repaired"
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		Destroy()
 
 /obj/covers/repairedfloor/ship/south
@@ -61,7 +61,7 @@
 
 /obj/covers/repairedfloor/rope
 	name = "grappling hook rope"
-	desc = "A piece of rope attached to a grappling hook"
+	desc = "一段系在抓钩上的绳子"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "grapplehook_line_bridge"
 	flammable = FALSE
@@ -201,7 +201,7 @@
 
 /obj/covers/slate
 	name = "slatestone wall"
-	desc = "A slate wall."
+	desc = "一堵板岩墙."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "slate"
 	passable = TRUE
@@ -660,7 +660,7 @@
 
 /obj/covers/carpet/
 	name = "Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "carpet"
 	passable = TRUE
@@ -672,7 +672,7 @@
 
 /obj/covers/carpet/pinkcarpet
 	name = "Pink Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "gaycarpet"
 	passable = TRUE
@@ -684,7 +684,7 @@
 
 /obj/covers/carpet/redcarpet
 	name = "Red Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "carpet"
 	passable = TRUE
@@ -696,7 +696,7 @@
 
 /obj/covers/carpet/orangecarpet
 	name = "Orange Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "oracarpet"
 	passable = TRUE
@@ -708,7 +708,7 @@
 
 /obj/covers/carpet/purplecarpet
 	name = "Purple Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "purcarpet"
 	passable = TRUE
@@ -720,7 +720,7 @@
 
 /obj/covers/carpet/bluecarpet
 	name = "Blue Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "blucarpet"
 	passable = TRUE
@@ -732,7 +732,7 @@
 
 /obj/covers/carpet/tealcarpet
 	name = "Teal Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "sblucarpet"
 	passable = TRUE
@@ -744,7 +744,7 @@
 
 /obj/covers/carpet/greencarpet
 	name = "Green Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "turcarpet"
 	passable = TRUE
@@ -756,7 +756,7 @@
 
 /obj/covers/carpet/blackcarpet
 	name = "Black Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "bcarpet"
 	passable = TRUE
@@ -768,7 +768,7 @@
 
 /obj/covers/carpet/whitecarpet
 	name = "White Carpet"
-	desc = "Fluffy and Flammable!"
+	desc = "蓬松且易燃!"
 	icon = 'icons/turf/flooring/carpet.dmi'
 	icon_state = "wcarpet"
 	passable = TRUE
@@ -780,7 +780,7 @@
 
 /obj/covers/carpet/arcade
 	name = "arcade mat"
-	desc = "For those 80s vibes!"
+	desc = "献给那些80年代风情!"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "arcadefloor1"
 	passable = TRUE
@@ -792,7 +792,7 @@
 
 /obj/covers/disco
 	name = "disco floor"
-	desc = "Get your groove on."
+	desc = "尽情摇摆吧."
 	icon_state = "disco1"
 	material = "Steel"
 	passable = TRUE
@@ -802,7 +802,7 @@
 
 /obj/covers/catwalk
 	name = "catwalk"
-	desc = "A cat wouldn't like this"
+	desc = "猫不会喜欢这个"
 	icon_state = "catwalk_plated"
 	material = "Steel"
 	passable = TRUE
@@ -812,7 +812,7 @@
 
 /obj/covers/catwalk/white
 	name = "white catwalk"
-	desc = "A cat wouldn't like this"
+	desc = "猫不会喜欢这个"
 	icon_state = "catwalk_platedwhite"
 	material = "Steel"
 	passable = TRUE
@@ -822,7 +822,7 @@
 
 /obj/covers/catwalk/dark
 	name = "white catwalk"
-	desc = "A cat wouldn't like this"
+	desc = "猫不会喜欢这个"
 	icon_state = "catwalk_plateddark"
 	material = "Steel"
 	passable = TRUE

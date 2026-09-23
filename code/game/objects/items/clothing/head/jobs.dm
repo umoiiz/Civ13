@@ -1,16 +1,16 @@
 
 //Bartender
 /obj/item/clothing/head/chefhat
-	name = "chef's hat"
-	desc = "It's a hat used by chefs to keep hair out of your food. Judging by the food in the mess, they don't work."
+	name = "厨师帽"
+	desc = "厨师用来防止头发掉进食物里的帽子. 从食堂的饭菜来看, 它们没什么用."
 	icon_state = "chefhat"
 	item_state = "chefhat"
 
 //Captain
 /obj/item/clothing/head/caphat
-	name = "captain's hat"
+	name = "船长帽"
 	icon_state = "captain"
-	desc = "It's good being the king."
+	desc = "当国王的感觉真好."
 	item_state_slots = list(
 		slot_l_hand_str = "caphat",
 		slot_r_hand_str = "caphat",
@@ -18,37 +18,37 @@
 	body_parts_covered = FALSE
 
 /obj/item/clothing/head/caphat/cap
-	name = "captain's cap"
-	desc = "You fear to wear it for the negligence it brings."
+	name = "舰长帽"
+	desc = "你害怕戴上它, 因为它会带来疏忽之罪."
 	icon_state = "capcap"
 
 /obj/item/clothing/head/caphat/formal
-	name = "parade hat"
-	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
+	name = "阅兵帽"
+	desc = "任何身居指挥职位的人都不该没有一顶完美、洁白、象征至高权威的帽子."
 	icon_state = "officercap"
 
 //HOP
 /obj/item/clothing/head/caphat/hop
-	name = "crew resource's hat"
-	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
+	name = "船员资源帽"
+	desc = "一顶时尚的帽子, 既能保护你免受愤怒的前船员伤害, 又能给你一种虚假的权威感."
 	icon_state = "hopcap"
 
 //Chaplain // Nuns & Plague Doctor -> relocated to apparel medieval
 /obj/item/clothing/head/chaplain_hood
-	name = "preacher's hood"
-	desc = "It's hood that covers the head."
+	name = "传教士头巾"
+	desc = "用来遮住头部的头巾."
 	icon_state = "chaplain_hood"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
 /obj/item/clothing/under/chaplain
-	name = "preacher's clothing"
-	desc = "Typical priest clothing."
+	name = "传教士服装"
+	desc = "典型的牧师服装."
 	icon_state = "chaplain"
 
 /obj/item/clothing/suit/storage/jacket/chaplain
-	name = "preacher's robe"
-	desc = "Typical priest robe."
+	name = "传教士长袍"
+	desc = "典型的牧师长袍."
 	icon_state = "chaplain_hoodie"
 
 
@@ -56,8 +56,8 @@
  * Welding mask
  */
 /obj/item/clothing/head/welding
-	name = "welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from arc eye."
+	name = "焊接头盔"
+	desc = "一种戴在头上的面罩, 旨在完全保护佩戴者免受电弧眼伤害."
 	icon_state = "welding"
 	flags = CONDUCT
 	item_state_slots = list(
@@ -95,7 +95,7 @@
 			flash_protection = initial(flash_protection)
 			tint = initial(tint)
 			icon_state = base_state
-			usr.visible_message("<span class = 'notice'>[usr] flips the [src] down.</span>", "<span class = 'notice'>You flip the [src] down to protect your eyes.") // Only the user would know why they flipped the welding mask down, niche for biche.
+			usr.visible_message("<span class = 'notice'>[usr]将[src]翻下.</span>", "<span class = 'notice'>你将[src]翻下来保护眼睛.") // Only the user would know why they flipped the welding mask down, niche for biche.
 		else
 			up = !up
 			body_parts_covered &= ~(EYES|FACE)
@@ -103,6 +103,6 @@
 			tint = TINT_NONE
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			icon_state = "[base_state]up"
-			usr.visible_message("<span class = 'notice'>[usr] flips the [src] up.</span>", "<span class = 'notice'>You flip the [src] up.") // Visual + Textual confirmation would make this no reason to be long, as conversation will move on.
+			usr.visible_message("<span class = 'notice'>[usr]将[src]翻上.</span>", "<span class = 'notice'>你将[src]翻上去.") // Visual + Textual confirmation would make this no reason to be long, as conversation will move on.
 		update_clothing_icon()	//so our mob-overlays
 		usr.update_action_buttons()

@@ -1,69 +1,69 @@
 
 /obj/structure/sign/crest
-	name = "house crest"
-	desc = "The crest of one of the houses."
+	name = "学院徽章"
+	desc = "其中一个学院的徽章."
 	icon = 'icons/misc/crests.dmi'
 	icon_state = ""
 
 /obj/structure/sign/crest/small
-	name = "house crest"
-	desc = "The crest of one of the houses."
+	name = "学院徽章"
+	desc = "其中一个学院的徽章."
 	icon = 'icons/misc/crests_small.dmi'
 	icon_state = ""
 
 /obj/structure/sign/crest/llanboarwart
-	name = "Llanboarwart crest"
-	desc = "The crest of L.A.M.E., Llanboarwart Academy of Magical Education."
+	name = "兰博疣猪学院徽章"
+	desc = "L.A.M.E., 兰博疣猪魔法教育学院的徽章."
 	icon_state = "llanboarwart"
 
 /obj/structure/sign/crest/small/llanboarwart
-	name = "Llanboarwart crest"
-	desc = "The crest of L.A.M.E., Llanboarwart Academy of Magical Education."
+	name = "兰博疣猪学院徽章"
+	desc = "L.A.M.E., 兰博疣猪魔法教育学院的徽章."
 	icon_state = "llanboarwart"
 
 /obj/structure/sign/crest/mintysnek
-	name = "Mintysnek crest"
-	desc = "The crest of the Mintysnek house. A minty green lizard and a leek."
+	name = "薄荷蛇学院徽章"
+	desc = "薄荷蛇学院的徽章. 一只薄荷绿色的蜥蜴和一根韭葱."
 	icon_state = "mintysnek"
 
 /obj/structure/sign/crest/small/mintysnek
-	name = "Mintysnek crest"
-	desc = "The crest of the Mintysnek house. A minty green lizard and a leek."
+	name = "薄荷蛇学院徽章"
+	desc = "薄荷蛇学院的徽章. 一只薄荷绿色的蜥蜴和一根韭葱."
 	icon_state = "mintysnek"
 
 /obj/structure/sign/crest/rubywyrm
-	name = "Rubywyrm crest"
-	desc = "The crest of the Rubywyrm house. A welsh dragon coiled around a ruby."
+	name = "红宝石龙学院徽章"
+	desc = "红宝石龙学院的徽章. 一条威尔士龙盘绕着一颗红宝石."
 	icon_state = "rubywyrm"
 
 /obj/structure/sign/crest/small/rubywyrm
-	name = "Rubywyrm crest"
-	desc = "The crest of the Rubywyrm house. A welsh dragon coiled around a ruby."
+	name = "红宝石龙学院徽章"
+	desc = "红宝石龙学院的徽章. 一条威尔士龙盘绕着一颗红宝石."
 	icon_state = "rubywyrm"
 
 /obj/structure/sign/crest/slatepie
-	name = "Slatepie crest"
-	desc = "The crest of the Slatepie house. A magpie sitting on top of welsh slate."
+	name = "板岩喜鹊学院徽章"
+	desc = "板岩喜鹊学院的徽章. 一只喜鹊坐在威尔士板岩上."
 	icon_state = "slatepie"
 
 /obj/structure/sign/crest/small/slatepie
-	name = "Slatepie crest"
-	desc = "The crest of the Slatepie house. A magpie sitting on top of welsh slate."
+	name = "板岩喜鹊学院徽章"
+	desc = "板岩喜鹊学院的徽章. 一只喜鹊坐在威尔士板岩上."
 	icon_state = "slatepie"
 
 /obj/structure/sign/crest/mustardweasel
-	name = "Mustardweasel crest"
-	desc = "The crest of the Mustardweasel house. A ferret with a daffodil over its ear."
+	name = "芥末鼬学院徽章"
+	desc = "芥末鼬学院的徽章. 一只耳朵上别着水仙花的雪貂."
 	icon_state = "mustardweasel"
 
 /obj/structure/sign/crest/small/mustardweasel
-	name = "Mustardweasel crest"
-	desc = "The crest of the Mustardweasel house. A ferret with a daffodil over its ear."
+	name = "芥末鼬学院徽章"
+	desc = "芥末鼬学院的徽章. 一只耳朵上别着水仙花的雪貂."
 	icon_state = "mustardweasel"
 
 /obj/structure/sign/house_points
-	name = "L.A.M.E. House Points Board"
-	desc = "A board displaying up-to-date house points for the four houses."
+	name = "L.A.M.E. 学院积分榜"
+	desc = "一块显示四个学院最新积分的告示板."
 	icon = 'icons/obj/decals_wide.dmi'
 	icon_state = "house_points"
 
@@ -92,25 +92,25 @@
 					if("Mustardweasel")
 						leading_house_color = "#FFD700"
 
-		to_chat(user, "<font size=4 class='wizard'>Current Leading House: <span style='color:[leading_house_color]'><b>[leading_house]</b></span></font>")
+		to_chat(user, "<font size=4 class='wizard'>当前领先学院: <span style='color:[leading_house_color]'><b>[leading_house]</b></span></font>")
 
 		for(var/house in list("Rubywyrm", "Mintysnek", "Slatepie", "Mustardweasel")) // Iterate to display all house scores
 			var/score = WB.house_points[house]
 			if (house == "Rubywyrm")
-				to_chat(user, "<font size=4 class='wizard' style='color:#CF0000'>Rubywyrm: [score]</font>")
+				to_chat(user, "<font size=4 class='wizard' style='color:#CF0000'>红宝石龙: [score]</font>")
 			else if (house == "Mintysnek")
-				to_chat(user, "<font size=4 class='wizard' style='color:#00CF00'>Mintysnek: [score]</font>")
+				to_chat(user, "<font size=4 class='wizard' style='color:#00CF00'>薄荷蛇: [score]</font>")
 			else if (house == "Slatepie")
-				to_chat(user, "<font size=4 class='wizard' style='color:#0000CF'>Slatepie: [score]</font>")
+				to_chat(user, "<font size=4 class='wizard' style='color:#0000CF'>板岩喜鹊: [score]</font>")
 			else if (house == "Mustardweasel")
-				to_chat(user, "<font size=4 class='wizard' style='color:#FFD700'>Mustardweasel: [score]</font>")
+				to_chat(user, "<font size=4 class='wizard' style='color:#FFD700'>芥末鼬: [score]</font>")
 
 	return TRUE
 
 
 /obj/structure/vending/sales/wizards
-	name = "Arcane Supplies vending machine"
-	desc = "An overpriced vending machine that sells various magical items. It accepts coins, but it seems to have a strange fondness for chocolate."
+	name = "奥术补给自动售货机"
+	desc = "一台售价过高的自动售货机, 出售各种魔法物品. 它接受硬币, 但似乎对巧克力有一种奇怪的偏爱."
 	icon_state = "arcane"
 	owner = "Arcane Supplies Co."
 	products = list(
@@ -125,8 +125,8 @@
 	)
 
 /obj/structure/vending/sales/wands
-	name = "Wand-O-Mat"
-	desc = "An overpriced vending machine that sells pre-made magical wands. Only qualified students may purchase."
+	name = "魔杖自动售货机"
+	desc = "一台售价过高的自动售货机, 出售预制魔法魔杖. 仅限合格学生购买."
 	icon_state = "wands"
 	owner = "Arcane Supplies Co."
 	products = list(
@@ -159,8 +159,8 @@
 		return ..()
 
 /obj/structure/magic/wand_registration
-	name = "wand registration service"
-	desc = "A terminal used to register your personal wand combination with the school's records."
+	name = "魔杖注册服务"
+	desc = "一台用于将你的个人魔杖组合登记到学校记录中的终端."
 	icon = 'icons/obj/computers.dmi'
 	icon_state = "lab_on"
 	density = TRUE
@@ -215,8 +215,8 @@
 //		overlays += icon(icon, "signpost_south")
 
 /obj/structure/gem_lever
-	name = "G.E.M. Trial Lever"
-	desc = "Pull this lever to start the dueling club defense trial. You must be qualification level 2 (C.O.A.L.) to take the test."
+	name = "G.E.M. 试炼拉杆"
+	desc = "拉动此拉杆以开始决斗俱乐部防御试炼. 你必须达到资格等级2 (C.O.A.L.) 才能参加测试."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "gate_control"
 	anchored = TRUE
@@ -313,8 +313,8 @@
 					break
 
 /obj/structure/moldymen_lever
-	name = "Moldy Men Alarm Lever"
-	desc = "A lever used by professors to warn the school and toggle the moldy men spawners."
+	name = "霉男警报拉杆"
+	desc = "教授用来警告学校并切换霉男生成器的拉杆."
 	icon = 'icons/obj/vehicles/train_lever.dmi'
 	icon_state = "lever_wood_none"
 	anchored = TRUE
@@ -374,8 +374,8 @@
 ////////////////////////////////////////////////////
 
 /obj/structure/fireplace_portal
-	name = "fireplace portal"
-	desc = "A magical portal disguised as a fireplace. It can transport you to different locations around the world."
+	name = "壁炉传送门"
+	desc = "一个伪装成壁炉的魔法传送门. 它可以将你传送到世界各地的不同地点."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "wall_fireplace0"
 	opacity = FALSE

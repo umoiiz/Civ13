@@ -20,7 +20,7 @@
 /obj/structure/noose/bullet_act(var/obj/item/projectile/P)
 	if (hanging)
 		hanging.bullet_act(P)
-		visible_message("<span class = 'danger'>[hanging] is hit by \the [P.name]!</span>")
+		visible_message("<span class = 'danger'>[hanging]被\the [P.name]击中!</span>")
 	else
 		..()
 
@@ -51,11 +51,11 @@
 		if (hanging.stat != DEAD)
 			hanging.adjustOxyLoss(5)
 			if (prob(5))
-				visible_message("<span class = 'danger'>[hanging]'s neck snaps.</span>")
+				visible_message("<span class = 'danger'>[hanging]的脖子折断了.</span>")
 				playsound(loc, 'sound/effects/gore/bullethit3.ogg')
 				hanging.death()
 			else if (prob(33))
-				to_chat(hanging, "<span class = 'danger'>You're suffocating!</span>")
+				to_chat(hanging, "<span class = 'danger'>你窒息了!</span>")
 	else
 		icon_state = ""
 		density = FALSE
@@ -73,10 +73,10 @@
 	if (!istype(target) || !istype(hangman))
 		return
 
-	visible_message("<span class = 'danger'>[hangman] starts to hang [target == hangman ? "themselves" : target]...</span>")
+	visible_message("<span class = 'danger'>[hangman]开始将[target == hangman ? "themselves" : target]吊起...</span>")
 	if (do_after(hangman, 50, target))
 		if (src)
-			visible_message("<span class = 'danger'>[hangman] hangs [target == hangman ? "themselves" : target]!</span>")
+			visible_message("<span class = 'danger'>[hangman]将[target == hangman ? "themselves" : target]吊起!</span>")
 			hanging = target
 			target.loc = get_turf(src)
 			target.dir = SOUTH
@@ -95,10 +95,10 @@
 	if (hanging == H)
 		return
 
-	visible_message("<span class = 'danger'>[H] starts to free [hanging] from the noose...</span>")
+	visible_message("<span class = 'danger'>[H]开始将[hanging]从绞索中解救出来...</span>")
 	if (do_after(H, 75, src))
 		if (src && hanging)
-			visible_message("<span class = 'danger'>[H] frees [hanging] from the noose!</span>")
+			visible_message("<span class = 'danger'>[H]将[hanging]从绞索中解救出来!</span>")
 			hanging.pixel_x = 0
 			hanging.pixel_y = 0
 			hanging.anchored = TRUE
@@ -126,7 +126,7 @@
 /obj/structure/gallows/bullet_act(var/obj/item/projectile/P)
 	if (hanging)
 		hanging.bullet_act(P)
-		visible_message("<span class = 'danger'>[hanging] is hit by \the [P.name]!</span>")
+		visible_message("<span class = 'danger'>[hanging]被\the [P.name]击中!</span>")
 	else
 		..()
 
@@ -165,11 +165,11 @@
 		if (hanging.stat != DEAD)
 			hanging.adjustOxyLoss(5)
 			if (prob(5))
-				visible_message("<span class = 'danger'>[hanging]'s neck snaps.</span>")
+				visible_message("<span class = 'danger'>[hanging]的脖子折断了.</span>")
 				playsound(loc, 'sound/effects/gore/bullethit3.ogg')
 				hanging.death()
 			else if (prob(33))
-				to_chat(hanging, "<span class = 'danger'>You're suffocating!</span>")
+				to_chat(hanging, "<span class = 'danger'>你窒息了!</span>")
 	else if (roped == FALSE)
 		icon_state = "gallows0"
 		density = FALSE
@@ -190,10 +190,10 @@
 	if (!istype(target) || !istype(hangman))
 		return
 	if (roped)
-		visible_message("<span class = 'danger'>[hangman] starts to hang [target == hangman ? "themselves" : target]...</span>")
+		visible_message("<span class = 'danger'>[hangman]开始将[target == hangman ? "themselves" : target]吊起...</span>")
 		if (do_after(hangman, 50, target))
 			if (src)
-				visible_message("<span class = 'danger'>[hangman] hangs [target == hangman ? "themselves" : target]!</span>")
+				visible_message("<span class = 'danger'>[hangman]将[target == hangman ? "themselves" : target]吊起!</span>")
 				hanging = target
 				target.loc = get_turf(src)
 				target.dir = SOUTH
@@ -207,9 +207,9 @@
 		return
 	if (!hanging && roped)
 		if (roped == TRUE)
-			visible_message("[H] starts taking out the noose...", "You start taking out the noose...")
+			visible_message("[H]开始取出绞索...", "你开始取出绞索...")
 			if (do_after(H, 65, src) && roped == TRUE)
-				visible_message("[H] finishes taking the rope from the gallows.", "You finish taking the rope from the gallows.")
+				visible_message("[H]从绞刑架上取下了绳子.", "你从绞刑架上取下了绳子.")
 				roped = FALSE
 				icon_state = "gallows0"
 				new/obj/item/stack/material/rope(H.loc)
@@ -221,10 +221,10 @@
 		return
 
 	if (roped)
-		visible_message("<span class = 'danger'>[H] starts to free [hanging] from the noose...</span>")
+		visible_message("<span class = 'danger'>[H]开始将[hanging]从绞索中解救出来...</span>")
 		if (do_after(H, 100, src))
 			if (src && hanging)
-				visible_message("<span class = 'danger'>[H] frees [hanging] from the noose!</span>")
+				visible_message("<span class = 'danger'>[H]将[hanging]从绞索中解救出来!</span>")
 				hanging.pixel_x = 0
 				hanging.pixel_y = 0
 				hanging.anchored = 0
@@ -234,10 +234,10 @@
 /obj/structure/gallows/attackby(var/obj/item/W as obj, var/mob/living/human/H as mob)
 	if (istype(W, /obj/item/weapon))
 		if (W.sharp == TRUE && hanging && roped)
-			visible_message("<span class = 'danger'>[H] starts to cut the noose with the [W]...</span>")
+			visible_message("<span class = 'danger'>[H]开始用[W]割断绞索...</span>")
 			if (do_after(H, 45, src))
 				if (src)
-					visible_message("<span class = 'danger'>[H] frees [hanging] from the noose!</span>")
+					visible_message("<span class = 'danger'>[H]将[hanging]从绞索中解救出来!</span>")
 					hanging.pixel_x = 0
 					hanging.pixel_y = 0
 					hanging.anchored = 0
@@ -246,9 +246,9 @@
 					roped = FALSE
 	if (istype(W, /obj/item/stack/material/rope))
 		if (roped == FALSE)
-			visible_message("[H] starts making a noose...", "You start making a noose...")
+			visible_message("[H]开始制作绞索...", "你开始制作绞索...")
 			if (do_after(H, 45, src))
-				visible_message("[H] finishes attaching the noose to the gallows.", "You finish attaching the noose to the gallows.")
+				visible_message("[H]将绞索挂到了绞刑架上.", "你将绞索挂到了绞刑架上.")
 				roped = TRUE
 				var/obj/item/stack/material/rope/R = W
 				if (R.amount > 1)
@@ -258,7 +258,7 @@
 				icon_state = "gallows1"
 				return
 		else
-			to_chat(H, "There already is a noose here.")
+			to_chat(H, "这里已经有一个绞索了.")
 			return
 	else
 		..()
@@ -267,8 +267,8 @@
 ////////////////////////CRUCIFIXION///////////////////////////
 /obj/structure/cross
 	icon = 'icons/obj/obj32x64.dmi'
-	name = "greek cross"
-	desc = "A cross for hanging criminals."
+	name = "希腊十字"
+	desc = "用于处决罪犯的十字架."
 	icon_state = "greekcross"
 	var/base_icon = "greekcross"
 	layer = MOB_LAYER - 0.1
@@ -282,7 +282,7 @@
 		crossoverlay = image(icon=src.icon, icon_state="[base_icon]_used")
 
 /obj/structure/cross/tau
-	name = "tau cross"
+	name = "T形十字"
 	icon_state = "taucross"
 	base_icon = "taucross"
 
@@ -297,7 +297,7 @@
 /obj/structure/cross/bullet_act(var/obj/item/projectile/P)
 	if (hanging)
 		hanging.bullet_act(P)
-		visible_message("<span class = 'danger'>[hanging] is hit by \the [P.name]!</span>")
+		visible_message("<span class = 'danger'>[hanging]被\the [P.name]击中!</span>")
 	else
 		..()
 
@@ -328,10 +328,10 @@
 
 	if (!istype(target) || !istype(hangman))
 		return
-	visible_message("<span class = 'danger'>[hangman] starts to nail [target == hangman ? "themselves" : target] to the cross...</span>")
+	visible_message("<span class = 'danger'>[hangman]开始将[target == hangman ? "themselves" : target]钉在十字架上...</span>")
 	if (do_after(hangman, 80, target))
 		if (src)
-			visible_message("<span class = 'danger'>[hangman] nails [target == hangman ? "themselves" : target] to the cross!</span>")
+			visible_message("<span class = 'danger'>[hangman]将[target == hangman ? "themselves" : target]钉在了十字架上!</span>")
 			hanging = target
 			target.loc = get_turf(src)
 			target.dir = SOUTH
@@ -355,10 +355,10 @@
 	if (hanging == H)
 		return
 
-	visible_message("<span class = 'danger'>[H] starts to free [hanging] from the cross...</span>")
+	visible_message("<span class = 'danger'>[H]开始将[hanging]从十字架上解救下来...</span>")
 	if (do_after(H, 100, src))
 		if (src && hanging)
-			visible_message("<span class = 'danger'>[H] frees [hanging] from the cross!</span>")
+			visible_message("<span class = 'danger'>[H]将[hanging]从十字架上解救下来!</span>")
 			hanging.pixel_x = 0
 			hanging.pixel_y = 0
 			hanging.anchored = 0
@@ -369,8 +369,8 @@
 ////////////////////////STOCK/PILLORY///////////////////////////
 /obj/structure/pillory
 	icon = 'icons/obj/structures.dmi'
-	name = "pillory"
-	desc = "A wood stock with three holes, for both hands and the head. Used to display criminals to the public."
+	name = "颈手枷"
+	desc = "一块有三个孔的木枷,分别用于双手和头部.用于向公众展示罪犯."
 	icon_state = "pillory"
 	layer = MOB_LAYER - 0.1
 	anchored = TRUE
@@ -394,7 +394,7 @@
 /obj/structure/pillory/bullet_act(var/obj/item/projectile/P)
 	if (hanging && prob(30))
 		hanging.bullet_act(P)
-		visible_message("<span class = 'danger'>[hanging] is hit by \the [P.name]!</span>")
+		visible_message("<span class = 'danger'>[hanging]被\the [P.name]击中!</span>")
 	else
 		..()
 
@@ -424,10 +424,10 @@
 
 	if (!istype(target) || !istype(hangman))
 		return
-	visible_message("<span class = 'danger'>[hangman] starts to place [target == hangman ? "themselves" : target] in the pillory...</span>")
+	visible_message("<span class = 'danger'>[hangman]开始将[target == hangman ? "themselves" : target]放入颈手枷中...</span>")
 	if (do_after(hangman, 60, target))
 		if (src)
-			visible_message("<span class = 'danger'>[hangman] places [target == hangman ? "themselves" : target] in the pollory!</span>")
+			visible_message("<span class = 'danger'>[hangman]将[target == hangman ? "themselves" : target]放入了颈手枷中!</span>")
 			hanging = target
 			target.loc = get_turf(src)
 			target.dir = SOUTH
@@ -452,10 +452,10 @@
 	if (hanging == H)
 		return
 
-	visible_message("<span class = 'danger'>[H] starts to free [hanging] from the pillory...</span>")
+	visible_message("<span class = 'danger'>[H]开始将[hanging]从颈手枷中解救出来...</span>")
 	if (do_after(H, 60, src))
 		if (src && hanging)
-			visible_message("<span class = 'danger'>[H] frees [hanging] from the pillory!</span>")
+			visible_message("<span class = 'danger'>[H]将[hanging]从颈手枷中解救出来!</span>")
 			hanging.pixel_x = 0
 			hanging.pixel_y = 0
 			hanging.anchored = 0
@@ -485,8 +485,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/structure/post_execution
 	icon = 'icons/obj/structures.dmi'
-	name = "execution post"
-	desc = "A wood stock with a rope to tie prisoners to in preparation for a firing squad."
+	name = "刑柱"
+	desc = "一根带有绳子的木柱,用于在行刑队处决前捆绑囚犯."
 	icon_state = "post_execution"
 	layer = MOB_LAYER - 0.11
 	anchored = TRUE
@@ -510,7 +510,7 @@
 /obj/structure/post_execution/bullet_act(var/obj/item/projectile/P)
 	if (hanging && prob(30))
 		hanging.bullet_act(P)
-		visible_message("<span class = 'danger'>[hanging] is hit by \the [P.name]!</span>")
+		visible_message("<span class = 'danger'>[hanging]被\the [P.name]击中!</span>")
 	else
 		..()
 
@@ -540,10 +540,10 @@
 
 	if (!istype(target) || !istype(hangman))
 		return
-	visible_message("<span class = 'danger'>[hangman] starts to tie [target == hangman ? "themselves" : target] to the post...</span>")
+	visible_message("<span class = 'danger'>[hangman]开始将[target == hangman ? "themselves" : target]绑在刑柱上...</span>")
 	if (do_after(hangman, 60, target))
 		if (src)
-			visible_message("<span class = 'danger'>[hangman] ties [target == hangman ? "themselves" : target] to the post!</span>")
+			visible_message("<span class = 'danger'>[hangman]将[target == hangman ? "themselves" : target]绑在了刑柱上!</span>")
 			hanging = target
 			target.loc = get_turf(src)
 			target.dir = NORTH
@@ -568,10 +568,10 @@
 	if (hanging == H)
 		return
 
-	visible_message("<span class = 'danger'>[H] starts to untie [hanging] from the post...</span>")
+	visible_message("<span class = 'danger'>[H]开始将[hanging]从刑柱上解开...</span>")
 	if (do_after(H, 60, src))
 		if (src && hanging)
-			visible_message("<span class = 'danger'>[H] unties [hanging] from the post!</span>")
+			visible_message("<span class = 'danger'>[H]将[hanging]从刑柱上解开了!</span>")
 			hanging.pixel_x = 0
 			hanging.pixel_y = 0
 			hanging.anchored = 0

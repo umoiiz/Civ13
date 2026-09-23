@@ -1,6 +1,6 @@
 /obj/item/clothing/under/fallout/ncr
-	name = "NCR uniform"
-	desc = "NCR Trooper Fatigues"
+	name = "NCR制服"
+	desc = "NCR士兵作战服"
 	icon_state = "ncr_fatigues"
 	item_state = "ncr_fatigues"
 	var/rolled = FALSE
@@ -18,7 +18,7 @@
 				item_state = "ncr_fatigues"
 				icon_state = "ncr_fatigues"
 				item_state_slots["w_uniform"] = "ncr_fatigues"
-				to_chat(usr, "<span class = 'danger'>You roll down your uniform's sleeves.</span>")
+				to_chat(usr, "<span class = 'danger'>你放下你的制服袖子.</span>")
 				rolled = FALSE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -28,7 +28,7 @@
 				item_state = "ncr_fatigues_rolled"
 				icon_state = "ncr_fatigues_rolled"
 				item_state_slots["w_uniform"] = "ncr_fatigues_rolled"
-				to_chat(usr, "<span class = 'danger'>You roll up your uniform's sleeves.</span>")
+				to_chat(usr, "<span class = 'danger'>你卷起你的制服袖子.</span>")
 				rolled = TRUE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -39,7 +39,7 @@
 				item_state = "ncr_fatigues_maskup"
 				icon_state = "ncr_fatigues_maskup"
 				item_state_slots["w_uniform"] = "ncr_fatigues_maskup"
-				to_chat(usr, "<span class = 'danger'>You roll down your uniform's sleeves.</span>")
+				to_chat(usr, "<span class = 'danger'>你放下你的制服袖子.</span>")
 				rolled = FALSE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -49,7 +49,7 @@
 				item_state = "ncr_fatigues_rolled_maskup"
 				icon_state = "ncr_fatigues_rolled_maskup"
 				item_state_slots["w_uniform"] = "ncr_fatigues_rolled_maskup"
-				to_chat(usr, "<span class = 'danger'>You roll up your uniform's sleeves.</span>")
+				to_chat(usr, "<span class = 'danger'>你卷起你的制服袖子.</span>")
 				rolled = TRUE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -65,7 +65,7 @@
 				item_state = "ncr_fatigues"
 				icon_state = "ncr_fatigues"
 				item_state_slots["w_uniform"] = "ncr_fatigues"
-				to_chat(usr, "<span class = 'danger'>You lower your mask.</span>")
+				to_chat(usr, "<span class = 'danger'>你放下你的面罩.</span>")
 				maskup = FALSE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -74,7 +74,7 @@
 				item_state = "ncr_fatigues_rolled"
 				icon_state = "ncr_fatigues_rolled"
 				item_state_slots["w_uniform"] = "ncr_fatigues_rolled"
-				to_chat(usr, "<span class = 'danger'>You lower your mask.</span>")
+				to_chat(usr, "<span class = 'danger'>你放下你的面罩.</span>")
 				maskup = FALSE
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 				update_clothing_icon()
@@ -84,7 +84,7 @@
 				item_state = "ncr_fatigues_maskup"
 				icon_state = "ncr_fatigues_maskup"
 				item_state_slots["w_uniform"] = "ncr_fatigues_maskup"
-				to_chat(usr, "<span class = 'danger'>You raise your mask.</span>")
+				to_chat(usr, "<span class = 'danger'>你抬起你的面罩.</span>")
 				maskup = TRUE
 				heat_protection = ARMS
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS
@@ -94,7 +94,7 @@
 				item_state = "ncr_fatigues_maskup_rolled"
 				icon_state = "ncr_fatigues_maskup_rolled"
 				item_state_slots["w_uniform"] = "ncr_fatigues_maskup_rolled"
-				to_chat(usr, "<span class = 'danger'>You raise your mask.</span>")
+				to_chat(usr, "<span class = 'danger'>你抬起你的面罩.</span>")
 				maskup = TRUE
 				heat_protection = ARMS
 				cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS
@@ -106,18 +106,18 @@
 	update_clothing_icon()
 
 /obj/item/clothing/shoes/heavyboots/wrappedboots/ncr
-	name = "NCR wrapped boots"
+	name = "NCR缠裹靴"
 	icon_state = "ncr_boots"
 	armor = list(melee = 20, arrow = 10, gun = FALSE, energy = 25, bomb = 10, bio = 10, rad = 40)
 
 /obj/item/clothing/gloves/fingerless/ncr
-	name = "hand wraps"
+	name = "手部缠带"
 	icon_state = "ncr_handwraps"
 	item_state = "ncr_handwraps"
 
 /obj/item/clothing/suit/armor/fallout/ncr
-	name = "NCR Trooper Armor"
-	desc = "An NCR Armored Vest"
+	name = "NCR士兵护甲"
+	desc = "一件NCR装甲背心"
 	icon_state = "ncr_armor"
 	item_state = "ncr_armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
@@ -126,8 +126,8 @@
 	slowdown = 0.1
 
 /obj/item/clothing/head/helmet/fallout/ncr
-	name = "Trooper Helmet"
-	desc = "A typical rounded steel helmet."
+	name = "士兵头盔"
+	desc = "一顶典型的圆形钢盔."
 	icon_state = "ncr_helmet"
 	item_state = "ncr_helmet"
 	body_parts_covered = HEAD
@@ -135,8 +135,8 @@
 	armor = list(melee = 43, arrow = 33, gun = 10, energy = 15, bomb = 44, bio = 20, rad = FALSE)
 
 /obj/item/clothing/head/helmet/fallout/ncr/goggles
-	name = "Goggles Helmet"
-	desc = "A typical rounded steel helmet. This one has a pair of biker goggles attached."
+	name = "护目镜头盔"
+	desc = "一顶典型的圆形钢盔. 这顶附有一副摩托车护目镜."
 	icon_state = "ncr_helmet_goggles"
 	item_state = "ncr_helmet_goggles"
 	var/goggles = FALSE
@@ -150,12 +150,12 @@
 		if (goggles)
 			item_state = "ncr_helmet_goggles"
 			item_state_slots["slot_head"] = "ncr_helmet_goggles"
-			to_chat(usr, "<span class = 'danger'>You adjust your goggles.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整你的护目镜.</span>")
 			goggles = FALSE
 		else if (!goggles)
 			item_state = "ncr_helmet_goggles_down"
 			item_state_slots["slot_head"] = "ncr_helmet_goggles_down"
-			to_chat(usr, "<span class = 'danger'>You adjust your goggles.</span>")
+			to_chat(usr, "<span class = 'danger'>你调整你的护目镜.</span>")
 			goggles = TRUE
 	update_clothing_icon()
 
@@ -168,8 +168,8 @@
 	update_icon()
 
 /obj/item/weapon/storage/belt/fallout/ncr
-	name = "NCR Trooper belt"
-	desc = "A belt that can hold gear like pistols, ammo and other things."
+	name = "NCR士兵腰带"
+	desc = "一条可以携带手枪, 弹药和其他物品的腰带."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 	storage_slots = 12
@@ -201,14 +201,14 @@
 	new /obj/item/weapon/reagent_containers/food/drinks/bottle/canteen/ww2/us(src)
 
 /obj/item/clothing/head/fallout/ncr
-	name = "NCR Officer Beret"
-	desc = "A green camo beret with a capbadge of the NCR's 2 headed bear."
+	name = "NCR军官贝雷帽"
+	desc = "一顶绿色迷彩贝雷帽,帽徽是新加州共和国的双头熊."
 	icon_state = "ncr_beret"
 	item_state = "ncr_beret"
 
 /obj/item/clothing/head/fallout/ncr/recon
-	name = "NCR 1st Recon Beret"
-	desc = "A red beret with a capbadge of the NCR's 1st Recon."
+	name = "NCR第一侦察营贝雷帽"
+	desc = "一顶红色贝雷帽,帽徽是新加州共和国第一侦察营."
 	icon_state = "ncr_beret_recon"
 	item_state = "ncr_beret_recon"
 
@@ -216,26 +216,26 @@
 
 ////////////////////////////////////////LEGION/////////////////////////////////////////////////
 /obj/item/clothing/under/fallout/legionaire
-	name = "Legionaire Armor"
-	desc = "A red T-shirt and dark skirt with leather armor overtop. Commonly worn by Caesar's Legion."
+	name = "军团士兵护甲"
+	desc = "一件红色T恤和深色短裙,外罩皮革护甲.常为凯撒军团所穿."
 	icon_state = "legionaire"
 	item_state = "legionaire"
 	armor = list(melee = 35, arrow = 33, gun = 8, energy = 15, bomb = 35, bio = 20, rad = FALSE)
 
 /obj/item/clothing/shoes/heavyboots/wrappedboots/legion
-	name = "Legionaire armored boots"
-	desc = "Black boots with armored plating attached."
+	name = "军团士兵装甲靴"
+	desc = "带有装甲板的黑色靴子."
 	icon_state = "legion_boots"
 	armor = list(melee = 20, arrow = 10, gun = FALSE, energy = 25, bomb = 10, bio = 10, rad = 40)
 
 /obj/item/clothing/gloves/fingerless/legionaire
-	name = "legionaire hand wraps"
+	name = "军团士兵裹手布"
 	icon_state = "legion_handwraps"
 	item_state = "legion_handwraps"
 
 /obj/item/clothing/head/helmet/fallout/legionaire
-	name = "Legionaire Cap"
-	desc = "A rather thin leather cap with ear protection."
+	name = "军团士兵帽"
+	desc = "一顶相当薄的皮革帽,带有护耳."
 	icon_state = "legionaire"
 	item_state = "legionaire"
 	body_parts_covered = HEAD

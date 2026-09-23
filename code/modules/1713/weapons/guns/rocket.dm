@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/launcher
-	name = "launcher"
-	desc = "A device that launches things."
+	name = "发射器"
+	desc = "一种发射物体的装置."
 	w_class = ITEM_SIZE_HUGE
 	flags =  CONDUCT
 	slot_flags = SLOT_SHOULDER
@@ -69,8 +69,8 @@
 	return TRUE
 
 /obj/item/weapon/gun/launcher/rocket
-	name = "rocket launcher"
-	desc = "MAGGOT."
+	name = "火箭发射器"
+	desc = "蛆虫."
 	icon_state = "rocket"
 	var/base_icon = "rocket"
 	item_state = "rocket"
@@ -120,17 +120,17 @@
 			user.drop_item()
 			I.loc = src
 			rockets += I
-			to_chat(user, "You put the [I] into the [src].") // We don't include \the here as all of the rockets are proper-nouned, so it would output badly, e.g: "You put PG-7V rocket in RPG-7.".
+			to_chat(user, "你把[I]装入了[src].") // We don't include \the here as all of the rockets are proper-nouned, so it would output badly, e.g: "You put PG-7V rocket in RPG-7.".
 			update_icon()
 		else
-			to_chat(usr, "\The [src] cannot hold more rockets.")
+			to_chat(usr, "\The [src]无法容纳更多火箭弹.")
 
 /obj/item/weapon/gun/launcher/rocket/proc/unload(mob/user)
 	if(rockets.len)
 		var/obj/item/ammo_casing/rocket/G = rockets[rockets.len]
 		rockets.len--
 		user.put_in_hands(G)
-		user.visible_message("\The [user] removes \a [G] from [src].", SPAN_NOTICE("You remove \a [G] from \the [src]."))
+		user.visible_message("\The [user]从[src]中移除了\a [G].", SPAN_NOTICE("You remove \a [G] from \the [src]."))
 		update_icon()
 	else
 		to_chat(user, SPAN_WARNING("\The [src] is empty."))
@@ -160,7 +160,7 @@
 //RPG-7
 /obj/item/weapon/gun/launcher/rocket/rpg7
 	name = "RPG-7"
-	desc = "Russian multi-use rocket."
+	desc = "俄制多用途火箭."
 	icon_state = "rpg7_empty"
 	base_icon = "rpg7"
 	item_state = "rpg7"
@@ -175,7 +175,7 @@
 
 /obj/item/weapon/gun/launcher/rocket/rpg7/makeshift
 	name = "RPG-7"
-	desc = "Multi-use rocket."
+	desc = "多用途火箭."
 	icon_state = "rpg7_empty"
 	item_state = "rpg7"
 	slot_flags = null
@@ -186,8 +186,8 @@
 // Flare gun
 
 /obj/item/weapon/gun/launcher/flaregun
-	name = "flare gun"
-	desc = "A flare gun used to launch flares."
+	name = "信号枪"
+	desc = "一把用于发射信号弹的信号枪."
 	icon = 'icons/obj/guns/pistols.dmi'
 	icon_state = "flaregun"
 	item_state = "flaregun"
@@ -240,7 +240,7 @@
 				I.loc = src
 				flares += I
 				playsound(user, 'sound/weapons/guns/interact/shotgun_insert.ogg', 25, TRUE)
-				user.visible_message("[user] loads \the [F] into \the [src].", SPAN_NOTICE("You load \the [F] into \the [src]."))
+				user.visible_message("[user]将\the [F]装入了\the [src].", SPAN_NOTICE("You load \the [F] into \the [src]."))
 				update_icon()
 			else
 				to_chat(user, SPAN_WARNING("\The [src] is already loaded!"))
@@ -330,8 +330,8 @@
 				return
 
 /obj/item/weapon/gun/launcher/flaregun/civilian
-	name = "flare gun"
-	desc = "A flare gun issued for civilian use in-case of an emergency."
+	name = "信号枪"
+	desc = "一把配发给平民用于紧急情况的信号枪."
 	icon_state = "flaregun_civ"
 	item_state = "flaregun_civ"
 	good_flare = /obj/item/ammo_casing/flare
@@ -345,7 +345,7 @@
 				I.loc = src
 				flares += I
 				playsound(user, 'sound/weapons/guns/interact/shotgun_insert.ogg', 25, TRUE)
-				user.visible_message("[user] load \the [F] into \the [src].",SPAN_NOTICE("You load \the [F] into \the [src]."))
+				user.visible_message("[user]将\the [F]装入了\the [src].",SPAN_NOTICE("You load \the [F] into \the [src]."))
 				update_icon()
 			else
 				to_chat(user, SPAN_WARNING("\The [src] is already loaded!"))
@@ -367,8 +367,8 @@
 //MLAW
 //Panzerfaust
 /obj/item/weapon/gun/launcher/rocket/single_shot
-	name = "Single Shot Launcher"
-	desc = "DONT USE THIS!"
+	name = "单发发射器"
+	desc = "不要使用这个!"
 	icon_state = "panzerfaust"
 	base_icon = "panzerfaust"
 	item_state = "panzerfaust"
@@ -402,8 +402,8 @@
 	..()
 
 /obj/item/weapon/gun/launcher/rocket/single_shot/panzerfaust
-	name = "Panzerfaust 60"
-	desc = "German single-use rocket."
+	name = "铁拳60"
+	desc = "德制单次使用火箭."
 	icon_state = "panzerfaust"
 	base_icon = "panzerfaust"
 	item_state = "panzerfaust"
@@ -416,7 +416,7 @@
 
 /obj/item/weapon/gun/launcher/rocket/single_shot/m72law
 	name = "M72 LAW"
-	desc = "A light, portable one-shot 66 mm (2.6 in) unguided anti-vehicular weapon."
+	desc = "一种轻便, 便携的一次性66毫米(2.6英寸)无制导反载具武器."
 	icon_state = "m72law"
 	base_icon = "m72law"
 	item_state = "m72law"
@@ -429,7 +429,7 @@
 
 /obj/item/weapon/gun/launcher/rocket/single_shot/rpg22
 	name = "RPG 22"
-	desc = "A light, Russian portable one-shot 72.5 mm (2.85 in) unguided anti-vehicular weapon."
+	desc = "一种轻便的俄制便携一次性72.5毫米(2.85英寸)无制导反载具武器."
 	icon_state = "rpg22"
 	base_icon = "rpg22"
 	item_state = "rpg22"
@@ -442,8 +442,8 @@
 
 //Bazooka
 /obj/item/weapon/gun/launcher/rocket/bazooka
-	name = "M1A1 Bazooka"
-	desc = "An American rocket launcher made for cracking open fortified defenses and enemy armor."
+	name = "M1A1巴祖卡"
+	desc = "一种美国火箭发射器, 用于击破防御工事和敌方装甲."
 	icon_state = "bazooka_empty"
 	base_icon = "bazooka"
 	item_state = "bazooka"
@@ -452,8 +452,8 @@
 	caliber = "bazooka"
 
 /obj/item/weapon/gun/launcher/rocket/rpb54
-	name = "Raketen-Panzerbüchse 54"
-	desc = "A reusable 88mm anti-vehicular rocket launcher developed by Germany during World War II."
+	name = "54型火箭反坦克枪"
+	desc = "一种可重复使用的88毫米反载具火箭发射器, 由德国在第二次世界大战期间研发."
 	icon_state = "rpb54_empty"
 	base_icon = "rpb54"
 	item_state = "rpb54"
@@ -464,8 +464,8 @@
 
 //Fatman
 /obj/item/weapon/gun/launcher/rocket/fatman
-	name = "Fatman"
-	desc = "An American rocket launcher made for firing small nuclear warheads."
+	name = "胖子"
+	desc = "一种美国火箭发射器, 用于发射小型核弹头."
 	icon_state = "fatman_empty"
 	base_icon = "fatman"
 	item_state = "bazooka"
@@ -480,7 +480,7 @@
 
 /obj/item/weapon/gun/launcher/rocket/piat
 	name = "PIAT MK1"
-	desc = "A reusable 83mm anti-vehicular weapon developed by Britain during World War II."
+	desc = "一种可重复使用的83毫米反载具武器, 由英国在第二次世界大战期间研发."
 	icon_state = "piat_empty"
 	base_icon = "piat"
 	item_state = "piat_empty"
@@ -495,8 +495,8 @@
 // Rocket items
 
 /obj/item/ammo_casing/rocket
-	name = "RPG rocket"
-	desc = "A high-explosive warhead and propeller designed to be fired from a rocket launcher."
+	name = "RPG火箭弹"
+	desc = "一种高爆弹头与推进器, 设计用于从火箭发射器中发射."
 	icon_state = "rocketshell"
 	projectile_type = /obj/item/projectile/shell/missile/heat
 	caliber = "rocket"
@@ -504,66 +504,66 @@
 	slot_flags = SLOT_BELT
 
 /obj/item/ammo_casing/rocket/bazooka
-	name = "M6A1 HEAT rocket"
-	desc = "A high-explosive, anti-vehicular warhead and propeller designed to be fired from a rocket launcher."
+	name = "M6A1破甲火箭弹"
+	desc = "一种高爆反载具弹头与推进器, 设计用于从火箭发射器中发射."
 	icon_state = "m6a1"
 	projectile_type = /obj/item/projectile/shell/missile/heat/bazooka
 	caliber = "bazooka"
 
 /obj/item/ammo_casing/rocket/rpb54
 	name = "RPzB. Gr. 4312"
-	desc = "A high-explosive, anti-vehicular warhead and propeller designed to be fired from a Raketen-Panzerbüchse."
+	desc = "一种高爆反载具弹头与推进器, 设计用于从火箭反坦克枪中发射."
 	icon_state = "rpb54"
 	projectile_type = /obj/item/projectile/shell/missile/heat/rpb54
 	caliber = "rpb54"
 
 /obj/item/ammo_casing/rocket/panzerfaust
-	name = "Panzerfaust rocket"
-	desc = "A high-explosive warhead and propeller designed to be fired from a panzerfaust launcher."
+	name = "铁拳火箭弹"
+	desc = "一种高爆弹头与推进器, 设计用于从铁拳发射器中发射."
 	icon_state = "panzerfaust"
 	projectile_type = /obj/item/projectile/shell/missile/heat/panzerfaust
 
 /obj/item/ammo_casing/rocket/m72law
-	name = "M72 LAW rocket"
-	desc = "A high-explosive warhead and propeller designed to be fired from an M72-LAW launcher."
+	name = "M72 LAW火箭弹"
+	desc = "一种高爆弹头与推进器, 设计用于从M72-LAW发射器中发射."
 	icon_state = "rocket"
 	projectile_type = /obj/item/projectile/shell/missile/heat/m72law
 
 /obj/item/ammo_casing/rocket/rpg22
-	name = "RPG-22 rocket"
-	desc = "A high-explosive warhead and propeller designed to be fired from an RPG-22 launcher."
+	name = "RPG-22火箭弹"
+	desc = "一种高爆弹头与推进器, 设计用于从RPG-22发射器中发射."
 	icon_state = "rocket"
 	projectile_type = /obj/item/projectile/shell/missile/heat/m72law
 
 /obj/item/ammo_casing/rocket/pg7v
-	name = "PG-7V rocket"
-	desc = "A high-explosive, anti-vehicular (HEAT) warhead and propeller designed to be fired from an RPG-7 launcher."
+	name = "PG-7V火箭弹"
+	desc = "一种高爆反载具(破甲)弹头与推进器, 设计用于从RPG-7发射器中发射."
 	icon_state = "pg7v"
 	projectile_type = /obj/item/projectile/shell/missile/heat/pg7v
 
 /obj/item/ammo_casing/rocket/og7v
-	name = "OG-7V rocket"
-	desc = "A fragmentation warhead and propeller designed to be fired from an RPG-7 launcher."
+	name = "OG-7V火箭弹"
+	desc = "一种破片弹头与推进器, 设计用于从RPG-7发射器中发射."
 	icon_state = "og7v"
 	projectile_type = /obj/item/projectile/shell/missile/og7v
 
 /obj/item/ammo_casing/rocket/piat
-	name = "SrB. HEAT MK I"
-	desc = "A high-explosive and anti-vehicular warhead designed to disable enemy vehicles and destroy fortifications."
+	name = "SrB. 破甲 MK I"
+	desc = "一种高爆反载具弹头, 设计用于瘫痪敌方载具并摧毁防御工事."
 	icon_state = "piat"
 	projectile_type = /obj/item/projectile/shell/missile/heat/piat
 	caliber = "piat"
 
 /obj/item/ammo_casing/rocket/piat/mk3
-	name = "SrB. HEAT MK III"
-	desc = "A modernized high-explosive and anti-vehicular warhead designed to disable enemy vehicles and destroy fortifications."
+	name = "SrB. 破甲 MK III"
+	desc = "一种现代化高爆反载具弹头, 设计用于瘫痪敌方载具并摧毁防御工事."
 	icon_state = "piathe"
 	projectile_type = /obj/item/projectile/shell/missile/piat44
 
 /obj/item/ammo_casing/rocket/nuclear
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "Nuclear warhead"
-	desc = "A nuclear fucking warhead, you might want to step back a bit..."
+	name = "核弹头"
+	desc = "一枚他妈的核弹头, 你也许该往后退一点..."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "nuclear"
 	projectile_type = /obj/item/projectile/shell/missile/nuclear
@@ -571,14 +571,14 @@
 	w_class = ITEM_SIZE_LARGE
 
 /obj/item/ammo_casing/rocket/atgm
-	name = "HEAT ATGM rocket"
-	desc = "A High-Explosive, anti-vehicular (HEAT) guided missile warhead and propeller designed to be fired from a ATGM system."
+	name = "破甲反坦克导弹火箭弹"
+	desc = "一种高爆反载具(破甲)制导导弹弹头与推进器, 设计用于从反坦克导弹系统中发射."
 	icon_state = "atgmAP"
 	projectile_type = /obj/item/projectile/shell/missile/atgm/heat
 
 /obj/item/ammo_casing/rocket/atgm/he
-	name = "HE ATGM rocket"
-	desc = "A High-Explosive (HE) guided missile warhead and propeller designed to be fired from an ATGM system."
+	name = "高爆反坦克导弹火箭弹"
+	desc = "一种高爆(HE)制导导弹弹头与推进器, 设计用于从反坦克导弹系统中发射."
 	icon_state = "atgmHE"
 	projectile_type = /obj/item/projectile/shell/missile/atgm/he
 

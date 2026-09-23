@@ -33,7 +33,7 @@ var/global/list/round_voters = list() //Keeps track of the individuals voting fo
 			// No more change mode votes after the game has started.
 			// 3 is GAME_STATE_PLAYING, but that #define is undefined for some reason
 			if ((mode == "gamemode" || mode == "ship selection") && ticker.current_state >= 2)
-				to_chat(world, "<b>Voting aborted due to game start.</b>")
+				to_chat(world, "<b>由于游戏开始,投票已中止.</b>")
 				reset()
 				return
 
@@ -155,7 +155,7 @@ var/global/list/round_voters = list() //Keeps track of the individuals voting fo
 			switch(mode)
 				if ("restart")
 					if (. == "Restart Round")
-						to_chat(world, "Round ending due to vote.")
+						to_chat(world, "由于投票,回合即将结束.")
 						log_game("Ending the round due to restart vote.")
 						map.next_win = world.time - 100
 						map.round_finished = TRUE
@@ -350,15 +350,15 @@ var/global/list/round_voters = list() //Keeps track of the individuals voting fo
 
 			log_vote(text)
 			if (mode == "ship selection")
-				to_chat(world, "<span class = 'deadsay'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[src]'>here</a> to place your votes.\nYou have 60 seconds to vote.</span>")
+				to_chat(world, "<span class = 'deadsay'><b>[text]</b>\nType <b>投票</b>或点击<a href='?src=\ref[src]'>这里</a>来投票.\nYou有60秒的时间投票.</span>")
 				world << sound('sound/effects/siren_once.ogg', repeat = FALSE, wait = FALSE, volume = 50, channel = 3)
 			else
-				to_chat(world, "<span class = 'deadsay'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=\ref[src]'>here</a> to place your votes.\nYou have [config.vote_period/10] seconds to vote.</span>")
+				to_chat(world, "<span class = 'deadsay'><b>[text]</b>\nType <b>投票</b>或点击<a href='?src=\ref[src]'>这里</a>来投票.\nYou有[config.vote_period/10]秒的时间投票.</span>")
 				world << sound('sound/ambience/alarm4.ogg', repeat = FALSE, wait = FALSE, volume = 50, channel = 3)
 
 			if ((mode == "gamemode" || mode == "ship selection") && round_progressing)
 				round_progressing = FALSE
-				to_chat(world, "<font color='red'><b>Round start has been delayed.</b></font>")
+				to_chat(world, "<font color='red'><b>回合开始已被延迟.</b></font>")
 			time_remaining = round(config.vote_period/10)
 
 			for (var/client/C in clients)
@@ -456,11 +456,11 @@ var/global/list/round_voters = list() //Keeps track of the individuals voting fo
 			if ("restart")
 				if (config.allow_vote_restart || usr.client.holder)
 					if (config.vote_no_dead && usr.stat == DEAD && !usr.client.holder)
-						to_chat(usr, "You can't start restart votes if you are not playing.")
+						to_chat(usr, "如果你没有在游玩,就不能发起重启投票.")
 						return FALSE
 					if (!config.allowedgamemodes == "TDM")
 						if (map.nomads && clients.len < 5 && ((world.time-round_start_time)>108000) && !usr.client.holder)
-							to_chat(usr, "You can't start restart votes if the server population is lower than <b>five</b> and the round has been going for over <b>three</b> hours.")
+							to_chat(usr, "如果服务器人数低于<b>五</b>人且回合已进行超过<b>三</b>小时,就不能发起重启投票.")
 							return FALSE
 					initiate_vote("restart",usr.key)
 			if ("custom")

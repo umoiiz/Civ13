@@ -1,6 +1,6 @@
 // Magic Projectile Definitions
 /obj/item/projectile/magic
-	name = "magic bolt"
+	name = "魔法弹"
 	icon = 'icons/obj/magic_projectiles.dmi'
 	icon_state = "spell"
 	damage = 10
@@ -65,7 +65,7 @@
 	if (Hfirer.client)
 		to_chat(Hfirer, SPAN_WARNING("Your house loses [points] points for casting [spell_name] at a protected target."))
 /obj/item/projectile/magic/spark
-	name = "spark"
+	name = "火花"
 	icon_state = "spark"
 	damage = 5
 	damage_type = BURN
@@ -81,7 +81,7 @@
 			L.apply_effects(agony = 10, blocked = blocked)
 
 /obj/item/projectile/magic/flare
-	name = "flare"
+	name = "闪光"
 	icon_state = "flare"
 	damage = 12
 	damage_type = BURN
@@ -98,7 +98,7 @@
 			H.IgniteMob()
 
 /obj/item/projectile/magic/root
-	name = "root spell"
+	name = "缠绕术"
 	icon_state = "root"
 	damage = 0
 	nodamage = TRUE
@@ -114,7 +114,7 @@
 			to_chat(L, SPAN_DANGER("Vines rise from the ground, rooting you in place!"))
 
 /obj/item/projectile/magic/ice_shard
-	name = "ice shard"
+	name = "冰晶"
 	icon_state = "ice_shard"
 	damage = 10
 	damage_type = BRUTE
@@ -132,7 +132,7 @@
 			to_chat(L, SPAN_DANGER("You feel a sudden chilling cold!"))
 
 /obj/item/projectile/magic/shock_bolt
-	name = "shock bolt"
+	name = "电击弹"
 	icon_state = "shock"
 	damage = 15
 	damage_type = BURN
@@ -148,7 +148,7 @@
 			L.apply_effects(agony = 20, stun = 1, blocked = blocked)
 
 /obj/item/projectile/magic/fire_bolt
-	name = "fire bolt"
+	name = "火焰弹"
 	icon_state = "fire"
 	damage = 22
 	damage_type = BURN
@@ -166,7 +166,7 @@
 		deduct_house_points_for_illegal_spell(target, 50, "Burnus")
 
 /obj/item/projectile/magic/vine_shot
-	name = "vine shot"
+	name = "藤蔓射击"
 	icon_state = "vines"
 	damage = 5
 	damage_type = BRUTE
@@ -182,7 +182,7 @@
 			to_chat(L, SPAN_DANGER("Vines wrap tightly around you!"))
 
 /obj/item/projectile/magic/ice_blast
-	name = "ice blast"
+	name = "冰爆"
 	icon_state = "ice"
 	damage = 18
 	damage_type = BURN
@@ -199,7 +199,7 @@
 			L.apply_effects(agony = 15, blocked = blocked)
 
 /obj/item/projectile/magic/lightning_strike
-	name = "lightning strike"
+	name = "闪电打击"
 	icon_state = "lightning"
 	damage = 35
 	damage_type = BURN
@@ -215,7 +215,7 @@
 			L.electrocute_act(25, src, 1.0)
 
 /obj/item/projectile/magic/fire_ball
-	name = "fireball"
+	name = "火球"
 	icon_state = "fireball"
 	damage = 30
 	damage_type = BURN
@@ -231,7 +231,7 @@
 	return ..()
 
 /obj/item/projectile/magic/ensnare
-	name = "ensnare spell"
+	name = "束缚术"
 	icon_state = "ensnare"
 	damage = 10
 	damage_type = BRUTE
@@ -247,7 +247,7 @@
 			to_chat(L, SPAN_DANGER("You are completely ensnared in thick magical roots!"))
 
 /obj/item/projectile/magic/frozen_rain
-	name = "frozen rain"
+	name = "冰雨"
 	icon_state = "frozen_rain"
 	damage = 30
 	damage_type = BURN
@@ -260,7 +260,7 @@
 			L.apply_effects(paralyze = 2, agony = 30, blocked = blocked)
 
 /obj/item/projectile/magic/zappus
-	name = "zappus"
+	name = "扎普斯"
 	icon_state = "spark"
 	damage = 5
 	damage_type = BRUTE
@@ -270,7 +270,7 @@
 	impact_type = /obj/effect/projectile/impact/magic/electricity
 
 /obj/item/projectile/magic/zappus/slow_purple
-	name = "slow zappus"
+	name = "缓慢电击术"
 	color = "#a000c8"
 	light_color = "#a000c8"
 	tracer_type = /obj/effect/projectile/tracer/magic/purple
@@ -304,7 +304,7 @@
 	return ..()
 
 /obj/item/projectile/magic/explodus
-	name = "explodus"
+	name = "爆炸术"
 	icon_state = "fireball"
 	color = "#FF0000"
 	light_color = "#FF0000"
@@ -322,7 +322,7 @@
 	return ..()
 
 /obj/item/projectile/magic/deadum
-	name = "deadum"
+	name = "死亡术"
 	icon_state = "spell"
 	color = "#00FF00"
 	light_color = "#00FF00"
@@ -353,7 +353,7 @@
 	return TRUE
 
 /obj/item/projectile/magic/sliceum
-	name = "sliceum"
+	name = "切割术"
 	icon_state = "spell"
 	invisibility = 101 // Invisible hit-scan
 	damage = 15
@@ -373,7 +373,7 @@
 			deduct_house_points_for_illegal_spell(target, 50, "Sliceum")
 
 /obj/item/projectile/magic/freezum
-	name = "freezum"
+	name = "冰冻术"
 	icon_state = "spell"
 	damage = 5
 	damage_type = BURN
@@ -390,7 +390,7 @@
 			L.Paralyse(5)
 
 /obj/item/projectile/magic/pushum
-	name = "pushum"
+	name = "推击术"
 	icon_state = "spell"
 	damage = 4
 	damage_type = BRUTE
@@ -420,7 +420,7 @@
 
 					if (slammed_into)
 						spawn (1)
-							AM.visible_message("<span class = 'danger'>[AM] flies back from the force of the blast and slams into \the [slammed_into]!</span>")
+							AM.visible_message("<span class = 'danger'>[AM]被爆炸的冲击力击飞, 猛地撞上了\the [slammed_into]!</span>")
 						if (isliving(AM))
 							var/mob/living/L = AM
 							L.Weaken(3)
@@ -445,7 +445,7 @@
 						to_chat(AM, SPAN_DANGER("You are violently pushed back by magical force!"))
 
 /obj/item/projectile/magic/pullus
-	name = "pullus"
+	name = "拉拽术"
 	icon_state = "spell"
 	damage = 4
 	damage_type = BRUTE
@@ -476,7 +476,7 @@
 
 					if (slammed_into)
 						spawn (1)
-							AM.visible_message("<span class = 'danger'>[AM] is violently pulled forward and slams into \the [slammed_into]!</span>")
+							AM.visible_message("<span class = 'danger'>[AM]被猛烈地拉向前方, 猛地撞上了\the [slammed_into]!</span>")
 						if (isliving(AM))
 							var/mob/living/L = AM
 							L.Weaken(3)
@@ -500,7 +500,7 @@
 					if (isliving(AM))
 						to_chat(AM, SPAN_DANGER("You are violently pulled forward by magical force!"))
 /obj/item/projectile/magic/blockum
-	name = "blockum"
+	name = "格挡术"
 	icon_state = "spell"
 	color = "#00ffff"
 	light_color = "#00ffff"
@@ -517,7 +517,7 @@
 	return TRUE
 
 /obj/item/projectile/magic/painum
-	name = "painum"
+	name = "疼痛术"
 	icon_state = "spell"
 	color = "#37530a"
 	light_color = "#37530a"
@@ -536,7 +536,7 @@
 			deduct_house_points_for_illegal_spell(target, 50, "Painum")
 
 /obj/item/projectile/magic/dropus
-	name = "dropus"
+	name = "掉落术"
 	icon_state = "spell"
 	damage = 4
 	damage_type = BRUTE
@@ -555,18 +555,18 @@
 				if (istype(WL) && (WL.chewing_gum_sticky || WL.truncheon_grip))
 					to_chat(L, SPAN_NOTICE("The Dropus! spell tries to wrench \the [L.l_hand] free - but it won't budge!"))
 				else
-					L.visible_message("<span class='danger'>[target] drops \the [L.l_hand]!</span>")
+					L.visible_message("<span class='danger'>[target]掉落了\the [L.l_hand]!</span>")
 					L.drop_l_hand()
 			if (L.r_hand)
 				var/obj/item/weapon/material/magic/wand/WR = L.r_hand
 				if (istype(WR) && (WR.chewing_gum_sticky || WR.truncheon_grip))
 					to_chat(L, SPAN_NOTICE("The Dropus! spell tries to wrench \the [L.r_hand] free - but it won't budge!"))
 				else
-					L.visible_message("<span class='danger'>[target] drops \the [L.r_hand]!</span>")
+					L.visible_message("<span class='danger'>[target]掉落了\the [L.r_hand]!</span>")
 					L.drop_r_hand()
 
 /obj/item/projectile/magic/floatus
-	name = "floatus"
+	name = "漂浮术"
 	icon_state = "spell"
 	color = "#ffffff"
 	light_color = "#ffffff"
@@ -602,7 +602,7 @@
 					if (istype(get_step(L, drc),/turf/floor))
 						L.forceMove(get_step(L, drc))
 /obj/item/projectile/magic/barrelus
-	name = "barrelus"
+	name = "木桶术"
 	icon_state = "spell"
 	color = "#7b4b2a"
 	light_color = "#7b4b2a"
@@ -627,7 +627,7 @@
 						qdel(B)
 
 /obj/item/projectile/magic/stinkaeum
-	name = "stinkaeum"
+	name = "恶臭术"
 	icon_state = "spell"
 	color = "#654413"
 	light_color = "#654413"
@@ -687,7 +687,7 @@
 
 // New Projectiles
 /obj/item/projectile/magic/fixae
-	name = "fixae bolt"
+	name = "固定螺栓"
 	icon_state = "spell"
 	damage = 0
 	nodamage = TRUE
@@ -703,7 +703,7 @@
 			to_chat(L, SPAN_NOTICE("You feel a surge of restorative energy!"))
 
 /obj/item/projectile/magic/wallus
-	name = "wallus bolt"
+	name = "墙壁螺栓"
 	icon_state = "spell"
 	nodamage = TRUE
 	color = "#8B4513" // Brown

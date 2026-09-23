@@ -1,6 +1,6 @@
 /obj/structure/bed/chair/wheelchair
-	name = "wheelchair"
-	desc = "You sit in this. Either by will or force."
+	name = "轮椅"
+	desc = "你坐在这上面. 无论是自愿还是被迫."
 	icon_state = "wheelchair"
 	anchored = FALSE
 	buckle_movable = TRUE
@@ -36,7 +36,7 @@
 		if (user==pulling)
 			pulling = null
 			user.pulledby = null
-			to_chat(user, "<span class='warning'>You lost your grip!</span>")
+			to_chat(user, "<span class='warning'>你脱手了!</span>")
 		return
 	if (buckled_mob && pulling && user == buckled_mob)
 		if (pulling.stat || pulling.stunned || pulling.weakened || pulling.paralysis || pulling.lying || pulling.restrained())
@@ -54,10 +54,10 @@
 		if (user==pulling)
 			return
 	if (pulling && (get_dir(loc, pulling.loc) == direction))
-		to_chat(user, "<span class='warning'>You cannot go there.</span>")
+		to_chat(user, "<span class='warning'>你不能去那里.</span>")
 		return
 	if (pulling && buckled_mob && (buckled_mob == user))
-		to_chat(user, "<span class='warning'>You cannot drive while being pushed.</span>")
+		to_chat(user, "<span class='warning'>被推着的时候你无法驾驶.</span>")
 		return
 
 	// Let's roll
@@ -114,7 +114,7 @@
 					unbuckle_mob()
 			if (pulling && (get_dist(src, pulling) > 1))
 				pulling.pulledby = null
-				to_chat(pulling, "<span class='warning'>You lost your grip!</span>")
+				to_chat(pulling, "<span class='warning'>你脱手了!</span>")
 				pulling = null
 		else
 			if (occupant && (loc != occupant.loc))
@@ -156,13 +156,13 @@
 			victim.apply_effect(6, STUTTER, blocked)
 			victim.apply_damage(10, BRUTE, def_zone)
 		if (pulling)
-			occupant.visible_message("<span class='danger'>[pulling] has thrusted \the [name] into \the [A], throwing \the [occupant] out of it!</span>")
+			occupant.visible_message("<span class='danger'>[pulling]将\the [name]刺入了\the [A],把\the [occupant]甩了出去!</span>")
 
 			pulling.attack_log += "\[[time_stamp()]\]<font color='red'> Crashed [occupant.name]'s ([occupant.ckey]) [name] into \a [A]</font>"
 			occupant.attack_log += "\[[time_stamp()]\]<font color='orange'> Thrusted into \a [A] by [pulling.name] ([pulling.ckey]) with \the [name]</font>"
 			msg_admin_attack("[pulling.name] ([pulling.ckey]) has thrusted [occupant.name]'s ([occupant.ckey]) [name] into \a [A] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[pulling.x];Y=[pulling.y];Z=[pulling.z]'>JMP</a>)", pulling.ckey, occupant.ckey)
 		else
-			occupant.visible_message("<span class='danger'>[occupant] crashed into \the [A]!</span>")
+			occupant.visible_message("<span class='danger'>[occupant]撞上了\the [A]!</span>")
 
 /obj/structure/bed/chair/wheelchair/proc/create_track()
 	var/obj/effect/decal/cleanable/blood/tracks/B = new(loc)

@@ -122,8 +122,8 @@
 	return getarmor_organ(get_organ(organ), "rad")
 
 /obj/item/weapon/geiger_counter //DISCLAIMER: I know nothing about how real-life Geiger counters work. This will not be realistic. ~Xhuis
-	name = "geiger counter"
-	desc = "A device used to detect radiation."
+	name = "盖革计数器"
+	desc = "用于探测辐射的装置."
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_BELT|SLOT_ID|SLOT_POCKET
 	icon = 'icons/obj/device.dmi'
@@ -173,13 +173,13 @@
 		radiation_count = 0
 		return
 	if (radiation_count >= 1000)
-		to_chat(user, "<font size=2>\icon[getFlatIcon(src)] Reading: <b>[radiation_count/1000] Sv/s</b></span>")
+		to_chat(user, "<font size=2>\icon[getFlatIcon(src)]读数:<b>[radiation_count/1000] Sv/s</b></span>")
 	else if (radiation_count <= 0.001)
-		to_chat(user, "<font size=2>\icon[getFlatIcon(src)] Reading: <b>0 uSv/s</b></span>")
+		to_chat(user, "<font size=2>\icon[getFlatIcon(src)]读数:<b>0 uSv/s</b></span>")
 	else if (radiation_count <= 0.1)
-		to_chat(user, "<font size=2>\icon[getFlatIcon(src)] Reading: <b>[radiation_count*1000] uSv/s</b></span>")
+		to_chat(user, "<font size=2>\icon[getFlatIcon(src)]读数:<b>[radiation_count*1000] uSv/s</b></span>")
 	else
-		to_chat(user, "<font size=2>\icon[getFlatIcon(src)] Reading: <b>[radiation_count] mSv/s</b></span>")
+		to_chat(user, "<font size=2>\icon[getFlatIcon(src)]读数:<b>[radiation_count] mSv/s</b></span>")
 	radiation_count = 0
 	checked = FALSE
 	return
@@ -191,8 +191,8 @@
 
 /obj/item/weapon/geiger_counter/attack(atom/M, mob/user)
 	if(user.a_intent == I_HELP)
-		user.visible_message("<span class='notice'>[user] scans [M] with [src].</span>", "<span class='notice'>You scan [M]'s radiation levels with [src]...</span>")
-		to_chat(user, "<font size=2>\icon[getFlatIcon(src)] Reading: <b>[M.radiation/100] Gy</b></span>")
+		user.visible_message("<span class='notice'>[user]用[src]扫描[M].</span>", "<span class='notice'>你用[src]扫描[M]的辐射水平...</span>")
+		to_chat(user, "<font size=2>\icon[getFlatIcon(src)]读数:<b>[M.radiation/100] Gy</b></span>")
 		return
 	..()
 
@@ -203,7 +203,7 @@
 
 	scanning = !scanning
 	update_icon()
-	to_chat(usr, "<span class='notice'>You switch [scanning ? "on" : "off"] \the [src].</span>")
+	to_chat(usr, "<span class='notice'>你将[scanning ? "on" : "off"]\the [src].</span>")
 	if (!scanning)
 		radiation_count = 0
 	if (scanning)

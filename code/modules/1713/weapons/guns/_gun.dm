@@ -39,15 +39,15 @@
 	if (gun_safety)
 		if (safetyon)
 			safetyon = FALSE
-			to_chat(user, "<span class='notice'>You toggle \the [src]'s safety <b>OFF</b>.</span>")
+			to_chat(user, "<span class='notice'>你将\the [src]的保险<b>关闭</b>.</span>")
 			return
 		else
 			safetyon = TRUE
-			to_chat(user, "<span class='notice'>You toggle \the [src]'s safety <b>ON</b>.</span>")
+			to_chat(user, "<span class='notice'>你将\the [src]的保险<b>打开</b>.</span>")
 			return
 
 /obj/item/weapon/gun/projectile/special_check(var/mob/user)
 	if (gun_safety && safetyon)
-		to_chat(user, "<span class='warning'>You can't fire \the [src] while the safety is on!</span>")
+		to_chat(user, "<span class='warning'>保险打开时你无法发射\the [src]!</span>")
 		return FALSE
 	return ..()

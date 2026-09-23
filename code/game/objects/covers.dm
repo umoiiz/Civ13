@@ -119,17 +119,17 @@
 		var/turf/targetfloor = get_turf(get_step(user, user.dir))
 		if (istype(targetfloor, /turf/wall) || istype(targetfloor, /turf/floor/beach/water/deep/saltwater))
 			if (map && map.ID != MAP_BATTLE_SHIPS)
-				visible_message("<span class='notice'>You can't build here!</span>")
+				visible_message("<span class='notice'>你不能在这里建造!</span>")
 				return
 		var/mob/living/human/H = user
 		covers_time /= H.getStatCoeff("strength")
 		covers_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
 	if (WWinput(user, "This will start building a floor cover [dir2text(user.dir)] of you.", "Floor Cover Construction", "Continue", list("Continue", "Stop")) == "Continue")
-		visible_message("<span class='danger'>[user] starts constructing the floor cover.</span>", "<span class='danger'>You start constructing the floor cover.</span>")
+		visible_message("<span class='danger'>[user]开始建造地板覆盖物.</span>", "<span class='danger'>你开始建造地板覆盖物.</span>")
 		if (do_after(user, covers_time, user.loc) && src)
 			qdel(src)
 			new/obj/covers/repairedfloor(get_step(user, user.dir), user)
-			visible_message("<span class='danger'>[user] finishes placing the floor cover.</span>")
+			visible_message("<span class='danger'>[user]完成了放置地板覆盖物.</span>")
 			if (ishuman(user))
 				var/mob/living/human/H = user
 				H.adaptStat("crafting", 3)
@@ -140,17 +140,17 @@
 	if (ishuman(user))
 		var/turf/targetfloor = get_turf(get_step(user, user.dir))
 		if (istype(targetfloor, /turf/wall))
-			visible_message("<span class='notice'>You can't build here!</span>")
+			visible_message("<span class='notice'>你不能在这里建造!</span>")
 			return
 		var/mob/living/human/H = user
 		covers_time /= H.getStatCoeff("strength")
 		covers_time /= (H.getStatCoeff("crafting") * H.getStatCoeff("crafting"))
 	if (WWinput(user, "This will start building a new ship floor [dir2text(user.dir)] of you.", "Ship Floor Repair", "Continue", list("Continue", "Stop")) == "Continue")
-		visible_message("<span class='danger'>[user] starts constructing the new floor.</span>", "<span class='danger'>You start constructing the new floor.</span>")
+		visible_message("<span class='danger'>[user]开始建造新地板.</span>", "<span class='danger'>你开始建造新地板.</span>")
 		if (do_after(user, covers_time, user.loc) && src)
 			qdel(src)
 			new/obj/covers/repairedfloor/ship(get_step(user, user.dir), user)
-			visible_message("<span class='danger'>[user] finishes placing the new floor.</span>")
+			visible_message("<span class='danger'>[user]完成了放置新地板.</span>")
 			if (ishuman(user))
 				var/mob/living/human/H = user
 				H.adaptStat("crafting", 3)
@@ -158,7 +158,7 @@
 
 /obj/covers/fire_act(temperature)
 	if (prob(20) && flammable)
-		visible_message("<span class = 'warning'>\The [src] is burned away.</span>")
+		visible_message("<span class = 'warning'>\The [src]被烧毁了.</span>")
 		qdel(src)
 
 /obj/covers/CanPass(var/atom/movable/mover)
@@ -168,10 +168,10 @@
 		if (istype(mover,/obj/item/projectile/shell))
 			var/obj/item/projectile/shell/S = mover
 			if(prob(18) && S.atype == "cannonball")
-				visible_message("<span class = 'warning'>\The [mover.name] hits \the [src]!</span>")
+				visible_message("<span class = 'warning'>\The [mover.name]击中了\the [src]!</span>")
 				return FALSE
 		if (prob(75) && density)
-			visible_message("<span class = 'warning'>\The [mover.name] hits \the [src]!</span>")
+			visible_message("<span class = 'warning'>\The [mover.name]击中了\the [src]!</span>")
 			return FALSE
 		else
 			return TRUE
@@ -183,17 +183,17 @@
 		return
 	if (istype(W, /obj/item/weapon/hammer))
 		if (!wall)
-			to_chat(user, "You start removing \the [src]...")
+			to_chat(user, "你开始移除\the [src]...")
 			if (do_after(user, 50, src))
-				to_chat(user, "You removed \the [src] from the floor.")
+				to_chat(user, "你从地板上移除了\the [src].")
 				qdel(src)
 				return
 	if (wall)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if (istype(W, /obj/item/weapon/poster/religious))
-			to_chat(user, "You start placing the [W] on the [src]...")
+			to_chat(user, "你开始将[W]放置在[src]上...")
 			if (do_after(user, 70, src))
-				visible_message("[user] places the [W] on the [src].")
+				visible_message("[user]将[W]放置在[src]上.")
 				var/obj/structure/poster/religious/RP = new/obj/structure/poster/religious(get_turf(src))
 				var/obj/item/weapon/poster/religious/P = W
 				RP.religion = P.religion
@@ -204,9 +204,9 @@
 				qdel(W)
 				return
 		if (istype(W, /obj/item/weapon/poster/faction))
-			to_chat(user, "You start placing the [W] on the [src]...")
+			to_chat(user, "你开始将[W]放置在[src]上...")
 			if (do_after(user, 70, src))
-				visible_message("[user] places the [W] on the [src].")
+				visible_message("[user]将[W]放置在[src]上.")
 				var/obj/structure/poster/faction/RP = new/obj/structure/poster/faction(get_turf(src))
 				var/obj/item/weapon/poster/faction/P = W
 				RP.faction = P.faction
@@ -220,7 +220,7 @@
 			var/obj/item/flashlight/torch/T = W
 			if (prob(33) && T.on)
 				onfire = TRUE
-				visible_message("<span class='danger'>\The [src] catches fire!</span>")
+				visible_message("<span class='danger'>\The [src]着火了!</span>")
 				start_fire()
 				message_admins("[user.name] ([user.ckey]) started a fire with a torch at [src.name] ([src.x],[src.y],[src.z]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[user.x];Y=[user.y];Z=[user.z]'>JMP</a>)", user.ckey)
 				log_game("[user.name] ([user.ckey]) started a fire with a torch at [src.name] ([src.x],[src.y],[src.z])")
@@ -249,7 +249,7 @@
 
 /obj/covers/proc/try_destroy()
 	if (health <= 0)
-		visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 		if (material == "Wood")
 			new /obj/item/stack/material/wood(get_turf(usr))
 		qdel(src)
@@ -260,19 +260,19 @@
 		health -= proj.damage * 0.25
 		if (prob(25))
 			onfire = TRUE
-			visible_message("<span class='danger'>\The [src] catches fire!</span>")
+			visible_message("<span class='danger'>\The [src]着火了!</span>")
 			start_fire()
 		try_destroy()
 	else
 		if (istype(proj, /obj/item/projectile/shell))
 			var/obj/item/projectile/shell/S = proj
 			if (S.atype == "HE" || S.atype == "cannonball")
-				visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+				visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 				qdel(src)
 				return
 			else
 				if (prob(60))
-					visible_message("<span class='danger'>\The [src] is broken into pieces!</span>")
+					visible_message("<span class='danger'>\The [src]碎成了碎片!</span>")
 					qdel(src)
 		else
 			if (wall)

@@ -140,7 +140,7 @@
 /obj/map_metadata/occupation/proc/check_points_msg()
 	check_points()
 	spawn(1)
-		to_chat(world, "<font size = 4><span class = 'notice'><b>Current Score:</b></font></span>")
+		to_chat(world, "<font size = 4><span class = 'notice'><b>当前比分:</b></font></span>")
 		for (var/i=1,i<=points.len,i++)
 			to_chat(world, "<br><font size = 3><span class = 'notice'>[points[i][1]]: <b>[points[i][2]+points[i][3]]</b></span></font>")
 

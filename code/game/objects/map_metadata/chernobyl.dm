@@ -28,8 +28,8 @@
 
 /obj/item/weapon/reagent_containers/nuclear/fuelrod ////mid rad
 	icon = 'icons/obj/items.dmi'
-	name = "a cracked reactor fuel rod"
-	desc = "A rod of nuclear fuel,very radioactive."
+	name = "一根破裂的反应堆燃料棒"
+	desc = "一根核燃料棒, 放射性极强."
 	icon_state = "nrod"
 	var/radioactive = TRUE
 	var/radioactive_amt = 5
@@ -42,8 +42,8 @@
 
 /obj/item/weapon/reagent_containers/nuclear/controlrod ////low rad
 	icon = 'icons/obj/items.dmi'
-	name = "a reactor control rod"
-	desc = "A former reactor control rod. now its slightly radioactive and broken."
+	name = "一根反应堆控制棒"
+	desc = "一根旧的反应堆控制棒. 现在它带有轻微放射性且已损坏."
 	icon_state = "crod"
 	var/radioactive = TRUE
 	var/radioactive_amt = 1
@@ -66,8 +66,8 @@
 		reagents.add_reagent("uranium", 50)
 
 /obj/item/weapon/reagent_containers/nuclear/nuclearwastebarrel ///very low rad
-	name = "yellow steel barrel (nuclear waste)"
-	desc = "A yellow steel barrel. You can put liquids inside."
+	name = "黄色钢桶 (核废料)"
+	desc = "一个黄色钢桶. 你可以将液体装入其中."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "barreln"
 	//item_state = ???? TO DO TODO or check
@@ -83,8 +83,8 @@
 
 ///////////////not radioactive
 /obj/item/weapon/reagent_containers/nuclear/notnuclear/uraniumref
-	name = "uranium refinery"
-	desc = "A uranium refinery."
+	name = "铀精炼厂"
+	desc = "一座铀精炼厂."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "uranium_refinery"
 	flammable = FALSE

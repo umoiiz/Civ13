@@ -69,9 +69,9 @@
 				ballas_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Basketball Court (South-West)</b>: [a1_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>篮球场(西南)</b>: [a1_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Basketball Court (South-West)</b>: Nobody</big>")
+			to_chat(world, "<big><b>篮球场(西南)</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -99,9 +99,9 @@
 				ballas_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Abandoned Lot (South-East)</b>: [a2_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>废弃空地(东南)</b>: [a2_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Abandoned Lot (South-East)</b>: Nobody</big>")
+			to_chat(world, "<big><b>废弃空地(东南)</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -129,9 +129,9 @@
 				ballas_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Rodriguez Steelworks</b>: [a3_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>罗德里格斯钢铁厂</b>: [a3_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Rodriguez Steelworks</b>: Nobody</big>")
+			to_chat(world, "<big><b>罗德里格斯钢铁厂</b>: 无人</big>")
 		c1 = 0
 		c2 = 0
 		for (var/mob/living/human/H in player_list)
@@ -159,13 +159,13 @@
 				ballas_points++
 			else
 				cust_color = "white"
-			to_chat(world, "<big><font color='[cust_color]'><b>Pig Pen Parking Lot (North-East)</b>: [a4_control]</font></big>")
+			to_chat(world, "<big><font color='[cust_color]'><b>猪圈停车场(东北)</b>: [a4_control]</font></big>")
 		else
-			to_chat(world, "<big><b>Pig Pen Parking Lot (North-East)</b>: Nobody</big>")
+			to_chat(world, "<big><b>猪圈停车场(东北)</b>: 无人</big>")
 	spawn(300)
 		points_check()
-		to_chat(world, "Ballas Influence: [ballas_points]/40")
-		to_chat(world, "Grove Influence: [grove_points]/40")
+		to_chat(world, "巴拉斯帮影响力: [ballas_points]/40")
+		to_chat(world, "格罗夫帮影响力: [grove_points]/40")
 
 /obj/map_metadata/east_los_santos/roundend_condition_def2name(define)
 	..()
@@ -267,7 +267,7 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/m9beretta(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/m9beretta(H), slot_r_store)
 				spam_check_g = 1
-				to_chat(world, "The <b><font color = 'green'>Grove Street Families</font></b> are now strapped with <b>pistols</b>!")
+				to_chat(world, "<b><font color = 'green'>格罗夫街家族</font></b>现在装备了<b>手枪</b>!")
 			else if ((grove_points >= 20 && grove_points < 30) && spam_check_g == 1)
 				var/rand_smg = rand(1,3)
 				switch(rand_smg)
@@ -284,7 +284,7 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mac10(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mac10(H), slot_r_store)
 				spam_check_g = 2
-				to_chat(world, "The <b><font color = 'green'> Grove Street Families</font></b> are now strapped with <b>SMGs</b>!")
+				to_chat(world, "<b><font color = 'green'>格罗夫街家族</font></b>现在装备了<b>冲锋枪</b>!")
 			else if (grove_points >= 30 && spam_check_g == 2)
 				var/rand_rifle = pick(1,2)
 				switch(rand_rifle)
@@ -297,7 +297,7 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mp40/mp5(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mp40/mp5(H), slot_r_store)
 				spam_check_g = 3
-				to_chat(world, "The <b><font color = 'green'>Grove Street Families</font></b> are now strapped with <b>assault rifles</b>!")
+				to_chat(world, "<b><font color = 'green'>格罗夫街家族</font></b>现在装备了<b>突击步枪</b>!")
 		else
 			if ((ballas_points >= 10 && ballas_points < 20) && spam_check_b == 0)
 				var/rand_pistol = rand(1,3)
@@ -315,7 +315,7 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/m9beretta(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/m9beretta(H), slot_r_store)
 				spam_check_b = 1
-				to_chat(world, "The <b><font color ='purple'>Ballas</font></b> are now strapped with <b>pistols</b>!")
+				to_chat(world, "<b><font color ='purple'>巴拉斯帮</font></b>现在装备了<b>手枪</b>!")
 			else if ((ballas_points >= 20 && ballas_points < 30) && spam_check_b == 1)
 				var/rand_smg = rand(1,3)
 				switch(rand_smg)
@@ -332,7 +332,7 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mac10(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mac10(H), slot_r_store)
 				spam_check_b = 2
-				to_chat(world, "The <b><font color ='purple'>Ballas</font></b> are now strapped with <b>SMGs</b>!")
+				to_chat(world, "<b><font color ='purple'>巴拉斯帮</font></b>现在装备了<b>冲锋枪</b>!")
 			else if (ballas_points >= 30 && spam_check_b == 2)
 				var/rand_rifle = pick(1,2)
 				switch(rand_rifle)
@@ -345,50 +345,50 @@
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mp40/mp5(H), slot_l_store)
 						H.equip_to_slot_or_drop(new /obj/item/ammo_magazine/mp40/mp5(H), slot_r_store)
 				spam_check_b = 3
-				to_chat(world, "The <b><font color ='purple'>Ballas</font></b> are now strapped with <b>assault rifles</b>!")
+				to_chat(world, "<b><font color ='purple'>巴拉斯帮</font></b>现在装备了<b>突击步枪</b>!")
 	spawn(300)
 		rewards()
 
 //////////////MAP SPECIFIC OBJECTS///////////////////
 
 /obj/item/clothing/under/ballas1
-	name = "white t-shirt and purple shorts"
-	desc = "An oversized white t-shirt and purple cargo shorts."
+	name = "白色T恤和紫色短裤"
+	desc = "一件超大号白色T恤和紫色工装短裤。"
 	icon_state = "ballas1"
 	item_state = "ballas1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/ballas2
-	name = "baggy black clothing"
-	desc = "An oversized black outfit."
+	name = "宽松黑色服装"
+	desc = "一套超大号黑色服装。"
 	icon_state = "ballas2"
 	item_state = "ballas2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/ballas3
-	name = "purple shirt and khaki pants"
-	desc = "An oversized purple shirt and khaki cargo pants."
+	name = "紫色衬衫和卡其裤"
+	desc = "一件超大号紫色衬衫和卡其色工装裤。"
 	icon_state = "ballas3"
 	item_state = "ballas3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/grove1
-	name = "green sweatshirt and jeans"
-	desc = "An oversized green sweatshirt and jeans."
+	name = "绿色运动衫和牛仔裤"
+	desc = "一件超大号绿色运动衫和牛仔裤。"
 	icon_state = "grove1"
 	item_state = "grove1"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/grove2
-	name = "green checkered outfit"
-	desc = "A green checkered shirt and beige pants."
+	name = "绿色格子服装"
+	desc = "一件绿色格子衬衫和米色裤子。"
 	icon_state = "grove2"
 	item_state = "grove2"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
 /obj/item/clothing/under/grove3
-	name = "green jersey and jeans"
-	desc = "A green basketball jersey and black jeans."
+	name = "绿色球衣和牛仔裤"
+	desc = "一件绿色篮球球衣和黑色牛仔裤。"
 	icon_state = "grove3"
 	item_state = "grove3"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -398,8 +398,8 @@
 	uncolored1 = FALSE
 
 /obj/item/clothing/head/bandana_ballas
-	name = "purple bandana"
-	desc = "A purple bandana tied in the front."
+	name = "紫色头巾"
+	desc = "一条系在前面的紫色头巾。"
 	icon_state = "bandana_ballas1"
 	item_state = "bandana_ballas1"
 	flags_inv = BLOCKHEADHAIR
@@ -409,8 +409,8 @@
 	item_state = "bandana_ballas2"
 
 /obj/item/clothing/head/bandana_grove
-	name = "green bandana"
-	desc = "A green bandana tied in the front."
+	name = "绿色头巾"
+	desc = "一条系在前面的绿色头巾。"
 	icon_state = "bandana_grove"
 	item_state = "bandana_grove"
 	flags_inv = BLOCKHEADHAIR

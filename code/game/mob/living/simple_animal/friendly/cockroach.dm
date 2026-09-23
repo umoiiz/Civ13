@@ -1,7 +1,7 @@
 /mob/living/simple_animal/cockroach
 	name = "cockroach"
 	real_name = "cockroach"
-	desc = "ewwwwww!"
+	desc = "呃呃呃呃呃!"
 	icon_state = "cockroach"
 	item_state = "cockroach"
 	icon_living = "cockroach"

@@ -1,6 +1,6 @@
 /obj/item/weapon/storage/ww2
-	name = "messkit"
-	desc = "It's a cheap tin messkit"
+	name = "饭盒"
+	desc = "这是一个廉价的锡制饭盒"
 	icon_state = "gerkit"
 	item_state = "gerkit"
 	max_storage_space = 8
@@ -16,8 +16,8 @@
 	)
 
 /obj/item/weapon/storage/ww2/german
-	name = "german messkit"
-	desc = "It's a standard issue messkit for german military personel"
+	name = "德军饭盒"
+	desc = "这是德军人员的标准配发饭盒"
 	icon_state = "gerkit"
 	item_state = "gerkit"
 
@@ -29,8 +29,8 @@
 		new /obj/item/weapon/material/kitchen/utensil/knife( src )
 
 /obj/item/weapon/storage/ww2/unmeal
-	name = "UN messkit"
-	desc = "It's a cheap tin messkit for all peacekeeping personel."
+	name = "联合国饭盒"
+	desc = "这是所有维和人员的廉价锡制饭盒."
 	max_w_class = 2
 	can_hold = new/list(
 	/obj/item/weapon/material/kitchen/utensil,
@@ -63,7 +63,7 @@
 		if (!prevent_warning)
 			for (var/mob/M in viewers(usr, null))
 				if (M == usr)
-					to_chat(usr, "<span class='notice'>You put \the [W] into [src].</span>")
+					to_chat(usr, "<span class='notice'>你将\the [W]放入了[src].</span>")
 				else if (M in range(1)) //If someone is standing close enough, they can tell what it is...
 					M.show_message("<span class='notice'>\The [usr] puts [W] into [src].</span>")
 				else if (W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
@@ -112,8 +112,8 @@
 	return TRUE
 
 /obj/item/weapon/storage/ww2/shaving_kit
-	name = "small pouch"
-	desc = "It's a small leather pouch."
+	name = "小袋子"
+	desc = "这是一个小皮革袋."
 	icon_state = "shaving_kit"
 	item_state = "shaving_kit"
 	max_storage_space = 2
@@ -124,8 +124,8 @@
 	)
 
 /obj/item/weapon/storage/ww2/shaving_kit/german
-	name = "german shaving kit"
-	desc = "It's a standard issue shaving kit for german military personel"
+	name = "德军剃须包"
+	desc = "这是德军人员的标准配发剃须包"
 	icon_state = "shaving_kit_germ"
 	item_state = "shaving_kit_germ"
 	New()
@@ -134,8 +134,8 @@
 		new /obj/item/weapon/haircomb( src )
 
 /obj/item/weapon/storage/emergencykit
-	name = "emergency kit"
-	desc = "Bandages and a little something to keep you going."
+	name = "应急包"
+	desc = "绷带和一些让你撑下去的东西."
 	icon_state = "shaving_kit"
 	item_state = "shaving_kit"
 	max_storage_space = 4
@@ -176,8 +176,8 @@
 		new /obj/item/weapon/reagent_containers/food/snacks/hardtack/hardtacknale( src )
 
 /obj/item/weapon/reagent_containers/glass/small_pot/german_kit_lid
-	desc = "A lid to the german messkit. Can be used as a pot to boil water."
-	name = "Messkit Lid"
+	desc = "德军饭盒的盖子. 可用作锅来烧水."
+	name = "饭盒盖"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "gerkit_lid"
 	item_state = "bucket"
@@ -187,8 +187,8 @@
 	volume = 40
 
 /obj/item/weapon/storage/ww2/slunch
-	name = "lunch kit"
-	desc = "It's a lunch kit pressed from steel."
+	name = "午餐盒"
+	desc = "这是一个钢冲压的午餐盒."
 	icon_state = "slunch"
 	item_state = "slunch"
 	max_storage_space = 12

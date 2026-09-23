@@ -42,11 +42,11 @@
 	user.face_atom(src)
 
 	if (get_dist(src, user) > 1)
-		to_chat(user, "<span class = 'danger'>Get next to \the [src] to use it.</span>")
+		to_chat(user, "<span class = 'danger'>靠近 \the [src] 以使用它.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个.</span>")
 		return FALSE
 	var/datum/program/loadedprogram
 	if (href_list["program"])

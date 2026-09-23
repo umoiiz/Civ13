@@ -1,5 +1,5 @@
 /obj/item/weapon/paper_bin
-	name = "paper bin"
+	name = "纸篓"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper_bin1"
 	item_state = "sheet-metal"
@@ -65,7 +65,7 @@
 	if (!istype(i))
 		return
 	i.loc = src
-	visible_message("<font color='yellow'><big>A [i] arrived in \the [src]!</big></span>")
+	visible_message("<font color='yellow'><big>一个[i]抵达了\the [src]!</big></span>")
 	papers.Add(i)
 	update_icon()
 	amount++

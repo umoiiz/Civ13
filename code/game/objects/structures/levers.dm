@@ -5,8 +5,8 @@
 	density = TRUE
 
 /obj/structure/skeleton_activator
-	name = "Activate Skeletons"
-	desc = "Activate the skeletons."
+	name = "激活骷髅"
+	desc = "激活骷髅。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -17,12 +17,12 @@
 		SK.activated = 1
 	for (var/obj/effect/spawner/mobspawner/attacker/SKA)
 		SKA.activated = 1
-	to_chat(user, "Skeleton spawners are now ENABLED.")
+	to_chat(user, "骷髅生成器现已启用。")
 	return
 
 /obj/structure/skeleton_deactivator
-	name = "Deactivate Skeletons"
-	desc = "Deactivate the skeletons."
+	name = "停用骷髅"
+	desc = "停用骷髅。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -33,12 +33,12 @@
 		SK.activated = 0
 	for (var/obj/effect/spawner/mobspawner/attacker/SKA)
 		SKA.activated = 0
-	to_chat(user, "Skeleton spawners are now DISABLED.")
+	to_chat(user, "骷髅生成器现已禁用。")
 	return
 
 /obj/structure/skeleton_configurator
-	name = "Configure Skeletons"
-	desc = "Configure the spawn points for skeletons."
+	name = "配置骷髅"
+	desc = "配置骷髅的生成点。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -56,14 +56,14 @@
 	for (var/obj/effect/spawner/mobspawner/attacker/SKA)
 		SKA.max_number = maxamount
 		SKA.timer = timer
-	to_chat(user, "Skeleton spawners have been configured to [timer/10] seconds, [maxamount] maximum number.")
+	to_chat(user, "骷髅生成器已配置为[timer/10]秒,最大数量[maxamount]。")
 	return
 
 //BRITISH
 
 /obj/structure/townmilitia_activator
-	name = "Activate town militias"
-	desc = "Activate the town militias."
+	name = "激活城镇民兵"
+	desc = "激活城镇民兵。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -72,12 +72,12 @@
 /obj/structure/townmilitia_activator/attack_hand(mob/living/user)
 	for (var/obj/effect/spawner/mobspawner/townmilitia/RC)
 		RC.activated = 1
-	to_chat(user, "Town militia spawners are now ENABLED.")
+	to_chat(user, "城镇民兵生成器现已启用。")
 	return
 
 /obj/structure/townmilitia_deactivator
-	name = "Deactivate town militias"
-	desc = "Deactivate the town militias."
+	name = "停用城镇民兵"
+	desc = "停用城镇民兵。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -86,12 +86,12 @@
 /obj/structure/townmilitia_deactivator/attack_hand(mob/living/user)
 	for (var/obj/effect/spawner/mobspawner/townmilitia/RC)
 		RC.activated = 0
-	to_chat(user, "Town militia spawners are now DISABLED.")
+	to_chat(user, "城镇民兵生成器现已禁用。")
 	return
 
 /obj/structure/townmilitia_configurator
-	name = "Configure town militias"
-	desc = "Configure the spawn points for town militias."
+	name = "配置城镇民兵"
+	desc = "配置城镇民兵的生成点。"
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "woodsign"
 	anchored = TRUE
@@ -106,5 +106,5 @@
 	for (var/obj/effect/spawner/mobspawner/townmilitia/RC)
 		RC.max_number = maxamount
 		RC.timer = timer
-	to_chat(user, "Town militia spawners have been configured to [timer/10] seconds, [maxamount] maximum number.")
+	to_chat(user, "城镇民兵生成器已配置为[timer/10]秒,最大数量[maxamount]。")
 	return

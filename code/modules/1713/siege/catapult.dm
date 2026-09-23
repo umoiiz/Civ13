@@ -1,5 +1,5 @@
 /obj/structure/catapult
-	name = "Catapult"
+	name = "投石机"
 	icon = 'icons/obj/catapult.dmi'
 	layer = MOB_LAYER + 1 //just above mobs
 	density = TRUE
@@ -47,7 +47,7 @@
 /obj/structure/catapult/attackby(obj/item/W as obj, mob/M as mob)
 	if (istype(W, /obj/item/catapult_ball))
 		if (loaded)
-			to_chat(M, "<span class = 'warning'>There's already a projectile loaded.</span>")
+			to_chat(M, "<span class = 'warning'>已经装填了弹药。</span>")
 			return
 		// load first and only slot
 		M.remove_from_mob(W)
@@ -71,7 +71,7 @@
 			user = null
 	restart:
 	if (!anchored)
-		to_chat(user, "<span class = 'danger'>You need to fix it to the floor before firing.</span>")
+		to_chat(user, "<span class = 'danger'>你需要先把它固定在地板上才能发射。</span>")
 		user = null
 	if (user && user != m)
 		if (user.client)
@@ -94,19 +94,19 @@
 
 	var/mob/living/human/H = user
 	if (istype(H) && H.faction_text == INDIANS)
-		to_chat(user, "<span class = 'danger'>You have no idea how this thing works.</span>")
+		to_chat(user, "<span class = 'danger'>你完全不知道这东西怎么用。</span>")
 		return FALSE
 
 	if (!locate(src) in get_step(user, user.dir))
-		to_chat(user, "<span class = 'danger'>Get behind the catapult to use it.</span>")
+		to_chat(user, "<span class = 'danger'>到投石机后面才能使用它。</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个。</span>")
 		return FALSE
 
 	if (!anchored)
-		to_chat(user, "<span class = 'danger'>You need to fix it to the floor before firing.</span>")
+		to_chat(user, "<span class = 'danger'>你需要先把它固定在地板上才能发射。</span>")
 		return FALSE
 
 	if (href_list["load"])
@@ -124,11 +124,11 @@
 
 		if (map)
 			if (!map.faction1_can_cross_blocks() && !map.faction2_can_cross_blocks())
-				to_chat(user, "<span class = 'danger'>You can't fire yet.</span>")
+				to_chat(user, "<span class = 'danger'>你还不能发射。</span>")
 				return
 
 		if (!loaded)
-			to_chat(user, "<span class = 'danger'>There's nothing in the catapult.</span>")
+			to_chat(user, "<span class = 'danger'>投石机里什么都没有。</span>")
 			return
 
 
@@ -236,12 +236,12 @@
 							if (target_area.location == AREA_INSIDE && !target_area.arty_act(25))
 								for (var/mob/living/L in view(20, target))
 									shake_camera(L, 5, 5)
-									to_chat(L, "<span class = 'danger'>You hear something violently smash into the ceiling!</span>")
+									to_chat(L, "<span class = 'danger'>你听到有什么东西猛烈地撞上了天花板!</span>")
 								message_admins("Catapult projectile hit the ceiling at [target.x], [target.y], [target.z].")
 								log_admin("Catapult projectile hit the ceiling at [target.x], [target.y], [target.z].")
 								return
 							else if (target_area_original_integrity)
-								target.visible_message("<span class = 'danger'>The ceiling collapses!</span>")
+								target.visible_message("<span class = 'danger'>天花板塌了!</span>")
 							message_admins("Catapult projectile hit at [target.x], [target.y], [target.z].")
 							log_admin("Catapult projectile hit at [target.x], [target.y], [target.z].")
 							explosion(target, 1, 2, 2, 0)
@@ -297,7 +297,7 @@
 	set name = "Rotate Left"
 	set src in range(2, usr)
 	if (anchored)
-		to_chat(user, "<span class='notice'>You need to unsecure the catapult first!</span>")
+		to_chat(user, "<span class='notice'>你需要先解开投石机的固定!</span>")
 	else
 		set_dir(turn(dir, 90))
 	return
@@ -307,7 +307,7 @@
 	set name = "Rotate Right"
 	set src in range(2, usr)
 	if (anchored)
-		to_chat(user, "<span class='notice'>You need to unsecure the catapult first!</span>")
+		to_chat(user, "<span class='notice'>你需要先解开投石机的固定!</span>")
 	else
 		set_dir(turn(dir, -90))
 
@@ -331,7 +331,7 @@
 
 /obj/item/catapult_ball
 	icon = 'icons/obj/cannon_ball.dmi'
-	name = "catapult projectile"
+	name = "投石机弹药"
 	icon_state = "catapult"
 	w_class = ITEM_SIZE_LARGE
 	value = 15

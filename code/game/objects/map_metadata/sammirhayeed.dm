@@ -123,7 +123,7 @@ var/no_loop_kar = FALSE
 				current_loser = "Arabic Caliphate"
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>The Arabs have recaptured the fortress!</font>")
+			to_chat(world, "<font size = 3>阿拉伯人已重新夺回堡垒!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1

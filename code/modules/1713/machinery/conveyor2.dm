@@ -5,7 +5,7 @@
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "conveyor0"
 	name = "conveyor belt"
-	desc = "A conveyor belt."
+	desc = "一条传送带."
 	layer = 2.9			// so they appear under stuff
 	anchored = 1
 	var/operating = 0	// 1 if running forward, -1 if backwards, 0 if off
@@ -80,7 +80,7 @@
 			var/obj/item/conveyor_construct/C = new/obj/item/conveyor_construct(src.loc)
 			C.id = id
 			transfer_fingerprints_to(C)
-		to_chat(user, "<span class='notice'>You remove the conveyor belt.</span>")
+		to_chat(user, "<span class='notice'>你移除了传送带。</span>")
 		qdel(src)
 		return
 
@@ -144,7 +144,7 @@
 /obj/machinery/conveyor_switch
 
 	name = "conveyor switch"
-	desc = "A conveyor control switch."
+	desc = "传送带控制开关。"
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	var/position = 0			// 0 off, -1 reverse, 1 forward
@@ -232,12 +232,12 @@
 		var/obj/item/conveyor_switch_construct/C = new/obj/item/conveyor_switch_construct(src.loc)
 		C.id = id
 		transfer_fingerprints_to(C)
-		to_chat(user, "<span class='notice'>You detach the conveyor switch.</span>")
+		to_chat(user, "<span class='notice'>你拆下了传送带开关。</span>")
 		qdel(src)
 
 /obj/machinery/conveyor_switch/oneway
 	var/convdir = 1 //Set to 1 or -1 depending on which way you want the convayor to go. (In other words keep at 1 and set the proper dir on the belts.)
-	desc = "A conveyor control switch. It appears to only go in one direction."
+	desc = "传送带控制开关。它似乎只能朝一个方向运行。"
 
 // attack with hand, switch position
 /obj/machinery/conveyor_switch/oneway/attack_hand(mob/user)
@@ -266,15 +266,15 @@
 /obj/item/conveyor_construct
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "conveyor0"
-	name = "conveyor belt assembly"
-	desc = "A conveyor belt assembly."
+	name = "传送带组件"
+	desc = "传送带组件。"
 	w_class = ITEM_SIZE_LARGE
 	var/id = "" //inherited by the belt
 
 /obj/item/conveyor_construct/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/conveyor_switch_construct))
-		to_chat(user, "<span class='notice'>You link the switch to the conveyor belt assembly.</span>")
+		to_chat(user, "<span class='notice'>你将开关连接到传送带组件。</span>")
 		var/obj/item/conveyor_switch_construct/C = I
 		id = C.id
 
@@ -298,8 +298,8 @@
 	qdel(src)
 
 /obj/item/conveyor_switch_construct
-	name = "conveyor switch assembly"
-	desc = "A conveyor control switch assembly."
+	name = "传送带开关组件"
+	desc = "传送带控制开关组件。"
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	w_class = ITEM_SIZE_LARGE
@@ -322,7 +322,7 @@
 			found = 1
 			break
 	if(!found)
-		to_chat(user, "<span class='notice'>The conveyor switch did not detect any linked conveyor belts in range.</span>")
+		to_chat(user, "<span class='notice'>传送带开关在范围内未检测到任何已连接的传送带。</span>")
 		return
 	var/obj/machinery/conveyor_switch/NC = new/obj/machinery/conveyor_switch(T, id)
 	transfer_fingerprints_to(NC)

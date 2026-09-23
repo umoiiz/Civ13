@@ -1,6 +1,6 @@
 
 /obj/structure/wild/rock
-	name = "rock"
+	name = "岩石"
 	icon_state = "rock5"
 	icon = 'icons/obj/flora/rocks.dmi'
 	deadicon = 'icons/obj/flora/rocks.dmi'
@@ -23,9 +23,9 @@
 
 /obj/structure/wild/rock/attack_hand(var/mob/living/human/H)
 	if (H.a_intent == I_GRAB)
-		to_chat(H, "You start looking for some flint among the rocks...")
+		to_chat(H, "你开始在岩石中寻找燧石...")
 		if (do_after(H, 50, H.loc) && flint_amount > 0)
-			to_chat(H, "You find some flint.")
+			to_chat(H, "你找到了一些燧石.")
 			flint_amount--
 			var/obj/item/weapon/flint/newflint = new/obj/item/weapon/flint(src.loc)
 			H.put_in_hands(newflint)
@@ -39,10 +39,10 @@
 		H.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		var/obj/item/weapon/flint/F = W
 		if (!F.sharpened)
-			to_chat(H, "<span class='warning'>You hit the rock with \the [W].</span>")
+			to_chat(H, "<span class='warning'>你用\the [W]敲击岩石.</span>")
 			playsound(src,'sound/effects/chop.ogg',100,1)
 			if (prob(20))
-				to_chat(H, "\The [W] chips away, exposing a sharp edge!")
+				to_chat(H, "\The [W]被敲下一片, 露出了锋利的边缘!")
 				F.sharpen()
 		return
 
@@ -61,8 +61,8 @@
 	deadicon_state = "[rocktype][rand(1,5)]"
 
 /obj/item/weapon/flint
-	name = "flint"
-	desc = "A small piece of flint rock."
+	name = "燧石"
+	desc = "一小块燧石岩石."
 	icon_state = "flint"
 	item_state = ""
 	icon = 'icons/obj/old_weapons.dmi'
@@ -97,28 +97,28 @@
 
 /obj/item/weapon/flint/attackby(obj/item/M as obj, mob/user as mob)
 	if(istype(M, itemtype1) || istype(M, itemtype2) || istype(M, itemtype3) || istype(M, itemtype4) || istype(M, itemtype5) || istype(M, itemtype6) || istype(M, itemtype7) || istype(M, itemtype8) || istype(M, itemtype9) || istype(M, itemtype10) || istype(M, itemtype11))
-		visible_message("<span class='notice'>[user] starts to [actiontext] the [M.name]...</span>")
+		visible_message("<span class='notice'>[user]开始[actiontext][M.name]...</span>")
 		playsound(src,noise,40,1)
 		if (do_after(user, delay, src))
 			M.maxhealth -= damageamount
 			M.health = min(M.health + repairamount, M.maxhealth)
-			visible_message("<span class='notice'>[user] finishes [actiontext]ing the [M.name].</span>")
+			visible_message("<span class='notice'>[user]完成了对[M.name]的[actiontext].</span>")
 			if(M.maxhealth <= 0 || M.health <= 0)
 				qdel(M)
 				playsound(src, "shatter", 70, TRUE)
-				visible_message("<span class='alert'>The [M.name] breaks from strain!</span>")
+				visible_message("<span class='alert'>[M.name]因过度受力而损坏!</span>")
 		else
-			visible_message("<span class='notice'>[user] stops [actiontext]ing the [M.name].</span>")
+			visible_message("<span class='notice'>[user]停止[actiontext][M.name].</span>")
 	else if (istype(M, /obj/item/weapon/hammer) || istype(M, /obj/item/weapon/wrench))
 		..()
 		return
 	else
-		to_chat(user, "<span class='notice'>You cannot repair this with a [src.name]!</span>")
+		to_chat(user, "<span class='notice'>你无法用[src.name]来修理这个!</span>")
 		return
 
 /obj/item/weapon/flint/sharpened
-	name = "sharpened flint"
-	desc = "A small piece of sharpened flint rock."
+	name = "磨尖的燧石"
+	desc = "一小块磨尖的燧石岩石."
 	icon_state = "sharpened_flint"
 	edge = TRUE
 	sharp = TRUE

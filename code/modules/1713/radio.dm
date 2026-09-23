@@ -1,7 +1,7 @@
 /////////////////////////////RADIO/////////////////////////////////////
 /obj/structure/radio
-	name = "radio receiver"
-	desc = "Used to communicate with distant places. Set to 150kHz."
+	name = "无线电接收器"
+	desc = "用于与远处通信.设定为150kHz."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "radio_vintage"
 	flammable = FALSE
@@ -134,11 +134,11 @@ var/global/FREQM = rand(101,120)
 	user.face_atom(src)
 
 	if (!locate(user) in range(1,src))
-		to_chat(user, "<span class = 'danger'>Get close to the [src] to use it.</span>")
+		to_chat(user, "<span class = 'danger'>靠近[src]才能使用.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个.</span>")
 		return FALSE
 
 	if (href_list["set_frequency"])
@@ -147,7 +147,7 @@ var/global/FREQM = rand(101,120)
 			if (!input || input == freq)
 				return
 			freq = input
-			to_chat(user, "Frequency set to <b>[freq]</b>.")
+			to_chat(user, "频率设定为<b>[freq]</b>.")
 			do_html(user)
 			return
 
@@ -156,7 +156,7 @@ var/global/FREQM = rand(101,120)
 			if (!input)
 				return
 			freq = sanitize_integer(input, min=150, max=300, default=150)
-			to_chat(user, "Frequency set to [freq]kHz.")
+			to_chat(user, "频率设定为[freq]kHz.")
 			desc = "Used to communicate with distant places. Set to [freq]kHz."
 			do_html(user)
 			return
@@ -418,7 +418,7 @@ var/global/FREQM = rand(101,120)
 
 	if ((sdisabilities & DEAF) || ear_deaf || find_trait("Deaf"))
 		if (prob(20))
-			to_chat(src, "<span class='warning'>You feel the radio vibrate but can hear nothing from it!</span>")
+			to_chat(src, "<span class='warning'>你感觉到无线电在振动,但听不到任何声音!</span>")
 	else
 		var/fontsize = 2
 		var/full_message = ""
@@ -436,7 +436,7 @@ var/global/FREQM = rand(101,120)
 		on_hear_radio(destination, full_message)
 
 /obj/structure/radio/transmitter
-	name = "radio transmitter"
+	name = "无线电发射器"
 	icon_state = "radio_transmitter"
 	transmitter = TRUE
 	receiver = FALSE
@@ -448,7 +448,7 @@ var/global/FREQM = rand(101,120)
 	powerneeded = 0
 
 /obj/structure/radio/transmitter_receiver
-	name = "two-way radio"
+	name = "双向无线电"
 	icon_state = "radio"
 	transmitter = TRUE
 	receiver = TRUE
@@ -460,8 +460,8 @@ var/global/FREQM = rand(101,120)
 	powerneeded = 0
 
 /obj/structure/radio/transmitter_receiver/nopower/tank
-	name = "tank radio"
-	desc = "A small and robust tank radio, allowing you to communicate with your fellows over long distances."
+	name = "坦克无线电"
+	desc = "一个小巧而坚固的坦克电台,让你能与同伴进行远距离通讯."
 	icon_state = "tankradio"
 	transmitter = TRUE
 	receiver = TRUE
@@ -491,7 +491,7 @@ var/global/FREQM = rand(101,120)
 	desc = "Used to communicate with distant places. Set to [freq]kHz."
 
 /obj/structure/radio/receiver/loudspeaker
-	name = "loudspeaker"
+	name = "扬声器"
 	icon_state = "loudspeaker"
 	transmitter = FALSE
 	receiver = TRUE
@@ -518,11 +518,11 @@ var/global/FREQM = rand(101,120)
 	desc = "Used to communicate with distant places. Set to [freq]kHz."
 /obj/structure/radio/attackby(obj/item/W as obj, mob/user as mob)
 	if (!anchored && !istype(W, /obj/item/weapon/wrench))
-		to_chat(user, "<span class='notice'>Fix the radio in place with a wrench first.</span>")
+		to_chat(user, "<span class='notice'>请先用扳手将电台固定到位.</span>")
 		return
 	if (istype(W, /obj/item/stack/cable_coil))
 		if (powersource)
-			to_chat(user, "There's already a cable connected here! Split it further from the [src].")
+			to_chat(user, "这里已经连接了一根电缆! 请将其从[src]上分离.")
 			return
 		var/obj/item/stack/cable_coil/CC = W
 		powersource = CC.place_turf(get_turf(src), user, turn(get_dir(user,src),180))
@@ -546,7 +546,7 @@ var/global/FREQM = rand(101,120)
 						NCOO.connections += powersource
 					if (!(NCOO in powersource.connections) && !list_cmp(powersource.connections, NCOO.connections))
 						powersource.connections += NCOO
-					to_chat(user, "You connect the two cables.")
+					to_chat(user, "你将两根电缆连接起来.")
 
 			for(var/obj/structure/cable/NCOC in get_turf(get_step(powersource,opdir2)))
 				if ((NCOC.tiledir == powersource.tiledir) && NCOC != powersource)
@@ -554,14 +554,14 @@ var/global/FREQM = rand(101,120)
 						NCOC.connections += powersource
 					if (!(NCOC in powersource.connections) && !list_cmp(powersource.connections, NCOC.connections))
 						powersource.connections += NCOC
-		to_chat(user, "You connect the cable to the [src].")
+		to_chat(user, "你将电缆连接到[src].")
 	else
 		..()
 
 ////////////////PORTABLE RADIOS//////////////////
 /obj/item/weapon/radio
-	name = "portable radio"
-	desc = "Used to communicate with distant places. Set to 150kHz."
+	name = "便携式电台"
+	desc = "用于与远处进行通讯. 设定为150kHz."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "portable_radio"
 	item_state = "portable_radio"
@@ -631,11 +631,11 @@ var/global/FREQM = rand(101,120)
 	user.face_atom(src)
 
 	if (!locate(user) in range(1,src))
-		to_chat(user, "<span class = 'danger'>Get close to the [src] to use it.</span>")
+		to_chat(user, "<span class = 'danger'>靠近[src]以使用它.</span>")
 		return FALSE
 
 	if (!user.can_use_hands())
-		to_chat(user, "<span class = 'danger'>You have no hands to use this with.</span>")
+		to_chat(user, "<span class = 'danger'>你没有手来使用这个.</span>")
 		return FALSE
 
 	if (href_list["set_frequency"])
@@ -644,7 +644,7 @@ var/global/FREQM = rand(101,120)
 			if (!input || input == freq)
 				return
 			freq = input
-			to_chat(user, "Frequency set to <b>[freq]</b>.")
+			to_chat(user, "频率设定为<b>[freq]</b>.")
 			do_html(user)
 			return
 		else
@@ -652,7 +652,7 @@ var/global/FREQM = rand(101,120)
 			if (!input)
 				return
 			freq = sanitize_integer(input, min=150, max=300, default=150)
-			to_chat(user, "Frequency set to [freq]kHz.")
+			to_chat(user, "频率设定为[freq]kHz.")
 			desc = "Used to communicate with distant places. Set to [freq]kHz."
 			do_html(user)
 			return
@@ -762,8 +762,8 @@ var/global/FREQM = rand(101,120)
 		O.hear_radio(msg, verbage, speaker.default_language, speaker, src, src)
 
 /obj/item/weapon/radio/galacticbattles
-	name = "portable communications backpack"
-	desc = "Used to communicate with others from a far. Set to 150kHz."
+	name = "便携式通讯背包"
+	desc = "用于与他人进行远距离通讯. 设定为150kHz."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "portable_radio_space"
 	item_state = "portable_radio_space"
@@ -777,8 +777,8 @@ var/global/FREQM = rand(101,120)
 //////////////"POUCH SLOT" RADIOS///////////////////////////
 //For modern radios worn on your chest
 /obj/item/weapon/radio/walkietalkie
-	name = "walkie-talkie radio"
-	desc = "Used to communicate with distant places. Set to 150kHz."
+	name = "对讲机"
+	desc = "用于与远处进行通讯. 设定为150kHz."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
@@ -818,12 +818,12 @@ var/global/FREQM = rand(101,120)
 	var/ear_safety = 2
 
 /obj/item/weapon/radio/walkietalkie/faction1/comlink
-	name = "comlink"
+	name = "通讯器"
 	icon_state = "comlink"
 	item_state = "comlink"
 
 /obj/item/weapon/radio/walkietalkie/faction2/comlink
-	name = "comlink"
+	name = "通讯器"
 	icon_state = "comlink"
 	item_state = "comlink"
 
@@ -937,8 +937,8 @@ var/global/FREQM = rand(101,120)
 		return message
 
 /obj/structure/radio/transmitter/nopower/microphone
-	name = "microphone"
-	desc = "Used to communicate to distant places. Set to 150kHz."
+	name = "麦克风"
+	desc = "用于与远处进行通讯. 设定为150kHz."
 	icon_state = "mic"
 	w_class = ITEM_SIZE_SMALL
 	density = FALSE
@@ -947,6 +947,6 @@ var/global/FREQM = rand(101,120)
 	nothrow = FALSE
 
 /obj/structure/radio/transmitter/nopower/microphone/wired
-	name = "wired microphone"
-	desc = "Used to communicate to distant places. Set to 150kHz."
+	name = "有线麦克风"
+	desc = "用于与远处进行通讯. 设定为150kHz."
 	icon_state = "mic2"

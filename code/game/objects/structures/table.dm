@@ -13,8 +13,8 @@
  */
 
 /obj/structure/table
-	name = "table"
-	desc = "A square piece of metal standing on four metal legs. It can not move."
+	name = "桌子"
+	desc = "一块方形的金属板,由四条金属腿支撑.它无法移动."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "table"
 	var/flipped_icon = "table-flipped"
@@ -88,13 +88,13 @@
 							return
 			flipped = !flipped
 			if (flipped)
-				visible_message("<span class='warning'>[usr] flips the table!</span>")
+				visible_message("<span class='warning'>[usr]掀翻了桌子!</span>")
 				if (istype(usr, /mob/living))
 					var/mob/living/L = usr
 					dir = L.dir
 			else
 				layer = 2.8
-				visible_message("<span class='warning'>[usr] puts the table back up.</span>")
+				visible_message("<span class='warning'>[usr]把桌子放回原位.</span>")
 			update_icon()
 
 /obj/structure/table/do_climb(var/mob/living/user)
@@ -389,10 +389,10 @@
 	if (prob(chance))
 		health -= P.damage/2
 		if (health > 0)
-			visible_message("<span class='warning'>[P] hits \the [src]!</span>")
+			visible_message("<span class='warning'>[P]击中了\the [src]!</span>")
 			return FALSE
 		else
-			visible_message("<span class='warning'>[src] breaks down!</span>")
+			visible_message("<span class='warning'>[src]崩溃了!</span>")
 			break_to_parts()
 			return TRUE
 	return TRUE
@@ -444,16 +444,16 @@
 	if (get_dist(src, user) < 2)
 		var/obj/item/weapon/grab/G = I
 		if (G.affecting.buckled)
-			to_chat(user, "<span class='warning'>[G.affecting] is buckled to [G.affecting.buckled]!</span>")
+			to_chat(user, "<span class='warning'>[G.affecting]被扣在了[G.affecting.buckled]上!</span>")
 			return FALSE
 		if (G.state < GRAB_AGGRESSIVE)
-			to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")
+			to_chat(user, "<span class='warning'>你需要更好的抓握才能做到!</span>")
 			return FALSE
 		if (!G.confirm())
 			return FALSE
 		G.affecting.loc = loc
 		G.affecting.Weaken(2)
-		G.affecting.visible_message("<span class='danger'>[G.assailant] pushes [G.affecting] onto [src].</span>", \
+		G.affecting.visible_message("<span class='danger'>[G.assailant]把[G.affecting]推到了[src]上.</span>", \
 									"<span class='userdanger'>[G.assailant] pushes [G.affecting] onto [src].</span>")
 		add_logs(G.assailant, G.affecting, "pushed")
 		qdel(I)
@@ -506,7 +506,7 @@
 		return
 
 	if (destroy_type == TBL_DISASSEMBLE)
-		to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
+		to_chat(user, "<span class='notice'>你开始拆解[src]...</span>")
 		playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
 		if (do_after(user, 20, target = src))
 			new frame(loc)
@@ -516,7 +516,7 @@
 			return
 
 	if (destroy_type == TBL_DECONSTRUCT)
-		to_chat(user, "<span class='notice'>You start deconstructing [src]...</span>")
+		to_chat(user, "<span class='notice'>你开始拆解[src]...</span>")
 		playsound(loc, 'sound/items/Ratchet.ogg', 50, TRUE)
 		if (do_after(user, 40, target = src))
 			for (var/i = TRUE, i <= framestackamount, i++)
@@ -531,22 +531,22 @@
  * Glass tables
  */
 /obj/structure/table/glass
-	name = "glass table"
-	desc = "What did I say about leaning on the glass tables? Now you need surgery."
+	name = "玻璃桌"
+	desc = "我不是说过不要靠在玻璃桌上吗?现在你需要做手术了."
 	icon_state = "glass_table"
 	flipped_icon = "glass_table-flipped"
 	buildstack = /obj/item/stack/material/glass
 
 /obj/structure/table/glass/tablepush(obj/item/I, mob/user)
 	if (..())
-		visible_message("<span class='warning'>[src] breaks!</span>")
+		visible_message("<span class='warning'>[src]坏了!</span>")
 		playsound(loc, "shatter", 50, TRUE)
 		new frame(loc)
 		new /obj/item/weapon/material/shard(loc)
 		qdel(src)
 
 /obj/structure/table/glass/proc/shatter()
-	visible_message("<span class='warning'>[src] shatters!</span>")
+	visible_message("<span class='warning'>[src]碎了!</span>")
 	playsound(loc, "shatter", 50, TRUE)
 	new frame(loc)
 	new /obj/item/weapon/material/shard(loc)
@@ -555,8 +555,8 @@
 	qdel(src)
 
 /obj/structure/table/marble
-	name = "marble table"
-	desc = "A very hard table."
+	name = "大理石桌"
+	desc = "一张非常坚硬的桌子."
 	icon_state = "table"
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/material/marble
@@ -567,8 +567,8 @@
  */
 
 /obj/structure/table/wood
-	name = "wooden table"
-	desc = "Do not apply fire to this. Rumour says it burns easily."
+	name = "木桌"
+	desc = "不要在这上面用火.传言说它很容易烧起来."
 	icon_state = "wood_table"
 	frame = /obj/structure/table_frame/wood
 	framestack = /obj/item/stack/material/wood
@@ -584,8 +584,8 @@
 		update_icon()
 
 /obj/structure/table/wood/poker //No specialties, Just a mapping object.
-	name = "gambling table"
-	desc = "A seedy table for seedy dealings in seedy places."
+	name = "赌桌"
+	desc = "一张用于在肮脏场所进行肮脏交易的肮脏桌子."
 	icon_state = "pokertable"
 	flipped_icon = "pokertable-flipped"
 
@@ -597,8 +597,8 @@
 		update_icon()
 
 /obj/structure/table/modern
-	name = "iron table"
-	desc = "A very hard table."
+	name = "铁桌"
+	desc = "一张非常坚硬的桌子."
 	icon_state = "table"
 	flipped_icon = "table-flipped"
 	frame = /obj/structure/table_frame
@@ -613,8 +613,8 @@
 		update_icon()
 
 /obj/structure/table/modern/table
-	name = "wooden table"
-	desc = "Do not apply fire to this. Rumour says it burns easily."
+	name = "木桌"
+	desc = "不要在这上面用火.传言说它很容易烧起来."
 	icon_state = "woodtable"
 	flipped_icon = "woodtable-flipped"
 	frame = /obj/structure/table_frame/wood
@@ -630,8 +630,8 @@
 		update_icon()
 
 /obj/structure/table/modern/retable
-	name = "reinforced table"
-	desc = "A very hard table."
+	name = "强化桌"
+	desc = "一张非常坚硬的桌子."
 	icon_state = "reinftable"
 	flipped_icon = "table-flipped"
 	health = 350
@@ -647,8 +647,8 @@
 		update_icon()
 
 /obj/structure/table/modern/billiard
-	name = "billiard table"
-	desc = "A bounded table on which cue sports are played."
+	name = "台球桌"
+	desc = "一张用于进行台球运动的有边框桌子."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "billard"
 	frame = /obj/structure/table_frame/wood

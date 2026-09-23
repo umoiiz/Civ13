@@ -2,8 +2,8 @@
 /* backpack.dm*/
 
 /obj/item/weapon/storage/backpack
-	name = "backpack"
-	desc = "You wear this on your back and put items into it."
+	name = "背包"
+	desc = "你把它背在背上, 然后把物品放进去."
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_backpacks.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_backpacks.dmi',
@@ -42,27 +42,27 @@
 /* Satchels*/
 
 /obj/item/weapon/storage/backpack/satchel
-	name = "leather satchel"
-	desc = "It's a very fancy satchel made with fine leather."
+	name = "皮革挎包"
+	desc = "这是一个用上等皮革制成的非常精致的挎包."
 	icon_state = "satchel"
 	base_icon = "satchel"
 	max_storage_space = 16
 
 /obj/item/weapon/storage/backpack/satchel/gator_satchel
-	name = "alligator scale satchel"
-	desc = "A fashionable satchel lined with exotic alligator scales"
+	name = "鳄鱼鳞挎包"
+	desc = "一个内衬异国鳄鱼鳞片的时尚挎包"
 	icon_state = "gator_satchel"
 	base_icon = "gator_satchel"
 
 /obj/item/weapon/storage/backpack/satchel/black
-	name = "black leather satchel"
-	desc = "A very fancy satchel made out of black leather."
+	name = "黑色皮革挎包"
+	desc = "一个用黑色皮革制成的非常精致的挎包."
 	icon_state = "satchel_black"
 	base_icon = "satchel_black"
 
 /obj/item/weapon/storage/backpack/satchel/black/germanat
-	name = "German Anti Tank Satchel"
-	desc = "It's a standard issue satchel for German military personel"
+	name = "德国反坦克挎包"
+	desc = "这是德国军人的标准配发挎包"
 	max_storage_space = 28
 	slowdown = 0.1
 	can_hold = list(
@@ -92,14 +92,14 @@
 			new /obj/item/ammo_casing/rocket/rpb54(src)
 
 /obj/item/weapon/storage/backpack/satchel/replicant
-	name = "synthetic backpack"
-	desc = "A very versitile backpack made out of synthetic leather."
+	name = "合成背包"
+	desc = "一个用合成皮革制成的非常通用的背包."
 	icon_state = "replicant_backpack"
 	base_icon = "replicant_backpack"
 
 /obj/item/weapon/storage/backpack/satchel/police
-	name = "police tactical pouch"
-	desc = "A tactical pouch made for law enforcement agents."
+	name = "警察战术包"
+	desc = "为执法探员制作的战术包."
 	icon_state = "policesatchel"
 	base_icon = "policesatchel"
 	max_storage_space = 12
@@ -107,8 +107,8 @@
 /* Backpacks */
 
 /obj/item/weapon/storage/backpack/ww2/jap
-	name = "japanese backpack"
-	desc = "It's a standard issue backpack for japanese military personel"
+	name = "日本背包"
+	desc = "这是日本军人的标准配发背包"
 	icon_state = "jappack"
 	item_state = "jappack"
 	base_icon = "jappack"
@@ -128,8 +128,8 @@
 		new /obj/item/stack/medical/bruise_pack/gauze(src)
 
 /obj/item/weapon/storage/backpack/ww2/jap/ammo_crate
-	name = "japanese ammo crate"
-	desc = "It's a crate equipped with straps for carrying, often used by ammo bearers."
+	name = "日本弹药箱"
+	desc = "这是一个配有背带的箱子, 通常由弹药手使用."
 	icon_state = "ammo_crate"
 	item_state = "ammo_crate"
 	base_icon = "ammo_crate"
@@ -158,8 +158,8 @@
 			new /obj/item/ammo_magazine/type96(src)
 
 /obj/item/weapon/storage/backpack/ww2/german
-	name = "backpack"
-	desc = "A standard issue backpack for German military personel"
+	name = "背包"
+	desc = "德国军人的标准配发背包"
 	icon_state = "germanpack"
 	item_state = "germanpack"
 	base_icon = "germanpack"
@@ -175,8 +175,8 @@
 		/obj/item/weapon/key,
 		)
 /obj/item/weapon/storage/backpack/ww2/russian
-	name = "backpack"
-	desc = "A standard issue backpack for Soviet military personel."
+	name = "背包"
+	desc = "苏联军人的标准配发背包."
 	icon_state = "germanpack" //To be replaced with proper, high quality sprites
 	item_state = "germanpack" //To be replaced with proper, high quality sprites
 	base_icon = "germanpack" //To be replaced with proper, high quality sprites
@@ -205,7 +205,7 @@
 		new /obj/item/weapon/plastique/russian(src)
 
 /obj/item/weapon/storage/backpack/ww2/sapper
-	name = "sapper backpack"
+	name = "工兵背包"
 	New()
 		..()
 		new /obj/item/stack/material/iron/twentyfive(src)
@@ -233,16 +233,16 @@
 		new /obj/item/weapon/grenade/smokebomb/rdg2(src)
 
 /obj/item/weapon/storage/backpack/ww2/american
-	name = "american backpack"
-	desc = "It's a standard issue backpack for American military personel"
+	name = "美国背包"
+	desc = "这是美国军人的标准配发背包"
 	icon_state = "uspack"
 	item_state = "uspack"
 	base_icon = "uspack"
 	max_storage_space = 24
 
 /obj/item/weapon/storage/backpack/paratrooper
-	name = "parachute pack"
-	desc = "A backpack with a built-in parachute."
+	name = "降落伞包"
+	desc = "一个内置降落伞的背包."
 	icon_state = "parachute"
 	item_state = "parachute"
 	base_icon = "parachute"
@@ -250,15 +250,15 @@
 	max_storage_space = 0
 
 /obj/item/weapon/storage/backpack/scavpack
-	name = "scavenger pack"
-	desc = "A makeshift backpack made of a mix of materials."
+	name = "拾荒者背包"
+	desc = "一个由多种材料混合制成的临时背包."
 	icon_state = "scavpack"
 	item_state = "scavpack"
 	max_storage_space = 24
 
 /obj/item/weapon/storage/backpack/rucksack
-	name = "rucksack"
-	desc = "A big rucksack made for long walks."
+	name = "帆布背包"
+	desc = "一个为长途跋涉制作的大帆布背包."
 	icon_state = "rucksack"
 	item_state = "backpack"
 	base_icon = "rucksack"
@@ -268,8 +268,8 @@
 	max_storage_space = 28
 
 /obj/item/weapon/storage/backpack/rucksack/small
-	name = "small army rucksack"
-	desc = "A small black army rucksack, made to allow you to be mobile while carrying everything you need."
+	name = "小型军用帆布背包"
+	desc = "一个小型黑色军用帆布背包, 让你在携带所有必需品的同时保持机动."
 	icon_state = "smallruck"
 	item_state = "smallruck"
 	base_icon = "smallruck"
@@ -279,8 +279,8 @@
 	max_storage_space = 14
 
 /obj/item/weapon/storage/backpack/rucksack/small/extracap
-	name = "army rucksack"
-	desc = "A bit small black army rucksack, made to allow you to be mobile while carrying everything you need."
+	name = "军用帆布背包"
+	desc = "一个稍小的黑色军用帆布背包, 让你在携带所有必需品的同时保持机动."
 	max_storage_space = 22
 
 /obj/item/weapon/storage/backpack/rucksack/small/extracap/medicalh
@@ -346,8 +346,8 @@
 		new/obj/item/ammo_casing/rocket/pg7v(src)
 
 /obj/item/weapon/storage/backpack/rpg_pack
-	name = "RPG-7 rocket backpack"
-	desc = "An ammunition carrier made out of canvas. This one is able to carry up to 3 rockets."
+	name = "RPG-7火箭背包"
+	desc = "一个用帆布制成的弹药携行具. 这个能够携带最多3枚火箭弹."
 	icon_state = "backpack_rpg_tan"
 	item_state = "backpack_rpg_tan"
 	base_icon = "backpack_rpg_tan"
@@ -394,8 +394,8 @@
 		new/obj/item/ammo_casing/rocket/pg7v(src)
 
 /obj/item/weapon/storage/backpack/heavyrucksack
-	name = "heavy rucksack"
-	desc = "A big heavyduty rucksack made for big, heavy objects."
+	name = "重型帆布背包"
+	desc = "一个为大型, 沉重物品制作的大号重型帆布背包."
 	icon_state = "heavyrucksack"
 	item_state = "backpack"
 	base_icon = "heavyrucksack"
@@ -429,8 +429,8 @@
 	base_icon = "heavyrucksack_black"
 
 /obj/item/weapon/storage/backpack/civbag
-	name = "backpack"
-	desc = "A big backpack made for long walks."
+	name = "背包"
+	desc = "一个为长途跋涉制作的大背包."
 	icon_state = "civback"
 	item_state = "backpack"
 	base_icon = "civback"
@@ -440,8 +440,8 @@
 	max_storage_space = 28
 
 /obj/item/weapon/storage/backpack/duffel
-	name = "duffel bag"
-	desc = "A generic duffel bag."
+	name = "行李袋"
+	desc = "一个普通的行李袋."
 	icon_state = "duffel"
 	item_state = "duffel"
 	base_icon = "duffel"
@@ -455,15 +455,15 @@
 	max_storage_space = 22
 
 /obj/item/weapon/storage/backpack/duffel/black
-	name = "black duffel bag"
-	desc = "A generic black duffel bag."
+	name = "黑色行李袋"
+	desc = "一个普通的黑色行李袋."
 	icon_state = "bduffel"
 	item_state = "bduffel"
 	base_icon = "bduffel"
 
 /obj/item/weapon/storage/backpack/buttpack
-	name = "US Army buttpack"
-	desc = "Standard issue buttpack for american military personel."
+	name = "美军臀包"
+	desc = "美国军人的标准配发臀包."
 	icon_state = "us_buttpack"
 	item_state = "us_buttpack"
 	item_state_slots = list(
@@ -475,8 +475,8 @@
 	max_storage_space = 8
 
 /obj/item/weapon/storage/backpack/sovpack
-	name = "Sidor rucksack"
-	desc = "Soviet standard issue rucksack."
+	name = "西多尔帆布背包"
+	desc = "苏联标准配发帆布背包."
 	icon_state = "sovpack"
 	item_state = "sovpack"
 	item_state_slots = list(
@@ -488,8 +488,8 @@
 	max_storage_space = 12
 
 /obj/item/weapon/storage/backpack/duffel/shaman
-	name = "shaman's duffel bag"
-	desc = "A duffel bag full of \"medical supplies\"."
+	name = "萨满的行李袋"
+	desc = "一个装满\"医疗用品\"的行李袋."
 	New()
 		..()
 		new /obj/item/stack/medical/bruise_pack/bint/leather(src)
@@ -511,8 +511,8 @@
 
 
 /obj/item/weapon/storage/backpack/duffel/ungineer
-	name = "United Nations Enigneer's duffel"
-	desc = "A duffel bag full of engineering supplies."
+	name = "联合国工程师的行李袋"
+	desc = "一个装满工程用品的行李袋."
 	New()
 		..()
 		new /obj/item/weapon/storage/box/sandbags(src)
@@ -524,8 +524,8 @@
 		new /obj/item/weapon/grenade/smokebomb(src)
 
 /obj/item/weapon/storage/backpack/duffel/unsniper
-	name = "United Nations Marksman's duffel"
-	desc = "A duffel bag full of marksman supplies."
+	name = "联合国神射手的行李袋"
+	desc = "一个装满精确射手补给品的行李袋."
 	New()
 		..()
 		new /obj/item/weapon/gun_cleaning_kit(src)
@@ -538,8 +538,8 @@
 		new /obj/item/weapon/grenade/smokebomb/m18smoke(src)
 
 /obj/item/weapon/storage/backpack/duffel/unmg
-	name = "United Nations Gunner's duffel"
-	desc = "A duffel bag full of gunner's supplies."
+	name = "联合国机枪手行李袋"
+	desc = "一个装满机枪手补给品的行李袋."
 	New()
 		..()
 		new /obj/item/weapon/gun_cleaning_kit(src)
@@ -553,8 +553,8 @@
 		new /obj/item/weapon/grenade/coldwar/m67(src)
 
 /obj/item/weapon/storage/backpack/duffel/unbasic
-	name = "United Nations Peacekeeper duffel"
-	desc = "A duffel bag full of basic supplies."
+	name = "联合国维和人员行李袋"
+	desc = "一个装满基础补给品的行李袋."
 	New()
 		..()
 		new /obj/item/weapon/gun_cleaning_kit(src)
@@ -567,8 +567,8 @@
 		new /obj/item/weapon/grenade/coldwar/m67(src)
 
 /obj/item/weapon/storage/backpack/duffel/unsgt
-	name = "United Nations Sergeant's duffel"
-	desc = "A duffel bag full of Sergeant's supplies."
+	name = "联合国中士行李袋"
+	desc = "一个装满中士补给品的行李袋."
 	New()
 		..()
 		new /obj/item/weapon/storage/box/firstaid(src)
@@ -582,8 +582,8 @@
 		new /obj/item/weapon/grenade/incendiary/anm14(src)
 
 /obj/item/weapon/storage/backpack/duffel/un
-	name = "United Nations Assault backpack"
-	desc = "A duffel bag full of basic supplies."
+	name = "联合国突击背包"
+	desc = "一个装满基础补给品的行李袋."
 
 /obj/item/weapon/storage/backpack/duffel/un/mk
 	New()
@@ -610,8 +610,8 @@
 		new /obj/item/weapon/grenade/coldwar/nonfrag/m26(src)
 
 /obj/item/weapon/storage/backpack/piatpack
-	name = "Tube Rocket Satchel"
-	desc = "An ammunition carrier made out of cardboard and canvas. This one is able to carry up to 3 rockets."
+	name = "管式火箭挎包"
+	desc = "一个由纸板和帆布制成的弹药携行具. 这个能携带最多3枚火箭."
 	icon_state = "piatbackpack"
 	item_state = "piatbackpack"
 	base_icon = "piatbackpack"

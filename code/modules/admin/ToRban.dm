@@ -32,7 +32,7 @@
 					F[cleaned] << 1
 			F["last_update"] << world.realtime
 			log_misc("ToR data updated!")
-			if (usr)	to_chat(usr, "ToRban updated.")
+			if (usr)	to_chat(usr, "ToRban已更新.")
 		log_misc("ToR data update aborted: no data.")
 
 

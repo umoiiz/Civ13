@@ -1,6 +1,6 @@
 /obj/structure/window
-	name = "window"
-	desc = "A window."
+	name = "窗户"
+	desc = "一扇窗户."
 	icon = 'icons/obj/windows.dmi'
 	density = TRUE
 	w_class = ITEM_SIZE_NORMAL
@@ -26,24 +26,24 @@
 	if (istype(src, /obj/structure/window/barrier))
 		return
 	if (health == maxhealth)
-		to_chat(user, "<span class='notice'>It looks fully intact.</span>")
+		to_chat(user, "<span class='notice'>它看起来完好无损.</span>")
 	else
 		var/perc = health / maxhealth
 		if (perc > 0.75)
-			to_chat(user, "<span class='notice'>It has a few cracks.</span>")
+			to_chat(user, "<span class='notice'>它有几道裂缝.</span>")
 		else if (perc > 0.5)
-			to_chat(user, "<span class='warning'>It looks slightly damaged.</span>")
+			to_chat(user, "<span class='warning'>它看起来轻微受损.</span>")
 		else if (perc > 0.25)
-			to_chat(user, "<span class='warning'>It looks moderately damaged.</span>")
+			to_chat(user, "<span class='warning'>它看起来中度受损.</span>")
 		else
-			to_chat(user, "<span class='danger'>It looks heavily damaged.</span>")
+			to_chat(user, "<span class='danger'>它看起来严重受损.</span>")
 	if (silicate)
 		if (silicate < 30)
-			to_chat(user, "<span class='notice'>It has a thin layer of silicate.</span>")
+			to_chat(user, "<span class='notice'>它上面有一层薄薄的硅酸盐.</span>")
 		else if (silicate < 70)
-			to_chat(user, "<span class='notice'>It is covered in silicate.</span>")
+			to_chat(user, "<span class='notice'>它被硅酸盐覆盖.</span>")
 		else
-			to_chat(user, "<span class='notice'>There is a thick layer of silicate covering it.</span>")
+			to_chat(user, "<span class='notice'>上面覆盖着一层厚厚的硅酸盐.</span>")
 
 /obj/structure/window/proc/take_damage(var/damage = 0,  var/sound_effect = TRUE)
 	var/initialhealth = health
@@ -59,18 +59,18 @@
 		if (sound_effect)
 			playsound(loc, 'sound/effects/Glasshit.ogg', 100, TRUE)
 		if (health < maxhealth / 4 && initialhealth >= maxhealth / 4)
-			visible_message("[src] looks like it's about to shatter!" )
+			visible_message("[src]看起来快要碎裂了!" )
 		else if (health < maxhealth / 2 && initialhealth >= maxhealth / 2)
-			visible_message("[src] looks seriously damaged!" )
+			visible_message("[src]看起来严重受损!" )
 		else if (health < maxhealth * 3/4 && initialhealth >= maxhealth * 3/4)
-			visible_message("Cracks begin to appear in [src]!" )
+			visible_message("[src]开始出现裂缝!" )
 	return
 
 /obj/structure/window/proc/apply_silicate(var/amount)
 	if (health < maxhealth) // Mend the damage
 		health = min(health + amount * 3, maxhealth)
 		if (health == maxhealth)
-			visible_message("[src] looks fully repaired." )
+			visible_message("[src]看起来已完全修复." )
 	else // Reinforce
 		silicate = min(silicate + amount, 100)
 		updateSilicate()
@@ -87,7 +87,7 @@
 /obj/structure/window/proc/shatter(var/display_message = TRUE)
 	playsound(get_turf(src), "shatter", 70, TRUE)
 	if (display_message)
-		visible_message("<span class = 'warning'>[src] shatters!</span>")
+		visible_message("<span class = 'warning'>[src]碎裂了!</span>")
 		new/obj/item/weapon/material/shard/glass(loc)
 	if (glassed)
 		if (istype(src, /obj/structure/window/classic/shoji))
@@ -193,7 +193,7 @@
 
 /obj/structure/window/hitby(AM as mob|obj)
 	..()
-	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	visible_message("<span class='danger'>[src]被[AM]击中了.</span>")
 	var/tforce = FALSE
 	if (ismob(AM))
 		tforce = 40
@@ -213,14 +213,14 @@
 
 		playsound(loc, 'sound/effects/glassknock.ogg', 80, TRUE)
 		user.do_attack_animation(src)
-		user.visible_message("<span class='danger'>\The [usr] bangs against \the [src]!</span>",
-							"<span class='danger'>You bang against \the [src]!</span>",
-							"You hear a banging sound.")
+		user.visible_message("<span class='danger'>\The [usr]撞在\the [src]上!</span>",
+							"<span class='danger'>你撞在\the [src]上!</span>",
+							"你听到一声撞击声.")
 	else
 		playsound(loc, 'sound/effects/glassknock.ogg', 80, TRUE)
-		user.visible_message("[usr.name] knocks on \the [name].",
-							"You knock on \the [name].",
-							"You hear a knocking sound.")
+		user.visible_message("[usr.name]敲了敲\the [name].",
+							"你敲了敲\the [name].",
+							"你听到一声敲击声.")
 	return
 
 /obj/structure/window/attack_generic(var/mob/user, var/damage)
@@ -230,10 +230,10 @@
 	if (!damage)
 		return
 	if (damage >= 10)
-		user.visible_message("<span class='danger'>[user] smashes into \the [src]!</span>")
+		user.visible_message("<span class='danger'>[user]猛撞在\the [src]上!</span>")
 		take_damage(damage)
 	else
-		user.visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
+		user.visible_message("<span class='notice'>\The [user]轻轻碰了一下\the [src],没有造成伤害.</span>")
 	return TRUE
 
 
@@ -241,7 +241,7 @@
 	if(!..())
 		return
 	user.stats["stamina"][1] = max(user.stats["stamina"][1] - rand(10,15), 0)
-	visible_message("<span class='danger'>[user] kicks the [src]!</span>")
+	visible_message("<span class='danger'>[user]踢了[src]!</span>")
 	take_damage(rand(5,10))
 
 /obj/structure/window/attackby(obj/item/W as obj, mob/user as mob)
@@ -254,17 +254,17 @@
 			qdel(W)	//gotta delete it here because if window breaks, it won't get deleted
 			switch (state)
 				if (1)
-					M.visible_message("<span class='warning'>[user] slams [M] against \the [src]!</span>")
+					M.visible_message("<span class='warning'>[user]把[M]猛砸在\the [src]上!</span>")
 					M.apply_damage(7)
 					hit(10)
 				if (2)
-					M.visible_message("<span class='danger'>[user] bashes [M] against \the [src]!</span>")
+					M.visible_message("<span class='danger'>[user]把[M]猛击在\the [src]上!</span>")
 					if (prob(50))
 						M.Weaken(1)
 					M.apply_damage(10)
 					hit(25)
 				if (3)
-					M.visible_message("<span class='danger'><big>[user] crushes [M] against \the [src]!</big></span>")
+					M.visible_message("<span class='danger'><big>[user]把[M]碾碎在\the [src]上!</big></span>")
 					M.Weaken(5)
 					M.apply_damage(20)
 					hit(50)
@@ -292,10 +292,10 @@
 		to_chat(user, (state ? "<span class='notice'>You have pried the window into the frame.</span>" : "<span class='notice'>You have pried the window out of the frame.</span>"))
 	else if (istype(W, /obj/item/weapon/hammer) && !anchored && (!state || !reinf))
 		if (!glasstype)
-			to_chat(user, "<span class='notice'>You're not sure how to dismantle \the [src] properly.</span>")
+			to_chat(user, "<span class='notice'>你不确定如何正确拆解\the [src].</span>")
 		else
 			playsound(loc, 'sound/items/Ratchet.ogg', 75, TRUE)
-			visible_message("<span class='notice'>[user] dismantles \the [src].</span>")
+			visible_message("<span class='notice'>[user]拆解了\the [src].</span>")
 			if (dir == SOUTHWEST)
 				var/obj/item/stack/material/mats = new glasstype(loc)
 				mats.amount = is_fulltile() ? 4 : 2
@@ -330,7 +330,7 @@
 		return FALSE
 
 	if (anchored)
-		to_chat(usr, "It is fastened to the floor therefore you can't rotate it!")
+		to_chat(usr, "它被固定在地板上,因此你无法旋转它!")
 		return FALSE
 
 	set_dir(turn(dir, 90))
@@ -346,7 +346,7 @@
 		return FALSE
 
 	if (anchored)
-		to_chat(usr, "It is fastened to the floor therefore you can't rotate it!")
+		to_chat(usr, "它被固定在地板上,因此你无法旋转它!")
 		return FALSE
 
 
@@ -441,7 +441,7 @@
 		shatter()
 
 /obj/structure/window_frame
-	desc = "A window frame."
+	desc = "一个窗框."
 	icon_state = "windownew_frame"
 	layer = MOB_LAYER + 0.01
 	anchored = TRUE
@@ -536,8 +536,8 @@
 
 /obj/structure/window_frame/shoji
 	icon_state = "shoji_windownew_frame"
-	name = "shoji window frame"
-	desc = "A good old window frame, only japanese-style."
+	name = "障子窗框"
+	desc = "一个不错的老式窗框,只是日式风格的."
 	stucco_window = FALSE
 
 /obj/structure/window_frame/metal
@@ -554,146 +554,146 @@
 
 /obj/structure/window_frame/portholefull
 	icon_state = "metal_porthole_fullframe"
-	name = "full metal porthole frame"
-	desc = "A large metal porthole with a empty space for glass."
+	name = "全金属舷窗框"
+	desc = "一个大型金属舷窗,留有放置玻璃的空位."
 	health = 500
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/medieval_old
 	icon_state = "medieval_windownew_frame"
-	name = "medieval window frame"
-	desc = "A dark ages window, minus the window."
+	name = "中世纪窗框"
+	desc = "一个黑暗时代的窗户,只是没有窗户."
 	stucco_window = FALSE
 
 /obj/structure/window_frame/oriental
 	icon_state = "oriental_windownew_frame"
-	name = "oriental window frame"
-	desc = "A east-oriental style window, minus the window."
+	name = "东方窗框"
+	desc = "一个东方式窗户,只是没有窗户."
 	stucco_window = FALSE
 
 /obj/structure/window_frame/bamboo
 	icon_state = "bamboo_windownew_frame"
-	name = "bamboo window frame"
-	desc = "A frame for a window, made of bamboo."
+	name = "竹制窗框"
+	desc = "一个由竹子制成的窗框."
 	stucco_window = FALSE
 
 /obj/structure/window_frame/clay
 	icon_state = "clay_windownew_frame"
-	name = "clay window frame"
-	desc = "A empty hole within the clay wall with no glass."
+	name = "黏土窗框"
+	desc = "黏土墙上的一个没有玻璃的空洞."
 	health = 80
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/redearth
 	icon_state = "red_earthwindownew_frame"
-	name = "red earthen window frame"
-	desc = "A empty three panelled red earthen window frame with no glass."
+	name = "红陶窗框"
+	desc = "一个没有玻璃的三格红陶窗框."
 	health = 120
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/villa
 	icon_state = "villa_windownew_frame"
-	name = "villa window frame"
-	desc = "A elegant roman villa window frame."
+	name = "别墅窗框"
+	desc = "一个优雅的罗马别墅窗框."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/villafull
 	icon_state = "villa_windownew_fullframe"
-	name = "villa full window frame"
-	desc = "A elegant large roman villa window frame."
+	name = "别墅全窗框"
+	desc = "一个优雅的大型罗马别墅窗框."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/brick
 	icon_state = "brick_windownew_frame"
-	name = "brick window frame"
-	desc = "A frame for a window, made of bricks."
+	name = "砖制窗框"
+	desc = "一个由砖块制成的窗框."
 	health = 200
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/brickfull
 	icon_state = "brick_windownew_fullframe"
-	name = "full brick window frame"
-	desc = "A frame for a full window, made of bricks."
+	name = "全砖窗框"
+	desc = "一个由砖块制成的全窗窗框."
 	health = 200
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/stone
 	icon_state = "stone_windownew_frame"
-	name = "stone window frame"
-	desc = "Stone carved to support a few panes of glass."
+	name = "石制窗框"
+	desc = "雕刻石头以支撑几块玻璃窗格."
 	health = 250
 	flammable = FALSE
 	stucco_window = TRUE
 
 /obj/structure/window_frame/stonefull
 	icon_state = "stone_windownew_fullframe"
-	name = "full stone window frame"
-	desc = "Stone carved to support a large window's worth of glass."
+	name = "全石窗框"
+	desc = "雕刻石头以支撑一整扇大窗的玻璃."
 	health = 250
 	flammable = FALSE
 	stucco_window = TRUE
 
 /obj/structure/window_frame/marble
 	icon_state = "marble_windownew_frame"
-	name = "marble window frame"
-	desc = "marble carved to support a few panes of glass."
+	name = "大理石窗框"
+	desc = "雕刻大理石以支撑几块玻璃窗格."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/marblefull
 	icon_state = "marble_windownew_fullframe"
-	name = "full stone window frame"
-	desc = "Marble carved to support a large window's worth of glass."
+	name = "全石窗框"
+	desc = "雕刻大理石以支撑一整扇大窗的玻璃."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/sandstone
 	icon_state = "sandstone_windownew_frame"
-	name = "sandstone window frame"
-	desc = "Sandstone carved to support some glass.."
+	name = "砂岩窗框"
+	desc = "雕刻砂岩以支撑一些玻璃.."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/sandstonefull
 	icon_state = "sandstone_windownew_fullframe"
-	name = "sandstone window frame"
-	desc = "Sandstone carved to support a large window's worth of glass.."
+	name = "砂岩窗框"
+	desc = "雕刻砂岩以支撑一整扇大窗的玻璃.."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/redsandstone
 	icon_state = "redsandstone_windownew_frame"
-	name = "red sandstone window frame"
-	desc = "Red sandstone carved to support some glass.."
+	name = "红砂岩窗框"
+	desc = "雕刻红砂岩以支撑一些玻璃.."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/redsandstonefull
 	icon_state = "redsandstone_windownew_fullframe"
-	name = "red sandstone window frame"
-	desc = "Red sandstone carved to support a large window's worth of glass.."
+	name = "红砂岩窗框"
+	desc = "雕刻红砂岩以支撑一整扇大窗的玻璃.."
 	health = 250
 	flammable = FALSE
 	stucco_window = FALSE
 
 /obj/structure/window_frame/sumerian
 	icon_state = "sumerian_windownew_frame"
-	name = "sumerian window frame"
-	desc = "A sumerian window made of clay, can hold glass."
+	name = "苏美尔窗框"
+	desc = "一个由黏土制成的苏美尔窗户,可以安装玻璃."
 	health = 150
 	flammable = FALSE
 	stucco_window = FALSE
@@ -701,31 +701,31 @@
 /obj/structure/window_frame/attackby(obj/item/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/stucco/generic) && (stucco_window))
 		if (!istype(src, /obj/structure/window_frame/stonefull) && !istype(src, /obj/structure/window_frame/stone))
-			to_chat(user, "You start adding stucco to the wood window frame...")
+			to_chat(user, "你开始往木制窗框上涂抹灰泥...")
 			if (do_after(user, 20, src))
-				to_chat(user, "You finish adding stucco to the wood window frame, rendering over it.")
+				to_chat(user, "你完成了往木制窗框上涂抹灰泥,并在其上进行了粉刷.")
 				new /obj/structure/window_frame/redearth(loc)
 				qdel(W)
 				qdel(src)
 	if (istype(W, /obj/item/weapon/stucco/roman) && (stucco_window))
 		if (istype(src, /obj/structure/window_frame/stone))
-			to_chat(user, "You start adding roman stucco to the stone window...")
+			to_chat(user, "你开始往石制窗户上涂抹罗马灰泥...")
 			if (do_after(user, 20, src))
-				to_chat(user, "You finish adding roman stucco to the stone window, rendering over it.")
+				to_chat(user, "你完成了往石制窗户上涂抹罗马灰泥,并在其上进行了粉刷.")
 				new /obj/structure/window_frame/villa(loc)
 				qdel(W)
 				qdel(src)
 		if (istype(src, /obj/structure/window_frame/stonefull))
-			to_chat(user, "You start adding roman stucco to the full stone window...")
+			to_chat(user, "你开始往全石窗户上涂抹罗马灰泥...")
 			if (do_after(user, 20, src))
-				to_chat(user, "You finish adding roman stucco to the full stone window, rendering over it.")
+				to_chat(user, "你完成了往全石窗户上涂抹罗马灰泥,并在其上进行了粉刷.")
 				new /obj/structure/window_frame/villafull(loc)
 				qdel(W)
 				qdel(src)
 	if (istype(W, /obj/item/stack/material/glass))
 		var/obj/item/stack/S = W
 		if (S.amount >= 3)
-			visible_message("<span class = 'notice'>[user] starts to add glass to the window frame...</span>")
+			visible_message("<span class = 'notice'>[user]开始往窗框上安装玻璃...</span>")
 			if (do_after(user, 50, src))
 				if (istype(src, /obj/structure/window_frame/shoji))
 					new/obj/structure/window/classic/shoji(get_turf(src))
@@ -771,22 +771,22 @@
 					new/obj/structure/window/classic/sumerian(get_turf(src))
 				else
 					new/obj/structure/window/classic(get_turf(src))
-				visible_message("<span class = 'notice'>[user] adds glass to the window frame.</span>")
+				visible_message("<span class = 'notice'>[user]往窗框上安装了玻璃.</span>")
 				S.use(3)
 				qdel(src)
 		else
-			to_chat(user, "<span class = 'warning'>You need at least 3 sheets of glass.</span>")
+			to_chat(user, "<span class = 'warning'>你至少需要3块玻璃板.</span>")
 	else
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		if (W.damtype == BRUTE || W.damtype == BURN)
 			user.do_attack_animation(src)
 			health -= (W.force * 0.2)
 	if (health <= 0)
-		visible_message("<span class = 'notice'>The window is broken by [user]!</span>")
+		visible_message("<span class = 'notice'>窗户被[user]打破了!</span>")
 		qdel(src)
 		return
 /obj/structure/window/classic
-	desc = "A good old window."
+	desc = "一个不错的老式窗户."
 	icon_state = "windownew"
 	basestate = "windownew"
 	glasstype = /obj/item/stack/material/glass
@@ -799,7 +799,7 @@
 	glassed = TRUE
 
 /obj/structure/window/clean
-	desc = "A good old window."
+	desc = "一个不错的老式窗户."
 	icon_state = "window_clear"
 	basestate = "window_clear"
 	glasstype = /obj/item/stack/material/glass
@@ -824,12 +824,12 @@
 
 
 /obj/structure/window/clean/reinforced/metal/indestructible
-	name = "indestructible glass"
+	name = "坚不可摧的玻璃"
 	icon_state = "windowmetal"
 	maxhealth = 6000
 
 /obj/structure/window/clean/reinforced/bank_glass
-	name = "reinforced glass"
+	name = "强化玻璃"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "bank_glass"
 	basestate = "bank_glass"
@@ -840,8 +840,8 @@
 /obj/structure/window/classic/shoji
 	icon_state = "shoji_windownew"
 	basestate = "shoji_windownew"
-	name = "shoji window"
-	desc = "A good old window, only japanese-style."
+	name = "障子窗"
+	desc = "一个不错的老式窗户,只是日式风格的."
 
 /obj/structure/window/classic/metal
 	icon_state = "windowmetal"
@@ -853,8 +853,8 @@
 
 /obj/structure/window/classic/portholefull
 	icon_state = "metal_porthole_full"
-	name = "full metal porthole"
-	desc = "A large metal porthole, with a large stretched sheet of glass."
+	name = "全金属舷窗"
+	desc = "一个大型金属舷窗,带有一大片拉伸的玻璃."
 	flammable = FALSE
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
@@ -863,26 +863,26 @@
 /obj/structure/window/classic/medieval_old
 	icon_state = "medieval_windownew"
 	basestate = "medieval_windownew"
-	name = "medieval window"
-	desc = "A dark ages window."
+	name = "中世纪窗户"
+	desc = "一个黑暗时代的窗户."
 
 /obj/structure/window/classic/oriental
 	icon_state = "oriental_windownew"
 	basestate = "oriental_windownew"
-	name = "oriental window"
-	desc = "A east-oriental style window."
+	name = "东方窗户"
+	desc = "一个东方式窗户."
 
 /obj/structure/window/classic/bamboo
 	icon_state = "bamboo_windownew"
 	basestate = "bamboo_windownew"
-	name = "bamboo window"
-	desc = "A bamboo window, made of bamboo."
+	name = "竹制窗户"
+	desc = "一个由竹子制成的竹窗."
 
 /obj/structure/window/classic/clay
 	icon_state = "clay_windownew"
 	icon_state = "clay_windownew"
-	name = "clay window"
-	desc = "A crude empty hole within the clay wall with glass."
+	name = "黏土窗户"
+	desc = "黏土墙上的一个带有玻璃的粗糙空洞."
 	flammable = FALSE
 	maximal_heat = T0C + 1400
 	damage_per_fire_tick = 1.5
@@ -891,8 +891,8 @@
 /obj/structure/window/classic/redearth
 	icon_state = "red_earthwindownew"
 	basestate = "red_earthwindownew"
-	name = "red earthen window"
-	desc = "A three panelled red earthen window."
+	name = "红陶窗户"
+	desc = "一个三格红陶窗户."
 	flammable = FALSE
 	maximal_heat = T0C + 1400
 	damage_per_fire_tick = 1.0
@@ -901,8 +901,8 @@
 /obj/structure/window/classic/villa
 	icon_state = "villa_windownew"
 	basestate = "villa_windownew"
-	name = "villa window"
-	desc = "A elegant roman villa window."
+	name = "别墅窗户"
+	desc = "一个优雅的罗马别墅窗户."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200
@@ -911,8 +911,8 @@
 /obj/structure/window/classic/villafull
 	icon_state = "villa_windownew_full"
 	basestate = "villa_windownew_full"
-	name = "full villa window"
-	desc = "A elegant large roman villa full-window."
+	name = "别墅全窗"
+	desc = "一个优雅的大型罗马别墅全窗."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200
@@ -920,8 +920,8 @@
 
 /obj/structure/window/classic/brick
 	icon_state = "brick_windownew"
-	name = "brick window"
-	desc = "A brick window, made of bricks."
+	name = "砖制窗户"
+	desc = "一扇砖窗,由砖块砌成."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200
@@ -929,8 +929,8 @@
 
 /obj/structure/window/classic/brickfull
 	icon_state = "brick_windownew_full"
-	name = "full brick window"
-	desc = "A full brick window, made of bricks."
+	name = "全砖窗"
+	desc = "一扇全砖窗,由砖块砌成."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200
@@ -938,8 +938,8 @@
 
 /obj/structure/window/classic/stone
 	icon_state = "stone_windownew"
-	name = "stone window"
-	desc = "A stone window with glass-covered holes."
+	name = "石窗"
+	desc = "一扇石窗,带有玻璃覆盖的孔洞."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -947,8 +947,8 @@
 
 /obj/structure/window/classic/stonefull
 	icon_state = "stone_windownew_full"
-	name = "full stone window"
-	desc = "A stone window with large glass-covered holes."
+	name = "全石窗"
+	desc = "一扇全石窗,带有大块玻璃覆盖的孔洞."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -956,8 +956,8 @@
 
 /obj/structure/window/classic/marble
 	icon_state = "marble_windownew"
-	name = "marble window"
-	desc = "A marble window with glass-covered holes."
+	name = "大理石窗"
+	desc = "一扇大理石窗,带有玻璃覆盖的孔洞."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -965,8 +965,8 @@
 
 /obj/structure/window/classic/marblefull
 	icon_state = "marble_windownew_full"
-	name = "full marble window"
-	desc = "A marble window with large glass-covered holes."
+	name = "全大理石窗"
+	desc = "一扇全大理石窗,带有大块玻璃覆盖的孔洞."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -974,8 +974,8 @@
 
 /obj/structure/window/classic/sandstone
 	icon_state = "sandstone_windownew"
-	name = "sandstone window"
-	desc = "Sandstone with glass windows."
+	name = "砂岩窗"
+	desc = "砂岩墙带有玻璃窗."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -983,8 +983,8 @@
 
 /obj/structure/window/classic/sandstonefull
 	icon_state = "sandstone_windownew_full"
-	name = "full sandstone window"
-	desc = "Sandstone with large glass windows."
+	name = "全砂岩窗"
+	desc = "砂岩墙带有大块玻璃窗."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -992,8 +992,8 @@
 
 /obj/structure/window/classic/redsandstone
 	icon_state = "redsandstone_windownew"
-	name = "redsandstone window"
-	desc = "Red sandstone with glass windows."
+	name = "红砂岩窗"
+	desc = "红砂岩墙带有玻璃窗."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -1001,8 +1001,8 @@
 
 /obj/structure/window/classic/redsandstonefull
 	icon_state = "redsandstone_windownew_full"
-	name = "full red sandstone window"
-	desc = "Red sandstone with large glass windows."
+	name = "全红砂岩窗"
+	desc = "红砂岩墙带有大块玻璃窗."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 250
@@ -1010,8 +1010,8 @@
 
 /obj/structure/window/classic/sumerian
 	icon_state = "sumerian_windownew"
-	name = "sumerian window"
-	desc = "Sumerian clay wall with some glass in it."
+	name = "苏美尔窗"
+	desc = "苏美尔泥墙,上面嵌有一些玻璃."
 	flammable = FALSE
 	maximal_heat = T0C + 1400
 	damage_per_fire_tick = 1.0
@@ -1019,8 +1019,8 @@
 
 /obj/structure/window/classic/abashiri
 	icon_state = "abashiri0"
-	name = "window"
-	desc = "A window set inside a wall."
+	name = "窗户"
+	desc = "一扇嵌在墙内的窗户."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200
@@ -1079,7 +1079,7 @@
 
 /obj/structure/window/classic/hitby(AM as mob|obj)
 	..()
-	visible_message("<span class='danger'>[src] was hit by [AM].</span>")
+	visible_message("<span class='danger'>[src]被[AM]击中了.</span>")
 	var/tforce = FALSE
 	if (ismob(AM))
 		tforce = 40
@@ -1117,8 +1117,8 @@
 
 /obj/structure/window/classic/medieval
 	icon_state = "medieval_glass0"
-	name = "window"
-	desc = "A window set inside a wall."
+	name = "窗户"
+	desc = "一扇嵌在墙内的窗户."
 	maximal_heat = T0C + 1600
 	damage_per_fire_tick = 1.0
 	health = 200

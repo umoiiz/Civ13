@@ -55,8 +55,8 @@
 #define CA_KARLUK_TURKIC_SYLLABLES list("a","ba","be","bi","bo","bu","da","de","di","do","du","fa","fe","fi","fo","fu","ga","ge","gi","go","gu","ha","he","hi","ho","hu","ja","je","ji","jo","ju","ka","ke","ki","ko","ku","la","le","li","lo","lu","ma","me","mi","mo","mu","na","ne","ni","no","nu","pa","pe","pi","po","pu","ra","re","ri","ro","ru","sa","se","si","so","su","ta","te","ti","to","tu","va","ve","vi","vo","vu","ya","ye","yi","yo","yu")
 
 /datum/language/portuguese
-	name = "Portuguese"
-	desc = "Muito bom."
+	name = "葡萄牙语"
+	desc = "非常好."
 	key = "pt"
 	colour = "Portuguese"
 	flags = RESTRICTED | COMMON_VERBS
@@ -64,8 +64,8 @@
 	mutual_intelligibility = list(/datum/language/spanish = 75,/datum/language/french = 35,/datum/language/italian = 10)
 
 /datum/language/spanish
-	name = "Spanish"
-	desc = "Muy bueno."
+	name = "西班牙语"
+	desc = "非常好."
 	key = "sp"
 	colour = "Spanish"
 	flags = RESTRICTED | COMMON_VERBS
@@ -73,8 +73,8 @@
 	mutual_intelligibility = list(/datum/language/portuguese = 50,/datum/language/french = 35,/datum/language/italian = 30)
 
 /datum/language/english
-	name = "English"
-	desc = "Very good."
+	name = "英语"
+	desc = "非常好."
 	key = "en"
 	colour = "English"
 	flags = RESTRICTED | COMMON_VERBS
@@ -82,8 +82,8 @@
 	mutual_intelligibility = list(/datum/language/french = 10,/datum/language/german = 10,/datum/language/dutch = 10,/datum/language/scots = 80,/datum/language/welsh = 80)
 
 /datum/language/french
-	name = "French"
-	desc = "Tres bien."
+	name = "法语"
+	desc = "非常好."
 	key = "fr"
 	colour = "French"
 	flags = RESTRICTED | COMMON_VERBS
@@ -91,8 +91,8 @@
 	mutual_intelligibility = list(/datum/language/english = 10,/datum/language/spanish = 25,/datum/language/portuguese = 10,/datum/language/dutch = 10,/datum/language/italian = 10)
 
 /datum/language/dutch
-	name = "Dutch"
-	desc = "Erg goed."
+	name = "荷兰语"
+	desc = "非常好."
 	key = "nl"
 	colour = "Dutch"
 	flags = RESTRICTED | COMMON_VERBS
@@ -100,8 +100,8 @@
 	mutual_intelligibility = list(/datum/language/english = 70, /datum/language/english = 10, /datum/language/german = 40, /datum/language/oldnorse = 15)
 
 /datum/language/afrikaans
-	name = "Afrikaans"
-	desc = "Kom ons rik en rol!"
+	name = "南非语"
+	desc = "让我们摇摆起来!"
 	key = "afr"
 	colour = "Afrikaans"
 	flags = RESTRICTED | COMMON_VERBS
@@ -109,7 +109,7 @@
 	mutual_intelligibility = list(/datum/language/dutch = 70)
 
 /datum/language/carib
-	name = "Carib"
+	name = "加勒比"
 	desc = "???"
 	key = "cb"
 	colour = "Carib"
@@ -118,8 +118,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/greek
-	name = "Greek"
-	desc = "Old and rational."
+	name = "希腊语"
+	desc = "古老而理性."
 	key = "gr"
 	colour = "Greek"
 	flags = RESTRICTED | COMMON_VERBS
@@ -127,8 +127,8 @@
 	mutual_intelligibility = list(/datum/language/latin = 10)
 
 /datum/language/latin
-	name = "Latin"
-	desc = "Sacred and violent."
+	name = "拉丁语"
+	desc = "神圣而暴烈."
 	key = "la"
 	colour = "Latin"
 	flags = RESTRICTED | COMMON_VERBS
@@ -141,8 +141,8 @@
 		/datum/language/dutch = 10)
 
 /datum/language/arab
-	name = "Arabic"
-	desc = "Allahu Ackbar!"
+	name = "阿拉伯语"
+	desc = "真主至大!"
 	key = "ar"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -150,8 +150,8 @@
 	mutual_intelligibility = list(/datum/language/hebrew = 35, /datum/language/egyptian= 30, /datum/language/chechen= 30)
 
 /datum/language/dari
-	name = "Dari"
-	desc = "Salaam, dost-e man!"
+	name = "达里语"
+	desc = "你好,我的朋友!"
 	key = "da"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -159,8 +159,8 @@
 	mutual_intelligibility = list(/datum/language/arab = 20, /datum/language/pashto = 30, /datum/language/farsi = 80, /datum/language/tajik = 95)
 
 /datum/language/tajik
-	name = "Tajik"
-	desc = "Salaam, dost-e man!"
+	name = "塔吉克语"
+	desc = "你好,我的朋友!"
 	key = "ta"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -168,8 +168,8 @@
 	mutual_intelligibility = list(/datum/language/arab = 20, /datum/language/pashto = 30, /datum/language/farsi = 80, /datum/language/dari = 95)
 
 /datum/language/farsi
-	name = "Farsi"
-	desc = "Salaam, doos-e man!"
+	name = "波斯语"
+	desc = "你好,我的朋友!"
 	key = "fa"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -177,8 +177,8 @@
 	mutual_intelligibility = list(/datum/language/arab = 30, /datum/language/pashto = 30, /datum/language/dari = 80, /datum/language/tajik = 80)
 
 /datum/language/pashto
-	name = "Pashto"
-	desc = "Salam, khairaan-e man!"
+	name = "普什图语"
+	desc = "你好,我的朋友!"
 	key = "pa"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -186,8 +186,8 @@
 	mutual_intelligibility = list(/datum/language/arab = 20, /datum/language/dari = 30)
 
 /datum/language/kazakh
-	name = "Kazakh"
-	desc = "Sälem!"
+	name = "哈萨克语"
+	desc = "你好!"
 	key = "kz"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -195,8 +195,8 @@
 	mutual_intelligibility = list(/datum/language/kyrgyz = 60, /datum/language/turkmen = 40, /datum/language/uzbek = 40, /datum/language/uyghur = 40)
 
 /datum/language/kyrgyz
-	name = "Kyrgyz"
-	desc = "Salam!"
+	name = "吉尔吉斯语"
+	desc = "你好!"
 	key = "ky"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -204,8 +204,8 @@
 	mutual_intelligibility = list(/datum/language/kazakh = 60, /datum/language/turkmen = 40, /datum/language/uzbek = 40, /datum/language/uyghur = 40)
 
 /datum/language/turkmen
-	name = "Turkmen"
-	desc = "Salam!"
+	name = "土库曼语"
+	desc = "你好!"
 	key = "tr"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -213,8 +213,8 @@
 	mutual_intelligibility = list(/datum/language/kyrgyz = 40, /datum/language/kazakh = 40, /datum/language/uzbek = 40, /datum/language/uyghur = 40)
 
 /datum/language/uzbek
-	name = "Uzbek"
-	desc = "Salom!"
+	name = "乌兹别克语"
+	desc = "你好!"
 	key = "uz"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -222,8 +222,8 @@
 	mutual_intelligibility = list(/datum/language/kyrgyz = 40, /datum/language/kazakh = 40, /datum/language/turkmen = 40, /datum/language/uyghur = 60)
 
 /datum/language/uyghur
-	name = "Uyghur"
-	desc = "Salom!"
+	name = "维吾尔语"
+	desc = "你好!"
 	key = "uy"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -231,8 +231,8 @@
 	mutual_intelligibility = list(/datum/language/kyrgyz = 40, /datum/language/kazakh = 40, /datum/language/turkmen = 40, /datum/language/uzbek = 60)
 
 /datum/language/chechen
-	name = "Chechen"
-	desc = "Marsallah!"
+	name = "车臣语"
+	desc = "真主的恩典!"
 	key = "ch"
 	colour = "Arabic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -240,8 +240,8 @@
 	mutual_intelligibility = list(/datum/language/russian = 5, /datum/language/arab= 30, /datum/language/armenian= 30)
 
 /datum/language/hebrew
-	name = "Hebrew"
-	desc = "Oy Vey!"
+	name = "希伯来语"
+	desc = "天哪!"
 	key = "hb"
 	colour = "Hebrew"
 	flags = RESTRICTED | COMMON_VERBS
@@ -249,8 +249,8 @@
 	mutual_intelligibility = list(/datum/language/arab = 35, /datum/language/egyptian= 30)
 
 /datum/language/japanese
-	name = "Japanese"
-	desc = "Ohio Gozaimasu."
+	name = "日语"
+	desc = "早上好."
 	key = "jp"
 	colour = "Japanese"
 	flags = RESTRICTED | COMMON_VERBS
@@ -258,8 +258,8 @@
 	mutual_intelligibility = list(/datum/language/chinese = 15)
 
 /datum/language/ainu
-	name = "Ainu"
-	desc = "Osoma!"
+	name = "阿伊努语"
+	desc = "你好!"
 	key = "ai"
 	colour = "Ainu"
 	flags = RESTRICTED | COMMON_VERBS
@@ -267,8 +267,8 @@
 	mutual_intelligibility = list(/datum/language/japanese = 15, /datum/language/russian = 15)
 
 /datum/language/mongolian
-	name = "Mongolian"
-	desc = "Sain baina uu, nadadai!"
+	name = "蒙古语"
+	desc = "你好,我的朋友!"
 	key = "mo"
 	colour = "Mongolian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -276,8 +276,8 @@
 	mutual_intelligibility = list(/datum/language/chinese = 15, /datum/language/russian = 10)
 
 /datum/language/russian
-	name = "Russian"
-	desc = "Za Rodinu!"
+	name = "俄语"
+	desc = "为了祖国!"
 	key = "ru"
 	colour = "Russian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -285,8 +285,8 @@
 	mutual_intelligibility = list(/datum/language/ukrainian = 60, /datum/language/polish = 10)
 
 /datum/language/ukrainian
-	name = "Ukrainian"
-	desc = "Slava Ukraina!"
+	name = "乌克兰语"
+	desc = "荣耀归于乌克兰!"
 	key = "uk"
 	colour = "Ukrainian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -294,8 +294,8 @@
 	mutual_intelligibility = list(/datum/language/russian = 60, /datum/language/polish = 30)
 
 /datum/language/polish
-	name = "Polish"
-	desc = "Smierc dla ciemiezcow!"
+	name = "波兰语"
+	desc = "打倒暴君!"
 	key = "pl"
 	colour = "Polish"
 	flags = RESTRICTED | COMMON_VERBS
@@ -303,8 +303,8 @@
 	mutual_intelligibility = list(/datum/language/russian = 10, /datum/language/ukrainian = 20)
 
 /datum/language/chinese
-	name = "Chinese"
-	desc = "Xiexie."
+	name = "中文"
+	desc = "谢谢."
 	key = "cn"
 	colour = "Chinese"
 	flags = RESTRICTED | COMMON_VERBS
@@ -312,8 +312,8 @@
 	mutual_intelligibility = list(/datum/language/japanese = 15)
 
 /datum/language/german
-	name = "German"
-	desc = "Vor uns liegt Deutschland, in uns marschiert Deutschland. und hinter uns kommt Deutschland!"
+	name = "德语"
+	desc = "德国在我们前方,德国在我们心中行进.而德国在我们身后到来!"
 	key = "de"
 	colour = "german"
 	flags = RESTRICTED | COMMON_VERBS
@@ -321,8 +321,8 @@
 	mutual_intelligibility = list(/datum/language/english = 15,/datum/language/dutch = 35,/datum/language/oldnorse = 15)
 
 /datum/language/zulu
-	name = "Zulu"
-	desc = "Kuhle Kakhulu."
+	name = "祖鲁语"
+	desc = "非常好."
 	key = "zu"
 	colour = "Zulu"
 	flags = RESTRICTED | COMMON_VERBS
@@ -330,8 +330,8 @@
 	mutual_intelligibility = list(/datum/language/swahili = 35, /datum/language/egyptian= 10)
 
 /datum/language/swahili
-	name = "Swahili"
-	desc = "Vizuri Sana."
+	name = "斯瓦希里语"
+	desc = "非常好."
 	key = "sw"
 	colour = "Swahili"
 	flags = RESTRICTED | COMMON_VERBS
@@ -339,8 +339,8 @@
 	mutual_intelligibility = list(/datum/language/zulu = 35, /datum/language/egyptian= 10)
 
 /datum/language/armenian
-	name = "Armenian"
-	desc = "Baref!"
+	name = "亚美尼亚语"
+	desc = "你好!"
 	key = "ar"
 	colour = "Armenian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -348,8 +348,8 @@
 	mutual_intelligibility = list(/datum/language/hebrew = 10, /datum/language/chechen= 30)
 
 /datum/language/vietnamese
-	name = "Vietnamese"
-	desc = "Rat Tot!"
+	name = "越南语"
+	desc = "太好了!"
 	key = "vn"
 	colour = "Vietnamese"
 	flags = RESTRICTED | COMMON_VERBS
@@ -357,8 +357,8 @@
 	mutual_intelligibility = list(/datum/language/chinese = 10)
 
 /datum/language/blackspeech
-	name = "Black Speech"
-	desc = "Baldur!"
+	name = "黑语"
+	desc = "巴尔杜尔!"
 	key = "bs"
 	colour = "Black Speech"
 	flags = RESTRICTED | COMMON_VERBS
@@ -366,8 +366,8 @@
 	mutual_intelligibility = list(/datum/language/oldnorse = 10) //easteregg to Norse god Baldr
 
 /datum/language/ant
-	name = "Antspeak"
-	desc = "Kch!"
+	name = "蚁语"
+	desc = "咔!"
 	key = "an"
 	colour = "Antspeak"
 	flags = RESTRICTED | COMMON_VERBS
@@ -375,8 +375,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/ape
-	name = "Ape Speech"
-	desc = "Ooga!"
+	name = "猿语"
+	desc = "呜嘎!"
 	key = "ap"
 	colour = "Ape Speech"
 	flags = RESTRICTED | COMMON_VERBS
@@ -384,8 +384,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/wolf
-	name = "Wolf Howling"
-	desc = "Awoooo!"
+	name = "狼嚎"
+	desc = "嗷呜!"
 	key = "wo"
 	colour = "Wolf Howling"
 	flags = RESTRICTED | COMMON_VERBS
@@ -393,8 +393,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/lizard
-	name = "Lizard Hissing"
-	desc = "Hissss!"
+	name = "蜥蜴嘶鸣"
+	desc = "嘶嘶嘶!"
 	key = "li"
 	colour = "Lizard Hissing"
 	flags = RESTRICTED | COMMON_VERBS
@@ -402,8 +402,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/crab
-	name = "Clack Tongue"
-	desc = "Clic Clac!"
+	name = "弹舌语"
+	desc = "咔嗒咔嗒!"
 	key = "ct"
 	colour = "Clack Tongue"
 	flags = RESTRICTED | COMMON_VERBS
@@ -411,8 +411,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/scottishgaelic
-	name = "Scottish Gaelic"
-	desc = "Alba gu brath!"
+	name = "苏格兰盖尔语"
+	desc = "苏格兰永远!"
 	key = "sg"
 	colour = "Scottish Gaelic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -420,8 +420,8 @@
 	mutual_intelligibility = list(/datum/language/gaelic = 80, /datum/language/scots = 70)
 
 /datum/language/italian
-	name = "Italian"
-	desc = "Cazzo!"
+	name = "意大利语"
+	desc = "操!"
 	key = "it"
 	colour = "ITALIAN"
 	flags = RESTRICTED | COMMON_VERBS
@@ -429,8 +429,8 @@
 	mutual_intelligibility = list(/datum/language/spanish = 30, /datum/language/french = 10, /datum/language/portuguese = 10)
 
 /datum/language/inuit
-	name = "inuktitut"
-	desc = "Wendigo!"
+	name = "因纽特语"
+	desc = "温迪戈!"
 	key = "in"
 	colour = "Inuktitut"
 	flags = RESTRICTED | COMMON_VERBS
@@ -438,8 +438,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/cherokee
-	name = "Cherokee"
-	desc = "Zah-dah-dah-goh-huhn-yuhn"
+	name = "切罗基语"
+	desc = "扎达达戈胡尤恩"
 	key = "cr"
 	colour = "Cherokee"
 	flags = RESTRICTED | COMMON_VERBS
@@ -447,8 +447,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/oldnorse
-	name = "Old Norse"
-	desc = "Asgard Awaits!"
+	name = "古诺尔斯语"
+	desc = "英灵殿在等待!"
 	key = "on"
 	colour = "Old Norse"
 	flags = RESTRICTED | COMMON_VERBS
@@ -460,8 +460,8 @@
 	/datum/language/danish = 25)
 
 /datum/language/finnish
-	name = "Finnish"
-	desc = "Mamme!"
+	name = "芬兰语"
+	desc = "妈妈!"
 	key = "fi"
 	colour = "Finnish"
 	flags = RESTRICTED | COMMON_VERBS
@@ -472,8 +472,8 @@
 	/datum/language/swedish = 30,)
 
 /datum/language/norwegian
-	name = "Norwegian"
-	desc = "Norsk."
+	name = "挪威语"
+	desc = "挪威语."
 	key = "no"
 	colour = "Norwegian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -486,8 +486,8 @@
 	/datum/language/english = 10)
 
 /datum/language/swedish
-	name = "Swedish"
-	desc = "Svenske."
+	name = "瑞典语"
+	desc = "瑞典人."
 	key = "se"
 	colour = "Swedish"
 	flags = RESTRICTED | COMMON_VERBS
@@ -500,8 +500,8 @@
 	/datum/language/english = 10)
 
 /datum/language/danish
-	name = "Danish"
-	desc = "OH LO LO OH LO LO."
+	name = "丹麦语"
+	desc = "哦咯咯哦咯咯."
 	key = "dk"
 	colour = "Danish"
 	flags = RESTRICTED | COMMON_VERBS
@@ -516,8 +516,8 @@
 
 
 /datum/language/egyptian
-    name = "Egyptian"
-    desc = "Amon-Ra, Aten!"
+    name = "埃及语"
+    desc = "阿蒙-拉,阿顿!"
     key = "eg"
     colour = "Egyptian"
     flags = RESTRICTED | COMMON_VERBS
@@ -528,8 +528,8 @@
 	/datum/language/zulu = 10)
 
 /datum/language/korean
-    name = "Korean"
-    desc = "Haudenosaunee."
+    name = "韩语"
+    desc = "豪德诺索尼."
     key = "ko"
     colour = "Korean"
     flags = RESTRICTED | COMMON_VERBS
@@ -537,8 +537,8 @@
     mutual_intelligibility = list(/datum/language/chinese = 15, /datum/language/japanese = 15)
 
 /datum/language/iroquois
-    name = "Iroquois"
-    desc = "Haudenosaunee."
+    name = "易洛魁语"
+    desc = "豪德诺索尼."
     key = "ir"
     colour = "Iroquois"
     flags = RESTRICTED | COMMON_VERBS
@@ -546,8 +546,8 @@
     mutual_intelligibility = list(/datum/language/inuit = 10, /datum/language/sioux = 6)
 
 /datum/language/sioux
-    name = "Sioux"
-    desc = "Lakotan, the language spoken by the Sioux."
+    name = "苏语"
+    desc = "拉科塔语,苏族人使用的语言."
     key = "sx"
     colour = "Sioux"
     flags = RESTRICTED | COMMON_VERBS
@@ -555,8 +555,8 @@
     mutual_intelligibility = list(/datum/language/cherokee = 10, /datum/language/iroquois = 6)
 
 /datum/language/apache
-    name = "Apache"
-    desc = "Western Apache."
+    name = "阿帕奇语"
+    desc = "西阿帕奇语."
     key = "ap"
     colour = "Apache"
     flags = RESTRICTED | COMMON_VERBS
@@ -564,8 +564,8 @@
     mutual_intelligibility = list(/datum/language/navajo = 10, /datum/language/cherokee = 4)
 
 /datum/language/navajo
-    name = "Navajo"
-    desc = "Diné Bizaad."
+    name = "纳瓦霍语"
+    desc = "迪内比萨德语."
     key = "nv"
     colour = "Navajo"
     flags = RESTRICTED | COMMON_VERBS
@@ -573,8 +573,8 @@
     mutual_intelligibility = list(/datum/language/apache = 10, /datum/language/cherokee = 4)
 
 /datum/language/chinook
-    name = "Chinook"
-    desc = "Chinook Jargon."
+    name = "奇努克语"
+    desc = "奇努克混合语."
     key = "cj"
     colour = "Chinook"
     flags = RESTRICTED | COMMON_VERBS
@@ -582,8 +582,8 @@
     mutual_intelligibility = list(/datum/language/iroquois = 6, /datum/language/inuit = 4)
 
 /datum/language/comanche
-    name = "Comanche"
-    desc = "Numu Tekwapu."
+    name = "科曼奇语"
+    desc = "努穆特夸普语."
     key = "cm"
     colour = "Comanche"
     flags = RESTRICTED | COMMON_VERBS
@@ -591,8 +591,8 @@
     mutual_intelligibility = list(/datum/language/cherokee = 8, /datum/language/apache = 6)
 
 /datum/language/mayan
-    name = "Mayan"
-    desc = "Maya T'aan."
+    name = "玛雅语"
+    desc = "玛雅语."
     key = "my"
     colour = "Mayan"
     flags = RESTRICTED | COMMON_VERBS
@@ -600,8 +600,8 @@
     mutual_intelligibility = list(/datum/language/aztec = 6, /datum/language/cherokee = 2)
 
 /datum/language/aztec
-    name = "Aztec"
-    desc = "Nahuatl language."
+    name = "阿兹特克语"
+    desc = "纳瓦特尔语."
     key = "az"
     colour = "Aztec"
     flags = RESTRICTED | COMMON_VERBS
@@ -609,8 +609,8 @@
     mutual_intelligibility = list(/datum/language/mayan = 6, /datum/language/cherokee = 2)
 
 /datum/language/hawaiian
-    name = "Hawaiian"
-    desc = "Ōlelo Hawai'i."
+    name = "夏威夷语"
+    desc = "夏威夷语."
     key = "hw"
     colour = "Hawaiian"
     flags = RESTRICTED | COMMON_VERBS
@@ -618,8 +618,8 @@
     mutual_intelligibility = list(/datum/language/chinook = 4, /datum/language/inuit = 2)
 
 /datum/language/filipino
-    name = "Filipino"
-    desc = "Maligayang bati!"
+    name = "菲律宾语"
+    desc = "生日快乐!"
     key = "ph"
     colour = "Filipino"
     flags = RESTRICTED | COMMON_VERBS
@@ -627,8 +627,8 @@
     mutual_intelligibility = list(/datum/language/spanish = 40)
 
 /datum/language/welsh
-	name = "Welsh"
-	desc = "Cymru am byth!"
+	name = "威尔士语"
+	desc = "威尔士永远自由!"
 	key = "we"
 	colour = "Welsh"
 	flags = RESTRICTED | COMMON_VERBS
@@ -636,8 +636,8 @@
 	mutual_intelligibility = list(/datum/language/english = 80)
 
 /datum/language/scots
-	name = "Scots"
-	desc = "It may sound like giberrish, but it makes perfect sense!"
+	name = "苏格兰语"
+	desc = "听起来可能像胡言乱语,但完全说得通!"
 	key = "sc"
 	colour = "Scots"
 	flags = RESTRICTED | COMMON_VERBS
@@ -645,8 +645,8 @@
 	mutual_intelligibility = list(/datum/language/english = 80, /datum/language/scottishgaelic = 60)
 
 /datum/language/gaelic
-	name = "Gaelic"
-	desc = "Drunken ramblings!"
+	name = "盖尔语"
+	desc = "醉汉的胡言乱语!"
 	key = "ga"
 	colour = "Gaelic"
 	flags = RESTRICTED | COMMON_VERBS
@@ -654,8 +654,8 @@
 	mutual_intelligibility = list(/datum/language/scottishgaelic = 80)
 
 /datum/language/redmenian
-	name = "Redmenian"
-	desc = "The language of Redmenia."
+	name = "红人语"
+	desc = "红人国的语言."
 	key = "red"
 	colour = "Redmenian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -663,8 +663,8 @@
 	mutual_intelligibility = list(/datum/language/blugoslavian = 10)
 
 /datum/language/blugoslavian
-	name = "Blugoslavian"
-	desc = "The language of Blugoslavia."
+	name = "蓝斯拉夫语"
+	desc = "蓝斯拉夫国的语言."
 	key = "blue"
 	colour = "Blugoslavian"
 	flags = RESTRICTED | COMMON_VERBS
@@ -672,8 +672,8 @@
 	mutual_intelligibility = list(/datum/language/redmenian = 10)
 
 /datum/language/greenistani
-	name = "Greenistani"
-	desc = "The language of Greenistan."
+	name = "绿斯坦语"
+	desc = "绿斯坦的语言."
 	key = "gn"
 	colour = "Greenistani"
 	flags = RESTRICTED | COMMON_VERBS
@@ -681,8 +681,8 @@
 	mutual_intelligibility = list()
 
 /datum/language/droid
-	name = "Binary"
-	desc = "Binary language used by droids."
+	name = "二进制"
+	desc = "机器人使用的二进制语言."
 	key = "bn"
 	colour = "Binary"
 	flags = RESTRICTED | COMMON_VERBS

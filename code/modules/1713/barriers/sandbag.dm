@@ -5,8 +5,8 @@
 
 /obj/structure/window/barrier
 	icon = 'icons/obj/structures.dmi'
-	name = "dirt wall"
-	desc = "That's a barricade from dirt."
+	name = "土墙"
+	desc = "那是由泥土构成的屏障."
 	icon_state = "dirt_wall"
 	layer = MOB_LAYER + 2 //just above mobs
 	anchored = TRUE
@@ -97,8 +97,8 @@ var/set_dir = null // Set the variable outside of any scopes
 //incomplete sandbag structures
 /// Dirt-bags
 /obj/structure/window/barrier/incomplete
-	name = "incomplete dirt barricade"
-	desc = "This dirt barricade is unfinished. Add few more dirt."
+	name = "未完成的土墙"
+	desc = "这个土墙尚未完工. 再加一些泥土."
 	icon_state = "dirt_wall_33%"
 	var/progress = FALSE
 	incomplete = TRUE
@@ -121,8 +121,8 @@ var/set_dir = null // Set the variable outside of any scopes
 /// Sand-bags
 
 /obj/structure/window/barrier/sandbag/incomplete
-	name = "incomplete sandbag wall"
-	desc = "This sandbag wall is unfinished. Add a few more sandbags."
+	name = "未完成的沙袋墙"
+	desc = "这个沙袋墙尚未完工. 再加几个沙袋."
 	icon_state = "sandbag_33%"
 	var/progress = FALSE
 	incomplete = TRUE
@@ -232,7 +232,7 @@ var/set_dir = null // Set the variable outside of any scopes
 	return
 
 /obj/item/weapon/barrier
-	name = "dirt"
+	name = "泥土"
 	icon_state = "dirt_pile"
 	icon = 'icons/obj/items.dmi'
 	w_class = ITEM_SIZE_TINY
@@ -265,8 +265,8 @@ var/set_dir = null // Set the variable outside of any scopes
 		return
 
 /obj/structure/window/barrier/sandbag
-	name = "sandbag wall"
-	desc = "That's a sandbag barricade."
+	name = "沙袋墙"
+	desc = "那是由沙袋构成的屏障."
 	icon_state = "sandbag"
 	layer = MOB_LAYER + 2 //just above mobs
 	anchored = TRUE
@@ -274,7 +274,7 @@ var/set_dir = null // Set the variable outside of any scopes
 
 /obj/structure/window/barrier/concrete
 	icon = 'icons/obj/structures.dmi'
-	name = "concrete halfwall"
+	name = "混凝土半墙"
 	icon_state = "concrete"
 	layer = MOB_LAYER + 2 //just above mobs
 	anchored = TRUE
@@ -283,8 +283,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	maxhealth = 1000
 
 /obj/structure/window/barrier/rock
-	name = "rock wall"
-	desc = "That's a barricade from rocks."
+	name = "石墙"
+	desc = "那是由岩石构成的屏障."
 	icon_state = "rock_barricade"
 	layer = MOB_LAYER + 2 //just above mobs
 	anchored = TRUE
@@ -292,8 +292,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	maxhealth = 900
 
 /obj/structure/window/barrier/sandstone
-	name = "sandstone wall"
-	desc = "That's a barricade from sandstone."
+	name = "砂岩墙"
+	desc = "那是由砂岩构成的屏障."
 	icon_state = "sandstone_barricade"
 	layer = MOB_LAYER + 2 //just above mobs
 	anchored = TRUE
@@ -302,8 +302,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	maxhealth = 900
 
 /obj/structure/window/barrier/palisade
-	name = "palisade"
-	desc = "A wooden palisade."
+	name = "木栅栏"
+	desc = "木制栅栏."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "palisade"
 	maxhealth = 50
@@ -313,7 +313,7 @@ var/set_dir = null // Set the variable outside of any scopes
 	dismantlable = FALSE
 
 /obj/item/weapon/barrier/sandbag
-	name = "sandbag"
+	name = "沙袋"
 	icon_state = "sandbag_new"
 	icon = 'icons/obj/items.dmi'
 	w_class = ITEM_SIZE_TINY
@@ -327,7 +327,7 @@ var/set_dir = null // Set the variable outside of any scopes
 /obj/item/weapon/barrier/sandbag/empty/attackby(var/obj/item/stack/O as obj, mob/user as mob)
 	if (istype(O, /obj/item/stack/ore/glass) && sand_amount < 1)
 		O.amount--
-		to_chat(user, "You fill the sandbag with sand.")
+		to_chat(user, "你用沙子装满沙袋.")
 		sand_amount = TRUE
 		if (O.amount<=0)
 			qdel(O)
@@ -410,8 +410,8 @@ var/set_dir = null // Set the variable outside of any scopes
 			do_climb(H)
 
 /obj/structure/window/barrier/railing
-	name = "railing"
-	desc = "It's a sandstone railing to keep you from falling where you shouldn't."
+	name = "栏杆"
+	desc = "那是砂岩栏杆, 防止你掉到不该掉下去的地方."
 	icon = 'icons/obj/railing.dmi'
 	icon_state = "sandstone"
 	layer = MOB_LAYER + 2 //just above mobs
@@ -421,8 +421,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	maxhealth = 900
 
 /obj/structure/window/barrier/railing/stone
-	name = "railing"
-	desc = "It's a stone railing to keep you from falling where you shouldn't."
+	name = "栏杆"
+	desc = "那是石制栏杆, 防止你掉到不该掉下去的地方."
 	icon = 'icons/obj/railing.dmi'
 	icon_state = "stone"
 	layer = MOB_LAYER + 2 //just above mobs
@@ -431,8 +431,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	maxhealth = 900
 
 /obj/structure/window/barrier/railing/brick
-	name = "Brick Wall"
-	desc = "It's a railing from bricks to keep you from falling where you shouldn't."
+	name = "砖墙"
+	desc = "那是砖制栏杆, 防止你掉到不该掉下去的地方."
 	icon = 'icons/obj/railing.dmi'
 	icon_state = "brick"
 	layer = MOB_LAYER + 2 //just above mobs
@@ -445,8 +445,8 @@ var/set_dir = null // Set the variable outside of any scopes
 	//invisibility = 101
 
 /obj/structure/window/barrier/jersey
-	name = "jersey barrier"
-	desc = "Barrier employed to separate lanes of traffic."
+	name = "泽西护栏"
+	desc = "用于分隔车道的护栏."
 	icon_state = "jerseybarrier1"
 	icon = 'icons/obj/junk.dmi'
 	maxhealth = 900

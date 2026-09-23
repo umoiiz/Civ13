@@ -1,5 +1,5 @@
 /obj/item/projectile/shell
-	name = "bullet"
+	name = "子弹"
 	icon_state = "shell"
 	damage = 200
 	damage_type = BRUTE

@@ -15,7 +15,7 @@ var/list/registered_macros_by_ckey_
 	log_macro(ckey, ".dblclick")
 
 /proc/log_macro(var/ckey, var/macro)
-	to_chat(usr, "The [macro] macro is disabled due to potential exploits.")
+	to_chat(usr, "[macro]宏因潜在漏洞已被禁用.")
 	if (is_macro_use_registered(ckey, macro))
 		return
 	register_macro_use(ckey, macro)

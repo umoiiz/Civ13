@@ -1,6 +1,6 @@
 /obj/item/weapon/grenade/smokebomb
-	desc = "It is set to detonate in 2 seconds."
-	name = "smoke grenade"
+	desc = "它被设定为2秒后引爆."
+	name = "烟雾弹"
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "smoke_grenade"
 	det_time = 20
@@ -42,22 +42,22 @@
 		prime()
 
 /obj/item/weapon/grenade/smokebomb/m18smoke
-	desc = "It is set to detonate in 3 seconds."
-	name = "M18 smoke grenade"
+	desc = "设置为3秒后引爆."
+	name = "M18烟雾弹"
 	icon_state = "m18smoke"
 	det_time = 30
 	item_state = "m18smoke"
 
 /obj/item/weapon/grenade/smokebomb/rdg1
-	desc = "It is set to detonate in 4 seconds."
-	name = "RDG-1 smoke grenade"
+	desc = "设置为4秒后引爆."
+	name = "RDG-1烟雾弹"
 	icon_state = "rdg1"
 	det_time = 40
 	item_state = "rdg1"
 
 /obj/item/weapon/grenade/smokebomb/rdg2
-	desc = "It is set to detonate in 3 seconds."
-	name = "RDG-2 smoke grenade"
+	desc = "设置为3秒后引爆."
+	name = "RDG-2烟雾弹"
 	icon_state = "rdg2"
 	det_time = 30
 	item_state = "rdg2"
@@ -65,8 +65,8 @@
 //////////Signal Smoke//////////////////////////////////////////
 
 /obj/item/weapon/grenade/smokebomb/signal
-	desc = "It is set to detonate in 5 seconds. A helicopter will drop a crate of supplies at its location."
-	name = "M18 signal smoke grenade (supplies)"
+	desc = "设置为5秒后引爆. 一架直升机会在其位置投放一箱补给."
+	name = "M18信号烟雾弹 (补给)"
 	icon_state = "m18smoke_purple"
 	det_time = 50
 	item_state = "m18smoke_purple"
@@ -98,7 +98,7 @@
 					var/choice = input(user,"What type of supply drop?") as null|anything in options
 					if(src && choice)
 						things_to_spawn = options[choice]
-						to_chat(user, "<span class='warning'>You light \the [name]! [det_time/10] seconds!</span>")
+						to_chat(user, "<span class='warning'>你点燃了\the [name]! [det_time/10]秒!</span>")
 						firer = user
 						activate(user)
 						add_fingerprint(user)
@@ -108,7 +108,7 @@
 								H.throw_mode_on()
 						triggered = TRUE
 				else
-					visible_message("<span class = 'danger'>There is no sufficient visibility for a supply drop!</span>")
+					visible_message("<span class = 'danger'>能见度不足, 无法进行补给空投!</span>")
 			if (DUTCH)
 				if (time_of_day != "Night")
 					var/list/options = list()
@@ -120,7 +120,7 @@
 					var/choice = input(user,"What type of supply drop?") as null|anything in options
 					if(src && choice)
 						things_to_spawn = options[choice]
-						to_chat(user, "<span class='warning'>You light \the [name]! [det_time/10] seconds!</span>")
+						to_chat(user, "<span class='warning'>你点燃了\the [name]! [det_time/10]秒!</span>")
 						firer = user
 						activate(user)
 						add_fingerprint(user)
@@ -130,7 +130,7 @@
 								H.throw_mode_on()
 						triggered = TRUE
 				else
-					visible_message("<span class = 'danger'>There is no sufficient visibility for a supply drop!</span>")
+					visible_message("<span class = 'danger'>能见度不足, 无法进行补给空投!</span>")
 			if (RUSSIAN)
 				if (time_of_day != "Night")
 					var/list/options = list()
@@ -142,7 +142,7 @@
 					var/choice = input(user,"What type of supply drop?") as null|anything in options
 					if(src && choice)
 						things_to_spawn = options[choice]
-						to_chat(user, "<span class='warning'>You light \the [name]! [det_time/10] seconds!</span>")
+						to_chat(user, "<span class='warning'>你点燃了\the [name]! [det_time/10]秒!</span>")
 						firer = user
 						activate(user)
 						add_fingerprint(user)
@@ -152,7 +152,7 @@
 								H.throw_mode_on()
 						triggered = TRUE	
 				else
-					visible_message("<span class = 'danger'>There is no sufficient visibility for a supply drop!</span>")
+					visible_message("<span class = 'danger'>能见度不足, 无法进行补给空投!</span>")
 			else
 				firer = user
 				activate(user)
@@ -225,16 +225,16 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/grenade/smokebomb/signal/rdg2_yellow
-	desc = "It is set to detonate in 5 seconds. A helicopter will drop a crate of supplies at its location."
-	name = "RDG-2 yellow signal smoke grenade (supplies)"
+	desc = "设置为5秒后引爆. 一架直升机会在其位置投放一箱补给."
+	name = "RDG-2黄色信号烟雾弹 (补给)"
 	icon_state = "rdg2_yellow"
 	det_time = 50
 	item_state = "rdg2_yellow"
 	smoke_color = /datum/effect/effect/system/smoke_spread/yellow
 
 /obj/item/weapon/grenade/smokebomb/signal/m18_red
-	desc = "It is set to detonate in 5 seconds. A helicopter will drop a crate of supplies at its location."
-	name = "M18 signal smoke grenade (supplies)"
+	desc = "设置为5秒后引爆. 一架直升机会在其位置投放一箱补给."
+	name = "M18信号烟雾弹 (补给)"
 	icon_state = "m18smoke_red"
 	det_time = 50
 	item_state = "m18smoke_red"
@@ -243,8 +243,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 /obj/item/weapon/grenade/incendiary
-	desc = "It is set to detonate in 6 seconds."
-	name = "incendiary grenade"
+	desc = "设置为6秒后引爆."
+	name = "燃烧弹"
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "incendiary"
 	det_time = 60
@@ -253,14 +253,14 @@
 	var/spread_range = 2
 
 /obj/item/weapon/grenade/incendiary/incendiarydetonator
-	name = "Incendiary Detonator"
-	desc = "A grenade-like incendiary weapon popular among military personnel, criminals, bountyhunters, and mercenaries."
+	name = "燃烧引爆器"
+	desc = "一种类似手榴弹的燃烧武器, 在军人, 罪犯, 赏金猎人和雇佣兵中很受欢迎."
 	icon_state = "detonator"
 	det_time = 35
 	throw_range = 12
 
 /obj/item/weapon/grenade/incendiary/anm14
-	name = "AN/M14 incendiary grenade"
+	name = "AN/M14燃烧弹"
 
 /obj/item/weapon/grenade/incendiary/prime()
 	if (active)
@@ -285,8 +285,8 @@
 
 
 /obj/item/weapon/grenade/chemical
-	desc = "It is set to detonate in 5 seconds."
-	name = "chemical grenade"
+	desc = "设置为5秒后引爆."
+	name = "化学弹"
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "smoke_generic"
 	det_time = 50
@@ -329,67 +329,67 @@
 		prime()
 
 /obj/item/weapon/grenade/chemical/chlorine
-	name = "chlorine gas grenade"
+	name = "氯气弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/chlorine_gas
 
 /obj/item/weapon/grenade/chemical/mustard
-	name = "mustard gas grenade"
+	name = "芥子气弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/mustard_gas
 
 /obj/item/weapon/grenade/chemical/phosgene
-	name = "phosgene gas grenade"
+	name = "光气弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/phosgene
 
 /obj/item/weapon/grenade/chemical/white_phosphorus
-	name = "white phosphorus gas grenade"
+	name = "白磷气体弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/white_phosphorus_gas
 
 /obj/item/weapon/grenade/chemical/white_phosphorus/m34
-	name = "M34 WP grenade"
-	desc = "An American white phosphorus smoke grenade"
+	name = "M34白磷弹"
+	desc = "一种美制白磷烟雾弹"
 	icon_state = "m34wp"
 
 /obj/item/weapon/grenade/chemical/xylyl_bromide
-	name = "xylyl bromide gas grenade"
+	name = "二甲苯基溴气体弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/xylyl_bromide
 	icon_state = "riot"
 /obj/item/weapon/grenade/chemical/zyklon_b
-	name = "Zyklon B gas grenade"
+	name = "齐克隆B气体弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/zyklon_b
 
 /obj/item/weapon/grenade/chemical/cs_gas
-	name = "CS gas grenade"
+	name = "CS催泪弹"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/csgas
 
 /obj/item/weapon/grenade/chemical/cs_gas/m7a2
-	name = "M7A2 CS gas grenade"
-	desc = "An American riot control CS hand grenade used to control counter-insurgencies and for other tactical missions."
+	name = "M7A2 CS催泪弹"
+	desc = "一种美制防暴CS手榴弹, 用于控制反叛乱以及其他战术任务."
 	icon_state = "m7a2"
 
 /obj/item/weapon/grenade/chemical/cs_gas/k51
-	name = "K51 CS gas grenade"
-	desc = "A Soviet riot control CS hand grenade used to control counter-insurgencies and for other tactical missions."
+	name = "K51 CS催泪弹"
+	desc = "一种苏制防暴CS手榴弹, 用于控制反叛乱以及其他战术任务."
 	icon_state = "k51"
 	
 /obj/item/weapon/grenade/smokebomb/ugl/attack_self(mob/user)
 	return
 
 /obj/item/weapon/grenade/smokebomb/ugl/shell40mm
-	name = "40x46mm 'M676' grenade shell"
-	desc = "Special smoke round designed for use in an underbarrel grenade launcher. Cannot be manually throwed."
+	name = "40x46mm 'M676'榴弹"
+	desc = "专为下挂式榴弹发射器设计的特殊烟雾弹. 无法手动投掷."
 	icon_state = "M406s"
 
 /obj/item/weapon/grenade/smokebomb/ugl/vog25
-	name = "40x103mm 'GRD-50' grenade shell"
-	desc = "Special smoke round designed for use in an underbarrel grenade launcher. Cannot be manually throwed."
+	name = "40x103mm 'GRD-50'榴弹"
+	desc = "专为下挂式榴弹发射器设计的特殊烟雾弹. 无法手动投掷."
 	icon_state = "40x103mmshells"
 
 /obj/item/weapon/grenade/chemical/ugl/attack_self(mob/user)
 	return
 
 /obj/item/weapon/grenade/chemical/ugl/teargas
-	name = "tear gas grenade"
-	desc = "Concentrated Capsaicin. Contents under pressure. Use with caution."
+	name = "催泪瓦斯弹"
+	desc = "浓缩辣椒素. 内含高压物质. 请谨慎使用."
 	icon_state = "M406s"
 	stype = /datum/effect/effect/system/smoke_spread/bad/chem/payload/xylyl_bromide
 

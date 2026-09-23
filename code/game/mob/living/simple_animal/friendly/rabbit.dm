@@ -1,7 +1,7 @@
 /mob/living/simple_animal/rabbit
 	name = "rabbit"
 	real_name = "rabbit"
-	desc = "A small rabbit. Cute."
+	desc = "一只小兔子.可爱."
 	icon_state = "rabbitgrey"
 	item_state = "rabbitgrey"
 	icon_living = "rabbitgrey"

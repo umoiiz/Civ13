@@ -64,7 +64,7 @@
 		atom_holder.verbs += /atom/proc/RemoveLabel
 	LAZYADD(labels, label)
 
-	user.visible_message("<span class='notice'>\The [user] attaches a label to \the [atom_holder].</span>", \
+	user.visible_message("<span class='notice'>\The [user]给\the [atom_holder]贴上了标签.</span>", \
 						 "<span class='notice'>You attach a label, '[label]', to \the [atom_holder].</span>")
 
 	var/old_name = atom_holder.name
@@ -84,7 +84,7 @@
 	if(!index) // Playing it safe, something might not have set the name properly
 		return
 
-	user.visible_message("<span class='notice'>\The [user] removes a label from \the [atom_holder].</span>", \
+	user.visible_message("<span class='notice'>\The [user]从\the [atom_holder]上移除了标签.</span>", \
 						 "<span class='notice'>You remove a label, '[label]', from \the [atom_holder].</span>")
 
 	var/old_name = atom_holder.name
@@ -117,7 +117,7 @@
 			. += length(entry) + 3
 	. = . > 64 ? TRUE : FALSE
 	if(. && user)
-		to_chat(user, "<span class='warning'>The label won't fit.</span>")
+		to_chat(user, "<span class='warning'>标签放不下.</span>")
 
 /proc/get_attached_labels(var/atom/source)
 	if(has_extension(source, /datum/extension/labels))

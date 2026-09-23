@@ -1,6 +1,6 @@
 /obj/structure/telegraph
-	name = "telegraph"
-	desc = "Used to communicate with distant places."
+	name = "电报机"
+	desc = "用于与远方通信."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "telegraph"
 	flammable = FALSE
@@ -70,8 +70,8 @@
 	return
 
 /obj/structure/teleprinter
-	name = "teleprinter"
-	desc = "Will convert telegraph messages to paper."
+	name = "电传打字机"
+	desc = "会将电报信息转换为纸张."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "teleprinter0"
 	flammable = FALSE
@@ -85,18 +85,18 @@
 	if (istype(W, /obj/item/weapon/paper))
 		if (isemptylist(inpaper))
 			inpaper += W
-			to_chat(user, "You put the paper in the teleprinter.")
+			to_chat(user, "你把纸放进了电传打字机.")
 			user.drop_from_inventory(W)
 			W.forceMove(locate(0,0,0))
 			icon_state = "teleprinter1"
 			update_icon()
 		else
-			to_chat(user, "There already is a paper inside! Remove it first.")
+			to_chat(user, "里面已经有一张纸了! 先把它取出来.")
 			return
 
 /obj/structure/teleprinter/attack_hand(var/mob/user as mob)
 	for(var/obj/item/weapon/C in inpaper)
-		to_chat(user, "You remove \the [C].")
+		to_chat(user, "你取出了 \the [C].")
 		C.loc = get_turf(src)
 		inpaper -= C
 		icon_state = "teleprinter0"
@@ -114,8 +114,8 @@
 				C.free_space -= length(strip_html_properly(new_text))
 
 /obj/structure/phoneline
-	name = "utility pole"
-	desc = "A wood pole with cable hooks on top. Used for phone and telegraph wiring."
+	name = "电线杆"
+	desc = "一根顶部带有电缆钩的木杆. 用于电话和电报布线."
 	icon = 'icons/obj/obj32x64.dmi'
 	icon_state = "powerline"
 	flammable = TRUE
@@ -203,8 +203,8 @@
 					TLG.ringproc(origin, originphone)
 	lastproc = world.time+3
 /obj/structure/phonecable
-	name = "communications cable"
-	desc = "A thin copper cable used for communications"
+	name = "通信电缆"
+	desc = "一种用于通信的细铜缆"
 	icon = 'icons/obj/obj128x128.dmi'
 	icon_state = "cable_h"
 	flammable = TRUE
@@ -247,8 +247,8 @@
 //////////////////////////RADIO RECORDER////////////////////
 // basically this enables you to schedule regular broadcasts.
 /obj/structure/radiorecorder
-	name = "voice recorder"
-	desc = "Used to record programs to be broadcast by radio."
+	name = "录音机"
+	desc = "用于录制要由无线电广播的节目."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "recorder"
 	flammable = TRUE
@@ -299,12 +299,12 @@
 	set src in view(1)
 
 	if (on)
-		to_chat(usr, "You turn the [src] off.")
+		to_chat(usr, "你关闭了 [src].")
 		on = FALSE
 		update_icon()
 		return
 	else
-		to_chat(usr, "You turn the [src] on.")
+		to_chat(usr, "你打开了 [src].")
 		on = TRUE
 		update_icon()
 		owner = usr

@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/sabertooth
 	name = "sabertooth"
-	desc = "A prehistoric mammal, with a distinctive pair of long razor sharp canine teeth, don't get caught by one."
+	desc = "一种史前哺乳动物, 长着一对标志性的长而锋利的犬齿, 别被它逮到."
 	icon = 'icons/mob/animal_64.dmi'
 	icon_state = "sabertooth_brown"
 	icon_living = "sabertooth_brown"
@@ -30,14 +30,14 @@
 
 /mob/living/simple_animal/hostile/sabertooth/white
 	name = "sabertooth"
-	desc = "A prehistoric mammal, with a distinctive pair of long razor sharp canine teeth, don't get caught by one."
+	desc = "一种史前哺乳动物, 长着一对标志性的长而锋利的犬齿, 别被它逮到."
 	icon_state = "sabertooth_white"
 	icon_living = "sabertooth_white"
 	icon_dead = "sabertooth_white_dead"
 
 /mob/living/simple_animal/hostile/sabertooth/lion
 	name = "lion"
-	desc = "King of beasts, it could probably kill a person without much effort. Don't get caught by one."
+	desc = "百兽之王, 它大概能不费多大力气就杀死一个人. 别被它逮到."
 	icon = 'icons/mob/animal_big.dmi'
 	icon_state = "lion"
 	icon_living = "lion"
@@ -50,7 +50,7 @@
 
 /mob/living/simple_animal/hostile/sabertooth/lion/gladiator
 	name = "arena lion"
-	desc = "King of beasts, raised to kill for the pleasure of the gladiatorial spectacle. Don't get caught by one."
+	desc = "百兽之王, 为角斗表演的娱乐而养大以供杀戮. 别被它逮到."
 	icon = 'icons/mob/animal_big.dmi'
 	maxHealth = 75
 	health = 75

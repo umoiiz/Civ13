@@ -84,14 +84,14 @@
 
 /obj/map_metadata/bagne13/proc/check_points_msg()
 	spawn(1)
-		to_chat(world, "<font size = 4><span class = 'notice'><b>Guards Score:</b> </span>[score_guards]</font>")
+		to_chat(world, "<font size = 4><span class = 'notice'><b>守卫得分:</b> </span>[score_guards]</font>")
 		
 		for (var/mob/living/human/H in prisoner_scores)
 			if (H && H.stat != DEAD && H.client)
 				var/score = prisoner_scores[H][3]
 				var/score_tgt = prisoner_scores[H][2]
 				var/score_item = prisoner_scores[H][1]
-				to_chat(H, "<font size = 4><span class = 'notice'>Your current score is: </span><b>[score]</b> out of <b>[score_tgt]</b> [score_item].</font>")
+				to_chat(H, "<font size = 4><span class = 'notice'>你当前的得分是: </span><b>[score]</b>,满分 <b>[score_tgt]</b> [score_item].</font>")
 	spawn(2400)
 		check_points_msg()
 	return
@@ -110,7 +110,7 @@
 		for (var/mob/M in player_list)
 			if (M && M.client)
 				M.client << warning_sound
-		to_chat(world, "<font size=3 color='red'><center><b>ALARM</b><br>The alarm is still on!</center></font>")
+		to_chat(world, "<font size=3 color='red'><center><b>警报</b><br>警报仍在响!</center></font>")
 
 		spawn(285)
 			if (siren)
@@ -122,29 +122,29 @@
 		return FALSE
 	if (processes.ticker.playtime_elapsed > 45000 || map.round_finished) //75 mins
 		ticker.finished = TRUE
-		to_chat(world, "<font size = 4><span class = 'notice'>The round has ended! Guards score: </span><b>[score_guards]</b></font>")
+		to_chat(world, "<font size = 4><span class = 'notice'>回合已结束! 守卫得分: </span><b>[score_guards]</b></font>")
 		for (var/mob/living/human/H in prisoner_scores)
 			if (H && H.stat != DEAD && H.client)
 				var/score = prisoner_scores[H][3]
 				var/score_tgt = prisoner_scores[H][2]
 				var/score_item = prisoner_scores[H][1]
 				if (score >= score_tgt)
-					to_chat(H, "<font size = 4><span style='color:green'><b>Congratulations! You have achieved your personal objective!</b></span></font>")
-					to_chat(H, "<font size = 4>Your final score is: <b>[score]</b> out of <b>[score_tgt]</b> [score_item].</font>")
+					to_chat(H, "<font size = 4><span style='color:green'><b>恭喜! 你达成了你的个人目标!</b></span></font>")
+					to_chat(H, "<font size = 4>你的最终得分是: <b>[score]</b>,满分 <b>[score_tgt]</b> [score_item].</font>")
 					if (H.client && H.client.ckey)
-						to_chat(world, "[H.ckey]: <span style='color:green'><b>SUCESS</b></span>!")
+						to_chat(world, "[H.ckey]: <span style='color:green'><b>成功</b></span>!")
 				else
-					to_chat(H, "<font size = 4><span style='color:red'><b>You did not achieve your personal objective.</b></span></font>")
+					to_chat(H, "<font size = 4><span style='color:red'><b>你未能达成你的个人目标.</b></span></font>")
 					if (H.client && H.client.ckey)
-						to_chat(world, "[H.ckey]: <span style='color:red'><b>FAILED</b></span>")
+						to_chat(world, "[H.ckey]: <span style='color:red'><b>失败</b></span>")
 		win_condition_spam_check = TRUE
 		return FALSE
 	last_win_condition = win_condition.hash
 	return TRUE
 
 /obj/structure/camp_exportbook/bagne
-	name = "camp exports"
-	desc = "Use this to export products from the camp, get paid, and gain points. 5 units of wood equals 1 franc."
+	name = "营地出口"
+	desc = "用这个从营地出口产品,获得报酬并赚取积分. 5单位木材等于1法郎."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "supplybook2"
 	density = TRUE
@@ -158,7 +158,7 @@
 		G = map
 		if (istype(S, /obj/item/stack/material/wood) && S.amount >= 5)
 			G.score_guards+=floor(S.amount/5)
-			to_chat(H, "You export \the [S]. You will be paid [floor(S.amount/5)] francs for this.")
+			to_chat(H, "你出口了\the [S]. 你将为此获得[floor(S.amount/5)]法郎.")
 			qdel(S)
 			new/obj/item/stack/money/francs(src.loc, floor(S.amount/5))
 			return
@@ -167,8 +167,8 @@
 
 
 /obj/structure/camp_exportbook/bagne/hideout
-	name = "hidden stash"
-	desc = "Use this to stash your contraband and increase your score."
+	name = "秘密藏匿处"
+	desc = "用这个藏匿你的违禁品并增加你的得分."
 	icon = 'icons/obj/hideout.dmi'
 	icon_state = "beach_closed"
 	density = FALSE
@@ -194,11 +194,11 @@
 				accepted_item = "opium"
 				qdel(I)
 		else
-			to_chat(H, "You have no personal objective, so stashing items will not increase your score.")
+			to_chat(H, "你没有个人目标,所以藏匿物品不会增加你的得分.")
 			return
 
 		if (accepted)
-			to_chat(H, "You stash the [accepted_item]. Your score is currently [G.prisoner_scores[H][3]] out of [G.prisoner_scores[H][2]].")
+			to_chat(H, "你藏匿了[accepted_item]. 你当前的得分是[G.prisoner_scores[H][3]],满分[G.prisoner_scores[H][2]].")
 		else
-			to_chat(H, "This item cannot be stashed for points.")
+			to_chat(H, "此物品无法藏匿以获取积分.")
 			return

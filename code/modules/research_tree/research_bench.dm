@@ -21,8 +21,8 @@
 var/global/list/research_benches = list()
 
 /obj/structure/research_bench
-	name = "research bench"
-	desc = "A workbench for studying and developing new inventions. Assign it a subject and it will slowly make progress."
+	name = "研究台"
+	desc = "用于研究和开发新发明的工作台。给它指定一个研究课题,它就会慢慢取得进展。"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "researchdesk"
 	density = TRUE
@@ -748,27 +748,27 @@ var/global/list/research_benches = list()
 /obj/structure/research_bench/examine(mob/user, distance = -1)
 	..()
 	if (tier >= MAX_BENCH_TIER)
-		to_chat(user, "It is tier [tier] (maximum).")
+		to_chat(user, "它是[tier]级(最高)。")
 	else if (tier >= era_max_tier())
-		to_chat(user, "It is tier [tier], capped at the current era -- your civilization must reach the next era to upgrade it further.")
+		to_chat(user, "它是[tier]级,受当前时代限制 -- 你的文明必须达到下一个时代才能进一步升级它。")
 	else
-		to_chat(user, "It is tier [tier] (upgrade progress: [tier_progress]/[BENCH_TIER_UPGRADE_COST(tier)]).")
+		to_chat(user, "它是[tier]级(升级进度:[tier_progress]/[BENCH_TIER_UPGRADE_COST(tier)])。")
 	if (!assigned_node)
-		to_chat(user, "It has no research subject assigned.")
+		to_chat(user, "它没有指定研究课题。")
 		return
 	var/datum/research_node/N = get_research_node(assigned_node)
 	if (!N)
 		return
-	to_chat(user, "It is researching <b>[N.name]</b> for the [faction || "no faction"].")
+	to_chat(user, "它正在为[faction || "no faction"]研究<b>[N.name]</b>。")
 	if (map)
 		if (map.is_node_done(faction, assigned_node))
-			to_chat(user, "This subject has already been completed.")
+			to_chat(user, "该课题已经完成。")
 			return
 		if (N.mode == RESEARCH_MODE_BOOK)
-			to_chat(user, "This can only be learned from another faction's research book.")
+			to_chat(user, "这只能从另一个阵营的研究书中习得。")
 		else
 			var/list/entry = map.get_node_entry(faction, assigned_node)
 			var/ticks = entry ? entry[RNODE_ENTRY_TICKS] : 0
-			to_chat(user, "Progress: [round((ticks / N.cost_ticks) * 100)]% ([ticks]/[N.cost_ticks]).")
+			to_chat(user, "进度:[round((ticks / N.cost_ticks) * 100)]%([ticks]/[N.cost_ticks])。")
 			if (N.mode == RESEARCH_MODE_PROTOTYPE)
-				to_chat(user, "A working prototype would also complete this outright.")
+				to_chat(user, "一个可用的原型也会直接完成它。")

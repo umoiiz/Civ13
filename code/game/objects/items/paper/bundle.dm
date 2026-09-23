@@ -1,5 +1,5 @@
 /obj/item/weapon/paper_bundle
-	name = "paper bundle"
+	name = "纸捆"
 	gender = NEUTER
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
@@ -34,7 +34,7 @@
 			O.add_fingerprint(usr)
 			pages.Add(O)
 
-		to_chat(user, "<span class='notice'>You add \the [W.name] to [(name == "paper bundle") ? "the paper bundle" : name].</span>")
+		to_chat(user, "<span class='notice'>你把\the [W.name]加入[(name == "paper bundle") ? "the paper bundle" : name].</span>")
 		qdel(W)
 	else
 		if (istype(W, /obj/item/weapon/pen))
@@ -50,7 +50,7 @@
 
 /obj/item/weapon/paper_bundle/proc/insert_sheet_at(mob/user, var/index, obj/item/weapon/sheet)
 	if (istype(sheet, /obj/item/weapon/paper))
-		to_chat(user, "<span class='notice'>You add [(sheet.name == "paper") ? "the paper" : sheet.name] to [(name == "paper bundle") ? "the paper bundle" : name].</span>")
+		to_chat(user, "<span class='notice'>你把[(sheet.name == "paper") ? "the paper" : sheet.name]加入[(name == "paper bundle") ? "the paper bundle" : name].</span>")
 
 	user.drop_from_inventory(sheet)
 	sheet.loc = src
@@ -67,12 +67,12 @@
 		if (istype(P, /obj/item/weapon/flame/lighter/zippo))
 			class = "rose>"
 
-		user.visible_message("<span class='[class]'>[user] holds \the [P] up to \the [src], it looks like \he's trying to burn it!</span>", \
+		user.visible_message("<span class='[class]'>[user]把\the [P]举到\the [src]前, 看起来\he 想把它烧掉!</span>", \
 		"<span class='[class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
 
 		spawn(20)
 			if (get_dist(src, user) < 2 && user.get_active_hand() == P && P.lit)
-				user.visible_message("<span class='[class]'>[user] burns right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>", \
+				user.visible_message("<span class='[class]'>[user]直接烧穿了\the [src], 把它化为灰烬. 灰烬在空中飘舞, 然后落在地上堆成一团.</span>", \
 				"<span class='[class]'>You burn right through \the [src], turning it to ash. It flutters through the air before settling on the floor in a heap.</span>")
 
 				if (user.get_inactive_hand() == src)
@@ -82,13 +82,13 @@
 				qdel(src)
 
 			else
-				to_chat(user, "<span class = 'red'>You must hold \the [P] steady to burn \the [src].</span>")
+				to_chat(user, "<span class = 'red'>你必须稳稳地握住\the [P]才能烧掉\the [src].</span>")
 
 /obj/item/weapon/paper_bundle/examine(mob/user)
 	if (..(user, TRUE))
 		show_content(user)
 	else
-		to_chat(user, "<span class='notice'>It is too far away.</span>")
+		to_chat(user, "<span class='notice'>它太远了.</span>")
 	return
 
 /obj/item/weapon/paper_bundle/proc/show_content(mob/user as mob)
@@ -151,7 +151,7 @@
 			usr.put_in_hands(W)
 			pages.Remove(pages[page])
 
-			to_chat(usr, "<span class='notice'>You remove the [W.name] from the bundle.</span>")
+			to_chat(usr, "<span class='notice'>你从纸捆中取出[W.name].</span>")
 
 			if (pages.len <= 1)
 				var/obj/item/weapon/paper/P = src.contents[1]
@@ -166,7 +166,7 @@
 
 			update_icon()
 	else
-		to_chat(usr, "<span class='notice'>You need to hold it in hands!</span>")
+		to_chat(usr, "<span class='notice'>你需要把它拿在手里!</span>")
 	if (istype(loc, /mob) || istype(loc.loc, /mob))
 		attack_self(usr)
 		updateUsrDialog()
@@ -188,7 +188,7 @@
 	set category = null
 	set src in usr
 
-	to_chat(usr, "<span class='notice'>You loosen the bundle.</span>")
+	to_chat(usr, "<span class='notice'>你松开了纸捆.</span>")
 	for (var/obj/O in src)
 		O.loc = usr.loc
 		O.layer = initial(O.layer)

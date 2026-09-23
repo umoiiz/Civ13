@@ -3,8 +3,8 @@
 	slot_flags = SLOT_ID|SLOT_BELT|SLOT_POCKET
 	icon = 'icons/obj/key.dmi'
 	icon_state = "keychain_0"
-	name = "keychain"
-	desc = "This holds your keys"
+	name = "钥匙串"
+	desc = "用来存放你的钥匙"
 	w_class = ITEM_SIZE_TINY
 	max_w_class = 1
 	storage_slots = 20 // up to 20 keys can spawn
@@ -16,7 +16,7 @@
 
 /obj/item/weapon/storage/belt/keychain/examine(mob/user)
 	if (locate(src) in get_step(user, user.dir) || user.contents.Find(src))
-		to_chat(user, "<span class = 'notice'>[desc]. Right now it's holding [print_keys()].</span>")
+		to_chat(user, "<span class = 'notice'>[desc]. 目前它装着[print_keys()].</span>")
 
 /obj/item/weapon/storage/belt/keychain/proc/print_keys()
 	if (keys.len == FALSE)
@@ -51,7 +51,7 @@
 				user.put_in_hands(which)
 				keys -= which
 				update_icon_state()
-				visible_message("<span class = 'notice'>[user] takes a key from their keychain.</span>", "<span class = 'notice'>You take out [which].</span>")
+				visible_message("<span class = 'notice'>[user]从钥匙串上取下一把钥匙.</span>", "<span class = 'notice'>你取出了[which].</span>")
 	else
 		..(user)
 
@@ -64,6 +64,6 @@
 			handle_item_insertion(key)
 			keys += key
 			update_icon_state()
-			visible_message("<span class = 'notice'>[user] puts a key in their keychain.</span>", "<span class = 'notice'>You put a key in your keychain.</span>")
+			visible_message("<span class = 'notice'>[user]把一把钥匙放进钥匙串.</span>", "<span class = 'notice'>你把一把钥匙放进你的钥匙串.</span>")
 		else
-			to_chat(user, "<span class = 'danger'>There's not enough space in the keychain!</span>")
+			to_chat(user, "<span class = 'danger'>钥匙串里没有足够的空间!</span>")

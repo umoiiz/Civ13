@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/human/muj_insurgent
 	name = "Mujahideen insurgent"
-	desc = "A local insurgent fighting for the Mujahideen."
+	desc = "一名为圣战者作战的当地叛乱分子."
 	icon_state = "muj1"
 	icon_dead = "muj1_dead"
 	response_help = "pushes"

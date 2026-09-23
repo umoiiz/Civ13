@@ -89,12 +89,12 @@
 			var/warning_sound = sound("sound/effects/siren_once.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			to_chat(world, "<font size = 5><b>REDMENIA HAS CAPTURED THE BLUGOSLAVIAN CAPITAL.</b></font>")
+			to_chat(world, "<font size = 5><b>红梅尼亚已占领布卢戈斯拉维亚首都.</b></font>")
 		if ("Blugoslavia")
 			var/warning_sound = sound("sound/effects/siren_once.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			to_chat(world, "<font size = 5><b>BLUGOSLAVIA HAS CAPTURED THE REDMENIAN CAPITAL.</b></font>")
+			to_chat(world, "<font size = 5><b>布卢戈斯拉维亚已占领红梅尼亚首都.</b></font>")
 	return
 
 /obj/map_metadata/nomads/persistence_beta/proc/lost_control_enemy_capital(var/faction)
@@ -103,10 +103,10 @@
 			var/warning_sound = sound("sound/effects/siren_once.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			to_chat(world, "<font size = 5><b>REDMENIA HAS LOST CONTROL OVER THE BLUGOSLAVIAN CAPITAL.</b></font>")
+			to_chat(world, "<font size = 5><b>红梅尼亚已失去对布卢戈斯拉维亚首都的控制.</b></font>")
 		if ("Blugoslavia")
 			var/warning_sound = sound("sound/effects/siren_once.ogg", repeat = FALSE, wait = TRUE, channel = 777)
 			for (var/mob/M in player_list)
 				M.client << warning_sound
-			to_chat(world, "<font size = 5><b>BLUGOSLAVIA HAS LOST CONTROL OVER THE REDMENIAN CAPITAL.</b></font>")
+			to_chat(world, "<font size = 5><b>布卢戈斯拉维亚已失去对红梅尼亚首都的控制.</b></font>")
 	return

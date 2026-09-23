@@ -1,6 +1,6 @@
 /obj/structure/TV
-	name = "television"
-	desc = "A television for watching broadcasted programmes. Its switched off."
+	name = "电视机"
+	desc = "一台用于观看广播节目的电视机. 它处于关闭状态."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "TV"
 	anchored = TRUE
@@ -18,18 +18,18 @@
 
 /obj/structure/TV/active //no television channels... yet.
 	icon_state = "TV_wn"
-	desc = "A television for watching broadcasted programmes. Its switched on."
+	desc = "一台用于观看广播节目的电视机. 它处于开启状态."
 	active = TRUE
 
 /obj/structure/TV/active/examine(var/mob/living/L)
-	to_chat(L, "There is nothing on television at the moment except static. Typical.")
+	to_chat(L, "目前电视上除了雪花点什么也没有. 真是典型.")
 	return
 
 /* Clocks*/
 
 /obj/structure/TV/grandfather
-	name = "grandfather clock"
-	desc = "A tall wooden grandfather clock. The clock hands & pendulum move frequently as time slips by."
+	name = "落地钟"
+	desc = "一座高大的木制落地钟. 随着时间流逝, 钟的指针和钟摆频繁摆动."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "grandfather_clock_a"
 	anchored = TRUE
@@ -45,19 +45,19 @@
 
 /obj/structure/TV/grandfather/inactive
 	icon_state = "grandfather_clock"
-	desc = "A tall wooden grandfather clock. The clock hands & pendulum have frozen in place, inert."
+	desc = "一座高大的木制落地钟. 钟的指针和钟摆已经静止不动, 毫无生气."
 	active = FALSE
 
 /obj/structure/TV/grandfather/inactive/examine(var/mob/living/L) //it would be fun to have nukes set clocks inactive or halt at a time.
-	to_chat(L, "This clock's stopped running, you can't tell what time it is currently.")
+	to_chat(L, "这座钟已经停止运行, 你无法判断当前时间.")
 	return
 
 /obj/structure/TV/grandfather/examine(var/mob/living/L)
-	to_chat(L, "<big>It is now [clock_time()].</big>")
+	to_chat(L, "<big>现在是[clock_time()].</big>")
 	return
 
 /obj/structure/TV/television //in prep for actually interesting and watchable tv's
-	name = "television"
+	name = "电视机"
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "TV"
 	anchored = TRUE
@@ -74,11 +74,11 @@
 
 /obj/structure/TV/television/active
 	icon_state = "TV_wn"
-	desc = "A television for watching broadcasted programmes. Its switched on."
+	desc = "一台用于观看广播节目的电视机. 它处于开启状态."
 	active = TRUE
 
 /obj/structure/TV/television/active/examine(var/mob/living/L)
-	to_chat(L, "There is nothing on television at the moment except static. Typical.")
+	to_chat(L, "目前电视上除了雪花点什么也没有. 真是典型.")
 	return
 
 /* TV Technical*/
@@ -95,12 +95,12 @@
 
 /obj/structure/TV/bullet_act(var/obj/item/projectile/proj)
 	health -= proj.damage * 0.01
-	visible_message("<span class='warning'>\The [src] is hit by \the [proj.name]!</span>")
+	visible_message("<span class='warning'>\The [src]被\the [proj.name]击中!</span>")
 	try_destroy()
 
 /obj/structure/TV/fire_act(temperature)
 	if (prob(35 * (temperature/500)))
-		visible_message("<span class = 'warning'>\The [src] is destroyed by the fire!</span>")
+		visible_message("<span class = 'warning'>\The [src]被火焰摧毁!</span>")
 		qdel(src)
 
 /obj/structure/TV/attackby(obj/item/W as obj, mob/user as mob)
@@ -119,7 +119,7 @@
 	if (health <= 0)
 		if (stored_unit)
 			release_stored()
-		visible_message("<span class='danger'>[src] is broken into pieces!</span>")
+		visible_message("<span class='danger'>[src]碎成了碎片!</span>")
 		qdel(src)
 		return
 
@@ -147,18 +147,18 @@
 		anchored = !anchored
 	else if (istype(O,/obj/item/weapon/hammer))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin smashing apart \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始砸碎\the [src].</span>")
 		if (do_after(user,30,src))
-			to_chat(user, "<span class='notice'>You roughly smash apart \the [src].</span>")
+			to_chat(user, "<span class='notice'>你粗暴地砸碎了\the [src].</span>")
 			new /obj/item/stack/material/iron(loc)
 			new /obj/item/stack/material/iron(loc)
 			new /obj/item/stack/material/electronics(loc)
 			qdel(src)
 	else if (istype(O,/obj/item/weapon/hammer/modern))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin dismantling \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始拆解\the [src].</span>")
 		if (do_after(user,20,src))
-			to_chat(user, "<span class='notice'>You carefully dismantle \the [src].</span>") //scavenging, the new proceeds auto-stack.
+			to_chat(user, "<span class='notice'>你小心地拆解了\the [src].</span>") //scavenging, the new proceeds auto-stack.
 			for (var/i=1, i<=4, i++)
 				new /obj/item/stack/material/iron(loc)
 			for (var/i=1, i<=3, i++)
@@ -175,17 +175,17 @@
 		anchored = !anchored
 	else if (istype(O,/obj/item/weapon/hammer))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin smashing apart \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始砸碎\the [src].</span>")
 		if (do_after(user,30,src))
-			to_chat(user, "<span class='notice'>You roughly smash apart \the [src].</span>")
+			to_chat(user, "<span class='notice'>你粗暴地砸碎了\the [src].</span>")
 			for (var/i=1, i<=3, i++)
 				new /obj/item/stack/material/wood(loc)
 			qdel(src)
 	else if (istype(O,/obj/item/weapon/hammer/modern))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 75, TRUE)
-		to_chat(user, "<span class='notice'>You begin dismantling \the [src].</span>")
+		to_chat(user, "<span class='notice'>你开始拆解\the [src].</span>")
 		if (do_after(user,20,src))
-			to_chat(user, "<span class='notice'>You carefully dismantle \the [src].</span>")
+			to_chat(user, "<span class='notice'>你小心地拆解了\the [src].</span>")
 			for (var/i=1, i<=6, i++)
 				new /obj/item/stack/material/wood(loc)
 			new /obj/item/stack/material/glass(loc)
@@ -193,8 +193,8 @@
 			qdel(src)
 
 /obj/structure/coolingfan
-	name = "cooling fan"
-	desc = "A rotating cooling fan. It's switched off."
+	name = "冷却风扇"
+	desc = "一台旋转的冷却风扇. 它处于关闭状态."
 	icon = 'icons/obj/modern_structures.dmi'
 	icon_state = "fan"
 	anchored = TRUE
@@ -205,11 +205,11 @@
 
 /obj/structure/coolingfan/attack_hand(mob/user as mob)
 	if (on == FALSE)
-		to_chat(usr, "You turn the cooling fan on.")
+		to_chat(usr, "你打开了冷却风扇.")
 		icon_state = "fan_working"
 		on = TRUE
 	else
-		to_chat(usr, "You turn the cooling fan off.")
+		to_chat(usr, "你关闭了冷却风扇.")
 		icon_state = "fan"
 		on = FALSE
 

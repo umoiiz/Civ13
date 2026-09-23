@@ -59,47 +59,47 @@
 		..()
 ///////////////ANCIENT//////////////////////////////////////
 /obj/item/clothing/under/custom/toga
-	name = "toga"
-	desc = "A simple cloth toga."
+	name = "托加长袍"
+	desc = "一块简单的布制托加长袍."
 	icon_state = "customtoga"
 	item_state = "customtoga"
 
 /obj/item/clothing/under/custom/stola
-	name = "stola"
-	desc = "A simple cloth stola, roman clothing for women."
+	name = "斯托拉"
+	desc = "一块简单的布制斯托拉, 古罗马女性服饰."
 	icon_state = "fem_roman"
 	item_state = "fem_roman"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO
 
 /obj/item/clothing/under/custom/roman
-	name = "long tunic"
-	desc = "A simple cloth tunic, with a brass and leather belt."
+	name = "长款束腰外衣"
+	desc = "一件简单的布制束腰外衣, 配有黄铜和皮革腰带."
 	icon_state = "customroman"
 	item_state = "customroman"
 
 /obj/item/clothing/under/custom/spartan
-	name = "short loincloth"
-	desc = "A simple, small loincloth."
+	name = "短款缠腰布"
+	desc = "一块简单的小缠腰布."
 	icon_state = "customspartan"
 	item_state = "customspartan"
 
 /obj/item/clothing/under/custom/shendyt
-	name = "shendyt"
-	desc = "A kilt-like cloth used around the waist."
+	name = "申迪特"
+	desc = "一种围在腰间的裙状布料."
 	icon_state = "customshendyt"
 	item_state = "customshendyt"
 	heat_protection = LOWER_TORSO
 
 /obj/item/clothing/under/custom/celtic
-	name = "celtic trousers"
-	desc = "Thick cloth celtic trousers."
+	name = "凯尔特长裤"
+	desc = "厚布制凯尔特长裤."
 	icon_state = "customceltic"
 	item_state = "customceltic"
 	heat_protection = LOWER_TORSO|LEGS
 
 /obj/item/clothing/under/custom/toga/purple
-	name = "purple toga"
-	desc = "A fancy cloth toga."
+	name = "紫色托加长袍"
+	desc = "一件华丽的布制托加长袍."
 	icon_state = "customtoga"
 	item_state = "customtoga"
 	uncolored = FALSE
@@ -108,42 +108,42 @@
 
 ///////////////MEDIEVAL//////////////////////////////////////
 /obj/item/clothing/under/custom/tunic
-	name = "tunic"
-	desc = "A simple cloth tunic, with a leather belt."
+	name = "束腰外衣"
+	desc = "一件简单的布制束腰外衣, 配有皮革腰带."
 	icon_state = "customtunic"
 	item_state = "customtunic"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO|ARMS
 
 /obj/item/clothing/under/custom/haori
-	name = "haori"
-	desc = "A light, loose fitting bit of clothes, worn in japan."
+	name = "羽织"
+	desc = "一件轻便宽松的衣物, 在日本穿着."
 	icon_state = "haori_custom"
 	item_state = "haori_custom"
 	uncolored = TRUE
 /obj/item/clothing/suit/storage/jacket/custom/haori_jacket
-	name = "haori jacket"
-	desc = "A simple jacket worn over a haori outfit."
+	name = "羽织外套"
+	desc = "一件穿在羽织套装外面的简单外套."
 	icon_state = "haori_jacket_custom"
 	item_state = "haori_jacket_custom"
 	uncolored = TRUE
 /obj/item/clothing/under/custom/arabictunic
-	name = "arabic tunic"
-	desc = "A light cloth tunic, in arabic style."
+	name = "阿拉伯束腰外衣"
+	desc = "一件轻便的布制束腰外衣, 阿拉伯风格."
 	icon_state = "customarabictunic"
 	item_state = "customarabictunic"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO|ARMS
 
 /obj/item/clothing/suit/storage/jacket/custom/poncho
-	name = "poncho"
-	desc = "A simple cloth poncho."
+	name = "斗篷"
+	desc = "一件简单的布制斗篷."
 	icon_state = "customponcho"
 	item_state = "customponcho"
 	heat_protection = LOWER_TORSO|LEGS|UPPER_TORSO|ARMS
 	uncolored = TRUE
 
 /obj/item/clothing/under/customren
-	name = "renaissance outfit"
-	desc = "A renaissance-style outfit."
+	name = "文艺复兴套装"
+	desc = "一套文艺复兴风格的套装."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/undercolor = 0
@@ -185,8 +185,8 @@
 		..()
 
 /obj/item/clothing/under/custompontifical
-	name = "renaissance outfit"
-	desc = "A renaissance-style pontifical outfit."
+	name = "文艺复兴套装"
+	desc = "一套文艺复兴风格的教皇套装."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/undercolor = 0
@@ -248,8 +248,8 @@
 		..()
 ///////////////IMPERIAL//////////////////////////////////////
 /obj/item/clothing/under/customdress
-	name = "dress"
-	desc = "A female dress."
+	name = "连衣裙"
+	desc = "一条女性连衣裙."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/undercolor = 0
@@ -302,8 +302,8 @@
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 /obj/item/clothing/under/customdress2
-	name = "dress"
-	desc = "A female dress."
+	name = "连衣裙"
+	desc = "一条女性连衣裙."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/undercolor = 0
@@ -345,8 +345,8 @@
 
 /////////////////COLONIAL COAT////////////////////////////////////
 /obj/item/clothing/suit/storage/jacket/customcolonialcoat
-	name = "colonial coat"
-	desc = "A colonial coat of the XVIIIth century."
+	name = "殖民时期大衣"
+	desc = "一件十八世纪的殖民时期大衣."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/deccolor = 0
@@ -398,8 +398,8 @@
 
 
 /obj/item/clothing/suit/storage/jacket/customcolonial
-	name = "colonial jacket"
-	desc = "A colonial jacket of the XVIIIth century."
+	name = "殖民时期夹克"
+	desc = "一件十八世纪的殖民时期夹克."
 	var/uncolored = FALSE
 	var/jacketcolor = 0
 	var/crosscolor = 0
@@ -443,8 +443,8 @@
 
 /////////////////CUSTOM TRIBAL////////////////////////////////////
 /obj/item/clothing/under/customtribalrobe
-	name = "tribal robe"
-	desc = "A tribal robe."
+	name = "部落长袍"
+	desc = "一件部落长袍."
 	var/uncolored = FALSE
 	var/shirtcolor = 0
 	var/pantscolor = 0
@@ -490,8 +490,8 @@
 
 /////////////////UNIFORMS////////////////////////////////////
 /obj/item/clothing/under/customvicuniform
-	name = "uniform"
-	desc = "A victorian Era uniform."
+	name = "制服"
+	desc = "一套维多利亚时代制服."
 	var/uncolored = FALSE
 	var/shirtcolor = 0
 	var/buttonscolor = 0
@@ -566,8 +566,8 @@
 ///////////////WW2-MODERN//////////////////////////////////////
 
 /obj/item/clothing/head/custom_off_cap
-	name = "officer cap"
-	desc = "An officer cap."
+	name = "军官帽"
+	desc = "一顶军官帽."
 	var/uncolored1 = FALSE
 	var/capcolor = 0
 	var/bandcolor = 0
@@ -618,8 +618,8 @@
 		..()
 
 /obj/item/clothing/head/custom/fieldcap
-	name = "field cap"
-	desc = "A cap often worn by military personnel."
+	name = "野战帽"
+	desc = "一顶军人常戴的帽子."
 	icon_state = "fieldcap_custom"
 	item_state = "fieldcap_custom"
 	var/capcolor = 0
@@ -644,8 +644,8 @@
 
 /////////////////UNIFORMS////////////////////////////////////
 /obj/item/clothing/under/customuniform_modern
-	name = "camo uniform"
-	desc = "A modern era camouflaged uniform."
+	name = "迷彩制服"
+	desc = "一套现代迷彩制服."
 	var/uncolored = FALSE
 	var/browncolor = 0
 	var/greencolor = 0
@@ -699,8 +699,8 @@
 
 //////////////////CIVILIAN STUFF////////////////////////////
 /obj/item/clothing/under/custompyjamas
-	name = "pyjamas"
-	desc = "Basic striped pyjamas."
+	name = "睡衣"
+	desc = "基本的条纹睡衣."
 	icon_state = "custompyjamas"
 	item_state = "custompyjamas"
 	var/stripescolor = 0
@@ -729,67 +729,67 @@
 
 /////////////////////HATS////////////////////
 /obj/item/clothing/head/custom/customberet
-	name = "beret"
-	desc = "A simple cloth beret."
+	name = "贝雷帽"
+	desc = "一顶简单的布制贝雷帽."
 	icon_state = "customberet_hat"
 	item_state = "customberet_hat"
 
 /obj/item/clothing/head/custom/custombandana
-	name = "bandana"
-	desc = "A simple cloth bandana."
+	name = "头巾"
+	desc = "一块简单的布制头巾."
 	icon_state = "custombandana_hat"
 	item_state = "custombandana_hat"
 
 /obj/item/clothing/head/custom/customnoblehat
-	name = "noble hat"
-	desc = "A fancy noble hat."
+	name = "贵族帽"
+	desc = "一顶华丽的贵族帽."
 	icon_state = "customnoblehat_hat"
 	item_state = "customnoblehat_hat"
 
 /obj/item/clothing/head/custom/customhood
-	name = "wool_hood"
-	desc = "A wool hood."
+	name = "羊毛兜帽"
+	desc = "一顶羊毛兜帽."
 	icon_state = "wool_hood"
 	item_state = "wool_hood"
 	cold_protection = HEAD
 
 /obj/item/clothing/head/custom/custom_beanie
-	name = "beanie"
-	desc = "A warm winter beanie."
+	name = "毛线帽"
+	desc = "一顶温暖的冬季毛线帽."
 	icon_state = "custom_beanie"
 	item_state = "custom_beanie"
 	cold_protection = HEAD
 
 /obj/item/clothing/head/custom/drill_hat
-    name = "Drill hat"
-    desc = "The hat of a drill sergeant sir yes sir!!"
+    name = "训练帽"
+    desc = "训练军士的帽子,长官,是的,长官!!"
     icon_state = "drill_hat"
     item_state = "drill_hat"
     heat_protection = HEAD
 
 /obj/item/clothing/head/custom/taqiyah
-	name = "taqiyah"
-	desc = "A short, rounded skullcap usually worn for religious purposes."
+	name = "塔基亚帽"
+	desc = "一种短而圆的小帽,通常用于宗教目的."
 	icon_state = "taqiyah"
 	item_state = "taqiyah"
 
 /obj/item/clothing/head/custom/hijab
-	name = "hijab"
-	desc = "A veil which is wrapped to cover the head and chest."
+	name = "希贾布"
+	desc = "一种包裹头部和胸部的面纱."
 	icon_state = "hijab"
 	item_state = "hijab"
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD
 
 /obj/item/clothing/head/custom/kippa
-	name = "kippa"
-	desc = "A small, brimless cap."
+	name = "基帕帽"
+	desc = "一种无帽檐的小帽."
 	icon_state = "kippa"
 	item_state = "kippa"
 
 /obj/item/clothing/head/custom_keffiyeh
-	name = "keffiyeh"
-	desc = "A headdress fashioned from a scarf with a checkered pattern."
+	name = "阿拉伯头巾"
+	desc = "一种由方格图案围巾制成的头饰."
 	icon_state = "keffiyeh_custom"
 	item_state = "keffiyeh_custom"
 	heat_protection = HEAD
@@ -818,8 +818,8 @@
 //Helmets
 
 /obj/item/clothing/head/helmet/montefortino
-	name = "bronze montefortino helmet"
-	desc = "A conical bronce helmet with cheekplates."
+	name = "青铜蒙特福尔蒂诺头盔"
+	desc = "一种带有护颊的锥形青铜头盔."
 	icon_override = "icons/obj/clothing/head.dmi"
 	icon_state = "montefortino"
 	item_state = "montefortino"
@@ -850,8 +850,8 @@
 
 
 /obj/item/clothing/head/helmet/roman_decurion/nomads
-	name = "roman decurion helmet"
-	desc = "An iron helmet, used by decurions. Officers within the cavalry of the roman army."
+	name = "罗马十夫长头盔"
+	desc = "一种铁制头盔,由十夫长使用.罗马军队骑兵中的军官."
 	icon_override = "icons/obj/clothing/head.dmi"
 	icon_state = "roman_d"
 	item_state = "roman_d"
@@ -882,8 +882,8 @@
 		..()
 
 /obj/item/clothing/head/helmet/roman_centurion/nomads
-	name = "roman centurion helmet"
-	desc = "An iron helmet, used by centurions. Officers within the infantry of the roman army."
+	name = "罗马百夫长头盔"
+	desc = "一种铁制头盔,由百夫长使用.罗马军队步兵中的军官."
 	icon_override = "icons/obj/clothing/head.dmi"
 	icon_state = "roman_c"
 	item_state = "roman_c"
@@ -914,8 +914,8 @@
 		..()
 
 /obj/item/clothing/head/custom_feathered_hat
-	name = "feathered cap"
-	desc = "A feathered cap."
+	name = "羽毛帽"
+	desc = "一顶羽毛帽."
 	var/uncolored1 = FALSE
 	var/capcolor = 0
 	var/bandcolor = 0
@@ -959,8 +959,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/item/clothing/under/crinoline_dress
-	name = "crinoine dress"
-	desc = "A laced dress."
+	name = "克里诺林裙"
+	desc = "一条系带连衣裙."
 	var/uncolored = FALSE
 	var/topcolor = 0
 	var/undercolor = 0
@@ -1003,8 +1003,8 @@
 		..()
 ///////////////////////////////////////////////////////////////////////////////////////
 /obj/item/clothing/head/custom_hennin
-	name = "hennin"
-	desc = "A headdress fashioned from cloth with a nice lining."
+	name = "汉宁帽"
+	desc = "一种由布料制成的头饰,带有漂亮的内衬."
 	icon_state = "custom_hennin"
 	item_state = "custom_hennin"
 	heat_protection = HEAD
@@ -1032,8 +1032,8 @@
 
 /////////////////CUSTOM GENERIC UNIFORMS////////////////////////////////////
 /obj/item/clothing/under/customuniform
-	name = "modern outfit"
-	desc = "A generic outfit."
+	name = "现代服装"
+	desc = "一套普通服装."
 	var/uncolored = FALSE
 	var/shirtcolor = 0
 	var/pantscolor = 0
@@ -1079,53 +1079,53 @@
 		..()
 
 /obj/item/clothing/under/customuniform/facilityg
-	name = "Facility uniform"
-	desc = "A sterile white uniform."
+	name = "设施制服"
+	desc = "一套无菌白色制服."
 	shirtcolor = "#FFFFFF"
 	pantscolor = "#FFFFFF"
 	color = "#FFFFFF"
 
 /obj/item/clothing/under/customuniform/baggy
-	name = "baggy modern outfit"
+	name = "宽松现代服装"
 	item_state = "custom_modbaggy_full"
 	icon_state = "custom_modbaggy_full"
 	base_icon = "custom_modbaggy"
 
 /obj/item/clothing/under/customuniform/short
-	name = "short modern outfit"
+	name = "短款现代服装"
 	item_state = "custom_modshort_full"
 	icon_state = "custom_modshort_full"
 	base_icon = "custom_modshort"
 
 /obj/item/clothing/under/customuniform/colonial
-	name = "colonial outfit"
+	name = "殖民时期服装"
 	item_state = "custom_col_full"
 	icon_state = "custom_col_full"
 	base_icon = "custom_col"
 
 /obj/item/clothing/under/customuniform/colonial/short
-	name = "short colonial outfit"
+	name = "短款殖民时期服装"
 	item_state = "custom_col_short_full"
 	icon_state = "custom_col_short_full"
 	base_icon = "custom_col_short"
 
 /obj/item/clothing/suit/storage/jacket/custom/hoodie
-	name = "hoodie"
-	desc = "A simple comfy cloth hoodie."
+	name = "连帽衫"
+	desc = "一件简单舒适的布质连帽衫."
 	icon_state = "customhoodie"
 	item_state = "customhoodie"
 	uncolored = TRUE
 
 /obj/item/clothing/suit/storage/jacket/custom/cloth_jacket
-	name = "cloth jacket"
-	desc = "A simple cloth jacket."
+	name = "布夹克"
+	desc = "一件简单的布夹克."
 	icon_state = "customjacket"
 	item_state = "customjacket"
 	uncolored = TRUE
 
 /obj/item/clothing/suit/storage/jacket/custom/blazer
-	name = "suit blazer"
-	desc = "A simple cloth blazer."
+	name = "西装外套"
+	desc = "一件简单的布质西装外套."
 	icon_state = "customblazer"
 	item_state = "customblazer"
 	uncolored = TRUE
@@ -1133,8 +1133,8 @@
 ////////////Track suit////////////////
 
 /obj/item/clothing/under/customtrackpants
-	name = "track pants"
-	desc = "A shirt with tracksuit pants."
+	name = "运动裤"
+	desc = "一件衬衫搭配运动裤."
 	var/uncolored = FALSE
 	var/pantscolor = 0
 	var/sidescolor = 0
@@ -1184,8 +1184,8 @@
 		..()
 
 /obj/item/clothing/suit/storage/jacket/customtracksuit
-	name = "track suit"
-	desc = "A sporty track suit."
+	name = "运动套装"
+	desc = "一套运动型运动套装."
 	var/uncolored = FALSE
 	var/basecolor = 0
 	var/linescolor = 0

@@ -126,7 +126,7 @@
 					return FALSE
 	if ((current_winner && current_loser && world.time > next_win) && no_loop_o == FALSE)
 		ticker.finished = TRUE
-		to_chat(world, "<font size = 4><span class = 'notice'>SWAT seized total control of the Storage Depot!</span></font>")
+		to_chat(world, "<font size = 4><span class = 'notice'>特警队已完全控制了仓库!</span></font>")
 		show_global_battle_report(null)
 		win_condition_spam_check = TRUE
 		no_loop_o = TRUE
@@ -165,7 +165,7 @@
 				current_loser = roundend_condition_def2army(roundend_condition_sides[1][1])
 	else
 		if (current_win_condition != no_winner && current_winner && current_loser)
-			to_chat(world, "<font size = 3>Rednikov have regained control of the Storage Depot!</font>")
+			to_chat(world, "<font size = 3>雷德尼科夫已重新控制了仓库!</font>")
 			current_winner = null
 			current_loser = null
 		next_win = -1
@@ -227,7 +227,7 @@
 /obj/item/weapon/paper/police/searchwarrant/drug
 	icon_state = "police_warrant"
 	base_icon = "police_warrant"
-	name = "Search Warrant"
+	name = "搜查令"
 	New()
 		..()
 		arn = rand(100,999)
@@ -237,8 +237,8 @@
 
 /obj/item/weapon/reagent_containers/cocaineblock
 	icon = 'icons/obj/drugs.dmi'
-	name = "block of cocaine"
-	desc = "A block of very pure cocaine."
+	name = "一砖可卡因"
+	desc = "一砖纯度极高的可卡因。"
 	icon_state = "single_brick"
 	pixel_y = 6
 	var/vol = 500
@@ -248,7 +248,7 @@
 	New()
 		..()
 		reagents.add_reagent("cocaine", 500)
-		desc = "A block of very pure cocaine. Contains [vol] grams."
+		desc = "一砖纯度极高的可卡因。含有[vol]克。"
 
 /obj/item/weapon/reagent_containers/cocaineblock/update_icon()
 	if (torn)
@@ -260,13 +260,13 @@
 
 /obj/item/weapon/reagent_containers/cocaineblock/attackby(var/obj/item/I, var/mob/user)
 	if (istype(I, /obj/item/weapon/reagent_containers/cocaineblock/))
-		to_chat(user, "You stack the blocks together.")
+		to_chat(user, "你把砖块堆叠在一起。")
 		new /obj/item/weapon/reagent_containers/cocaineblocks(src.loc)
 		qdel(src)
 		qdel(I)
 		return
 	if (!istype(I, /obj/item/weapon/material/kitchen/utensil/knife))
-		to_chat(user, "You need a knife to cut the [src].")
+		to_chat(user, "你需要一把刀来切开[src]。")
 		return
 	if (reagents.get_reagent_amount("cocaine") <= 0)
 		qdel(src)
@@ -278,7 +278,7 @@
 	if (!torn)
 		torn = TRUE
 		update_icon()
-	to_chat(user, "You take out some cocaine from the [src].")
+	to_chat(user, "你从[src]中取出了一些可卡因。")
 	reagents.remove_reagent("cocaine",25)
 	var/obj/item/weapon/reagent_containers/pill/cocaine/coca = new/obj/item/weapon/reagent_containers/pill/cocaine(user)
 	user.put_in_hands(coca)
@@ -310,10 +310,10 @@
 	New()
 		..()
 		reagents.add_reagent("cocaine", 400)
-		desc = "A block of very pure cocaine. Contains [vol] grams."
+		desc = "一砖纯度极高的可卡因。含有[vol]克。"
 
 /obj/item/weapon/reagent_containers/cocaineblocks
-	name = "blocks of cocaine"
+	name = "可卡因砖"
 	icon = 'icons/obj/drugs.dmi'
 	icon_state = "brick_stack2"
 	pixel_y = 6
@@ -321,7 +321,7 @@
 	is_contraband = TRUE
 	New()
 		..()
-		desc = "[blocks_amount] blocks of very pure cocaine, packed together for shipping."
+		desc = "[blocks_amount]砖纯度极高的可卡因,打包在一起以便运输。"
 		value = blocks_amount*100
 
 /obj/item/weapon/reagent_containers/cocaineblocks/three
@@ -348,7 +348,7 @@
 	if (src == user.l_hand || src == user.r_hand)
 		var/obj/item/weapon/reagent_containers/cocaineblock/block = new/obj/item/weapon/reagent_containers/cocaineblock(user)
 		user.put_in_hands(block)
-		to_chat(user, "You split the [src] apart.")
+		to_chat(user, "你把[src]拆开了。")
 		if (blocks_amount > 2)
 			blocks_amount -= 1
 			update_icon()

@@ -647,7 +647,7 @@ window "outputwindow"
 		size = 496x20
 		anchor1 = 0,100
 		anchor2 = 100,100
-		font-family = "Book Antiqua"
+		font-family = "Microsoft YaHei"
 		font-size = 8
 		text-color = #1c1c1c
 		background-color = #a68b7d

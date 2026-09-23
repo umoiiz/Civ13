@@ -174,6 +174,10 @@ This lets agents introspect sprite sheets without opening them in a GUI - useful
 - `_compile_options.dm` controls TESTING, UNIT_TESTS, REFERENCE_TRACKING, etc. - uncomment as needed.
 - `.gitignore` excludes compiled outputs (`*.dmb`, `*.rsc`), log files, `data/`, `SQL/`, `dreamchecker.exe`, `civ13.json`, `TODO.md`.
 
+<!-- 2026-09-23: CJK text support -->
+- User-visible text limits should use `length_char()` and `copytext_char()`; byte-based `length()`/`copytext()` can split or prematurely truncate UTF-8 CJK text.
+- Browser UI and maptext should specify CJK-capable font fallbacks because bundled Latin fonts may not include those glyphs.
+
 ## Agent self-maintenance
 
 This file is read by every agent at session start. If you discover something

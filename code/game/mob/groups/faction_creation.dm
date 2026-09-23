@@ -105,8 +105,8 @@
 		if (!isnull(raw))
 			// The character limit applies to what was TYPED -- enforce it
 			// before sanitize()'s html-encoding inflates e.g. "&" to "&amp;".
-			if (length(raw) > FACTION_MOTTO_MAX_CHARS)
-				raw = copytext(raw, 1, FACTION_MOTTO_MAX_CHARS + 1)
+			if (length_char(raw) > FACTION_MOTTO_MAX_CHARS)
+				raw = copytext_char(raw, 1, FACTION_MOTTO_MAX_CHARS + 1)
 				to_chat(owner, SPAN_WARNING("Your motto was over [FACTION_MOTTO_MAX_CHARS] characters and has been trimmed."))
 			draft_motto = sanitize(raw, 0)
 	else if (href_list["set_flavour"])

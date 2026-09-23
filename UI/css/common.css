@@ -6,6 +6,7 @@ body
 	font-size: 14px;
 	color: #ffffff;
 	line-height: 170%;
+	font-family: "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", sans-serif;
 }
 
 hr
@@ -169,7 +170,7 @@ h4
 {	
 	clear: both;
 	padding: 8px;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Verdana, Geneva, sans-serif;
 }
 
 .good

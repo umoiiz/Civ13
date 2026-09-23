@@ -84,7 +84,7 @@
 				pref.real_name = new_name
 				return TOPIC_REFRESH
 			else
-				to_chat(user, "<span class='warning'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</span>")
+				to_chat(user, "<span class='warning'>Invalid name. Your name must be 2 to [MAX_NAME_LEN] characters long and may contain Unicode letters, spaces, and the punctuation -, ' and .</span>")
 				return TOPIC_NOACTION
 
 	else if (href_list["random_name"])

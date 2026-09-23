@@ -50,7 +50,7 @@ html body #uiContent {
 }
 
 #rt-root {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	color: #3a2c1a;
 	padding: 14px;
 	/* A block's width:auto fills its container but does NOT grow to
@@ -83,7 +83,7 @@ html body #uiContent {
 }
 
 #rt-root h2 {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	font-weight: bold;
 	font-size: 16px;
 	color: #4a3418;
@@ -124,7 +124,7 @@ html body #uiContent {
 
 .rt-tab {
 	margin-right: 4px;
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	font-weight: bold;
 	font-size: 13px;
 	color: #6b5230;
@@ -182,7 +182,7 @@ html body #uiContent {
 }
 
 .rt-layer-title {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	font-weight: bold;
 	font-size: 14px;
 	color: #4a3418;
@@ -296,7 +296,7 @@ html body #uiContent {
 /* --- assign / staff links (reuse the framework's linkActive markup) --- */
 
 #rt-root .link, #rt-root .linkActive, #rt-modal .link, #rt-modal .linkActive {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	background: #e9dcb8;
 	border: 1px solid #a98c5c;
 	color: #3a2c1a;
@@ -342,7 +342,7 @@ html body #uiContent {
 	max-width: 86%;
 	padding: 14px 16px;
 	font-size: 12px;
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	/* The modal lives outside #rt-root in the DOM (it's a sibling shell, not
 	   a descendant), so it never inherits the parchment root's dark ink
 	   color -- without this it falls back to the base NanoUI theme's white
@@ -379,7 +379,7 @@ html body #uiContent {
 }
 
 .rt-modal-title {
-	font-family: 'Civ13Custom', Georgia, serif;
+	font-family: 'Civ13Custom', "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", Georgia, serif;
 	font-weight: 900;
 	font-size: 17px;
 	color: #2f2211;

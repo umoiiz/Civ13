@@ -63,7 +63,7 @@
 		#endif
 		message.maptext_y = TILE_SIZE*1
 		message.maptext_height = TILE_SIZE*3
-		message.maptext = "<center><span style=\"-dm-text-outline: 1 black; vertical-align: bottom;\">[desired_text]</span></center>"
+		message.maptext = "<center><span style=\"font-family: 'Microsoft YaHei', 'Noto Sans CJK SC', 'Yu Gothic', 'Malgun Gothic', sans-serif; line-height: 1.2; -dm-text-outline: 1 black; vertical-align: bottom;\">[desired_text]</span></center>"
 		if(target)
 			if (!(message in target.images))
 				target.images += message

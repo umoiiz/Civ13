@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     color: #f0e0c0;
     line-height: 170%;
-    font-family: 'Segoe UI', monospace;
+    font-family: "Microsoft YaHei", "Noto Sans CJK SC", "Yu Gothic", "Malgun Gothic", "Segoe UI", sans-serif;
     background: #2b1e0e;
 }
 
@@ -33,7 +33,9 @@ hr {
 .link, .linkOn, .linkOff, .selected, .disabled, .yellowButton, .redButton {
     float: left;
     min-width: 15px;
-    height: 16px;
+    min-height: 16px;
+	height: auto;
+	line-height: 1.35;
     text-align: center;
     color: #ffd700;
     text-decoration: none;
@@ -42,7 +44,7 @@ hr {
     padding: 0px 4px 4px 4px;
     margin: 0 2px 2px 0;
     cursor: default;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .hasIcon {
@@ -525,7 +527,7 @@ div.notice {
 
 .pdalink {
     float: left;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 /* DNA Modifier UI (dna_modifier.tmpl) */

@@ -32,7 +32,7 @@
 	if (usr)
 		if (usr.client)
 			if (usr.client.holder)
-				to_chat(M, "\bold 你听到脑海中传来一个声音... \it alic [msg]")
+				to_chat(M, "什么几把[msg]")
 
 	log_admin("SubtlePM: [key_name(usr)] -> [key_name(M)] : [msg]")
 	message_admins("<span class = 'notice'>\bold SubtleMessage: [key_name_admin(usr)] -> [key_name_admin(M)] : [msg]</span>", key_name_admin(usr))
